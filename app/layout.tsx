@@ -76,7 +76,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" className={`${dmSerif.variable} ${dmSans.variable}`}>
-      <head>
+      <body className="min-h-screen flex flex-col">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -114,19 +114,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }),
           }}
         />
-      </head>
-      <body className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
         <WhatsAppButton />
-
-        {/* GHL Chat Widget */}
-        <div
-          data-chat-widget=""
-          data-widget-id="67f098808e2d431c7fc8ec81"
-          data-location-id="MR3yMqtdBa4732pi4ZCw"
-        />
         <Script
           src="https://link.msgsndr.com/js/form_embed.js"
           strategy="lazyOnload"
