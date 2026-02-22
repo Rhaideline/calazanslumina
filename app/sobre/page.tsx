@@ -13,33 +13,42 @@ export const metadata: Metadata = {
 export default function SobrePage() {
   return (
     <>
-      {/* Hero */}
-      <section className="section-padding bg-brand-bg">
-        <div className="container-main">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      {/* Hero — full-width background image with overlay */}
+      <section className="relative min-h-[70vh] flex items-center">
+        {/* Background Image */}
+        <Image
+          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c035285908c419.jpeg"
+          alt="Rhaideline Calazans — Fundadora da Calazans Lumina, especialista em marketing digital para brasileiros nos EUA e Brasil"
+          fill
+          className="object-cover"
+          priority
+        />
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-brand-dark/80" />
+
+        <div className="container-main section-padding relative z-10 text-white">
+          <div className="max-w-3xl">
             <ScrollReveal>
               <p className="text-brand-mint font-medium mb-2 text-sm uppercase tracking-wider">
                 Sobre a fundadora
               </p>
               <h1 className="heading-1 mb-6">
-                Rhaideline <span className="gradient-text">Calazans</span>
+                Rhaideline <span className="text-brand-mint">Calazans</span>
               </h1>
-              <p className="text-brand-dark/60 text-lg italic mb-8 border-l-2 border-brand-mint pl-6">
+              <p className="text-white/70 text-lg italic mb-8 border-l-2 border-brand-mint pl-6">
                 &quot;Eu não aprendi marketing em sala de aula. Eu aprendi vendendo meus próprios produtos,
                 perdendo clientes por falta de sistema e reconstruindo tudo do zero — mais de uma vez.&quot;
               </p>
-            </ScrollReveal>
-            <ScrollReveal delay={200}>
-              <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-br from-brand-mint/20 to-brand-light/10 rounded-3xl blur-2xl" />
-                <Image
-                  src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c035285908c419.jpeg"
-                  alt="Rhaideline Calazans — Fundadora da Calazans Lumina, especialista em marketing digital para brasileiros nos EUA e Brasil"
-                  width={600}
-                  height={750}
-                  className="rounded-3xl relative z-10 w-full object-cover"
-                  priority
-                />
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/contato"
+                  className="btn-primary text-base"
+                >
+                  Fale comigo
+                </Link>
+                <Link href="/servicos" className="btn-secondary-light text-base">
+                  Conheça os serviços
+                </Link>
               </div>
             </ScrollReveal>
           </div>
@@ -204,6 +213,68 @@ export default function SobrePage() {
                 </div>
               </ScrollReveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Freelancer para agências */}
+      <section className="section-padding bg-brand-dark text-white">
+        <div className="container-main max-w-4xl">
+          <div className="grid lg:grid-cols-5 gap-10 items-center">
+            <div className="lg:col-span-3">
+              <ScrollReveal>
+                <p className="text-brand-mint font-medium mb-2 text-sm uppercase tracking-wider">
+                  Freelancer para agências
+                </p>
+                <h2 className="heading-2 mb-6">
+                  Sua agência precisa de uma <span className="text-brand-mint">parceira confiável?</span>
+                </h2>
+                <div className="space-y-4 text-white/70 leading-relaxed">
+                  <p>
+                    Além de atender empreendedores diretamente, também trabalho como freelancer
+                    para agências de marketing digital que precisam de apoio especializado em
+                    implementação e execução.
+                  </p>
+                  <p>
+                    Se sua agência precisa de uma profissional experiente para projetos de sites,
+                    funis no GoHighLevel, automações com IA, gestão de Google Business Profile
+                    ou configuração de CRM — eu posso ser a extensão da sua equipe.
+                  </p>
+                </div>
+                <ul className="space-y-3 mt-6 mb-8">
+                  {['Entrega pontual e com qualidade', 'Comunicação clara e profissional', 'Experiência com white-label', 'Domínio completo do GoHighLevel'].map((item) => (
+                    <li key={item} className="flex items-center gap-3 text-white/80">
+                      <svg className="w-5 h-5 text-brand-mint flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="https://wa.me/5531982948067?text=Olá Rhaideline, sou de uma agência e gostaria de conversar sobre uma parceria"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary text-base inline-flex"
+                >
+                  Quero conversar sobre parceria
+                </a>
+              </ScrollReveal>
+            </div>
+            <div className="lg:col-span-2">
+              <ScrollReveal delay={200}>
+                <div className="relative">
+                  <div className="absolute -inset-4 bg-gradient-to-br from-brand-mint/20 to-brand-light/10 rounded-3xl blur-2xl" />
+                  <Image
+                    src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c0357f3208c418.jpeg"
+                    alt="Rhaideline Calazans — freelancer para agências de marketing digital"
+                    width={400}
+                    height={500}
+                    className="rounded-3xl relative z-10 w-full object-cover"
+                  />
+                </div>
+              </ScrollReveal>
+            </div>
           </div>
         </div>
       </section>

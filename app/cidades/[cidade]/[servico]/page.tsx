@@ -10,6 +10,7 @@ import ReviewsWidget from '@/components/ReviewsWidget'
 import HeroForm from '@/components/HeroForm'
 import HeroBadges from '@/components/HeroBadges'
 import Breadcrumb from '@/components/Breadcrumb'
+import PricingTable from '@/components/PricingTable'
 import ServiceIcon from '@/components/ServiceIcon'
 
 export async function generateStaticParams() {
@@ -42,7 +43,7 @@ export default async function CidadeServicoPage({ params }: { params: Promise<{ 
       {/* Hero */}
       <section className="relative min-h-[80vh] flex items-center">
         <Image
-          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d62df9bdf1a8f06e132.png"
+          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d74aa28b2801643ac3f117.jpeg"
           alt={`${servico.nome} em ${cidade.nome}, MA — Calazans Lumina`}
           fill
           className="object-cover"
@@ -136,6 +137,7 @@ export default async function CidadeServicoPage({ params }: { params: Promise<{ 
         </div>
       </section>
 
+      <PricingTable />
       <ReviewsWidget />
 
       {/* Outros Serviços */}

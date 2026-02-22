@@ -10,6 +10,7 @@ import ReviewsWidget from '@/components/ReviewsWidget'
 import HeroForm from '@/components/HeroForm'
 import HeroBadges from '@/components/HeroBadges'
 import Breadcrumb from '@/components/Breadcrumb'
+import PricingTable from '@/components/PricingTable'
 import ServiceIcon from '@/components/ServiceIcon'
 
 export async function generateStaticParams() {
@@ -35,7 +36,7 @@ export default async function CapitalPage({ params }: { params: Promise<{ capita
     <>
       <section className="relative min-h-[80vh] flex items-center">
         <Image
-          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d6220c035435705e8cd.png"
+          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d74aa28b2801643ac3f117.jpeg"
           alt={`Marketing Digital em ${capital.nome} — Calazans Lumina`}
           fill
           className="object-cover"
@@ -128,6 +129,7 @@ export default async function CapitalPage({ params }: { params: Promise<{ capita
         </div>
       </section>
 
+      <PricingTable />
       <ReviewsWidget />
       <CTAForm cidade={capital.nome} />
     </>

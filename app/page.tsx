@@ -7,6 +7,30 @@ import CTAForm from '@/components/CTAForm'
 import ReviewsWidget from '@/components/ReviewsWidget'
 import HeroForm from '@/components/HeroForm'
 import HeroBadges from '@/components/HeroBadges'
+import PricingTable from '@/components/PricingTable'
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Calazans Lumina',
+  description: 'Agência de marketing digital especializada em brasileiros nos EUA e Brasil. Sites Next.js, funis GHL, CRM com IA, tráfego pago e Google Business Profile.',
+  url: 'https://calazanslumina.com',
+  telephone: '+5531982948067',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Framingham',
+    addressRegion: 'MA',
+    addressCountry: 'US',
+  },
+  founder: {
+    '@type': 'Person',
+    name: 'Rhaideline Calazans',
+  },
+  areaServed: ['Massachusetts, USA', 'Brasil'],
+  priceRange: '$$',
+  image: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3c6855d8bc9a8c44fb4d.png',
+  sameAs: ['https://www.instagram.com/calazanslumina/'],
+}
 
 const portfolioImages = [
   { src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d624c8da2a02097df7b.png', alt: 'Site profissional desenvolvido pela Calazans Lumina — layout moderno e responsivo', segmento: 'Site Profissional' },
@@ -57,6 +81,11 @@ const problemasSolucoes = [
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+
       {/* ===== HERO — background image + overlay + form on right ===== */}
       <section className="relative min-h-[85vh] flex items-center">
         {/* Background Image */}
@@ -332,6 +361,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ===== PACOTES ===== */}
+      <PricingTable />
 
       {/* ===== REVIEWS ===== */}
       <ReviewsWidget />

@@ -10,6 +10,7 @@ import ReviewsWidget from '@/components/ReviewsWidget'
 import HeroForm from '@/components/HeroForm'
 import HeroBadges from '@/components/HeroBadges'
 import Breadcrumb from '@/components/Breadcrumb'
+import PricingTable from '@/components/PricingTable'
 import ServiceIcon from '@/components/ServiceIcon'
 
 export async function generateStaticParams() {
@@ -41,7 +42,7 @@ export default async function CapitalServicoPage({ params }: { params: Promise<{
     <>
       <section className="relative min-h-[80vh] flex items-center">
         <Image
-          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d6255d8bc22d845716a.png"
+          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d74aa28b2801643ac3f117.jpeg"
           alt={`${servico.nome} em ${capital.nome} — Calazans Lumina`}
           fill
           className="object-cover"
@@ -133,6 +134,7 @@ export default async function CapitalServicoPage({ params }: { params: Promise<{
         </div>
       </section>
 
+      <PricingTable />
       <ReviewsWidget />
 
       <section className="section-padding bg-brand-bg">

@@ -85,7 +85,7 @@ export default async function ServicoPage({ params }: { params: Promise<{ slug: 
       {/* ===== 1. HERO ===== */}
       <section className="relative min-h-[80vh] flex items-center">
         <Image
-          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d6255d8bc3b6f457169.png"
+          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d74aa28b2801643ac3f117.jpeg"
           alt={`${servico.nome} — Calazans Lumina Marketing Digital`}
           fill
           className="object-cover"

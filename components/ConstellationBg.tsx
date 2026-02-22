@@ -54,7 +54,7 @@ export default function ConstellationBg({ className = '' }: { className?: string
             ctx.beginPath()
             ctx.moveTo(points[i].x, points[i].y)
             ctx.lineTo(points[j].x, points[j].y)
-            ctx.strokeStyle = `rgba(212, 168, 67, ${0.15 * (1 - dist / 150)})`
+            ctx.strokeStyle = `rgba(230, 168, 23, ${0.15 * (1 - dist / 150)})`
             ctx.lineWidth = 1
             ctx.stroke()
           }
@@ -65,7 +65,7 @@ export default function ConstellationBg({ className = '' }: { className?: string
       points.forEach((p) => {
         ctx.beginPath()
         ctx.arc(p.x, p.y, 2, 0, Math.PI * 2)
-        ctx.fillStyle = 'rgba(232, 201, 122, 0.4)'
+        ctx.fillStyle = 'rgba(240, 201, 77, 0.5)'
         ctx.fill()
       })
 

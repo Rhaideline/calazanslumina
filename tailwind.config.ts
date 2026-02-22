@@ -10,8 +10,8 @@ const config: Config = {
       colors: {
         brand: {
           dark: '#111111',
-          mint: '#D4A843',
-          light: '#E8C97A',
+          mint: '#E6A817',
+          light: '#F0C94D',
           bg: '#FAF8F3',
         },
       },
