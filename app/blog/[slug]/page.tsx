@@ -1,0 +1,165 @@
+import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+import Image from 'next/image'
+import Link from 'next/link'
+import { blogPosts, getBlogPostBySlug } from '@/data/blog'
+import ScrollReveal from '@/components/ScrollReveal'
+import CTAForm from '@/components/CTAForm'
+
+export async function generateStaticParams() {
+  return blogPosts.map((p) => ({ slug: p.slug }))
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+  const { slug } = await params
+  const post = getBlogPostBySlug(slug)
+  if (!post) return {}
+  return {
+    title: post.titulo,
+    description: post.resumo,
+    openGraph: {
+      title: post.titulo,
+      description: post.resumo,
+      type: 'article',
+      authors: [post.autor],
+      images: [{ url: post.imagem }],
+    },
+  }
+}
+
+export default async function BlogPostPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}) {
+  const { slug } = await params
+  const post = getBlogPostBySlug(slug)
+  if (!post) notFound()
+
+  const outrosPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 3)
+
+  return (
+    <>
+      {/* Header */}
+      <article className="section-padding bg-brand-dark">
+        <div className="container-main max-w-3xl">
+          <ScrollReveal>
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 text-white/40 hover:text-white/60 text-sm mb-8 transition-colors"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              Voltar ao blog
+            </Link>
+
+            <div className="flex items-center gap-3 mb-6">
+              <span className="bg-brand-mint/90 text-brand-dark text-xs font-bold px-3 py-1 rounded-full">
+                {post.categoria}
+              </span>
+              <span className="text-white/40 text-sm">{post.dataPublicacao}</span>
+              <span className="text-white/40 text-sm">•</span>
+              <span className="text-white/40 text-sm">{post.tempoLeitura}</span>
+            </div>
+
+            <h1 className="heading-1 mb-6">{post.titulo}</h1>
+
+            <div className="flex items-center gap-3 mb-10">
+              <Image
+                src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d74aa28b2801643ac3f117.jpeg"
+                alt="Rhaideline Calazans — autora do blog Calazans Lumina"
+                width={40}
+                height={40}
+                className="w-10 h-10 rounded-full object-cover"
+              />
+              <div>
+                <p className="text-white text-sm font-medium">{post.autor}</p>
+                <p className="text-white/40 text-xs">Fundadora, Calazans Lumina</p>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Featured Image */}
+          <ScrollReveal>
+            <div className="relative aspect-video rounded-2xl overflow-hidden mb-10">
+              <Image
+                src={post.imagem}
+                alt={post.titulo}
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 768px) 100vw, 720px"
+              />
+            </div>
+          </ScrollReveal>
+
+          {/* Content */}
+          <ScrollReveal>
+            <div className="prose prose-invert prose-lg max-w-none [&>h2]:font-serif [&>h2]:text-2xl [&>h2]:text-brand-mint [&>h2]:mt-10 [&>h2]:mb-4 [&>p]:text-white/70 [&>p]:leading-relaxed [&>ul]:text-white/70 [&>ol]:text-white/70 [&>blockquote]:border-brand-mint [&>blockquote]:text-brand-light">
+              {post.conteudo.split('\n').map((line, i) => {
+                if (line.startsWith('## ')) {
+                  return <h2 key={i}>{line.replace('## ', '')}</h2>
+                }
+                if (line.trim() === '') return <br key={i} />
+                return <p key={i}>{line}</p>
+              })}
+            </div>
+          </ScrollReveal>
+
+          {/* Share */}
+          <div className="border-t border-white/10 mt-12 pt-8 flex items-center justify-between">
+            <p className="text-white/40 text-sm">
+              Por {post.autor} • {post.dataPublicacao}
+            </p>
+            <a
+              href={`https://wa.me/5531982948067?text=${encodeURIComponent(`Olá, li o artigo "${post.titulo}" e quero saber mais`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-mint text-sm font-medium hover:underline"
+            >
+              Falar sobre este artigo →
+            </a>
+          </div>
+        </div>
+      </article>
+
+      {/* Related Posts */}
+      <section className="section-padding bg-brand-dark border-t border-white/5">
+        <div className="container-main">
+          <h2 className="heading-3 text-center mb-10">Outros artigos</h2>
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {outrosPosts.map((p, i) => (
+              <ScrollReveal key={p.slug} delay={i * 100}>
+                <Link href={`/blog/${p.slug}`} className="group block">
+                  <div className="card-premium overflow-hidden p-0">
+                    <div className="relative aspect-video overflow-hidden">
+                      <Image
+                        src={p.imagem}
+                        alt={p.titulo}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                        sizes="33vw"
+                      />
+                    </div>
+                    <div className="p-4">
+                      <h3 className="font-serif text-sm font-bold group-hover:text-brand-mint transition-colors leading-snug">
+                        {p.titulo}
+                      </h3>
+                    </div>
+                  </div>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CTAForm />
+    </>
+  )
+}

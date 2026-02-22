@@ -1,0 +1,66 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { servicos } from '@/data/servicos'
+import ScrollReveal from '@/components/ScrollReveal'
+import CTAForm from '@/components/CTAForm'
+
+export const metadata: Metadata = {
+  title: 'Serviços de Marketing Digital | Sites, Funis, CRM, Redes Sociais',
+  description:
+    'Sites Next.js, funis GHL, CRM com IA, tráfego pago, gestão de redes sociais e Google Business Profile. Soluções completas para brasileiros nos EUA e Brasil.',
+}
+
+export default function ServicosPage() {
+  return (
+    <>
+      <section className="section-padding bg-brand-dark">
+        <div className="container-main">
+          <ScrollReveal className="text-center mb-16">
+            <p className="text-brand-mint font-medium mb-2 text-sm uppercase tracking-wider">
+              O que fazemos
+            </p>
+            <h1 className="heading-1 mb-4">
+              Nossos <span className="gradient-text">Serviços</span>
+            </h1>
+            <p className="text-white/60 text-lg max-w-2xl mx-auto">
+              Soluções completas de marketing digital, do primeiro clique ao fechamento.
+              Cada serviço é pensado para gerar resultados mensuráveis.
+            </p>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {servicos.map((servico, i) => (
+              <ScrollReveal key={servico.slug} delay={i * 100}>
+                <Link href={`/servicos/${servico.slug}`} className="card-premium block h-full group">
+                  <span className="text-5xl mb-6 block">{servico.icone}</span>
+                  <h2 className="text-2xl font-bold mb-3 group-hover:text-brand-mint transition-colors font-serif">
+                    {servico.nome}
+                  </h2>
+                  <p className="text-white/60 text-sm mb-4 leading-relaxed">
+                    {servico.descricaoCurta}
+                  </p>
+                  <ul className="space-y-2 mb-6">
+                    {servico.dores.slice(0, 3).map((dor, j) => (
+                      <li key={j} className="flex items-start gap-2 text-white/50 text-xs">
+                        <span className="text-red-400 mt-0.5">x</span>
+                        {dor}
+                      </li>
+                    ))}
+                  </ul>
+                  <span className="inline-flex items-center gap-2 text-brand-mint text-sm font-medium group-hover:gap-3 transition-all">
+                    {servico.cta}
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </span>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CTAForm />
+    </>
+  )
+}
