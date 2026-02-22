@@ -77,8 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR" className={`${dmSerif.variable} ${dmSans.variable}`}>
       <head>
-        <Script
-          id="schema-local-business"
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
@@ -115,14 +114,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }),
           }}
         />
-        <Script
-          src="https://link.msgsndr.com/js/form_embed.js"
-          strategy="lazyOnload"
-        />
-        <Script
-          src="https://reputationhub.site/reputation/assets/review-widget.js"
-          strategy="lazyOnload"
-        />
       </head>
       <body className="min-h-screen flex flex-col">
         <Header />
@@ -135,6 +126,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           data-chat-widget=""
           data-widget-id="67f098808e2d431c7fc8ec81"
           data-location-id="MR3yMqtdBa4732pi4ZCw"
+        />
+        <Script
+          src="https://link.msgsndr.com/js/form_embed.js"
+          strategy="lazyOnload"
+        />
+        <Script
+          src="https://reputationhub.site/reputation/assets/review-widget.js"
+          strategy="lazyOnload"
         />
         <Script
           src="https://beta.leadconnectorhq.com/loader.js"
