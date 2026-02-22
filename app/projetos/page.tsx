@@ -53,7 +53,7 @@ const categorias = {
 export default function ProjetosPage() {
   return (
     <>
-      <section className="section-padding bg-brand-dark">
+      <section className="section-padding bg-brand-bg">
         <div className="container-main">
           <ScrollReveal className="text-center mb-16">
             <p className="text-brand-mint font-medium mb-2 text-sm uppercase tracking-wider">
@@ -62,7 +62,7 @@ export default function ProjetosPage() {
             <h1 className="heading-1 mb-4">
               Projetos & <span className="gradient-text">Portfólio</span>
             </h1>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto">
+            <p className="text-brand-dark/60 text-lg max-w-2xl mx-auto">
               Cada projeto é uma transformação real. Sites, automações, campanhas e
               resultados que falam por si.
             </p>
@@ -73,21 +73,21 @@ export default function ProjetosPage() {
       {Object.entries(categorias).map(([key, cat]) => (
         <section
           key={key}
-          className={`section-padding ${key === 'performance' ? 'bg-brand-bg' : 'bg-brand-dark'}`}
+          className={`section-padding ${key === 'performance' ? 'bg-brand-bg' : 'bg-white'}`}
         >
           <div className="container-main">
             <ScrollReveal className="mb-10">
-              <h2 className={`heading-3 mb-2 ${key === 'performance' ? 'text-brand-dark' : ''}`}>
+              <h2 className="heading-3 mb-2 text-brand-dark">
                 {cat.titulo}
               </h2>
-              <p className={`${key === 'performance' ? 'text-brand-dark/60' : 'text-white/60'}`}>
+              <p className="text-brand-dark/60">
                 {cat.descricao}
               </p>
             </ScrollReveal>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {cat.imagens.map((img, i) => (
                 <ScrollReveal key={i} delay={i * 80}>
-                  <div className={`rounded-2xl overflow-hidden ${key === 'performance' ? 'shadow-lg bg-white' : 'bg-white/5 border border-white/10'}`}>
+                  <div className="rounded-2xl overflow-hidden shadow-lg bg-white">
                     <Image
                       src={img.src}
                       alt={img.alt}

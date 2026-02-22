@@ -14,7 +14,7 @@ export default function SobrePage() {
   return (
     <>
       {/* Hero */}
-      <section className="section-padding bg-brand-dark">
+      <section className="section-padding bg-brand-bg">
         <div className="container-main">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <ScrollReveal>
@@ -24,7 +24,7 @@ export default function SobrePage() {
               <h1 className="heading-1 mb-6">
                 Rhaideline <span className="gradient-text">Calazans</span>
               </h1>
-              <p className="text-white/60 text-lg italic mb-8 border-l-2 border-brand-mint pl-6">
+              <p className="text-brand-dark/60 text-lg italic mb-8 border-l-2 border-brand-mint pl-6">
                 &quot;Eu não aprendi marketing em sala de aula. Eu aprendi vendendo meus próprios produtos,
                 perdendo clientes por falta de sistema e reconstruindo tudo do zero — mais de uma vez.&quot;
               </p>
@@ -151,7 +151,7 @@ export default function SobrePage() {
       </section>
 
       {/* Fotos */}
-      <section className="section-padding bg-brand-dark">
+      <section className="section-padding bg-white">
         <div className="container-main">
           <div className="grid md:grid-cols-3 gap-6">
             {[

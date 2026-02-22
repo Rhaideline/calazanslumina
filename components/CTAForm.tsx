@@ -8,7 +8,7 @@ export default function CTAForm({ cidade, servico }: { cidade?: string; servico?
   return (
     <section className="section-padding bg-brand-dark" id="contato-form">
       <div className="container-main">
-        <div className="max-w-4xl mx-auto text-center mb-10">
+        <div className="max-w-4xl mx-auto text-center mb-10 text-white">
           <h2 className="heading-2 mb-4">{title}</h2>
           <p className="text-white/60 text-lg max-w-2xl mx-auto">
             Preencha o formulário abaixo e receba um diagnóstico gratuito do seu marketing digital.

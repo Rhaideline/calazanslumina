@@ -15,7 +15,7 @@ export default function BlogPage() {
 
   return (
     <>
-      <section className="section-padding bg-brand-dark">
+      <section className="section-padding bg-brand-bg">
         <div className="container-main">
           <ScrollReveal className="text-center mb-12">
             <p className="text-brand-mint font-medium mb-2 text-sm uppercase tracking-wider">
@@ -24,7 +24,7 @@ export default function BlogPage() {
             <h1 className="heading-1 mb-4">
               Conteúdo que <span className="gradient-text">educa e converte</span>
             </h1>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto">
+            <p className="text-brand-dark/60 text-lg max-w-2xl mx-auto">
               Dicas práticas, estratégias e insights para empreendedores brasileiros
               que querem dominar o marketing digital nos EUA e no Brasil.
             </p>
@@ -37,7 +37,7 @@ export default function BlogPage() {
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 !categoriaAtiva
                   ? 'bg-brand-mint text-brand-dark'
-                  : 'bg-white/5 text-white/60 hover:bg-white/10'
+                  : 'bg-white text-brand-dark/60 hover:bg-gray-100'
               }`}
             >
               Todos
@@ -49,7 +49,7 @@ export default function BlogPage() {
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   categoriaAtiva === cat
                     ? 'bg-brand-mint text-brand-dark'
-                    : 'bg-white/5 text-white/60 hover:bg-white/10'
+                    : 'bg-white text-brand-dark/60 hover:bg-gray-100'
                 }`}
               >
                 {cat}
@@ -78,7 +78,7 @@ export default function BlogPage() {
                       </div>
                     </div>
                     <div className="p-6">
-                      <div className="flex items-center gap-3 text-white/40 text-xs mb-3">
+                      <div className="flex items-center gap-3 text-brand-dark/40 text-xs mb-3">
                         <span>{post.dataPublicacao}</span>
                         <span>•</span>
                         <span>{post.tempoLeitura}</span>
@@ -86,7 +86,7 @@ export default function BlogPage() {
                       <h2 className="font-serif text-lg font-bold group-hover:text-brand-mint transition-colors leading-snug mb-3">
                         {post.titulo}
                       </h2>
-                      <p className="text-white/50 text-sm line-clamp-2">
+                      <p className="text-brand-dark/50 text-sm line-clamp-2">
                         {post.resumo}
                       </p>
                     </div>

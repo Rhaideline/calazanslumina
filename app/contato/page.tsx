@@ -11,13 +11,13 @@ export const metadata: Metadata = {
 export default function ContatoPage() {
   return (
     <>
-      <section className="section-padding bg-brand-dark">
+      <section className="section-padding bg-brand-bg">
         <div className="container-main">
           <ScrollReveal className="text-center mb-16">
             <h1 className="heading-1 mb-4">
               Vamos <span className="gradient-text">conversar?</span>
             </h1>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto">
+            <p className="text-brand-dark/60 text-lg max-w-2xl mx-auto">
               Escolha o canal que preferir. Estou pronta para entender seu negócio e
               criar a estratégia ideal para você.
             </p>
@@ -58,7 +58,7 @@ export default function ContatoPage() {
                   <h2 className="text-xl font-bold mb-2 group-hover:text-brand-mint transition-colors">
                     {canal.titulo}
                   </h2>
-                  <p className="text-white/50 text-sm mb-4">{canal.desc}</p>
+                  <p className="text-brand-dark/50 text-sm mb-4">{canal.desc}</p>
                   <span className="text-brand-mint text-sm font-medium">{canal.cta} →</span>
                 </a>
               </ScrollReveal>

@@ -1,70 +1,70 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import Image from 'next/image'
 import Link from 'next/link'
 import { servicos } from '@/data/servicos'
 import { capitaisBR, getCapitalBRBySlug } from '@/data/capitais-br'
 import ScrollReveal from '@/components/ScrollReveal'
 import CTAForm from '@/components/CTAForm'
 import ReviewsWidget from '@/components/ReviewsWidget'
-import ConstellationBg from '@/components/ConstellationBg'
+import HeroForm from '@/components/HeroForm'
+import HeroBadges from '@/components/HeroBadges'
+import Breadcrumb from '@/components/Breadcrumb'
 
 export async function generateStaticParams() {
   return capitaisBR.map((c) => ({ capital: c.slug }))
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ capital: string }>
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ capital: string }> }): Promise<Metadata> {
   const { capital: capitalSlug } = await params
   const capital = getCapitalBRBySlug(capitalSlug)
   if (!capital) return {}
   return {
     title: `Agência de Marketing Digital em ${capital.nome}`,
-    description: `Sites Next.js, funis de vendas, CRM com IA, redes sociais e Google Meu Negócio para negócios em ${capital.nome}. Transforme leads em clientes. Calazans Lumina.`,
-    openGraph: {
-      title: `Marketing Digital em ${capital.nome} | Calazans Lumina`,
-      description: `Soluções completas de marketing digital em ${capital.nome}, ${capital.siglaEstado}.`,
-    },
+    description: `Sites Next.js, funis de vendas, CRM com IA, redes sociais e Google Meu Negócio para negócios em ${capital.nome}. Calazans Lumina.`,
   }
 }
 
-export default async function CapitalPage({
-  params,
-}: {
-  params: Promise<{ capital: string }>
-}) {
+export default async function CapitalPage({ params }: { params: Promise<{ capital: string }> }) {
   const { capital: capitalSlug } = await params
   const capital = getCapitalBRBySlug(capitalSlug)
   if (!capital) notFound()
 
   return (
     <>
-      {/* Hero */}
-      <section className="section-padding bg-brand-dark relative overflow-hidden">
-        <ConstellationBg />
-        <div className="container-main relative z-10">
-          <ScrollReveal>
-            <div className="inline-flex items-center gap-2 bg-brand-mint/10 border border-brand-mint/20 rounded-full px-4 py-2 mb-6">
-              <span className="text-sm">🇧🇷</span>
-              <span className="text-brand-mint text-sm font-medium">
-                {capital.nome}, {capital.siglaEstado}
-              </span>
-            </div>
-            <h1 className="heading-1 mb-6 max-w-4xl">
-              Agência de Marketing Digital em{' '}
-              <span className="gradient-text">{capital.nome}</span>
-            </h1>
-            <p className="text-white/70 text-lg leading-relaxed max-w-3xl mb-4">
-              {capital.descricao}. Na Calazans Lumina, entregamos soluções completas de marketing
-              digital para negócios em {capital.nome}: sites de alta performance, funis automatizados,
-              CRM com IA conversacional, gestão de redes sociais e Google Meu Negócio otimizado.
-            </p>
-            <p className="text-white/50 text-base mb-8 max-w-3xl">
-              {capital.doresEspecificas}.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+      <section className="relative min-h-[80vh] flex items-center">
+        <Image
+          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d6220c035435705e8cd.png"
+          alt={`Marketing Digital em ${capital.nome} — Calazans Lumina`}
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-brand-dark/85" />
+
+        <div className="container-main section-padding relative z-10 text-white">
+          <div className="grid lg:grid-cols-5 gap-10 lg:gap-12 items-start">
+            <div className="lg:col-span-3">
+              <Breadcrumb items={[
+                { label: 'Home', href: '/' },
+                { label: 'Brasil' },
+                { label: `${capital.nome}, ${capital.siglaEstado}` },
+              ]} />
+
+              <HeroBadges cidade={`${capital.nome}, ${capital.siglaEstado}`} />
+
+              <h1 className="heading-1 mb-6">
+                Agência de Marketing Digital em{' '}
+                <span className="text-brand-mint">{capital.nome}</span>
+              </h1>
+
+              <p className="text-white/70 text-lg leading-relaxed mb-4 max-w-2xl">
+                {capital.descricao}. Entregamos soluções completas de marketing digital para
+                negócios em {capital.nome}: sites de alta performance, funis automatizados,
+                CRM com IA e Google Meu Negócio otimizado.
+              </p>
+              <p className="text-white/50 text-base mb-8 max-w-2xl">{capital.doresEspecificas}.</p>
+
               <a
                 href={`https://wa.me/5531982948067?text=${encodeURIComponent(`Olá, sou de ${capital.nome} e quero saber mais sobre os serviços da Calazans Lumina`)}`}
                 target="_blank"
@@ -74,29 +74,30 @@ export default async function CapitalPage({
                 Fale comigo — sou de {capital.nome}
               </a>
             </div>
-          </ScrollReveal>
+            <div className="lg:col-span-2">
+              <HeroForm titulo={`Orçamento Gratuito em ${capital.nome}`} />
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Dores locais */}
+      {/* Dores */}
       <section className="section-padding bg-brand-bg">
         <div className="container-main">
           <ScrollReveal className="text-center mb-12">
-            <h2 className="heading-2 text-brand-dark mb-4">
-              Desafios de empreendedores em {capital.nome}
-            </h2>
+            <h2 className="heading-2 text-brand-dark mb-4">Desafios de empreendedores em {capital.nome}</h2>
           </ScrollReveal>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
             {[
               `Alta concorrência digital em ${capital.nome} — CPL cada vez mais caro`,
               'Sites antigos sem mobile, sem velocidade e sem SEO',
               'Perder leads no WhatsApp por falta de automação',
-              'Campanhas sem estrutura — dinheiro jogado fora em anúncios',
+              'Campanhas sem estrutura — dinheiro jogado fora',
               'Instagram com seguidores que não compram',
               `Google Meu Negócio nunca configurado corretamente em ${capital.nome}`,
             ].map((dor, i) => (
               <ScrollReveal key={i} delay={i * 80}>
-                <div className="bg-white rounded-xl p-5 shadow-sm border-l-4 border-red-400/50">
+                <div className="bg-white rounded-xl p-5 shadow-sm border-l-4 border-red-400/50 h-full">
                   <p className="text-brand-dark/70 text-sm">{dor}</p>
                 </div>
               </ScrollReveal>
@@ -106,29 +107,19 @@ export default async function CapitalPage({
       </section>
 
       {/* Serviços */}
-      <section className="section-padding bg-brand-dark">
+      <section className="section-padding bg-white">
         <div className="container-main">
           <ScrollReveal className="text-center mb-12">
-            <h2 className="heading-2 mb-4">
-              Nossos serviços em{' '}
-              <span className="gradient-text">{capital.nome}</span>
-            </h2>
+            <h2 className="heading-2 text-brand-dark mb-4">Nossos serviços em <span className="text-brand-mint">{capital.nome}</span></h2>
           </ScrollReveal>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {servicos.map((servico, i) => (
               <ScrollReveal key={servico.slug} delay={i * 100}>
-                <Link
-                  href={`/brasil/${capital.slug}/${servico.slug}`}
-                  className="card-premium block h-full group"
-                >
+                <Link href={`/brasil/${capital.slug}/${servico.slug}`} className="card-premium block h-full group">
                   <span className="text-3xl mb-3 block">{servico.icone}</span>
-                  <h3 className="text-lg font-bold mb-2 group-hover:text-brand-mint transition-colors">
-                    {servico.nome}
-                  </h3>
-                  <p className="text-white/50 text-sm mb-4">{servico.descricaoCurta}</p>
-                  <span className="text-brand-mint text-sm font-medium">
-                    {servico.cta} em {capital.nome} →
-                  </span>
+                  <h3 className="text-lg font-bold mb-2 group-hover:text-brand-mint transition-colors">{servico.nome}</h3>
+                  <p className="text-brand-dark/70 text-sm mb-4">{servico.descricaoCurta}</p>
+                  <span className="text-brand-mint text-sm font-medium">{servico.cta} em {capital.nome} →</span>
                 </Link>
               </ScrollReveal>
             ))}
@@ -136,10 +127,7 @@ export default async function CapitalPage({
         </div>
       </section>
 
-      {/* Reviews */}
       <ReviewsWidget />
-
-      {/* CTA */}
       <CTAForm cidade={capital.nome} />
     </>
   )

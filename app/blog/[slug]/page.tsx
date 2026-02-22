@@ -45,12 +45,12 @@ export default async function BlogPostPage({
   return (
     <>
       {/* Header */}
-      <article className="section-padding bg-brand-dark">
+      <article className="section-padding bg-white">
         <div className="container-main max-w-3xl">
           <ScrollReveal>
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 text-white/40 hover:text-white/60 text-sm mb-8 transition-colors"
+              className="inline-flex items-center gap-2 text-brand-dark/40 hover:text-brand-dark/60 text-sm mb-8 transition-colors"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -62,9 +62,9 @@ export default async function BlogPostPage({
               <span className="bg-brand-mint/90 text-brand-dark text-xs font-bold px-3 py-1 rounded-full">
                 {post.categoria}
               </span>
-              <span className="text-white/40 text-sm">{post.dataPublicacao}</span>
-              <span className="text-white/40 text-sm">•</span>
-              <span className="text-white/40 text-sm">{post.tempoLeitura}</span>
+              <span className="text-brand-dark/40 text-sm">{post.dataPublicacao}</span>
+              <span className="text-brand-dark/40 text-sm">•</span>
+              <span className="text-brand-dark/40 text-sm">{post.tempoLeitura}</span>
             </div>
 
             <h1 className="heading-1 mb-6">{post.titulo}</h1>
@@ -78,8 +78,8 @@ export default async function BlogPostPage({
                 className="w-10 h-10 rounded-full object-cover"
               />
               <div>
-                <p className="text-white text-sm font-medium">{post.autor}</p>
-                <p className="text-white/40 text-xs">Fundadora, Calazans Lumina</p>
+                <p className="text-brand-dark text-sm font-medium">{post.autor}</p>
+                <p className="text-brand-dark/40 text-xs">Fundadora, Calazans Lumina</p>
               </div>
             </div>
           </ScrollReveal>
@@ -100,7 +100,7 @@ export default async function BlogPostPage({
 
           {/* Content */}
           <ScrollReveal>
-            <div className="prose prose-invert prose-lg max-w-none [&>h2]:font-serif [&>h2]:text-2xl [&>h2]:text-brand-mint [&>h2]:mt-10 [&>h2]:mb-4 [&>p]:text-white/70 [&>p]:leading-relaxed [&>ul]:text-white/70 [&>ol]:text-white/70 [&>blockquote]:border-brand-mint [&>blockquote]:text-brand-light">
+            <div className="prose prose-lg max-w-none [&>h2]:font-serif [&>h2]:text-2xl [&>h2]:text-brand-mint [&>h2]:mt-10 [&>h2]:mb-4 [&>p]:text-brand-dark/70 [&>p]:leading-relaxed [&>ul]:text-brand-dark/70 [&>ol]:text-brand-dark/70 [&>blockquote]:border-brand-mint [&>blockquote]:text-brand-dark/60">
               {post.conteudo.split('\n').map((line, i) => {
                 if (line.startsWith('## ')) {
                   return <h2 key={i}>{line.replace('## ', '')}</h2>
@@ -112,8 +112,8 @@ export default async function BlogPostPage({
           </ScrollReveal>
 
           {/* Share */}
-          <div className="border-t border-white/10 mt-12 pt-8 flex items-center justify-between">
-            <p className="text-white/40 text-sm">
+          <div className="border-t border-gray-200 mt-12 pt-8 flex items-center justify-between">
+            <p className="text-brand-dark/40 text-sm">
               Por {post.autor} • {post.dataPublicacao}
             </p>
             <a
@@ -129,7 +129,7 @@ export default async function BlogPostPage({
       </article>
 
       {/* Related Posts */}
-      <section className="section-padding bg-brand-dark border-t border-white/5">
+      <section className="section-padding bg-brand-bg">
         <div className="container-main">
           <h2 className="heading-3 text-center mb-10">Outros artigos</h2>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">

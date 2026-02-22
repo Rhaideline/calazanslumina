@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function ServicosPage() {
   return (
     <>
-      <section className="section-padding bg-brand-dark">
+      <section className="section-padding bg-brand-bg">
         <div className="container-main">
           <ScrollReveal className="text-center mb-16">
             <p className="text-brand-mint font-medium mb-2 text-sm uppercase tracking-wider">
@@ -22,7 +22,7 @@ export default function ServicosPage() {
             <h1 className="heading-1 mb-4">
               Nossos <span className="gradient-text">Serviços</span>
             </h1>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto">
+            <p className="text-brand-dark/60 text-lg max-w-2xl mx-auto">
               Soluções completas de marketing digital, do primeiro clique ao fechamento.
               Cada serviço é pensado para gerar resultados mensuráveis.
             </p>
@@ -36,12 +36,12 @@ export default function ServicosPage() {
                   <h2 className="text-2xl font-bold mb-3 group-hover:text-brand-mint transition-colors font-serif">
                     {servico.nome}
                   </h2>
-                  <p className="text-white/60 text-sm mb-4 leading-relaxed">
+                  <p className="text-brand-dark/60 text-sm mb-4 leading-relaxed">
                     {servico.descricaoCurta}
                   </p>
                   <ul className="space-y-2 mb-6">
                     {servico.dores.slice(0, 3).map((dor, j) => (
-                      <li key={j} className="flex items-start gap-2 text-white/50 text-xs">
+                      <li key={j} className="flex items-start gap-2 text-brand-dark/50 text-xs">
                         <span className="text-red-400 mt-0.5">x</span>
                         {dor}
                       </li>
