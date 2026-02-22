@@ -1,20 +1,21 @@
 import type { Metadata } from 'next'
-import { Playfair_Display, Inter } from 'next/font/google'
+import { DM_Serif_Display, DM_Sans } from 'next/font/google'
 import Script from 'next/script'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import './globals.css'
 
-const playfair = Playfair_Display({
+const dmSerif = DM_Serif_Display({
+  weight: '400',
   subsets: ['latin'],
-  variable: '--font-playfair',
+  variable: '--font-dm-serif',
   display: 'swap',
 })
 
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-dm-sans',
   display: 'swap',
 })
 
@@ -74,7 +75,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" className={`${playfair.variable} ${inter.variable}`}>
+    <html lang="pt-BR" className={`${dmSerif.variable} ${dmSans.variable}`}>
       <head>
         <Script
           id="schema-local-business"

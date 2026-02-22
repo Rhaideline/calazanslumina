@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { servicos } from '@/data/servicos'
+import ServiceIcon from '@/components/ServiceIcon'
 import ScrollReveal from '@/components/ScrollReveal'
 import CTAForm from '@/components/CTAForm'
 import ReviewsWidget from '@/components/ReviewsWidget'
@@ -45,12 +46,12 @@ const capitaisBR = [
 ]
 
 const problemasSolucoes = [
-  { problema: 'Seu site não aparece no Google', solucao: 'SEO técnico + conteúdo otimizado + Google Business Profile', icone: '🔍' },
-  { problema: 'Leads chegam e somem', solucao: 'Funil automatizado com follow-up por WhatsApp, email e SMS', icone: '📩' },
-  { problema: 'Instagram parado, sem engajamento', solucao: 'Gestão estratégica com conteúdo que gera leads, não só curtidas', icone: '📱' },
-  { problema: 'Gasta com anúncio sem retorno', solucao: 'Campanhas otimizadas com landing page + tracking completo de ROI', icone: '💸' },
-  { problema: 'Ninguém responde seus leads a tempo', solucao: 'Robô de IA 24h no WhatsApp + CRM organizado com pipeline', icone: '🤖' },
-  { problema: 'Concorrente domina o Google Maps', solucao: 'Google Business Profile otimizado + estratégia de reviews', icone: '📍' },
+  { problema: 'Seu site não aparece no Google', solucao: 'SEO técnico + conteúdo otimizado + Google Business Profile' },
+  { problema: 'Leads chegam e somem', solucao: 'Funil automatizado com follow-up por WhatsApp, email e SMS' },
+  { problema: 'Instagram parado, sem engajamento', solucao: 'Gestão estratégica com conteúdo que gera leads, não só curtidas' },
+  { problema: 'Gasta com anúncio sem retorno', solucao: 'Campanhas otimizadas com landing page + tracking completo de ROI' },
+  { problema: 'Ninguém responde seus leads a tempo', solucao: 'Robô de IA 24h no WhatsApp + CRM organizado com pipeline' },
+  { problema: 'Concorrente domina o Google Maps', solucao: 'Google Business Profile otimizado + estratégia de reviews' },
 ]
 
 export default function HomePage() {
@@ -159,9 +160,18 @@ export default function HomePage() {
             {problemasSolucoes.map((item, i) => (
               <ScrollReveal key={i} delay={i * 100}>
                 <div className="card-premium h-full">
-                  <span className="text-3xl mb-4 block">{item.icone}</span>
-                  <h3 className="text-lg font-bold text-red-500/80 mb-3">{item.problema}</h3>
-                  <p className="text-brand-mint font-medium text-sm">Solução → {item.solucao}</p>
+                  <div className="flex items-start gap-3 mb-3">
+                    <svg className="w-5 h-5 text-red-500/80 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                    <h3 className="text-lg font-bold text-red-500/80">{item.problema}</h3>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-brand-mint flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <p className="text-brand-mint font-medium text-sm">Solução: {item.solucao}</p>
+                  </div>
                 </div>
               </ScrollReveal>
             ))}
@@ -184,7 +194,7 @@ export default function HomePage() {
             {servicos.map((servico, i) => (
               <ScrollReveal key={servico.slug} delay={i * 100}>
                 <Link href={`/servicos/${servico.slug}`} className="card-premium block h-full group">
-                  <span className="text-4xl mb-4 block">{servico.icone}</span>
+                  <ServiceIcon name={servico.icone} className="w-10 h-10 text-brand-mint mb-4" />
                   <h3 className="text-xl font-bold text-brand-dark mb-3 group-hover:text-brand-mint transition-colors">
                     {servico.nome}
                   </h3>
@@ -275,7 +285,7 @@ export default function HomePage() {
             ))}
           </div>
           <div className="text-center mt-10">
-            <Link href="/projetos" className="btn-secondary">Ver todos os projetos</Link>
+            <Link href="/projetos" className="btn-secondary-light">Ver todos os projetos</Link>
           </div>
         </div>
       </section>
@@ -368,8 +378,8 @@ export default function HomePage() {
             <h2 className="heading-2 text-brand-dark mb-4">Cidades atendidas</h2>
           </ScrollReveal>
           <div className="mb-10">
-            <h3 className="font-serif text-xl font-bold text-brand-dark mb-4 flex items-center gap-2">
-              <span className="text-2xl">🇺🇸</span> Massachusetts, EUA
+            <h3 className="font-serif text-xl font-bold text-brand-dark mb-4">
+              Massachusetts, EUA
             </h3>
             <div className="flex flex-wrap gap-2">
               {cidadesMA.map((c) => (
@@ -379,8 +389,8 @@ export default function HomePage() {
             </div>
           </div>
           <div>
-            <h3 className="font-serif text-xl font-bold text-brand-dark mb-4 flex items-center gap-2">
-              <span className="text-2xl">🇧🇷</span> Brasil — Capitais
+            <h3 className="font-serif text-xl font-bold text-brand-dark mb-4">
+              Brasil — Capitais
             </h3>
             <div className="flex flex-wrap gap-2">
               {capitaisBR.map((c) => (

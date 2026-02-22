@@ -9,6 +9,7 @@ import ReviewsWidget from '@/components/ReviewsWidget'
 import HeroForm from '@/components/HeroForm'
 import HeroBadges from '@/components/HeroBadges'
 import Breadcrumb from '@/components/Breadcrumb'
+import ServiceIcon from '@/components/ServiceIcon'
 
 export async function generateStaticParams() {
   return servicos.map((s) => ({ slug: s.slug }))
@@ -132,7 +133,7 @@ export default async function ServicoPage({ params }: { params: Promise<{ slug: 
             {outrosServicos.map((s, i) => (
               <ScrollReveal key={s.slug} delay={i * 100}>
                 <Link href={`/servicos/${s.slug}`} className="card-premium block group">
-                  <span className="text-3xl mb-3 block">{s.icone}</span>
+                  <ServiceIcon name={s.icone} className="w-8 h-8 text-brand-mint mb-3" />
                   <h3 className="font-bold group-hover:text-brand-mint transition-colors">{s.nome}</h3>
                 </Link>
               </ScrollReveal>

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { servicos } from '@/data/servicos'
 import ScrollReveal from '@/components/ScrollReveal'
 import CTAForm from '@/components/CTAForm'
+import ServiceIcon from '@/components/ServiceIcon'
 
 export const metadata: Metadata = {
   title: 'Serviços de Marketing Digital | Sites, Funis, CRM, Redes Sociais',
@@ -32,7 +33,7 @@ export default function ServicosPage() {
             {servicos.map((servico, i) => (
               <ScrollReveal key={servico.slug} delay={i * 100}>
                 <Link href={`/servicos/${servico.slug}`} className="card-premium block h-full group">
-                  <span className="text-5xl mb-6 block">{servico.icone}</span>
+                  <ServiceIcon name={servico.icone} className="w-8 h-8 text-brand-mint mb-3" />
                   <h2 className="text-2xl font-bold mb-3 group-hover:text-brand-mint transition-colors font-serif">
                     {servico.nome}
                   </h2>

@@ -50,7 +50,7 @@ export default function Header() {
         <div className="container-main flex items-center justify-between px-4 sm:px-6 lg:px-8 py-3">
           <Link href="/" className="flex items-center gap-3 group">
             <Image
-              src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/6725b61703f7c6c23fb7077d.svg"
+              src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b540f20c035ef93111fc1.png"
               alt="Calazans Lumina — Agência de Marketing Digital"
               width={220}
               height={60}

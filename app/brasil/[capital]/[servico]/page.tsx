@@ -10,6 +10,7 @@ import ReviewsWidget from '@/components/ReviewsWidget'
 import HeroForm from '@/components/HeroForm'
 import HeroBadges from '@/components/HeroBadges'
 import Breadcrumb from '@/components/Breadcrumb'
+import ServiceIcon from '@/components/ServiceIcon'
 
 export async function generateStaticParams() {
   return capitaisBR.flatMap((capital) =>
@@ -143,7 +144,7 @@ export default async function CapitalServicoPage({ params }: { params: Promise<{
             {outrosServicos.map((s, i) => (
               <ScrollReveal key={s.slug} delay={i * 80}>
                 <Link href={`/brasil/${capital.slug}/${s.slug}`} className="card-premium block group">
-                  <span className="text-2xl mb-2 block">{s.icone}</span>
+                  <ServiceIcon name={s.icone} className="w-8 h-8 text-brand-mint mb-3" />
                   <h3 className="font-bold group-hover:text-brand-mint transition-colors text-sm">{s.nome} em {capital.nome}</h3>
                 </Link>
               </ScrollReveal>

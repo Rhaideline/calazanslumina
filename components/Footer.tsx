@@ -18,7 +18,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div>
             <Image
-              src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3c6855d8bc9a8c44fb4d.png"
+              src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b540f20c035ef93111fc1.png"
               alt="Calazans Lumina"
               width={180}
               height={48}

@@ -10,6 +10,7 @@ import ReviewsWidget from '@/components/ReviewsWidget'
 import HeroForm from '@/components/HeroForm'
 import HeroBadges from '@/components/HeroBadges'
 import Breadcrumb from '@/components/Breadcrumb'
+import ServiceIcon from '@/components/ServiceIcon'
 
 export async function generateStaticParams() {
   return cidadesMA.map((c) => ({ cidade: c.slug }))
@@ -129,7 +130,7 @@ export default async function CidadePage({ params }: { params: Promise<{ cidade:
             {servicos.map((servico, i) => (
               <ScrollReveal key={servico.slug} delay={i * 100}>
                 <Link href={`/cidades/${cidade.slug}/${servico.slug}`} className="card-premium block h-full group">
-                  <span className="text-3xl mb-3 block">{servico.icone}</span>
+                  <ServiceIcon name={servico.icone} className="w-8 h-8 text-brand-mint mb-3" />
                   <h3 className="text-lg font-bold mb-2 group-hover:text-brand-mint transition-colors">{servico.nome}</h3>
                   <p className="text-brand-dark/70 text-sm mb-4">{servico.descricaoCurta}</p>
                   <span className="text-brand-mint text-sm font-medium">{servico.cta} em {cidade.nome} →</span>

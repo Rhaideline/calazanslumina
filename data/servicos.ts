@@ -18,7 +18,7 @@ export const servicos: Servico[] = [
     nome: 'Sites & Landing Pages',
     descricaoCurta: 'Sites profissionais de alta performance que convertem visitantes em clientes',
     descricaoLonga: 'Desenvolvemos sites e landing pages com tecnologia Next.js, alcançando PageSpeed 95+, design premium e arquitetura focada em conversão. Cada pixel é pensado para transformar visitantes em leads qualificados, com SEO técnico integrado desde a primeira linha de código.',
-    icone: '🌐',
+    icone: 'globe',
     dores: [
       'Seu site é lento e perde visitantes antes de carregar',
       'Não aparece no Google mesmo depois de meses online',
@@ -42,7 +42,7 @@ export const servicos: Servico[] = [
     nome: 'Funis de Vendas & Automação GHL',
     descricaoCurta: 'Funis inteligentes que captam, nutrem e convertem leads no automático',
     descricaoLonga: 'Criamos funis de vendas completos dentro do GoHighLevel: desde a captura do lead até o fechamento, com automações de email, SMS e WhatsApp que trabalham 24 horas por dia. Seu processo de vendas funciona enquanto você dorme.',
-    icone: '⚡',
+    icone: 'funnel',
     dores: [
       'Lead chega pelo WhatsApp e some porque ninguém respondeu a tempo',
       'Processo de vendas 100% manual e dependente de você',
@@ -66,7 +66,7 @@ export const servicos: Servico[] = [
     nome: 'CRM & IA Conversacional',
     descricaoCurta: 'CRM estruturado com robô de IA que atende seus clientes 24h por dia',
     descricaoLonga: 'Implementamos um CRM completo no GoHighLevel com inteligência artificial conversacional integrada ao WhatsApp. Seu negócio responde leads em segundos, faz follow-up automático, agenda consultas e nunca mais perde um cliente por demora no atendimento.',
-    icone: '🤖',
+    icone: 'bot',
     dores: [
       'Perde leads no WhatsApp porque demora para responder',
       'Não faz follow-up e o cliente esfria',
@@ -90,7 +90,7 @@ export const servicos: Servico[] = [
     nome: 'Tráfego Pago & Performance',
     descricaoCurta: 'Campanhas de Google e Meta Ads otimizadas para gerar leads qualificados',
     descricaoLonga: 'Gerenciamos suas campanhas de Google Ads e Meta Ads com foco total em performance. Cada centavo investido é rastreado, otimizado e direcionado para atrair leads qualificados que realmente compram. Relatórios claros, sem enrolação.',
-    icone: '📊',
+    icone: 'chart',
     dores: [
       'Gasta em anúncio e não sabe se está vendendo por causa dele',
       'CPL (custo por lead) alto demais para o retorno',
@@ -114,7 +114,7 @@ export const servicos: Servico[] = [
     nome: 'Gestão de Redes Sociais',
     descricaoCurta: 'Gestão estratégica de Instagram e Facebook que transforma seguidores em clientes',
     descricaoLonga: 'Criamos e gerenciamos sua presença completa no Instagram e Facebook com estratégia de conteúdo, design profissional, calendário editorial, stories, reels e crescimento orgânico. Não é só postar bonito — é postar para vender.',
-    icone: '📱',
+    icone: 'share',
     dores: [
       'Instagram parado, sem engajamento e sem estratégia',
       'Posts sem identidade visual, feitos na correria',
@@ -138,7 +138,7 @@ export const servicos: Servico[] = [
     nome: 'Google Business Profile',
     descricaoCurta: 'Criação e otimização do seu perfil no Google Maps para dominar buscas locais',
     descricaoLonga: 'Criamos e otimizamos seu Google Business Profile do zero: categorias estratégicas, descrição otimizada, fotos profissionais, estratégia de captação de reviews, postagens semanais e monitoramento de insights. Seu cliente está pesquisando no Google agora — a pergunta é se ele está te encontrando.',
-    icone: '📍',
+    icone: 'mappin',
     dores: [
       'Empresa não aparece no Google Maps',
       'Perfil incompleto com fotos ruins ou sem fotos',
