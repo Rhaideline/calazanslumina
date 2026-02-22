@@ -6,15 +6,16 @@ const pacotes = [
     nome: 'Essencial',
     preco: 'R$ 500',
     periodo: 'a partir de',
-    descricao: 'Ideal para quem precisa de presença digital profissional',
+    descricao: 'Presença digital profissional para começar a ser encontrado',
     destaque: false,
     itens: [
-      'Site profissional Next.js',
-      'Design responsivo (mobile-first)',
-      'SEO técnico básico',
-      'Formulário de contato integrado',
-      'Hospedagem + domínio configurado',
-      'Entrega em até 7 dias',
+      'Site profissional Next.js (PageSpeed 95+)',
+      'Design responsivo mobile-first',
+      'SEO técnico + Schema Markup',
+      'Formulário integrado com CRM',
+      'Google Analytics 4 configurado',
+      'Hospedagem + domínio + SSL',
+      'Entrega em até 7 dias úteis',
     ],
     cta: 'Solicitar Orçamento',
   },
@@ -22,16 +23,18 @@ const pacotes = [
     nome: 'Profissional',
     preco: 'R$ 1.200',
     periodo: 'a partir de',
-    descricao: 'Para quem quer automatizar e escalar vendas',
+    descricao: 'Automatize seu funil de vendas e pare de perder leads',
     destaque: true,
     itens: [
       'Tudo do Essencial +',
-      'Funil de vendas no GoHighLevel',
-      'Automação de WhatsApp + Email',
-      'CRM configurado com pipeline',
-      'Até 5 páginas otimizadas',
-      'Follow-up automático de leads',
-      'Dashboard de métricas',
+      'Funil de vendas completo (GoHighLevel)',
+      'CRM com pipeline de vendas configurado',
+      'Inbox unificada: WhatsApp, SMS, Email, DMs',
+      'Automações de follow-up (workflow visual)',
+      'Calendário de agendamento integrado',
+      'Até 5 páginas otimizadas para SEO',
+      'Dashboard de métricas e conversões',
+      'Formulários e pesquisas de captura',
     ],
     cta: 'Quero Automatizar',
   },
@@ -39,19 +42,30 @@ const pacotes = [
     nome: 'Premium',
     preco: 'Sob consulta',
     periodo: 'personalizado',
-    descricao: 'Solução completa para dominar seu mercado',
+    descricao: 'Solução completa para dominar seu mercado digital',
     destaque: false,
     itens: [
       'Tudo do Profissional +',
       'IA conversacional no WhatsApp 24h',
-      'Gestão de redes sociais',
-      'Tráfego pago (Google + Meta)',
+      'Gestão de redes sociais (conteúdo + posts)',
+      'Tráfego pago (Google Ads + Meta Ads)',
       'Google Business Profile otimizado',
+      'Gestão de reputação e reviews',
+      'Email marketing + campanhas SMS',
       'Relatórios mensais de performance',
-      'Suporte prioritário',
+      'Suporte prioritário + consultoria mensal',
     ],
     cta: 'Falar com Especialista',
   },
+]
+
+const ferramentasGHL = [
+  { nome: 'CRM & Pipelines', desc: 'Contatos, negócios e tarefas em um só lugar' },
+  { nome: 'Funis de Vendas', desc: 'Landing pages de alta conversão' },
+  { nome: 'Inbox Unificada', desc: 'WhatsApp, SMS, email e DMs numa tela' },
+  { nome: 'Automações', desc: 'Workflows visuais no piloto automático' },
+  { nome: 'Calendário', desc: 'Agendamento com lembretes automáticos' },
+  { nome: 'IA Conversacional', desc: 'Chatbot que atende e qualifica leads' },
 ]
 
 export default function PricingTable() {
@@ -66,11 +80,12 @@ export default function PricingTable() {
             Pacotes que cabem no seu <span className="text-brand-mint">bolso</span>
           </h2>
           <p className="text-white/50 max-w-2xl mx-auto">
-            Soluções para todo tamanho de negócio. Também atendemos agências como freelancer.
+            Soluções completas de marketing digital com tecnologia GoHighLevel — do site ao funil automatizado.
+            Também atendemos agências como freelancer.
           </p>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {pacotes.map((pkg, i) => (
             <ScrollReveal key={pkg.nome} delay={i * 150}>
               <div
@@ -129,6 +144,19 @@ export default function PricingTable() {
             </ScrollReveal>
           ))}
         </div>
+
+        {/* GHL Tools Strip */}
+        <ScrollReveal className="mt-16">
+          <p className="text-center text-white/30 text-xs uppercase tracking-widest mb-6">Ferramentas incluídas via GoHighLevel</p>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-6xl mx-auto">
+            {ferramentasGHL.map((tool) => (
+              <div key={tool.nome} className="text-center bg-white/5 rounded-xl p-4 border border-white/5 hover:border-brand-mint/20 transition-colors">
+                <p className="text-brand-mint font-bold text-sm mb-1">{tool.nome}</p>
+                <p className="text-white/40 text-xs leading-snug">{tool.desc}</p>
+              </div>
+            ))}
+          </div>
+        </ScrollReveal>
 
         <ScrollReveal className="text-center mt-12">
           <p className="text-white/40 text-sm">

@@ -337,22 +337,50 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== AUTOMAÇÕES ===== */}
+      {/* ===== AUTOMAÇÕES GHL ===== */}
       <section className="section-padding bg-brand-dark text-white relative overflow-hidden">
         <div className="container-main relative z-10">
-          <ScrollReveal className="text-center mb-16">
+          <ScrollReveal className="text-center mb-6">
+            <p className="text-brand-mint font-medium mb-2 text-sm uppercase tracking-wider">GoHighLevel</p>
             <h2 className="heading-2 mb-4">Automações & <span className="text-brand-mint">IA que trabalham por você</span></h2>
+            <p className="text-white/50 max-w-2xl mx-auto">
+              CRM, funis, inbox unificada, calendário, automações e IA conversacional — tudo numa plataforma.
+              Enquanto você foca no seu negócio, o sistema trabalha 24h captando e nutrindo leads.
+            </p>
           </ScrollReveal>
+
+          {/* GHL Feature highlights */}
+          <ScrollReveal className="mb-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto">
+              {[
+                { label: 'Inbox Unificada', sub: 'WhatsApp + SMS + Email + DMs' },
+                { label: 'Pipelines Visuais', sub: 'Gerencie leads etapa por etapa' },
+                { label: 'Workflows Automáticos', sub: 'Follow-up no piloto automático' },
+                { label: 'Calendário Integrado', sub: 'Agendamento + lembretes automáticos' },
+              ].map((f) => (
+                <div key={f.label} className="bg-white/5 rounded-xl p-4 text-center border border-white/5">
+                  <p className="text-brand-mint font-bold text-sm">{f.label}</p>
+                  <p className="text-white/40 text-xs mt-1">{f.sub}</p>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+
           <div className="grid md:grid-cols-3 gap-6">
             {automacaoImages.map((img, i) => (
               <ScrollReveal key={i} delay={i * 150}>
                 <div className="card-dark overflow-hidden p-0">
                   <Image src={img.src} alt={img.alt} width={600} height={400} className="w-full h-auto" />
                   <div className="p-6">
+                    <h3 className="text-brand-mint font-bold text-sm mb-2">
+                      {i === 0 && 'CRM & Pipeline de Vendas'}
+                      {i === 1 && 'Workflows Multicanal'}
+                      {i === 2 && 'IA Conversacional 24h'}
+                    </h3>
                     <p className="text-white/70 text-sm leading-relaxed">
-                      {i === 0 && 'Pipeline de vendas automatizado no GoHighLevel — do lead ao fechamento sem esforço manual.'}
-                      {i === 1 && 'Workflows multicanal com disparo automático de WhatsApp, email e SMS em sequência.'}
-                      {i === 2 && 'Robô de IA que atende seus clientes 24h no WhatsApp, agenda consultas e qualifica leads.'}
+                      {i === 0 && 'Pipeline visual no GoHighLevel — cada lead organizado por etapa, com automações de movimentação, tarefas e notificações. Do primeiro contato ao fechamento.'}
+                      {i === 1 && 'Workflows automáticos com disparo de WhatsApp, email e SMS em sequência. Missed call text-back, follow-up de leads e nurturing — tudo visual.'}
+                      {i === 2 && 'Robô de IA treinado com dados do seu negócio que atende no WhatsApp 24h, responde perguntas, agenda consultas e qualifica leads antes de chegar a você.'}
                     </p>
                   </div>
                 </div>
