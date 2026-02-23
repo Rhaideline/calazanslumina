@@ -68,12 +68,12 @@ export default async function CapitalPage({ params }: { params: Promise<{ capita
               <p className="text-white/50 text-base mb-8 max-w-2xl">{capital.doresEspecificas}.</p>
 
               <a
-                href={`https://wa.me/5531982948067?text=${encodeURIComponent(`Olá, sou de ${capital.nome} e quero saber mais sobre os serviços da Calazans Lumina`)}`}
+                href={`https://wa.me/5531982948067?text=${encodeURIComponent(`Olá, moro em ${capital.nome} e quero saber mais sobre os serviços da Calazans Lumina`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
               >
-                Fale comigo — sou de {capital.nome}
+                Atendo em {capital.nome} — Fale Comigo
               </a>
             </div>
             <div className="lg:col-span-2">

@@ -72,12 +72,12 @@ export default async function CidadePage({ params }: { params: Promise<{ cidade:
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href={`https://wa.me/5531982948067?text=${encodeURIComponent(`Olá, sou de ${cidade.nome}, MA e quero saber mais sobre os serviços da Calazans Lumina`)}`}
+                  href={`https://wa.me/5531982948067?text=${encodeURIComponent(`Olá, moro em ${cidade.nome}, MA e quero saber mais sobre os serviços da Calazans Lumina`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary"
                 >
-                  Fale comigo — sou de {cidade.nome}
+                  Atendo em {cidade.nome} — Fale Comigo
                 </a>
                 <Link href="/servicos" className="btn-secondary">
                   Ver Serviços

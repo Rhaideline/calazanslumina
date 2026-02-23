@@ -5,9 +5,9 @@ import ScrollReveal from '@/components/ScrollReveal'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Cursos de Marketing Digital | A partir de R$ 20',
+  title: 'Cursos de Marketing Digital | Gratuitos e a partir de R$ 20',
   description:
-    'Cursos básicos de marketing digital para iniciantes. IA & ChatGPT, Google Meu Negócio, Redes Sociais, Funis de Vendas. A partir de R$ 20. Por Rhaideline Calazans.',
+    'Cursos de marketing digital para iniciantes. IA & ChatGPT, Google Meu Negócio, Redes Sociais, Funis de Vendas. Cursos gratuitos e a partir de R$ 20. Por Rhaideline Calazans.',
 }
 
 export default function CursosPage() {
@@ -26,7 +26,7 @@ export default function CursosPage() {
               <span className="text-brand-mint">para Iniciantes</span>
             </h1>
             <p className="text-white/60 text-lg md:text-xl max-w-3xl mx-auto mb-8">
-              Conhecimento prático e direto ao ponto. Cada curso custa apenas{' '}
+              Conhecimento prático e direto ao ponto. Temos cursos <strong className="text-white">gratuitos</strong> e cursos a partir de{' '}
               <strong className="text-white">R$ 20,00</strong> — menos que um almoço, mais que muitos cursos caros ensinam.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
@@ -35,7 +35,7 @@ export default function CursosPage() {
                 <p className="text-white/40 text-xs">Cursos disponíveis</p>
               </div>
               <div className="bg-white/5 border border-white/10 rounded-xl px-6 py-3 text-center">
-                <p className="text-brand-mint font-bold text-2xl">R$ 20</p>
+                <p className="text-brand-mint font-bold text-2xl">R$ 0–20</p>
                 <p className="text-white/40 text-xs">Por curso</p>
               </div>
               <div className="bg-white/5 border border-white/10 rounded-xl px-6 py-3 text-center">
@@ -59,11 +59,15 @@ export default function CursosPage() {
                       ? 'border-2 border-brand-mint shadow-xl shadow-brand-mint/10'
                       : 'border border-gray-100 shadow-sm'
                   }`}>
-                    {curso.destaque && (
+                    {curso.gratuito ? (
+                      <div className="absolute top-4 right-4 z-10 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                        Gratuito
+                      </div>
+                    ) : curso.destaque ? (
                       <div className="absolute top-4 right-4 z-10 bg-brand-mint text-white text-xs font-bold px-3 py-1 rounded-full">
                         Mais vendido
                       </div>
-                    )}
+                    ) : null}
 
                     {/* Image area */}
                     <div className="relative h-48 bg-brand-dark flex items-center justify-center overflow-hidden">
@@ -89,10 +93,14 @@ export default function CursosPage() {
 
                       <div className="flex items-center justify-between mb-4">
                         <div>
-                          <p className="text-brand-dark/40 text-xs">Investimento</p>
-                          <p className="font-serif text-3xl font-bold text-brand-dark">
-                            R$ {curso.preco}<span className="text-base text-brand-dark/40">,00</span>
-                          </p>
+                          <p className="text-brand-dark/40 text-xs">{curso.gratuito ? 'Acesso' : 'Investimento'}</p>
+                          {curso.gratuito ? (
+                            <p className="font-serif text-3xl font-bold text-green-600">GRÁTIS</p>
+                          ) : (
+                            <p className="font-serif text-3xl font-bold text-brand-dark">
+                              R$ {curso.preco}<span className="text-base text-brand-dark/40">,00</span>
+                            </p>
+                          )}
                         </div>
                         <div className="text-right">
                           <p className="text-brand-dark/40 text-xs">{curso.modulos.length} módulos</p>

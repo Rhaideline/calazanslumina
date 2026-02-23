@@ -10,9 +10,98 @@ export interface Curso {
   imagem: string
   destaque?: boolean
   pdfDisponivel?: boolean
+  gratuito?: boolean
 }
 
 export const cursos: Curso[] = [
+  {
+    slug: 'chatgpt-para-idosos',
+    nome: 'ChatGPT para Idosos — Curso Gratuito',
+    descricaoCurta: 'Aprenda a usar o ChatGPT do zero, com linguagem simples e passo a passo visual. Feito especialmente para quem tem mais de 60 anos.',
+    descricaoLonga: 'Este curso foi criado com carinho para pessoas da terceira idade que querem aprender a usar o ChatGPT no dia a dia. Com linguagem clara, ilustrações grandes, exemplos práticos e vídeos explicativos, você vai descobrir como essa ferramenta pode facilitar sua vida — desde escrever mensagens até tirar dúvidas de saúde, receitas e muito mais. Totalmente gratuito.',
+    preco: 0,
+    gratuito: true,
+    destaque: true,
+    pdfDisponivel: true,
+    imagem: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b9a7c55d8bc1b616621c7.png',
+    paraQuem: [
+      'Pessoas com mais de 60 anos que nunca usaram IA',
+      'Avós que querem acompanhar a tecnologia dos netos',
+      'Aposentados que querem aprender algo novo e útil',
+      'Idosos que usam WhatsApp e querem expandir suas habilidades digitais',
+      'Filhos e netos que querem ensinar seus pais/avós a usar ChatGPT',
+    ],
+    oQueVaiAprender: [
+      'O que é o ChatGPT e para que serve (explicação simples)',
+      'Como criar uma conta passo a passo (com imagens grandes)',
+      'Como fazer perguntas para o ChatGPT entender você',
+      'Pedir receitas de culinária com os ingredientes que tem em casa',
+      'Tirar dúvidas sobre saúde, remédios e bem-estar',
+      'Escrever mensagens bonitas para família e amigos',
+      'Pedir ajuda para entender documentos e contas',
+      'Usar o ChatGPT como companheiro de conversa',
+      'Dicas de segurança: o que NÃO fazer com IA',
+    ],
+    modulos: [
+      {
+        titulo: 'Módulo 1 — O Que é Essa Tal de Inteligência Artificial?',
+        aulas: [
+          'O que é IA? (explicação como se fosse para um amigo)',
+          'ChatGPT: seu novo assistente digital gratuito',
+          'Isso é seguro? Posso confiar? (dúvidas comuns respondidas)',
+          'Exemplos do dia a dia: como outras pessoas da sua idade usam',
+        ],
+      },
+      {
+        titulo: 'Módulo 2 — Criando Sua Conta (Passo a Passo com Imagens)',
+        aulas: [
+          'Abrindo o navegador e acessando o site do ChatGPT',
+          'Criando sua conta com email (tela por tela)',
+          'Fazendo login pela primeira vez',
+          'Conhecendo a tela principal: onde escrever e onde ler',
+        ],
+      },
+      {
+        titulo: 'Módulo 3 — Suas Primeiras Conversas com o ChatGPT',
+        aulas: [
+          'Como escrever uma pergunta clara (dica: fale como se fosse uma pessoa)',
+          'Pedindo uma receita com o que tem na geladeira',
+          'Perguntando sobre um remédio ou sintoma',
+          'Pedindo para explicar uma notícia de forma simples',
+          'Escrevendo uma mensagem de aniversário para alguém especial',
+        ],
+      },
+      {
+        titulo: 'Módulo 4 — ChatGPT no Dia a Dia',
+        aulas: [
+          'Ajuda para entender contas e documentos',
+          'Planejando uma viagem ou passeio',
+          'Encontrando exercícios leves para fazer em casa',
+          'Aprendendo palavras em inglês (ou outro idioma)',
+          'Organizando sua rotina da semana',
+        ],
+      },
+      {
+        titulo: 'Módulo 5 — Dicas de Segurança e Cuidados',
+        aulas: [
+          'Nunca coloque senhas, CPF ou dados bancários no ChatGPT',
+          'O ChatGPT pode errar — sempre confirme informações de saúde com seu médico',
+          'Golpes com IA: como identificar e se proteger',
+          'Quando usar e quando NÃO usar o ChatGPT',
+        ],
+      },
+      {
+        titulo: 'Módulo 6 — Atividades Práticas (Mão na Massa!)',
+        aulas: [
+          'Atividade 1: Peça uma receita do seu prato favorito',
+          'Atividade 2: Escreva uma carta para alguém que você ama',
+          'Atividade 3: Peça dicas de filmes ou livros do seu gênero favorito',
+          'Atividade 4: Crie sua rotina matinal ideal',
+          'Atividade 5: Pergunte curiosidades sobre sua cidade ou país',
+        ],
+      },
+    ],
+  },
   {
     slug: 'ia-chatgpt-completo',
     nome: 'IA & ChatGPT — Curso Completo',
