@@ -53,7 +53,7 @@ export default function CursosPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {cursos.map((curso, i) => (
               <ScrollReveal key={curso.slug} delay={i * 100}>
-                <Link href={`/cursos/${curso.slug}`} className="group block h-full">
+                <Link href={curso.gratuito ? `/cursos/${curso.slug}/download` : `/cursos/${curso.slug}`} className="group block h-full">
                   <div className={`relative rounded-2xl overflow-hidden h-full flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
                     curso.destaque
                       ? 'border-2 border-brand-mint shadow-xl shadow-brand-mint/10'
@@ -120,7 +120,7 @@ export default function CursosPage() {
                       )}
 
                       <span className="btn-primary text-sm py-3 text-center w-full group-hover:scale-105 transition-transform">
-                        Ver Conteúdo Completo
+                        {curso.gratuito ? 'Baixar PDF Gratuito' : 'Ver Conteúdo Completo'}
                       </span>
                     </div>
                   </div>
