@@ -241,6 +241,63 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ===== CONTEUDO EM VIDEO ===== */}
+      <section className="section-padding bg-brand-dark text-white" id="videos">
+        <div className="container-main">
+          <ScrollReveal className="text-center mb-16">
+            <p className="text-brand-mint font-medium mb-2 text-sm uppercase tracking-wider">Assista e aprenda</p>
+            <h2 className="heading-2 mb-4">
+              Conteudo em <span className="text-brand-mint">Video</span>
+            </h2>
+            <p className="text-white/50 text-lg max-w-2xl mx-auto">
+              Dicas praticas de marketing digital, ferramentas e estrategias para fazer seu negocio crescer.
+            </p>
+          </ScrollReveal>
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              {
+                src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f81590acb2f32c57fde.mp4',
+                label: 'Marketing Digital na Pratica',
+              },
+              {
+                src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f811001a525e2e45e93.mp4',
+                label: 'Como Atrair Clientes Online',
+              },
+              {
+                src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f813eba04ab9649d652.mp4',
+                label: 'Ferramentas que Uso no Dia a Dia',
+              },
+              {
+                src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f8110bc9c7c8a6841ea.mp4',
+                label: 'Dicas de IA para Negocios',
+              },
+            ].map((video, i) => (
+              <ScrollReveal key={i} delay={i * 150}>
+                <div className="bg-white/5 rounded-2xl overflow-hidden border border-white/10">
+                  <video
+                    controls
+                    preload="metadata"
+                    playsInline
+                    className="w-full aspect-video rounded-t-2xl"
+                  >
+                    <source src={video.src} type="video/mp4" />
+                    Seu navegador nao suporta video HTML5.
+                  </video>
+                  <div className="p-4">
+                    <p className="text-brand-mint font-bold text-sm uppercase tracking-wider mb-1">
+                      Video {i + 1}
+                    </p>
+                    <h3 className="text-white font-serif text-lg font-bold">
+                      {video.label}
+                    </h3>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ===== SOBRE RHAIDELINE ===== */}
       <section className="section-padding bg-brand-bg" id="sobre">
         <div className="container-main">

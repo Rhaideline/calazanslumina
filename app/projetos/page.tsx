@@ -328,6 +328,65 @@ export default function ProjetosPage() {
         </div>
       </section>
 
+      {/* Video Showcase */}
+      <section className="py-16 bg-brand-bg">
+        <div className="container-main px-4 sm:px-6 lg:px-8">
+          <ScrollReveal className="text-center mb-12">
+            <p className="text-brand-mint text-xs font-bold uppercase tracking-[0.3em] mb-2">
+              Assista e aprenda
+            </p>
+            <h2 className="font-serif text-3xl md:text-5xl font-bold text-brand-dark leading-tight">
+              Conteudo em <span className="text-brand-mint">Video</span>
+            </h2>
+            <p className="text-brand-dark/50 text-sm max-w-xl mx-auto mt-4 leading-relaxed">
+              Dicas praticas, estrategias e ferramentas de marketing digital para empreendedores brasileiros.
+            </p>
+          </ScrollReveal>
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              {
+                src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f81590acb2f32c57fde.mp4',
+                label: 'Marketing Digital na Pratica',
+              },
+              {
+                src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f811001a525e2e45e93.mp4',
+                label: 'Como Atrair Clientes Online',
+              },
+              {
+                src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f813eba04ab9649d652.mp4',
+                label: 'Ferramentas que Uso no Dia a Dia',
+              },
+              {
+                src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f8110bc9c7c8a6841ea.mp4',
+                label: 'Dicas de IA para Negocios',
+              },
+            ].map((video, i) => (
+              <ScrollReveal key={i} delay={i * 100}>
+                <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+                  <video
+                    controls
+                    preload="metadata"
+                    playsInline
+                    className="w-full aspect-video"
+                  >
+                    <source src={video.src} type="video/mp4" />
+                    Seu navegador nao suporta video HTML5.
+                  </video>
+                  <div className="p-5">
+                    <p className="text-brand-mint text-xs font-bold uppercase tracking-wider mb-1">
+                      Video {i + 1}
+                    </p>
+                    <h3 className="font-serif text-lg font-bold text-brand-dark">
+                      {video.label}
+                    </h3>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Magazine Pull Quote */}
       <section className="py-20 bg-brand-dark text-white">
         <div className="container-main px-4 sm:px-6 lg:px-8 text-center max-w-4xl">

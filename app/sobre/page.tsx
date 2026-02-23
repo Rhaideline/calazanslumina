@@ -162,11 +162,15 @@ export default function SobrePage() {
       {/* Fotos */}
       <section className="section-padding bg-white">
         <div className="container-main">
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d74aa28b2801643ac3f117.jpeg',
                 alt: 'Rhaideline Calazans em ambiente profissional — marketing digital para brasileiros',
+              },
+              {
+                src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67f07ddb544d82eaef1ec10e.jpeg',
+                alt: 'Rhaideline Calazans — estrategista de marketing digital e empreendedora',
               },
               {
                 src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c0357f3208c418.jpeg',
