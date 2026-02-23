@@ -18,10 +18,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div>
             <Image
-              src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b540f20c035ef93111fc1.png"
+              src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b9ac94c8da27eb5b8f7fb.png"
               alt="Calazans Lumina"
-              width={180}
-              height={48}
+              width={220}
+              height={70}
               className="h-10 w-auto mb-4"
             />
             <p className="text-white/60 text-sm leading-relaxed mb-4">

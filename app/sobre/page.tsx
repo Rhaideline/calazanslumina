@@ -66,7 +66,7 @@ export default function SobrePage() {
             <ScrollReveal>
               <div className="flex gap-6">
                 <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-brand-mint flex items-center justify-center text-brand-dark font-bold text-sm flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-brand-mint flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
                     14a
                   </div>
                   <div className="w-0.5 h-full bg-brand-mint/20 mt-2" />
@@ -88,7 +88,7 @@ export default function SobrePage() {
             <ScrollReveal delay={100}>
               <div className="flex gap-6">
                 <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-brand-mint flex items-center justify-center text-brand-dark font-bold text-sm flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-brand-mint flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
                     2018
                   </div>
                   <div className="w-0.5 h-full bg-brand-mint/20 mt-2" />
@@ -112,7 +112,7 @@ export default function SobrePage() {
             <ScrollReveal delay={200}>
               <div className="flex gap-6">
                 <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-brand-mint flex items-center justify-center text-brand-dark font-bold text-sm flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-brand-mint flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
                     EUA
                   </div>
                   <div className="w-0.5 h-full bg-brand-mint/20 mt-2" />

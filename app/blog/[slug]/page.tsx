@@ -59,7 +59,7 @@ export default async function BlogPostPage({
             </Link>
 
             <div className="flex items-center gap-3 mb-6">
-              <span className="bg-brand-mint/90 text-brand-dark text-xs font-bold px-3 py-1 rounded-full">
+              <span className="bg-brand-mint/90 text-white text-xs font-bold px-3 py-1 rounded-full">
                 {post.categoria}
               </span>
               <span className="text-brand-dark/40 text-sm">{post.dataPublicacao}</span>

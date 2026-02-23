@@ -36,7 +36,7 @@ export default function BlogPage() {
               onClick={() => setCategoriaAtiva(null)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 !categoriaAtiva
-                  ? 'bg-brand-mint text-brand-dark'
+                  ? 'bg-brand-mint text-white'
                   : 'bg-white text-brand-dark/60 hover:bg-gray-100'
               }`}
             >
@@ -48,7 +48,7 @@ export default function BlogPage() {
                 onClick={() => setCategoriaAtiva(cat)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   categoriaAtiva === cat
-                    ? 'bg-brand-mint text-brand-dark'
+                    ? 'bg-brand-mint text-white'
                     : 'bg-white text-brand-dark/60 hover:bg-gray-100'
                 }`}
               >
@@ -72,7 +72,7 @@ export default function BlogPage() {
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                       <div className="absolute top-4 left-4">
-                        <span className="bg-brand-mint/90 text-brand-dark text-xs font-bold px-3 py-1 rounded-full">
+                        <span className="bg-brand-mint/90 text-white text-xs font-bold px-3 py-1 rounded-full">
                           {post.categoria}
                         </span>
                       </div>

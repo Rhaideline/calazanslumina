@@ -225,7 +225,7 @@ export default async function ServicoPage({ params }: { params: Promise<{ slug: 
               <ScrollReveal key={i} delay={i * 150}>
                 <div className={`relative flex items-start gap-6 mb-12 last:mb-0 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                   {/* Step number */}
-                  <div className="flex-shrink-0 w-12 h-12 bg-brand-mint text-brand-dark rounded-full flex items-center justify-center font-serif text-xl font-bold z-10 relative">
+                  <div className="flex-shrink-0 w-12 h-12 bg-brand-mint text-white rounded-full flex items-center justify-center font-serif text-xl font-bold z-10 relative">
                     {step.passo}
                   </div>
                   {/* Content */}

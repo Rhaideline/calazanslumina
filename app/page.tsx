@@ -414,7 +414,7 @@ export default function HomePage() {
                     <div className="relative aspect-video overflow-hidden">
                       <Image src={post.img} alt={post.titulo} fill className="object-cover transition-transform duration-500 group-hover:scale-110" sizes="33vw" />
                       <div className="absolute top-4 left-4">
-                        <span className="bg-brand-mint/90 text-brand-dark text-xs font-bold px-3 py-1 rounded-full">{post.categoria}</span>
+                        <span className="bg-brand-mint/90 text-white text-xs font-bold px-3 py-1 rounded-full">{post.categoria}</span>
                       </div>
                     </div>
                     <div className="p-6">
@@ -443,9 +443,9 @@ export default function HomePage() {
             </h3>
             <div className="flex flex-wrap gap-2">
               {cidadesMA.map((c) => (
-                <Link key={c} href={`/cidades/${c.toLowerCase().replace(/ /g, '-')}`} className="bg-white text-brand-dark text-sm px-4 py-2 rounded-full hover:bg-brand-mint hover:text-brand-dark transition-colors shadow-sm">{c}, MA</Link>
+                <Link key={c} href={`/cidades/${c.toLowerCase().replace(/ /g, '-')}`} className="bg-white text-brand-dark text-sm px-4 py-2 rounded-full hover:bg-brand-mint hover:text-white transition-colors shadow-sm">{c}, MA</Link>
               ))}
-              <Link href="/cidades/framingham" className="bg-brand-dark text-white text-sm px-4 py-2 rounded-full hover:bg-brand-mint hover:text-brand-dark transition-colors">+ ver todas</Link>
+              <Link href="/cidades/framingham" className="bg-brand-dark text-white text-sm px-4 py-2 rounded-full hover:bg-brand-mint hover:text-white transition-colors">+ ver todas</Link>
             </div>
           </div>
           <div>
@@ -454,7 +454,7 @@ export default function HomePage() {
             </h3>
             <div className="flex flex-wrap gap-2">
               {capitaisBR.map((c) => (
-                <Link key={c} href={`/brasil/${c.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ /g, '-')}`} className="bg-white text-brand-dark text-sm px-4 py-2 rounded-full hover:bg-brand-mint hover:text-brand-dark transition-colors shadow-sm">{c}</Link>
+                <Link key={c} href={`/brasil/${c.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ /g, '-')}`} className="bg-white text-brand-dark text-sm px-4 py-2 rounded-full hover:bg-brand-mint hover:text-white transition-colors shadow-sm">{c}</Link>
               ))}
             </div>
           </div>

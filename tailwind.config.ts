@@ -9,10 +9,10 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          dark: '#0B1A2F',
-          mint: '#C9A84C',
-          light: '#D4BC6A',
-          bg: '#F5F3EE',
+          dark: '#111111',
+          mint: '#FF0005',
+          light: '#FF3333',
+          bg: '#F5F5F5',
         },
       },
       fontFamily: {

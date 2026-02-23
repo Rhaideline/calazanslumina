@@ -91,22 +91,22 @@ export default function PricingTable() {
               <div
                 className={`relative rounded-2xl p-8 h-full flex flex-col transition-all duration-300 hover:-translate-y-2 ${
                   pkg.destaque
-                    ? 'bg-brand-mint text-brand-dark shadow-2xl shadow-brand-mint/20 scale-[1.02]'
+                    ? 'bg-brand-mint text-white shadow-2xl shadow-brand-mint/20 scale-[1.02]'
                     : 'bg-white/5 border border-white/10 hover:border-brand-mint/30'
                 }`}
               >
                 {pkg.destaque && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-dark text-brand-mint text-xs font-bold px-4 py-1.5 rounded-full">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-brand-mint text-xs font-bold px-4 py-1.5 rounded-full">
                     Mais Popular
                   </div>
                 )}
 
                 <div className="mb-6">
                   <h3 className="font-serif text-xl font-bold mb-1">{pkg.nome}</h3>
-                  <p className={`text-sm mb-4 ${pkg.destaque ? 'text-brand-dark/60' : 'text-white/40'}`}>
+                  <p className={`text-sm mb-4 ${pkg.destaque ? 'text-white/70' : 'text-white/40'}`}>
                     {pkg.descricao}
                   </p>
-                  <p className={`text-xs uppercase tracking-wider ${pkg.destaque ? 'text-brand-dark/50' : 'text-white/30'}`}>
+                  <p className={`text-xs uppercase tracking-wider ${pkg.destaque ? 'text-white/50' : 'text-white/30'}`}>
                     {pkg.periodo}
                   </p>
                   <p className="font-serif text-4xl font-bold mt-1">{pkg.preco}</p>
@@ -116,7 +116,7 @@ export default function PricingTable() {
                   {pkg.itens.map((item) => (
                     <li key={item} className="flex items-start gap-3 text-sm">
                       <svg
-                        className={`w-5 h-5 flex-shrink-0 mt-0.5 ${pkg.destaque ? 'text-brand-dark' : 'text-brand-mint'}`}
+                        className={`w-5 h-5 flex-shrink-0 mt-0.5 ${pkg.destaque ? 'text-white' : 'text-brand-mint'}`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -134,8 +134,8 @@ export default function PricingTable() {
                   rel="noopener noreferrer"
                   className={`w-full text-center font-bold py-4 rounded-full transition-all duration-300 hover:scale-105 block ${
                     pkg.destaque
-                      ? 'bg-brand-dark text-brand-mint hover:bg-brand-dark/90'
-                      : 'bg-brand-mint text-brand-dark hover:bg-brand-light'
+                      ? 'bg-white text-brand-mint hover:bg-white/90'
+                      : 'bg-brand-mint text-white hover:bg-brand-light'
                   }`}
                 >
                   {pkg.cta}
