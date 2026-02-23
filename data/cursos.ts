@@ -147,7 +147,7 @@ export const cursos: Curso[] = [
       'Como criar uma presença digital profissional',
       'Fundamentos de SEO (aparecer no Google)',
       'Redes sociais: estratégia que gera resultado',
-      'Introdução a tráfego pago (Google e Meta)',
+      'Introdução a anúncios online (Google e Meta)',
       'Email marketing básico',
       'Como medir resultados (métricas essenciais)',
       'Ferramentas gratuitas para começar hoje',
@@ -170,7 +170,7 @@ export const cursos: Curso[] = [
         aulas: ['Instagram para negócios', 'Conteúdo que engaja', 'Calendário editorial', 'Métricas de redes sociais'],
       },
       {
-        titulo: 'Módulo 5 — Tráfego Pago Básico',
+        titulo: 'Módulo 5 — Anúncios Online Básico',
         aulas: ['Google Ads para iniciantes', 'Meta Ads para iniciantes', 'Orçamento e ROI', 'Primeiro anúncio na prática'],
       },
       {
@@ -259,7 +259,7 @@ export const cursos: Curso[] = [
       },
       {
         titulo: 'Módulo 4 — Crescimento e Métricas',
-        aulas: ['Hashtags estratégicas', 'Engajamento autêntico', 'Quando usar tráfego pago', 'Relatórios simples que funcionam'],
+        aulas: ['Hashtags estratégicas', 'Engajamento autêntico', 'Quando impulsionar publicações', 'Relatórios simples que funcionam'],
       },
     ],
   },
@@ -273,7 +273,7 @@ export const cursos: Curso[] = [
     paraQuem: [
       'Empreendedores que perdem leads por falta de follow-up',
       'Quem quer automatizar o processo de vendas',
-      'Negócios que investem em tráfego mas não convertem',
+      'Negócios que investem em marketing mas não convertem',
       'Profissionais que querem entender CRM e automação',
     ],
     oQueVaiAprender: [

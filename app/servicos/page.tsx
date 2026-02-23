@@ -8,7 +8,7 @@ import ServiceIcon from '@/components/ServiceIcon'
 export const metadata: Metadata = {
   title: 'Serviços de Marketing Digital | Sites, Funis, CRM, Redes Sociais',
   description:
-    'Sites Next.js, funis GHL, CRM com IA, tráfego pago, gestão de redes sociais e Google Business Profile. Soluções completas para brasileiros nos EUA e Brasil.',
+    'Sites Next.js, funis GHL, CRM com IA, gestão de redes sociais e Google Business Profile. Soluções completas para brasileiros nos EUA e Brasil.',
 }
 
 export default function ServicosPage() {

@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: '%s | Calazans Lumina',
   },
   description:
-    'Agência de marketing digital especializada em sites Next.js, funis GHL, CRM com IA, redes sociais, tráfego pago e Google Business Profile para brasileiros nos EUA (Massachusetts) e Brasil. Atendimento em português.',
+    'Agência de marketing digital especializada em sites Next.js, funis GHL, CRM com IA, redes sociais e Google Business Profile para brasileiros nos EUA (Massachusetts) e Brasil. Atendimento em português.',
   keywords: [
     'marketing digital para brasileiros',
     'agência de marketing Massachusetts',
@@ -35,7 +35,6 @@ export const metadata: Metadata = {
     'GoHighLevel',
     'funis de vendas',
     'CRM WhatsApp',
-    'tráfego pago',
     'gestão de redes sociais',
     'Google Meu Negócio',
     'Calazans Lumina',

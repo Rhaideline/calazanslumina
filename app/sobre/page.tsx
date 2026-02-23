@@ -124,7 +124,7 @@ export default function SobrePage() {
                   <p className="text-brand-dark/70 leading-relaxed">
                     Meu pai, dono de uma agência de marketing nos Estados Unidos, me convidou para trabalhar
                     com ele. Foi ali que mergulhei de cabeça no marketing digital profissional: GoHighLevel
-                    CRM, Visual Studio, automações com IA, funis de vendas e tráfego pago. Fiz cursos
+                    CRM, Visual Studio, automações com IA e funis de vendas. Fiz cursos
                     intensivos, implementei sistemas para clientes reais e descobri que tudo que eu havia
                     aprendido sozinha era uma base poderosa para construir algo muito maior.
                   </p>

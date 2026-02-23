@@ -90,7 +90,7 @@ const categorias = [
     titulo: 'Resultados & Performance',
     subtitulo: 'Números reais',
     descricao:
-      'Métricas reais de campanhas de tráfego pago, SEO local e performance digital. Cada número aqui representa crescimento real de negócios brasileiros.',
+      'Métricas reais de campanhas de SEO local e performance digital. Cada número aqui representa crescimento real de negócios brasileiros.',
     imagens: [
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d624c8da285cc97df7c.png',
@@ -101,9 +101,9 @@ const categorias = [
       },
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3f13f714ee618fd93ca5.png',
-        alt: 'Relatório de tráfego pago — ROI positivo em Google Ads',
-        nome: 'Campanha Google Ads',
-        tipo: 'Tráfego Pago',
+        alt: 'Relatório de performance digital — métricas de conversão e ROI',
+        nome: 'Performance Digital',
+        tipo: 'Marketing Digital',
         resultado: 'ROI +440%',
       },
       {
@@ -111,7 +111,7 @@ const categorias = [
         alt: 'Crescimento orgânico — resultados de SEO local para brasileiros',
         nome: 'SEO Orgânico',
         tipo: 'SEO Local',
-        resultado: '+520% tráfego orgânico',
+        resultado: '+520% crescimento orgânico',
       },
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3f1355d8bc19b9463b26.png',

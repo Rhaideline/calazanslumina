@@ -249,7 +249,7 @@ export const servicos: Servico[] = [
       },
       {
         pergunta: 'Quanto tempo leva para o funil começar a gerar resultados?',
-        resposta: 'O setup completo leva de 2 a 3 semanas. Após a ativação, os primeiros leads costumam chegar nos primeiros dias, especialmente quando combinado com tráfego pago. A otimização completa do funil com dados reais geralmente leva de 30 a 60 dias para atingir performance máxima.',
+        resposta: 'O setup completo leva de 2 a 3 semanas. Após a ativação, os primeiros leads costumam chegar nos primeiros dias, especialmente quando combinado com estratégias de marketing digital. A otimização completa do funil com dados reais geralmente leva de 30 a 60 dias para atingir performance máxima.',
       },
       {
         pergunta: 'O funil funciona com WhatsApp Business nos EUA?',
@@ -390,128 +390,6 @@ export const servicos: Servico[] = [
       'Lojas e restaurantes brasileiros que querem oferecer atendimento 24h sem aumentar a equipe',
     ],
     conteudoSEO: 'No mercado americano, a velocidade de resposta pode ser a diferença entre fechar um cliente ou perdê-lo para o concorrente. Estudos mostram que leads respondidos nos primeiros 5 minutos têm 21 vezes mais chance de conversão — e a maioria dos empreendedores brasileiros nos EUA demora horas ou até dias para responder mensagens no WhatsApp. É aí que entra o CRM com IA conversacional da Calazans Lumina.\n\nNossa solução combina o poder do GoHighLevel como CRM completo com inteligência artificial treinada especificamente para o seu negócio. O resultado é um sistema que responde leads em menos de 30 segundos, 24 horas por dia, 7 dias por semana. A IA entende o contexto da conversa, responde perguntas sobre seus serviços e preços, qualifica o lead e agenda consultas automaticamente na sua agenda — tudo isso enquanto você está atendendo outros clientes ou dormindo.\n\nPara a comunidade brasileira em Massachusetts e nos Estados Unidos, o WhatsApp é o canal número um de comunicação. Por isso, nossa IA é configurada para operar nativamente no WhatsApp Business API, além de Instagram Direct, Facebook Messenger e email. Todas as conversas ficam centralizadas em um único painel, com pipeline visual que mostra exatamente onde cada lead está no processo de vendas.\n\nRhaideline Calazans, com mais de 8 anos de experiência em automação e CRM, desenvolveu um processo de implementação que garante que a IA represente fielmente seu negócio. O treinamento inclui todas as informações sobre seus serviços, preços, diferenciais, horários e tom de voz. O resultado é um atendimento automatizado que parece humano, é eficiente e nunca perde um lead por falta de resposta.',
-  },
-  {
-    slug: 'trafego-pago-performance',
-    nome: 'Tráfego Pago & Performance',
-    descricaoCurta: 'Campanhas de Google e Meta Ads otimizadas para gerar leads qualificados',
-    descricaoLonga: 'Gerenciamos suas campanhas de Google Ads e Meta Ads com foco total em performance. Cada centavo investido é rastreado, otimizado e direcionado para atrair leads qualificados que realmente compram. Relatórios claros, sem enrolação.',
-    icone: 'chart',
-    dores: [
-      'Gasta em anúncio e não sabe se está vendendo por causa dele',
-      'CPL (custo por lead) alto demais para o retorno',
-      'Campanhas sem direção, feitas no "achismo"',
-      'Não sabe de onde seus clientes realmente vêm',
-      'Agência anterior mostrava métricas de vaidade (curtidas) e não vendas',
-    ],
-    solucao: 'Google Ads + Meta Ads com tracking completo, landing pages integradas, otimização contínua de campanhas, relatórios claros de ROI e redução progressiva de CPL.',
-    diferenciais: [
-      'Tracking completo — saiba exatamente de onde vem cada lead e cada venda',
-      'Landing pages integradas — cada campanha tem sua página de conversão',
-      'Otimização semanal — suas campanhas melhoram toda semana, não só no início',
-      'Relatórios de verdade — ROI, CPL, taxa de conversão, não métricas de vaidade',
-      'Google + Meta + retargeting — presença completa onde seu cliente está',
-    ],
-    cta: 'Quero anúncios que vendem de verdade',
-    ctaTexto: 'Olá, quero saber mais sobre tráfego pago e performance',
-    metaTitle: 'Tráfego Pago Google & Meta Ads | Calazans Lumina',
-    metaDescription: 'Campanhas de Google Ads e Meta Ads focadas em ROI real. Tracking completo, otimização semanal e relatórios transparentes. Especialistas em negócios brasileiros.',
-    h1: 'Tráfego Pago Que Gera Leads Qualificados e Vendas de Verdade',
-    beneficios: [
-      {
-        titulo: 'ROI Transparente',
-        descricao: 'Cada real investido é rastreado do clique à venda final, para que você saiba exatamente quanto retorno cada campanha gera.',
-        icone: 'chart',
-      },
-      {
-        titulo: 'Segmentação Precisa',
-        descricao: 'Alcançamos seu público ideal com segmentação por localização, interesse, comportamento e dados demográficos específicos.',
-        icone: 'mappin',
-      },
-      {
-        titulo: 'Landing Pages Dedicadas',
-        descricao: 'Cada campanha recebe uma landing page de alta conversão alinhada com o anúncio, maximizando a taxa de conversão.',
-        icone: 'globe',
-      },
-      {
-        titulo: 'Otimização Semanal',
-        descricao: 'Analisamos e ajustamos suas campanhas toda semana com base em dados reais, reduzindo custo por lead progressivamente.',
-        icone: 'funnel',
-      },
-      {
-        titulo: 'Retargeting Inteligente',
-        descricao: 'Impactamos novamente visitantes que não converteram na primeira vez, mantendo sua marca presente até o momento da decisão.',
-        icone: 'share',
-      },
-      {
-        titulo: 'Relatórios Semanais Claros',
-        descricao: 'Relatórios com linguagem simples mostrando CPL, taxa de conversão, ROI e ações tomadas — sem jargões nem métricas de vaidade.',
-        icone: 'bot',
-      },
-    ],
-    comoFunciona: [
-      {
-        passo: 1,
-        titulo: 'Diagnóstico e Estratégia',
-        descricao: 'Analisamos seu mercado, concorrentes e histórico de campanhas para definir a estratégia ideal de investimento em Google e Meta Ads.',
-      },
-      {
-        passo: 2,
-        titulo: 'Configuração de Tracking',
-        descricao: 'Instalamos pixels, conversões API, Google Tag Manager e UTMs para rastrear cada interação do clique à venda com precisão.',
-      },
-      {
-        passo: 3,
-        titulo: 'Criação das Campanhas',
-        descricao: 'Desenvolvemos criativos, copies persuasivas, landing pages e estrutura de campanhas segmentadas para cada objetivo de negócio.',
-      },
-      {
-        passo: 4,
-        titulo: 'Monitoramento e Otimização',
-        descricao: 'Acompanhamos métricas diariamente e realizamos otimizações semanais de lances, públicos, criativos e palavras-chave.',
-      },
-      {
-        passo: 5,
-        titulo: 'Relatórios e Escala',
-        descricao: 'Enviamos relatórios semanais com resultados claros e, conforme identificamos campanhas vencedoras, escalamos o investimento de forma controlada.',
-      },
-    ],
-    resultados: [
-      { numero: '35', label: 'Redução média no custo por lead', sufixo: '%' },
-      { numero: '4.2', label: 'ROAS médio das campanhas', sufixo: 'x' },
-      { numero: '250', label: 'Campanhas gerenciadas', sufixo: '+' },
-      { numero: '500', label: 'Mil reais gerenciados em mídia', sufixo: 'K+' },
-    ],
-    faqs: [
-      {
-        pergunta: 'Qual o investimento mínimo recomendado em anúncios?',
-        resposta: 'Recomendamos um investimento mínimo de $500 a $1.000 por mês em mídia para campanhas locais em Massachusetts. Para campanhas nacionais ou com múltiplos serviços, o ideal é a partir de $2.000. Esse valor é o investimento na plataforma (Google/Meta), separado da taxa de gestão da Calazans Lumina.',
-      },
-      {
-        pergunta: 'Google Ads ou Meta Ads — qual funciona melhor?',
-        resposta: 'Depende do seu tipo de negócio. Google Ads é ideal para captar quem já está buscando seu serviço ativamente (intenção de compra). Meta Ads funciona melhor para gerar demanda, awareness e atingir públicos que ainda não conhecem você. Na maioria dos casos, recomendamos uma combinação das duas plataformas para resultados máximos.',
-      },
-      {
-        pergunta: 'Em quanto tempo vou ver resultados?',
-        resposta: 'Os primeiros leads costumam aparecer na primeira semana de campanha ativa. Porém, a otimização completa leva de 30 a 60 dias, período em que os algoritmos aprendem sobre seu público ideal e as campanhas atingem performance estável. Por isso trabalhamos com contratos trimestrais para garantir tempo suficiente de otimização.',
-      },
-      {
-        pergunta: 'Vocês criam as artes e textos dos anúncios?',
-        resposta: 'Sim, nossa equipe cria todos os criativos (imagens e vídeos curtos) e textos persuasivos dos anúncios. Realizamos testes A/B constantes entre diferentes versões de criativos e copies para identificar as combinações com melhor desempenho e escalar o que funciona.',
-      },
-      {
-        pergunta: 'Como vocês medem o sucesso das campanhas?',
-        resposta: 'Medimos por métricas de negócio reais: custo por lead (CPL), custo por aquisição (CPA), retorno sobre investimento em anúncios (ROAS) e número de vendas atribuídas. Nunca usamos métricas de vaidade como curtidas ou alcance como indicadores de sucesso. Você recebe relatórios semanais com esses números de forma clara.',
-      },
-    ],
-    casosDeUso: [
-      'Prestadores de serviço brasileiros em Massachusetts que querem atrair clientes americanos e brasileiros da região via Google',
-      'Negócios locais (restaurantes, salões, clínicas) que precisam aparecer nas buscas locais com anúncios geolocalizados',
-      'Profissionais que vendem serviços online (coaches, consultores, mentores) e precisam de funis de captação com tráfego pago',
-      'Empresas no Brasil que querem expandir para o mercado americano utilizando campanhas em inglês e português',
-      'E-commerces e lojas online que precisam de campanhas de remarketing para recuperar visitantes e aumentar vendas',
-    ],
-    conteudoSEO: 'Investir em tráfego pago sem estratégia é como jogar dinheiro fora — e infelizmente, é exatamente o que acontece com a maioria dos empreendedores brasileiros que tentam fazer anúncios por conta própria ou com agências que não entendem seu mercado. Na Calazans Lumina, gerenciamos campanhas de Google Ads e Meta Ads com metodologia orientada a dados e foco obsessivo em ROI real.\n\nNossa abordagem começa antes mesmo de subir o primeiro anúncio. Instalamos tracking completo com pixels de conversão, Google Tag Manager e UTMs para garantir que cada clique, lead e venda seja rastreado com precisão. Sem essa base, é impossível otimizar campanhas de verdade — e é por isso que tantos empreendedores têm a sensação de que anúncios não funcionam.\n\nPara negócios brasileiros em Massachusetts e nos EUA, trabalhamos com segmentação hiper-local combinando Google Ads para capturar demanda ativa (pessoas buscando seu serviço agora) e Meta Ads para gerar awareness e demanda nova em públicos qualificados. Cada campanha recebe landing pages dedicadas, criativos profissionais e copies persuasivas — tudo em português ou inglês, dependendo do público-alvo.\n\nRhaideline Calazans e sua equipe já gerenciaram mais de $500 mil em investimento de mídia, com resultados consistentes de ROAS acima de 4x. Nosso diferencial é a otimização semanal: não configuramos e esquecemos. Toda semana ajustamos lances, testamos novos criativos, refinamos públicos e eliminamos o que não está performando. Relatórios transparentes são enviados semanalmente para que você acompanhe cada centavo investido e cada resultado gerado.',
   },
   {
     slug: 'gestao-redes-sociais',

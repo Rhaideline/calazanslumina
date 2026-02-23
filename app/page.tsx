@@ -13,7 +13,7 @@ const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: 'Calazans Lumina',
-  description: 'Agência de marketing digital especializada em brasileiros nos EUA e Brasil. Sites Next.js, funis GHL, CRM com IA, tráfego pago e Google Business Profile.',
+  description: 'Agência de marketing digital especializada em brasileiros nos EUA e Brasil. Sites Next.js, funis GHL, CRM com IA e Google Business Profile.',
   url: 'https://calazanslumina.com',
   telephone: '+5531982948067',
   address: {
@@ -43,7 +43,7 @@ const portfolioImages = [
 
 const performanceImages = [
   { src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d624c8da285cc97df7c.png', alt: 'Dashboard de performance de campanhas — métricas reais Calazans Lumina' },
-  { src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3f13f714ee618fd93ca5.png', alt: 'Relatório de tráfego pago — ROI positivo Google Ads' },
+  { src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3f13f714ee618fd93ca5.png', alt: 'Relatório de performance digital — métricas de conversão e ROI' },
   { src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3f1320c035efa006b443.png', alt: 'Métricas de crescimento orgânico — SEO local para brasileiros' },
   { src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3f1355d8bc19b9463b26.png', alt: 'Performance de landing page — taxa de conversão otimizada' },
   { src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3f1355d8bc676d463b27.png', alt: 'Dashboard de leads — funil de vendas automatizado GHL' },

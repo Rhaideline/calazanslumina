@@ -3,7 +3,7 @@ export interface BlogPost {
   titulo: string
   resumo: string
   conteudo: string
-  categoria: 'Sites' | 'Automação' | 'Redes Sociais' | 'Google' | 'Tráfego'
+  categoria: 'Sites' | 'Automação' | 'Redes Sociais' | 'Google' | 'Estratégia'
   imagem: string
   dataPublicacao: string
   tempoLeitura: string
@@ -96,7 +96,7 @@ Um funil de vendas é um caminho estratégico que guia o visitante desde o prime
 
 ## A diferença nos números
 
-Vamos falar de números reais. Um site comum tem uma taxa de conversão média de 1 a 3% — ou seja, de cada 100 visitantes, apenas 1 a 3 entram em contato. Um funil de vendas bem construído pode alcançar taxas de 15 a 30% na captura de leads, e depois converter 10 a 20% desses leads em clientes através do follow-up automatizado. Fazendo as contas: se você investe R$500 em tráfego e manda para um site comum, talvez consiga 2 contatos. Com um funil, pode conseguir 15 a 20 leads qualificados do mesmo investimento.
+Vamos falar de números reais. Um site comum tem uma taxa de conversão média de 1 a 3% — ou seja, de cada 100 visitantes, apenas 1 a 3 entram em contato. Um funil de vendas bem construído pode alcançar taxas de 15 a 30% na captura de leads, e depois converter 10 a 20% desses leads em clientes através do follow-up automatizado. Fazendo as contas: se você investe R$500 em marketing e manda para um site comum, talvez consiga 2 contatos. Com um funil, pode conseguir 15 a 20 leads qualificados do mesmo investimento.
 
 ## Quando um site comum é suficiente
 
@@ -104,7 +104,7 @@ Nem todo negócio precisa de um funil complexo. Se você está começando e prec
 
 ## Quando investir em um funil
 
-O funil de vendas se torna essencial quando você está investindo em tráfego pago (Google Ads, Facebook Ads) ou quando precisa escalar suas vendas sem aumentar proporcionalmente o seu tempo. Se você gasta dinheiro para trazer pessoas até o seu site e não tem um sistema de captura e follow-up, está literalmente jogando dinheiro fora. O funil transforma esse investimento em um processo previsível de geração de clientes.
+O funil de vendas se torna essencial quando você está investindo em marketing digital (Google, redes sociais) ou quando precisa escalar suas vendas sem aumentar proporcionalmente o seu tempo. Se você gasta dinheiro para trazer pessoas até o seu site e não tem um sistema de captura e follow-up, está literalmente jogando dinheiro fora. O funil transforma esse investimento em um processo previsível de geração de clientes.
 
 ## O caminho ideal
 
@@ -275,7 +275,7 @@ Para negócios locais de serviços, os conteúdos que mais geram resultado se di
 
 ## Hashtags e localização: como ser encontrado
 
-Hashtags locais são fundamentais para ser descoberto por pessoas da sua região. Use uma combinação de hashtags de localização (#FraminghamMA, #MetroWestBoston, #BrazilianInBoston), hashtags do serviço (#HouseCleaningFramingham, #LandscapingMA) e hashtags da comunidade brasileira (#BrasileirosEmBoston, #BrasileirosNosEUA). Sempre marque a localização nos seus posts e Stories. Isso aumenta drasticamente a chance de aparecer na aba "Explorar" de pessoas que estão na sua região. É tráfego orgânico gratuito de pessoas próximas a você.
+Hashtags locais são fundamentais para ser descoberto por pessoas da sua região. Use uma combinação de hashtags de localização (#FraminghamMA, #MetroWestBoston, #BrazilianInBoston), hashtags do serviço (#HouseCleaningFramingham, #LandscapingMA) e hashtags da comunidade brasileira (#BrasileirosEmBoston, #BrasileirosNosEUA). Sempre marque a localização nos seus posts e Stories. Isso aumenta drasticamente a chance de aparecer na aba "Explorar" de pessoas que estão na sua região. É alcance orgânico gratuito de pessoas próximas a você.
 
 ## Reels: o formato que o algoritmo ama
 
@@ -297,4 +297,4 @@ export function getBlogPostBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find((p) => p.slug === slug)
 }
 
-export const categoriasBlog = ['Sites', 'Automação', 'Redes Sociais', 'Google', 'Tráfego'] as const
+export const categoriasBlog = ['Sites', 'Automação', 'Redes Sociais', 'Google', 'Estratégia'] as const

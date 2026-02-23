@@ -16,7 +16,7 @@ export const capitaisBR: CapitalBR[] = [
     estado: 'São Paulo',
     siglaEstado: 'SP',
     descricao:
-      'São Paulo é o maior polo econômico da América Latina e concentra o ecossistema digital mais competitivo do Brasil. Com milhares de agências, startups e profissionais de marketing disputando cada nicho, destacar-se exige estratégia de alto nível, posicionamento claro e execução impecável em SEO, tráfego pago e branding.',
+      'São Paulo é o maior polo econômico da América Latina e concentra o ecossistema digital mais competitivo do Brasil. Com milhares de agências, startups e profissionais de marketing disputando cada nicho, destacar-se exige estratégia de alto nível, posicionamento claro e execução impecável em SEO, marketing digital e branding.',
     doresEspecificas:
       'Empresas paulistanas enfrentam um custo por clique elevadíssimo no Google Ads, saturação de conteúdo genérico nos resultados de busca e dificuldade em reter clientes diante de uma concorrência feroz que oferece promoções agressivas o ano inteiro.',
     populacao: '12,3 milhões de habitantes',

@@ -48,7 +48,7 @@ const pacotes = [
       'Tudo do Profissional +',
       'IA conversacional no WhatsApp 24h',
       'Gestão de redes sociais (conteúdo + posts)',
-      'Tráfego pago (Google Ads + Meta Ads)',
+      'Campanhas estratégicas de marketing digital',
       'Google Business Profile otimizado',
       'Gestão de reputação e reviews',
       'Email marketing + campanhas SMS',

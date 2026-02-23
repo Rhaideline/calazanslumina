@@ -1,1493 +1,1117 @@
-# Calendário Instagram 30 Dias — @calazanslumina
-**Período:** 23/02/2026 a 24/03/2026
-**Conta:** @calazanslumina — Rhaideline Calazans | Calazans Lumina
-**CDN Base:** `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/`
-**WhatsApp:** (31) 98294-8067 | **Site:** calazanslumina.vercel.app
+# CALENDARIO INSTAGRAM — CALAZANS LUMINA
+## Feed Organizado para Upload no GHL
+### Periodo: 24/02/2026 a 23/04/2026 (42 publicacoes | 45 imagens)
+
+> **Como usar:** Cada post tem data, URL da imagem CDN, tipo, legenda viral e hashtags.
+> Os posts estao organizados para feed harmonico no grid 3x3 do Instagram.
+> Datas comemorativas estao fixas nas datas corretas.
 
 ---
 
-## Dia 1 — 23/02/2026 (Domingo)
+## SEMANA 1 — 24/02 a 28/02
 
-**Tipo:** Post simples
-**Imagem:** `699b8c1c20c0350fbe2388fb.png`
-**URL completa:** `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1c20c0350fbe2388fb.png`
-**Melhor horário:** 18h
+### POST 1 — 24/02 (Segunda) — POS-CARNAVAL CHECKLIST
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebfd35cf44cd41d36b8.png
+- **Tipo:** Post unico | **Cor:** BRANCO
 
-**Legenda:**
+**LEGENDA:**
+Carnaval acabou. E o seu marketing, ta pronto pro resto do ano?
 
-Olá! Eu sou a Rhaideline Calazans. 👋
+Checklist rapido pra voce nao deixar nenhum cliente escapar:
 
-E eu preciso te contar o que eu faço — porque pode ser exatamente o que o seu negócio precisa.
+☐ Site atualizado e rapido
+☐ Google Business completo
+☐ CRM configurado
+☐ Automacao WhatsApp ativa
+☐ Conteudo planejado
 
-Sou especialista em Marketing Digital e fundadora da Calazans Lumina, uma agência focada em resultados reais para pequenas e médias empresas.
+Se voce marcou menos de 3... me chama no WhatsApp que eu te ajudo a resolver isso em 7 dias.
 
-Trabalho com:
-✅ Sites profissionais em Next.js (rápidos, bonitos e que vendem)
-✅ Funis de vendas automatizados
-✅ CRM com GoHighLevel
-✅ Automação com Inteligência Artificial
-✅ Gestão de redes sociais
-✅ Tráfego pago no Google e Meta
+Salva esse post e compartilha com aquele amigo empreendedor que precisa ouvir isso.
 
-Não sou uma agência genérica que entrega relatório bonito e resultado ruim.
-
-Eu entrego dashboards reais, com números que provam o crescimento do seu negócio.
-
-Se você é empreendedor e sente que seu negócio poderia estar crescendo mais online — esse perfil foi feito pra você.
-
-Me segue aqui, porque nos próximos dias vou compartilhar dados, estratégias e bastidores de verdade. 🔥
-
-Me chama no WhatsApp pra conversar: **(31) 98294-8067**
-Ou acessa: **calazanslumina.vercel.app**
-
-**Hashtags:**
-#marketingdigital #empreendedorismo #negociosdigitais #agenciadigital #rhaideline #calazanslumina #marketingbrasil #empreendedora #agenciamarketing #consultoriadigital #marketingderesultados #pequenasempresas #siteprofissional #funiladesitas #automacao #gohighlevel #crm #ia #brasil #minasgerais #belohorizonte #marketingmg #tendencias2026 #ia2026
-
-**SEO Keywords:**
-- especialista marketing digital brasil
-- agência marketing digital minas gerais
-- consultoria marketing digital pme
-- rhaideline calazans marketing
-- calazans lumina agência digital
+**HASHTAGS:**
+#marketingdigital #poscarnaval #checklist #empreendedorismo #negocios2026 #calazanslumina #dicasdemarketing #pequenosnegocios #marketingparaempreendedores #estrategiadigital
 
 ---
 
-## Dia 2 — 24/02/2026 (Segunda-feira)
+### POST 2 — 24/02 (Segunda, 2o post) — POS-CARNAVAL FOCO
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caec0d0716b62c643e55e.png
+- **Tipo:** Post unico | **Cor:** ESCURO + FOTO Rhaideline
 
-**Tipo:** Post simples
-**Imagem:** `699b8c1c4c8da26f91b5b1c3.png`
-**URL completa:** `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1c4c8da26f91b5b1c3.png`
-**Melhor horário:** 12h
+**LEGENDA:**
+A folia acabou. Os resultados comecam agora.
 
-**Legenda:**
+Enquanto muitos ainda estao no modo "ferias", os empreendedores que saem na frente sao os que ja voltam com estrategia.
 
-98% das mensagens enviadas pelo WhatsApp são abertas. 📱
+Essa semana e o momento perfeito pra:
+→ Revisar seu posicionamento online
+→ Planejar o conteudo de marco
+→ Ativar automacoes que trabalham por voce
 
-Enquanto isso, o e-mail tem uma taxa de abertura de apenas 20%.
+Quem quer comecar marco com tudo? Comenta "EU" aqui embaixo.
 
-Sabe o que isso significa pra você que tem um negócio?
-
-O WhatsApp não é só um aplicativo de conversa. É o canal de vendas mais poderoso do Brasil agora mesmo.
-
-Alguns dados que vão te surpreender:
-📊 148 milhões de usuários ativos no Brasil (Statista)
-💼 86% das pequenas e médias empresas usam o WhatsApp para vender (Wapikit 2025)
-⚡ Resposta média em menos de 3 minutos quando automatizado
-
-Mas aqui está o problema: a maioria das empresas usa o WhatsApp de forma manual, perdendo leads por demora na resposta ou por falta de follow-up.
-
-Com a automação certa no GoHighLevel, seu WhatsApp responde em menos de 5 minutos, 24 horas por dia, 7 dias por semana — sem você precisar ficar colado no celular.
-
-Isso é o que separa empresas que vendem muito das que ficam só "conversando" no WhatsApp.
-
-Salva esse post para não esquecer e compartilha com um amigo empreendedor! 💡
-
-Quer saber como automatizar o WhatsApp do seu negócio?
-👉 Chama no WhatsApp: **(31) 98294-8067**
-
-**Hashtags:**
-#whatsappmarketing #whatsappbusiness #automacaowhatsapp #marketingdigital #empreendedorismo #negociosdigitais #gohighlevel #automacao #crm #vendas #pequenasempresas #brasil #calazanslumina #agenciadigital #marketingderesultados #funil #chatbot #ia2026 #tendencias2026 #marketingbrasil #vendasdigitais #conversao #leadgeneration #marketingmg #belohorizonte
-
-**SEO Keywords:**
-- automação whatsapp para empresas
-- whatsapp business marketing digital
-- gohighlevel whatsapp brasil
-- como vender pelo whatsapp automatizado
-- chatbot whatsapp pequenas empresas
+**HASHTAGS:**
+#voltaatrabalhar #focototal #empreendedorismodigital #marketingdigital #calazanslumina #negocios #motivacaoempreendedora #marketingonline #resultados #estrategia
 
 ---
 
-## Dia 3 — 25/02/2026 (Terça-feira)
+### POST 3 — 25/02 (Terca) — FRASE MOTIVACIONAL
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caec0e54a3799992d8bb5.png
+- **Tipo:** Post unico | **Cor:** ESCURO
 
-**Tipo:** Carrossel (3 slides)
-**Imagens:**
-- Slide 1: `699b8c1c20c03538ea2388f0.png`
-- Slide 2: `699b8c1c55d8bc412e62fd61.png`
-- Slide 3: `699b8c1cf714ee21b0f5e36e.png`
+**LEGENDA:**
+Enquanto uns descansam, outros constroem.
 
-**URLs completas:**
-- `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1c20c03538ea2388f0.png`
-- `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1c55d8bc412e62fd61.png`
-- `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1cf714ee21b0f5e36e.png`
+Nao e sobre trabalhar 24h. E sobre ser intencional com o seu tempo.
 
-**Melhor horário:** 12h
+Cada post planejado, cada automacao configurada, cada cliente bem atendido... tudo isso e construcao.
 
-**Legenda:**
+Voce esta construindo o que hoje? Me conta nos comentarios.
 
-Seu negócio aparece no Google Maps quando alguém busca o que você oferece? 📍
-
-Se a resposta foi "não tenho certeza"... você está perdendo clientes agora mesmo.
-
-O Google Business Profile é uma das ferramentas mais poderosas — e gratuitas — para atrair clientes locais. E a maioria das empresas usa mal ou não usa.
-
-Deslize para ver os 7 passos que fazem um perfil realmente aparecer e converter. 👉
-
-✅ Perfis 100% completos recebem **7x mais cliques** do que perfis incompletos.
-✅ 80% das buscas locais resultam em contato, visita ou compra.
-✅ Fotos atualizadas aumentam o engajamento em até 42%.
-
-Isso não é opinião — são dados do Google.
-
-A pergunta é: você está aproveitando ou deixando dinheiro na mesa?
-
-Salva esse carrossel para aplicar no seu negócio ainda hoje! 💾
-
-Precisa de ajuda para configurar ou otimizar seu Google Business?
-👉 Chama no WhatsApp: **(31) 98294-8067**
-
-**Hashtags:**
-#googlebusiness #googlemybusiness #seolocaluario #marketinglocal #marketingdigital #empreendedorismo #negociosdigitais #seo #googleads #calazanslumina #agenciadigital #pequenasempresas #brasil #minasgerais #belohorizonte #busca local #marketingbrasil #marketingmg #tendencias2026 #ia2026 #conversao #leadgeneration #siteprofissional #negociosonline #visibilidadedigital
-
-**SEO Keywords:**
-- google business profile otimização
-- como aparecer no google maps
-- seo local para pequenas empresas
-- google meu negócio brasil
-- marketing local digital belo horizonte
+**HASHTAGS:**
+#motivacao #empreendedorismo #mindsetempreendedor #marketingdigital #calazanslumina #frases #negocios #determinacao #sucessodigital #construindosonhos
 
 ---
 
-## Dia 4 — 26/02/2026 (Quarta-feira)
+### POST 4 — 26/02 (Quarta) — SERVICO CRM + IA + WHATSAPP
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebf590acb023eca81df.png
+- **Tipo:** Post unico | **Cor:** BRANCO
 
-**Tipo:** Post simples
-**Imagem:** `699b8c1c55d8bcbed462fd7a.png`
-**URL completa:** `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1c55d8bcbed462fd7a.png`
-**Melhor horário:** 12h
+**LEGENDA:**
+Imagine seu negocio funcionando assim:
 
-**Legenda:**
+WhatsApp responde sozinho em 5 segundos
+IA atende 24h sem voce precisar estar online
+CRM organiza todos os contatos automaticamente
 
-+320% de leads. -47% de custo por lead. 8,2% de taxa de conversão.
+Isso nao e futuro. Eu configuro isso HOJE pro seu negocio.
 
-Em 90 dias. 📊
+Pipeline de vendas + Chatbot inteligente + Inbox unificado = voce vendendo mais, trabalhando menos.
 
-Não é promessa. É resultado real de um cliente que antes não tinha presença digital estruturada — e hoje tem um sistema que gera leads automaticamente enquanto ele foca no negócio.
+Quer ver como funciona na pratica? Link na bio.
 
-Como isso acontece?
-
-A fórmula não é segredo:
-🔹 Site de alta performance com SEO técnico
-🔹 Funil de vendas automatizado no GoHighLevel
-🔹 CRM configurado para nutrir e qualificar leads
-🔹 Tráfego pago direcionado ao público certo
-🔹 Dashboard em tempo real para tomar decisões com dados
-
-Não existe milagre. Existe estratégia, execução e acompanhamento.
-
-O que existe de diferente na Calazans Lumina é que eu não abandono o cliente depois da entrega. Eu acompanho os números, ajusto a rota e garanto que o sistema continue gerando resultado.
-
-Se o seu negócio ainda não tem esse tipo de estrutura, a pergunta é: quanto isso já custou a você em oportunidades perdidas?
-
-Compartilha com um amigo empreendedor que precisa ver esse número! 🔥
-
-👉 Chama no WhatsApp: **(31) 98294-8067**
-Ou visita: **calazanslumina.vercel.app**
-
-**Hashtags:**
-#resultadosreais #marketingdigital #leads #conversao #empreendedorismo #negociosdigitais #gohighlevel #funil #crm #automacao #trafegopago #calazanslumina #agenciadigital #marketingderesultados #brasil #minasgerais #belohorizonte #marketingmg #roi #retornodoinvestimento #pequenasempresas #ia2026 #tendencias2026 #vendas #crescimentodigital
-
-**SEO Keywords:**
-- agência marketing digital com resultados comprovados
-- aumento de leads marketing digital
-- gohighlevel funil de vendas resultado
-- como aumentar leads pequena empresa
-- marketing digital que gera resultado brasil
+**HASHTAGS:**
+#crm #inteligenciaartificial #whatsappbusiness #automacao #gohighlevel #calazanslumina #vendasonline #chatbot #marketingdigital #tecnologiaparanegocios
 
 ---
 
-## Dia 5 — 27/02/2026 (Quinta-feira)
+### POST 5 — 27/02 (Quinta) — COMECE IMPERFEITO
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebfd0716b6ba443e55a.png
+- **Tipo:** Post unico | **Cor:** ESCURO + FOTO stock
 
-**Tipo:** Post simples
-**Imagem:** `699b8c1cdf9bdfc5d62456a8.png`
-**URL completa:** `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1cdf9bdfc5d62456a8.png`
-**Melhor horário:** 12h
+**LEGENDA:**
+Comece imperfeito, mas comece.
 
-**Legenda:**
+O maior erro que eu vejo empreendedores cometendo? Esperar tudo estar "perfeito" pra comecar.
 
-88% dos profissionais de marketing já usam Inteligência Artificial diariamente. 🤖
+→ O site nao precisa ter 50 paginas pra ir ao ar
+→ O Instagram nao precisa de 1000 seguidores pra vender
+→ A automacao nao precisa ser complexa pra funcionar
 
-Enquanto você lê esse post, concorrentes do seu segmento estão usando IA para criar conteúdo, automatizar atendimento, qualificar leads e fechar mais vendas — com muito menos esforço.
+Comece com o que voce tem. Otimize no caminho.
 
-Os números do Digital Marketing Institute 2026 são impossíveis de ignorar:
-📌 88% dos profissionais usam IA diariamente
-📌 94% planejam usar IA para criação de conteúdo
-📌 Campanhas com IA geram +22% de ROI em média
-📌 Empresas que adotam IA crescem 3x mais rápido
+Marca aqui quem precisa ouvir isso hoje.
 
-A questão não é mais "se" você vai usar IA. A questão é: você vai usar antes ou depois dos seus concorrentes?
-
-Na Calazans Lumina, integramos IA em tudo: no atendimento via WhatsApp (24h/7dias), na geração de conteúdo, na qualificação de leads, nas campanhas de tráfego pago.
-
-Não é ficção científica. É o que fazemos hoje para nossos clientes.
-
-Quer entender como a IA pode trabalhar para o SEU negócio especificamente?
-
-Salva esse post e me chama pra conversar! 💡
-
-👉 WhatsApp: **(31) 98294-8067**
-
-**Hashtags:**
-#ia2026 #inteligenciaartificial #automatizacao #marketingdigital #empreendedorismo #negociosdigitais #aimarketing #tendencias2026 #gohighlevel #automacao #calazanslumina #agenciadigital #brasil #iabrasil #futurodigital #marketingcomia #chatgpt #marketingderesultados #pequenasempresas #tecnologia #inovacao #marketingbrasil #belohorizonte #minasgerais #ia
-
-**SEO Keywords:**
-- inteligência artificial marketing digital 2026
-- automação com IA para empresas
-- marketing digital com inteligência artificial
-- IA para pequenas empresas brasil
-- tendências marketing digital 2026
+**HASHTAGS:**
+#comece #motivacao #empreendedorismo #marketingdigital #calazanslumina #dicasparanegocios #mindset #acaoeconseguir #pequenosnegocios #crescimento
 
 ---
 
-## Dia 6 — 28/02/2026 (Sexta-feira)
+### POST 6 — 28/02 (Sexta) — CHECKLIST MARCO
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caec021455f0ceb7d6d73.png
+- **Tipo:** Post unico | **Cor:** BRANCO
 
-**Tipo:** Post simples
-**Imagem:** `699b8c1c4c8da25f1fb5b1c2.png`
-**URL completa:** `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1c4c8da25f1fb5b1c2.png`
-**Melhor horário:** 19h
+**LEGENDA:**
+Fevereiro acabando e seu marketing ainda no modo rascunho?
 
-**Legenda:**
+Marco e o mes que separa quem planeja de quem improvisa. Confere o checklist:
 
-*"Seu negócio merece ser encontrado."* — Rhaideline Calazans ✨
+☐ Site atualizado e rapido
+☐ Google Business completo
+☐ CRM configurado
+☐ Automacao WhatsApp ativa
+☐ Conteudo planejado
 
-Essa frase resume tudo o que eu acredito e o porquê eu faço o que faço.
+Quantos voce marcou? Se foi menos de 3, me chama que a gente resolve isso junto.
 
-Todo dia eu me deparo com empreendedores incríveis — com produtos bons, serviços de qualidade, atendimento excelente — que estão invisíveis na internet.
+Salva esse post pra revisar na segunda!
 
-E isso não é justo.
-
-Não é falta de esforço. É falta de estratégia digital certa.
-
-Você pode ter o melhor produto do mundo, mas se ninguém te encontra online, você perde para o concorrente que investe em presença digital — mesmo que o produto dele seja inferior.
-
-É por isso que a Calazans Lumina existe.
-
-Para fazer com que negócios reais, de pessoas reais, sejam encontrados pelas pessoas certas, no momento certo, no lugar certo.
-
-Se você sente que seu negócio está crescendo abaixo do potencial, quero te ouvir.
-
-Não para vender qualquer coisa. Para entender o que faz sentido pra você.
-
-Me chama no WhatsApp: **(31) 98294-8067**
-
-Esse post foi feito pra quem vai compartilhar com aquele amigo que precisa ouvir isso hoje. 🤍
-
-**Hashtags:**
-#empreendedorismo #motivacao #marketingdigital #negociosdigitais #rhaideline #calazanslumina #presencadigital #visibilidadedigital #agenciadigital #empreendedora #marketingderesultados #brasil #minasgerais #belohorizonte #pequenasempresas #negociosonline #transformacaodigital #marketingmg #brandingdigital #autenticidade #empreender #crescimento #consultoriadigital #ia2026 #tendencias2026
-
-**SEO Keywords:**
-- presença digital para pequenas empresas
-- como ser encontrado no google
-- visibilidade digital para empreendedores
-- agência digital minas gerais
-- marketing digital para empreendedores brasil
+**HASHTAGS:**
+#planejamento #marketingdigital #marco2026 #checklist #calazanslumina #organizacao #negocios #estrategiadigital #dicasdemarketing #empreendedorismo
 
 ---
 
-## Dia 7 — 01/03/2026 (Sábado)
+## SEMANA 2 — 01/03 a 07/03
 
-**Tipo:** Post simples
-**Imagem:** `699b8c1c55d8bc4a5262fd7b.png`
-**URL completa:** `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1c55d8bc4a5262fd7b.png`
-**Melhor horário:** 12h
+### POST 7 — 01/03 (Sabado) — DADO 98% WHATSAPP
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caec03730809a8986ffc5.png
+- **Tipo:** Post unico | **Cor:** BRANCO
 
-**Legenda:**
+**LEGENDA:**
+98% das mensagens no WhatsApp sao abertas.
 
-4,6 milhões de pequenas empresas abertas no Brasil em 2025. Recorde histórico! 🇧🇷
+Sabe quantas pessoas abrem seu email marketing? Menos de 20%.
 
-Mas aqui está o dado que ninguém fala:
+Se voce tem um negocio e nao esta usando WhatsApp com estrategia, esta literalmente deixando dinheiro na mesa.
 
-**66% dessas empresas ainda estão nos níveis iniciais de maturidade digital.**
+O que eu configuro pros meus clientes:
+→ Resposta automatica em 5 segundos
+→ Follow-up inteligente
+→ Agendamento automatico
+→ IA que atende como se fosse voce
 
-A nota média das PMEs brasileiras em presença digital é 40,77 de 100. (FGV + Agência Brasil, 2025)
+Voce esta usando o WhatsApp a seu favor? Me conta aqui.
 
-Traduzindo: a maioria dos seus concorrentes ainda não sabe como usar o digital direito.
-
-Isso é uma oportunidade GIGANTE para quem age agora.
-
-Enquanto a concorrência ainda descobre o que é SEO, você pode já estar na primeira página do Google, com funil automatizado, CRM funcionando e leads chegando todo dia.
-
-O mercado digital brasileiro nunca esteve tão aberto para quem tem estratégia.
-
-Pensa comigo:
-🔹 66% das PMEs ainda sem presença digital madura
-🔹 80% das buscas locais resultam em compra
-🔹 Sites profissionais a partir de R$ 500
-
-A janela de oportunidade não vai ficar aberta para sempre.
-
-Salva esse post e compartilha com aquele amigo empreendedor que ainda está em dúvida! 📌
-
-👉 WhatsApp: **(31) 98294-8067**
-👉 **calazanslumina.vercel.app**
-
-**Hashtags:**
-#empreendedorismo #pme #pequenosnegocios #marketingdigital #negociosdigitais #brasil #oportunidade #transformacaodigital #presencadigital #calazanslumina #agenciadigital #seo #crescimentodigital #marketingbrasil #pequenasempresas #empreender #inovacao #digitalmarketing #tendencias2026 #ia2026 #marketingmg #minasgerais #belohorizonte #fgv #economia
-
-**SEO Keywords:**
-- maturidade digital pequenas empresas brasil
-- oportunidade marketing digital pme
-- como digitalizar pequena empresa brasil
-- presença digital para pequenos negócios
-- estatísticas marketing digital brasil 2025
+**HASHTAGS:**
+#whatsappbusiness #whatsappmarketing #automacao #dadosreais #marketingdigital #calazanslumina #vendasonline #estrategia #conversao #gohighlevel
 
 ---
 
-## Dia 8 — 02/03/2026 (Domingo)
+### POST 8 — 03/03 (Segunda) — 5 ERROS QUE AFASTAM CLIENTES
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebf5dfd504cb2898d0d.png
+- **Tipo:** Post unico | **Cor:** ESCURO + stock
 
-**Tipo:** Post simples
-**Imagem:** `699b8c1c20c03519822388ec.png`
-**URL completa:** `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1c20c03519822388ec.png`
-**Melhor horário:** 18h
+**LEGENDA:**
+Voce pode estar afastando clientes sem perceber.
 
-**Legenda:**
+Esses 5 erros sao mais comuns do que voce imagina:
 
-Você sabia que seu site pode estar afastando clientes sem você perceber? ❌
+1. Site lento demais — 53% das pessoas saem se demora mais de 3 segundos
+2. Nao ter WhatsApp visivel — o cliente quer falar AGORA
+3. Ignorar SEO local — se nao aparece no Google, nao existe
+4. Nao fazer follow-up — 80% das vendas precisam de 5+ contatos
+5. Zero presenca no Google — sem Google Business, sem credibilidade
 
-Se ele carrega lento, não abre bem no celular ou não aparece no Google — ele está custando dinheiro, não gerando.
+Quantos desses voce esta cometendo? Seja honesto nos comentarios.
 
-Na Calazans Lumina, os sites que entregamos têm um padrão que vai além do visual:
-
-⚡ **PageSpeed 95+** — carregamento ultrarrápido
-📱 **Design 100% responsivo** — perfeito em qualquer tela
-🔍 **SEO técnico + Schema markup** — feito para aparecer no Google
-📊 **Google Analytics 4** integrado — você vê o que funciona
-🔒 **SSL + hospedagem gerenciada** — segurança e estabilidade
-🚀 **Entrega em até 7 dias**
-
-E o investimento? **A partir de R$ 500.**
-
-Não existe site barato que gera resultado sem SEO. E não existe site caro que vale o preço se não converte.
-
-O que eu entrego é um site que faz o trabalho por você: aparece no Google, carrega rápido, converte visitante em lead.
-
-Se você ainda tem um site lento, não responsivo ou feito em plataformas que travam — a gente precisa conversar.
-
-👉 Chama no WhatsApp: **(31) 98294-8067**
-👉 Veja exemplos: **calazanslumina.vercel.app**
-
-**Hashtags:**
-#siteprofissional #webdesign #nextjs #seo #marketingdigital #empreendedorismo #negociosdigitais #desenvolvimentoweb #pagespeed #performanceweb #calazanslumina #agenciadigital #brasil #minasgerais #belohorizonte #siterapido #conversao #leadgeneration #marketingmg #pequenasempresas #tendencias2026 #ia2026 #designresponsivo #googleanalytics #hospedagem
-
-**SEO Keywords:**
-- site profissional para pequenas empresas
-- desenvolvimento web next.js brasil
-- site com seo para negócios locais
-- criar site profissional belo horizonte
-- site que aparece no google brasil
+**HASHTAGS:**
+#errosdemarketing #dicasdemarketing #marketingdigital #calazanslumina #pequenosnegocios #seotips #googlebusiness #vendas #estrategiadigital #crescimentodigital
 
 ---
 
-## Dia 9 — 03/03/2026 (Segunda-feira)
+### POST 9 — 04/03 (Terca) — SERVICO SITES ALTA PERFORMANCE
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebf5dfd506a34898d1b.png
+- **Tipo:** Post unico | **Cor:** BRANCO + stock
 
-**Tipo:** Post simples
-**Imagem:** `699b8c1cf714ee0db6f5e36f.png`
-**URL completa:** `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1cf714ee0db6f5e36f.png`
-**Melhor horário:** 18h
+**LEGENDA:**
+Seu site e a primeira impressao do seu negocio. E voce so tem 3 segundos.
 
-**Legenda:**
+O que voce recebe com um site Calazans Lumina:
 
-*"Quem não é visto, não é lembrado. Quem não é lembrado, não vende."* 🔥
+→ PageSpeed 95+ (seu concorrente tem 30)
+→ SEO tecnico completo
+→ Mobile-first (70% dos acessos sao do celular)
+→ SSL + hosting incluso
+→ Analytics integrado
+→ Entrega em 7 dias
 
-Simples assim.
+A partir de R$ 500.
 
-No mundo digital de 2026, invisibilidade não é opção — é prejuízo.
+Nao e template. E site profissional feito pra converter visitante em cliente.
 
-Pensa: quando você precisa de um serviço, o que você faz? Google, né?
+Quer ver exemplos? Link na bio.
 
-Agora imagina que o seu cliente ideal está fazendo exatamente isso — procurando o que você oferece — e o seu nome não aparece.
-
-Quem aparece? O concorrente. E ele leva o cliente embora.
-
-Presença digital não é luxo. É o básico que separa negócios que crescem dos que estagnaram.
-
-E não precisa ser complicado:
-✅ Um site que carrega rápido e aparece no Google
-✅ Redes sociais com conteúdo que gera valor
-✅ Automação que responde e nutre o lead
-✅ CRM que organiza e converte
-
-Isso é o que a Calazans Lumina entrega.
-
-Se você chegou até aqui, é porque algo nessa mensagem ressoou. Não ignora esse sinal.
-
-Compartilha essa frase com aquele empreendedor que precisa ouvir isso hoje! 💡
-
-Me chama no WhatsApp: **(31) 98294-8067**
-
-**Hashtags:**
-#marketingdigital #empreendedorismo #motivacao #frase #presencadigital #visibilidadedigital #negociosdigitais #calazanslumina #agenciadigital #brand ing #brandingdigital #brasil #minasgerais #belohorizonte #marketingmg #pequenasempresas #crescimento #vendas #transformacaodigital #ia2026 #tendencias2026 #empreender #negocioonline #marketingderesultados #seo
-
-**SEO Keywords:**
-- marketing digital para empreendedores
-- visibilidade digital para negócios
-- como aparecer no google meu negócio
-- branding digital para pequenas empresas
-- presença digital brasil
+**HASHTAGS:**
+#siteprofissional #webdesign #criacaodesites #marketingdigital #calazanslumina #nextjs #seotecnico #pagespeed #performanceweb #sitesrapidos
 
 ---
 
-## Dia 10 — 04/03/2026 (Terça-feira)
+### POST 10 — 05/03 (Quarta) — FRASE PESSOAL RHAIDELINE
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebfe54a37ce552d8ba0.png
+- **Tipo:** Post unico | **Cor:** ESCURO + FOTO Rhaideline
 
-**Tipo:** Post simples
-**Imagem:** `699b8c1cdf9bdf424d2456a7.png`
-**URL completa:** `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1cdf9bdf424d2456a7.png`
-**Melhor horário:** 18h
+**LEGENDA:**
+"Eu nao vendo promessas. Eu entrego dashboards."
 
-**Legenda:**
+Cansada de agencias que prometem "resultados incriveis" mas nao mostram numeros?
 
-Imagine acordar de manhã e ter leads qualificados esperando na sua caixa de entrada. 📥
+Aqui e diferente. Cada cliente meu tem acesso a:
+→ Dashboard em tempo real
+→ Metricas de conversao claras
+→ Relatorios mensais transparentes
+→ ROI que voce CONSEGUE medir
 
-Sem você ter feito nada durante a noite.
+Transparencia nao e diferencial. E obrigacao. Mas como poucos fazem, virou o meu diferencial.
 
-Isso não é fantasia. É o que um funil de vendas automatizado faz pelo seu negócio.
+Quer ver resultados reais? Me chama no WhatsApp.
 
-Com o GoHighLevel, o processo funciona assim:
-
-**1️⃣ Lead chega** — pela landing page, anúncio ou redes sociais
-**2️⃣ WhatsApp automático em 5 minutos** — antes que ele vá para o concorrente
-**3️⃣ Follow-up por email + SMS** — sem deixar ninguém esquecer de você
-**4️⃣ Agendamento automático** — o lead marca direto na sua agenda
-**5️⃣ Pipeline atualizado automaticamente** — você sabe exatamente onde está cada lead
-
-Nada disso é feito manualmente. Tudo no piloto automático.
-
-O resultado? Mais leads convertidos, menos tempo desperdiçado com processos manuais, mais foco no que você realmente faz de melhor.
-
-Implemento esse sistema completo **a partir de R$ 1.200**.
-
-Um único cliente a mais por mês já paga o investimento. E o sistema vai trabalhar por você durante anos.
-
-Quer entender como isso funcionaria no seu negócio?
-
-👉 Chama no WhatsApp: **(31) 98294-8067**
-
-**Hashtags:**
-#gohighlevel #funil #automacao #crm #marketingdigital #empreendedorismo #negociosdigitais #vendas #leads #leadgeneration #calazanslumina #agenciadigital #brasil #minasgerais #belohorizonte #marketingmg #whatsappmarketing #emailmarketing #conversao #automatizacao #ia2026 #tendencias2026 #pequenasempresas #funiladesitas #marketingderesultados
-
-**SEO Keywords:**
-- gohighlevel brasil funil de vendas
-- funil de vendas automatizado para empresas
-- automação de vendas crm brasil
-- como automatizar vendas pequena empresa
-- gohighlevel agência brasil
+**HASHTAGS:**
+#resultadosreais #transparencia #marketingdigital #calazanslumina #dashboards #metricas #roi #agenciadigital #rhaideline #marketinghonestos
 
 ---
 
-## Dia 11 — 05/03/2026 (Quarta-feira)
+### POST 11 — 06/03 (Quinta) — CURSOS R$20
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebf21455f46427d6d62.png
+- **Tipo:** Post unico | **Cor:** BRANCO
 
-**Tipo:** Post simples
-**Imagem:** `699b8c1c55d8bca9bb62fd79.png`
-**URL completa:** `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1c55d8bca9bb62fd79.png`
-**Melhor horário:** 12h
+**LEGENDA:**
+NOVIDADE: Cursos de Marketing Digital a partir de R$ 20.
 
-**Legenda:**
+Eu criei cursos pra quem quer aprender de verdade, sem enrolacao e sem pagar uma fortuna:
 
-Para cada R$ 1 investido em automação de marketing, o retorno médio é de R$ 5,44. 💰
+- IA & ChatGPT para Negocios
+- Google Business do Zero ao Avancado
+- SEO Pratico
+- Funis de Vendas com GoHighLevel
+- Automacao WhatsApp
 
-Esse número é do relatório da Amra and Elma em parceria com a Cazoomi (2025). E não é isolado:
+Cada curso tem certificado, material em PDF e acesso vitalicio.
 
-📊 76% das empresas que implementam automação têm ROI positivo já no primeiro ano
-📊 Empresas com email automatizado geram 320% mais receita do que as que enviam manualmente
-📊 Automação reduz em até 80% o tempo gasto em tarefas repetitivas
+Por que R$20? Porque conhecimento nao deveria ter barreira de entrada.
 
-Mas aqui está o que mais me impressiona: a maioria das pequenas empresas ainda não usa automação. Não por falta de opção. Por falta de conhecimento.
+Link na bio para acessar.
 
-Isso significa que você pode se diferenciar agora.
-
-Enquanto seu concorrente ainda responde mensagem manualmente, você pode ter um sistema que:
-✅ Responde leads em 5 minutos automaticamente
-✅ Envia sequência de follow-up por email e SMS
-✅ Nutre o cliente até ele estar pronto para comprar
-✅ Agenda reuniões sem intervenção humana
-
-Tudo isso com o GoHighLevel, que configuro e gerencio para o seu negócio.
-
-Salva esse post para mostrar para quem diz que automação é coisa de empresa grande. 📌
-
-👉 WhatsApp: **(31) 98294-8067**
-
-**Hashtags:**
-#automacao #marketingdigital #roi #retornodoinvestimento #empreendedorismo #negociosdigitais #gohighlevel #emailmarketing #crm #leads #calazanslumina #agenciadigital #brasil #minasgerais #belohorizonte #marketingmg #ia2026 #tendencias2026 #pequenasempresas #vendas #conversao #automatizacao #marketingderesultados #financas #crescimento
-
-**SEO Keywords:**
-- roi automação marketing digital
-- retorno investimento automação marketing
-- gohighlevel automação pequenas empresas
-- como automatizar marketing digital brasil
-- email marketing automatizado resultado
+**HASHTAGS:**
+#cursoonline #marketingdigital #cursobarato #educacao #calazanslumina #aprenda #chatgpt #seo #googlebusiness #cursosdigitais
 
 ---
 
-## Dia 12 — 06/03/2026 (Quinta-feira)
+### POST 12 — 08/03 (Domingo) — DIA INTERNACIONAL DA MULHER
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebf21455fcb3d7d6d60.png
+- **Tipo:** Data comemorativa | **Cor:** FOTO Rhaideline
 
-**Tipo:** Post simples
-**Imagem:** `699b8c1cf714ee30d8f5e346.png`
-**URL completa:** `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1cf714ee30d8f5e346.png`
-**Melhor horário:** 19h
+**LEGENDA:**
+Mulheres que empreendem mudam o mundo. Todos os dias.
 
-**Legenda:**
+Hoje nao e so sobre flores. E sobre reconhecer a forca de cada mulher que:
+→ Abriu um negocio com coragem
+→ Concilia mil tarefas e ainda sonha grande
+→ Enfrenta um mercado que nem sempre esta pronto pra ela
 
-*"Eu não vendo promessas. Eu entrego dashboards."* — Rhaideline Calazans 📊
+Eu sou Rhaideline Calazans. Empreendo com tecnologia, IA e marketing digital. E sei que o caminho nao e facil — mas e nosso.
 
-Essa é a diferença entre a Calazans Lumina e a maioria das agências de marketing.
+Feliz Dia da Mulher pra toda mulher que se recusa a ser pequena.
 
-Você já contratou um serviço de marketing e ficou sem saber o que aconteceu com o dinheiro? Relatório lindo, mas sem resultado claro?
+Marca aqui uma mulher empreendedora que te inspira.
 
-Eu passei anos vendo isso acontecer com empreendedores. E decidi fazer diferente.
-
-Aqui, você vai saber exatamente:
-🔹 Quantos leads chegaram essa semana
-🔹 De qual canal vieram
-🔹 Qual o custo por lead
-🔹 Qual a taxa de conversão
-🔹 O que está funcionando e o que precisa ajustar
-
-Sem achismo. Sem "acredite em mim". Com número, com dashboard, com transparência total.
-
-Porque o seu dinheiro merece respeito — e o seu negócio merece resultados mensuráveis.
-
-Se você está cansado de investir em marketing sem saber o retorno real, chegou a hora de mudar isso.
-
-Compartilha com aquele amigo empreendedor que já caiu em promessa de agência! 🤝
-
-👉 Chama no WhatsApp: **(31) 98294-8067**
-
-**Hashtags:**
-#marketingdigital #transparencia #resultadosreais #empreendedorismo #negociosdigitais #dashboard #dados #analytics #calazanslumina #agenciadigital #rhaideline #brasil #minasgerais #belohorizonte #marketingmg #roi #leads #conversao #ia2026 #tendencias2026 #pequenasempresas #marketingderesultados #consultoriadigital #agenciamarketing #confinca
-
-**SEO Keywords:**
-- agência marketing digital transparente resultados
-- dashboard marketing digital para empresas
-- como medir resultado marketing digital
-- marketing digital com métricas reais
-- consultoria marketing digital brasil
+**HASHTAGS:**
+#diadamulher #8demarco #mulheresempreendedoras #girlpower #empreendedorismofeminino #calazanslumina #mulheresnonegocios #empoderamento #womenintech #inspiracao
 
 ---
 
-## Dia 13 — 07/03/2026 (Sexta-feira)
+## SEMANA 3 — 10/03 a 14/03
 
-**Tipo:** Post simples
-**Imagem:** `699b8c1cf714ee4ad6f5e33d.png`
-**URL completa:** `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1cf714ee4ad6f5e33d.png`
-**Melhor horário:** 12h
+### POST 13 — 10/03 (Segunda) — DADO 80% BUSCAS LOCAIS
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebf590acbc599ca81e0.png
+- **Tipo:** Post unico | **Cor:** BRANCO + stock
 
-**Legenda:**
+**LEGENDA:**
+80% das buscas locais viram compra. Ligacao, visita ou pedido online.
 
-O Google mudou tudo em 2026 — e a maioria dos empresários ainda não sabe. 🚨
+Quando alguem pesquisa "perto de mim" no Google, ja esta pronto pra comprar.
 
-Os AI Overviews (respostas geradas por IA direto no Google) reduziram os cliques orgânicos em -34,5%. (Fonte: Genesys Growth, Sterling Sky 2026)
+A pergunta e: seu negocio aparece nessa busca?
 
-Parece ruim, né? Mas aguenta.
+Se a resposta e "nao sei" ou "acho que nao"... voce esta perdendo vendas TODOS OS DIAS.
 
-O tráfego que vem via IA converte **4,4x mais em vendas** do que o tráfego tradicional.
+O que faz seu negocio aparecer:
+→ Google Business otimizado
+→ Site com SEO local
+→ Avaliacoes de clientes
+→ Informacoes atualizadas
 
-Por quê? Porque quem chega via IA já chegou com a resposta. Está mais qualificado. Mais pronto para comprar.
+Eu configuro tudo isso pra voce. Link na bio.
 
-O que isso muda na prática?
-
-✅ SEO precisa ser mais estratégico, não só baseado em palavras-chave
-✅ Autoridade de marca importa mais do que nunca
-✅ Conteúdo de valor genuíno supera conteúdo genérico
-✅ Google Business Profile vira ainda mais essencial
-✅ Velocidade de site impacta diretamente nos resultados de IA
-
-A boa notícia: quem adaptar a estratégia agora vai sair na frente de 90% dos concorrentes.
-
-A Calazans Lumina já trabalha com SEO para o contexto de IA — desde estrutura técnica até conteúdo estratégico.
-
-Salva esse post porque você vai precisar dessas informações! 💡
-
-👉 WhatsApp: **(31) 98294-8067**
-
-**Hashtags:**
-#seo #google #ia2026 #marketingdigital #tendencias2026 #empreendedorismo #negociosdigitais #googleai #aioverview #inteligenciaartificial #calazanslumina #agenciadigital #brasil #minasgerais #belohorizonte #marketingmg #seotecnico #busca #algoritmo #conversao #leads #marketingderesultados #pequenasempresas #futurodigital #inovacao
-
-**SEO Keywords:**
-- seo google ai overview 2026
-- como aparecer no google com IA
-- tendências seo 2026 brasil
-- google ai overview impacto negócios
-- marketing digital google 2026
+**HASHTAGS:**
+#seolocal #googlebusiness #buscalocal #marketingdigital #calazanslumina #aparecanogoogle #negocios #vendas #estrategialocal #marketinglocal
 
 ---
 
-## Dia 14 — 08/03/2026 (Sábado)
+### POST 14 — 11/03 (Terca) — SEGREDO DO GOOGLE SEO
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caec05dfd50226e898d35.png
+- **Tipo:** Post unico | **Cor:** ESCURO + stock
 
-**Tipo:** Carrossel (3 slides)
-**Imagens:**
-- Slide 1: `699b8c1cdf9bdfcf90245690.png`
-- Slide 2: `699b8c1cf714eee46ef5e342.png`
-- Slide 3: `699b8c1cf714ee0274f5e341.png`
+**LEGENDA:**
+O segredo do Google? Nao e magica.
 
-**URLs completas:**
-- `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1cdf9bdfcf90245690.png`
-- `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1cf714eee46ef5e342.png`
-- `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1cf714ee0274f5e341.png`
+E estrategia: palavras certas, estrutura limpa, velocidade alta.
 
-**Melhor horário:** 18h
+Enquanto seu concorrente paga pra aparecer, voce pode aparecer de graca — e com mais credibilidade.
 
-**Legenda:**
+SEO bem feito significa:
+→ Aparecer no topo do Google sem pagar por clique
+→ Atrair clientes que ja estao procurando o que voce vende
+→ Construir autoridade a longo prazo
 
-O que é GoHighLevel? E por que seu negócio precisa disso ONTEM. 🤯
+O melhor investimento digital que existe? Um site otimizado.
 
-Deslize para entender a plataforma que mais de 600.000 empresas no mundo já usam para crescer — e que a maioria dos brasileiros ainda não conhece. 👉
+Quer saber como seu site esta hoje? Me manda o link no WhatsApp que eu analiso de graca.
 
-GoHighLevel não é só um CRM. É um ecossistema completo de marketing e vendas em um único lugar:
-
-📱 CRM integrado — todos os seus leads em um lugar
-💬 Inbox unificado — WhatsApp, email e SMS juntos
-⚙️ Automações ilimitadas — sem trabalho manual
-📅 Calendário inteligente — agendamento automático
-🤖 IA 24h respondendo — sem perder nenhum lead
-🔧 Funis prontos para converter
-
-Sabe o que isso significa para você? Nunca mais usar 5 ferramentas diferentes para fazer o que o GoHighLevel faz sozinho.
-
-600.000+ empresas mundo afora já entenderam isso.
-
-E no Brasil, o GoHighLevel ainda está chegando — o que significa que você pode sair na frente da concorrência agora.
-
-Implemento e configuro tudo para o seu negócio **a partir de R$ 1.200**.
-
-Salva esse carrossel e compartilha com o empreendedor que ainda não conhece! 💾
-
-👉 Chama no WhatsApp: **(31) 98294-8067**
-
-**Hashtags:**
-#gohighlevel #crm #automacao #marketingdigital #empreendedorismo #negociosdigitais #funil #vendas #leads #calazanslumina #agenciadigital #brasil #minasgerais #belohorizonte #marketingmg #whatsappmarketing #emailmarketing #ia2026 #tendencias2026 #pequenasempresas #conversao #marketingderesultados #plataformamarketing #automatizacao #ghl
-
-**SEO Keywords:**
-- gohighlevel brasil configuração
-- gohighlevel crm pequenas empresas
-- como usar gohighlevel em português
-- gohighlevel agência brasil setup
-- crm automação vendas brasil
+**HASHTAGS:**
+#seo #google #seotips #marketingdigital #calazanslumina #rankearnogoogle #otimizacao #dicasdegoogle #buscaorganica #primeirapagina
 
 ---
 
-## Dia 15 — 09/03/2026 (Domingo)
+### POST 15 — 12/03 (Quarta) — AUTOMACAO 5 SEGUNDOS
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caec01001a50121e96ba5.png
+- **Tipo:** Post unico | **Cor:** BRANCO
 
-**Tipo:** Post simples
-**Imagem:** `699b8c1c20c035b9ac2388de.png`
-**URL completa:** `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1c20c035b9ac2388de.png`
-**Melhor horário:** 18h
+**LEGENDA:**
+Seu cliente mandou mensagem. Voce demorou 2 horas pra responder. Adivinha? Ele ja fechou com o concorrente.
 
-**Legenda:**
+Com automacao, seu negocio responde em 5 SEGUNDOS:
 
-Chega de não saber quanto custa transformar seu negócio digitalmente. 💡
+WhatsApp — Resposta automatica personalizada
+IA 24h — Chatbot inteligente que parece voce
+CRM — Tudo organizado, nada se perde
 
-Eu acredito em transparência. Por isso, vou te mostrar exatamente o que oferecemos e quanto custa:
+Nao e sobre substituir voce. E sobre nao perder venda por demora.
 
-**📦 Pacote Essencial — R$ 500**
-Site profissional em Next.js, SEO técnico, design responsivo, entrega em 7 dias. Para quem precisa começar com o pé direito.
+Quantas vendas voce ja perdeu por nao responder rapido? Comenta aqui.
 
-**📦 Pacote Profissional — R$ 1.200**
-Tudo do Essencial + Funil de vendas automatizado + CRM GoHighLevel configurado + WhatsApp automático + Dashboard de resultados. Para quem quer crescer com sistema.
-
-**📦 Pacote Premium — Consulta personalizada**
-Tráfego pago Google + Meta + Gestão completa de redes sociais + Estratégia full digital + Relatórios mensais + Suporte prioritário. Para quem quer dominar o mercado.
-
-Não existe pacote ruim aqui. Existe o que é certo para o momento do SEU negócio.
-
-A pergunta certa não é "quanto custa?" — é "quanto estou perdendo sem isso?"
-
-Esse post é especial. Compartilha com aquele empreendedor que sempre fala que não sabe por onde começar. 🤝
-
-👉 WhatsApp para orçamento: **(31) 98294-8067**
-👉 **calazanslumina.vercel.app**
-
-**Hashtags:**
-#preco #investimento #marketingdigital #empreendedorismo #negociosdigitais #siteprofissional #gohighlevel #funil #automacao #calazanslumina #agenciadigital #brasil #minasgerais #belohorizonte #marketingmg #pequenasempresas #pacotes #orcamento #conversao #leads #ia2026 #tendencias2026 #marketingderesultados #crescimento #vendas
-
-**SEO Keywords:**
-- quanto custa site profissional brasil
-- preço agência marketing digital
-- pacote marketing digital pequena empresa
-- quanto custa gohighlevel brasil
-- investimento marketing digital pme
+**HASHTAGS:**
+#automacao #whatsappbusiness #chatbot #crm #gohighlevel #calazanslumina #marketingdigital #vendas #atendimentoautomatico #iaparanegocios
 
 ---
 
-## Dia 16 — 10/03/2026 (Segunda-feira)
+### POST 16 — 13/03 (Quinta) — REEL CHATGPT
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebf21455f3d9c7d6d64.png
+- **Tipo:** Reel (cover) | **Cor:** ESCURO
 
-**Tipo:** Post simples
-**Imagem:** `699b8c1c55d8bcd68462fd62.png`
-**URL completa:** `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1c55d8bcd68462fd62.png`
-**Melhor horário:** 12h
+**LEGENDA:**
+Como usar o ChatGPT para seu negocio — em 1 minuto.
 
-**Legenda:**
+A maioria dos empreendedores usa ChatGPT errado. Faz pergunta generica e reclama que a resposta e "ruim".
 
-77% de crescimento no e-commerce de pequenas empresas brasileiras em 2025. 📈
+Nesse reel eu mostro 3 formas PRATICAS de usar no seu dia a dia:
 
-Setenta e sete por cento. Em um ano. (Fonte: E-Commerce Update 2025)
+1. Criar legendas pro Instagram (com prompt certo)
+2. Responder clientes mais rapido
+3. Montar propostas comerciais em minutos
 
-Enquanto a economia gerava incerteza para muitos setores, o comércio digital de PMEs explodiu.
+Assista, salva e manda pra quem precisa parar de perder tempo.
 
-Mas tem um detalhe que esse número esconde:
-
-Esse crescimento não foi distribuído igualmente. As empresas que cresceram são as que já tinham — ou decidiram montar — uma presença digital estruturada.
-
-Quem não tinha site, não tinha SEO, não tinha funil — não pegou essa onda.
-
-E 2026 promete ser ainda maior.
-
-A pergunta é: seu negócio vai surfar essa onda ou vai assistir de longe?
-
-O que separa quem cresce de quem fica para trás é simples:
-✅ Site profissional e rápido
-✅ Aparecer nas buscas certas
-✅ Sistema para captar e nutrir leads
-✅ Presença consistente nas redes sociais
-
-Não é complicado. É estratégia + execução + consistência.
-
-Salva esse post e compartilha com quem está esperando o "momento certo" para investir no digital. O momento é agora. 🔥
-
-👉 WhatsApp: **(31) 98294-8067**
-
-**Hashtags:**
-#ecommerce #pme #marketingdigital #empreendedorismo #negociosdigitais #crescimento #brasil #oportunidade #comerciodigital #lojasonline #calazanslumina #agenciadigital #minasgerais #belohorizonte #marketingmg #pequenasempresas #tendencias2026 #ia2026 #transformacaodigital #presencadigital #vendasonline #marketingderesultados #conversao #leads #economia
-
-**SEO Keywords:**
-- e-commerce pequenas empresas brasil 2025
-- crescimento digital pme brasil
-- como vender online pequena empresa
-- loja online para pequenas empresas
-- e-commerce brasil oportunidade
+**HASHTAGS:**
+#chatgpt #inteligenciaartificial #iaparanegocios #reels #dicasdemarketing #calazanslumina #produtividade #tecnologia #empreendedorismo #ferramentasia
 
 ---
 
-## Dia 17 — 11/03/2026 (Terça-feira)
+### POST 17 — 14/03 (Sexta) — RESULTADO +320% LEADS
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caec034011811ad9e00b3.png
+- **Tipo:** Post unico | **Cor:** BRANCO + stock
 
-**Tipo:** Post simples
-**Imagem:** `699b8c1c20c03588542388e0.png`
-**URL completa:** `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1c20c03588542388e0.png`
-**Melhor horário:** 12h
+**LEGENDA:**
++320% mais leads em 90 dias. Resultado REAL de um cliente.
 
-**Legenda:**
+O que a gente fez:
+→ Funil de vendas estrategico
+→ CRM com follow-up automatico
+→ Automacao WhatsApp ativa 24h
 
-ANTES x DEPOIS de ter um site profissional. ❌ ✅
+Nao foi sorte. Foi processo.
 
-Deixa eu ser bem direta aqui:
+Quando voce para de depender so de indicacao e monta um sistema que gera leads no automatico, os numeros mudam.
 
-**ANTES:**
-❌ Site lento — visitante sai em menos de 3 segundos
-❌ Não abre no celular — 70% do tráfego é mobile
-❌ Sem SEO — invisível no Google
-❌ Zero leads chegando
+Quer saber como aplicar isso no SEU negocio? Me chama no WhatsApp. Primeiro diagnostico e gratuito.
 
-**DEPOIS com a Calazans Lumina:**
-✅ PageSpeed 95+ — carregamento ultrarrápido
-✅ 100% mobile-first — bonito em qualquer tela
-✅ 1º nos resultados do Google — para as buscas certas
-✅ Leads chegando todo dia de forma orgânica
-✅ Dashboard em tempo real — você vê o que está acontecendo
-✅ CRM integrado — nenhum lead se perde
-
-Essa não é uma transformação de meses. É de semanas.
-
-Entrego o site completo em até 7 dias. E a diferença nos resultados começa a aparecer nas primeiras semanas.
-
-Um site profissional não é despesa. É a máquina de geração de leads que trabalha pra você 24 horas por dia.
-
-Compartilha com aquele amigo que ainda usa o site que "um sobrinho fez" em 2018! 😅
-
-👉 WhatsApp: **(31) 98294-8067**
-👉 **calazanslumina.vercel.app**
-
-**Hashtags:**
-#antesedepois #siteprofissional #webdesign #seo #marketingdigital #empreendedorismo #negociosdigitais #nextjs #performanceweb #pagespeed #calazanslumina #agenciadigital #brasil #minasgerais #belohorizonte #marketingmg #leads #conversao #mobile #responsivo #ia2026 #tendencias2026 #marketingderesultados #pequenasempresas #crescimento
-
-**SEO Keywords:**
-- site profissional antes e depois
-- migração para site profissional
-- redesign site para pequenas empresas
-- site rápido e responsivo brasil
-- site que aparece no google
+**HASHTAGS:**
+#resultadosreais #leads #funildevendas #crm #automacao #calazanslumina #marketingdigital #casesdesucesso #conversao #gohighlevel
 
 ---
 
-## Dia 18 — 12/03/2026 (Quarta-feira)
+## SEMANA 4 — 15/03 a 21/03
 
-**Tipo:** Carrossel (3 slides)
-**Imagens:**
-- Slide 1: `699b8c1c4c8da284ddb5b1a2.png`
-- Slide 2: `699b8c1c20c035427a2388d8.png`
-- Slide 3: `699b8c1c20c035580d2388d7.png`
+### POST 18 — 15/03 (Domingo) — DIA DO CONSUMIDOR
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebf340118d8809e009b.png
+- **Tipo:** Data comemorativa | **Cor:** VERMELHO
 
-**URLs completas:**
-- `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1c4c8da284ddb5b1a2.png`
-- `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1c20c035427a2388d8.png`
-- `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1c20c035580d2388d7.png`
+**LEGENDA:**
+Hoje e Dia do Consumidor. E o meu presente pra voce e um diagnostico digital GRATUITO do seu negocio.
 
-**Melhor horário:** 12h
+Eu vou analisar:
+→ Seu site (velocidade, SEO, mobile)
+→ Seu Google Business
+→ Sua presenca nas redes sociais
+→ Suas automacoes
 
-**Legenda:**
+E te entregar um relatorio completo com o que precisa melhorar — sem compromisso.
 
-5 sinais de que você PRECISA de um CRM — e provavelmente nem sabe disso. 🚨
+Como participar? Me chama no WhatsApp: (31) 98294-8067
 
-Deslize para ver se você se identifica com pelo menos um. Eu garanto que a maioria vai marcar mais de três. 👉
+Oferta valida so essa semana!
 
-✅ Anota leads em caderno ou planilha
-✅ Não sabe quantos leads recebeu esse mês
-✅ Já esqueceu de dar retorno para um cliente
-✅ Perde tempo procurando histórico de conversas
-✅ Não consegue ver qual canal traz mais clientes
-
-Se você marcou 3 ou mais... chama agora. Sem julgamento.
-
-Um CRM bem configurado:
-📈 Aumenta a conversão em até **300%**
-💰 Gera +29% em receita de vendas
-⏱ Aumenta a produtividade em +30%
-
-A partir de R$ 1.200, configuro e implemento o GoHighLevel completo para o seu negócio. Com automações, pipeline de vendas, follow-up automático e dashboard em tempo real.
-
-Salva esse carrossel e compartilha com quem ainda gerencia vendas no WhatsApp e caderninho! 💾
-
-👉 Me chama no WhatsApp: **(31) 98294-8067**
-
-**Hashtags:**
-#crm #gohighlevel #automacao #vendas #marketingdigital #empreendedorismo #negociosdigitais #leads #conversao #gestao #calazanslumina #agenciadigital #brasil #minasgerais #belohorizonte #marketingmg #pequenasempresas #ia2026 #tendencias2026 #marketingderesultados #pipeline #followup #whatsappbusiness #automatizacao #crescimento
-
-**SEO Keywords:**
-- crm para pequenas empresas brasil
-- gohighlevel crm configuração brasil
-- como organizar leads crm
-- software crm pequena empresa
-- crm que aumenta vendas brasil
+**HASHTAGS:**
+#diadoconsumidor #15demarco #diagnosticodigital #gratuito #marketingdigital #calazanslumina #oferta #empreendedorismo #negocios #oportunidade
 
 ---
 
-## Dia 19 — 13/03/2026 (Quinta-feira)
+### POST 19 — 17/03 (Terca) — FUNIS GOHIGHLEVEL
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebf1001a5b2f6e96b8d.png
+- **Tipo:** Post unico | **Cor:** ESCURO + stock
 
-**Tipo:** Post simples
-**Imagem:** `699b8c1cdf9bdf7676245691.png`
-**URL completa:** `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1cdf9bdf7676245691.png`
-**Melhor horário:** 12h
+**LEGENDA:**
+Funis de vendas que funcionam no piloto automatico.
 
-**Legenda:**
+Funciona assim:
+1. Lead chega pelo site
+2. WhatsApp responde em 5 min
+3. Follow-up automatico
+4. Venda no piloto automatico
 
-Números que falam por si. 📊
+Nao e teoria. E exatamente o que eu configuro com GoHighLevel pros meus clientes.
 
-A Calazans Lumina em dados:
+O resultado? Mais vendas, menos trabalho manual, zero lead perdido.
 
-🔹 **940+ páginas** otimizadas para SEO entregues
-🔹 **95+ PageSpeed Score** em todos os sites
-🔹 **24h** com IA respondendo leads dos clientes
-🔹 **R$ 500** — o menor investimento para começar
+Ja usa funil no seu negocio? Me conta nos comentarios.
 
-Cada número aqui representa uma decisão de qualidade que tomamos desde o início.
-
-940+ páginas de SEO não acontecem por acidente. É método, é técnica, é consistência.
-
-95+ de PageSpeed Score não é sorte. É desenvolvimento correto, com Next.js, otimização de imagens, código limpo e hospedagem de qualidade.
-
-IA 24h respondendo não é promessa vazia. É automação configurada, testada e funcionando — para que nenhum lead caia em esquecimento.
-
-E R$ 500 para começar não é o preço mais barato do mercado. É o preço que permite a qualquer pequeno empresário ter acesso a um site que de fato funciona e aparece no Google.
-
-Esses são os números da Calazans Lumina. E eles crescem a cada projeto entregue.
-
-Compartilha com quem ainda está em dúvida se vale a pena investir! 🤝
-
-👉 WhatsApp: **(31) 98294-8067**
-👉 **calazanslumina.vercel.app**
-
-**Hashtags:**
-#calazanslumina #marketingdigital #resultados #dados #seo #pagespeed #ia #automacao #empreendedorismo #negociosdigitais #agenciadigital #brasil #minasgerais #belohorizonte #marketingmg #pequenasempresas #siteprofissional #nextjs #webdesign #ia2026 #tendencias2026 #marketingderesultados #leads #conversao #transparencia
-
-**SEO Keywords:**
-- agência digital resultados mensuráveis
-- calazans lumina portfólio
-- seo especialista brasil
-- pagespeed 95 site profissional
-- marketing digital com números reais
+**HASHTAGS:**
+#funildevendas #gohighlevel #automacao #marketingdigital #calazanslumina #vendas #leads #followup #sistemadevendas #processodevenda
 
 ---
 
-## Dia 20 — 14/03/2026 (Sexta-feira)
+### POST 20 — 18/03 (Quarta) — GOOGLE BUSINESS 7X CLIQUES
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebf590acbf6ebca81e1.png
+- **Tipo:** Post unico | **Cor:** BRANCO
 
-**Tipo:** Post simples
-**Imagem:** `699b8c1c55d8bc1c5562fd63.png`
-**URL completa:** `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1c55d8bc1c5562fd63.png`
-**Melhor horário:** 12h
+**LEGENDA:**
+Dica de ouro: Negocios com Google Business completo recebem 7x mais cliques.
 
-**Legenda:**
+SETE VEZES. E de graca.
 
-O Instagram em 2026 mudou. E quem não sabe disso está postando no vazio. 📱
+O que voce precisa fazer HOJE:
+→ Criar/completar seu perfil no Google Business
+→ Adicionar fotos reais do seu negocio
+→ Pedir avaliacoes dos clientes
+→ Postar atualizacoes semanais
+→ Responder TODA avaliacao (boa ou ruim)
 
-O Hootsuite Social Trends 2026 revelou o que o algoritmo quer — e é bem diferente do que muita gente ainda faz.
+Se voce nao sabe por onde comecar, eu configuro pra voce do zero. E rapido, e barato, e muda tudo.
 
-A nova regra é: **Info-First Content.**
+Ja tem Google Business? Comenta "SIM" ou "NAO" aqui.
 
-O que isso significa?
-
-Cada post PRECISA entregar valor real. Informação, dado, aprendizado, perspectiva.
-
-Post bonito sem conteúdo de qualidade não cresce mais.
-
-O que o algoritmo favorece em 2026:
-📌 Conteúdo educativo e informativo (Info-First)
-📌 Feed personalizado por interesse — não por volume de postagens
-📌 Influencer marketing supera digital ads em ROI
-📌 Autenticidade > perfeição (câmera do iPhone bate produção estúdio)
-📌 Vídeos curtos com dado real no início
-📌 Salves e compartilhamentos como principal métrica
-
-Mas não adianta saber tudo isso e não ter estratégia pra aplicar.
-
-A Calazans Lumina cria e gerencia a estratégia de redes sociais com esse método — Info-First, baseado em dados, com resultado mensurável.
-
-Salva esse post! (E veja só... você acabou de ajudar o algoritmo a entender que esse conteúdo tem valor. 😉)
-
-👉 WhatsApp: **(31) 98294-8067**
-
-**Hashtags:**
-#instagram2026 #algoritmoinstagram #infofirst #marketingdigital #redessociais #empreendedorismo #negociosdigitais #contentmarketing #estrategiadigital #calazanslumina #agenciadigital #brasil #minasgerais #belohorizonte #marketingmg #tendencias2026 #ia2026 #socialmedia #gestaoredessociais #pequenasempresas #marketingderesultados #hootsuite #influencermarketing #marketingorganic #conteudo
-
-**SEO Keywords:**
-- instagram 2026 algoritmo estratégia
-- tendências instagram marketing digital 2026
-- gestão redes sociais para empresas
-- info-first content instagram
-- como crescer no instagram em 2026
+**HASHTAGS:**
+#googlebusiness #googlemeunegocio #seolocal #dicademarketing #calazanslumina #marketingdigital #negociolocal #aparecanogoogle #dicadeouro #crescimento
 
 ---
 
-## Dia 21 — 15/03/2026 (Sábado)
+### POST 21 — 20/03 (Sexta) — INICIO DO OUTONO
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebf21455fda587d6d63.png
+- **Tipo:** Data comemorativa | **Cor:** BRANCO + stock foto
 
-**Tipo:** Post simples
-**Imagem:** `699b8c1c20c03507562388d9.png`
-**URL completa:** `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1c20c03507562388d9.png`
-**Melhor horário:** 18h
+**LEGENDA:**
+Nova estacao, nova estrategia.
 
-**Legenda:**
+O outono chegou e com ele a oportunidade perfeita de replantar as sementes do seu marketing digital.
 
-Você sabe que precisa postar nas redes sociais. Mas falta tempo, falta ideia, falta constância. ⏰
+Assim como a natureza se renova, seu negocio tambem precisa de renovacao:
+→ Atualize seu site
+→ Revise suas automacoes
+→ Planeje conteudo pro proximo trimestre
 
-E aí o mês passa, você postou 3 vezes, e o perfil parece abandonado.
+Nao espere o verao voltar pra colher resultados. Plante agora.
 
-Isso tem nome: ausência digital. E ela cobra um preço caro em oportunidades perdidas.
+O que voce vai renovar no seu negocio esse outono?
 
-A solução? Deixar isso com quem faz isso profissionalmente.
-
-O Pacote Premium de Gestão de Redes Sociais da Calazans Lumina inclui:
-
-📅 **Planejamento editorial mensal** — estratégia antes de tudo
-🎨 **Design de posts** — visual que representa sua marca
-📊 **Análise de métricas** — o que funciona, a gente repete
-📝 **Conteúdo Info-First** — posts que geram salvamentos e compartilhamentos
-🤖 **Automação de DMs** — resposta imediata para novos seguidores
-📈 **Relatório mensal** — você vê o crescimento mês a mês
-
-E sim, tudo isso alinhado com o que o algoritmo do Instagram quer em 2026.
-
-Você foca no seu negócio. Eu cuido da sua presença digital.
-
-Esse aqui é um post pra salvar e pensar no final de semana. 📌
-
-Quando você decidir que chega de fazer isso no improviso, me chama:
-
-👉 WhatsApp: **(31) 98294-8067**
-👉 **calazanslumina.vercel.app**
-
-**Hashtags:**
-#gestaoredessociais #socialmediamanager #marketingdigital #empreendedorismo #negociosdigitais #instagram #redessociais #contentmarketing #calazanslumina #agenciadigital #brasil #minasgerais #belohorizonte #marketingmg #pequenasempresas #ia2026 #tendencias2026 #marketingderesultados #planejamentoeditorial #designposts #automacao #metricas #crescimentodigital #presencadigital #socialmedia
-
-**SEO Keywords:**
-- gestão redes sociais para empresas brasil
-- social media manager contrato
-- agência gestão instagram belo horizonte
-- como gerenciar redes sociais empresa
-- gestão instagram para pequenas empresas
+**HASHTAGS:**
+#outono #iniciodooutono #estrategia #renovacao #marketingdigital #calazanslumina #planejamento #negocios #novafase #estacoes2026
 
 ---
 
-## Dia 22 — 16/03/2026 (Domingo)
+### POST 22 — 21/03 (Sabado) — DEPOIMENTO MARIA S.
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebf21455f64bd7d6d59.png
+- **Tipo:** Post unico | **Cor:** ESCURO
 
-**Tipo:** Post simples
-**Imagem:** `699b8c1cdf9bdf53652456a9.png`
-**URL completa:** `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1cdf9bdf53652456a9.png`
-**Melhor horário:** 12h
+**LEGENDA:**
+"Meu faturamento triplicou em 3 meses." — Maria S., Esteticista
 
-**Legenda:**
+Quando a Maria me procurou, ela tinha um Instagram parado, sem site e atendia por indicacao.
 
-80% das buscas locais no Google resultam em conversão. 📍
+O que eu fiz:
+→ Site profissional com SEO local
+→ Google Business otimizado
+→ Automacao WhatsApp com IA
+→ Funil de captacao de leads
 
-Ligação. Visita. Compra.
+Em 90 dias: 3x mais clientes, agenda lotada, atendimento no automatico.
 
-80%. Não é estimativa — é dado real de pesquisa da SeoProfy e Wiser Review (2025).
+Isso nao e excecao. E processo. E funciona pra qualquer negocio local.
 
-O que isso quer dizer pra você?
+Quer o mesmo resultado? Link na bio.
 
-Quando alguém pesquisa "mecânica perto de mim", "dentista em BH" ou "advogado Belo Horizonte" — quem aparece primeiro, vende primeiro.
-
-E se o seu Google Business Profile está incompleto ou desatualizado, você simplesmente não aparece.
-
-Dados que você precisa saber:
-📊 Perfis 100% completos recebem **7x mais cliques**
-📊 Empresas com fotos atualizadas têm **42% mais pedidos de rota**
-📊 Avaliações no Google aumentam conversão em **270%** (com mais de 5 avaliações)
-
-O serviço local é o mercado mais acessível para pequenas empresas — e a maioria ainda não está aproveitando.
-
-Configurar e otimizar o Google Business Profile é um dos primeiros passos que fazemos na Calazans Lumina.
-
-Salva esse post e compartilha com aquele empreendedor do bairro que você sabe que ainda não está no Google Maps! 🗺️
-
-👉 WhatsApp: **(31) 98294-8067**
-
-**Hashtags:**
-#seolocal #googlemaps #googlebusiness #marketinglocal #marketingdigital #empreendedorismo #negociosdigitais #busca local #calazanslumina #agenciadigital #brasil #minasgerais #belohorizonte #marketingmg #pequenasempresas #conversao #leads #ia2026 #tendencias2026 #marketingderesultados #google #buscalocal #presencadigital #avaliações #negocioonline
-
-**SEO Keywords:**
-- seo local para pequenas empresas brasil
-- google business profile otimizado
-- como aparecer no google maps empresa
-- marketing local digital belo horizonte
-- buscas locais conversão google
+**HASHTAGS:**
+#depoimento #resultado #casesdesucesso #calazanslumina #marketingdigital #socialproof #clientes #estetica #negociolocal #transformacaodigital
 
 ---
 
-## Dia 23 — 17/03/2026 (Segunda-feira)
+## SEMANA 5 — 22/03 a 28/03
 
-**Tipo:** Post simples — Foto Pessoal + Missão
-**Imagem:** Foto pessoal da Rhaideline (usar uma das fotos pessoais disponíveis no CDN ou no acervo local)
-**Sugestão de imagem alternativa:** `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1c20c0350fbe2388fb.png`
-**Melhor horário:** 19h
+### POST 23 — 22/03 (Domingo) — DIA MUNDIAL DA AGUA
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebf340118a59f9e009f.png
+- **Tipo:** Data comemorativa | **Cor:** ESCURO azul
 
-**Legenda:**
+**LEGENDA:**
+Dia Mundial da Agua. E uma reflexao pro seu negocio:
 
-Minha missão é clara. ✨
+Assim como a agua precisa fluir, seu negocio precisa de FLUXO.
 
-**Fazer empreendedores serem encontrados pelas pessoas certas, no momento certo.**
+Fluxo de clientes no automatico. Fluxo de leads. Fluxo de vendas.
 
-Isso não é slogan de agência. É o que me levanta todo dia às 6h da manhã.
+Se o fluxo do seu negocio esta travado, pode ser que esteja faltando:
+→ Um site que converte
+→ Automacao que atende 24h
+→ SEO que atrai sem voce precisar correr atras
 
-Eu conheço a realidade de quem tem um negócio pequeno. A luta diária. O investimento que dói no bolso. A insegurança de não saber se o marketing vai funcionar.
+Destrave o fluxo do seu negocio. Me chama no WhatsApp.
 
-Por isso a Calazans Lumina não opera com promessas vazias.
-
-Eu trabalho com sistema:
-🔹 Site profissional que aparece no Google
-🔹 Funil que captura e nutre o lead
-🔹 CRM que organiza e converte
-🔹 IA que responde 24h sem descansar
-🔹 Dashboard que prova cada centavo investido
-
-Não é para qualquer empreendedor. É para quem está pronto para levar o digital a sério.
-
-Para quem entende que presença digital é investimento — e não custo.
-
-Se você chegou até essa linha, você provavelmente é essa pessoa.
-
-Manda uma mensagem. Sem compromisso. Só quero entender o seu negócio e ver se posso te ajudar de verdade.
-
-👉 WhatsApp: **(31) 98294-8067**
-
-**Hashtags:**
-#missao #empreendedorismo #marketingdigital #rhaideline #calazanslumina #proposito #agenciadigital #negociosdigitais #brasil #minasgerais #belohorizonte #marketingmg #presencadigital #transformacaodigital #pequenasempresas #autenticidade #empreendedora #consultoriadigital #crescimento #ia2026 #tendencias2026 #marketingderesultados #visibilidadedigital #identidade #brandingdigital
-
-**SEO Keywords:**
-- marketing digital com propósito
-- agência digital humanizada brasil
-- rhaideline calazans marketing
-- consultoria marketing digital belo horizonte
-- agência digital para empreendedores
+**HASHTAGS:**
+#diamundialdaagua #22demarco #agua #fluxo #marketingdigital #calazanslumina #automacao #negocios #reflexao #sustentabilidade
 
 ---
 
-## Dia 24 — 18/03/2026 (Terça-feira)
+### POST 24 — 24/03 (Terca) — IA +40% PRODUTIVIDADE
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebf3401184f779e00a0.png
+- **Tipo:** Post unico | **Cor:** BRANCO + stock
 
-**Tipo:** Post simples
-**Imagem:** `699b8c1cdf9bdfd8eb24568f.png`
-**URL completa:** `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1cdf9bdfd8eb24568f.png`
-**Melhor horário:** 18h
+**LEGENDA:**
+Empresas que usam IA tem +40% de produtividade. E voce, ja usa IA no seu negocio?
 
-**Legenda:**
+Nao estou falando de robos substituindo pessoas. Estou falando de:
 
-Você investe em tráfego pago e não sabe se está dando retorno? 🎯
+→ ChatGPT criando conteudo em minutos
+→ IA respondendo clientes no WhatsApp 24h
+→ Automacoes que eliminam tarefas repetitivas
+→ Analise de dados que levaria horas feita em segundos
 
-Esse é o problema mais comum que vejo em pequenas empresas que já tentaram Google Ads ou Meta Ads e "não funcionou".
+Quem nao usa IA em 2026 vai ficar pra tras. Simples assim.
 
-Spoiler: não é a plataforma que falha. É a estratégia e a estrutura por trás.
+Quer comecar? Eu tenho cursos a partir de R$20 e servicos sob medida.
 
-Tráfego pago sem funil = torneira aberta sem balde.
-
-Na Calazans Lumina, o processo de tráfego pago funciona assim:
-
-🔍 **Pesquisa de público** — entender exatamente quem vai comprar
-⚙️ **Configuração técnica** — pixel, conversões, audiências
-🔧 **Funil CRM integrado** — lead não se perde
-⚡ **Follow-up automático em 5 minutos** — antes do lead esfriar
-📊 **Dashboard em tempo real** — você vê cada R$ gasto e cada lead gerado
-📈 **Relatório mensal** — decisões baseadas em dados
-
-E o diferencial de 2026: **campanhas otimizadas com IA geram +22% de ROI** em relação às campanhas manuais.
-
-Não existe segredo. Existe processo.
-
-Se você quer tráfego pago que realmente traz resultado — sem desperdício — me chama.
-
-👉 WhatsApp: **(31) 98294-8067**
-👉 **calazanslumina.vercel.app**
-
-**Hashtags:**
-#trafegopago #googleads #metaads #marketingdigital #empreendedorismo #negociosdigitais #anuncios #roi #leads #conversao #calazanslumina #agenciadigital #brasil #minasgerais #belohorizonte #marketingmg #ia2026 #tendencias2026 #marketingderesultados #pequenasempresas #funil #crm #automacao #gohighlevel #facebook ads
-
-**SEO Keywords:**
-- tráfego pago google ads meta ads brasil
-- como anunciar no google pequena empresa
-- agência tráfego pago belo horizonte
-- google ads com resultado real brasil
-- meta ads para pequenas empresas
+**HASHTAGS:**
+#inteligenciaartificial #ia #produtividade #tecnologia #chatgpt #calazanslumina #automacao #marketingdigital #inovacao #futuro
 
 ---
 
-## Dia 25 — 19/03/2026 (Quarta-feira)
+### POST 25 — 25/03 (Quarta) — MISSAO PESSOAL RHAIDELINE
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caec0d0716bc46a43e589.png
+- **Tipo:** Post unico | **Cor:** FOTO Rhaideline
 
-**Tipo:** Post simples
-**Imagem:** `699b8c1c4c8da26f8db5b1aa.png`
-**URL completa:** `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1c4c8da26f8db5b1aa.png`
-**Melhor horário:** 12h
+**LEGENDA:**
+Minha missao: fazer voce ser encontrado pelas pessoas certas, na hora certa.
 
-**Legenda:**
+Eu sou Rhaideline Calazans e ha anos ajudo empreendedores a sairem da invisibilidade digital.
 
-Um CRM bem configurado pode mudar completamente os resultados do seu negócio. 🔥
+Nao importa se voce e:
+→ Esteticista em BH
+→ Advogado em Sao Luis
+→ Loja em Belo Horizonte
+→ Restaurante em qualquer cidade
 
-Não é exagero. São dados de empresas reais:
+Se voce tem um negocio, merece ser encontrado. E eu sei como fazer isso acontecer.
 
-📊 **+300% em conversão de leads** (GoHighLevel.com)
-💰 **+29% em crescimento de vendas**
-⏱ **+30% de aumento de produtividade** da equipe
-📉 **-23% de churn** (perda de clientes)
+SEO + Site + Automacao + IA = voce visivel pro cliente certo.
 
-E o motivo é simples: quando você tem um CRM funcionando, nenhum lead cai no esquecimento. Nenhuma oportunidade é perdida por falta de follow-up. Nenhum cliente some sem motivo.
+Me chama no WhatsApp. Primeira conversa e gratuita.
 
-O CRM é a memória do seu negócio.
-
-Ele lembra de tudo:
-✅ Quando esse lead entrou em contato
-✅ O que ele perguntou
-✅ Que proposta você enviou
-✅ Quando fazer o próximo follow-up
-✅ O valor potencial da negociação
-
-Sem CRM, você vive apagando incêndio. Com CRM, você tem visão estratégica.
-
-Isso é o que implemento com o GoHighLevel — a plataforma de CRM mais completa do mercado, adaptada para a realidade do seu negócio brasileiro.
-
-Salva esse post para não esquecer esses números! 📌
-
-👉 WhatsApp: **(31) 98294-8067**
-Fonte: GoHighLevel.com, SLT Creative 2025
-
-**Hashtags:**
-#crm #gohighlevel #vendas #conversao #leads #marketingdigital #empreendedorismo #negociosdigitais #automacao #pipeline #calazanslumina #agenciadigital #brasil #minasgerais #belohorizonte #marketingmg #pequenasempresas #ia2026 #tendencias2026 #marketingderesultados #gestao #produtividade #followup #clientes #crescimento
-
-**SEO Keywords:**
-- crm gohighlevel resultado conversão
-- como aumentar vendas com crm
-- crm para pequenas empresas brasil
-- gohighlevel configuração brasil
-- benefícios crm pequena empresa
+**HASHTAGS:**
+#calazanslumina #rhaideline #marketingdigital #missao #seo #visibilidade #negociolocal #empreendedorismo #encontrado #transformacaodigital
 
 ---
 
-## Dia 26 — 20/03/2026 (Quinta-feira)
+### POST 26 — 26/03 (Quinta) — GESTAO REDES SOCIAIS
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caec05dfd5069f7898d33.png
+- **Tipo:** Post unico | **Cor:** ESCURO + stock
 
-**Tipo:** Post simples
-**Imagem:** `699b8c1cdf9bdfc100245692.png`
-**URL completa:** `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1cdf9bdfc100245692.png`
-**Melhor horário:** 12h
+**LEGENDA:**
+Voce sabe que precisa postar. Mas nao tem tempo. Nao sabe o que postar. E quando posta, ninguem engaja.
 
-**Legenda:**
+Eu resolvo isso.
 
-Vou desmontar 3 mitos que estão te impedindo de crescer online. 🚫✅
+Meu servico de Gestao de Redes Sociais inclui:
+→ Planejamento editorial mensal
+→ Design profissional dos posts
+→ Analise de metricas e ajustes
+→ Relatorio mensal de resultados
 
-**MITO 1: "IA vai substituir as agências de marketing"**
-✅ VERDADE: O Google penaliza conteúdo gerado por IA sem supervisão humana. IA sem estratégia é conteúdo sem resultado. O diferencial é a combinação de IA + especialista humano.
+Seu Instagram vira uma maquina de atrair clientes — enquanto voce foca no que importa: seu negocio.
 
-**MITO 2: "Só preciso do Instagram para vender"**
-✅ VERDADE: 80% das buscas locais convertem no Google — não no Instagram. Quem não tem site com SEO perde a maioria das oportunidades mais qualificadas.
+Quer saber valores? Me chama no WhatsApp.
 
-**MITO 3: "Marketing digital é caro e só funciona pra empresa grande"**
-✅ VERDADE: Na Calazans Lumina, sites profissionais custam a partir de R$ 500. E o ROI médio de automação de marketing é R$ 5,44 para cada R$ 1 investido.
-
-Os mitos existem porque empreendedores ouviram promessa errada ou tiveram experiência ruim com quem não entregou.
-
-Eu entendo isso. Por isso trabalho com transparência e dados — não com promessas.
-
-Compartilha esse post com aquele amigo que ainda acredita em algum desses mitos! 🤝
-
-👉 WhatsApp: **(31) 98294-8067**
-
-**Hashtags:**
-#mitosverdades #marketingdigital #empreendedorismo #negociosdigitais #ia2026 #seo #google #calazanslumina #agenciadigital #brasil #minasgerais #belohorizonte #marketingmg #pequenasempresas #tendencias2026 #marketingderesultados #ia #automacao #crm #gohighlevel #leads #conversao #educacaodigital #presencadigital #crescimento
-
-**SEO Keywords:**
-- mitos marketing digital brasil
-- ia substituir agências marketing
-- marketing digital vale a pena pequena empresa
-- quanto custa marketing digital brasil
-- agência digital acessível brasil
+**HASHTAGS:**
+#gestaoderedessociais #socialmediamarketing #instagram #marketingdigital #calazanslumina #conteudo #design #planejamento #redessociais #engagement
 
 ---
 
-## Dia 27 — 21/03/2026 (Sexta-feira)
+### POST 27 — 27/03 (Sexta) — PAGESPEED ANTES/DEPOIS
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebf1001a5072ee96b8a.png
+- **Tipo:** Post unico | **Cor:** ESCURO split
 
-**Tipo:** Post simples
-**Imagem:** `699b8c1cf714ee21b0f5e36e.png`
-**URL completa:** `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1cf714ee21b0f5e36e.png`
-**Melhor horário:** 12h
+**LEGENDA:**
+ANTES: PageSpeed 32. DEPOIS: PageSpeed 95+.
 
-**Legenda:**
+Mesmo negocio. Mesmo conteudo. Resultado completamente diferente.
 
-3.600% de ROI. Não é erro de digitação. 📧
+O que muda com um site rapido:
+→ Google te coloca mais alto nos resultados
+→ Visitantes ficam mais tempo
+→ Conversao aumenta ate 70%
+→ Experiencia do usuario melhora drasticamente
 
-Email marketing e SMS ainda são os canais com maior retorno sobre investimento no marketing digital.
+Seu site esta no "antes" ou no "depois"?
 
-Para cada R$ 1 investido em email marketing, o retorno médio é de **R$ 36**. (Fonte: Marketing LTB + Cazoomi 2025)
+Manda o link do seu site no WhatsApp que eu faco uma analise gratuita de velocidade.
 
-E o SMS? Com 98% de taxa de abertura, é o complemento perfeito.
-
-Mas o poder real não está em enviar email. Está em enviar o email certo, para a pessoa certa, no momento certo — de forma automática.
-
-Na Calazans Lumina, a estratégia de email + SMS funciona assim:
-
-📨 **Sequências automáticas** — configuradas uma vez, trabalham para sempre
-🎯 **Campanhas segmentadas** — cada lead recebe o que faz sentido pra ele
-🌱 **Nurturing automatizado** — educando e aquecendo até a compra
-📱 **SMS de 98% de abertura** — nada cai no spam
-📊 **Dashboard de resultados** — você vê cada abertura, clique e conversão
-
-Isso é o que separa negócios que têm lista e convertem, dos que têm lista e ficam no silêncio.
-
-Salva esse post e compartilha com quem acha que "email marketing morreu". 😄
-
-👉 WhatsApp: **(31) 98294-8067**
-
-**Hashtags:**
-#emailmarketing #sms #marketingdigital #empreendedorismo #negociosdigitais #roi #automacao #crm #gohighlevel #leads #conversao #calazanslumina #agenciadigital #brasil #minasgerais #belohorizonte #marketingmg #pequenasempresas #ia2026 #tendencias2026 #marketingderesultados #nurturing #sequencias #whatsappmarketing #automatizacao
-
-**SEO Keywords:**
-- email marketing roi brasil
-- email marketing automatizado para empresas
-- sms marketing pequenas empresas
-- automação email sms brasil
-- como fazer email marketing que converte
+**HASHTAGS:**
+#pagespeed #velocidade #site #webperformance #seo #calazanslumina #antesedepois #resultado #marketingdigital #otimizacao
 
 ---
 
-## Dia 28 — 22/03/2026 (Sábado)
+## SEMANA 6 — 28/03 a 04/04
 
-**Tipo:** Post simples
-**Imagem:** Usar imagem de automação/workflow disponível — sugestão: `699b8c1cdf9bdf424d2456a7.png`
-**URL completa:** `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1cdf9bdf424d2456a7.png`
-**Melhor horário:** 18h
+### POST 28 — 28/03 (Sabado) — CTA VAMOS TRANSFORMAR
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caec0e54a37ca1c2d8bba.png
+- **Tipo:** Post unico | **Cor:** VERMELHO + FOTO Rhaideline
 
-**Legenda:**
+**LEGENDA:**
+Vamos transformar seu negocio?
 
-O que acontece com um lead do seu negócio nos próximos 7 dias — no piloto automático. ⚙️
+Se voce chegou ate aqui, ja sabe que precisa de algo diferente.
 
-Quando um lead entra no sistema da Calazans Lumina, isso é o que acontece sem você precisar fazer nada:
+Eu sou Rhaideline Calazans e ofereco:
+(31) 98294-8067
+@calazanslumina
+calazanslumina.vercel.app
 
-**Minuto 0:** WhatsApp automático de boas-vindas com apresentação e CTA
-**Minuto 5:** Email personalizado com a proposta de valor e link para mais info
-**1 hora depois:** SMS com convite para agendamento direto na sua agenda
-**24 horas depois:** WhatsApp com oferta especial ou case de resultado
-**3 dias depois:** Email de nurturing com conteúdo de valor (educa + aquece)
-**7 dias depois:** Última tentativa — WhatsApp personalizado com urgência real
+Servicos: Sites profissionais, SEO, Google Business, CRM com IA, automacao WhatsApp, gestao de redes sociais.
 
-Se o lead não converteu nesses 7 dias, entra na sequência de longo prazo — que continua aquecendo até ele estar pronto.
+Nao e mais uma agencia. E uma parceira que entende de tecnologia E de negocio.
 
-Tudo no piloto automático. Tudo rastreado. Tudo no dashboard.
+Vamos conversar? Me chama agora.
 
-Enquanto você dorme, o sistema trabalha.
-
-Isso não é ficção científica. É o GoHighLevel configurado do jeito certo.
-
-Compartilha com aquele empreendedor que fica sem dormir respondendo mensagem manual! 😅
-
-👉 WhatsApp: **(31) 98294-8067**
-👉 **calazanslumina.vercel.app**
-
-**Hashtags:**
-#automacao #workflow #gohighlevel #marketingdigital #empreendedorismo #negociosdigitais #crm #leads #conversao #whatsappmarketing #emailmarketing #sms #calazanslumina #agenciadigital #brasil #minasgerais #belohorizonte #marketingmg #pequenasempresas #ia2026 #tendencias2026 #pilotoautomatico #marketingderesultados #automatizacao #funil
-
-**SEO Keywords:**
-- automação workflow marketing leads
-- sequência automática de vendas
-- gohighlevel automação whatsapp email sms
-- como automatizar follow-up vendas
-- sistema automático de vendas brasil
+**HASHTAGS:**
+#calazanslumina #transformacaodigital #marketingdigital #vamosconversar #negocios #empreendedorismo #servicos #rhaideline #parceria #crescimento
 
 ---
 
-## Dia 29 — 23/03/2026 (Domingo)
+### POST 29 — 31/03 (Terca) — 53% ABANDONAM SITES LENTOS
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebf1001a508f0e96b8b.png
+- **Tipo:** Post unico | **Cor:** VERMELHO + ESCURO split
 
-**Tipo:** Post simples
-**Imagem:** Usar imagem de dados/estatísticas — sugestão: `699b8c1c55d8bc4a5262fd7b.png`
-**URL completa:** `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1c55d8bc4a5262fd7b.png`
-**Melhor horário:** 12h
+**LEGENDA:**
+53% dos visitantes abandonam seu site se ele demora mais de 3 segundos pra carregar.
 
-**Legenda:**
+CINQUENTA E TRES POR CENTO.
 
-97% das empresas abertas no Brasil em 2025 são pequenas. 🇧🇷
+Isso significa que mais da metade das pessoas que poderiam ser seus clientes... saem antes mesmo de ver o que voce vende.
 
-Noventa e sete por cento. (Fonte: Agência Brasil 2025)
+Sites lentos perdem vendas. Ponto.
 
-Mas aqui está o número que choca:
+A solucao? Um site de alta performance:
+→ Carrega em menos de 1 segundo
+→ Otimizado pra mobile
+→ SEO tecnico embutido
+→ Design que converte
 
-Apenas **34% dessas empresas** têm presença digital em estágio maduro. (FGV 2025)
+Seu site carrega em quantos segundos? Testa e me conta.
 
-Traduzindo: 63% das pequenas empresas brasileiras ainda estão digitalmente vulneráveis.
-
-Isso significa uma janela de oportunidade que não vai durar para sempre.
-
-Cada mês que passa, mais empresas acordam para o digital. O espaço vai ficando menor para quem chegar depois.
-
-Mas hoje, agora, neste momento em que você lê esse post:
-
-Você pode sair na frente de 2 em cada 3 concorrentes simplesmente tendo uma presença digital estruturada.
-
-Um site que aparece no Google. Um perfil do Google Maps completo. Um sistema que captura e nutre leads. Uma rede social com estratégia.
-
-Isso é tudo.
-
-A oportunidade é agora. 2025 provou. 2026 vai confirmar.
-
-Compartilha esse post com aquele amigo empreendedor que ainda está esperando o "momento ideal". O momento é esse. 🔥
-
-👉 WhatsApp: **(31) 98294-8067**
-👉 **calazanslumina.vercel.app**
-
-**Hashtags:**
-#oportunidade #empreendedorismo #marketingdigital #negociosdigitais #brasil #pme #pequenasempresas #transformacaodigital #presencadigital #calazanslumina #agenciadigital #minasgerais #belohorizonte #marketingmg #crescimento #ia2026 #tendencias2026 #marketingderesultados #agora #digital #economia #fgv #agenciabrasil #mercadodigital #futurodigital
-
-**SEO Keywords:**
-- pequenas empresas digitais brasil 2025
-- oportunidade marketing digital brasil
-- como digitalizar empresa pequena
-- presença digital pequenas empresas
-- maturidade digital pme brasil
+**HASHTAGS:**
+#siteslentosperdemvendas #velocidade #webperformance #ux #seo #calazanslumina #marketingdigital #conversao #dados #pagespeed
 
 ---
 
-## Dia 30 — 24/03/2026 (Segunda-feira)
+### POST 30 — 01/04 (Quarta) — CARROSSEL: 3 DICAS SITE VENDER MAIS
+- **Slide 1 (Cover):** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebfd35cf478d11d36bd.png
+- **Slide 2:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebf373080c3da86ff92.png
+- **Slide 3:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebf1001a51051e96b8e.png
+- **Slide 4:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caec05dfd5069ad898d34.png
+- **Tipo:** Carrossel (4 slides) | **Cor:** BRANCO
 
-**Tipo:** Post simples — CTA Final
-**Imagem:** `699b8c1c20c0350fbe2388fb.png` (foto principal da Rhaideline)
-**URL completa:** `https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b8c1c20c0350fbe2388fb.png`
-**Melhor horário:** 18h
+**LEGENDA:**
+3 dicas que fazem seu site vender mais (e que quase ninguem aplica).
 
-**Legenda:**
+Desliza pra ver cada uma:
 
-30 dias. Muito conteúdo. Uma pergunta. 🎯
+1. VELOCIDADE IMPORTA — Sites que carregam em mais de 3 segundos perdem 53% dos visitantes. Velocidade = dinheiro.
 
-Nesses últimos 30 dias, compartilhei dados, estratégias, bastidores e resultados reais.
+2. CTA VISIVEL E CLARO — O botao de contato precisa estar em TODO lugar. WhatsApp, formulario, telefone. Facilite a vida do cliente.
 
-E agora quero te fazer a pergunta que importa:
+3. SEO TE FAZ SER ACHADO — De nada adianta um site bonito se ninguem encontra. SEO e o que traz visitantes de graca, todos os dias.
 
-**O seu negócio está crescendo da forma que você sonhou quando começou?**
+Salva esse carrossel e aplica HOJE no seu site.
 
-Se a resposta não for um "sim" claro e confiante... é hora de agir.
+Quer ajuda profissional? Link na bio.
 
-A Calazans Lumina está pronta para transformar a presença digital do seu negócio. Com método. Com transparência. Com resultado mensurável.
-
-O que você leva quando trabalha comigo:
-
-🌐 **Site profissional** que aparece no Google e converte visitante em lead
-⚙️ **Funil automatizado** que trabalha enquanto você dorme
-📊 **CRM integrado** que organiza e converte cada lead
-🤖 **IA 24h** respondendo e qualificando
-🎯 **Tráfego pago** com ROI real e dashboard em tempo real
-📱 **Gestão de redes sociais** com estratégia Info-First
-
-Tudo medido. Tudo transparente. Tudo com resultado.
-
-📞 **(31) 98294-8067** — WhatsApp
-🌐 **calazanslumina.vercel.app** — Site
-📸 **@calazanslumina** — Instagram
-
-Me chama agora. Vamos conversar sobre o seu negócio. Sem compromisso. Com intenção real de resultado.
-
-**VAMOS TRANSFORMAR SEU NEGÓCIO DIGITAL?** 💪
-
-**Hashtags:**
-#calazanslumina #marketingdigital #empreendedorismo #negociosdigitais #agenciadigital #brasil #minasgerais #belohorizonte #marketingmg #pequenasempresas #ia2026 #tendencias2026 #marketingderesultados #gohighlevel #automacao #crm #funil #siteprofissional #seo #trafegopago #gestaoredessociais #conversao #leads #crescimento #transformacaodigital
-
-**SEO Keywords:**
-- agência marketing digital resultados brasil
-- calazans lumina marketing digital
-- contratar agência digital belo horizonte
-- marketing digital completo para empresas
-- agência digital site funil crm automação
+**HASHTAGS:**
+#dicasdesite #carrossel #webdesign #seo #cta #velocidade #marketingdigital #calazanslumina #vendasonline #sitequevende #dicasdemarketing
 
 ---
 
-## Resumo do Calendário
+### POST 31 — 02/04 (Quinta) — SEU NEGOCIO ENCONTRADO
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caec7d35cf4abff1d3933.png
+- **Tipo:** Post unico | **Cor:** FOTO Rhaideline (close-up)
 
-| Dia | Data | Tipo | Horário | Tema |
-|-----|------|------|---------|------|
-| 1 | 23/02 Dom | Post | 18h | Apresentação Pessoal |
-| 2 | 24/02 Seg | Post | 12h | WhatsApp 98% |
-| 3 | 25/02 Ter | Carrossel 3 slides | 12h | Google Business Profile |
-| 4 | 26/02 Qua | Post | 12h | Resultado Real +320% |
-| 5 | 27/02 Qui | Post | 12h | Tendência IA 2026 |
-| 6 | 28/02 Sex | Post | 19h | Bastidores / Quote |
-| 7 | 01/03 Sab | Post | 12h | PMEs Brasil 2025 |
-| 8 | 02/03 Dom | Post | 18h | Sites Alta Performance |
-| 9 | 03/03 Seg | Post | 18h | Frase / Branding |
-| 10 | 04/03 Ter | Post | 18h | Funis GHL |
-| 11 | 05/03 Qua | Post | 12h | ROI Automação |
-| 12 | 06/03 Qui | Post | 19h | Foto + Quote Dashboard |
-| 13 | 07/03 Sex | Post | 12h | Alerta Google 2026 |
-| 14 | 08/03 Sab | Carrossel 3 slides | 18h | GoHighLevel |
-| 15 | 09/03 Dom | Post | 18h | Pacotes / Preços |
-| 16 | 10/03 Seg | Post | 12h | E-commerce PMEs 77% |
-| 17 | 11/03 Ter | Post | 12h | Antes x Depois |
-| 18 | 12/03 Qua | Carrossel 3 slides | 12h | 5 Sinais CRM |
-| 19 | 13/03 Qui | Post | 12h | Números Calazans Lumina |
-| 20 | 14/03 Sex | Post | 12h | Instagram 2026 |
-| 21 | 15/03 Sab | Post | 18h | Gestão Redes Sociais |
-| 22 | 16/03 Dom | Post | 12h | Local SEO 80% |
-| 23 | 17/03 Seg | Post | 19h | Foto + Missão |
-| 24 | 18/03 Ter | Post | 18h | Tráfego Pago |
-| 25 | 19/03 Qua | Post | 12h | CRM + Conversão |
-| 26 | 20/03 Qui | Post | 12h | Mitos vs Verdades |
-| 27 | 21/03 Sex | Post | 12h | Email + SMS 3.600% |
-| 28 | 22/03 Sab | Post | 18h | Automação Workflow |
-| 29 | 23/03 Dom | Post | 12h | Oportunidade 2025 |
-| 30 | 24/03 Seg | Post | 18h | CTA Final |
+**LEGENDA:**
+"Seu negocio merece ser encontrado."
+
+Voce sabia que 97% dos consumidores pesquisam online antes de comprar localmente?
+
+Se o seu negocio nao aparece no Google, pra essas pessoas ele simplesmente nao existe.
+
+Eu ajudo empreendedores a:
+→ Aparecer no topo do Google
+→ Ter um site que converte
+→ Automatizar o atendimento
+→ Transformar visitantes em clientes
+
+Seu negocio merece ser visto. E eu sei como fazer isso.
+
+Vamos comecar? Me chama no WhatsApp.
+
+**HASHTAGS:**
+#seunegocio #encontrado #seo #google #calazanslumina #marketingdigital #visibilidade #negociolocal #empreendedorismo #rhaideline
 
 ---
 
-## Notas de Implementação
+### POST 32 — 03/04 (Sexta) — SEXTA-FEIRA SANTA
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebf590acbf6ebca81e1.png
+- **Tipo:** Data comemorativa | **Cor:** ESCURO
 
-### Tipos de Post
-- **25 posts simples** (imagem + legenda)
-- **4 carrosseis** (Dias 3, 14, 18 — e opção carrossel para dia 3)
-- **1 post com foto pessoal CDN alternativo** (Dia 23)
+**LEGENDA:**
+Sexta-feira Santa. Momento de reflexao e renovacao.
 
-### Distribuição de Horários
-- **12h** — Posts com dados, estatísticas, tendências (maior engajamento em horário de almoço)
-- **18h** — Posts de serviços, pacotes e CTA (final do expediente)
-- **19h** — Posts pessoais, bastidores e quotes (horário de lazer)
+Hoje e dia de pausar, refletir e renovar as energias.
 
-### Estratégia de Hashtags
-Cada post usa 24-25 hashtags divididas em:
-- 3-4 hashtags de alto volume (#marketingdigital #empreendedorismo)
-- 4-5 hashtags de médio volume (#gohighlevel #automacao #seo)
-- 2-3 hashtags de nicho (#calazanslumina #agenciadigital)
-- 2 hashtags de tendência (#ia2026 #tendencias2026)
-- 3 hashtags de localização (#brasil #minasgerais #belohorizonte)
+Na vida e nos negocios, as pausas sao necessarias pra voltar com mais clareza, mais forca e mais proposito.
 
-### Contatos e Links
-- WhatsApp: (31) 98294-8067
-- Site: calazanslumina.vercel.app
-- Instagram: @calazanslumina
-- CDN: https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/
+Aproveite esse momento pra:
+→ Reconhecer o caminho percorrido
+→ Agradecer as conquistas
+→ Planejar os proximos passos com intencao
 
-### Observação sobre o Dia 23
-O Dia 23 (17/03) requer uma foto pessoal da Rhaideline. Caso a imagem CDN específica não esteja disponível, utilize a foto do Dia 1 (`699b8c1c20c0350fbe2388fb.png`) como alternativa, ajustando o texto sobreposto na arte.
+Que essa Pascoa traga renovacao pro seu coracao e pro seu negocio.
+
+Paz e boas energias pra voce e sua familia.
+
+**HASHTAGS:**
+#sextafeirasanta #pascoa #reflexao #renovacao #fe #calazanslumina #paz #gratidao #feriado #momento
+
+---
+
+## SEMANA 7 — 05/04 a 11/04
+
+### POST 33 — 05/04 (Domingo) — PASCOA
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebfd35cf44cd41d36b8.png
+- **Tipo:** Data comemorativa | **Cor:** BRANCO
+
+**LEGENDA:**
+Feliz Pascoa!
+
+Que este dia traga renovacao, esperanca e novos comecos — na vida pessoal e nos negocios.
+
+A Pascoa nos lembra que sempre podemos recomeccar. Que depois de toda dificuldade, vem a virada.
+
+Se o seu negocio esta passando por um momento dificil, saiba: a virada esta mais perto do que voce imagina.
+
+Feliz Pascoa da equipe Calazans Lumina!
+
+Marca alguem que voce quer desejar Feliz Pascoa.
+
+**HASHTAGS:**
+#felizpascoa #pascoa2026 #renovacao #esperanca #calazanslumina #familia #celebracao #pascoa #gratidao #novocomeco
+
+---
+
+### POST 34 — 07/04 (Terca) — DIA MUNDIAL DA SAUDE
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebfa0830294d0b7761e.png
+- **Tipo:** Data comemorativa | **Cor:** BRANCO + stock
+
+**LEGENDA:**
+07 de Abril — Dia Mundial da Saude.
+
+E a saude digital do seu negocio, como esta?
+
+Diagnostico rapido:
+
+☐ Site rapido e responsivo
+☐ Google Business otimizado
+☐ Redes sociais ativas
+☐ CRM com follow-up
+☐ Automacao WhatsApp
+
+Marcou menos de 3? A saude digital do seu negocio precisa de atencao.
+
+Me chama no WhatsApp que eu faco um diagnostico completo e gratuito.
+
+Cuide do seu negocio como cuida da sua saude: com prevencao e estrategia.
+
+**HASHTAGS:**
+#diamundialdasaude #7deabril #saudedigital #diagnostico #marketingdigital #calazanslumina #negocios #checklist #estrategia #cuidado
+
+---
+
+### POST 35 — 08/04 (Quarta) — REEL 3 FERRAMENTAS IA
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebf1001a51dfce96b8c.png
+- **Tipo:** Reel (cover) | **Cor:** ESCURO gradiente
+
+**LEGENDA:**
+3 ferramentas de IA que voce PRECISA conhecer em 2026.
+
+Se voce ainda nao usa IA no seu negocio, esta ficando pra tras. Assista esse reel.
+
+As 3 ferramentas:
+ChatGPT — Crie conteudo, responda clientes, monte propostas
+GoHighLevel com IA — CRM + automacao + chatbot integrado
+Canva com IA — Design profissional em minutos
+
+Essas 3 juntas = seu negocio no piloto automatico.
+
+Salva e compartilha com outro empreendedor.
+
+**HASHTAGS:**
+#ferramentasia #inteligenciaartificial #chatgpt #gohighlevel #canva #reels #calazanslumina #tecnologia #produtividade #inovacao
+
+---
+
+### POST 36 — 09/04 (Quinta) — APRENDA DO ZERO ACADEMY
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebf37308051a586ff96.png
+- **Tipo:** Post unico | **Cor:** FOTO Rhaideline
+
+**LEGENDA:**
+Voce nao precisa de faculdade pra dominar marketing digital. Precisa do caminho certo.
+
+Apresento: Calazans Lumina Academy.
+
+Cursos praticos, direto ao ponto, feitos pra quem quer resultado:
+
+- IA & ChatGPT para Negocios
+- SEO do Zero ao Avancado
+- Google Business Completo
+- Funis com GoHighLevel
+- Automacao WhatsApp
+
+Tudo a partir de R$ 20. Com certificado.
+
+Eu aprendi tudo na pratica. E agora ensino pra voce nao perder tempo com teoria que nao funciona.
+
+Link na bio pra acessar os cursos.
+
+**HASHTAGS:**
+#cursos #academy #calazanslumina #marketingdigital #aprendaonline #educacao #chatgpt #seo #cursoonline #conhecimento
+
+---
+
+### POST 37 — 11/04 (Sabado) — DIAGNOSTICO GRATUITO CTA
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebf21455f46427d6d62.png
+- **Tipo:** Post unico | **Cor:** VERMELHO
+
+**LEGENDA:**
+Diagnostico gratuito do seu marketing digital.
+
+Para de adivinhar o que esta errado. Deixa eu te mostrar com dados.
+
+Eu vou analisar:
+→ Velocidade do seu site
+→ SEO e posicionamento no Google
+→ Presenca no Google Business
+→ Automacoes e atendimento
+→ Redes sociais
+
+E te entrego um relatorio completo com as prioridades.
+
+100% gratuito. Sem compromisso. So conhecimento.
+
+Me chama agora: (31) 98294-8067
+
+**HASHTAGS:**
+#diagnostico #gratuito #marketingdigital #analise #calazanslumina #whatsapp #negocios #consultoria #seo #oportunidade
+
+---
+
+## SEMANA 8 — 14/04 a 18/04
+
+### POST 38 — 14/04 (Segunda) — REEL CHATGPT VARIANTE
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caec0d0716b16e343e562.png
+- **Tipo:** Reel (cover) | **Cor:** ESCURO
+
+**LEGENDA:**
+Voce esta usando ChatGPT errado. E eu vou te provar em 1 minuto.
+
+A maioria faz assim: "ChatGPT, me faz uma legenda pro Instagram."
+E reclama que saiu generico.
+
+O segredo esta no PROMPT. Assista o reel e aprenda:
+→ Como dar contexto pro ChatGPT
+→ O framework de prompt que eu uso
+→ 3 exemplos praticos pro seu negocio
+
+Depois de assistir, voce nunca mais vai usar IA do mesmo jeito.
+
+Salva e manda pra um amigo empreendedor.
+
+**HASHTAGS:**
+#chatgpt #prompt #inteligenciaartificial #reels #dicaspraticas #calazanslumina #marketingdigital #ia #produtividade #hack
+
+---
+
+### POST 39 — 18/04 (Sexta) — DIA DO LIVRO INFANTIL / MONTEIRO LOBATO
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebfe54a3774132d8b99.png
+- **Tipo:** Data comemorativa | **Cor:** ESCURO + stock
+
+**LEGENDA:**
+18 de Abril — Dia do Livro Infantil. Homenagem a Monteiro Lobato.
+
+"O melhor investimento e conhecimento."
+
+Quem aprende, cresce. Quem cresce, lidera.
+
+Monteiro Lobato nos ensinou que a imaginacao nao tem limites. No marketing digital e igual: quem estuda, inova. Quem inova, se destaca.
+
+Invista em conhecimento:
+→ Cursos a partir de R$ 20
+→ Conteudo pratico e direto
+→ Resultado real no seu negocio
+
+Qual foi o ultimo livro que voce leu? Comenta aqui!
+
+**HASHTAGS:**
+#diadolivroinfantil #monteirolobato #18deabril #conhecimento #educacao #calazanslumina #livros #aprendizado #leitura #investimento
+
+---
+
+## SEMANA 9 — 19/04 a 23/04
+
+### POST 40 — 19/04 (Sabado) — DIA DOS POVOS INDIGENAS
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebf340118d8809e009b.png
+- **Tipo:** Data comemorativa | **Cor:** ESCURO
+
+**LEGENDA:**
+19 de Abril — Dia dos Povos Indigenas.
+
+Raizes fortes, negocios fortes.
+
+Os povos indigenas nos ensinam sobre:
+→ Resiliencia — persistir mesmo quando o cenario e dificil
+→ Comunidade — crescer junto e mais poderoso
+→ Conhecimento ancestral — respeitar a base pra construir o novo
+
+No empreendedorismo, quem conhece suas raizes constroi com mais solidez.
+
+Respeito e admiracao aos povos originarios do Brasil.
+
+**HASHTAGS:**
+#diadospovosindigenas #19deabril #raizes #cultura #respeito #calazanslumina #brasil #diversidade #historia #consciencia
+
+---
+
+### POST 41 — 21/04 (Segunda) — TIRADENTES
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebf21455f64bd7d6d59.png
+- **Tipo:** Data comemorativa | **Cor:** ESCURO
+
+**LEGENDA:**
+21 de Abril — Dia de Tiradentes.
+
+Liberdade para empreender.
+
+Tiradentes lutou pela liberdade. Hoje, a nossa luta e por liberdade financeira, profissional e digital.
+
+Empreender e um ato de coragem. E cada empreendedor brasileiro carrega um pouco desse espirito:
+→ Coragem de comecar
+→ Persistencia quando tudo parece dificil
+→ Visao de um futuro melhor
+
+Que a gente honre essa liberdade construindo negocios que fazem diferenca.
+
+Feliz Dia de Tiradentes!
+
+**HASHTAGS:**
+#tiradentes #21deabril #liberdade #empreendedorismo #feriado #calazanslumina #brasil #historia #coragem #independencia
+
+---
+
+### POST 42 — 23/04 (Quarta) — DIA DO LIVRO + SAO JORGE
+- **Imagem:** https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699caebfa083023661b7761f.png
+- **Tipo:** Data comemorativa | **Cor:** BRANCO
+
+**LEGENDA:**
+23 de Abril — Dia Mundial do Livro e Dia de Sao Jorge.
+
+Conhecimento e poder. Fe e forca.
+
+Duas celebracoes no mesmo dia que nos lembram: pra vencer qualquer batalha, voce precisa de estrategia E de coragem.
+
+No marketing digital:
+→ Conhecimento = saber as ferramentas certas
+→ Coragem = aplicar mesmo sem garantia
+→ Consistencia = o que separa quem cresce de quem desiste
+
+Que Sao Jorge proteja sua jornada empreendedora. E que o conhecimento ilumine seu caminho.
+
+Salva esse post pra lembrar sempre.
+
+**HASHTAGS:**
+#diadolivro #saoJorge #23deabril #conhecimento #fe #calazanslumina #forca #empreendedorismo #sabedoria #guerreiro
+
+---
+
+## RESUMO DO GRID 3x3 (Visualizacao do Feed)
+
+O Instagram mostra 3 posts por linha. De baixo para cima:
+
+| Linha | Esquerda | Centro | Direita | Cores |
+|-------|----------|--------|---------|-------|
+| 14 | POST 40 (ESC) | POST 41 (ESC) | POST 42 (BRA) | D-D-W |
+| 13 | POST 37 (VERM) | POST 38 (ESC) | POST 39 (ESC) | R-D-D |
+| 12 | POST 34 (BRA) | POST 35 (ESC) | POST 36 (FOTO) | W-D-P |
+| 11 | POST 31 (FOTO) | POST 32 (ESC) | POST 33 (BRA) | P-D-W |
+| 10 | POST 28 (VERM) | POST 29 (V+E) | POST 30 (BRA) | R-R-W |
+| 9 | POST 25 (FOTO) | POST 26 (ESC) | POST 27 (ESC) | P-D-D |
+| 8 | POST 22 (ESC) | POST 23 (ESC) | POST 24 (BRA) | D-D-W |
+| 7 | POST 19 (ESC) | POST 20 (BRA) | POST 21 (BRA) | D-W-W |
+| 6 | POST 16 (ESC) | POST 17 (BRA) | POST 18 (VERM) | D-W-R |
+| 5 | POST 13 (BRA) | POST 14 (ESC) | POST 15 (BRA) | W-D-W |
+| 4 | POST 10 (ESC) | POST 11 (BRA) | POST 12 (FOTO) | D-W-P |
+| 3 | POST 7 (BRA) | POST 8 (ESC) | POST 9 (BRA) | W-D-W |
+| 2 | POST 4 (BRA) | POST 5 (ESC) | POST 6 (BRA) | W-D-W |
+| 1 | POST 1 (BRA) | POST 2 (ESC) | POST 3 (ESC) | W-D-D |
+
+**Legenda:** BRA=Branco | ESC=Escuro | VERM=Vermelho | FOTO=Foto Rhaideline | P=Photo
+
+---
+
+## TABELA RESUMO PARA GHL
+
+| # | Data | Dia | Tipo | Imagens | Tema |
+|---|------|-----|------|---------|------|
+| 1 | 24/02 | Seg | Post | 1 | Pos-Carnaval checklist |
+| 2 | 24/02 | Seg | Post | 1 | Pos-Carnaval foco |
+| 3 | 25/02 | Ter | Post | 1 | Frase motivacional |
+| 4 | 26/02 | Qua | Post | 1 | CRM + IA + WhatsApp |
+| 5 | 27/02 | Qui | Post | 1 | Comece imperfeito |
+| 6 | 28/02 | Sex | Post | 1 | Checklist Marco |
+| 7 | 01/03 | Sab | Post | 1 | 98% WhatsApp |
+| 8 | 03/03 | Seg | Post | 1 | 5 erros |
+| 9 | 04/03 | Ter | Post | 1 | Sites Alta Performance |
+| 10 | 05/03 | Qua | Post | 1 | Frase Rhaideline |
+| 11 | 06/03 | Qui | Post | 1 | Cursos R$20 |
+| 12 | 08/03 | Dom | DATA | 1 | Dia da Mulher |
+| 13 | 10/03 | Seg | Post | 1 | 80% buscas locais |
+| 14 | 11/03 | Ter | Post | 1 | Segredo Google SEO |
+| 15 | 12/03 | Qua | Post | 1 | Automacao 5 seg |
+| 16 | 13/03 | Qui | Reel | 1 | ChatGPT |
+| 17 | 14/03 | Sex | Post | 1 | +320% leads |
+| 18 | 15/03 | Dom | DATA | 1 | Dia do Consumidor |
+| 19 | 17/03 | Ter | Post | 1 | Funis GHL |
+| 20 | 18/03 | Qua | Post | 1 | Google Business 7x |
+| 21 | 20/03 | Sex | DATA | 1 | Inicio Outono |
+| 22 | 21/03 | Sab | Post | 1 | Depoimento Maria S. |
+| 23 | 22/03 | Dom | DATA | 1 | Dia da Agua |
+| 24 | 24/03 | Ter | Post | 1 | IA +40% |
+| 25 | 25/03 | Qua | Post | 1 | Missao Rhaideline |
+| 26 | 26/03 | Qui | Post | 1 | Gestao Redes Sociais |
+| 27 | 27/03 | Sex | Post | 1 | PageSpeed antes/depois |
+| 28 | 28/03 | Sab | Post | 1 | CTA Transformar |
+| 29 | 31/03 | Ter | Post | 1 | 53% abandonam |
+| 30 | 01/04 | Qua | Carrossel | 4 | 3 Dicas site |
+| 31 | 02/04 | Qui | Post | 1 | Negocio encontrado |
+| 32 | 03/04 | Sex | DATA | 1 | Sexta-feira Santa |
+| 33 | 05/04 | Dom | DATA | 1 | Pascoa |
+| 34 | 07/04 | Ter | DATA | 1 | Dia da Saude |
+| 35 | 08/04 | Qua | Reel | 1 | 3 ferramentas IA |
+| 36 | 09/04 | Qui | Post | 1 | Academy cursos |
+| 37 | 11/04 | Sab | Post | 1 | Diagnostico gratuito |
+| 38 | 14/04 | Seg | Reel | 1 | ChatGPT prompts |
+| 39 | 18/04 | Sex | DATA | 1 | Livro Infantil |
+| 40 | 19/04 | Sab | DATA | 1 | Povos Indigenas |
+| 41 | 21/04 | Seg | DATA | 1 | Tiradentes |
+| 42 | 23/04 | Qua | DATA | 1 | Livro + Sao Jorge |
+
+**TOTAIS: 42 publicacoes | 45 imagens | 9 semanas | 10 datas comemorativas | 3 reels | 1 carrossel**

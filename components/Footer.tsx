@@ -74,7 +74,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-white/40 text-sm">&copy; {new Date().getFullYear()} Calazans Lumina. Todos os direitos reservados.</p>
-          <p className="text-white/30 text-xs text-center md:text-right max-w-lg">Agência de marketing digital para brasileiros nos EUA e Brasil — Sites, Funis GHL, CRM com IA, Tráfego Pago, Redes Sociais e Google Business Profile.</p>
+          <p className="text-white/30 text-xs text-center md:text-right max-w-lg">Agência de marketing digital para brasileiros nos EUA e Brasil — Sites, Funis GHL, CRM com IA, Redes Sociais e Google Business Profile.</p>
         </div>
       </div>
     </footer>
