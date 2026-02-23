@@ -19,8 +19,8 @@
 
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 11pt;
-    line-height: 1.7;
+    font-size: 12.5pt;
+    line-height: 1.85;
     color: var(--black);
     background: var(--white);
   }
@@ -467,6 +467,135 @@
       border-radius: 2px;
     }
   }
+
+  /* ===== SIMULACAO CHATGPT ===== */
+  .chat-sim { background:#343541; border-radius:12px; overflow:hidden; margin:20px 0; font-family:'Segoe UI',sans-serif; box-shadow:0 4px 20px rgba(0,0,0,.15); }
+  .chat-sim-header { background:#202123; padding:10px 16px; display:flex; align-items:center; gap:8px; font-size:9pt; color:#fff; }
+  .chat-sim-header .dot { width:10px; height:10px; border-radius:50%; }
+  .chat-sim-header .dot-r { background:#ff5f57; }
+  .chat-sim-header .dot-y { background:#febc2e; }
+  .chat-sim-header .dot-g { background:#28c840; }
+  .chat-sim-header .model-name { margin-left:auto; color:#888; font-size:8pt; }
+  .chat-msg { padding:18px 24px; font-size:11pt; line-height:1.7; }
+  .chat-msg.user { background:#343541; color:#ececec; border-bottom:1px solid #444654; }
+  .chat-msg.user::before { content:"👤 Voce"; display:block; font-size:8pt; font-weight:700; color:#FF0005; margin-bottom:6px; letter-spacing:1px; text-transform:uppercase; }
+  .chat-msg.ai { background:#444654; color:#d1d5db; border-bottom:1px solid #343541; }
+  .chat-msg.ai::before { content:"🤖 ChatGPT"; display:block; font-size:8pt; font-weight:700; color:#10a37f; margin-bottom:6px; letter-spacing:1px; text-transform:uppercase; }
+
+  /* ===== DIAGRAMAS ===== */
+  .diagram { background:#fafafa; border:1px solid #e0e0e0; border-radius:10px; padding:24px; margin:20px 0; text-align:center; }
+  .diagram-title { font-size:12pt; font-weight:700; color:var(--black); margin-bottom:16px; }
+  .diagram-flow { display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap; margin:16px 0; }
+  .diagram-box { background:var(--black); color:#fff; padding:12px 20px; border-radius:8px; font-size:10pt; font-weight:600; min-width:100px; text-align:center; }
+  .diagram-box.red { background:var(--red); }
+  .diagram-box.white { background:#fff; color:var(--black); border:2px solid var(--red); }
+  .diagram-box.light { background:var(--light-gray); color:var(--black); border:1px solid #ddd; }
+  .diagram-arrow { color:var(--red); font-size:18pt; font-weight:700; }
+
+  /* ===== INFOGRAFICOS ===== */
+  .infographic { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:20px 0; }
+  .infographic.cols-2 { grid-template-columns:repeat(2,1fr); }
+  .infographic.cols-4 { grid-template-columns:repeat(4,1fr); }
+  .info-card { background:#fafafa; border:1px solid #eee; border-radius:10px; padding:20px 16px; text-align:center; }
+  .info-card .info-icon { font-size:28pt; margin-bottom:6px; }
+  .info-card .info-number { font-size:22pt; font-weight:800; color:var(--red); line-height:1; }
+  .info-card .info-label { font-size:9pt; color:#888; margin-top:4px; }
+  .info-card.dark { background:var(--black); border-color:#333; }
+  .info-card.dark .info-number { color:var(--red); }
+  .info-card.dark .info-label { color:#aaa; }
+
+  /* ===== TABELA COMPARATIVA ===== */
+  .compare-table { width:100%; border-collapse:collapse; margin:16px 0; font-size:10pt; border-radius:10px; overflow:hidden; border:1px solid #e0e0e0; }
+  .compare-table th { background:var(--black); color:#fff; padding:12px 14px; text-align:left; font-weight:700; font-size:9.5pt; }
+  .compare-table th.highlight { background:var(--red); }
+  .compare-table td { padding:10px 14px; border-bottom:1px solid #eee; color:var(--text-gray); }
+  .compare-table tr:nth-child(even) td { background:#fafafa; }
+  .compare-table .check { color:var(--red); font-weight:700; }
+  .compare-table .cross { color:#ccc; }
+
+  /* ===== TIMELINE ===== */
+  .timeline { position:relative; margin:20px 0; padding-left:30px; }
+  .timeline::before { content:""; position:absolute; left:8px; top:0; bottom:0; width:3px; background:linear-gradient(to bottom,var(--red),var(--black)); border-radius:2px; }
+  .timeline-item { position:relative; margin-bottom:16px; padding-left:16px; }
+  .timeline-item::before { content:""; position:absolute; left:-26px; top:6px; width:14px; height:14px; border-radius:50%; background:var(--red); border:3px solid #fff; box-shadow:0 0 0 2px var(--red); }
+  .timeline-year { font-size:11pt; font-weight:800; color:var(--red); }
+  .timeline-text { font-size:10pt; color:var(--text-gray); margin-top:2px; }
+
+  /* ===== SCREENSHOT ===== */
+  .screenshot { background:#fff; border:1px solid #e0e0e0; border-radius:10px; overflow:hidden; margin:20px 0; box-shadow:0 2px 12px rgba(0,0,0,.08); }
+  .screenshot-bar { background:#f0f0f0; padding:8px 14px; display:flex; align-items:center; gap:6px; border-bottom:1px solid #e0e0e0; }
+  .screenshot-bar .url-bar { background:#fff; border:1px solid #ddd; border-radius:4px; padding:3px 10px; font-size:8pt; color:#888; flex:1; margin-left:6px; }
+  .screenshot-body { padding:20px; font-size:10pt; color:var(--text-gray); }
+
+  /* ===== PASSOS DE PROCESSO ===== */
+  .process-steps { display:flex; gap:4px; margin:20px 0; align-items:stretch; }
+  .process-step { flex:1; background:#fafafa; border:1px solid #eee; border-radius:8px; padding:16px 10px; text-align:center; }
+  .process-step .step-num { display:inline-block; background:var(--red); color:#fff; width:28px; height:28px; line-height:28px; border-radius:50%; font-size:9pt; font-weight:700; margin-bottom:6px; }
+  .process-step .step-title { font-size:10pt; font-weight:700; color:var(--black); margin-bottom:4px; }
+  .process-step .step-desc { font-size:8.5pt; color:#888; }
+  .process-arrow { display:flex; align-items:center; color:var(--red); font-size:16pt; font-weight:700; }
+
+  /* ===== CITACAO VISUAL ===== */
+  .visual-quote { background:linear-gradient(135deg,var(--black),#1a1a1a); color:#fff; padding:28px 32px; border-radius:10px; margin:20px 0; text-align:center; position:relative; }
+  .visual-quote .quote-mark { font-size:48pt; color:var(--red); opacity:.3; line-height:.5; }
+  .visual-quote .quote-text { font-size:14pt; font-weight:600; line-height:1.5; margin:10px 0; }
+  .visual-quote .quote-author { font-size:9pt; color:#888; margin-top:12px; }
+
+  /* ===== GRID DE RECURSOS ===== */
+  .feature-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin:16px 0; }
+  .feature-card { display:flex; align-items:flex-start; gap:10px; background:#fafafa; border:1px solid #eee; border-radius:8px; padding:14px; }
+  .feature-card .feat-icon { font-size:20pt; flex-shrink:0; }
+  .feature-card .feat-title { font-size:10pt; font-weight:700; color:var(--black); margin-bottom:2px; }
+  .feature-card .feat-desc { font-size:9pt; color:#888; }
+
+  /* ===== CAMPO DE PREENCHIMENTO ===== */
+  .fill-section { background:#fff; border:2px dashed var(--red); border-radius:10px; padding:22px 26px; margin:20px 0; }
+  .fill-section h3 { font-size:13pt; color:var(--red); margin-bottom:4px; }
+  .fill-section .fill-subtitle { font-size:10pt; color:#888; margin-bottom:16px; }
+  .fill-item { margin-bottom:18px; }
+  .fill-item label { display:block; font-size:11pt; font-weight:600; color:var(--black); margin-bottom:6px; }
+  .fill-line { display:block; width:100%; border:none; border-bottom:2px solid #ddd; padding:8px 4px; font-size:12pt; font-family:inherit; color:var(--black); background:transparent; margin-top:4px; }
+  .fill-line:focus { outline:none; border-bottom-color:var(--red); }
+  .fill-line-long { min-height:60px; border:2px solid #eee; border-radius:8px; padding:12px; width:100%; font-size:11pt; font-family:inherit; resize:vertical; }
+  .fill-options { display:flex; gap:10px; flex-wrap:wrap; margin-top:8px; }
+  .fill-option { background:#f5f5f5; border:2px solid #eee; border-radius:8px; padding:10px 18px; font-size:10pt; cursor:pointer; }
+  .fill-option:hover { border-color:var(--red); background:#fff5f5; }
+
+  /* ===== TESTE DE COMPREENSAO ===== */
+  .quiz { background:linear-gradient(135deg,#fff5f5,#fff); border:2px solid var(--red); border-radius:12px; padding:24px 28px; margin:24px 0; }
+  .quiz h3 { font-size:14pt; color:var(--red); margin-bottom:4px; display:flex; align-items:center; gap:8px; }
+  .quiz .quiz-subtitle { font-size:10pt; color:#888; margin-bottom:18px; }
+  .quiz-question { margin-bottom:18px; padding-bottom:18px; border-bottom:1px solid #f0e0e0; }
+  .quiz-question:last-child { border-bottom:none; margin-bottom:0; padding-bottom:0; }
+  .quiz-q { font-size:11pt; font-weight:600; color:var(--black); margin-bottom:8px; }
+  .quiz-q .q-num { display:inline-block; background:var(--red); color:#fff; width:26px; height:26px; line-height:26px; text-align:center; border-radius:50%; font-size:9pt; margin-right:8px; }
+  .quiz-options { margin-left:34px; }
+  .quiz-opt { display:flex; align-items:center; gap:8px; margin-bottom:6px; font-size:10.5pt; color:var(--text-gray); }
+  .quiz-opt input[type="radio"] { accent-color:var(--red); width:16px; height:16px; }
+  .quiz-answer { margin-left:34px; margin-top:8px; background:#f0fff0; border-left:3px solid #28a745; padding:8px 14px; border-radius:0 6px 6px 0; font-size:10pt; color:#333; }
+  .quiz-tf { display:flex; gap:12px; margin-left:34px; margin-top:4px; }
+  .quiz-tf label { display:flex; align-items:center; gap:6px; background:#f5f5f5; border:2px solid #eee; border-radius:8px; padding:8px 20px; font-size:10.5pt; cursor:pointer; }
+  .quiz-tf label:hover { border-color:var(--red); }
+  .quiz-fill { margin-left:34px; margin-top:4px; }
+
+  /* ===== WHATSAPP SIM ===== */
+  .whatsapp-sim { background:#e5ddd5; border-radius:10px; padding:20px; max-width:420px; margin:16px auto; }
+  .wa-msg { padding:10px 14px; border-radius:8px; margin-bottom:8px; max-width:85%; font-size:10pt; line-height:1.5; }
+  .wa-msg.sent { background:#dcf8c6; margin-left:auto; }
+  .wa-msg.recv { background:#fff; }
+  .wa-time { text-align:right; font-size:7pt; color:#888; margin-top:4px; }
+
+  /* ===== PRINT PARA NOVOS ELEMENTOS ===== */
+  @media print {
+    .chat-sim, .diagram, .infographic, .compare-table, .timeline, .screenshot,
+    .process-steps, .visual-quote, .feature-grid, .info-card, .info-card.dark,
+    .fill-section, .quiz, .whatsapp-sim, .wa-msg.sent, .wa-msg.recv {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .fill-line { border-bottom:2px solid #999; }
+    .fill-line-long { border:2px solid #999; }
+  }
 </style>
 </head>
 <body>
@@ -615,6 +744,13 @@
       Nao pense na IA como substituta do seu trabalho. Pense nela como uma assistente incansavel que trabalha 24h, nao reclama e aprende rapido. Seu papel e direcionar essa assistente com boas instrucoes — e e exatamente isso que voce vai aprender neste curso.
     </div>
 
+    <div class="infographic cols-4">
+      <div class="info-card"><div class="info-icon">📈</div><div class="info-number">+20%</div><div class="info-label">Produtividade com IA (McKinsey)</div></div>
+      <div class="info-card"><div class="info-icon">🤖</div><div class="info-number">200M</div><div class="info-label">Usuarios ChatGPT por semana</div></div>
+      <div class="info-card"><div class="info-icon">💰</div><div class="info-number">R$5,44</div><div class="info-label">Retorno por cada R$1 em automacao</div></div>
+      <div class="info-card"><div class="info-icon">⚡</div><div class="info-number">88%</div><div class="info-label">Profissionais ja usam IA no dia a dia</div></div>
+    </div>
+
     <p>Ao longo deste modulo, vamos construir uma base solida. Voce vai entender de onde a IA veio, quais sao os tipos principais, como funciona por dentro e o que esperar. Com essa fundacao, tudo o que vier depois — prompts, automacoes, marketing — vai fazer muito mais sentido.</p>
   </div>
 
@@ -645,6 +781,19 @@
     </div>
 
     <p><strong>2023-2025 — A era da IA generativa.</strong> Hoje vivemos a era mais acelerada da IA. Novos modelos sao lancados quase toda semana. GPT-4, GPT-4o, Claude, Gemini, Llama — a competicao esta intensa e os resultados estao cada vez melhores. E voce esta aqui, neste curso, no momento perfeito para dominar essa tecnologia.</p>
+
+    <div class="diagram">
+      <div class="diagram-title">📅 Linha do Tempo da Inteligencia Artificial</div>
+      <div class="timeline">
+        <div class="timeline-item"><div class="timeline-year">1950</div><div class="timeline-text">Alan Turing pergunta: "As maquinas podem pensar?"</div></div>
+        <div class="timeline-item"><div class="timeline-year">1956</div><div class="timeline-text">Nasce o termo "Inteligencia Artificial" (Conferencia de Dartmouth)</div></div>
+        <div class="timeline-item"><div class="timeline-year">1997</div><div class="timeline-text">Computador Deep Blue (IBM) vence campeao mundial de xadrez</div></div>
+        <div class="timeline-item"><div class="timeline-year">2012</div><div class="timeline-text">Revolucao do Deep Learning — maquinas aprendem a ver e ouvir</div></div>
+        <div class="timeline-item"><div class="timeline-year">2017</div><div class="timeline-text">Google cria o Transformer — a base do ChatGPT</div></div>
+        <div class="timeline-item"><div class="timeline-year">2022</div><div class="timeline-text">ChatGPT e lancado — 100 milhoes de usuarios em 2 meses!</div></div>
+        <div class="timeline-item"><div class="timeline-year">2025</div><div class="timeline-text">IA generativa esta em tudo: textos, imagens, voz, video</div></div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -687,6 +836,23 @@
       IA (conceito geral) > Machine Learning (aprende com dados) > Deep Learning (redes neurais profundas) > NLP (entende linguagem) > IA Generativa (cria conteudo novo). Cada um esta dentro do anterior, como bonecas russas.
     </div>
 
+    <div class="diagram">
+      <div class="diagram-title">🪆 Hierarquia dos Tipos de IA (como bonecas russas)</div>
+      <div style="padding:20px;border:3px solid var(--black);border-radius:16px;text-align:center;">
+        <div style="font-size:11pt;font-weight:700;color:var(--black);margin-bottom:8px;">🧠 INTELIGENCIA ARTIFICIAL</div>
+        <div style="padding:16px;border:2px solid var(--red);border-radius:12px;margin:0 20px;">
+          <div style="font-size:10pt;font-weight:700;color:var(--red);margin-bottom:8px;">📊 MACHINE LEARNING (aprende com exemplos)</div>
+          <div style="padding:12px;border:2px solid #666;border-radius:10px;margin:0 20px;">
+            <div style="font-size:10pt;font-weight:700;color:#666;margin-bottom:8px;">🔬 DEEP LEARNING (redes como o cerebro)</div>
+            <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">
+              <div style="background:var(--red);color:#fff;padding:8px 16px;border-radius:6px;font-size:9pt;font-weight:700;">💬 NLP (entende o que voce fala)</div>
+              <div style="background:var(--black);color:#fff;padding:8px 16px;border-radius:6px;font-size:9pt;font-weight:700;">✨ IA Generativa (cria coisas novas)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <p><strong>Por que isso importa para voce?</strong> Porque quando voce entende que o ChatGPT usa NLP e Deep Learning, voce comeca a entender por que ele e otimo em algumas coisas (gerar textos, resumir, traduzir) e limitado em outras (calculos precisos, dados em tempo real). Esse entendimento vai te ajudar a usar a ferramenta de forma muito mais inteligente.</p>
   </div>
 
@@ -717,6 +883,21 @@
     </div>
 
     <p>Entender isso e fundamental porque elimina duas ilusoes perigosas: (1) achar que a IA sabe tudo e nunca erra, e (2) achar que a IA e inutil porque "so repete coisas". A verdade esta no meio: ela e uma ferramenta extraordinaria <strong>quando voce sabe usa-la</strong>.</p>
+
+    <div class="diagram">
+      <div class="diagram-title">🔄 Como um Modelo de IA e Treinado (passo a passo simples)</div>
+      <div class="process-steps">
+        <div class="process-step"><div class="step-num">1</div><div class="step-title">Dados</div><div class="step-desc">Le bilhoes de textos da internet</div></div>
+        <div class="process-arrow">→</div>
+        <div class="process-step"><div class="step-num">2</div><div class="step-title">Aprende</div><div class="step-desc">Descobre padroes de linguagem</div></div>
+        <div class="process-arrow">→</div>
+        <div class="process-step"><div class="step-num">3</div><div class="step-title">Ajuste</div><div class="step-desc">Humanos avaliam as respostas</div></div>
+        <div class="process-arrow">→</div>
+        <div class="process-step"><div class="step-num">4</div><div class="step-title">Melhora</div><div class="step-desc">Feedback real refina tudo</div></div>
+        <div class="process-arrow">→</div>
+        <div class="process-step"><div class="step-num">5</div><div class="step-title">Pronto!</div><div class="step-desc">ChatGPT disponivel para voce</div></div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -761,6 +942,17 @@
       Use o ChatGPT como <strong>primeiro rascunho</strong>, nunca como versao final. Ele te da 80% do trabalho feito em 5% do tempo. Seus 20% restantes — revisao, personalizacao, verificacao — sao o que fazem a diferenca entre conteudo generico e conteudo excelente.
     </div>
 
+    <div class="feature-grid">
+      <div class="feature-card"><div class="feat-icon">✅</div><div><div class="feat-title">Escrever Textos</div><div class="feat-desc">E-mails, legendas, artigos — qualquer texto</div></div></div>
+      <div class="feature-card"><div class="feat-icon">✅</div><div><div class="feat-title">Resumir Conteudo</div><div class="feat-desc">Textos longos viram 3 paragrafos</div></div></div>
+      <div class="feature-card"><div class="feat-icon">✅</div><div><div class="feat-title">Traduzir Idiomas</div><div class="feat-desc">Funciona com dezenas de linguas</div></div></div>
+      <div class="feature-card"><div class="feat-icon">✅</div><div><div class="feat-title">Dar Ideias</div><div class="feat-desc">Nomes, slogans, estrategias de marketing</div></div></div>
+      <div class="feature-card"><div class="feat-icon">❌</div><div><div class="feat-title">Noticias de Hoje</div><div class="feat-desc">Nao sabe o que aconteceu ontem</div></div></div>
+      <div class="feature-card"><div class="feat-icon">❌</div><div><div class="feat-title">Contas de Matematica</div><div class="feat-desc">Pode errar calculos — use calculadora</div></div></div>
+      <div class="feature-card"><div class="feat-icon">❌</div><div><div class="feat-title">Fatos 100% Corretos</div><div class="feat-desc">Pode "inventar" dados — sempre confira</div></div></div>
+      <div class="feature-card"><div class="feat-icon">❌</div><div><div class="feat-title">Substituir Especialistas</div><div class="feat-desc">Ajuda, mas nao substitui medico, advogado</div></div></div>
+    </div>
+
     <p>Agora que voce tem essa base solida, esta pronto para colocar a mao na massa. No proximo modulo, vamos configurar sua conta no ChatGPT e comecar a usa-lo na pratica.</p>
   </div>
 
@@ -774,6 +966,77 @@
       <li>Acesse o ChatGPT (se ja tiver conta) e pergunte: "Explique inteligencia artificial como se eu tivesse 10 anos." Compare a resposta com o que voce aprendeu neste modulo.</li>
       <li>Reflita: qual e a limitacao do ChatGPT que mais te surpreendeu? Como isso muda a forma como voce pretende usa-lo?</li>
     </ol>
+  </div>
+
+  <!-- QUIZ MODULO 1 -->
+  <div class="quiz">
+    <h3>📝 Voce Entendeu? — Teste do Modulo 1</h3>
+    <div class="quiz-subtitle">Marque a resposta correta. Nao precisa ter pressa — o importante e entender.</div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">1</span> O que e Inteligencia Artificial, de forma simples?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt"><input type="radio" name="q1m1"> Um robo que pensa igual a um ser humano</div>
+        <div class="quiz-opt"><input type="radio" name="q1m1"> Uma maquina que faz tarefas que normalmente precisam de inteligencia humana</div>
+        <div class="quiz-opt"><input type="radio" name="q1m1"> Um programa que so funciona com internet</div>
+      </div>
+      <div class="quiz-answer">✅ <strong>Resposta:</strong> Uma maquina que faz tarefas que normalmente precisam de inteligencia humana — como entender textos, reconhecer imagens e tomar decisoes.</div>
+    </div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">2</span> Verdadeiro ou Falso: O ChatGPT sabe tudo e nunca erra.</div>
+      <div class="quiz-tf">
+        <label><input type="radio" name="q2m1"> Verdadeiro</label>
+        <label><input type="radio" name="q2m1"> Falso</label>
+      </div>
+      <div class="quiz-answer">✅ <strong>Falso!</strong> O ChatGPT pode errar e ate "inventar" informacoes. Sempre confira dados importantes.</div>
+    </div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">3</span> Em que ano o ChatGPT foi lancado?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt"><input type="radio" name="q3m1"> 2018</div>
+        <div class="quiz-opt"><input type="radio" name="q3m1"> 2020</div>
+        <div class="quiz-opt"><input type="radio" name="q3m1"> 2022</div>
+      </div>
+      <div class="quiz-answer">✅ <strong>Resposta:</strong> 2022 — e em apenas 2 meses ja tinha 100 milhoes de usuarios!</div>
+    </div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">4</span> O que significa LLM?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt"><input type="radio" name="q4m1"> Linguagem Longa de Maquina</div>
+        <div class="quiz-opt"><input type="radio" name="q4m1"> Large Language Model (Modelo de Linguagem Grande)</div>
+        <div class="quiz-opt"><input type="radio" name="q4m1"> Link de Login do Messenger</div>
+      </div>
+      <div class="quiz-answer">✅ <strong>Resposta:</strong> Large Language Model — um modelo de IA treinado com bilhoes de textos para entender e gerar linguagem.</div>
+    </div>
+  </div>
+
+  <!-- CAMPO DE PREENCHIMENTO MODULO 1 -->
+  <div class="fill-section">
+    <h3>✏️ Complete com Suas Palavras — Modulo 1</h3>
+    <div class="fill-subtitle">Escreva abaixo para fixar o que aprendeu. Pode usar lapis se imprimiu o PDF!</div>
+
+    <div class="fill-item">
+      <label>1. Com minhas proprias palavras, IA e:</label>
+      <input type="text" class="fill-line" placeholder="Escreva aqui com suas palavras...">
+    </div>
+
+    <div class="fill-item">
+      <label>2. Tres coisas que o ChatGPT faz bem:</label>
+      <input type="text" class="fill-line" placeholder="1. ________________  2. ________________  3. ________________">
+    </div>
+
+    <div class="fill-item">
+      <label>3. Uma coisa que o ChatGPT NAO faz bem:</label>
+      <input type="text" class="fill-line" placeholder="Escreva aqui...">
+    </div>
+
+    <div class="fill-item">
+      <label>4. Como a IA pode ajudar no MEU trabalho ou negocio:</label>
+      <textarea class="fill-line-long" placeholder="Pense no seu dia a dia e escreva aqui..."></textarea>
+    </div>
   </div>
 
   <div class="page-footer">IA &amp; ChatGPT — Curso Completo &middot; Calazans Lumina &middot; Rhaideline Calazans</div>
@@ -816,6 +1079,31 @@
     <p><strong>Sobre a conta gratuita:</strong> Com a conta gratuita, voce ja tem acesso ao GPT-4o mini, que e extremamente capaz. Voce nao precisa pagar nada para acompanhar este curso. A versao paga (Plus) traz beneficios adicionais que vamos discutir na Aula 2.5, mas tudo que ensinamos aqui funciona na versao gratuita.</p>
 
     <p><strong>Importante sobre privacidade:</strong> Por padrao, suas conversas com o ChatGPT podem ser usadas pela OpenAI para treinar futuros modelos. Se isso te preocupa, va em Configuracoes > Controles de Dados e desative "Melhorar o modelo para todos". Suas conversas continuarao funcionando normalmente, mas nao serao usadas para treinamento.</p>
+
+    <!-- VISUAL: Screenshot da pagina de cadastro -->
+    <div class="screenshot">
+      <div class="screenshot-bar">
+        <span class="dot dot-r" style="width:10px;height:10px;border-radius:50%;display:inline-block;background:#ff5f57;"></span>
+        <span class="dot dot-y" style="width:10px;height:10px;border-radius:50%;display:inline-block;background:#febc2e;"></span>
+        <span class="dot dot-g" style="width:10px;height:10px;border-radius:50%;display:inline-block;background:#28c840;"></span>
+        <div class="url-bar">🔒 https://chat.openai.com</div>
+      </div>
+      <div class="screenshot-body" style="text-align:center; padding:30px 20px;">
+        <div style="font-size:22pt; font-weight:800; margin-bottom:12px;">Welcome to ChatGPT</div>
+        <div style="font-size:10pt; color:#888; margin-bottom:24px;">Log in with your OpenAI account to continue</div>
+        <div style="display:inline-block; background:#10a37f; color:#fff; padding:12px 40px; border-radius:6px; font-weight:700; font-size:11pt; margin-bottom:10px;">Log in</div><br>
+        <div style="display:inline-block; background:#fff; color:#333; border:2px solid #ddd; padding:12px 40px; border-radius:6px; font-weight:700; font-size:11pt; margin-bottom:16px;">Sign up</div>
+        <div style="font-size:9pt; color:#aaa; margin-top:10px;">👆 Clique aqui para criar sua conta</div>
+        <div style="margin-top:20px; border-top:1px solid #eee; padding-top:16px;">
+          <div style="font-size:9pt; color:#888; margin-bottom:8px;">Ou entre com:</div>
+          <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
+            <div style="border:1px solid #ddd; border-radius:6px; padding:8px 20px; font-size:9pt;">🔵 Google</div>
+            <div style="border:1px solid #ddd; border-radius:6px; padding:8px 20px; font-size:9pt;">🟦 Microsoft</div>
+            <div style="border:1px solid #ddd; border-radius:6px; padding:8px 20px; font-size:9pt;">🍎 Apple</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- AULA 2.2 -->
@@ -857,6 +1145,44 @@
     <div class="tip-box">
       <div class="tip-label">Dica da Rhai:</div>
       Use as <strong>instrucoes personalizadas</strong> desde o primeiro dia. Isso evita que voce tenha que repetir informacoes sobre voce e seu negocio em cada nova conversa. E como se o ChatGPT ja te conhecesse. Va em Configuracoes > Personalizacao > Instrucoes personalizadas e preencha os dois campos.
+    </div>
+
+    <!-- VISUAL: Screenshot da interface do ChatGPT -->
+    <div class="screenshot">
+      <div class="screenshot-bar">
+        <span class="dot dot-r" style="width:10px;height:10px;border-radius:50%;display:inline-block;background:#ff5f57;"></span>
+        <span class="dot dot-y" style="width:10px;height:10px;border-radius:50%;display:inline-block;background:#febc2e;"></span>
+        <span class="dot dot-g" style="width:10px;height:10px;border-radius:50%;display:inline-block;background:#28c840;"></span>
+        <div class="url-bar">🔒 https://chat.openai.com</div>
+      </div>
+      <div class="screenshot-body" style="display:flex; min-height:200px; padding:0;">
+        <!-- Sidebar -->
+        <div style="width:200px; background:#202123; color:#fff; padding:14px; font-size:8pt; border-right:1px solid #444;">
+          <div style="background:#10a37f; color:#fff; padding:8px 12px; border-radius:6px; margin-bottom:14px; text-align:center; font-weight:700;">+ Nova conversa</div>
+          <div style="color:#aaa; font-size:7pt; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Historico</div>
+          <div style="padding:6px 8px; border-radius:4px; background:#2a2b32; margin-bottom:4px;">📝 Legenda Instagram loja</div>
+          <div style="padding:6px 8px; border-radius:4px; margin-bottom:4px; color:#ccc;">📧 Email para cliente</div>
+          <div style="padding:6px 8px; border-radius:4px; margin-bottom:4px; color:#ccc;">💡 Ideias de conteudo</div>
+          <div style="padding:6px 8px; border-radius:4px; margin-bottom:4px; color:#ccc;">📊 Analise de vendas</div>
+          <div style="margin-top:auto; padding-top:14px; border-top:1px solid #444; color:#888;">⚙️ Configuracoes</div>
+        </div>
+        <!-- Chat area -->
+        <div style="flex:1; display:flex; flex-direction:column; background:#343541;">
+          <div style="padding:8px 16px; background:#343541; border-bottom:1px solid #444; font-size:9pt; color:#fff; display:flex; justify-content:space-between; align-items:center;">
+            <span>📌 Modelo: <strong style="color:#10a37f;">GPT-4o</strong></span>
+            <span style="color:#888; font-size:8pt;">👆 Escolha o modelo aqui</span>
+          </div>
+          <div style="flex:1; padding:16px;">
+            <div style="text-align:center; color:#888; font-size:10pt; margin-top:20px;">💬 Area do chat<br><span style="font-size:8pt;">As respostas aparecem aqui</span></div>
+          </div>
+          <div style="padding:12px 16px; background:#40414f; margin:0 16px 16px 16px; border-radius:10px; display:flex; align-items:center; gap:8px;">
+            <span style="color:#888; font-size:9pt;">📎</span>
+            <span style="flex:1; color:#999; font-size:9pt;">Digite sua mensagem aqui...</span>
+            <span style="color:#888; font-size:9pt;">🎤</span>
+            <span style="background:#10a37f; color:#fff; padding:4px 10px; border-radius:6px; font-size:8pt;">➤</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -903,6 +1229,17 @@
       <div class="tip-label">Dica da Rhai:</div>
       Pense no ChatGPT como um estagiario muito talentoso mas que acabou de chegar. Ele precisa de instrucoes claras. Quanto mais especifico voce for, melhor sera o resultado. "Faz ai" nao funciona. "Faz isso, dessa forma, para esse publico, com esse objetivo" — ai sim!
     </div>
+
+    <!-- VISUAL: Chat-sim com primeiro prompt -->
+    <div class="chat-sim">
+      <div class="chat-sim-header">
+        <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+        <span style="margin-left:8px; color:#fff;">💬 Seu Primeiro Prompt — Exemplo</span>
+        <span class="model-name">GPT-4o</span>
+      </div>
+      <div class="chat-msg user">Voce e uma social media especialista em Instagram. Escreva uma legenda curta para um post de uma padaria artesanal sobre o pao de fermentacao natural. Tom acolhedor e caseiro. Maximo 80 palavras. Termine com um CTA para visitar a loja.</div>
+      <div class="chat-msg ai">Tem cheiro de pao fresquinho no ar... 🍞<br><br>Nosso pao de fermentacao natural leva 24 horas para ficar pronto. Sem pressa, sem quimica, sem atalhos. So farinha, agua, sal e muito carinho.<br><br>Cada fatia tem aquela crocancia por fora e maciez por dentro que so o tempo consegue criar.<br><br>Venha provar pessoalmente! Estamos te esperando na loja. 📍<br><br><em>Salve esse post para lembrar!</em> 💛</div>
+    </div>
   </div>
 
   <!-- AULA 2.4 -->
@@ -940,6 +1277,64 @@
     </div>
 
     <p>Uma coisa importante: o modelo que voce escolhe aparece no topo da interface do ChatGPT. Na versao gratuita, voce tera acesso ao GPT-4o mini como padrao, com uso limitado do GPT-4o. Na versao Plus, voce tem acesso ilimitado ao GPT-4o e outros modelos avancados.</p>
+
+    <!-- VISUAL: Tabela comparativa GPT-3.5 vs GPT-4 vs GPT-4o -->
+    <table class="compare-table">
+      <tr>
+        <th>Caracteristica</th>
+        <th>GPT-3.5</th>
+        <th>GPT-4</th>
+        <th class="highlight">GPT-4o ⭐</th>
+      </tr>
+      <tr>
+        <td><strong>Velocidade</strong></td>
+        <td><span class="check">✓ Rapido</span></td>
+        <td><span class="cross">✗ Lento</span></td>
+        <td><span class="check">✓ Muito rapido</span></td>
+      </tr>
+      <tr>
+        <td><strong>Qualidade dos textos</strong></td>
+        <td>Basica</td>
+        <td><span class="check">✓ Otima</span></td>
+        <td><span class="check">✓ Otima</span></td>
+      </tr>
+      <tr>
+        <td><strong>Entende imagens</strong></td>
+        <td><span class="cross">✗ Nao</span></td>
+        <td><span class="check">✓ Sim</span></td>
+        <td><span class="check">✓ Sim</span></td>
+      </tr>
+      <tr>
+        <td><strong>Conversa por voz</strong></td>
+        <td><span class="cross">✗ Nao</span></td>
+        <td><span class="cross">✗ Basica</span></td>
+        <td><span class="check">✓ Excelente</span></td>
+      </tr>
+      <tr>
+        <td><strong>Raciocinio logico</strong></td>
+        <td>Fraco</td>
+        <td><span class="check">✓ Forte</span></td>
+        <td><span class="check">✓ Forte</span></td>
+      </tr>
+      <tr>
+        <td><strong>Portugues do Brasil</strong></td>
+        <td>Razoavel</td>
+        <td>Bom</td>
+        <td><span class="check">✓ Muito bom</span></td>
+      </tr>
+      <tr>
+        <td><strong>Disponivel gratis?</strong></td>
+        <td><span class="cross">✗ Nao mais</span></td>
+        <td><span class="cross">✗ Nao</span></td>
+        <td><span class="check">✓ Sim (limitado)</span></td>
+      </tr>
+      <tr>
+        <td><strong>Melhor para</strong></td>
+        <td>—</td>
+        <td>Analises complexas</td>
+        <td><strong style="color:var(--red);">Uso diario! 🏆</strong></td>
+      </tr>
+    </table>
   </div>
 </div>
 
@@ -1001,6 +1396,77 @@
       <li>Pegue um dos prompts que nao ficou tao bom e refine-o usando a tecnica de iteracao: peca ajustes, mude o tom, adicione restricoes.</li>
       <li>Explore o historico de conversas e pratique renomear e organizar suas conversas.</li>
     </ol>
+  </div>
+
+  <!-- QUIZ MODULO 2 -->
+  <div class="quiz">
+    <h3>📝 Voce Entendeu? — Teste do Modulo 2</h3>
+    <div class="quiz-subtitle">Marque a resposta correta. Sem pressa — o importante e aprender!</div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">1</span> Qual e o site oficial para acessar o ChatGPT?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt"><input type="radio" name="q1m2"> www.google.com/chatgpt</div>
+        <div class="quiz-opt"><input type="radio" name="q1m2"> chat.openai.com</div>
+        <div class="quiz-opt"><input type="radio" name="q1m2"> www.chatgpt.org</div>
+      </div>
+      <div class="quiz-answer">✅ <strong>Resposta:</strong> chat.openai.com — esse e o endereco oficial. Cuidado com sites falsos!</div>
+    </div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">2</span> O que sao as "instrucoes personalizadas" do ChatGPT?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt"><input type="radio" name="q2m2"> Um tipo de assinatura paga</div>
+        <div class="quiz-opt"><input type="radio" name="q2m2"> Informacoes sobre voce que o ChatGPT lembra em todas as conversas</div>
+        <div class="quiz-opt"><input type="radio" name="q2m2"> Mensagens automaticas que ele envia para outras pessoas</div>
+      </div>
+      <div class="quiz-answer">✅ <strong>Resposta:</strong> Sao informacoes sobre voce e seu negocio que o ChatGPT lembra sempre — assim ele ja te conhece!</div>
+    </div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">3</span> Qual modelo e o mais indicado para uso no dia a dia (e esta disponivel de graca)?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt"><input type="radio" name="q3m2"> GPT-3.5</div>
+        <div class="quiz-opt"><input type="radio" name="q3m2"> GPT-4o</div>
+        <div class="quiz-opt"><input type="radio" name="q3m2"> GPT-2</div>
+      </div>
+      <div class="quiz-answer">✅ <strong>Resposta:</strong> GPT-4o — e rapido, inteligente e esta disponivel na versao gratuita (com limites).</div>
+    </div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">4</span> Verdadeiro ou Falso: Para usar o ChatGPT, voce precisa pagar obrigatoriamente.</div>
+      <div class="quiz-tf">
+        <label><input type="radio" name="q4m2"> Verdadeiro</label>
+        <label><input type="radio" name="q4m2"> Falso</label>
+      </div>
+      <div class="quiz-answer">✅ <strong>Falso!</strong> A versao gratuita ja e muito boa. Voce so precisa pagar se quiser recursos extras (ChatGPT Plus).</div>
+    </div>
+  </div>
+
+  <!-- CAMPO DE PREENCHIMENTO MODULO 2 -->
+  <div class="fill-section">
+    <h3>✏️ Complete com Suas Palavras — Modulo 2</h3>
+    <div class="fill-subtitle">Escreva abaixo para fixar o que voce aprendeu. Use lapis se imprimiu!</div>
+
+    <div class="fill-item">
+      <label>1. O site do ChatGPT e:</label>
+      <input type="text" class="fill-line" placeholder="Escreva o endereco aqui...">
+    </div>
+
+    <div class="fill-item">
+      <label>2. Para criar uma conta, eu posso usar minha conta do:</label>
+      <input type="text" class="fill-line" placeholder="Google, Microsoft, Apple ou...">
+    </div>
+
+    <div class="fill-item">
+      <label>3. As tres partes principais da interface do ChatGPT sao:</label>
+      <input type="text" class="fill-line" placeholder="1. ________________  2. ________________  3. ________________">
+    </div>
+
+    <div class="fill-item">
+      <label>4. A diferenca entre um prompt ruim e um prompt bom e:</label>
+      <textarea class="fill-line-long" placeholder="Explique com suas palavras..."></textarea>
+    </div>
   </div>
 
   <div class="page-footer">IA &amp; ChatGPT — Curso Completo &middot; Calazans Lumina &middot; Rhaideline Calazans</div>
@@ -1084,6 +1550,41 @@ Cada legenda deve ter entre 100-150 palavras, incluir 2-3 emojis, comecar com um
       <div class="tip-label">Dica avancada da Rhai:</div>
       Voce pode adicionar um quarto elemento: <strong>Restricoes</strong>. Coisas que ele NAO deve fazer. Exemplo: "Nao use a palavra 'dieta'. Nao faca promessas de resultado rapido. Nao cite nomes de marcas." Restricoes ajudam a refinar ainda mais o resultado.
     </div>
+
+    <!-- VISUAL: Diagrama CTF -->
+    <div class="diagram">
+      <div class="diagram-title">🎯 Metodo CTF — A Formula do Prompt Perfeito</div>
+      <div class="diagram-flow">
+        <div class="diagram-box red">C<br><span style="font-size:8pt;font-weight:400;">CONTEXTO</span><br><span style="font-size:7pt;font-weight:400;">Quem e voce?<br>Qual a situacao?</span></div>
+        <div class="diagram-arrow">+</div>
+        <div class="diagram-box red">T<br><span style="font-size:8pt;font-weight:400;">TAREFA</span><br><span style="font-size:7pt;font-weight:400;">O que fazer?<br>Qual a acao?</span></div>
+        <div class="diagram-arrow">+</div>
+        <div class="diagram-box red">F<br><span style="font-size:8pt;font-weight:400;">FORMATO</span><br><span style="font-size:7pt;font-weight:400;">Como entregar?<br>Quantas palavras?</span></div>
+        <div class="diagram-arrow">=</div>
+        <div class="diagram-box" style="background:#10a37f;">✨ PROMPT<br>PERFEITO</div>
+      </div>
+    </div>
+
+    <!-- VISUAL: Chat-sim prompt ruim vs bom -->
+    <div class="chat-sim">
+      <div class="chat-sim-header">
+        <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+        <span style="margin-left:8px; color:#fff;">❌ Prompt RUIM (sem CTF)</span>
+        <span class="model-name">GPT-4o</span>
+      </div>
+      <div class="chat-msg user">Escreve uma legenda pro Instagram.</div>
+      <div class="chat-msg ai">Aqui esta uma legenda para voce:<br><br>"Aproveite cada momento! A vida e feita de pequenas alegrias. #felicidade #vida #motivacao"<br><br><em style="color:#888; font-size:9pt;">😐 Resultado generico, sem personalidade, sem estrategia...</em></div>
+    </div>
+
+    <div class="chat-sim" style="margin-top:12px;">
+      <div class="chat-sim-header">
+        <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+        <span style="margin-left:8px; color:#fff;">✅ Prompt BOM (com CTF)</span>
+        <span class="model-name">GPT-4o</span>
+      </div>
+      <div class="chat-msg user"><strong>[CONTEXTO]</strong> Eu sou dona de uma loja de bolos caseiros em Belo Horizonte. Meu publico sao mulheres de 30-55 anos que amam doces artesanais.<br><br><strong>[TAREFA]</strong> Escreva uma legenda de Instagram para o lancamento do meu bolo de chocolate com morangos.<br><br><strong>[FORMATO]</strong> Maximo 100 palavras, comece com uma pergunta, use 2 emojis, termine com CTA para pedir pelo WhatsApp. Tom carinhoso e caseiro.</div>
+      <div class="chat-msg ai">Quem resiste a um bolo de chocolate com morangos fresquinhos? 🍓<br><br>Nosso mais novo sabor acabou de sair do forno. Chocolate belga derretido, massa fofinha feita com carinho e morangos selecionados um a um.<br><br>E aquele bolo que faz a casa inteira parar pra pedir um pedaco.<br><br>Encomende o seu agora pelo WhatsApp e receba em casa quentinho! 🍫<br><br><em style="color:#10a37f; font-size:9pt;">😍 Resultado personalizado, com estrategia e a cara do negocio!</em></div>
+    </div>
   </div>
 </div>
 
@@ -1139,6 +1640,17 @@ Pense passo a passo:
     <div class="tip-box">
       <div class="tip-label">Dica da Rhai:</div>
       Eu uso Chain-of-Thought sempre que preciso de analises estrategicas ou planos de acao. Para tarefas simples como "escreva uma legenda", nao e necessario. Saiba dosar: nem todo prompt precisa ser um ensaio, mas para decisoes importantes, vale a pena pedir raciocinio detalhado.
+    </div>
+
+    <!-- VISUAL: Chat-sim Chain-of-Thought -->
+    <div class="chat-sim">
+      <div class="chat-sim-header">
+        <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+        <span style="margin-left:8px; color:#fff;">🔗 Exemplo de Chain-of-Thought (Passo a Passo)</span>
+        <span class="model-name">GPT-4o</span>
+      </div>
+      <div class="chat-msg user">Eu tenho um salao de beleza pequeno com 3 funcionarias. Quero atrair mais clientes no proximo mes. Pense passo a passo:<br>1. Analise os canais mais eficazes para salao de beleza<br>2. Sugira 3 acoes praticas que custam pouco<br>3. Monte um mini plano de 4 semanas</div>
+      <div class="chat-msg ai"><strong>Passo 1 — Analise dos canais mais eficazes:</strong><br>Para saloes de beleza, os canais com melhor resultado sao: Instagram (fotos de antes/depois), WhatsApp (agendamento) e Google Meu Negocio (busca local). Investir nesses 3 canais cobre 90% do necessario.<br><br><strong>Passo 2 — 3 acoes praticas de baixo custo:</strong><br>1. Postar 1 foto de "antes e depois" por dia no Instagram (custo: R$0)<br>2. Criar um programa "Traga uma amiga e ganhe 15% de desconto" (custo: minimo)<br>3. Cadastrar no Google Meu Negocio e pedir avaliacao para cada cliente (custo: R$0)<br><br><strong>Passo 3 — Mini plano de 4 semanas:</strong><br>Semana 1: Cadastrar no Google + comecar fotos diarias...<br>Semana 2: Lancar programa "Traga uma Amiga"...<br>Semana 3: Fazer 2 Reels mostrando transformacoes...<br>Semana 4: Enviar mensagem de reativacao para clientes antigos...</div>
     </div>
   </div>
 
@@ -1327,6 +1839,77 @@ Formato: Apresente em formato de plano de acao com cronograma mensal, investimen
     </ol>
   </div>
 
+  <!-- QUIZ MODULO 3 -->
+  <div class="quiz">
+    <h3>📝 Voce Entendeu? — Teste do Modulo 3</h3>
+    <div class="quiz-subtitle">Marque a resposta correta. Lembre-se: quem domina prompts, domina a IA!</div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">1</span> O que significa CTF no metodo de prompt?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt"><input type="radio" name="q1m3"> Copiar, Traduzir, Finalizar</div>
+        <div class="quiz-opt"><input type="radio" name="q1m3"> Contexto, Tarefa, Formato</div>
+        <div class="quiz-opt"><input type="radio" name="q1m3"> Criar, Testar, Formatar</div>
+      </div>
+      <div class="quiz-answer">✅ <strong>Resposta:</strong> Contexto + Tarefa + Formato — a formula para escrever prompts que funcionam de verdade!</div>
+    </div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">2</span> Quando devo usar a tecnica Chain-of-Thought (passo a passo)?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt"><input type="radio" name="q2m3"> Sempre, em todos os prompts</div>
+        <div class="quiz-opt"><input type="radio" name="q2m3"> Quando preciso de analises, planos ou decisoes complexas</div>
+        <div class="quiz-opt"><input type="radio" name="q2m3"> Nunca, e perda de tempo</div>
+      </div>
+      <div class="quiz-answer">✅ <strong>Resposta:</strong> Quando voce precisa que o ChatGPT pense com mais cuidado — em analises, planos de acao e decisoes importantes.</div>
+    </div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">3</span> O que e a tecnica Few-Shot?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt"><input type="radio" name="q3m3"> Pedir poucas palavras na resposta</div>
+        <div class="quiz-opt"><input type="radio" name="q3m3"> Dar exemplos ao ChatGPT antes de pedir o que voce quer</div>
+        <div class="quiz-opt"><input type="radio" name="q3m3"> Usar o ChatGPT poucas vezes por dia</div>
+      </div>
+      <div class="quiz-answer">✅ <strong>Resposta:</strong> E dar exemplos do que voce quer para que o ChatGPT entenda o estilo e o padrao desejado.</div>
+    </div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">4</span> Verdadeiro ou Falso: Na tecnica Role-Play, voce da um papel (ex: copywriter, consultor) ao ChatGPT.</div>
+      <div class="quiz-tf">
+        <label><input type="radio" name="q4m3"> Verdadeiro</label>
+        <label><input type="radio" name="q4m3"> Falso</label>
+      </div>
+      <div class="quiz-answer">✅ <strong>Verdadeiro!</strong> Quando voce diz "voce e um copywriter senior", o ChatGPT responde com muito mais qualidade e profundidade.</div>
+    </div>
+  </div>
+
+  <!-- CAMPO DE PREENCHIMENTO MODULO 3 -->
+  <div class="fill-section">
+    <h3>✏️ Complete com Suas Palavras — Modulo 3</h3>
+    <div class="fill-subtitle">Preencha para fixar. Essas tecnicas vao mudar sua vida com IA!</div>
+
+    <div class="fill-item">
+      <label>1. As tres partes de um prompt perfeito (CTF) sao:</label>
+      <input type="text" class="fill-line" placeholder="C = __________   T = __________   F = __________">
+    </div>
+
+    <div class="fill-item">
+      <label>2. Uma "frase magica" para ativar o Chain-of-Thought e:</label>
+      <input type="text" class="fill-line" placeholder="Escreva uma frase que voce usaria...">
+    </div>
+
+    <div class="fill-item">
+      <label>3. Na tecnica Role-Play, um papel que eu usaria no meu negocio e:</label>
+      <input type="text" class="fill-line" placeholder="Ex: 'Voce e um especialista em...'">
+    </div>
+
+    <div class="fill-item">
+      <label>4. Escreva um prompt completo usando CTF para o seu negocio:</label>
+      <textarea class="fill-line-long" placeholder="[CONTEXTO] Eu sou... [TAREFA] Escreva... [FORMATO] Use..."></textarea>
+    </div>
+  </div>
+
   <div class="page-footer">IA &amp; ChatGPT — Curso Completo &middot; Calazans Lumina &middot; Rhaideline Calazans</div>
 </div>
 
@@ -1372,6 +1955,30 @@ Estrutura: Gancho na primeira linha (algo provocativo), 3 pontos com emojis nume
     <div class="tip-box">
       <div class="tip-label">Hack da Rhai:</div>
       Gere 5 opcoes de legenda com o ChatGPT, depois peca para ele analisar qual das 5 tem mais potencial de engajamento e por que. Use essa analise para escolher a melhor e ainda aprender sobre o que funciona.
+    </div>
+
+    <!-- VISUAL: Chat-sim geracao de legenda Instagram -->
+    <div class="chat-sim">
+      <div class="chat-sim-header">
+        <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+        <span style="margin-left:8px; color:#fff;">📸 Gerando Legenda de Instagram com IA</span>
+        <span class="model-name">GPT-4o</span>
+      </div>
+      <div class="chat-msg user">Voce e uma social media especialista em engajamento. Eu tenho uma loja de roupas femininas plus size online. Escreva uma legenda para um post carrossel sobre "5 dicas para montar looks confortaveis e estilosos". Tom empoderador e acolhedor. Comece com gancho forte, use emojis com moderacao e termine pedindo para salvar. Maximo 120 palavras.</div>
+      <div class="chat-msg ai">Conforto e estilo podem andar juntos — e voce merece os dois. 💛<br><br>Cansada de escolher entre "roupa bonita" e "roupa confortavel"? Entao salva esse post porque ele vai mudar seu guarda-roupa:<br><br>1️⃣ Invista em tecidos que respiram (malha, algodao, viscose)<br>2️⃣ Aposte em cintura alta — valoriza e segura tudo no lugar<br>3️⃣ Acessorios transformam qualquer look basico<br>4️⃣ Cores que voce AMA &gt; cores que "emagrecem"<br>5️⃣ O segredo e experimentar ate achar SEU estilo<br><br>Voce e linda do jeitinho que e. Vista-se pra voce. ✨<br><br>Salva esse post e manda pra aquela amiga que precisa ouvir isso! 💕</div>
+    </div>
+
+    <!-- VISUAL: Process-steps criacao de conteudo -->
+    <div class="process-steps">
+      <div class="process-step"><div class="step-num">1</div><div class="step-title">Definir Pilar</div><div class="step-desc">Educativo? Venda? Inspiracional?</div></div>
+      <div class="process-arrow">→</div>
+      <div class="process-step"><div class="step-num">2</div><div class="step-title">Montar Prompt CTF</div><div class="step-desc">Contexto + Tarefa + Formato</div></div>
+      <div class="process-arrow">→</div>
+      <div class="process-step"><div class="step-num">3</div><div class="step-title">Gerar com IA</div><div class="step-desc">Pedir 3 a 5 opcoes</div></div>
+      <div class="process-arrow">→</div>
+      <div class="process-step"><div class="step-num">4</div><div class="step-title">Personalizar</div><div class="step-desc">Adicionar sua voz e estilo</div></div>
+      <div class="process-arrow">→</div>
+      <div class="process-step"><div class="step-num">5</div><div class="step-title">Publicar!</div><div class="step-desc">Postar e acompanhar metricas</div></div>
     </div>
   </div>
 
@@ -1626,6 +2233,77 @@ Garanta equilibrio entre os pilares e inclua pelo menos 2 posts de venda e 2 de 
     </ol>
   </div>
 
+  <!-- QUIZ MODULO 4 -->
+  <div class="quiz">
+    <h3>📝 Voce Entendeu? — Teste do Modulo 4</h3>
+    <div class="quiz-subtitle">Marque a resposta correta. Voce esta virando um criador de conteudo profissional!</div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">1</span> Qual e a parte mais importante de uma legenda de Instagram?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt"><input type="radio" name="q1m4"> O ultimo paragrafo</div>
+        <div class="quiz-opt"><input type="radio" name="q1m4"> A primeira linha (o gancho)</div>
+        <div class="quiz-opt"><input type="radio" name="q1m4"> As hashtags</div>
+      </div>
+      <div class="quiz-answer">✅ <strong>Resposta:</strong> A primeira linha! No Instagram, so aparecem as 2 primeiras linhas. Se nao prender ali, ninguem le o resto.</div>
+    </div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">2</span> Para criar um artigo de blog com IA, qual e a melhor estrategia?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt"><input type="radio" name="q2m4"> Pedir o artigo inteiro de uma vez</div>
+        <div class="quiz-opt"><input type="radio" name="q2m4"> Criar a estrutura primeiro e depois escrever secao por secao</div>
+        <div class="quiz-opt"><input type="radio" name="q2m4"> Copiar textos de outros sites e pedir para reescrever</div>
+      </div>
+      <div class="quiz-answer">✅ <strong>Resposta:</strong> Criar a estrutura primeiro e escrever secao por secao. Assim o resultado fica muito melhor e mais detalhado.</div>
+    </div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">3</span> Verdadeiro ou Falso: Voce pode publicar textos da IA sem revisar, porque ela nunca erra.</div>
+      <div class="quiz-tf">
+        <label><input type="radio" name="q3m4"> Verdadeiro</label>
+        <label><input type="radio" name="q3m4"> Falso</label>
+      </div>
+      <div class="quiz-answer">✅ <strong>Falso!</strong> Sempre revise, personalize e adicione sua voz. O texto da IA e o rascunho. Voce faz a versao final.</div>
+    </div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">4</span> Os primeiros 3 segundos de um Reels servem para:</div>
+      <div class="quiz-options">
+        <div class="quiz-opt"><input type="radio" name="q4m4"> Mostrar seu logo</div>
+        <div class="quiz-opt"><input type="radio" name="q4m4"> Prender a atencao da pessoa (gancho)</div>
+        <div class="quiz-opt"><input type="radio" name="q4m4"> Pedir para seguir</div>
+      </div>
+      <div class="quiz-answer">✅ <strong>Resposta:</strong> Prender a atencao! Se voce nao prende nos 3 primeiros segundos, a pessoa passa para o proximo video.</div>
+    </div>
+  </div>
+
+  <!-- CAMPO DE PREENCHIMENTO MODULO 4 -->
+  <div class="fill-section">
+    <h3>✏️ Complete com Suas Palavras — Modulo 4</h3>
+    <div class="fill-subtitle">Preencha para fixar o que aprendeu sobre criar conteudo com IA.</div>
+
+    <div class="fill-item">
+      <label>1. Os 5 passos para criar conteudo com IA sao:</label>
+      <input type="text" class="fill-line" placeholder="1. Definir pilar  2. __________  3. __________  4. __________  5. __________">
+    </div>
+
+    <div class="fill-item">
+      <label>2. A estrutura PAS para emails de venda significa:</label>
+      <input type="text" class="fill-line" placeholder="P = __________   A = __________   S = __________">
+    </div>
+
+    <div class="fill-item">
+      <label>3. Um tipo de conteudo que eu quero criar para meu negocio com IA:</label>
+      <input type="text" class="fill-line" placeholder="Ex: legendas, artigos de blog, roteiros de video...">
+    </div>
+
+    <div class="fill-item">
+      <label>4. Meus 4 pilares de conteudo para redes sociais seriam:</label>
+      <textarea class="fill-line-long" placeholder="1. __________  2. __________  3. __________  4. __________"></textarea>
+    </div>
+  </div>
+
   <div class="page-footer">IA &amp; ChatGPT — Curso Completo &middot; Calazans Lumina &middot; Rhaideline Calazans</div>
 </div>
 
@@ -1680,6 +2358,17 @@ Apresente em formato de tabela comparativa e, ao final, recomende 3 estrategias 
     <div class="tip-box">
       <div class="tip-label">Dica da Rhai:</div>
       Faca essa analise de concorrencia a cada 3 meses. O mercado muda rapido e seus concorrentes tambem. Salve cada analise para ter um historico e poder identificar tendencias ao longo do tempo.
+    </div>
+
+    <!-- VISUAL: Chat-sim analise de concorrencia -->
+    <div class="chat-sim">
+      <div class="chat-sim-header">
+        <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+        <span style="margin-left:8px; color:#fff;">🔍 Analise de Concorrencia com IA</span>
+        <span class="model-name">GPT-4o</span>
+      </div>
+      <div class="chat-msg user">Voce e um analista de mercado. Meu negocio e uma clinica de estetica em BH. Meus 2 concorrentes principais sao: Clinica Bella (foco em botox, 50k seguidores, posts diarios) e Espaco Renova (foco em massagem, 20k seguidores, posts 3x/semana). Analise pontos fortes, fracos e oportunidades para mim.</div>
+      <div class="chat-msg ai"><strong>Clinica Bella:</strong><br>✅ Pontos fortes: Frequencia alta de posts, autoridade em botox, boa base de seguidores<br>❌ Pontos fracos: Conteudo muito tecnico, pouco humanizado, nao mostra bastidores<br><br><strong>Espaco Renova:</strong><br>✅ Pontos fortes: Tom acolhedor, boas fotos do espaco, preco acessivel<br>❌ Pontos fracos: Pouca frequencia, sem Reels, nao responde comentarios<br><br><strong>🎯 Oportunidades para voce:</strong><br>1. Humanizar o conteudo (mostrar bastidores, equipe, dia a dia)<br>2. Fazer Reels educativos — nenhum concorrente faz<br>3. Responder TODOS os comentarios e DMs rapido<br>4. Criar conteudo "antes e depois" com autorizacao dos clientes</div>
     </div>
   </div>
 
@@ -1769,6 +2458,49 @@ Diferenciais: [LISTA]</div>
     <div class="tip-box">
       <div class="tip-label">Dica da Rhai:</div>
       Depois de gerar a persona, peca ao ChatGPT: "Agora, escreva como se voce fosse essa persona. Descreva um dia tipico na sua vida, suas frustracoes e o que voce desejaria que existisse no mercado." Isso vai te dar insights incriveis sobre como sua persona pensa e sente.
+    </div>
+
+    <!-- VISUAL: Persona Card -->
+    <div class="diagram">
+      <div class="diagram-title">👩 Exemplo de Persona — Gerada por IA</div>
+      <div style="text-align:left; padding:12px;">
+        <div style="display:flex; gap:16px; align-items:flex-start; flex-wrap:wrap;">
+          <div style="flex:1; min-width:200px;">
+            <div style="font-size:16pt; font-weight:800; margin-bottom:4px;">Mariana Silva, 38 anos</div>
+            <div style="font-size:9pt; color:#888; margin-bottom:12px;">Dona de loja de roupas femininas online | Casada, 2 filhos | BH-MG | Renda: R$6.000/mes</div>
+            <div style="margin-bottom:8px;"><strong style="color:var(--red);">😣 Dores:</strong></div>
+            <ul style="font-size:9pt; color:var(--text-gray); margin-left:16px; margin-bottom:12px;">
+              <li>Nao sabe o que postar no Instagram</li>
+              <li>Trabalha 12h por dia e nao sobra tempo</li>
+              <li>Concorrentes parecem sempre a frente</li>
+              <li>Tem medo de tecnologia nova</li>
+            </ul>
+            <div style="margin-bottom:8px;"><strong style="color:#10a37f;">✨ Desejos:</strong></div>
+            <ul style="font-size:9pt; color:var(--text-gray); margin-left:16px; margin-bottom:12px;">
+              <li>Ter mais tempo livre para a familia</li>
+              <li>Dobrar o faturamento em 6 meses</li>
+              <li>Criar conteudo bonito e profissional</li>
+              <li>Automatizar atendimento no WhatsApp</li>
+            </ul>
+          </div>
+          <div style="flex:1; min-width:200px;">
+            <div style="margin-bottom:8px;"><strong style="color:var(--black);">📱 Onde esta:</strong></div>
+            <div style="font-size:9pt; color:var(--text-gray); margin-bottom:12px;">Instagram (3h/dia), WhatsApp, YouTube a noite</div>
+            <div style="margin-bottom:8px;"><strong style="color:var(--black);">🛒 Objecoes de compra:</strong></div>
+            <ul style="font-size:9pt; color:var(--text-gray); margin-left:16px; margin-bottom:12px;">
+              <li>"Sera que eu consigo aprender?"</li>
+              <li>"Nao tenho tempo para mais um curso"</li>
+              <li>"R$20 e pouco, sera que e bom mesmo?"</li>
+            </ul>
+            <div style="margin-bottom:8px;"><strong style="color:var(--black);">💡 O que a convence:</strong></div>
+            <ul style="font-size:9pt; color:var(--text-gray); margin-left:16px;">
+              <li>Depoimentos de pessoas parecidas com ela</li>
+              <li>Resultados praticos e rapidos</li>
+              <li>Linguagem simples, sem termos tecnicos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1939,6 +2671,77 @@ Tom: persuasivo mas honesto. Use gatilhos de urgencia, escassez e prova social d
     </ol>
   </div>
 
+  <!-- QUIZ MODULO 5 -->
+  <div class="quiz">
+    <h3>📝 Voce Entendeu? — Teste do Modulo 5</h3>
+    <div class="quiz-subtitle">Marque a resposta correta. Marketing com IA e poderoso!</div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">1</span> O que e uma "persona" no marketing?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt"><input type="radio" name="q1m5"> Uma pessoa famosa que faz propaganda</div>
+        <div class="quiz-opt"><input type="radio" name="q1m5"> Uma representacao detalhada do seu cliente ideal</div>
+        <div class="quiz-opt"><input type="radio" name="q1m5"> O dono do negocio</div>
+      </div>
+      <div class="quiz-answer">✅ <strong>Resposta:</strong> Uma persona e a representacao ficticia e detalhada do seu cliente ideal — com nome, idade, dores, desejos e habitos.</div>
+    </div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">2</span> Com que frequencia voce deve analisar seus concorrentes?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt"><input type="radio" name="q2m5"> Uma vez na vida</div>
+        <div class="quiz-opt"><input type="radio" name="q2m5"> A cada 3 meses, pelo menos</div>
+        <div class="quiz-opt"><input type="radio" name="q2m5"> Nunca — so olhar para seu proprio negocio</div>
+      </div>
+      <div class="quiz-answer">✅ <strong>Resposta:</strong> A cada 3 meses! O mercado muda rapido e voce precisa se manter atualizado.</div>
+    </div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">3</span> Verdadeiro ou Falso: Palavras-chave de "cauda longa" sao termos curtos e genericos como "marketing".</div>
+      <div class="quiz-tf">
+        <label><input type="radio" name="q3m5"> Verdadeiro</label>
+        <label><input type="radio" name="q3m5"> Falso</label>
+      </div>
+      <div class="quiz-answer">✅ <strong>Falso!</strong> Cauda longa sao termos longos e especificos, como "melhor curso de marketing digital para iniciantes". Tem menos busca, mas mais chance de vender.</div>
+    </div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">4</span> O que e um teste A/B em anuncios?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt"><input type="radio" name="q4m5"> Testar o anuncio com a e b minusculos</div>
+        <div class="quiz-opt"><input type="radio" name="q4m5"> Criar 2 ou mais versoes e ver qual funciona melhor</div>
+        <div class="quiz-opt"><input type="radio" name="q4m5"> Publicar o mesmo anuncio duas vezes</div>
+      </div>
+      <div class="quiz-answer">✅ <strong>Resposta:</strong> Criar variacoes do anuncio e comparar os resultados. A IA cria as variacoes em segundos!</div>
+    </div>
+  </div>
+
+  <!-- CAMPO DE PREENCHIMENTO MODULO 5 -->
+  <div class="fill-section">
+    <h3>✏️ Complete com Suas Palavras — Modulo 5</h3>
+    <div class="fill-subtitle">Preencha para aplicar o marketing com IA no seu negocio.</div>
+
+    <div class="fill-item">
+      <label>1. O nome da minha persona ideal e __________ e sua maior dor e:</label>
+      <input type="text" class="fill-line" placeholder="Ex: Maria, 42 anos, nao consegue atrair clientes pelo Instagram...">
+    </div>
+
+    <div class="fill-item">
+      <label>2. Meus 3 principais concorrentes sao:</label>
+      <input type="text" class="fill-line" placeholder="1. __________  2. __________  3. __________">
+    </div>
+
+    <div class="fill-item">
+      <label>3. Uma palavra-chave de cauda longa para o meu negocio seria:</label>
+      <input type="text" class="fill-line" placeholder="Ex: 'melhor salao de beleza para noivas em BH'">
+    </div>
+
+    <div class="fill-item">
+      <label>4. Uma campanha que eu quero criar com ajuda da IA:</label>
+      <textarea class="fill-line-long" placeholder="Descreva a ideia da campanha, o objetivo e o publico..."></textarea>
+    </div>
+  </div>
+
   <div class="page-footer">IA &amp; ChatGPT — Curso Completo &middot; Calazans Lumina &middot; Rhaideline Calazans</div>
 </div>
 
@@ -1986,6 +2789,37 @@ Tom: persuasivo mas honesto. Use gatilhos de urgencia, escassez e prova social d
     <div class="tip-box">
       <div class="tip-label">Dica da Rhai:</div>
       Comece simples. Seu primeiro chatbot deve resolver <strong>uma unica dor</strong>: responder as 10 perguntas mais frequentes que voce recebe no WhatsApp. Depois, gradualmente, adicione mais funcionalidades. Chatbot complexo demais no inicio gera frustracao (para voce e para o cliente).
+    </div>
+
+    <!-- VISUAL: WhatsApp sim chatbot -->
+    <div class="whatsapp-sim">
+      <div style="text-align:center; font-size:9pt; color:#888; margin-bottom:12px; font-weight:700;">💬 Exemplo: Chatbot de IA no WhatsApp</div>
+      <div class="wa-msg recv">Ola! 👋 Bem-vindo(a) a Clinica Bella! Sou a assistente virtual. Como posso te ajudar hoje?<br><br>1️⃣ Ver servicos e precos<br>2️⃣ Agendar consulta<br>3️⃣ Falar com atendente</div>
+      <div class="wa-time">10:32</div>
+      <div class="wa-msg sent">Quero ver os precos</div>
+      <div class="wa-time">10:32</div>
+      <div class="wa-msg recv">Claro! 😊 Aqui estao nossos servicos mais procurados:<br><br>💆 Limpeza de pele — R$ 120<br>✨ Peeling de diamante — R$ 180<br>💉 Botox (testa) — R$ 450<br>🧴 Preenchimento labial — R$ 800<br><br>Quer agendar algum? Posso verificar os horarios disponiveis para voce!</div>
+      <div class="wa-time">10:33</div>
+      <div class="wa-msg sent">Quero agendar limpeza de pele</div>
+      <div class="wa-time">10:33</div>
+      <div class="wa-msg recv">Otimo! 📅 Temos horarios disponiveis:<br><br>• Terca 14h<br>• Quarta 10h<br>• Sexta 16h<br><br>Qual prefere? Preciso tambem do seu nome completo para a reserva 😊</div>
+      <div class="wa-time">10:34</div>
+    </div>
+
+    <!-- VISUAL: Diagrama fluxo de automacao -->
+    <div class="diagram">
+      <div class="diagram-title">⚡ Fluxo de Automacao com IA</div>
+      <div class="diagram-flow">
+        <div class="diagram-box light">📱 Lead chega<br><span style="font-size:7pt;">(WhatsApp, site, Instagram)</span></div>
+        <div class="diagram-arrow">→</div>
+        <div class="diagram-box red">🤖 IA responde<br><span style="font-size:7pt;">automaticamente</span></div>
+        <div class="diagram-arrow">→</div>
+        <div class="diagram-box">❓ Qualifica<br><span style="font-size:7pt;">Quente, morno ou frio</span></div>
+        <div class="diagram-arrow">→</div>
+        <div class="diagram-box white">📅 Agenda<br><span style="font-size:7pt;">reuniao automatica</span></div>
+        <div class="diagram-arrow">→</div>
+        <div class="diagram-box red">💰 Venda!<br><span style="font-size:7pt;">Atendimento humano</span></div>
+      </div>
     </div>
 
     <p><strong>Prompt para criar o roteiro do chatbot:</strong></p>
@@ -2148,6 +2982,30 @@ O tom deve ser [TOM], como se fosse uma conversa natural por WhatsApp. Nao deve 
       <div class="tip-label">Dica da Rhai:</div>
       A chave e que a qualificacao seja <strong>imperceptivel</strong> para o lead. Ele deve sentir que esta tendo uma conversa natural, nao preenchendo um formulario. Use a IA para tornar as perguntas contextuais e fluidas. Exemplo: em vez de "Qual seu orcamento?", pergunte "Para entender como posso te ajudar melhor, me conta: voce ja investiu em algo parecido antes?".
     </div>
+
+    <!-- VISUAL: BANT scoring com info-cards -->
+    <div class="infographic cols-4">
+      <div class="info-card dark">
+        <div class="info-icon">💰</div>
+        <div class="info-number">B</div>
+        <div class="info-label">BUDGET<br>(Orcamento)<br><span style="font-size:8pt; color:#888;">Tem dinheiro para investir?</span></div>
+      </div>
+      <div class="info-card dark">
+        <div class="info-icon">👤</div>
+        <div class="info-number">A</div>
+        <div class="info-label">AUTHORITY<br>(Autoridade)<br><span style="font-size:8pt; color:#888;">E quem decide a compra?</span></div>
+      </div>
+      <div class="info-card dark">
+        <div class="info-icon">🎯</div>
+        <div class="info-number">N</div>
+        <div class="info-label">NEED<br>(Necessidade)<br><span style="font-size:8pt; color:#888;">Tem um problema real?</span></div>
+      </div>
+      <div class="info-card dark">
+        <div class="info-icon">⏰</div>
+        <div class="info-number">T</div>
+        <div class="info-label">TIMELINE<br>(Prazo)<br><span style="font-size:8pt; color:#888;">Quer resolver agora?</span></div>
+      </div>
+    </div>
   </div>
 
   <!-- AULA 6.5 -->
@@ -2207,6 +3065,77 @@ Negocio: [SEGMENTO]. Tom: [TOM]. Cada mensagem com maximo 3 linhas.</div>
       <li>Configure uma conta no Calendly (ou Cal.com) e integre com seu Google Calendar.</li>
       <li>Desenhe (em papel ou no ChatGPT) o fluxo ideal do lead: primeiro contato > qualificacao > agendamento > reuniao > venda.</li>
     </ol>
+  </div>
+
+  <!-- QUIZ MODULO 6 -->
+  <div class="quiz">
+    <h3>📝 Voce Entendeu? — Teste do Modulo 6</h3>
+    <div class="quiz-subtitle">Marque a resposta correta. Automacao e o futuro do seu negocio!</div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">1</span> O que um chatbot de IA no WhatsApp pode fazer?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt"><input type="radio" name="q1m6"> Responder perguntas frequentes, qualificar leads e agendar reunioes</div>
+        <div class="quiz-opt"><input type="radio" name="q1m6"> Fazer transferencias bancarias automaticas</div>
+        <div class="quiz-opt"><input type="radio" name="q1m6"> Postar automaticamente no Instagram</div>
+      </div>
+      <div class="quiz-answer">✅ <strong>Resposta:</strong> O chatbot responde duvidas, qualifica leads (descobre quem quer comprar) e pode agendar reunioes — tudo automaticamente!</div>
+    </div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">2</span> O que significa BANT na qualificacao de leads?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt"><input type="radio" name="q2m6"> Budget, Authority, Need, Timeline (Orcamento, Autoridade, Necessidade, Prazo)</div>
+        <div class="quiz-opt"><input type="radio" name="q2m6"> Business, Automation, Network, Technology</div>
+        <div class="quiz-opt"><input type="radio" name="q2m6"> Basic, Advanced, Normal, Top</div>
+      </div>
+      <div class="quiz-answer">✅ <strong>Resposta:</strong> Budget (Orcamento), Authority (Autoridade), Need (Necessidade), Timeline (Prazo) — 4 criterios para saber se o lead e quente!</div>
+    </div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">3</span> Verdadeiro ou Falso: O chatbot deve substituir completamente o atendimento humano.</div>
+      <div class="quiz-tf">
+        <label><input type="radio" name="q3m6"> Verdadeiro</label>
+        <label><input type="radio" name="q3m6"> Falso</label>
+      </div>
+      <div class="quiz-answer">✅ <strong>Falso!</strong> O chatbot cuida das perguntas simples e qualificacao. Para vendas complexas e reclamacoes, o humano entra em acao.</div>
+    </div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">4</span> Qual ferramenta pode ser usada para agendamento automatico de reunioes?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt"><input type="radio" name="q4m6"> Canva</div>
+        <div class="quiz-opt"><input type="radio" name="q4m6"> Calendly</div>
+        <div class="quiz-opt"><input type="radio" name="q4m6"> Midjourney</div>
+      </div>
+      <div class="quiz-answer">✅ <strong>Resposta:</strong> Calendly! E gratuito e se conecta com seu Google Calendar. Adeus, ping-pong de horarios!</div>
+    </div>
+  </div>
+
+  <!-- CAMPO DE PREENCHIMENTO MODULO 6 -->
+  <div class="fill-section">
+    <h3>✏️ Complete com Suas Palavras — Modulo 6</h3>
+    <div class="fill-subtitle">Preencha para planejar suas automacoes com IA.</div>
+
+    <div class="fill-item">
+      <label>1. As 3 perguntas que meus clientes mais fazem no WhatsApp sao:</label>
+      <input type="text" class="fill-line" placeholder="1. __________  2. __________  3. __________">
+    </div>
+
+    <div class="fill-item">
+      <label>2. Uma pergunta de qualificacao que eu usaria para meu negocio:</label>
+      <input type="text" class="fill-line" placeholder="Ex: 'Para quando voce precisa desse servico?'">
+    </div>
+
+    <div class="fill-item">
+      <label>3. O fluxo ideal do meu lead seria:</label>
+      <input type="text" class="fill-line" placeholder="Chega pelo __________ → IA faz __________ → Se quente, __________">
+    </div>
+
+    <div class="fill-item">
+      <label>4. A primeira automacao que eu quero criar para meu negocio e:</label>
+      <textarea class="fill-line-long" placeholder="Descreva a automacao: o que acontece automaticamente e qual problema resolve..."></textarea>
+    </div>
   </div>
 
   <div class="page-footer">IA &amp; ChatGPT — Curso Completo &middot; Calazans Lumina &middot; Rhaideline Calazans</div>
@@ -2486,6 +3415,78 @@ Negocio: [SEGMENTO]. Tom: [TOM]. Cada mensagem com maximo 3 linhas.</div>
       <div class="tip-label">Conselho da Rhai:</div>
       Voce NAO precisa usar todas essas ferramentas. Comece com o ChatGPT (texto) + Canva (design). Domine essas duas. Depois, adicione uma por vez conforme a necessidade. Mais importante do que ter 10 ferramentas e dominar 2-3 profundamente.
     </div>
+
+    <!-- VISUAL: Tabela comparativa de ferramentas -->
+    <table class="compare-table">
+      <tr>
+        <th>Ferramenta</th>
+        <th>Tipo</th>
+        <th>Melhor Para</th>
+        <th>Preco</th>
+        <th class="highlight">Nota</th>
+      </tr>
+      <tr>
+        <td><strong>ChatGPT</strong></td>
+        <td>Texto / IA Geral</td>
+        <td>Conteudo, analise, prompts</td>
+        <td>Gratis / US$20/mes</td>
+        <td><span class="check">⭐⭐⭐⭐⭐</span></td>
+      </tr>
+      <tr>
+        <td><strong>Claude</strong></td>
+        <td>Texto / Analise</td>
+        <td>Textos longos, documentos</td>
+        <td>Gratis / US$20/mes</td>
+        <td><span class="check">⭐⭐⭐⭐⭐</span></td>
+      </tr>
+      <tr>
+        <td><strong>Midjourney</strong></td>
+        <td>Imagem</td>
+        <td>Imagens artisticas incriveis</td>
+        <td>US$10/mes</td>
+        <td><span class="check">⭐⭐⭐⭐⭐</span></td>
+      </tr>
+      <tr>
+        <td><strong>DALL-E</strong></td>
+        <td>Imagem</td>
+        <td>Imagens rapidas (via ChatGPT)</td>
+        <td>Incluso no Plus</td>
+        <td><span class="check">⭐⭐⭐⭐</span></td>
+      </tr>
+      <tr>
+        <td><strong>Canva IA</strong></td>
+        <td>Design</td>
+        <td>Posts, apresentacoes, criativos</td>
+        <td>Gratis / R$35/mes</td>
+        <td><span class="check">⭐⭐⭐⭐⭐</span></td>
+      </tr>
+      <tr>
+        <td><strong>ElevenLabs</strong></td>
+        <td>Voz / Audio</td>
+        <td>Narracoes, podcasts, voz</td>
+        <td>Gratis / US$5/mes</td>
+        <td><span class="check">⭐⭐⭐⭐</span></td>
+      </tr>
+      <tr>
+        <td><strong>Make/Zapier</strong></td>
+        <td>Automacao</td>
+        <td>Conectar apps, automatizar tarefas</td>
+        <td>Gratis / US$9/mes</td>
+        <td><span class="check">⭐⭐⭐⭐</span></td>
+      </tr>
+    </table>
+
+    <!-- VISUAL: Feature-grid qual ferramenta para cada tarefa -->
+    <div class="feature-grid">
+      <div class="feature-card"><div class="feat-icon">✍️</div><div><div class="feat-title">Escrever textos</div><div class="feat-desc">ChatGPT ou Claude</div></div></div>
+      <div class="feature-card"><div class="feat-icon">🎨</div><div><div class="feat-title">Criar imagens</div><div class="feat-desc">Midjourney ou DALL-E</div></div></div>
+      <div class="feature-card"><div class="feat-icon">📱</div><div><div class="feat-title">Fazer posts bonitos</div><div class="feat-desc">Canva com IA</div></div></div>
+      <div class="feature-card"><div class="feat-icon">🎙️</div><div><div class="feat-title">Criar audio e voz</div><div class="feat-desc">ElevenLabs</div></div></div>
+      <div class="feature-card"><div class="feat-icon">⚡</div><div><div class="feat-title">Automatizar tarefas</div><div class="feat-desc">Make ou Zapier</div></div></div>
+      <div class="feature-card"><div class="feat-icon">📊</div><div><div class="feat-title">Analisar documentos</div><div class="feat-desc">Claude (textos longos)</div></div></div>
+      <div class="feature-card"><div class="feat-icon">💬</div><div><div class="feat-title">Chatbot no WhatsApp</div><div class="feat-desc">Manychat ou Typebot</div></div></div>
+      <div class="feature-card"><div class="feat-icon">🔍</div><div><div class="feat-title">Pesquisar na internet</div><div class="feat-desc">Perplexity AI</div></div></div>
+    </div>
   </div>
 
   <!-- EXERCICIOS MODULO 7 -->
@@ -2499,6 +3500,77 @@ Negocio: [SEGMENTO]. Tom: [TOM]. Cada mensagem com maximo 3 linhas.</div>
       <li>Crie uma conta no Make (ou Zapier) e configure uma automacao simples (mesmo que seja de teste).</li>
       <li>Faca uma lista das 5 ferramentas de IA que mais fazem sentido para o seu negocio agora e crie um plano de implementacao.</li>
     </ol>
+  </div>
+
+  <!-- QUIZ MODULO 7 -->
+  <div class="quiz">
+    <h3>📝 Voce Entendeu? — Teste do Modulo 7</h3>
+    <div class="quiz-subtitle">Marque a resposta correta. Agora voce conhece todo o ecossistema de IA!</div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">1</span> Quando o Claude e melhor que o ChatGPT?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt"><input type="radio" name="q1m7"> Para criar imagens</div>
+        <div class="quiz-opt"><input type="radio" name="q1m7"> Para analisar documentos longos e textos sofisticados</div>
+        <div class="quiz-opt"><input type="radio" name="q1m7"> Para fazer ligacoes telefonicas</div>
+      </div>
+      <div class="quiz-answer">✅ <strong>Resposta:</strong> O Claude e otimo para analisar documentos longos (PDFs, contratos) e escrever textos com mais naturalidade.</div>
+    </div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">2</span> Qual ferramenta de IA transforma texto em voz realista?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt"><input type="radio" name="q2m7"> Canva</div>
+        <div class="quiz-opt"><input type="radio" name="q2m7"> ElevenLabs</div>
+        <div class="quiz-opt"><input type="radio" name="q2m7"> Midjourney</div>
+      </div>
+      <div class="quiz-answer">✅ <strong>Resposta:</strong> ElevenLabs! Voce digita um texto e ele gera audio com voz humana muito realista. Ate em portugues!</div>
+    </div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">3</span> Verdadeiro ou Falso: Voce precisa usar TODAS as ferramentas de IA para ter sucesso.</div>
+      <div class="quiz-tf">
+        <label><input type="radio" name="q3m7"> Verdadeiro</label>
+        <label><input type="radio" name="q3m7"> Falso</label>
+      </div>
+      <div class="quiz-answer">✅ <strong>Falso!</strong> Comece com 2-3 ferramentas (ChatGPT + Canva, por exemplo) e domine. Depois adicione mais conforme precisar.</div>
+    </div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">4</span> Make e Zapier servem para:</div>
+      <div class="quiz-options">
+        <div class="quiz-opt"><input type="radio" name="q4m7"> Criar imagens bonitas</div>
+        <div class="quiz-opt"><input type="radio" name="q4m7"> Conectar aplicativos e criar automacoes sem programar</div>
+        <div class="quiz-opt"><input type="radio" name="q4m7"> Fazer video chamadas</div>
+      </div>
+      <div class="quiz-answer">✅ <strong>Resposta:</strong> Conectar aplicativos! Exemplo: "Quando chegar email, enviar para ChatGPT gerar resposta e salvar como rascunho." Tudo automatico!</div>
+    </div>
+  </div>
+
+  <!-- CAMPO DE PREENCHIMENTO MODULO 7 -->
+  <div class="fill-section">
+    <h3>✏️ Complete com Suas Palavras — Modulo 7</h3>
+    <div class="fill-subtitle">Preencha para montar seu kit de ferramentas de IA pessoal.</div>
+
+    <div class="fill-item">
+      <label>1. Para criar textos, eu vou usar:</label>
+      <input type="text" class="fill-line" placeholder="ChatGPT, Claude, ou...">
+    </div>
+
+    <div class="fill-item">
+      <label>2. Para criar imagens e design, eu vou usar:</label>
+      <input type="text" class="fill-line" placeholder="Canva, Midjourney, DALL-E, ou...">
+    </div>
+
+    <div class="fill-item">
+      <label>3. A primeira ferramenta NOVA que eu quero testar alem do ChatGPT e:</label>
+      <input type="text" class="fill-line" placeholder="Escolha uma e explique por que...">
+    </div>
+
+    <div class="fill-item">
+      <label>4. Meu kit ideal de ferramentas de IA para meu negocio seria:</label>
+      <textarea class="fill-line-long" placeholder="Liste 3-5 ferramentas e para que voce usaria cada uma..."></textarea>
+    </div>
   </div>
 
   <div class="page-footer">IA &amp; ChatGPT — Curso Completo &middot; Calazans Lumina &middot; Rhaideline Calazans</div>
@@ -2547,6 +3619,25 @@ Negocio: [SEGMENTO]. Tom: [TOM]. Cada mensagem com maximo 3 linhas.</div>
     </div>
 
     <p>O profissional do futuro nao e aquele que faz tudo sozinho nem aquele que delega tudo para IA. E aquele que sabe <strong>o que delegar para IA e o que fazer pessoalmente</strong>. Esse discernimento e sua maior vantagem competitiva.</p>
+
+    <!-- VISUAL: Citacao visual -->
+    <div class="visual-quote">
+      <div class="quote-mark">"</div>
+      <div class="quote-text">A IA nao vai substituir pessoas. Mas pessoas que usam IA vao substituir pessoas que nao usam.</div>
+      <div class="quote-author">— Frase adaptada de Karim Lakhani, professor de Harvard</div>
+    </div>
+
+    <!-- VISUAL: Feature-grid IA vs Humanos -->
+    <div class="feature-grid">
+      <div class="feature-card"><div class="feat-icon">🤖</div><div><div class="feat-title">IA faz bem: Velocidade</div><div class="feat-desc">Gera textos e analises em segundos</div></div></div>
+      <div class="feature-card"><div class="feat-icon">👩</div><div><div class="feat-title">Humano faz bem: Empatia</div><div class="feat-desc">Conexao emocional verdadeira</div></div></div>
+      <div class="feature-card"><div class="feat-icon">🤖</div><div><div class="feat-title">IA faz bem: Volume</div><div class="feat-desc">100 versoes de texto sem cansar</div></div></div>
+      <div class="feature-card"><div class="feat-icon">👩</div><div><div class="feat-title">Humano faz bem: Julgamento etico</div><div class="feat-desc">Decisoes com valores e moral</div></div></div>
+      <div class="feature-card"><div class="feat-icon">🤖</div><div><div class="feat-title">IA faz bem: Padroes</div><div class="feat-desc">Encontra padroes em dados enormes</div></div></div>
+      <div class="feature-card"><div class="feat-icon">👩</div><div><div class="feat-title">Humano faz bem: Criatividade original</div><div class="feat-desc">Ideias que mudam o mundo</div></div></div>
+      <div class="feature-card"><div class="feat-icon">🤖</div><div><div class="feat-title">IA faz bem: Consistencia</div><div class="feat-desc">Funciona 24h sem dias ruins</div></div></div>
+      <div class="feature-card"><div class="feat-icon">👩</div><div><div class="feat-title">Humano faz bem: Relacionamentos</div><div class="feat-desc">Confianca e conexao real</div></div></div>
+    </div>
   </div>
 
   <!-- AULA 8.2 -->
@@ -2763,6 +3854,77 @@ Negocio: [SEGMENTO]. Tom: [TOM]. Cada mensagem com maximo 3 linhas.</div>
     </ol>
   </div>
 
+  <!-- QUIZ MODULO 8 -->
+  <div class="quiz">
+    <h3>📝 Voce Entendeu? — Teste do Modulo 8</h3>
+    <div class="quiz-subtitle">Ultimo teste! Voce esta quase formado(a) em IA!</div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">1</span> O que e uma "alucinacao" da IA?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt"><input type="radio" name="q1m8"> Quando a IA para de funcionar</div>
+        <div class="quiz-opt"><input type="radio" name="q1m8"> Quando a IA inventa informacoes que parecem verdadeiras mas sao falsas</div>
+        <div class="quiz-opt"><input type="radio" name="q1m8"> Quando a IA demora para responder</div>
+      </div>
+      <div class="quiz-answer">✅ <strong>Resposta:</strong> Alucinacao e quando a IA inventa dados, nomes, estudos — e apresenta tudo com confianca! Sempre verifique informacoes importantes.</div>
+    </div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">2</span> Verdadeiro ou Falso: Se voce edita e personaliza o texto gerado pela IA, o conteudo e considerado seu.</div>
+      <div class="quiz-tf">
+        <label><input type="radio" name="q2m8"> Verdadeiro</label>
+        <label><input type="radio" name="q2m8"> Falso</label>
+      </div>
+      <div class="quiz-answer">✅ <strong>Verdadeiro!</strong> A IA e sua ferramenta, como um pincel para um artista. Se voce direciona, edita e personaliza, o trabalho e seu.</div>
+    </div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">3</span> O que sao "AI Agents" (Agentes de IA) que veremos no futuro?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt"><input type="radio" name="q3m8"> Robos fisicos que andam pela casa</div>
+        <div class="quiz-opt"><input type="radio" name="q3m8"> IAs que agem sozinhas: agendam, respondem, organizam sem voce pedir</div>
+        <div class="quiz-opt"><input type="radio" name="q3m8"> Agentes de seguros que usam computador</div>
+      </div>
+      <div class="quiz-answer">✅ <strong>Resposta:</strong> Agentes de IA sao programas que tomam acoes por conta propria — como organizar sua agenda, responder emails e priorizar tarefas automaticamente.</div>
+    </div>
+
+    <div class="quiz-question">
+      <div class="quiz-q"><span class="q-num">4</span> Qual e a habilidade MAIS valiosa na era da IA?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt"><input type="radio" name="q4m8"> Saber programar em Python</div>
+        <div class="quiz-opt"><input type="radio" name="q4m8"> Saber orquestrar ferramentas de IA e pensar criticamente</div>
+        <div class="quiz-opt"><input type="radio" name="q4m8"> Decorar todos os comandos de todas as ferramentas</div>
+      </div>
+      <div class="quiz-answer">✅ <strong>Resposta:</strong> Saber orquestrar multiplas ferramentas de IA + pensamento critico. A IA muda rapido — mas quem pensa bem, se adapta a qualquer ferramenta.</div>
+    </div>
+  </div>
+
+  <!-- CAMPO DE PREENCHIMENTO MODULO 8 -->
+  <div class="fill-section">
+    <h3>✏️ Complete com Suas Palavras — Modulo 8</h3>
+    <div class="fill-subtitle">Ultima reflexao! Pense no seu futuro com IA.</div>
+
+    <div class="fill-item">
+      <label>1. Uma coisa que a IA faz melhor que humanos e:</label>
+      <input type="text" class="fill-line" placeholder="Ex: gerar muitas opcoes de texto rapido...">
+    </div>
+
+    <div class="fill-item">
+      <label>2. Uma coisa que SEMPRE precisara do toque humano e:</label>
+      <input type="text" class="fill-line" placeholder="Ex: empatia, julgamento etico, relacionamentos...">
+    </div>
+
+    <div class="fill-item">
+      <label>3. Para verificar se a IA inventou algo, eu devo:</label>
+      <input type="text" class="fill-line" placeholder="Descreva como voce verificaria a informacao...">
+    </div>
+
+    <div class="fill-item">
+      <label>4. Minha visao para os proximos 6 meses usando IA no meu negocio:</label>
+      <textarea class="fill-line-long" placeholder="O que voce quer conquistar? Quais ferramentas vai usar? Qual sera seu primeiro passo?"></textarea>
+    </div>
+  </div>
+
   <div class="page-footer">IA &amp; ChatGPT — Curso Completo &middot; Calazans Lumina &middot; Rhaideline Calazans</div>
 </div>
 
@@ -2813,9 +3975,43 @@ Negocio: [SEGMENTO]. Tom: [TOM]. Cada mensagem com maximo 3 linhas.</div>
 
     <p><strong>Eu fico por aqui, mas a jornada continua.</strong> Siga a Calazans Lumina para se manter atualizado com novidades, dicas e tutoriais sobre IA. E se este curso te ajudou, compartilhe com alguem que tambem precisa.</p>
 
+    <!-- VISUAL: Stats infographic -->
+    <div class="infographic cols-4">
+      <div class="info-card dark"><div class="info-icon">📚</div><div class="info-number">8</div><div class="info-label">Modulos completos</div></div>
+      <div class="info-card dark"><div class="info-icon">🎓</div><div class="info-number">45</div><div class="info-label">Aulas praticas</div></div>
+      <div class="info-card dark"><div class="info-icon">📋</div><div class="info-number">20</div><div class="info-label">Templates prontos</div></div>
+      <div class="info-card dark"><div class="info-icon">🚀</div><div class="info-number">∞</div><div class="info-label">Possibilidades</div></div>
+    </div>
+
     <p style="font-size:14pt; font-weight:700; color:#FF0005; text-align:center; margin-top:30px;">Obrigada por confiar na Calazans Lumina.<br>Nos vemos na era da IA.</p>
 
     <p style="text-align:center; font-size:12pt; font-weight:700; margin-top:6px;">— Rhaideline Calazans</p>
+  </div>
+
+  <!-- FILL-SECTION: Meu Plano de Acao com IA -->
+  <div class="fill-section">
+    <h3>🎯 Meu Plano de Acao com IA</h3>
+    <div class="fill-subtitle">Preencha este plano para sair do curso com acoes concretas. Esse e o passo mais importante!</div>
+
+    <div class="fill-item">
+      <label>1. Meu principal objetivo usando IA nos proximos 30 dias e:</label>
+      <textarea class="fill-line-long" placeholder="Ex: criar conteudo para Instagram com mais qualidade e frequencia..."></textarea>
+    </div>
+
+    <div class="fill-item">
+      <label>2. As ferramentas de IA que eu vou usar a partir de hoje:</label>
+      <input type="text" class="fill-line" placeholder="1. __________  2. __________  3. __________">
+    </div>
+
+    <div class="fill-item">
+      <label>3. Minha primeira acao CONCRETA esta semana sera:</label>
+      <textarea class="fill-line-long" placeholder="Ex: configurar instrucoes personalizadas no ChatGPT e gerar 5 legendas para meu Instagram..."></textarea>
+    </div>
+
+    <div class="fill-item">
+      <label>4. Daqui a 6 meses, com IA, eu quero ter conquistado:</label>
+      <textarea class="fill-line-long" placeholder="Sonhe grande! O que voce quer ter alcancado com ajuda da IA?"></textarea>
+    </div>
   </div>
 
   <!-- CONTACT SECTION -->
