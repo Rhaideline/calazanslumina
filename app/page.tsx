@@ -257,7 +257,7 @@ export default function HomePage() {
             {[
               {
                 src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f81590acb2f32c57fde.mp4',
-                label: 'Marketing Digital na Pratica',
+                label: 'Marketing Digital na Prática',
               },
               {
                 src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f811001a525e2e45e93.mp4',
@@ -265,11 +265,11 @@ export default function HomePage() {
               },
               {
                 src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f813eba04ab9649d652.mp4',
-                label: 'Ferramentas que Uso no Dia a Dia',
+                label: 'Avaliações no Google: Por Que Importam',
               },
               {
                 src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f8110bc9c7c8a6841ea.mp4',
-                label: 'Dicas de IA para Negocios',
+                label: 'Como Conseguir Mais Avaliações 5 Estrelas',
               },
             ].map((video, i) => (
               <ScrollReveal key={i} delay={i * 150}>
