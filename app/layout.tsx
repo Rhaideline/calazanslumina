@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { DM_Serif_Display, DM_Sans } from 'next/font/google'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -18,6 +18,10 @@ const dmSans = DM_Sans({
   variable: '--font-dm-sans',
   display: 'swap',
 })
+
+export const viewport: Viewport = {
+  themeColor: '#000000',
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://calazanslumina.com'),
@@ -40,6 +44,10 @@ export const metadata: Metadata = {
     'Calazans Lumina',
     'Rhaideline Calazans',
   ],
+  icons: {
+    icon: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6da0830220a0c3e452.png',
+    apple: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6da0830220a0c3e452.png',
+  },
   authors: [{ name: 'Rhaideline Calazans' }],
   creator: 'Calazans Lumina',
   openGraph: {
