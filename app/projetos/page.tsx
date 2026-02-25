@@ -18,61 +18,69 @@ const categorias = [
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d624c8da2a02097df7b.png',
         alt: 'RS Development Group — site de framing contractor em Marlborough, MA',
         nome: 'RS Development Group',
-        tipo: 'Site Profissional',
-        resultado: 'Framing Contractor · Marlborough, MA',
+        tipo: 'Site + SEO Completo',
+        resultado: 'PageSpeed 95+ · SEO On-Page',
+        descricao: 'Site completo para empresa de framing em Marlborough, MA. Entregue com SEO técnico, SEO local, blog com artigos otimizados, Google Business Profile, design responsivo e formulário de orçamento.',
       },
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d6220c035435705e8cd.png',
         alt: 'RS Development Group — página de serviços de framing e construção',
         nome: 'RS Development Group',
         tipo: 'Página de Serviços',
-        resultado: 'Framing & Construction Services',
+        resultado: '13.1K impressões no Google',
+        descricao: 'Página de serviços detalhada com descrição de cada tipo de framing, galeria de projetos, depoimentos de clientes e CTAs estratégicos para captação de leads.',
       },
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d6255d8bc503d457168.png',
         alt: 'RS Development Group — blog de construção com artigos sobre framing e roofing',
         nome: 'RS Development Group',
-        tipo: 'Blog',
-        resultado: 'Construction Blog · SEO Articles',
+        tipo: 'Blog SEO',
+        resultado: '25 cliques orgânicos/semana',
+        descricao: 'Blog com artigos SEO sobre construção, framing, roofing e decks. Cada artigo otimizado para palavras-chave locais de Massachusetts, gerando tráfego orgânico constante.',
       },
       // Wolf's Siding — Siding Company, Massachusetts
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d6255d8bc22d845716a.png',
         alt: "Wolf's Siding — site de exterior e interior siding em Massachusetts",
         nome: "Wolf's Siding",
-        tipo: 'Site Profissional',
-        resultado: 'Exterior & Interior Siding · MA',
+        tipo: 'Site + SEO Completo',
+        resultado: 'PageSpeed 100 · SEO 100',
+        descricao: 'Site profissional para empresa de siding com PageSpeed perfeito (100/100). Entregue com SEO completo, galeria de trabalhos, área de atendimento por cidade, formulário de contato e blog integrado.',
       },
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d6255d8bc91e4457164.png',
         alt: "Wolf's Siding — blog com dicas e guias sobre siding",
         nome: "Wolf's Siding",
-        tipo: 'Blog',
-        resultado: 'Siding Tips & Expert Advice',
+        tipo: 'Blog SEO',
+        resultado: '41.1K impressões em 3 meses',
+        descricao: 'Blog com dicas e guias sobre siding para Massachusetts. Artigos sobre instalação, manutenção, materiais e custos. 41.1K impressões orgânicas no Google em apenas 3 meses.',
       },
       // JF Painting Services — Painting, Massachusetts
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d62df9bdfed7506e133.png',
         alt: 'JF Painting Services — site de pintura profissional em Massachusetts',
         nome: 'JF Painting Services',
-        tipo: 'Site Profissional',
-        resultado: 'Painting Services · Massachusetts',
+        tipo: 'Site + SEO Completo',
+        resultado: 'PageSpeed 95+ · SEO Local',
+        descricao: 'Site profissional para empresa de pintura em Massachusetts. Entregue com SEO local, galeria before/after, seção de serviços detalhada, depoimentos e formulário de orçamento gratuito.',
       },
       // Professional Painting — Massachusetts
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d62df9bdf1a8f06e132.png',
         alt: 'Site de pintura profissional em Massachusetts — design moderno verde',
         nome: 'Professional Painting MA',
-        tipo: 'Site Profissional',
-        resultado: 'Painting Services · Massachusetts',
+        tipo: 'Site + SEO Completo',
+        resultado: 'PageSpeed 95+ · Design Premium',
+        descricao: 'Site com design moderno para empresa de pintura. Inclui galeria de transformações before/after, mapa interativo de áreas atendidas, avaliações de clientes e integração com Google Maps.',
       },
       // Painting & Remodeling — Massachusetts
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d6255d8bc3b6f457169.png',
         alt: 'Site de painting e remodeling em Massachusetts',
         nome: 'Painting & Remodeling MA',
-        tipo: 'Site Profissional',
-        resultado: 'Painting & Remodeling · Massachusetts',
+        tipo: 'Site + SEO Completo',
+        resultado: 'PageSpeed 95+ · SEO Local',
+        descricao: 'Site completo para empresa de pintura e remodelação. Entregue com SEO local para múltiplas cidades de Massachusetts, portfólio de projetos, seção de FAQ e sistema de agendamento.',
       },
       // Sinmevaço — Sindicato, Brasil
       {
@@ -80,15 +88,17 @@ const categorias = [
         alt: 'Sinmevaço — site institucional do sindicato brasileiro',
         nome: 'Sinmevaço',
         tipo: 'Site Institucional',
-        resultado: 'Sindicato · Brasil',
+        resultado: 'Sem SEO · Design Institucional',
+        descricao: 'Site institucional para sindicato brasileiro. Entregue sem SEO (foco institucional). Inclui área de notícias, eventos, benefícios para filiados, galeria de fotos e formulário de contato.',
       },
       // HVAC Company — Massachusetts
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d6255d8bc756045716b.png',
         alt: 'Site de HVAC em Massachusetts — aquecimento e ar condicionado',
         nome: 'HVAC Experts MA',
-        tipo: 'Site Profissional',
-        resultado: 'HVAC Services · Massachusetts',
+        tipo: 'Site + SEO Completo',
+        resultado: 'PageSpeed 95+ · SEO Local',
+        descricao: 'Site profissional para empresa de HVAC (aquecimento e ar condicionado). Entregue com SEO local, descrição de serviços, área de emergência 24h, avaliações e formulário de orçamento.',
       },
     ],
   },
@@ -152,8 +162,8 @@ const categorias = [
     imagens: [
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b406720c0355e60076365.png',
-        alt: 'HBM Solar — Conversation AI Bot no GoHighLevel para qualificação de leads de energia solar',
-        nome: 'HBM Solar',
+        alt: 'Bot de IA conversacional no GoHighLevel para qualificação automática de leads',
+        nome: 'Empresa de Energia Solar',
         tipo: 'Bot de IA · GoHighLevel',
         resultado: 'Qualificação automática de leads',
       },
@@ -166,15 +176,15 @@ const categorias = [
       },
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b410c4c8da2445e99c973.png',
-        alt: 'Fisio & Movimento — bot de IA com OpenAI GPT 4.1 para atendimento de clínica',
-        nome: 'Fisio & Movimento',
+        alt: 'Bot de IA com OpenAI GPT para atendimento automatizado de clínica',
+        nome: 'Clínica de Fisioterapia',
         tipo: 'Bot de IA · OpenAI GPT',
         resultado: 'Atendimento 24h para clínica',
       },
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b418ddf9bdf249608cf87.png',
-        alt: 'Fisio & Movimento — templates de avaliação automatizados no GoHighLevel',
-        nome: 'Fisio & Movimento',
+        alt: 'Templates de avaliação automatizados no GoHighLevel para clínica',
+        nome: 'Clínica de Fisioterapia',
         tipo: 'Templates de Avaliação',
         resultado: 'Coleta automática de feedback',
       },
@@ -275,27 +285,35 @@ export default function ProjetosPage() {
             <div className="grid md:grid-cols-2 gap-4 mb-4">
               {activeCat.imagens.slice(0, 2).map((img, i) => (
                 <ScrollReveal key={i} delay={i * 100}>
-                  <div
-                    className="group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/3]"
-                    onClick={() => setLightbox(img.src)}
-                  >
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
-                    <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                      <p className="text-brand-mint text-xs font-bold uppercase tracking-wider mb-1">{img.tipo}</p>
-                      <p className="text-white font-serif text-xl font-bold mb-1">{img.nome}</p>
-                      <p className="text-white/60 text-sm">{img.resultado}</p>
+                  <div className="group">
+                    <div
+                      className="relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/3]"
+                      onClick={() => setLightbox(img.src)}
+                    >
+                      <Image
+                        src={img.src}
+                        alt={img.alt}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                      <div className="absolute bottom-0 left-0 right-0 p-6">
+                        <p className="text-brand-mint text-xs font-bold uppercase tracking-wider mb-1">{img.tipo}</p>
+                        <p className="text-white font-serif text-xl font-bold mb-1">{img.nome}</p>
+                        <p className="text-white/70 text-sm font-medium">{img.resultado}</p>
+                      </div>
+                      {/* Always-visible label */}
+                      <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-brand-dark text-xs font-bold px-3 py-1.5 rounded-full">
+                        {img.tipo}
+                      </div>
                     </div>
-                    {/* Always-visible label */}
-                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-brand-dark text-xs font-bold px-3 py-1.5 rounded-full">
-                      {img.tipo}
-                    </div>
+                    {/* Description below image */}
+                    {'descricao' in img && (
+                      <div className="mt-3 px-1">
+                        <p className="text-brand-dark/60 text-sm leading-relaxed">{(img as { descricao: string }).descricao}</p>
+                      </div>
+                    )}
                   </div>
                 </ScrollReveal>
               ))}
@@ -307,31 +325,59 @@ export default function ProjetosPage() {
             <div className="grid md:grid-cols-3 gap-4 mb-4">
               {activeCat.imagens.slice(2).map((img, i) => (
                 <ScrollReveal key={i} delay={i * 80}>
-                  <div
-                    className="group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/3]"
-                    onClick={() => setLightbox(img.src)}
-                  >
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
-                    <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                      <p className="text-brand-mint text-xs font-bold uppercase tracking-wider mb-1">{img.tipo}</p>
-                      <p className="text-white font-serif text-lg font-bold mb-0.5">{img.nome}</p>
-                      <p className="text-white/60 text-xs">{img.resultado}</p>
+                  <div className="group">
+                    <div
+                      className="relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/3]"
+                      onClick={() => setLightbox(img.src)}
+                    >
+                      <Image
+                        src={img.src}
+                        alt={img.alt}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                      <div className="absolute bottom-0 left-0 right-0 p-5">
+                        <p className="text-brand-mint text-xs font-bold uppercase tracking-wider mb-1">{img.tipo}</p>
+                        <p className="text-white font-serif text-lg font-bold mb-0.5">{img.nome}</p>
+                        <p className="text-white/70 text-xs font-medium">{img.resultado}</p>
+                      </div>
+                      <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-brand-dark text-xs font-bold px-3 py-1 rounded-full">
+                        {img.tipo}
+                      </div>
                     </div>
-                    <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-brand-dark text-xs font-bold px-3 py-1 rounded-full">
-                      {img.tipo}
-                    </div>
+                    {/* Description below image */}
+                    {'descricao' in img && (
+                      <div className="mt-3 px-1">
+                        <p className="text-brand-dark/60 text-xs leading-relaxed">{(img as { descricao: string }).descricao}</p>
+                      </div>
+                    )}
                   </div>
                 </ScrollReveal>
               ))}
             </div>
           )}
+        </div>
+      </section>
+
+      {/* Info Banner — SEO + PageSpeed */}
+      <section className="py-10 bg-brand-dark text-white">
+        <div className="container-main px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-8 text-center">
+            <div>
+              <p className="text-brand-mint font-bold text-3xl mb-1">95+</p>
+              <p className="text-white/50 text-sm">PageSpeed Score em todos os sites</p>
+            </div>
+            <div>
+              <p className="text-brand-mint font-bold text-3xl mb-1">SEO Completo</p>
+              <p className="text-white/50 text-sm">SEO técnico, local e on-page incluído</p>
+            </div>
+            <div>
+              <p className="text-brand-mint font-bold text-3xl mb-1">Com ou Sem SEO</p>
+              <p className="text-white/50 text-sm">Entregamos sites com ou sem SEO conforme sua necessidade</p>
+            </div>
+          </div>
         </div>
       </section>
 
