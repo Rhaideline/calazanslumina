@@ -9,79 +9,86 @@ const categorias = [
   {
     id: 'sites',
     titulo: 'Sites & Landing Pages',
-    subtitulo: 'Design que converte',
+    subtitulo: 'Projetos reais',
     descricao:
-      'Sites profissionais de alta performance com Next.js, focados em conversão e SEO técnico. Cada projeto é único e desenvolvido para gerar resultados.',
+      'Sites profissionais de alta performance desenvolvidos para empresas reais. Cada projeto é organizado por cliente e mostra o trabalho completo entregue.',
     imagens: [
+      // RS Development Group — Framing & Construction, Marlborough MA
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d624c8da2a02097df7b.png',
-        alt: 'Site profissional — layout moderno e responsivo desenvolvido pela Calazans Lumina',
-        nome: 'Brazil Clean Co.',
+        alt: 'RS Development Group — site de framing contractor em Marlborough, MA',
+        nome: 'RS Development Group',
         tipo: 'Site Profissional',
-        resultado: 'PageSpeed 97 · +180% leads',
-      },
-      {
-        src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d62df9bdf1a8f06e132.png',
-        alt: 'Landing page de alta conversão — design premium para captação de leads',
-        nome: 'Maria Oliveira Estética',
-        tipo: 'Landing Page',
-        resultado: 'Taxa de conversão 12.4%',
-      },
-      {
-        src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d6255d8bc91e4457164.png',
-        alt: 'Site institucional para empresa brasileira — presença digital profissional',
-        nome: 'JM Consulting Group',
-        tipo: 'Site Institucional',
-        resultado: '1º no Google Maps',
-      },
-      {
-        src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d6220c0352e5305e8cc.png',
-        alt: 'Página de vendas otimizada para conversão — funil integrado',
-        nome: 'Sabor Tropical',
-        tipo: 'Página de Vendas',
-        resultado: '+320% de leads em 90 dias',
-      },
-      {
-        src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d62df9bdfed7506e133.png',
-        alt: 'Design responsivo para negócios locais em Massachusetts',
-        nome: 'Elite Auto Detail',
-        tipo: 'Negócio Local',
-        resultado: '7x mais cliques no Google',
-      },
-      {
-        src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d6255d8bc22d845716a.png',
-        alt: 'Site de serviços profissionais para empreendedores brasileiros nos EUA',
-        nome: 'Luana Tax Services',
-        tipo: 'Serviços Profissionais',
-        resultado: 'Leads orgânicos diários',
-      },
-      {
-        src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d6255d8bc3b6f457169.png',
-        alt: 'Layout premium para agência digital — Calazans Lumina portfólio',
-        nome: 'Viva Marketing',
-        tipo: 'Agência Digital',
-        resultado: 'Design premiado',
+        resultado: 'Framing Contractor · Marlborough, MA',
       },
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d6220c035435705e8cd.png',
-        alt: 'Site com funil integrado para geração de leads qualificados',
-        nome: 'Carlos Construction',
-        tipo: 'Funil Integrado',
-        resultado: '8.2% conversão do funil',
+        alt: 'RS Development Group — página de serviços de framing e construção',
+        nome: 'RS Development Group',
+        tipo: 'Página de Serviços',
+        resultado: 'Framing & Construction Services',
       },
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d6255d8bc503d457168.png',
-        alt: 'Design mobile-first para negócios brasileiros nos EUA',
-        nome: 'Bella Hair Studio',
-        tipo: 'Mobile-First',
-        resultado: '95+ PageSpeed Mobile',
+        alt: 'RS Development Group — blog de construção com artigos sobre framing e roofing',
+        nome: 'RS Development Group',
+        tipo: 'Blog',
+        resultado: 'Construction Blog · SEO Articles',
+      },
+      // Wolf's Siding — Siding Company, Massachusetts
+      {
+        src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d6255d8bc22d845716a.png',
+        alt: "Wolf's Siding — site de exterior e interior siding em Massachusetts",
+        nome: "Wolf's Siding",
+        tipo: 'Site Profissional',
+        resultado: 'Exterior & Interior Siding · MA',
       },
       {
+        src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d6255d8bc91e4457164.png',
+        alt: "Wolf's Siding — blog com dicas e guias sobre siding",
+        nome: "Wolf's Siding",
+        tipo: 'Blog',
+        resultado: 'Siding Tips & Expert Advice',
+      },
+      // JF Painting Services — Painting, Massachusetts
+      {
+        src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d62df9bdfed7506e133.png',
+        alt: 'JF Painting Services — site de pintura profissional em Massachusetts',
+        nome: 'JF Painting Services',
+        tipo: 'Site Profissional',
+        resultado: 'Painting Services · Massachusetts',
+      },
+      // Professional Painting — Massachusetts
+      {
+        src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d62df9bdf1a8f06e132.png',
+        alt: 'Site de pintura profissional em Massachusetts — design moderno verde',
+        nome: 'Professional Painting MA',
+        tipo: 'Site Profissional',
+        resultado: 'Painting Services · Massachusetts',
+      },
+      // Painting & Remodeling — Massachusetts
+      {
+        src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d6255d8bc3b6f457169.png',
+        alt: 'Site de painting e remodeling em Massachusetts',
+        nome: 'Painting & Remodeling MA',
+        tipo: 'Site Profissional',
+        resultado: 'Painting & Remodeling · Massachusetts',
+      },
+      // Sinmevaço — Sindicato, Brasil
+      {
+        src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d6220c0352e5305e8cc.png',
+        alt: 'Sinmevaço — site institucional do sindicato brasileiro',
+        nome: 'Sinmevaço',
+        tipo: 'Site Institucional',
+        resultado: 'Sindicato · Brasil',
+      },
+      // HVAC Company — Massachusetts
+      {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d6255d8bc756045716b.png',
-        alt: 'Site de alta performance com PageSpeed 95+',
-        nome: 'Smart Home Tech',
-        tipo: 'Alta Performance',
-        resultado: 'Carrega em 0.8s',
+        alt: 'Site de HVAC em Massachusetts — aquecimento e ar condicionado',
+        nome: 'HVAC Experts MA',
+        tipo: 'Site Profissional',
+        resultado: 'HVAC Services · Massachusetts',
       },
     ],
   },
@@ -90,56 +97,49 @@ const categorias = [
     titulo: 'Resultados & Performance',
     subtitulo: 'Números reais',
     descricao:
-      'Métricas reais de campanhas de SEO local e performance digital. Cada número aqui representa crescimento real de negócios brasileiros.',
+      'Métricas reais do Google Search Console e PageSpeed Insights. Cada screenshot mostra dados verdadeiros dos sites que construímos e gerenciamos.',
     imagens: [
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d624c8da285cc97df7c.png',
-        alt: 'Dashboard de performance — métricas reais de campanhas Calazans Lumina',
-        nome: 'Dashboard Analytics',
-        tipo: 'Performance',
-        resultado: 'Visão 360° do negócio',
+        alt: 'RS Development Group — Google Search Console com 25 cliques e 13.1K impressões',
+        nome: 'RS Development Group',
+        tipo: 'Google Search Console',
+        resultado: '25 cliques · 13.1K impressões · 7 dias',
       },
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3f13f714ee618fd93ca5.png',
-        alt: 'Relatório de performance digital — métricas de conversão e ROI',
-        nome: 'Performance Digital',
-        tipo: 'Marketing Digital',
-        resultado: 'ROI +440%',
+        alt: "Wolf's Siding — PageSpeed Insights com nota 99 em desempenho",
+        nome: "Wolf's Siding",
+        tipo: 'PageSpeed Insights',
+        resultado: 'Desempenho 99 · SEO 100 · Práticas 100',
       },
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3f1320c035efa006b443.png',
-        alt: 'Crescimento orgânico — resultados de SEO local para brasileiros',
-        nome: 'SEO Orgânico',
-        tipo: 'SEO Local',
-        resultado: '+520% crescimento orgânico',
+        alt: "Wolf's Siding — Google Search Console com 11.8K impressões em 28 dias",
+        nome: "Wolf's Siding",
+        tipo: 'Google Search Console',
+        resultado: '9 cliques · 11.8K impressões · 28 dias',
       },
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3f1355d8bc19b9463b26.png',
-        alt: 'Performance de landing page — taxa de conversão otimizada',
-        nome: 'Landing Page Metrics',
-        tipo: 'Conversão',
-        resultado: 'De 2% para 12.4%',
+        alt: "Wolf's Siding — crescimento orgânico no Google Search Console",
+        nome: "Wolf's Siding",
+        tipo: 'Google Search Console',
+        resultado: '12.9K impressões · Crescimento orgânico',
       },
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3f1355d8bc676d463b27.png',
-        alt: 'Dashboard de leads — funil de vendas automatizado GHL',
-        nome: 'Pipeline de Leads',
-        tipo: 'CRM GoHighLevel',
-        resultado: '+320% leads qualificados',
+        alt: "Wolf's Siding — 3 meses de performance no Google com 41.1K impressões",
+        nome: "Wolf's Siding",
+        tipo: 'Google Search Console',
+        resultado: '40 cliques · 41.1K impressões · 3 meses',
       },
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3f1320c035699706b444.png',
-        alt: 'Relatório de redes sociais — crescimento de engajamento',
-        nome: 'Social Media Growth',
-        tipo: 'Redes Sociais',
-        resultado: '+250% engajamento',
-      },
-      {
-        src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b406720c035d914076364.png',
-        alt: 'Resultados de Google Business Profile — aumento de visualizações',
-        nome: 'Google Business',
-        tipo: 'SEO Local',
-        resultado: '7x mais visualizações',
+        alt: "Wolf's Siding — PageSpeed Insights com nota 100 em desempenho",
+        nome: "Wolf's Siding",
+        tipo: 'PageSpeed Insights',
+        resultado: 'Desempenho 100 · Acessibilidade 96 · SEO 100',
       },
     ],
   },
@@ -148,28 +148,35 @@ const categorias = [
     titulo: 'Automações & IA',
     subtitulo: 'Máquinas que vendem',
     descricao:
-      'Fluxos de automação no GoHighLevel, pipelines de vendas e robôs de WhatsApp com IA que trabalham 24 horas por dia pelo seu negócio.',
+      'Fluxos de automação no GoHighLevel, bots de IA conversacional e workflows de WhatsApp para atendimento 24 horas.',
     imagens: [
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b406720c0355e60076365.png',
-        alt: 'Fluxo de automação GoHighLevel — pipeline de vendas automatizado',
-        nome: 'Sales Pipeline',
-        tipo: 'CRM & Pipeline',
-        resultado: 'Cada lead no lugar certo',
+        alt: 'HBM Solar — Conversation AI Bot no GoHighLevel para qualificação de leads de energia solar',
+        nome: 'HBM Solar',
+        tipo: 'Bot de IA · GoHighLevel',
+        resultado: 'Qualificação automática de leads',
+      },
+      {
+        src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b406720c035d914076364.png',
+        alt: 'Workflow de WhatsApp no GoHighLevel — atendimento automatizado com IA',
+        nome: 'Automação WhatsApp',
+        tipo: 'Workflow · GoHighLevel',
+        resultado: 'Atendimento + Orçamento + IA',
       },
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b410c4c8da2445e99c973.png',
-        alt: 'Workflow GHL com disparo automático de WhatsApp, email e SMS',
-        nome: 'Workflow Multicanal',
-        tipo: 'Automação',
-        resultado: 'WhatsApp + Email + SMS',
+        alt: 'Fisio & Movimento — bot de IA com OpenAI GPT 4.1 para atendimento de clínica',
+        nome: 'Fisio & Movimento',
+        tipo: 'Bot de IA · OpenAI GPT',
+        resultado: 'Atendimento 24h para clínica',
       },
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b418ddf9bdf249608cf87.png',
-        alt: 'Robô de IA conversacional no WhatsApp — atendimento 24h automatizado',
-        nome: 'Robô de IA 24h',
-        tipo: 'IA Conversacional',
-        resultado: 'Responde em 5 segundos',
+        alt: 'Fisio & Movimento — templates de avaliação automatizados no GoHighLevel',
+        nome: 'Fisio & Movimento',
+        tipo: 'Templates de Avaliação',
+        resultado: 'Coleta automática de feedback',
       },
     ],
   },
@@ -336,17 +343,17 @@ export default function ProjetosPage() {
               Assista e aprenda
             </p>
             <h2 className="font-serif text-3xl md:text-5xl font-bold text-brand-dark leading-tight">
-              Conteudo em <span className="text-brand-mint">Video</span>
+              Conteúdo em <span className="text-brand-mint">Vídeo</span>
             </h2>
             <p className="text-brand-dark/50 text-sm max-w-xl mx-auto mt-4 leading-relaxed">
-              Dicas praticas, estrategias e ferramentas de marketing digital para empreendedores brasileiros.
+              Dicas práticas, estratégias e ferramentas de marketing digital para empreendedores brasileiros.
             </p>
           </ScrollReveal>
           <div className="grid md:grid-cols-2 gap-6">
             {[
               {
                 src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f81590acb2f32c57fde.mp4',
-                label: 'Marketing Digital na Pratica',
+                label: 'Marketing Digital na Prática',
               },
               {
                 src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f811001a525e2e45e93.mp4',
@@ -358,7 +365,7 @@ export default function ProjetosPage() {
               },
               {
                 src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f8110bc9c7c8a6841ea.mp4',
-                label: 'Dicas de IA para Negocios',
+                label: 'Dicas de IA para Negócios',
               },
             ].map((video, i) => (
               <ScrollReveal key={i} delay={i * 100}>
@@ -370,7 +377,7 @@ export default function ProjetosPage() {
                     className="w-full aspect-video"
                   >
                     <source src={video.src} type="video/mp4" />
-                    Seu navegador nao suporta video HTML5.
+                    Seu navegador não suporta vídeo HTML5.
                   </video>
                   <div className="p-5">
                     <p className="text-brand-mint text-xs font-bold uppercase tracking-wider mb-1">
