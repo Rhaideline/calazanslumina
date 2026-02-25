@@ -18,17 +18,17 @@ const categorias = [
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d624c8da2a02097df7b.png',
         alt: 'RS Development Group — site de framing contractor em Marlborough, MA',
         nome: 'RS Development Group',
-        tipo: 'Site + SEO Completo',
-        resultado: 'PageSpeed 95+ · SEO On-Page',
-        descricao: 'Site completo para empresa de framing em Marlborough, MA. Entregue com SEO técnico, SEO local, blog com artigos otimizados, Google Business Profile, design responsivo e formulário de orçamento.',
+        tipo: 'Site + SEO Completo · 600+ páginas',
+        resultado: 'PageSpeed 90+ · 13.1K impressões/semana',
+        descricao: 'Site com mais de 600 páginas para empresa de framing em Marlborough, MA. Entregue com SEO completo (técnico, local e on-page), blog com dezenas de artigos otimizados, Google Business Profile configurado, páginas de serviços por cidade, design responsivo e formulário de orçamento. Resultado: 13.1K impressões e 25 cliques orgânicos por semana no Google.',
       },
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d6220c035435705e8cd.png',
         alt: 'RS Development Group — página de serviços de framing e construção',
         nome: 'RS Development Group',
-        tipo: 'Página de Serviços',
-        resultado: '13.1K impressões no Google',
-        descricao: 'Página de serviços detalhada com descrição de cada tipo de framing, galeria de projetos, depoimentos de clientes e CTAs estratégicos para captação de leads.',
+        tipo: 'Páginas de Serviços',
+        resultado: 'Ranking excelente no Google',
+        descricao: 'Páginas de serviços detalhadas para cada tipo de trabalho: framing residencial, comercial, roofing e decks. Cada página otimizada para SEO local com palavras-chave de Massachusetts, galeria de fotos reais e CTAs estratégicos para captação de leads.',
       },
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d6255d8bc503d457168.png',
@@ -36,33 +36,33 @@ const categorias = [
         nome: 'RS Development Group',
         tipo: 'Blog SEO',
         resultado: '25 cliques orgânicos/semana',
-        descricao: 'Blog com artigos SEO sobre construção, framing, roofing e decks. Cada artigo otimizado para palavras-chave locais de Massachusetts, gerando tráfego orgânico constante.',
+        descricao: 'Blog com artigos completos sobre construção, framing, roofing e decks. Cada artigo entre 1500-3000 palavras, otimizado para palavras-chave locais de Massachusetts. O blog é a principal fonte de tráfego orgânico do site.',
       },
       // Wolf's Siding — Siding Company, Massachusetts
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d6255d8bc22d845716a.png',
         alt: "Wolf's Siding — site de exterior e interior siding em Massachusetts",
         nome: "Wolf's Siding",
-        tipo: 'Site + SEO Completo',
-        resultado: 'PageSpeed 100 · SEO 100',
-        descricao: 'Site profissional para empresa de siding com PageSpeed perfeito (100/100). Entregue com SEO completo, galeria de trabalhos, área de atendimento por cidade, formulário de contato e blog integrado.',
+        tipo: 'Site + SEO Completo · 800+ páginas',
+        resultado: 'PageSpeed 100 · 41.1K impressões',
+        descricao: 'Site com mais de 800 páginas para empresa de siding em Massachusetts. PageSpeed perfeito (100/100). Entregue com SEO completo, centenas de páginas por cidade e serviço, blog com guias detalhados, galeria de trabalhos e formulário de contato. Resultado: 41.1K impressões e 40 cliques orgânicos em 3 meses — ranking excelente no Google.',
       },
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d6255d8bc91e4457164.png',
         alt: "Wolf's Siding — blog com dicas e guias sobre siding",
         nome: "Wolf's Siding",
-        tipo: 'Blog SEO',
+        tipo: 'Blog SEO · Crescimento orgânico',
         resultado: '41.1K impressões em 3 meses',
-        descricao: 'Blog com dicas e guias sobre siding para Massachusetts. Artigos sobre instalação, manutenção, materiais e custos. 41.1K impressões orgânicas no Google em apenas 3 meses.',
+        descricao: 'Blog completo com guias sobre siding para Massachusetts. Artigos sobre instalação, manutenção, materiais e custos. De zero a 41.1K impressões orgânicas no Google em apenas 3 meses, com crescimento constante mês a mês.',
       },
       // JF Painting Services — Painting, Massachusetts
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d62df9bdfed7506e133.png',
         alt: 'JF Painting Services — site de pintura profissional em Massachusetts',
         nome: 'JF Painting Services',
-        tipo: 'Site + SEO Completo',
-        resultado: 'PageSpeed 95+ · SEO Local',
-        descricao: 'Site profissional para empresa de pintura em Massachusetts. Entregue com SEO local, galeria before/after, seção de serviços detalhada, depoimentos e formulário de orçamento gratuito.',
+        tipo: 'Site + SEO Completo · 600+ páginas',
+        resultado: 'PageSpeed 90+ · Ranking no Google',
+        descricao: 'Site com mais de 600 páginas para empresa de pintura em Massachusetts. Entregue com SEO completo, páginas de serviço por cidade, blog com artigos otimizados, galeria before/after, depoimentos de clientes e formulário de orçamento. Ranking excelente no Google para buscas locais.',
       },
       // Professional Painting — Massachusetts
       {
@@ -70,8 +70,8 @@ const categorias = [
         alt: 'Site de pintura profissional em Massachusetts — design moderno verde',
         nome: 'Professional Painting MA',
         tipo: 'Site + SEO Completo',
-        resultado: 'PageSpeed 95+ · Design Premium',
-        descricao: 'Site com design moderno para empresa de pintura. Inclui galeria de transformações before/after, mapa interativo de áreas atendidas, avaliações de clientes e integração com Google Maps.',
+        resultado: 'PageSpeed 90+ · Design Premium',
+        descricao: 'Site profissional com design premium para empresa de pintura. Entregue com SEO local, galeria de transformações before/after, mapa interativo de áreas atendidas, avaliações de clientes e integração com Google Maps.',
       },
       // Painting & Remodeling — Massachusetts
       {
@@ -79,17 +79,17 @@ const categorias = [
         alt: 'Site de painting e remodeling em Massachusetts',
         nome: 'Painting & Remodeling MA',
         tipo: 'Site + SEO Completo',
-        resultado: 'PageSpeed 95+ · SEO Local',
-        descricao: 'Site completo para empresa de pintura e remodelação. Entregue com SEO local para múltiplas cidades de Massachusetts, portfólio de projetos, seção de FAQ e sistema de agendamento.',
+        resultado: 'PageSpeed 90+ · SEO Local',
+        descricao: 'Site completo para empresa de pintura e remodelação. Entregue com SEO local para múltiplas cidades de Massachusetts, portfólio de projetos, seção de perguntas frequentes e sistema de agendamento online.',
       },
       // Sinmevaço — Sindicato, Brasil
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d6220c0352e5305e8cc.png',
         alt: 'Sinmevaço — site institucional do sindicato brasileiro',
         nome: 'Sinmevaço',
-        tipo: 'Site Institucional',
-        resultado: 'Sem SEO · Design Institucional',
-        descricao: 'Site institucional para sindicato brasileiro. Entregue sem SEO (foco institucional). Inclui área de notícias, eventos, benefícios para filiados, galeria de fotos e formulário de contato.',
+        tipo: 'Site Institucional · Sem SEO',
+        resultado: 'Design Institucional',
+        descricao: 'Site institucional para sindicato brasileiro. Entregue sem SEO (foco exclusivamente institucional). Inclui área de notícias, eventos, benefícios para filiados, galeria de fotos e formulário de contato. Exemplo de entrega de site sem pacote de SEO.',
       },
       // HVAC Company — Massachusetts
       {
@@ -97,8 +97,8 @@ const categorias = [
         alt: 'Site de HVAC em Massachusetts — aquecimento e ar condicionado',
         nome: 'HVAC Experts MA',
         tipo: 'Site + SEO Completo',
-        resultado: 'PageSpeed 95+ · SEO Local',
-        descricao: 'Site profissional para empresa de HVAC (aquecimento e ar condicionado). Entregue com SEO local, descrição de serviços, área de emergência 24h, avaliações e formulário de orçamento.',
+        resultado: 'PageSpeed 90+ · SEO Local',
+        descricao: 'Site profissional para empresa de HVAC (aquecimento e ar condicionado). Entregue com SEO local, descrição de serviços, área de emergência 24h, avaliações de clientes e formulário de orçamento.',
       },
     ],
   },
@@ -362,20 +362,24 @@ export default function ProjetosPage() {
       </section>
 
       {/* Info Banner — SEO + PageSpeed */}
-      <section className="py-10 bg-brand-dark text-white">
+      <section className="py-12 bg-brand-dark text-white">
         <div className="container-main px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8 text-center">
+          <div className="grid md:grid-cols-4 gap-8 text-center">
             <div>
-              <p className="text-brand-mint font-bold text-3xl mb-1">95+</p>
-              <p className="text-white/50 text-sm">PageSpeed Score em todos os sites</p>
+              <p className="text-brand-mint font-bold text-3xl mb-1">80+</p>
+              <p className="text-white/50 text-sm">PageSpeed Score em todos os sites entregues</p>
             </div>
             <div>
-              <p className="text-brand-mint font-bold text-3xl mb-1">SEO Completo</p>
-              <p className="text-white/50 text-sm">SEO técnico, local e on-page incluído</p>
+              <p className="text-brand-mint font-bold text-3xl mb-1">800+</p>
+              <p className="text-white/50 text-sm">Páginas criadas no maior projeto (Wolf&apos;s Siding)</p>
             </div>
             <div>
               <p className="text-brand-mint font-bold text-3xl mb-1">Com ou Sem SEO</p>
               <p className="text-white/50 text-sm">Entregamos sites com ou sem SEO conforme sua necessidade</p>
+            </div>
+            <div>
+              <p className="text-brand-mint font-bold text-3xl mb-1">Ranking Real</p>
+              <p className="text-white/50 text-sm">Todos os sites com SEO posicionados no Google com resultados comprovados</p>
             </div>
           </div>
         </div>

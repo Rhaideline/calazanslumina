@@ -3,57 +3,55 @@ import ScrollReveal from '@/components/ScrollReveal'
 
 const pacotes = [
   {
-    nome: 'Essencial',
+    nome: 'Site Básico',
     preco: 'R$ 500',
     periodo: 'a partir de',
-    descricao: 'Presença digital profissional para começar a ser encontrado',
+    descricao: 'Sua presença digital profissional para começar a ser encontrado online',
     destaque: false,
     itens: [
-      'Site profissional Next.js (PageSpeed 95+)',
-      'Design responsivo mobile-first',
-      'SEO técnico + Schema Markup',
-      'Formulário integrado com CRM',
-      'Google Analytics 4 configurado',
-      'Hospedagem + domínio + SSL',
+      'Site profissional de 2 páginas (principal + obrigado)',
+      'Design moderno e responsivo para celular',
+      'Formulário de contato integrado',
+      'Hospedagem + domínio + SSL incluso',
+      'PageSpeed acima de 80',
       'Entrega em até 7 dias úteis',
     ],
     cta: 'Solicitar Orçamento',
   },
   {
-    nome: 'Profissional',
-    preco: 'R$ 1.200',
-    periodo: 'a partir de',
-    descricao: 'Automatize seu funil de vendas e pare de perder leads',
+    nome: 'Site + SEO',
+    preco: null,
+    periodo: '',
+    descricao: 'Site completo com SEO para aparecer no Google e atrair clientes',
     destaque: true,
     itens: [
-      'Tudo do Essencial +',
-      'Funil de vendas completo (GoHighLevel)',
-      'CRM com pipeline de vendas configurado',
-      'Inbox unificada: WhatsApp, SMS, Email, DMs',
-      'Automações de follow-up (workflow visual)',
-      'Calendário de agendamento integrado',
-      'Até 5 páginas otimizadas para SEO',
-      'Dashboard de métricas e conversões',
-      'Formulários e pesquisas de captura',
+      'Tudo do Site Básico +',
+      'Múltiplas páginas (serviços, blog, cidades)',
+      'SEO completo (técnico, local e on-page)',
+      'Blog com artigos otimizados para Google',
+      'Google Business Profile configurado',
+      'Integração com Google Analytics',
+      'Páginas otimizadas por cidade e serviço',
+      'Ranking real no Google comprovado',
     ],
-    cta: 'Quero Automatizar',
+    cta: 'Solicitar Orçamento',
   },
   {
-    nome: 'Premium',
-    preco: 'Sob consulta',
-    periodo: 'personalizado',
-    descricao: 'Solução completa para dominar seu mercado digital',
+    nome: 'Solução Completa',
+    preco: null,
+    periodo: '',
+    descricao: 'Site + SEO + automação + IA — tudo que seu negócio precisa para vender mais',
     destaque: false,
     itens: [
-      'Tudo do Profissional +',
+      'Tudo do Site + SEO +',
+      'Funil de vendas completo (GoHighLevel)',
+      'CRM com pipeline de vendas configurado',
       'IA conversacional no WhatsApp 24h',
+      'Automações de follow-up automático',
       'Gestão de redes sociais (conteúdo + posts)',
-      'Campanhas estratégicas de marketing digital',
-      'Google Business Profile otimizado',
-      'Gestão de reputação e reviews',
-      'Email marketing + campanhas SMS',
+      'Gestão de reputação e avaliações',
       'Relatórios mensais de performance',
-      'Suporte prioritário + consultoria mensal',
+      'Suporte prioritário + consultoria',
     ],
     cta: 'Falar com Especialista',
   },
@@ -80,7 +78,7 @@ export default function PricingTable() {
             Pacotes que cabem no seu <span className="text-brand-mint">bolso</span>
           </h2>
           <p className="text-white/50 max-w-2xl mx-auto">
-            Soluções completas de marketing digital com tecnologia GoHighLevel — do site ao funil automatizado.
+            Soluções completas de marketing digital — do site simples ao funil automatizado com IA.
             Também atendemos agências como freelancer.
           </p>
         </ScrollReveal>
@@ -106,10 +104,16 @@ export default function PricingTable() {
                   <p className={`text-sm mb-4 ${pkg.destaque ? 'text-white/70' : 'text-white/40'}`}>
                     {pkg.descricao}
                   </p>
-                  <p className={`text-xs uppercase tracking-wider ${pkg.destaque ? 'text-white/50' : 'text-white/30'}`}>
-                    {pkg.periodo}
-                  </p>
-                  <p className="font-serif text-4xl font-bold mt-1">{pkg.preco}</p>
+                  {pkg.preco ? (
+                    <>
+                      <p className={`text-xs uppercase tracking-wider ${pkg.destaque ? 'text-white/50' : 'text-white/30'}`}>
+                        {pkg.periodo}
+                      </p>
+                      <p className="font-serif text-4xl font-bold mt-1">{pkg.preco}</p>
+                    </>
+                  ) : (
+                    <p className="font-serif text-3xl font-bold mt-4">Sob consulta</p>
+                  )}
                 </div>
 
                 <ul className="space-y-3 mb-8 flex-1">

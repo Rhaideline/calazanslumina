@@ -13,7 +13,7 @@ const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: 'Calazans Lumina',
-  description: 'Agência de marketing digital especializada em brasileiros nos EUA e Brasil. Sites Next.js, funis GHL, CRM com IA e Google Business Profile.',
+  description: 'Agência de marketing digital especializada em brasileiros nos EUA e Brasil. Sites profissionais, funis de vendas, CRM com IA e Google Business Profile.',
   url: 'https://calazanslumina.com',
   telephone: '+5531982948067',
   address: {

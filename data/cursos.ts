@@ -224,6 +224,7 @@ export const cursos: Curso[] = [
     descricaoCurta: 'Aprenda os fundamentos do marketing digital do zero. Ideal para quem está começando e quer entender como atrair clientes pela internet.',
     descricaoLonga: 'Curso completo para quem nunca fez marketing digital. Desde os conceitos básicos até a implementação prática de estratégias que geram resultado. Você vai aprender a criar presença digital, atrair visitantes, gerar leads e converter em vendas.',
     preco: 20,
+    pdfDisponivel: true,
     imagem: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b9ac95dfd50100d491487.png',
     paraQuem: [
       'Empreendedores que estão começando no digital',
@@ -274,6 +275,7 @@ export const cursos: Curso[] = [
     descricaoCurta: 'Aprenda a configurar, otimizar e dominar o Google Business Profile para aparecer no Google Maps e atrair clientes locais.',
     descricaoLonga: 'Curso prático e direto para configurar seu Google Business Profile do zero e otimizar para aparecer nas primeiras posições do Google Maps. Com dados reais e técnicas que aplicamos nos clientes da Calazans Lumina.',
     preco: 20,
+    pdfDisponivel: true,
     imagem: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b9ac95dfd50100d491487.png',
     paraQuem: [
       'Negócios locais que querem mais visibilidade',
@@ -316,6 +318,7 @@ export const cursos: Curso[] = [
     descricaoCurta: 'Transforme suas redes sociais em máquinas de geração de leads. Aprenda a estratégia Info-First que o algoritmo favorece em 2026.',
     descricaoLonga: 'Curso focado em transformar redes sociais de vitrine para máquina de vendas. Usando a estratégia Info-First que o algoritmo do Instagram e outras plataformas favorecem. Com templates de posts, calendário editorial e métricas que importam.',
     preco: 20,
+    pdfDisponivel: true,
     imagem: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b9ac94c8da27eb5b8f7fb.png',
     paraQuem: [
       'Empreendedores que postam mas não geram vendas',
@@ -358,6 +361,7 @@ export const cursos: Curso[] = [
     descricaoCurta: 'Entenda como criar funis de vendas que convertem. Do primeiro contato ao fechamento, de forma automatizada e simples.',
     descricaoLonga: 'Curso prático sobre funis de vendas para quem quer parar de perder leads e começar a converter de forma automatizada. Com exemplos reais de funis que implementamos na Calazans Lumina usando GoHighLevel.',
     preco: 20,
+    pdfDisponivel: true,
     imagem: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b9ac95dfd50100d491487.png',
     paraQuem: [
       'Empreendedores que perdem leads por falta de follow-up',
