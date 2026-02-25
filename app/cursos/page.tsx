@@ -46,8 +46,8 @@ export default function CursosPage() {
                 <p className="text-white/40 text-xs">Por curso</p>
               </div>
               <div className="bg-white/5 border border-white/10 rounded-xl px-6 py-3 text-center">
-                <p className="text-brand-mint font-bold text-2xl">PDF</p>
-                <p className="text-white/40 text-xs">Acesso imediato</p>
+                <p className="text-brand-mint font-bold text-2xl">Online + PDF</p>
+                <p className="text-white/40 text-xs">Duas formas de estudar</p>
               </div>
             </div>
           </ScrollReveal>
@@ -60,23 +60,23 @@ export default function CursosPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {cursos.map((curso, i) => (
               <ScrollReveal key={curso.slug} delay={i * 100}>
-                <Link href={curso.gratuito ? `/cursos/${curso.slug}/download` : `/cursos/${curso.slug}`} className="group block h-full">
-                  <div className={`relative rounded-2xl overflow-hidden h-full flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
-                    curso.destaque
-                      ? 'border-2 border-brand-mint shadow-xl shadow-black/10'
-                      : 'border border-gray-100 shadow-sm'
-                  }`}>
-                    {curso.gratuito ? (
-                      <div className="absolute top-4 right-4 z-10 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                        Gratuito
-                      </div>
-                    ) : curso.destaque ? (
-                      <div className="absolute top-4 right-4 z-10 bg-brand-mint text-white text-xs font-bold px-3 py-1 rounded-full">
-                        Mais vendido
-                      </div>
-                    ) : null}
+                <div className={`relative rounded-2xl overflow-hidden h-full flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
+                  curso.destaque
+                    ? 'border-2 border-brand-mint shadow-xl shadow-black/10'
+                    : 'border border-gray-100 shadow-sm'
+                }`}>
+                  {curso.gratuito ? (
+                    <div className="absolute top-4 right-4 z-10 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                      Gratuito
+                    </div>
+                  ) : curso.destaque ? (
+                    <div className="absolute top-4 right-4 z-10 bg-brand-mint text-white text-xs font-bold px-3 py-1 rounded-full">
+                      Mais vendido
+                    </div>
+                  ) : null}
 
-                    {/* Image area */}
+                  {/* Image area */}
+                  <Link href={`/cursos/${curso.slug}`} className="group">
                     <div className="relative h-48 bg-brand-dark flex items-center justify-center overflow-hidden">
                       <Image
                         src={curso.imagem}
@@ -91,47 +91,56 @@ export default function CursosPage() {
                         </p>
                       </div>
                     </div>
+                  </Link>
 
-                    {/* Content */}
-                    <div className="p-6 flex flex-col flex-1">
-                      <p className="text-brand-dark/60 text-sm leading-relaxed mb-4 flex-1">
-                        {curso.descricaoCurta}
-                      </p>
+                  {/* Content */}
+                  <div className="p-6 flex flex-col flex-1">
+                    <p className="text-brand-dark/60 text-sm leading-relaxed mb-4 flex-1">
+                      {curso.descricaoCurta}
+                    </p>
 
-                      <div className="flex items-center justify-between mb-4">
-                        <div>
-                          <p className="text-brand-dark/40 text-xs">{curso.gratuito ? 'Acesso' : 'Investimento'}</p>
-                          {curso.gratuito ? (
-                            <p className="font-serif text-3xl font-bold text-green-600">GRÁTIS</p>
-                          ) : (
-                            <p className="font-serif text-3xl font-bold text-brand-dark">
-                              R$ {curso.preco}<span className="text-base text-brand-dark/40">,00</span>
-                            </p>
-                          )}
-                        </div>
-                        <div className="text-right">
-                          <p className="text-brand-dark/40 text-xs">{curso.modulos.length} módulos</p>
-                          <p className="text-brand-dark/40 text-xs">
-                            {curso.modulos.reduce((acc, m) => acc + m.aulas.length, 0)} aulas
+                    <div className="flex items-center justify-between mb-4">
+                      <div>
+                        <p className="text-brand-dark/40 text-xs">{curso.gratuito ? 'Acesso' : 'Investimento'}</p>
+                        {curso.gratuito ? (
+                          <p className="font-serif text-3xl font-bold text-green-600">GRÁTIS</p>
+                        ) : (
+                          <p className="font-serif text-3xl font-bold text-brand-dark">
+                            R$ {curso.preco}<span className="text-base text-brand-dark/40">,00</span>
                           </p>
-                        </div>
+                        )}
                       </div>
-
-                      {curso.pdfDisponivel && (
-                        <p className="text-brand-mint text-xs font-bold mb-3 flex items-center gap-1">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                          </svg>
-                          PDF disponível para download imediato
+                      <div className="text-right">
+                        <p className="text-brand-dark/40 text-xs">{curso.modulos.length} módulos</p>
+                        <p className="text-brand-dark/40 text-xs">
+                          {curso.modulos.reduce((acc, m) => acc + m.aulas.length, 0)} aulas
                         </p>
-                      )}
+                      </div>
+                    </div>
 
-                      <span className="btn-primary text-sm py-3 text-center w-full group-hover:scale-105 transition-transform">
-                        {curso.gratuito ? 'Baixar PDF Gratuito' : 'Ver Conteúdo Completo'}
-                      </span>
+                    <div className="flex flex-col gap-2">
+                      <Link
+                        href={`/cursos/${curso.slug}/aprender`}
+                        className="btn-primary text-sm py-3 text-center w-full inline-flex items-center justify-center gap-2"
+                      >
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Fazer Curso Online
+                      </Link>
+                      <Link
+                        href={`/cursos/${curso.slug}/download`}
+                        className="border border-brand-dark/20 text-brand-dark hover:bg-brand-bg text-sm py-3 rounded-full text-center w-full font-medium transition-colors inline-flex items-center justify-center gap-2"
+                      >
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        Baixar PDF
+                      </Link>
                     </div>
                   </div>
-                </Link>
+                </div>
               </ScrollReveal>
             ))}
           </div>
