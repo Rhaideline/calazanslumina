@@ -21,6 +21,21 @@ export const cursosInterativosExtras: CursoInterativo[] = [
             tip: 'Regra de ouro: para cada post de venda, faça pelo menos 4 posts educativos. Essa proporção 4:1 é o que funciona em 2026.',
           },
           {
+            type: 'diagram',
+            title: 'Plataformas que Você Precisa Dominar',
+            diagramType: 'icons',
+            data: {
+              items: [
+                { icon: 'instagram', label: 'Instagram' },
+                { icon: 'facebook', label: 'Facebook' },
+                { icon: 'tiktok', label: 'TikTok' },
+                { icon: 'youtube', label: 'YouTube' },
+                { icon: 'whatsapp', label: 'WhatsApp' },
+              ],
+            },
+            caption: 'As 5 plataformas essenciais para vender nas redes sociais em 2026',
+          },
+          {
             type: 'content',
             title: 'Por que conteúdo informativo vende mais',
             body: 'Quando você ensina algo útil, as pessoas passam a confiar em você como especialista. Essa confiança é o que faz alguém comprar de você e não do concorrente. Pense assim: quem te ensinou a resolver um problema, provavelmente é a melhor pessoa para vender a solução completa. Além disso, conteúdo educativo é salvo e compartilhado, o que aumenta seu alcance de forma gratuita. É a estratégia mais barata e eficaz que existe.',
@@ -102,6 +117,22 @@ export const cursosInterativosExtras: CursoInterativo[] = [
             tip: 'Use o Canva gratuito para criar carrosséis bonitos em minutos. Procure por templates de "Carrossel Instagram" e adapte com suas cores.',
           },
           {
+            type: 'diagram',
+            title: 'Taxa de Engajamento por Plataforma',
+            diagramType: 'barchart',
+            data: {
+              items: [
+                { label: 'TikTok', value: 85 },
+                { label: 'Reels', value: 72 },
+                { label: 'Carrossel', value: 65 },
+                { label: 'Stories', value: 50 },
+                { label: 'Post Foto', value: 30 },
+                { label: 'Facebook', value: 20 },
+              ],
+            },
+            caption: 'Engajamento médio por formato em 2026 — Reels e Carrosséis lideram',
+          },
+          {
             type: 'content',
             title: 'Reels curtos com dados: conteúdo que viraliza',
             body: 'Reels de 15 a 30 segundos com dados surpreendentes são o tipo de vídeo que mais viraliza em 2026. A fórmula é simples: comece com um dado impactante, explique por que isso importa, e termine com uma dica prática. Não precisa de edição profissional — texto na tela com sua narração já funciona. Use legendas automáticas porque a maioria assiste sem som. Poste pelo menos 3 Reels por semana para ganhar tração.',
@@ -157,6 +188,23 @@ export const cursosInterativosExtras: CursoInterativo[] = [
             title: 'Calendário editorial mensal: como montar o seu',
             body: 'Um calendário editorial é um planejamento de tudo que você vai postar no mês. Comece definindo 4 pilares de conteúdo do seu negócio — por exemplo, um restaurante pode ter: receitas, bastidores, dicas de culinária e promoções. Distribua esses pilares ao longo da semana para ter variedade. Use uma planilha simples do Google Sheets ou até o bloco de notas do celular para organizar. Planejar um mês inteiro de uma vez economiza horas de trabalho.',
             tip: 'No primeiro domingo de cada mês, reserve 1 hora para planejar todo o conteúdo do mês. Isso elimina aquela sensação de "não sei o que postar hoje".',
+          },
+          {
+            type: 'diagram',
+            title: 'Planejamento Semanal de Conteúdo',
+            diagramType: 'calendar',
+            data: {
+              days: [
+                'Dica rápida (carrossel)',
+                'Bastidores do negócio',
+                'Produção em lote',
+                'Tutorial / Passo a passo',
+                'Mitos vs. Verdades',
+                'Reels com dados',
+                'Descanso / Análise',
+              ],
+            },
+            caption: 'Modelo de calendário semanal equilibrado com os 4 pilares de conteúdo',
           },
           {
             type: 'content',
@@ -226,6 +274,21 @@ export const cursosInterativosExtras: CursoInterativo[] = [
             title: 'Hashtags estratégicas: menos é mais',
             body: 'Em 2026, usar 30 hashtags genéricas não funciona mais. O ideal é usar entre 5 e 10 hashtags bem escolhidas. Misture hashtags grandes (acima de 1 milhão de posts), médias (100 mil a 1 milhão) e pequenas (abaixo de 100 mil). As pequenas são as mais importantes porque nelas você compete com menos gente e aparece por mais tempo. Sempre inclua hashtags específicas do seu nicho e da sua cidade para atrair clientes locais.',
             tip: 'Crie uma lista de 30 hashtags do seu nicho divididas em grandes, médias e pequenas. Para cada post, selecione 3 de cada grupo.',
+          },
+          {
+            type: 'diagram',
+            title: 'Funil de Vendas nas Redes Sociais',
+            diagramType: 'funnel',
+            data: {
+              stages: [
+                { label: 'Alcance', desc: 'Posts e Reels atraem novos seguidores' },
+                { label: 'Engajamento', desc: 'Curtidas, salvamentos e comentários' },
+                { label: 'Confiança', desc: 'Conteúdo educativo constrói autoridade' },
+                { label: 'Conversa', desc: 'DMs e WhatsApp com leads quentes' },
+                { label: 'Venda', desc: 'Cliente compra e indica para amigos' },
+              ],
+            },
+            caption: 'O caminho do seguidor até a venda — cada etapa alimenta a próxima',
           },
           {
             type: 'content',
@@ -324,6 +387,20 @@ export const cursosInterativosExtras: CursoInterativo[] = [
             tip: 'Topo = atrair atenção com conteúdo educativo. Meio = construir confiança com provas sociais. Fundo = facilitar a compra com oferta irresistível.',
           },
           {
+            type: 'diagram',
+            title: 'O Funil de Vendas Clássico',
+            diagramType: 'funnel',
+            data: {
+              stages: [
+                { label: 'Topo (Descoberta)', desc: 'Atrai atenção com conteúdo educativo e anúncios' },
+                { label: 'Meio (Consideração)', desc: 'Constrói confiança com provas sociais e valor' },
+                { label: 'Fundo (Decisão)', desc: 'Apresenta oferta irresistível com urgência' },
+                { label: 'Conversão', desc: 'Cliente compra e se torna promotor da marca' },
+              ],
+            },
+            caption: 'Muitas pessoas entram pelo topo, mas só as mais qualificadas chegam à conversão',
+          },
+          {
             type: 'content',
             title: 'A jornada do cliente: do desconhecido ao fã',
             body: 'Imagine a jornada da Maria: ela vê um Reel seu com uma dica útil (topo). Curiosa, ela visita seu perfil e segue você. Nos dias seguintes, ela vê mais conteúdos seus e começa a confiar na sua expertise (meio). Então você publica um depoimento de um cliente satisfeito, e a Maria pensa: "quero isso para mim também". Ela clica no link da bio e compra (fundo). Depois da compra, ela fica tão satisfeita que indica para 3 amigas. Esse é o ciclo completo — e ele pode ser planejado.',
@@ -334,6 +411,21 @@ export const cursosInterativosExtras: CursoInterativo[] = [
             title: 'Exemplos reais de funis que funcionam',
             body: 'Uma nutricionista atrai com Reels de receitas saudáveis (topo), oferece um e-book gratuito "7 Dias de Cardápio" em troca do email (meio), e depois envia uma sequência de emails com depoimentos e oferta de consulta (fundo). Uma loja de roupas atrai com looks do dia no Instagram (topo), leva para o WhatsApp com "avise-me quando chegar" (meio), e manda mensagem personalizada quando o produto chega (fundo). Os funis são simples — o segredo é ter cada etapa funcionando.',
             tip: 'Comece com o funil mais simples possível: rede social > WhatsApp > venda. Depois, vá adicionando etapas conforme for crescendo.',
+          },
+          {
+            type: 'diagram',
+            title: 'Jornada do Cliente — Passo a Passo',
+            diagramType: 'flowchart',
+            data: {
+              steps: [
+                'Vê um Reel ou post educativo',
+                'Visita o perfil e segue',
+                'Consome mais conteúdos e confia',
+                'Clica no link da bio ou manda DM',
+                'Compra e indica para amigos',
+              ],
+            },
+            caption: 'O caminho real que um cliente percorre — da descoberta até a indicação',
           },
           {
             type: 'quiz',
@@ -390,6 +482,28 @@ export const cursosInterativosExtras: CursoInterativo[] = [
             title: 'Títulos que convertem: a frase mais importante da página',
             body: 'O título da sua landing page é responsável por 80% da decisão do visitante de continuar lendo ou sair. Um bom título comunica o benefício principal em poucas palavras. A fórmula mais eficaz é: resultado desejado + prazo + sem objeção. Exemplo: "Emagreça 5kg em 30 dias sem passar fome". Evite títulos vagos como "Bem-vindo ao meu site". O visitante precisa entender em 3 segundos o que vai ganhar ali.',
             tip: 'Escreva 10 opções de título e peça para 5 pessoas escolherem o melhor. A opinião de pessoas reais vale mais do que qualquer teoria.',
+          },
+          {
+            type: 'diagram',
+            title: 'Com Funil vs. Sem Funil',
+            diagramType: 'comparison',
+            data: {
+              leftLabel: 'Sem Funil',
+              rightLabel: 'Com Funil',
+              leftItems: [
+                'Venda direta e fria',
+                'Cliente desconfia e sai',
+                'Perde leads por falta de follow-up',
+                'Sem dados para melhorar',
+              ],
+              rightItems: [
+                'Educa antes de vender',
+                'Confiança construída com conteúdo',
+                'Automação nutre leads 24h/dia',
+                'Métricas claras em cada etapa',
+              ],
+            },
+            caption: 'O funil transforma visitantes desconfiados em clientes fiéis',
           },
           {
             type: 'content',
@@ -536,6 +650,20 @@ export const cursosInterativosExtras: CursoInterativo[] = [
             tip: 'Comece com um scoring simples de 3 níveis: frio (0-5 pontos), morno (6-14 pontos) e quente (15+ pontos). Foque seu tempo nos leads quentes.',
           },
           {
+            type: 'diagram',
+            title: 'Métricas-Chave do Funil',
+            diagramType: 'stats',
+            data: {
+              stats: [
+                { value: '3-5%', label: 'Taxa de conversão média do topo ao fundo' },
+                { value: '80%', label: 'Queda se resposta demora mais de 5 min' },
+                { value: '5x', label: 'Mais barato reter cliente do que conquistar novo' },
+                { value: '47%', label: 'Leads compram de quem responde primeiro' },
+              ],
+            },
+            caption: 'Números reais que mostram por que cada etapa do funil importa',
+          },
+          {
             type: 'content',
             title: 'Relatórios de conversão: meça para melhorar',
             body: 'Sem medir, é impossível melhorar. Os relatórios essenciais são: taxa de conversão por etapa do funil (quantos % passam de uma etapa para a próxima), tempo médio de venda (quantos dias entre o primeiro contato e a compra), ticket médio (valor médio de cada venda) e taxa de fechamento (quantos leads viram clientes). Acompanhe esses números semanalmente e identifique onde está o gargalo. Se muitos leads travam na etapa de "Proposta Enviada", o problema pode ser o preço ou a proposta.',
@@ -614,6 +742,24 @@ export const cursosInterativosExtras: CursoInterativo[] = [
             tip: 'Se você já tem uma conta do Gmail, já tem acesso a TODAS essas ferramentas gratuitamente. Acesse drive.google.com para começar.',
           },
           {
+            type: 'diagram',
+            title: 'Ferramentas do Escritório Digital',
+            diagramType: 'icons',
+            data: {
+              items: [
+                { icon: 'excel', label: 'Planilhas' },
+                { icon: 'word', label: 'Documentos' },
+                { icon: 'email', label: 'E-mail' },
+                { icon: 'calendar', label: 'Agenda' },
+                { icon: 'drive', label: 'Armazenamento' },
+                { icon: 'zoom', label: 'Zoom' },
+                { icon: 'meet', label: 'Google Meet' },
+                { icon: 'teams', label: 'Teams' },
+              ],
+            },
+            caption: 'Principais ferramentas que toda secretária precisa dominar',
+          },
+          {
             type: 'content',
             title: 'Gmail profissional: organizando sua caixa de entrada',
             body: 'Como secretária, você vai lidar com dezenas de emails por dia. O segredo para não se perder é usar marcadores (labels) e filtros. Crie marcadores como "Urgente", "Financeiro", "Reuniões" e "Arquivo". Depois, crie filtros automáticos: por exemplo, todos os emails do chefe podem receber automaticamente o marcador "Urgente". Use também a função "Estrela" para marcar emails que precisam de resposta. Assim, sua caixa de entrada vira uma lista organizada de tarefas.',
@@ -683,6 +829,28 @@ export const cursosInterativosExtras: CursoInterativo[] = [
             tip: 'Abra o Google Calendar agora e crie 3 calendários com cores diferentes: Reuniões, Prazos e Pessoal. Vai ser o melhor investimento de 2 minutos do seu dia.',
           },
           {
+            type: 'diagram',
+            title: 'Processos Manuais vs. Digitais',
+            diagramType: 'comparison',
+            data: {
+              leftLabel: 'Manual (Papel)',
+              rightLabel: 'Digital (Nuvem)',
+              leftItems: [
+                'Agenda de papel — pode perder ou molhar',
+                'Ligações para confirmar reuniões',
+                'Pastas físicas ocupam espaço',
+                'Sem backup — risco de perder tudo',
+              ],
+              rightItems: [
+                'Google Calendar com lembretes automáticos',
+                'Convites automáticos por e-mail',
+                'Google Drive acessível de qualquer lugar',
+                'Backup automático na nuvem',
+              ],
+            },
+            caption: 'A transição do papel para o digital economiza horas e elimina riscos',
+          },
+          {
             type: 'content',
             title: 'Agendando reuniões como uma profissional',
             body: 'Para agendar uma reunião, clique no horário desejado no calendário e preencha: título claro (ex: "Reunião com Fornecedor XYZ"), data, horário de início e fim, local ou link da videochamada. Em "Convidados", adicione os emails dos participantes — eles receberão um convite automático e podem confirmar ou recusar. Adicione uma descrição com a pauta da reunião. Use a função "Horários Disponíveis" para encontrar um horário que funcione para todos os convidados sem precisar ficar trocando mensagens.',
@@ -750,6 +918,22 @@ export const cursosInterativosExtras: CursoInterativo[] = [
             title: 'Google Docs: seu processador de textos na nuvem',
             body: 'O Google Docs é como o Word, mas funciona direto no navegador e salva automaticamente. Você nunca mais vai perder um documento porque esqueceu de salvar ou o computador travou. Para criar um novo documento, acesse docs.google.com e clique em "Documento em branco". Ele aceita formatação de texto, tabelas, imagens, cabeçalhos e rodapés — tudo que você precisa para o trabalho de escritório. E o melhor: várias pessoas podem editar o mesmo documento ao mesmo tempo.',
             tip: 'Quando o chefe pedir "manda o documento em Word", vá em Arquivo > Fazer Download > Microsoft Word (.docx). O Google Docs converte automaticamente!',
+          },
+          {
+            type: 'diagram',
+            title: 'Fluxo de Gestão de Documentos',
+            diagramType: 'steps',
+            data: {
+              steps: [
+                'Receber o documento (e-mail ou Drive)',
+                'Renomear com padrão ANO-MES-Tipo-Assunto',
+                'Salvar na pasta correta do Google Drive',
+                'Definir permissões (Visualizador ou Editor)',
+                'Compartilhar com as pessoas certas',
+                'Arquivar versões antigas em pasta de histórico',
+              ],
+            },
+            caption: 'Siga esses 6 passos para nunca mais perder um documento importante',
           },
           {
             type: 'content',
@@ -900,6 +1084,25 @@ export const cursosInterativosExtras: CursoInterativo[] = [
             title: 'Respostas automáticas e templates de email',
             body: 'Se você responde os mesmos tipos de email toda semana, está desperdiçando tempo. O Gmail tem a função "Templates" (Modelos): vá em Configurações > Avançado > Ative "Templates". Depois, escreva um email modelo, vá em "Mais opções" (3 pontos) > Templates > Salvar rascunho como template. Na próxima vez, basta inserir o template e personalizar com o nome da pessoa. Para períodos de ausência, configure "Resposta automática de férias" em Configurações > Geral. Essas duas funções economizam dezenas de minutos por dia.',
             tip: 'Crie templates para: confirmação de reunião, encaminhamento de documentos, resposta a fornecedores e agradecimento de recebimento.',
+          },
+          {
+            type: 'diagram',
+            title: 'Modelo de E-mail Profissional',
+            diagramType: 'mockup',
+            data: {
+              url: 'mail.google.com',
+              title: 'Gmail — Novo E-mail',
+              elements: [
+                { type: 'header', text: 'Para: fornecedor@empresa.com' },
+                { type: 'input', text: 'Assunto: Confirmação de Reunião — 26/02/2026' },
+                { type: 'text', text: 'Prezado(a) Sr(a). Silva,' },
+                { type: 'text', text: 'Confirmo a reunião agendada para quarta-feira, dia 26/02, às 14h, na sala de reuniões do 3o andar.' },
+                { type: 'text', text: 'Segue em anexo a pauta para sua análise prévia.' },
+                { type: 'text', text: 'Atenciosamente, Ana — Secretária Executiva' },
+                { type: 'button', text: 'Enviar' },
+              ],
+            },
+            caption: 'Exemplo de e-mail profissional com estrutura clara: saudação, corpo objetivo e despedida formal',
           },
           {
             type: 'content',

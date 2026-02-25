@@ -3,6 +3,7 @@
 import type { Slide } from './types'
 import QuizSlide from './QuizSlide'
 import ChecklistSlide from './ChecklistSlide'
+import DiagramSlide from './DiagramSlide'
 
 interface SlideRendererProps {
   slide: Slide
@@ -39,6 +40,10 @@ export default function SlideRenderer({
         onComplete={onComplete}
       />
     )
+  }
+
+  if (slide.type === 'diagram') {
+    return <DiagramSlide key={slideIndex} slide={slide} />
   }
 
   if (slide.type === 'summary') {

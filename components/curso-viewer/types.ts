@@ -27,7 +27,15 @@ export interface SummarySlide {
   points: string[]
 }
 
-export type Slide = ContentSlide | QuizSlide | ChecklistSlide | SummarySlide
+export interface DiagramSlide {
+  type: 'diagram'
+  title: string
+  diagramType: 'flowchart' | 'mindmap' | 'funnel' | 'comparison' | 'steps' | 'mockup' | 'stats' | 'barchart' | 'icons' | 'phone' | 'calendar'
+  data: Record<string, unknown>
+  caption?: string
+}
+
+export type Slide = ContentSlide | QuizSlide | ChecklistSlide | SummarySlide | DiagramSlide
 
 export interface CursoModule {
   titulo: string

@@ -25,6 +25,24 @@ const cursosBase: CursoInterativo[] = [
             tip: 'O ChatGPT é gratuito. Você não precisa pagar nada para começar a usar!',
           },
           {
+            type: 'diagram',
+            title: 'Como é a tela do ChatGPT',
+            diagramType: 'mockup',
+            data: {
+              url: 'chat.openai.com',
+              title: 'ChatGPT',
+              elements: [
+                { type: 'header', text: 'ChatGPT — Seu assistente digital' },
+                { type: 'text', text: 'Olá! Como posso te ajudar hoje?' },
+                { type: 'chat_user', text: 'Me dê uma receita de bolo de cenoura simples' },
+                { type: 'chat_ai', text: 'Claro! Aqui vai uma receita fácil de bolo de cenoura: 3 cenouras, 3 ovos, 1 xícara de óleo...' },
+                { type: 'input', text: 'Digite sua mensagem aqui...' },
+                { type: 'button', text: 'Enviar' },
+              ],
+            },
+            caption: 'A tela do ChatGPT é simples: você digita embaixo e a resposta aparece em cima, como no WhatsApp',
+          },
+          {
             type: 'quiz',
             question: 'O que é o ChatGPT?',
             options: [
@@ -91,6 +109,21 @@ const cursosBase: CursoInterativo[] = [
             title: 'Criando sua conta com email (tela por tela)',
             body: 'Depois de clicar em "Sign up", o site vai pedir seu email. Use o mesmo email que você já usa, como o do Gmail ou Hotmail. Em seguida, escolha uma senha. A senha precisa ter pelo menos 8 letras ou números. Anote sua senha em um papel e guarde em lugar seguro! Depois, o site vai enviar um email de confirmação. Abra seu email, procure a mensagem da OpenAI e clique no link azul para confirmar. Pronto, conta criada!',
             tip: 'Anote o email e a senha que você usou em um caderninho. Assim, você nunca vai esquecer!',
+          },
+          {
+            type: 'diagram',
+            title: 'Passo a passo para criar sua conta no ChatGPT',
+            diagramType: 'steps',
+            data: {
+              steps: [
+                'Abra o navegador (Chrome, Safari ou outro)',
+                'Digite chat.openai.com na barra de endereço',
+                'Clique em "Sign up" (Cadastrar-se)',
+                'Coloque seu email e crie uma senha',
+                'Abra seu email e clique no link de confirmacao',
+              ],
+            },
+            caption: 'Siga esses 5 passos simples e sua conta estara pronta em menos de 5 minutos!',
           },
           {
             type: 'quiz',
@@ -191,6 +224,24 @@ const cursosBase: CursoInterativo[] = [
             tip: 'Diga para quem é a mensagem e o que a pessoa gosta. Assim, o ChatGPT cria algo bem pessoal e bonito!',
           },
           {
+            type: 'diagram',
+            title: 'Exemplo de conversa no ChatGPT',
+            diagramType: 'phone',
+            data: {
+              appName: 'ChatGPT',
+              elements: [
+                { type: 'title', text: 'Sua primeira conversa' },
+                { type: 'bubble_right', text: 'Ola! Me da uma receita facil de bolo de chocolate?' },
+                { type: 'bubble_left', text: 'Claro! Aqui vai uma receita simples: Ingredientes: 2 xicaras de farinha, 1 xicara de acucar, 3 ovos, 1/2 xicara de oleo e 3 colheres de cacau em po.' },
+                { type: 'bubble_right', text: 'Pode ser sem acucar? Sou diabetico.' },
+                { type: 'bubble_left', text: 'Sim! Substitua o acucar por 1/2 xicara de adocante culinario (como xilitol). O restante da receita continua igual!' },
+                { type: 'divider', text: 'Voce pode continuar a conversa a vontade' },
+                { type: 'button', text: 'Enviar nova mensagem' },
+              ],
+            },
+            caption: 'Converse com o ChatGPT como se fosse um amigo: pergunte, peca ajustes e ele vai adaptando a resposta para voce',
+          },
+          {
             type: 'quiz',
             question: 'Posso confiar totalmente no ChatGPT para informações sobre saúde?',
             options: [
@@ -263,6 +314,23 @@ const cursosBase: CursoInterativo[] = [
             title: 'Organizando sua rotina da semana',
             body: 'O ChatGPT pode ajudar a organizar sua semana de forma prática. Diga para ele: "Me ajude a organizar minha semana. Tenho consulta médica na terça, aula de ginástica na quarta e sexta, e quero reservar tempo para ler e caminhar." Ele vai criar uma rotina organizada, dia por dia, com horários sugeridos. Também pode pedir para incluir lembretes de tomar remédios, horários de refeição e momentos de descanso. É como ter uma agenda inteligente!',
             tip: 'Peça para ele montar a rotina em formato de lista, com os dias da semana. Assim fica fácil de copiar para um papel ou caderno!',
+          },
+          {
+            type: 'diagram',
+            title: 'Formas de usar o ChatGPT no dia a dia',
+            diagramType: 'mindmap',
+            data: {
+              center: 'ChatGPT no Dia a Dia',
+              branches: [
+                'Receitas com ingredientes que voce tem',
+                'Entender contas e documentos',
+                'Mensagens de aniversario e datas especiais',
+                'Exercicios leves para fazer em casa',
+                'Aprender palavras em outros idiomas',
+                'Organizar a rotina da semana',
+              ],
+            },
+            caption: 'O ChatGPT pode ajudar em muitas situacoes do seu dia a dia. Explore sem medo!',
           },
           {
             type: 'quiz',
@@ -508,6 +576,21 @@ const cursosBase: CursoInterativo[] = [
             tip: 'Sempre que o ChatGPT fornecer dados específicos (datas, estatísticas, nomes), confirme em uma fonte confiável. Ele pode inventar fatos com muita confiança.',
           },
           {
+            type: 'diagram',
+            title: 'Comparativo dos principais modelos de IA',
+            diagramType: 'barchart',
+            data: {
+              items: [
+                { label: 'GPT-4o', value: 92 },
+                { label: 'Claude 3.5', value: 90 },
+                { label: 'Gemini Pro', value: 85 },
+                { label: 'Llama 3', value: 78 },
+                { label: 'Mistral', value: 75 },
+              ],
+            },
+            caption: 'Nivel geral de capacidade dos principais modelos de IA (escala relativa). Todos evoluem rapidamente e os rankings mudam com frequencia.',
+          },
+          {
             type: 'quiz',
             question: 'O que são LLMs (Large Language Models)?',
             options: [
@@ -632,6 +715,21 @@ const cursosBase: CursoInterativo[] = [
             tip: 'Memorize o CRIA: Contexto + Role (Papel) + Instrução + Ajustes. Nem todo prompt precisa de todos os elementos, mas quanto mais completo, melhor.',
           },
           {
+            type: 'diagram',
+            title: 'Processo de Prompt Engineering',
+            diagramType: 'flowchart',
+            data: {
+              steps: [
+                'Defina o CONTEXTO (situacao e cenario)',
+                'Escolha o PAPEL (Role) para a IA',
+                'Escreva a INSTRUCAO clara e especifica',
+                'Adicione AJUSTES (formato, tom, tamanho)',
+                'Avalie a resposta e refine o prompt',
+              ],
+            },
+            caption: 'Siga esse fluxo para criar prompts eficientes. Se a resposta nao ficar boa, volte e ajuste cada etapa.',
+          },
+          {
             type: 'content',
             title: 'Chain-of-Thought: fazendo a IA pensar passo a passo',
             body: 'Chain-of-Thought (Cadeia de Pensamento) é uma técnica onde você pede para o ChatGPT raciocinar passo a passo antes de dar a resposta final. Em vez de pedir "Quanto é 17 x 23 + 45?", peça: "Resolva passo a passo: 17 x 23 + 45." Isso reduz erros significativamente, especialmente em tarefas complexas como análise de dados, estratégias de negócio ou diagnóstico de problemas. A expressão mágica é: "Pense passo a passo" ou "Raciocine antes de responder." Essa técnica simples melhora drasticamente a qualidade das respostas.',
@@ -716,6 +814,23 @@ const cursosBase: CursoInterativo[] = [
             title: 'Calendário editorial: planejando 30 dias de conteúdo',
             body: 'Um dos maiores desafios de quem cria conteúdo é a consistência. O ChatGPT pode criar um calendário editorial completo para 30 dias em minutos. Peça: "Crie um calendário editorial de 30 dias para [nicho] no Instagram. Poste 5x por semana. Inclua: tema do post, tipo (carrossel, reels, story), gancho da legenda e melhor horário para postar. Alterne entre conteúdo educativo, entretenimento e vendas na proporção 60/30/10." Ele vai organizar tudo em uma tabela prática. Depois é só executar, adaptando cada post para o momento.',
             tip: 'A proporção 60/30/10 (educativo/entretenimento/vendas) é uma boa regra para manter o público engajado sem parecer que você só quer vender.',
+          },
+          {
+            type: 'diagram',
+            title: 'Interface avancada do ChatGPT para criacao de conteudo',
+            diagramType: 'mockup',
+            data: {
+              url: 'chat.openai.com',
+              title: 'ChatGPT — Criacao de Conteudo',
+              elements: [
+                { type: 'header', text: 'ChatGPT Plus — GPT-4o' },
+                { type: 'chat_user', text: 'Crie um calendario editorial de 7 dias para Instagram de uma padaria artesanal. Tom descontraido, inclua hashtags.' },
+                { type: 'chat_ai', text: 'Aqui esta seu calendario:\n\nSeg: Bastidores da producao (Reels)\nTer: Dica de harmonizacao (Carrossel)\nQua: Depoimento de cliente (Story)\nQui: Receita simplificada (Carrossel)\nSex: Promocao do fim de semana (Post)\nSab: Novidades frescas do dia (Story)\nDom: Enquete interativa (Story)' },
+                { type: 'button', text: 'Copiar resposta' },
+                { type: 'button', text: 'Regenerar resposta' },
+              ],
+            },
+            caption: 'O ChatGPT pode criar calendarios editoriais completos em segundos. Personalize com seu nicho, publico e tom de voz.',
           },
           {
             type: 'quiz',
@@ -916,6 +1031,20 @@ const cursosBase: CursoInterativo[] = [
             tip: 'Comece com uma automação simples no Make ou Zapier: "Quando receber um lead pelo formulário, envie um email de boas-vindas automaticamente." Depois vá evoluindo.',
           },
           {
+            type: 'diagram',
+            title: 'Impacto da IA na produtividade profissional',
+            diagramType: 'stats',
+            data: {
+              stats: [
+                { value: '70%', label: 'Reducao no tempo de criacao de conteudo' },
+                { value: '40%', label: 'Aumento na produtividade com IA' },
+                { value: '3x', label: 'Mais variantes de anuncios testadas' },
+                { value: '85%', label: 'Profissionais de marketing ja usam IA' },
+              ],
+            },
+            caption: 'Dados aproximados do mercado em 2024-2025. A IA esta transformando a produtividade em todas as areas.',
+          },
+          {
             type: 'quiz',
             question: 'Para que serve o ElevenLabs?',
             options: [
@@ -1051,10 +1180,41 @@ const cursosBase: CursoInterativo[] = [
             tip: 'A maioria dos negócios erra ao tentar vender direto (fundo do funil) para quem ainda está no topo. Respeite a jornada do cliente!',
           },
           {
+            type: 'diagram',
+            title: 'O funil de vendas do marketing digital',
+            diagramType: 'funnel',
+            data: {
+              stages: [
+                { label: 'Topo — Descoberta', desc: 'Redes sociais, blog e anuncios atraem visitantes' },
+                { label: 'Meio — Consideracao', desc: 'Email, conteudo e provas sociais educam o lead' },
+                { label: 'Fundo — Decisao', desc: 'Oferta, garantia e CTA convertem em cliente' },
+                { label: 'Pos-venda', desc: 'Fidelizacao, avaliacoes e indicacoes' },
+              ],
+            },
+            caption: 'Cada etapa do funil exige conteudo diferente. Nao tente vender para quem ainda esta no topo!',
+          },
+          {
             type: 'content',
             title: 'Canais digitais: onde seu cliente está',
             body: 'Os principais canais de marketing digital são: Busca (Google) — pessoas procurando ativamente por soluções; Redes Sociais (Instagram, Facebook, TikTok, LinkedIn) — onde as pessoas passam tempo e descobrem coisas novas; Email Marketing — comunicação direta e personalizada com quem já demonstrou interesse; Site/Blog — sua "casa própria" na internet, onde você controla tudo; WhatsApp — o canal mais usado no Brasil para comunicação direta. Você não precisa estar em todos ao mesmo tempo. Comece onde seu público-alvo está e domine um canal antes de expandir para outros.',
             tip: 'Para negócios locais (restaurantes, salões, clínicas), comece por Google Meu Negócio + Instagram. Para serviços B2B, foque em LinkedIn + email.',
+          },
+          {
+            type: 'diagram',
+            title: 'Areas do Marketing Digital',
+            diagramType: 'mindmap',
+            data: {
+              center: 'Marketing Digital',
+              branches: [
+                'Redes Sociais (Instagram, TikTok, LinkedIn)',
+                'SEO (aparecer no Google)',
+                'Trafego Pago (Google Ads, Meta Ads)',
+                'Email Marketing',
+                'Marketing de Conteudo (blog, video)',
+                'WhatsApp e Mensageria',
+              ],
+            },
+            caption: 'O marketing digital tem varias areas. Voce nao precisa dominar todas — comece por 1 ou 2 onde seu publico esta.',
           },
           {
             type: 'content',
@@ -1255,10 +1415,43 @@ const cursosBase: CursoInterativo[] = [
             tip: 'A regra de ouro do conteúdo: dê valor primeiro, venda depois. Se 9 em cada 10 posts ajudam seu público, o 1 de venda será muito bem recebido.',
           },
           {
+            type: 'diagram',
+            title: 'Uso de redes sociais no Brasil (% da populacao)',
+            diagramType: 'barchart',
+            data: {
+              items: [
+                { label: 'WhatsApp', value: 93 },
+                { label: 'Instagram', value: 87 },
+                { label: 'Facebook', value: 68 },
+                { label: 'TikTok', value: 65 },
+                { label: 'YouTube', value: 82 },
+                { label: 'LinkedIn', value: 29 },
+              ],
+            },
+            caption: 'Dados aproximados de uso no Brasil. WhatsApp e Instagram sao os canais mais importantes para negocios locais.',
+          },
+          {
             type: 'content',
             title: 'Calendário editorial: consistência é a chave',
             body: 'Um calendário editorial é o planejamento antecipado do que você vai postar, quando e em que formato. Consistência é mais importante que frequência — é melhor postar 3 vezes por semana de forma constante do que 7 vezes numa semana e sumir na outra. Para criar seu calendário: defina quantos posts por semana é sustentável para você (mínimo 3), distribua os 4 pilares de conteúdo ao longo da semana, reserve 1-2 horas no fim de semana para criar o conteúdo da semana seguinte. Use o Canva para criar os posts e ferramentas como o Meta Business Suite para agendar gratuitamente.',
             tip: 'Comece com 3 posts por semana: segunda (educativo), quarta (entretenimento) e sexta (inspiracional). É simples, sustentável e eficiente.',
+          },
+          {
+            type: 'diagram',
+            title: 'Exemplo de calendario editorial semanal',
+            diagramType: 'calendar',
+            data: {
+              days: [
+                'Seg: Post educativo (Carrossel com dicas)',
+                'Ter: Stories interativos (enquete e perguntas)',
+                'Qua: Reels de entretenimento (bastidores)',
+                'Qui: Post inspiracional (depoimento de cliente)',
+                'Sex: Conteudo educativo (tutorial em video)',
+                'Sab: Oferta ou promocao da semana',
+                'Dom: Planejamento da proxima semana',
+              ],
+            },
+            caption: 'Organize seus posts com antecedencia. Reserve 1-2 horas no domingo para criar o conteudo da semana.',
           },
           {
             type: 'content',
@@ -1463,10 +1656,44 @@ const cursosBase: CursoInterativo[] = [
             tip: 'Um perfil completo do Google Business tem 7x mais chance de receber cliques do que um perfil incompleto. Cada detalhe importa!',
           },
           {
+            type: 'diagram',
+            title: 'Como aparece seu perfil no Google',
+            diagramType: 'mockup',
+            data: {
+              url: 'google.com/maps',
+              title: 'Google Business Profile',
+              elements: [
+                { type: 'header', text: 'Padaria Sabor & Arte — 4.8 estrelas (127 avaliacoes)' },
+                { type: 'text', text: 'Padaria artesanal · Aberto agora · Fecha as 19h' },
+                { type: 'text', text: 'Rua das Flores, 123 — Sao Luis, MA' },
+                { type: 'button', text: 'Ligar: (98) 99999-0000' },
+                { type: 'button', text: 'Como chegar (Google Maps)' },
+                { type: 'button', text: 'Enviar mensagem pelo WhatsApp' },
+                { type: 'text', text: 'Fotos · Cardapio · Avaliacoes · Sobre' },
+              ],
+            },
+            caption: 'Assim aparece um perfil completo do Google Business quando alguem pesquisa por seu negocio. Cada detalhe preenchido gera mais confianca.',
+          },
+          {
             type: 'content',
             title: 'Passo a passo: criando seu perfil do zero',
             body: 'Para criar seu perfil, acesse business.google.com e faça login com sua conta Google. Clique em "Gerenciar agora" e digite o nome do seu negócio. Se ele já aparecer na lista, reivindique-o. Se não, clique em "Adicionar sua empresa." Preencha: nome do negócio (exatamente como os clientes conhecem), categoria principal (escolha a mais específica possível — "Restaurante japonês" é melhor que "Restaurante"), endereço completo, telefone e site. Se atende em domicílio, marque "Área de atendimento" em vez de endereço fixo. Salve e aguarde a verificação.',
             tip: 'Escolha a categoria mais específica possível. "Clínica de estética" converte muito mais que "Serviços de beleza". O Google tem centenas de categorias.',
+          },
+          {
+            type: 'diagram',
+            title: 'Passo a passo para criar seu perfil do Google Business',
+            diagramType: 'steps',
+            data: {
+              steps: [
+                'Acesse business.google.com e faca login com sua conta Google',
+                'Clique em "Gerenciar agora" e digite o nome do seu negocio',
+                'Escolha a categoria mais especifica possivel',
+                'Preencha endereco, telefone, site e WhatsApp',
+                'Aguarde a verificacao (carta, SMS ou video)',
+              ],
+            },
+            caption: 'O processo inteiro leva poucos minutos. A verificacao pode demorar de 5 a 14 dias, mas voce ja pode editar o perfil enquanto aguarda.',
           },
           {
             type: 'content',
@@ -1531,6 +1758,20 @@ const cursosBase: CursoInterativo[] = [
             tip: 'Liste os 5 serviços mais procurados e a localização na descrição. Exemplo: "[serviço 1], [serviço 2] em [cidade/bairro]."',
           },
           {
+            type: 'diagram',
+            title: 'Impacto do Google Business Profile nos negocios',
+            diagramType: 'stats',
+            data: {
+              stats: [
+                { value: '80%', label: 'Consumidores pesquisam no Google antes de visitar' },
+                { value: '520%', label: 'Mais ligacoes com 100+ fotos no perfil' },
+                { value: '7x', label: 'Mais cliques com perfil 100% completo' },
+                { value: '50+', label: 'Avaliacoes para se destacar da concorrencia' },
+              ],
+            },
+            caption: 'Esses numeros mostram por que o Google Business Profile e a ferramenta gratuita mais poderosa para negocios locais.',
+          },
+          {
             type: 'content',
             title: 'Fotos que convertem: o que e como fotografar',
             body: 'Fotos são o fator que mais influencia a decisão do cliente no Google Business. Perfis com 100+ fotos recebem 520% mais ligações que perfis sem fotos. As fotos essenciais são: fachada (para o cliente reconhecer o local), interior do estabelecimento (mostrando ambiente limpo e acolhedor), produtos ou serviços em ação, equipe trabalhando (gera confiança), antes e depois (quando aplicável). Use luz natural sempre que possível, mantenha o enquadramento reto e limpe o ambiente antes de fotografar. Adicione pelo menos 10 fotos para começar e adicione novas semanalmente.',
@@ -1547,6 +1788,32 @@ const cursosBase: CursoInterativo[] = [
             title: 'Área de atendimento e multi-localidades',
             body: 'Se seu negócio atende em domicílio ou cobre uma região específica, configure a Área de Atendimento em vez de (ou além de) um endereço fixo. Você pode definir cidades, bairros ou um raio em quilômetros. Isso é essencial para: encanadores, eletricistas, personal trainers, fotógrafos, consultores e qualquer profissional que vai até o cliente. Se você tem mais de uma unidade, crie um perfil separado para cada endereço — cada um terá suas próprias avaliações e métricas. Mantenha informações consistentes (mesmo nome, mesma categoria) entre as unidades.',
             tip: 'Se você atende em vários bairros, não crie perfis falsos para cada bairro. O Google penaliza isso. Use a Área de Atendimento corretamente.',
+          },
+          {
+            type: 'diagram',
+            title: 'Perfil otimizado vs perfil nao otimizado',
+            diagramType: 'comparison',
+            data: {
+              leftLabel: 'Perfil Otimizado',
+              rightLabel: 'Perfil Nao Otimizado',
+              leftItems: [
+                'Descricao com palavras-chave e servicos',
+                '100+ fotos de qualidade (fachada, interior, equipe)',
+                '50+ avaliacoes com media acima de 4.3',
+                'Google Posts semanais com ofertas e novidades',
+                'Horarios atualizados inclusive feriados',
+                'Produtos e servicos listados com precos',
+              ],
+              rightItems: [
+                'Descricao generica ou vazia',
+                'Poucas fotos ou nenhuma foto',
+                'Poucas avaliacoes ou sem respostas',
+                'Nenhum Google Post publicado',
+                'Horarios desatualizados ou incompletos',
+                'Sem lista de produtos ou servicos',
+              ],
+            },
+            caption: 'A diferenca entre um perfil otimizado e um nao otimizado pode significar dezenas de clientes a mais por mes.',
           },
           {
             type: 'quiz',
