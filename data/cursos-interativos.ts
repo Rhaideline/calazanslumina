@@ -1,6 +1,7 @@
 import type { CursoInterativo } from '@/components/curso-viewer/types'
+import { cursosInterativosExtras } from './cursos-interativos-extras'
 
-export const cursosInterativos: CursoInterativo[] = [
+const cursosBase: CursoInterativo[] = [
   {
     slug: 'chatgpt-para-idosos',
     nome: 'ChatGPT para Idosos — Curso Gratuito',
@@ -468,4 +469,1261 @@ export const cursosInterativos: CursoInterativo[] = [
       },
     ],
   },
+
+  // ================================================================
+  // CURSO 2 — IA & ChatGPT — Curso Completo
+  // ================================================================
+  {
+    slug: 'ia-chatgpt-completo',
+    nome: 'IA & ChatGPT — Curso Completo',
+    modulos: [
+      // ============================================================
+      // MODULO 1 — Fundamentos da IA
+      // ============================================================
+      {
+        titulo: 'Fundamentos da IA',
+        slides: [
+          {
+            type: 'content',
+            title: 'O que é Inteligência Artificial?',
+            body: 'Inteligência Artificial (IA) é a capacidade de máquinas e programas de computador realizarem tarefas que normalmente exigiriam inteligência humana, como entender textos, reconhecer imagens e tomar decisões. Diferente de um programa comum que segue regras fixas, a IA aprende com enormes quantidades de dados e melhora suas respostas ao longo do tempo. Pense na IA como um estagiário muito rápido: ele não tem experiência de vida, mas consegue processar informações em uma velocidade impressionante. Hoje a IA está presente em coisas do nosso dia a dia, como filtros de spam no email, sugestões do Netflix e assistentes de voz como a Alexa.',
+            tip: 'A IA não "pensa" como humanos. Ela identifica padrões em dados. Quanto mais dados de qualidade ela recebe, melhores são suas respostas.',
+          },
+          {
+            type: 'content',
+            title: 'Breve história da IA: de 1950 até hoje',
+            body: 'A ideia de IA surgiu nos anos 1950, quando o matemático Alan Turing perguntou: "As máquinas podem pensar?" Nas décadas seguintes, a IA passou por altos e baixos — períodos de grande entusiasmo seguidos de "invernos" onde o progresso estagnava. A revolução veio a partir de 2012, quando computadores potentes e grandes volumes de dados permitiram treinar redes neurais profundas (deep learning). Em 2022, o ChatGPT da OpenAI popularizou a IA generativa para o mundo inteiro, atingindo 100 milhões de usuários em apenas 2 meses. Hoje vivemos a era mais transformadora da tecnologia desde a invenção da internet.',
+            tip: 'A IA generativa (como o ChatGPT) é apenas um tipo de IA. Existem muitos outros, como IA de visão computacional, robótica e sistemas de recomendação.',
+          },
+          {
+            type: 'content',
+            title: 'Tipos de IA: de assistentes a modelos de linguagem',
+            body: 'Existem diferentes categorias de IA. A IA Estreita (ou fraca) é especializada em uma tarefa, como reconhecer rostos em fotos ou traduzir idiomas. A IA Geral (ou forte) seria capaz de fazer qualquer tarefa intelectual humana, mas ela ainda não existe. Os LLMs (Large Language Models ou Grandes Modelos de Linguagem) são o tipo de IA por trás do ChatGPT: eles foram treinados lendo bilhões de textos e aprenderam a prever qual é a próxima palavra mais provável em uma frase. É por isso que eles conseguem escrever textos, responder perguntas e até programar.',
+            tip: 'LLM significa Large Language Model. O ChatGPT, o Claude e o Gemini são todos LLMs. Cada um foi treinado de forma diferente, por isso dão respostas diferentes.',
+          },
+          {
+            type: 'content',
+            title: 'O que o ChatGPT pode e NÃO pode fazer',
+            body: 'O ChatGPT pode: escrever textos, resumir documentos, traduzir, criar código, fazer cálculos, gerar ideias, simular conversas e muito mais. Porém, ele NÃO pode: acessar a internet em tempo real (na versão gratuita), garantir que informações são 100% verdadeiras, ter opiniões genuínas ou sentimentos, executar ações no mundo real como enviar emails ou fazer compras. Ele também pode "alucinar", ou seja, inventar informações que parecem verdadeiras mas são falsas. Saber essas limitações é fundamental para usar a ferramenta de forma inteligente e produtiva.',
+            tip: 'Sempre que o ChatGPT fornecer dados específicos (datas, estatísticas, nomes), confirme em uma fonte confiável. Ele pode inventar fatos com muita confiança.',
+          },
+          {
+            type: 'quiz',
+            question: 'O que são LLMs (Large Language Models)?',
+            options: [
+              'Robôs que andam e falam como humanos',
+              'Modelos de IA treinados em bilhões de textos que preveem a próxima palavra',
+              'Programas que acessam a internet e buscam informações ao vivo',
+              'Aplicativos de mensagens como WhatsApp',
+            ],
+            correctIndex: 1,
+            explanation: 'LLMs são modelos de IA treinados em enormes quantidades de texto. Eles aprenderam padrões da linguagem e conseguem gerar textos coerentes prevendo qual palavra vem a seguir.',
+          },
+          {
+            type: 'quiz',
+            question: 'Qual dessas afirmações sobre o ChatGPT é VERDADEIRA?',
+            options: [
+              'Ele nunca comete erros',
+              'Ele pode inventar informações que parecem verdadeiras (alucinações)',
+              'Ele tem acesso a todas as informações da internet em tempo real',
+              'Ele tem sentimentos e opiniões próprias',
+            ],
+            correctIndex: 1,
+            explanation: 'O ChatGPT pode "alucinar", ou seja, gerar informações falsas com grande confiança. Por isso, é importante sempre verificar dados importantes em fontes confiáveis.',
+          },
+          {
+            type: 'summary',
+            title: 'Resumo do Módulo 1',
+            points: [
+              'IA é a capacidade de máquinas realizarem tarefas que normalmente exigiriam inteligência humana',
+              'A IA moderna explodiu a partir de 2012 com deep learning e se popularizou em 2022 com o ChatGPT',
+              'LLMs como o ChatGPT foram treinados em bilhões de textos e preveem a próxima palavra',
+              'O ChatGPT pode escrever, resumir, traduzir e gerar ideias, mas pode alucinar',
+              'Sempre confirme informações importantes — a IA não é infalível',
+            ],
+          },
+        ],
+      },
+
+      // ============================================================
+      // MODULO 2 — Primeiros Passos com ChatGPT
+      // ============================================================
+      {
+        titulo: 'Primeiros Passos com ChatGPT',
+        slides: [
+          {
+            type: 'content',
+            title: 'Criando sua conta no ChatGPT',
+            body: 'Para começar a usar o ChatGPT, acesse chat.openai.com e clique em "Sign up". Você pode criar uma conta usando seu email, sua conta do Google ou sua conta da Apple. Após confirmar seu email e preencher algumas informações básicas como nome e data de nascimento, sua conta está pronta. Todo o processo leva menos de 3 minutos. A versão gratuita já dá acesso ao GPT-3.5 e ao GPT-4o com limites, o que é mais do que suficiente para começar a explorar.',
+            tip: 'Use o mesmo email que você já utiliza no dia a dia. Anote a senha em local seguro para não esquecer.',
+          },
+          {
+            type: 'content',
+            title: 'Conhecendo a interface: o que cada botão faz',
+            body: 'A interface do ChatGPT é simples e intuitiva. No centro da tela você tem o campo de texto onde digita seus prompts (pedidos). Acima, ficam as respostas da conversa. No canto esquerdo, há um painel com o histórico de todas as suas conversas, que você pode renomear ou apagar. O botão "New chat" cria uma conversa nova do zero. No canto superior, você pode escolher qual modelo de IA usar. Cada conversa é independente: o ChatGPT só lembra do que foi dito dentro daquela mesma conversa.',
+            tip: 'Crie uma nova conversa para cada assunto diferente. Assim fica mais fácil encontrar informações depois no histórico.',
+          },
+          {
+            type: 'content',
+            title: 'Seu primeiro prompt: como começar a conversar',
+            body: 'Um prompt é qualquer texto que você envia ao ChatGPT. Pode ser uma pergunta, um pedido, uma instrução ou até uma conversa casual. Para seu primeiro prompt, tente algo simples como: "Explique o que você é e o que pode fazer por mim em 5 pontos." A resposta vai te mostrar o leque de possibilidades. Não existe pergunta boba — o ChatGPT vai responder qualquer coisa educadamente. Se a resposta não for boa, simplesmente peça para ele refazer de outro jeito.',
+            tip: 'Seu primeiro prompt pode ser tão simples quanto: "Olá! Me ajude a entender como posso te usar no meu trabalho." Não precisa ser formal.',
+          },
+          {
+            type: 'content',
+            title: 'GPT-3.5 vs GPT-4 vs GPT-4o: qual escolher?',
+            body: 'O ChatGPT oferece diferentes versões do modelo de IA. O GPT-3.5 é a versão mais básica, rápida mas menos precisa. O GPT-4 é muito mais inteligente, entende contextos complexos e comete menos erros. O GPT-4o é a versão mais recente, que combina a inteligência do GPT-4 com velocidade maior e capacidade de entender imagens e áudio. Na versão gratuita, você tem acesso ao GPT-4o com limites diários. Na versão Plus (US$20/mês), os limites são muito maiores e você ganha acesso a recursos exclusivos.',
+            tip: 'Para a maioria das tarefas do dia a dia (textos, resumos, ideias), o GPT-4o gratuito é mais que suficiente. Só considere o Plus se usar intensivamente.',
+          },
+          {
+            type: 'quiz',
+            question: 'O que é um "prompt" no ChatGPT?',
+            options: [
+              'O nome do programa de IA',
+              'Qualquer texto que você envia ao ChatGPT (pergunta, pedido ou instrução)',
+              'A senha da sua conta',
+              'Um tipo de vírus de computador',
+            ],
+            correctIndex: 1,
+            explanation: 'Prompt é o termo usado para qualquer texto que você envia ao ChatGPT. Pode ser uma pergunta, pedido, instrução ou até uma conversa casual.',
+          },
+          {
+            type: 'quiz',
+            question: 'Qual é a principal diferença entre a versão gratuita e a Plus do ChatGPT?',
+            options: [
+              'A versão gratuita não funciona',
+              'A versão Plus custa US$20/mês e oferece limites maiores e recursos exclusivos',
+              'A versão gratuita é em inglês e a Plus em português',
+              'Não existe diferença nenhuma',
+            ],
+            correctIndex: 1,
+            explanation: 'A versão Plus custa US$20/mês e oferece limites muito maiores de uso do GPT-4o, além de recursos exclusivos. A versão gratuita já é ótima para começar.',
+          },
+          {
+            type: 'summary',
+            title: 'Resumo do Módulo 2',
+            points: [
+              'Criar uma conta no ChatGPT é gratuito e leva menos de 3 minutos',
+              'A interface tem campo de texto para prompts, histórico de conversas e seleção de modelo',
+              'Prompt é qualquer texto que você envia — pode ser pergunta, pedido ou instrução',
+              'GPT-4o é o modelo mais moderno, disponível gratuitamente com limites diários',
+              'Para a maioria dos usos, a versão gratuita é suficiente',
+            ],
+          },
+        ],
+      },
+
+      // ============================================================
+      // MODULO 3 — Prompt Engineering
+      // ============================================================
+      {
+        titulo: 'Prompt Engineering',
+        slides: [
+          {
+            type: 'content',
+            title: 'O que é Prompt Engineering e por que importa',
+            body: 'Prompt Engineering é a arte e ciência de escrever instruções claras e eficientes para a IA. Assim como um bom briefing para um designer resulta em um trabalho melhor, um bom prompt resulta em respostas melhores do ChatGPT. A diferença entre um resultado medíocre e um resultado excelente está quase sempre na qualidade do prompt. Dominar essa habilidade é o que separa usuários casuais de profissionais que extraem o máximo da IA. A boa notícia é que existem técnicas simples e replicáveis que qualquer pessoa pode aprender.',
+            tip: 'Prompt Engineering não exige conhecimento técnico. É sobre comunicação clara. Se você sabe explicar algo para um estagiário, já sabe fazer um bom prompt.',
+          },
+          {
+            type: 'content',
+            title: 'Estrutura de um prompt eficiente: o framework CRIA',
+            body: 'Um prompt eficiente segue uma estrutura. Use o framework CRIA: Contexto (explique a situação), Papel/Role (diga quem o ChatGPT deve ser), Instrução (o que exatamente ele deve fazer) e Ajustes (formato, tom, tamanho). Exemplo: "Você é um especialista em marketing digital [Papel]. Meu cliente é uma padaria artesanal no bairro [Contexto]. Crie 5 legendas para Instagram [Instrução] com tom descontraído, máximo 150 caracteres cada, incluindo emojis e hashtags [Ajustes]." Quanto mais elementos você incluir, melhor será o resultado.',
+            tip: 'Memorize o CRIA: Contexto + Role (Papel) + Instrução + Ajustes. Nem todo prompt precisa de todos os elementos, mas quanto mais completo, melhor.',
+          },
+          {
+            type: 'content',
+            title: 'Chain-of-Thought: fazendo a IA pensar passo a passo',
+            body: 'Chain-of-Thought (Cadeia de Pensamento) é uma técnica onde você pede para o ChatGPT raciocinar passo a passo antes de dar a resposta final. Em vez de pedir "Quanto é 17 x 23 + 45?", peça: "Resolva passo a passo: 17 x 23 + 45." Isso reduz erros significativamente, especialmente em tarefas complexas como análise de dados, estratégias de negócio ou diagnóstico de problemas. A expressão mágica é: "Pense passo a passo" ou "Raciocine antes de responder." Essa técnica simples melhora drasticamente a qualidade das respostas.',
+            tip: 'Adicione "Pense passo a passo antes de responder" ao final de prompts complexos. Essa frase simples pode melhorar muito a qualidade da resposta.',
+          },
+          {
+            type: 'content',
+            title: 'Few-Shot e Role-Play: exemplos e personagens',
+            body: 'Few-Shot é quando você dá exemplos do que espera antes de fazer o pedido. Por exemplo: "Quero que você crie títulos para blog. Exemplo 1: 5 Erros que Todo Iniciante Comete no Instagram. Exemplo 2: Como Triplicar suas Vendas com Email Marketing. Agora crie 10 títulos sobre SEO." O ChatGPT vai seguir o padrão dos exemplos. Role-Play é quando você pede que o ChatGPT assuma um papel específico: "Aja como um consultor de negócios com 20 anos de experiência." Isso muda completamente o nível e o estilo da resposta.',
+            tip: 'Dar 2-3 exemplos do resultado que você quer é mais eficiente do que explicar em muitas palavras. Mostre, não apenas diga.',
+          },
+          {
+            type: 'quiz',
+            question: 'O que significa a técnica de Chain-of-Thought?',
+            options: [
+              'Enviar mensagens em cadeia para o ChatGPT',
+              'Pedir que o ChatGPT raciocine passo a passo antes de responder',
+              'Criar correntes de emails automáticos',
+              'Conectar vários computadores em rede',
+            ],
+            correctIndex: 1,
+            explanation: 'Chain-of-Thought é pedir que a IA raciocine passo a passo. Adicionar "Pense passo a passo" ao prompt reduz erros e melhora significativamente as respostas.',
+          },
+          {
+            type: 'content',
+            title: 'Templates prontos para o dia a dia',
+            body: 'Ter templates de prompts prontos acelera muito seu trabalho. Aqui estão alguns poderosos: Para resumo: "Resuma o texto abaixo em [X] pontos principais, usando linguagem simples: [texto]". Para email profissional: "Escreva um email [tom] para [destinatário] sobre [assunto], incluindo [pontos-chave]." Para análise: "Analise os prós e contras de [decisão], considerando [contexto], e dê sua recomendação final." Salve seus melhores prompts em um documento para reutilizar. Com o tempo, você vai construir uma biblioteca pessoal de templates que funciona como um superpoder.',
+            tip: 'Crie um documento no Google Docs ou no Notion com seus melhores prompts organizados por categoria. Isso economiza muito tempo no dia a dia.',
+          },
+          {
+            type: 'quiz',
+            question: 'No framework CRIA, o que significa o "R"?',
+            options: [
+              'Resultado — o formato da resposta',
+              'Role (Papel) — quem o ChatGPT deve ser na resposta',
+              'Resumo — pedir um resumo ao final',
+              'Repetição — repetir a pergunta várias vezes',
+            ],
+            correctIndex: 1,
+            explanation: 'No framework CRIA, o R significa Role (Papel). Definir um papel para o ChatGPT (como "especialista em marketing") muda completamente o nível e o estilo da resposta.',
+          },
+          {
+            type: 'summary',
+            title: 'Resumo do Módulo 3',
+            points: [
+              'Prompt Engineering é a habilidade de escrever instruções claras e eficientes para a IA',
+              'Use o framework CRIA: Contexto + Role (Papel) + Instrução + Ajustes',
+              'Chain-of-Thought ("pense passo a passo") reduz erros em tarefas complexas',
+              'Few-Shot (dar exemplos) e Role-Play (definir personagem) melhoram drasticamente os resultados',
+              'Crie uma biblioteca pessoal de templates de prompts para reutilizar no dia a dia',
+            ],
+          },
+        ],
+      },
+
+      // ============================================================
+      // MODULO 4 — IA para Criação de Conteúdo
+      // ============================================================
+      {
+        titulo: 'IA para Criação de Conteúdo',
+        slides: [
+          {
+            type: 'content',
+            title: 'Legendas para Instagram que engajam',
+            body: 'O ChatGPT pode criar legendas de Instagram altamente engajantes em segundos. O segredo é dar contexto no prompt: diga o nicho, o público-alvo, o objetivo do post e o tom desejado. Exemplo: "Crie 5 legendas para Instagram de uma loja de roupas femininas. Público: mulheres 25-40 anos. Tom: descontraído e empoderado. Inclua call-to-action e hashtags." Peça variações com diferentes ganchos (pergunta, polêmica, história, dado estatístico) para testar qual funciona melhor. A IA gera opções em segundos, e você escolhe e personaliza a melhor.',
+            tip: 'Peça ao ChatGPT para gerar 5 variações com ganchos diferentes. Assim você testa qual estilo funciona melhor com seu público.',
+          },
+          {
+            type: 'content',
+            title: 'Artigos de blog completos e otimizados',
+            body: 'Para criar artigos de blog com IA, divida o processo em etapas. Primeiro, peça ao ChatGPT para sugerir temas relevantes para seu nicho. Depois, peça uma estrutura (outline) com títulos e subtítulos. Em seguida, peça para escrever seção por seção, dando instruções específicas para cada parte. Finalize pedindo para otimizar o texto para SEO, incluindo palavras-chave naturalmente. Um artigo de 1500 palavras que levaria 4 horas para escrever pode ser criado em 30 minutos com esse processo. Mas sempre revise e adicione sua voz pessoal ao texto final.',
+            tip: 'Nunca publique o texto da IA sem revisar. Adicione exemplos pessoais, dados atualizados e sua perspectiva única para tornar o conteúdo autêntico.',
+          },
+          {
+            type: 'content',
+            title: 'Scripts de vídeo e emails que convertem',
+            body: 'O ChatGPT é excelente para criar scripts de vídeo seguindo estruturas comprovadas como AIDA (Atenção, Interesse, Desejo, Ação) ou PAS (Problema, Agitação, Solução). Para emails, peça: "Crie uma sequência de 5 emails de boas-vindas para novos assinantes de uma loja de cosméticos naturais. Tom: acolhedor e educativo. Objetivo: levar ao primeiro pedido." Ele vai criar cada email com assunto, corpo e CTA. Para descrições de produtos, forneça as especificações e peça que ele escreva focando nos benefícios para o cliente, não apenas nas características técnicas.',
+            tip: 'Para scripts de vídeo, peça: "Crie um roteiro de [X] minutos usando a estrutura AIDA sobre [tema]." Isso garante que o vídeo tenha começo, meio e fim envolventes.',
+          },
+          {
+            type: 'content',
+            title: 'Calendário editorial: planejando 30 dias de conteúdo',
+            body: 'Um dos maiores desafios de quem cria conteúdo é a consistência. O ChatGPT pode criar um calendário editorial completo para 30 dias em minutos. Peça: "Crie um calendário editorial de 30 dias para [nicho] no Instagram. Poste 5x por semana. Inclua: tema do post, tipo (carrossel, reels, story), gancho da legenda e melhor horário para postar. Alterne entre conteúdo educativo, entretenimento e vendas na proporção 60/30/10." Ele vai organizar tudo em uma tabela prática. Depois é só executar, adaptando cada post para o momento.',
+            tip: 'A proporção 60/30/10 (educativo/entretenimento/vendas) é uma boa regra para manter o público engajado sem parecer que você só quer vender.',
+          },
+          {
+            type: 'quiz',
+            question: 'Qual é a melhor prática ao usar IA para criar conteúdo?',
+            options: [
+              'Publicar exatamente o que a IA gerou, sem alterar nada',
+              'Gerar o conteúdo com IA e depois revisar, adicionar sua voz pessoal e dados atualizados',
+              'Usar a IA apenas para corrigir erros gramaticais',
+              'Nunca usar IA porque o conteúdo fica ruim',
+            ],
+            correctIndex: 1,
+            explanation: 'A IA é uma excelente ferramenta para gerar rascunhos rápidos, mas o conteúdo final deve ser revisado e personalizado com sua voz, experiência e dados atualizados.',
+          },
+          {
+            type: 'quiz',
+            question: 'O que significa a estrutura AIDA usada em scripts e emails?',
+            options: [
+              'Análise, Implementação, Dados, Automação',
+              'Atenção, Interesse, Desejo, Ação',
+              'Anúncio, Instagram, Digital, Analytics',
+              'Antes, Início, Durante, Após',
+            ],
+            correctIndex: 1,
+            explanation: 'AIDA significa Atenção, Interesse, Desejo e Ação. É uma estrutura clássica do marketing que funciona perfeitamente para scripts de vídeo, emails e páginas de vendas.',
+          },
+          {
+            type: 'summary',
+            title: 'Resumo do Módulo 4',
+            points: [
+              'O ChatGPT gera legendas de Instagram engajantes quando você fornece contexto, público e tom',
+              'Para artigos de blog, divida o processo em etapas: temas, estrutura, escrita e otimização SEO',
+              'Use estruturas como AIDA e PAS para scripts de vídeo e emails que convertem',
+              'Crie calendários editoriais de 30 dias com proporção 60/30/10 (educativo/entretenimento/vendas)',
+              'Sempre revise e personalize o conteúdo gerado pela IA antes de publicar',
+            ],
+          },
+        ],
+      },
+
+      // ============================================================
+      // MODULO 5 — IA para Marketing Digital
+      // ============================================================
+      {
+        titulo: 'IA para Marketing Digital',
+        slides: [
+          {
+            type: 'content',
+            title: 'Análise de concorrentes com IA',
+            body: 'O ChatGPT pode ser seu analista de mercado pessoal. Forneça informações sobre seus concorrentes e peça uma análise detalhada. Exemplo: "Analise a presença digital dos seguintes concorrentes: [nomes e links]. Identifique pontos fortes, pontos fracos, estratégias de conteúdo, frequência de postagem e diferenciais. Compare com o meu negócio: [descrição]." Ele vai organizar tudo em uma tabela comparativa clara. Também pode pedir: "Baseado nessa análise, quais oportunidades meu negócio pode explorar?" A IA encontra padrões e lacunas que você pode não perceber sozinho.',
+            tip: 'Faça essa análise mensalmente. O mercado muda rápido e seus concorrentes estão sempre se movimentando. Use a IA para se manter atualizado.',
+          },
+          {
+            type: 'content',
+            title: 'Pesquisa de palavras-chave e criação de personas',
+            body: 'Palavras-chave são os termos que as pessoas digitam no Google. O ChatGPT pode gerar listas enormes de palavras-chave relevantes para seu negócio. Peça: "Liste 50 palavras-chave de cauda longa para [seu nicho], organizadas por intenção de busca: informacional, comercial e transacional." Para personas, peça: "Crie 3 personas detalhadas para o público-alvo de [seu negócio]. Inclua: nome, idade, profissão, dores, desejos, objeções de compra, canais que usa e tipo de conteúdo que consome." Personas detalhadas guiam toda sua estratégia de marketing.',
+            tip: 'Valide as palavras-chave sugeridas pela IA usando ferramentas gratuitas como o Google Trends ou Ubersuggest para confirmar o volume de busca real.',
+          },
+          {
+            type: 'content',
+            title: 'Otimização de anúncios e geração de ideias de campanha',
+            body: 'A IA é extremamente útil para criar e otimizar anúncios. Peça variações de copy: "Crie 10 variações de headline para um anúncio no Google Ads vendendo [produto/serviço]. Máximo 30 caracteres. Inclua urgência, benefício ou curiosidade." Para Meta Ads: "Crie 5 variações de texto primário para um anúncio no Instagram. Produto: [descreva]. Público: [descreva]. Objetivo: conversão." Também pode pedir ideias de campanha: "Sugira 5 ideias de campanha de marketing para [data comemorativa] para [tipo de negócio], com conceito criativo, canais e estimativa de investimento."',
+            tip: 'Crie pelo menos 5 variações de cada anúncio para fazer testes A/B. A IA gera variações em segundos — aproveite para testar mais.',
+          },
+          {
+            type: 'content',
+            title: 'Copy de landing pages que convertem',
+            body: 'Uma landing page (página de destino) eficiente segue uma estrutura testada: headline impactante, sub-headline que explica o benefício, prova social, detalhamento da oferta, FAQ e CTA forte. O ChatGPT pode criar toda essa copy. Peça: "Crie a copy completa de uma landing page para [produto/serviço]. Público-alvo: [descreva]. Problema principal que resolve: [descreva]. Inclua headline, sub-headline, 3 blocos de benefícios, seção de depoimentos (sugira textos), FAQ com 5 perguntas e CTA." Ele vai entregar uma página pronta para ser implementada pelo designer.',
+            tip: 'A headline é o elemento mais importante da landing page. Peça 10 variações ao ChatGPT e escolha a que melhor comunica o benefício principal.',
+          },
+          {
+            type: 'quiz',
+            question: 'O que são palavras-chave de "cauda longa"?',
+            options: [
+              'Palavras muito grandes com mais de 20 letras',
+              'Termos de busca mais específicos e detalhados, como "melhor curso de marketing digital para iniciantes"',
+              'Palavras-chave que estão na última página do Google',
+              'Termos técnicos que só profissionais de marketing conhecem',
+            ],
+            correctIndex: 1,
+            explanation: 'Palavras-chave de cauda longa são termos de busca mais específicos e detalhados. Elas têm menos concorrência e atraem um público mais qualificado.',
+          },
+          {
+            type: 'quiz',
+            question: 'Por que criar várias variações de copy para anúncios é importante?',
+            options: [
+              'Porque a primeira versão é sempre a pior',
+              'Para poder fazer testes A/B e descobrir qual versão converte melhor',
+              'Porque o Google exige no mínimo 10 versões',
+              'Não é importante, uma versão basta',
+            ],
+            correctIndex: 1,
+            explanation: 'Criar várias variações permite fazer testes A/B (comparar versões) e descobrir qual copy ressoa melhor com seu público, otimizando o retorno do investimento.',
+          },
+          {
+            type: 'summary',
+            title: 'Resumo do Módulo 5',
+            points: [
+              'Use IA para analisar concorrentes e encontrar oportunidades de mercado',
+              'Gere listas de palavras-chave organizadas por intenção de busca e crie personas detalhadas',
+              'Crie múltiplas variações de anúncios para testes A/B em Google Ads e Meta Ads',
+              'O ChatGPT pode criar copy completa de landing pages seguindo estruturas comprovadas',
+              'Sempre valide dados da IA com ferramentas reais como Google Trends e Ubersuggest',
+            ],
+          },
+        ],
+      },
+
+      // ============================================================
+      // MODULO 6 — Automação com IA
+      // ============================================================
+      {
+        titulo: 'Automação com IA',
+        slides: [
+          {
+            type: 'content',
+            title: 'Chatbots de WhatsApp com IA',
+            body: 'Chatbots de WhatsApp com IA são um dos maiores avanços para pequenos e médios negócios. Com ferramentas como ManyChat, Botpress ou até a API do WhatsApp Business, você pode criar um assistente que responde clientes 24 horas por dia, 7 dias por semana. O chatbot pode responder perguntas frequentes, enviar catálogos de produtos, agendar consultas e até qualificar leads automaticamente. O ChatGPT pode ajudar a criar todas as respostas e fluxos de conversa do seu chatbot. Basta pedir: "Crie um fluxo de chatbot para [tipo de negócio] com respostas para as 20 perguntas mais frequentes."',
+            tip: 'Comece simples: crie um chatbot que responda as 10 perguntas mais frequentes dos seus clientes. Depois vá adicionando funcionalidades aos poucos.',
+          },
+          {
+            type: 'content',
+            title: 'Automação de emails e integração com CRM',
+            body: 'Automação de email marketing com IA vai muito além de enviar newsletters. Você pode criar sequências inteligentes que se adaptam ao comportamento do lead. Use o ChatGPT para criar: sequências de boas-vindas (5-7 emails), sequências de abandono de carrinho, campanhas de reativação de clientes inativos e nurturing (nutrição) de leads. Para integrar com CRM (como HubSpot, RD Station ou Pipedrive), a IA pode ajudar a definir critérios de lead scoring, categorizar contatos e sugerir ações automatizadas baseadas no estágio do funil de vendas.',
+            tip: 'Uma sequência de boas-vindas bem feita pode aumentar suas vendas em até 30%. Peça ao ChatGPT para criar uma com 5 emails espaçados por 2-3 dias.',
+          },
+          {
+            type: 'content',
+            title: 'Qualificação de leads e agendamento inteligente',
+            body: 'A qualificação de leads é o processo de identificar quais potenciais clientes têm maior chance de comprar. Com IA, você pode automatizar isso criando formulários inteligentes, chatbots que fazem perguntas estratégicas e sistemas de pontuação (lead scoring) automáticos. Peça ao ChatGPT: "Crie 10 perguntas de qualificação para leads de [seu negócio], ordenadas da mais importante para a menos." Para agendamento, ferramentas como Calendly integradas com IA podem sugerir os melhores horários, enviar lembretes automáticos e reagendar com um clique, eliminando o vai-e-vem de mensagens.',
+            tip: 'As 3 perguntas mais importantes para qualificar um lead são: qual o problema que quer resolver, qual o orçamento disponível e quando precisa da solução.',
+          },
+          {
+            type: 'quiz',
+            question: 'Qual é a principal vantagem de um chatbot de WhatsApp com IA?',
+            options: [
+              'Substituir completamente o atendimento humano',
+              'Atender clientes 24 horas por dia, 7 dias por semana, respondendo perguntas frequentes automaticamente',
+              'Enviar spam para todos os contatos',
+              'Fazer ligações automáticas para clientes',
+            ],
+            correctIndex: 1,
+            explanation: 'Um chatbot de WhatsApp com IA atende clientes automaticamente 24/7, respondendo perguntas frequentes, enviando informações e qualificando leads enquanto você foca em tarefas mais estratégicas.',
+          },
+          {
+            type: 'quiz',
+            question: 'O que é lead scoring?',
+            options: [
+              'O preço que você cobra de cada lead',
+              'Um sistema de pontuação que classifica leads pela probabilidade de compra',
+              'O número de seguidores no Instagram',
+              'A nota que o cliente dá ao seu serviço',
+            ],
+            correctIndex: 1,
+            explanation: 'Lead scoring é um sistema de pontuação que classifica potenciais clientes pela probabilidade de fechar negócio, baseado em critérios como engajamento, perfil e comportamento.',
+          },
+          {
+            type: 'summary',
+            title: 'Resumo do Módulo 6',
+            points: [
+              'Chatbots de WhatsApp com IA atendem clientes 24/7 e qualificam leads automaticamente',
+              'Automação de email com IA cria sequências inteligentes que se adaptam ao comportamento do lead',
+              'A integração com CRM permite lead scoring automático e ações baseadas no estágio do funil',
+              'Qualificação automatizada identifica os leads com maior chance de compra',
+              'Comece simples e vá adicionando complexidade — automação é um processo iterativo',
+            ],
+          },
+        ],
+      },
+
+      // ============================================================
+      // MODULO 7 — Ferramentas de IA Além do ChatGPT
+      // ============================================================
+      {
+        titulo: 'Ferramentas de IA Além do ChatGPT',
+        slides: [
+          {
+            type: 'content',
+            title: 'Claude: a IA da Anthropic para textos longos e análises',
+            body: 'Claude, criado pela Anthropic, é uma alternativa poderosa ao ChatGPT, especialmente para textos longos e análises detalhadas. Ele se destaca por ter uma janela de contexto enorme, permitindo analisar documentos inteiros de uma só vez. Claude tende a ser mais cauteloso e preciso em suas respostas, evitando alucinações com mais frequência. É excelente para revisar contratos, analisar relatórios extensos, resumir livros inteiros e criar conteúdo com nuances. A versão gratuita já oferece funcionalidades excelentes, e o plano pago (Claude Pro) oferece limites maiores.',
+            tip: 'Use o Claude quando precisar analisar documentos muito longos ou quando quiser respostas mais cautelosas e ponderadas. Ele e o ChatGPT se complementam.',
+          },
+          {
+            type: 'content',
+            title: 'Midjourney e DALL-E: criando imagens com IA',
+            body: 'Midjourney e DALL-E são ferramentas de IA que geram imagens a partir de descrições em texto. Precisa de uma foto para um post no Instagram, uma ilustração para um ebook ou um mockup de produto? Basta descrever o que você quer. O Midjourney funciona pelo Discord e produz imagens artísticas e estilizadas de altíssima qualidade. O DALL-E está integrado ao ChatGPT Plus e é mais acessível para iniciantes. Ambos são transformadores para quem precisa de imagens originais sem contratar um fotógrafo ou designer para cada peça.',
+            tip: 'Para prompts de imagem, seja específico: descreva estilo artístico, iluminação, ângulo e cores. Exemplo: "Foto realista de café artesanal, luz natural, vista de cima, estilo editorial."',
+          },
+          {
+            type: 'content',
+            title: 'Canva AI e ElevenLabs: design e voz',
+            body: 'O Canva AI transformou o design gráfico democratizando a criação visual. Com recursos como Magic Design, Magic Write e remoção de fundo por IA, qualquer pessoa cria peças profissionais em minutos. A ferramenta sugere layouts, gera textos e até adapta designs para diferentes formatos automaticamente. Já o ElevenLabs é uma ferramenta de IA de voz que clona vozes e gera narração de altíssima qualidade em dezenas de idiomas, incluindo português. É perfeito para criar locuções para vídeos, podcasts e conteúdo de áudio sem precisar de estúdio de gravação.',
+            tip: 'O Canva AI com plano gratuito já oferece muitos recursos de IA. Comece por ele para criar posts, stories e apresentações profissionais.',
+          },
+          {
+            type: 'content',
+            title: 'Make e Zapier: conectando tudo com automação',
+            body: 'Make (antigo Integromat) e Zapier são plataformas de automação que conectam diferentes ferramentas sem precisar programar. Imagine: um formulário no seu site envia automaticamente os dados para seu CRM, que dispara um email de boas-vindas e notifica seu time no Slack. Com IA integrada, essas plataformas ficam ainda mais poderosas: podem classificar emails automaticamente, gerar respostas personalizadas e até criar conteúdo com base em gatilhos. O Make é mais flexível e barato, o Zapier é mais fácil de usar. Ambos oferecem planos gratuitos para começar.',
+            tip: 'Comece com uma automação simples no Make ou Zapier: "Quando receber um lead pelo formulário, envie um email de boas-vindas automaticamente." Depois vá evoluindo.',
+          },
+          {
+            type: 'quiz',
+            question: 'Para que serve o ElevenLabs?',
+            options: [
+              'Criar planilhas automaticamente',
+              'Gerar narração e clonar vozes com IA em alta qualidade',
+              'Editar vídeos profissionais',
+              'Gerenciar redes sociais',
+            ],
+            correctIndex: 1,
+            explanation: 'O ElevenLabs é uma ferramenta de IA de voz que gera narração de alta qualidade e pode clonar vozes em dezenas de idiomas. Perfeito para vídeos, podcasts e conteúdo de áudio.',
+          },
+          {
+            type: 'quiz',
+            question: 'Qual é a diferença principal entre Make e Zapier?',
+            options: [
+              'Make é gratuito e Zapier é pago',
+              'Make é mais flexível e barato, Zapier é mais fácil de usar — ambos têm planos gratuitos',
+              'Zapier só funciona com Google e Make só com Microsoft',
+              'Não há diferença, são a mesma ferramenta',
+            ],
+            correctIndex: 1,
+            explanation: 'Make é mais flexível e geralmente mais barato, enquanto Zapier é mais fácil de usar para iniciantes. Ambos oferecem planos gratuitos e conectam centenas de ferramentas.',
+          },
+          {
+            type: 'summary',
+            title: 'Resumo do Módulo 7',
+            points: [
+              'Claude é excelente para textos longos e análises detalhadas com menos alucinações',
+              'Midjourney e DALL-E geram imagens originais a partir de descrições em texto',
+              'Canva AI democratiza o design e ElevenLabs cria narração de voz com IA',
+              'Make e Zapier conectam ferramentas e automatizam processos sem programação',
+              'Cada ferramenta tem seus pontos fortes — combine-as para criar um ecossistema poderoso',
+              'A maioria dessas ferramentas oferece planos gratuitos para começar',
+            ],
+          },
+        ],
+      },
+
+      // ============================================================
+      // MODULO 8 — Ética, Limites e Futuro da IA
+      // ============================================================
+      {
+        titulo: 'Ética, Limites e Futuro da IA',
+        slides: [
+          {
+            type: 'content',
+            title: 'Pontos fortes e fracos da IA atual',
+            body: 'A IA atual é extraordinária em velocidade, escala e consistência. Ela processa informações milhões de vezes mais rápido que humanos, trabalha 24/7 sem cansar e mantém qualidade constante. Porém, tem fraquezas importantes: não tem consciência ou compreensão real, pode reproduzir e amplificar vieses dos dados de treinamento, não tem senso comum verdadeiro e pode gerar conteúdo falso com total confiança. A IA também não substitui criatividade genuína, empatia humana, julgamento ético ou experiência vivida. Entender esses limites é fundamental para usar a tecnologia de forma responsável.',
+            tip: 'Pense na IA como uma calculadora muito potente para linguagem: incrível para processar e gerar texto, mas sem entender realmente o que está dizendo.',
+          },
+          {
+            type: 'content',
+            title: 'Plágio, direitos autorais e originalidade',
+            body: 'Uma das maiores polêmicas da IA é sobre plágio e direitos autorais. O ChatGPT foi treinado com textos da internet, livros e artigos, e pode reproduzir trechos sem citar a fonte. Isso cria riscos legais e éticos. Ao usar textos gerados por IA, sempre reescreva com suas palavras e adicione sua perspectiva original. Para imagens geradas por IA, a legislação ainda está evoluindo, mas é boa prática não usá-las como se fossem fotos reais de pessoas. Ferramentas como detectores de IA (GPTZero, Originality.ai) podem identificar textos gerados por máquina, então a originalidade é cada vez mais importante.',
+            tip: 'Regra prática: use a IA como ponto de partida, não como produto final. Sempre reescreva, adicione exemplos pessoais e cite fontes quando possível.',
+          },
+          {
+            type: 'content',
+            title: 'Vieses, alucinações e regulamentação',
+            body: 'Vieses (preconceitos) na IA vêm dos dados de treinamento: se os dados contêm preconceitos raciais, de gênero ou culturais, a IA pode reproduzi-los. Alucinações são quando a IA inventa informações com total confiança — nomes de estudos que não existem, estatísticas falsas, citações inventadas. Quanto à regulamentação, a União Europeia lançou o AI Act em 2024, a primeira lei abrangente sobre IA do mundo. O Brasil está discutindo o Marco Legal da IA. Essas regulamentações buscam garantir transparência, segurança e responsabilidade no uso de IA. Profissionais que entendem essas questões terão vantagem competitiva.',
+            tip: 'Sempre que o ChatGPT citar um estudo, artigo ou estatística, verifique se existe de verdade. Alucinações são comuns em referências bibliográficas.',
+          },
+          {
+            type: 'content',
+            title: 'O futuro da IA e como se preparar',
+            body: 'O futuro da IA aponta para modelos multimodais que entendem texto, imagem, áudio e vídeo simultaneamente. Agentes de IA autônomos que executam tarefas complexas sem supervisão constante já estão surgindo. O mercado de trabalho será transformado: algumas profissões desaparecerão, muitas serão transformadas e novas surgirão. A melhor preparação é desenvolver habilidades que complementam a IA: pensamento crítico, criatividade, inteligência emocional e capacidade de fazer boas perguntas. Quem souber trabalhar COM a IA terá uma vantagem enorme sobre quem tentar competir CONTRA ela.',
+            tip: 'A habilidade mais valiosa do futuro não é programar ou dominar ferramentas — é saber fazer as perguntas certas e pensar criticamente sobre as respostas da IA.',
+          },
+          {
+            type: 'quiz',
+            question: 'O que são "alucinações" no contexto de IA?',
+            options: [
+              'Quando a IA fica confusa e desliga',
+              'Quando a IA inventa informações falsas com total confiança',
+              'Quando o usuário não entende a resposta',
+              'Quando a IA mostra imagens distorcidas',
+            ],
+            correctIndex: 1,
+            explanation: 'Alucinações são quando a IA gera informações que parecem verdadeiras mas são completamente inventadas, como estudos falsos, estatísticas fictícias ou citações inexistentes.',
+          },
+          {
+            type: 'quiz',
+            question: 'Qual é a melhor forma de se preparar para o futuro com IA?',
+            options: [
+              'Ignorar a IA e continuar como antes',
+              'Aprender a programar inteligências artificiais',
+              'Desenvolver pensamento crítico e aprender a trabalhar COM a IA',
+              'Esperar a IA ser proibida pelo governo',
+            ],
+            correctIndex: 2,
+            explanation: 'A melhor preparação é desenvolver habilidades que complementam a IA (pensamento crítico, criatividade, boas perguntas) e aprender a trabalhar com ela, não contra ela.',
+          },
+          {
+            type: 'summary',
+            title: 'Resumo do Módulo 8',
+            points: [
+              'A IA é rápida e escalável, mas não tem consciência, senso comum ou empatia real',
+              'Sempre reescreva textos da IA com suas palavras e adicione originalidade',
+              'Vieses e alucinações são problemas reais — verifique sempre informações importantes',
+              'Regulamentações como o AI Act europeu e o Marco Legal brasileiro estão moldando o futuro da IA',
+              'A melhor preparação é desenvolver pensamento crítico e aprender a trabalhar COM a IA',
+              'Quem dominar IA terá vantagem competitiva enorme no mercado de trabalho',
+            ],
+          },
+        ],
+      },
+    ],
+  },
+
+  // ================================================================
+  // CURSO 3 — Marketing Digital para Iniciantes
+  // ================================================================
+  {
+    slug: 'marketing-digital-iniciantes',
+    nome: 'Marketing Digital para Iniciantes',
+    modulos: [
+      // ============================================================
+      // MODULO 1 — O que é Marketing Digital
+      // ============================================================
+      {
+        titulo: 'O que é Marketing Digital',
+        slides: [
+          {
+            type: 'content',
+            title: 'Marketing Digital: conceitos essenciais',
+            body: 'Marketing Digital é o conjunto de estratégias para promover produtos, serviços ou marcas usando canais online como redes sociais, Google, email e sites. Diferente do marketing tradicional (TV, rádio, outdoor), o digital permite medir tudo: quantas pessoas viram, clicaram, compraram. Isso significa que você pode investir R$100 e saber exatamente quanto retornou. Qualquer negócio, do menor ao maior, pode começar com marketing digital hoje, muitas vezes com investimento zero ou muito baixo. O segredo é entender os fundamentos antes de sair fazendo.',
+            tip: 'A maior vantagem do marketing digital sobre o tradicional é a mensurabilidade: você sabe exatamente o que está funcionando e o que não está.',
+          },
+          {
+            type: 'content',
+            title: 'O funil de vendas: da descoberta à compra',
+            body: 'O funil de vendas é o caminho que uma pessoa percorre desde descobrir seu negócio até se tornar cliente. Tem três etapas: Topo (descoberta) — a pessoa descobre que tem um problema ou necessidade. Meio (consideração) — ela pesquisa soluções e compara opções. Fundo (decisão) — ela escolhe comprar de você. Cada etapa exige conteúdo diferente. No topo, você educa. No meio, você mostra por que sua solução é a melhor. No fundo, você oferece a venda com garantias e provas sociais. Entender o funil é a base de todo marketing digital eficiente.',
+            tip: 'A maioria dos negócios erra ao tentar vender direto (fundo do funil) para quem ainda está no topo. Respeite a jornada do cliente!',
+          },
+          {
+            type: 'content',
+            title: 'Canais digitais: onde seu cliente está',
+            body: 'Os principais canais de marketing digital são: Busca (Google) — pessoas procurando ativamente por soluções; Redes Sociais (Instagram, Facebook, TikTok, LinkedIn) — onde as pessoas passam tempo e descobrem coisas novas; Email Marketing — comunicação direta e personalizada com quem já demonstrou interesse; Site/Blog — sua "casa própria" na internet, onde você controla tudo; WhatsApp — o canal mais usado no Brasil para comunicação direta. Você não precisa estar em todos ao mesmo tempo. Comece onde seu público-alvo está e domine um canal antes de expandir para outros.',
+            tip: 'Para negócios locais (restaurantes, salões, clínicas), comece por Google Meu Negócio + Instagram. Para serviços B2B, foque em LinkedIn + email.',
+          },
+          {
+            type: 'content',
+            title: 'Mentalidade de resultados: o que esperar',
+            body: 'Marketing digital não é mágica e não traz resultados da noite para o dia. Resultados orgânicos (sem pagar por anúncios) levam de 3 a 6 meses para aparecer de forma consistente. Anúncios pagos podem trazer resultados imediatos, mas exigem investimento e otimização constante. O segredo é ter expectativas realistas e medir tudo desde o início. Defina metas claras: "Quero 50 seguidores novos por mês" ou "Quero 10 contatos por semana pelo WhatsApp." Sem metas, você não sabe se está avançando ou girando em círculos. Marketing digital é uma maratona, não uma corrida de 100 metros.',
+            tip: 'Defina uma meta específica para os próximos 30 dias. Algo simples e mensurável, como "publicar 12 posts no Instagram" ou "conseguir 20 avaliações no Google".',
+          },
+          {
+            type: 'quiz',
+            question: 'Quais são as três etapas do funil de vendas?',
+            options: [
+              'Criar conta, postar conteúdo, vender',
+              'Topo (descoberta), Meio (consideração), Fundo (decisão)',
+              'Instagram, Facebook, Google',
+              'Email, WhatsApp, Telefone',
+            ],
+            correctIndex: 1,
+            explanation: 'O funil de vendas tem 3 etapas: Topo (a pessoa descobre o problema), Meio (pesquisa soluções) e Fundo (decide comprar). Cada etapa precisa de conteúdo diferente.',
+          },
+          {
+            type: 'quiz',
+            question: 'Qual é a maior vantagem do marketing digital sobre o tradicional?',
+            options: [
+              'É sempre gratuito',
+              'Funciona sozinho sem esforço',
+              'Permite medir resultados com precisão e saber o retorno de cada real investido',
+              'Só funciona para empresas grandes',
+            ],
+            correctIndex: 2,
+            explanation: 'A mensurabilidade é a grande vantagem: no digital, você mede cliques, visualizações, conversões e retorno financeiro de cada ação. No tradicional, isso é muito mais difícil.',
+          },
+          {
+            type: 'summary',
+            title: 'Resumo do Módulo 1',
+            points: [
+              'Marketing Digital usa canais online para promover negócios com resultados mensuráveis',
+              'O funil de vendas tem 3 etapas: Topo (descoberta), Meio (consideração) e Fundo (decisão)',
+              'Principais canais: Google, Redes Sociais, Email, Site/Blog e WhatsApp',
+              'Comece dominando 1-2 canais onde seu público está antes de expandir',
+              'Resultados orgânicos levam 3-6 meses — defina metas e meça tudo desde o início',
+            ],
+          },
+        ],
+      },
+
+      // ============================================================
+      // MODULO 2 — Presença Digital
+      // ============================================================
+      {
+        titulo: 'Presença Digital',
+        slides: [
+          {
+            type: 'content',
+            title: 'Google Meu Negócio: sua vitrine gratuita no Google',
+            body: 'O Google Meu Negócio (Google Business Profile) é a ferramenta gratuita mais poderosa para negócios locais. Quando alguém pesquisa "restaurante perto de mim" ou "dentista em [sua cidade]", os resultados que aparecem no mapa são perfis do Google Meu Negócio. Ter um perfil completo e otimizado pode trazer dezenas de clientes novos por mês sem gastar nada com anúncios. Você pode adicionar fotos, horário de funcionamento, endereço, telefone, WhatsApp e até publicar ofertas. É literalmente gratuito e obrigatório para qualquer negócio com endereço físico.',
+            tip: 'Um perfil do Google Meu Negócio completo com 20+ avaliações pode gerar mais clientes que um anúncio pago. Priorize isso!',
+          },
+          {
+            type: 'content',
+            title: 'Seu primeiro site: simples mas profissional',
+            body: 'Ter um site é como ter uma "casa própria" na internet. Diferente das redes sociais (que são "terreno alugado" e podem mudar regras a qualquer momento), seu site é seu. Para começar, você não precisa de algo complexo: uma página simples com quem você é, o que oferece, depoimentos de clientes e um botão de WhatsApp já funciona. Plataformas como WordPress, Wix ou Carrd permitem criar sites profissionais sem saber programar. O mais importante é que o site seja rápido, funcione bem no celular e tenha informações claras de contato.',
+            tip: 'Não precisa de um site perfeito para começar. Uma página simples com informações essenciais e botão de WhatsApp já é suficiente. Melhore com o tempo.',
+          },
+          {
+            type: 'content',
+            title: 'Escolhendo as redes sociais certas para seu negócio',
+            body: 'Você não precisa estar em todas as redes sociais. A escolha depende de onde seu público está. Instagram é essencial para negócios visuais (moda, gastronomia, beleza, decoração). LinkedIn é ideal para serviços B2B e profissionais liberais. TikTok funciona muito bem para alcance orgânico e público mais jovem. Facebook ainda é relevante para comunidades locais e público 35+. YouTube é o segundo maior buscador do mundo e excelente para conteúdo educativo. Escolha 1-2 redes, domine elas, e só depois considere expandir para outras.',
+            tip: 'Se você tem um negócio local e não sabe por onde começar, vá de Instagram + Google Meu Negócio. É a combinação mais eficiente para resultados rápidos.',
+          },
+          {
+            type: 'content',
+            title: 'Identidade visual básica: pareça profissional desde o início',
+            body: 'Identidade visual é o conjunto de elementos visuais que representam sua marca: cores, fontes, logo e estilo de imagens. Você não precisa de um designer caro para começar. Com o Canva gratuito, você pode criar uma identidade visual básica e profissional. Escolha 2-3 cores que representem seu negócio, uma ou duas fontes, e mantenha a consistência em tudo. Um perfil de Instagram com visual coerente transmite profissionalismo e confiança. Cores quentes (vermelho, laranja) transmitem energia e urgência. Cores frias (azul, verde) transmitem confiança e calma.',
+            tip: 'No Canva, use o recurso "Kit de Marca" para salvar suas cores e fontes. Assim, todo material que criar já sai com sua identidade visual.',
+          },
+          {
+            type: 'quiz',
+            question: 'Por que o Google Meu Negócio é tão importante para negócios locais?',
+            options: [
+              'Porque é a única rede social que existe',
+              'Porque aparece quando pessoas pesquisam por negócios próximos no Google Maps',
+              'Porque substitui a necessidade de ter um site',
+              'Porque é pago e por isso tem mais qualidade',
+            ],
+            correctIndex: 1,
+            explanation: 'O Google Meu Negócio faz seu negócio aparecer quando alguém pesquisa por serviços na sua região no Google e no Maps. É gratuito e pode trazer dezenas de clientes novos por mês.',
+          },
+          {
+            type: 'quiz',
+            question: 'Qual é a melhor estratégia para redes sociais quando se está começando?',
+            options: [
+              'Criar perfis em todas as redes sociais ao mesmo tempo',
+              'Escolher 1-2 redes onde seu público está e dominá-las antes de expandir',
+              'Postar apenas quando tiver algo para vender',
+              'Não usar redes sociais e focar só em panfletos',
+            ],
+            correctIndex: 1,
+            explanation: 'É muito mais eficiente dominar 1-2 redes sociais do que ter perfis abandonados em todas. Escolha onde seu público está e foque sua energia ali.',
+          },
+          {
+            type: 'summary',
+            title: 'Resumo do Módulo 2',
+            points: [
+              'Google Meu Negócio é gratuito e obrigatório para qualquer negócio local',
+              'Um site simples com informações essenciais e botão de WhatsApp já é suficiente para começar',
+              'Escolha 1-2 redes sociais onde seu público está e domine elas',
+              'Identidade visual básica (cores, fontes, logo) transmite profissionalismo e confiança',
+              'Use o Canva gratuito para criar materiais visuais consistentes',
+            ],
+          },
+        ],
+      },
+
+      // ============================================================
+      // MODULO 3 — SEO para Iniciantes
+      // ============================================================
+      {
+        titulo: 'SEO para Iniciantes',
+        slides: [
+          {
+            type: 'content',
+            title: 'O que é SEO e por que é tão importante',
+            body: 'SEO (Search Engine Optimization) significa Otimização para Mecanismos de Busca. Em termos simples, é o conjunto de técnicas que fazem seu site aparecer nos primeiros resultados do Google quando alguém pesquisa algo relacionado ao seu negócio. Estar na primeira página do Google é como ter uma loja na rua mais movimentada da cidade — milhares de pessoas passam por ali todos os dias. A grande vantagem do SEO é que, uma vez posicionado, você recebe visitantes "de graça", sem pagar por cada clique como acontece com anúncios. É um investimento de médio prazo que gera resultados duradouros.',
+            tip: 'SEO é como plantar uma árvore: demora para crescer, mas uma vez estabelecida, dá frutos por anos. Comece hoje, mesmo que os resultados venham em meses.',
+          },
+          {
+            type: 'content',
+            title: 'Palavras-chave: entendendo o que seu cliente pesquisa',
+            body: 'Palavras-chave são os termos que as pessoas digitam no Google. Entender quais palavras-chave seu público usa é a base de todo SEO. Existem dois tipos principais: palavras-chave de cauda curta ("dentista") que têm muita busca mas muita concorrência, e palavras-chave de cauda longa ("dentista infantil em São Luís que aceita plano") que têm menos busca mas muito menos concorrência e atraem clientes mais qualificados. Ferramentas gratuitas como Google Trends, Ubersuggest e o próprio Google (sugestões de busca) ajudam a descobrir o que as pessoas estão pesquisando.',
+            tip: 'Digite o início de uma frase no Google e veja as sugestões automáticas. Essas sugestões são palavras-chave reais que as pessoas pesquisam!',
+          },
+          {
+            type: 'content',
+            title: 'SEO On-Page: otimizando seu site para o Google',
+            body: 'SEO On-Page são otimizações feitas dentro do seu próprio site. Os elementos mais importantes são: Título da página (tag title) — deve conter a palavra-chave principal e ter até 60 caracteres. Meta description — a descrição que aparece no Google, com até 155 caracteres, deve ser atrativa e conter a palavra-chave. Headings (H1, H2, H3) — organize o conteúdo com subtítulos que usam palavras-chave. URLs amigáveis — use URLs curtas e descritivas como /dentista-infantil em vez de /pagina?id=123. Imagens otimizadas — nomeie arquivos com palavras-chave e use texto alternativo (alt text).',
+            tip: 'O título da página (title tag) é o fator on-page mais importante. Sempre inclua sua palavra-chave principal no início do título.',
+          },
+          {
+            type: 'content',
+            title: 'Google Search Console: sua central de dados gratuita',
+            body: 'O Google Search Console é uma ferramenta 100% gratuita do Google que mostra como seu site aparece nos resultados de busca. Com ele, você descobre: quais palavras-chave trazem visitantes ao seu site, quantas vezes seu site apareceu nos resultados (impressões), quantas pessoas clicaram (cliques), sua posição média para cada termo e problemas técnicos que podem estar prejudicando seu site. Cadastrar seu site no Search Console é simples e leva poucos minutos. É a ferramenta mais importante para quem está começando com SEO porque mostra dados reais do seu desempenho no Google.',
+            tip: 'Cadastre seu site no Google Search Console hoje mesmo. Mesmo que ainda não tenha tráfego, ele começará a coletar dados que serão valiosos no futuro.',
+          },
+          {
+            type: 'quiz',
+            question: 'O que são palavras-chave de cauda longa?',
+            options: [
+              'Palavras com muitas letras',
+              'Termos de busca mais específicos e detalhados, com menos concorrência',
+              'Palavras-chave em inglês',
+              'Termos que aparecem no final da página do Google',
+            ],
+            correctIndex: 1,
+            explanation: 'Palavras-chave de cauda longa são termos mais específicos como "dentista infantil em São Luís". Têm menos busca, mas menos concorrência e atraem clientes mais qualificados.',
+          },
+          {
+            type: 'quiz',
+            question: 'Qual é a função do Google Search Console?',
+            options: [
+              'Criar anúncios no Google',
+              'Mostrar como seu site aparece nos resultados de busca e identificar problemas',
+              'Substituir seu site por um do Google',
+              'Enviar emails para seus clientes',
+            ],
+            correctIndex: 1,
+            explanation: 'O Google Search Console é uma ferramenta gratuita que mostra quais palavras-chave trazem visitantes, quantos cliques você recebe e problemas técnicos do seu site.',
+          },
+          {
+            type: 'summary',
+            title: 'Resumo do Módulo 3',
+            points: [
+              'SEO faz seu site aparecer nos primeiros resultados do Google — tráfego "gratuito" e duradouro',
+              'Palavras-chave de cauda longa são mais específicas, menos concorridas e atraem clientes qualificados',
+              'SEO On-Page: otimize títulos, meta descriptions, headings, URLs e imagens do seu site',
+              'O Google Search Console é gratuito e essencial para monitorar seu desempenho na busca',
+              'SEO é investimento de médio prazo — comece hoje para colher resultados em 3-6 meses',
+            ],
+          },
+        ],
+      },
+
+      // ============================================================
+      // MODULO 4 — Redes Sociais
+      // ============================================================
+      {
+        titulo: 'Redes Sociais',
+        slides: [
+          {
+            type: 'content',
+            title: 'Instagram para negócios: configuração e primeiros passos',
+            body: 'O Instagram é a rede social mais importante para a maioria dos negócios no Brasil. Para começar profissionalmente, converta sua conta para "Perfil Comercial" nas configurações — isso desbloqueia métricas e botões de contato. Otimize sua bio com: o que você faz, para quem faz, onde atende e um CTA (chamada para ação) como "Agende pelo WhatsApp." Escolha uma foto de perfil profissional (logo ou foto sua). Organize seus destaques de stories com capas padronizadas cobrindo: serviços, depoimentos, antes/depois, localização e perguntas frequentes.',
+            tip: 'Sua bio do Instagram tem apenas 150 caracteres para convencer alguém a te seguir. Seja direto: diga O QUE faz, PARA QUEM faz e COMO contratar.',
+          },
+          {
+            type: 'content',
+            title: 'Criando conteúdo que engaja: os 4 pilares',
+            body: 'Conteúdo que engaja no Instagram segue 4 pilares: Educativo (ensine algo útil — dicas, tutoriais, curiosidades do seu nicho), Inspiracional (mostre resultados, depoimentos, histórias de transformação), Entretenimento (humor, tendências, bastidores do dia a dia, memes do seu nicho) e Vendas (ofertas, promoções, apresentação de produtos/serviços). A proporção ideal é 40% educativo, 25% entretenimento, 25% inspiracional e 10% vendas. Carrosséis (posts com várias imagens) têm o maior alcance orgânico. Reels curtos (15-30 segundos) são os que mais alcançam pessoas novas.',
+            tip: 'A regra de ouro do conteúdo: dê valor primeiro, venda depois. Se 9 em cada 10 posts ajudam seu público, o 1 de venda será muito bem recebido.',
+          },
+          {
+            type: 'content',
+            title: 'Calendário editorial: consistência é a chave',
+            body: 'Um calendário editorial é o planejamento antecipado do que você vai postar, quando e em que formato. Consistência é mais importante que frequência — é melhor postar 3 vezes por semana de forma constante do que 7 vezes numa semana e sumir na outra. Para criar seu calendário: defina quantos posts por semana é sustentável para você (mínimo 3), distribua os 4 pilares de conteúdo ao longo da semana, reserve 1-2 horas no fim de semana para criar o conteúdo da semana seguinte. Use o Canva para criar os posts e ferramentas como o Meta Business Suite para agendar gratuitamente.',
+            tip: 'Comece com 3 posts por semana: segunda (educativo), quarta (entretenimento) e sexta (inspiracional). É simples, sustentável e eficiente.',
+          },
+          {
+            type: 'content',
+            title: 'Métricas de redes sociais: o que acompanhar',
+            body: 'Métricas são números que mostram se sua estratégia está funcionando. As mais importantes são: Alcance — quantas pessoas viram seu conteúdo; Engajamento — curtidas, comentários, salvamentos e compartilhamentos divididos pelo alcance; Crescimento de seguidores — quantos novos seguidores por semana/mês; Cliques no link/WhatsApp — quantas pessoas tomaram uma ação; Salvamentos — a métrica mais valiosa, pois indica que o conteúdo foi útil o bastante para guardar. Acompanhe essas métricas semanalmente para entender o que funciona. Foque menos em curtidas e mais em salvamentos, compartilhamentos e cliques.',
+            tip: 'Salvamentos e compartilhamentos valem mais que curtidas no algoritmo do Instagram. Crie conteúdo que as pessoas queiram guardar para ver depois.',
+          },
+          {
+            type: 'quiz',
+            question: 'Qual é a proporção ideal de conteúdo no Instagram?',
+            options: [
+              '100% de posts de vendas',
+              '40% educativo, 25% entretenimento, 25% inspiracional, 10% vendas',
+              '50% vendas e 50% fotos pessoais',
+              'Não importa o que postar, o importante é postar muito',
+            ],
+            correctIndex: 1,
+            explanation: 'A proporção ideal é 40% educativo, 25% entretenimento, 25% inspiracional e apenas 10% vendas. Dê valor primeiro — quando vender, seu público estará receptivo.',
+          },
+          {
+            type: 'quiz',
+            question: 'Qual métrica de Instagram indica que seu conteúdo foi realmente útil?',
+            options: [
+              'Número de seguidores',
+              'Curtidas no post',
+              'Salvamentos',
+              'Número de posts publicados',
+            ],
+            correctIndex: 2,
+            explanation: 'Salvamentos indicam que o conteúdo foi tão útil que a pessoa quis guardar para consultar depois. É a métrica mais valiosa para o algoritmo e para seu negócio.',
+          },
+          {
+            type: 'summary',
+            title: 'Resumo do Módulo 4',
+            points: [
+              'Converta para Perfil Comercial e otimize sua bio com o que faz, para quem e CTA',
+              'Siga os 4 pilares: Educativo (40%), Entretenimento (25%), Inspiracional (25%), Vendas (10%)',
+              'Consistência é mais importante que frequência — mínimo 3 posts por semana',
+              'Foque em salvamentos e compartilhamentos, não apenas curtidas',
+              'Use o Canva para criar posts e o Meta Business Suite para agendar gratuitamente',
+            ],
+          },
+        ],
+      },
+
+      // ============================================================
+      // MODULO 5 — Anúncios Online Básico
+      // ============================================================
+      {
+        titulo: 'Anúncios Online Básico',
+        slides: [
+          {
+            type: 'content',
+            title: 'Google Ads básico: apareça quando o cliente procura',
+            body: 'O Google Ads é a plataforma de anúncios do Google. Sua maior vantagem é a intenção: quando alguém pesquisa "encanador em São Luís urgente", ela QUER contratar agora. Para começar, crie uma conta no ads.google.com. Os anúncios de Pesquisa (Search) são os mais indicados para iniciantes: você escolhe palavras-chave relacionadas ao seu negócio, cria um anúncio com título e descrição, e define quanto quer pagar por cada clique. Quando alguém pesquisa sua palavra-chave, seu anúncio aparece no topo. Comece com um orçamento pequeno (R$20-30/dia) e aumente conforme veja resultados.',
+            tip: 'No Google Ads, comece com anúncios de Pesquisa (Search) para palavras-chave específicas do seu negócio. Evite campanhas automáticas no início.',
+          },
+          {
+            type: 'content',
+            title: 'Meta Ads básico: anúncios no Instagram e Facebook',
+            body: 'Meta Ads (antigo Facebook Ads) permite criar anúncios no Instagram e Facebook. Diferente do Google Ads (onde a pessoa procura), aqui você mostra seu anúncio para pessoas com o perfil ideal, mesmo que elas não estejam procurando. Para começar, acesse o Meta Business Suite ou o Gerenciador de Anúncios. Escolha um objetivo (tráfego, engajamento, mensagens no WhatsApp), defina seu público-alvo (idade, localização, interesses), crie o anúncio (imagem/vídeo + texto) e defina o orçamento. Meta Ads é excelente para negócios visuais e para gerar reconhecimento de marca na sua região.',
+            tip: 'Para negócios locais, o objetivo "Mensagens" é muito eficiente: o anúncio leva a pessoa direto para seu WhatsApp. Comece com R$15-20/dia.',
+          },
+          {
+            type: 'content',
+            title: 'Orçamento e ROI: como não perder dinheiro',
+            body: 'ROI (Retorno Sobre Investimento) é a métrica que mostra se seus anúncios estão dando lucro. A fórmula é simples: ROI = (Receita gerada - Investimento) / Investimento x 100. Se você investiu R$500 em anúncios e gerou R$2.000 em vendas, seu ROI é de 300%. Para não perder dinheiro: comece com orçamento baixo (R$15-30/dia), teste diferentes versões do anúncio (imagens, textos, públicos), desligue o que não funciona e aumente o que funciona. Acompanhe o custo por resultado diariamente na primeira semana. Nunca gaste mais do que pode perder enquanto está aprendendo.',
+            tip: 'Regra de ouro: só aumente o orçamento de um anúncio que já está dando resultado. Nunca aumente por "esperança" de que vai melhorar.',
+          },
+          {
+            type: 'content',
+            title: 'Seu primeiro anúncio na prática: passo a passo',
+            body: 'Vamos criar seu primeiro anúncio prático. Passo 1: Escolha a plataforma (Google Ads se seu serviço é procurado no Google; Meta Ads se é visual ou local). Passo 2: Defina o objetivo (para iniciantes, "Mensagens no WhatsApp" é o mais direto). Passo 3: Configure o público (sua cidade + 10-30km, idade do seu cliente típico, interesses relacionados). Passo 4: Crie a peça (uma foto profissional do seu produto/serviço + texto claro com o benefício principal + CTA). Passo 5: Defina orçamento de R$15/dia por 7 dias. Passo 6: Publique e acompanhe diariamente. Após 7 dias, analise: quantas mensagens recebeu? Quantas viraram clientes?',
+            tip: 'Não edite nem desligue o anúncio nos primeiros 3-4 dias. O algoritmo precisa de tempo para aprender e otimizar a entrega.',
+          },
+          {
+            type: 'quiz',
+            question: 'Qual é a principal diferença entre Google Ads e Meta Ads?',
+            options: [
+              'Google Ads é gratuito e Meta Ads é pago',
+              'Google Ads atinge pessoas que estão pesquisando ativamente; Meta Ads mostra anúncios baseado no perfil do público',
+              'Meta Ads só funciona no Facebook',
+              'Google Ads só funciona para empresas grandes',
+            ],
+            correctIndex: 1,
+            explanation: 'No Google Ads, a pessoa já está procurando por seu serviço (intenção ativa). No Meta Ads, você mostra o anúncio para pessoas com o perfil ideal, mesmo que não estejam procurando.',
+          },
+          {
+            type: 'quiz',
+            question: 'Se você investiu R$300 em anúncios e gerou R$1.200 em vendas, qual é o ROI?',
+            options: [
+              '100%',
+              '200%',
+              '300%',
+              '400%',
+            ],
+            correctIndex: 2,
+            explanation: 'ROI = (1200 - 300) / 300 x 100 = 300%. Isso significa que para cada R$1 investido, você recebeu R$3 de lucro além do investimento.',
+          },
+          {
+            type: 'summary',
+            title: 'Resumo do Módulo 5',
+            points: [
+              'Google Ads mostra seu anúncio quando alguém pesquisa — ideal para serviços com busca ativa',
+              'Meta Ads mostra anúncios no Instagram/Facebook para pessoas com o perfil do seu cliente',
+              'Comece com orçamento baixo (R$15-30/dia), teste variações e aumente só o que funciona',
+              'ROI = (Receita - Investimento) / Investimento x 100 — acompanhe diariamente',
+              'Não edite anúncios nos primeiros 3-4 dias para o algoritmo aprender',
+            ],
+          },
+        ],
+      },
+
+      // ============================================================
+      // MODULO 6 — Conversão e Métricas
+      // ============================================================
+      {
+        titulo: 'Conversão e Métricas',
+        slides: [
+          {
+            type: 'content',
+            title: 'Taxa de conversão: transformando visitantes em clientes',
+            body: 'Taxa de conversão é a porcentagem de pessoas que realizam a ação desejada no seu site ou perfil. Se 100 pessoas visitam seu site e 3 pedem orçamento pelo WhatsApp, sua taxa de conversão é 3%. Parece pouco? Na verdade, taxas de 2-5% são consideradas boas no marketing digital. Para melhorar a conversão, foque em: ter uma oferta clara e irresistível, incluir prova social (depoimentos), tornar o processo de contato fácil (WhatsApp com um clique), criar urgência real e remover distrações da página. Pequenas melhorias na conversão geram grandes resultados financeiros.',
+            tip: 'Dobrar sua taxa de conversão de 2% para 4% tem o mesmo efeito que dobrar seu tráfego — mas é muito mais fácil e barato de conseguir.',
+          },
+          {
+            type: 'content',
+            title: 'Google Analytics: entendendo quem visita seu site',
+            body: 'O Google Analytics é uma ferramenta gratuita que mostra tudo sobre os visitantes do seu site: de onde vieram (Google, Instagram, direto), quantas páginas visitaram, quanto tempo ficaram, de qual cidade são e até qual dispositivo usam (celular ou computador). Para instalar, crie uma conta em analytics.google.com, copie o código de rastreamento e cole no seu site. Em plataformas como WordPress e Wix, há plugins que fazem isso em um clique. Os dados mais importantes para acompanhar semanalmente são: número de visitantes, páginas mais acessadas, taxa de rejeição e de onde vem seu tráfego.',
+            tip: 'Configure o Google Analytics HOJE. Mesmo que você ainda não tenha tráfego, ele começará a coletar dados que serão essenciais para suas decisões futuras.',
+          },
+          {
+            type: 'content',
+            title: 'KPIs: os números que realmente importam',
+            body: 'KPI (Key Performance Indicator) são os indicadores-chave de performance do seu negócio. Não tente acompanhar tudo — foque nos que realmente importam para seu estágio. Para iniciantes, os KPIs essenciais são: Custo por Lead (quanto gasta para conseguir um contato), Taxa de Conversão (% de visitantes que viram clientes), CAC — Custo de Aquisição de Cliente (quanto gasta para conseguir um novo cliente), Ticket Médio (valor médio de cada venda) e LTV — Lifetime Value (quanto um cliente gasta ao longo do tempo). Se seu LTV for maior que seu CAC, seu negócio é saudável.',
+            tip: 'A fórmula mais importante do marketing digital: se o LTV (valor vitalício do cliente) é maior que o CAC (custo para adquiri-lo), você tem um negócio lucrativo.',
+          },
+          {
+            type: 'content',
+            title: 'Relatórios simples: o que acompanhar toda semana',
+            body: 'Crie uma rotina semanal de acompanhamento de métricas. Todo domingo ou segunda, reserve 30 minutos para olhar: quantos visitantes seu site recebeu (Google Analytics), quantos leads (contatos) entraram e por qual canal, quantas vendas foram fechadas, quanto gastou em anúncios e qual o ROI, e como suas redes sociais performaram (alcance, engajamento, novos seguidores). Anote tudo em uma planilha simples no Google Sheets. Isso permite comparar semana a semana e identificar tendências. O ChatGPT pode ajudar a criar a planilha e até analisar os dados para sugerir melhorias.',
+            tip: 'Use o ChatGPT para criar sua planilha de acompanhamento: "Crie uma planilha semanal de métricas de marketing digital para [tipo de negócio] com as colunas essenciais."',
+          },
+          {
+            type: 'quiz',
+            question: 'Se 200 pessoas visitam seu site e 8 pedem orçamento, qual é a taxa de conversão?',
+            options: [
+              '2%',
+              '4%',
+              '8%',
+              '16%',
+            ],
+            correctIndex: 1,
+            explanation: 'Taxa de conversão = (Conversões / Visitantes) x 100 = (8 / 200) x 100 = 4%. Isso é considerado uma boa taxa de conversão no marketing digital.',
+          },
+          {
+            type: 'quiz',
+            question: 'Quando seu negócio digital é considerado saudável?',
+            options: [
+              'Quando tem muitos seguidores no Instagram',
+              'Quando o LTV (valor vitalício do cliente) é maior que o CAC (custo de aquisição)',
+              'Quando gasta muito em anúncios',
+              'Quando não precisa medir nada',
+            ],
+            correctIndex: 1,
+            explanation: 'Um negócio é saudável quando cada cliente gera mais receita ao longo do tempo (LTV) do que custa para ser adquirido (CAC). Essa é a métrica mais importante.',
+          },
+          {
+            type: 'summary',
+            title: 'Resumo do Módulo 6',
+            points: [
+              'Taxa de conversão é a % de visitantes que viram clientes — taxas de 2-5% são boas',
+              'Google Analytics mostra de onde vêm seus visitantes e como se comportam no site',
+              'KPIs essenciais: Custo por Lead, Taxa de Conversão, CAC, Ticket Médio e LTV',
+              'Se LTV > CAC, seu negócio é lucrativo e saudável',
+              'Crie uma rotina semanal de 30 minutos para acompanhar suas métricas em uma planilha',
+              'Use o ChatGPT para criar planilhas de acompanhamento e analisar dados',
+            ],
+          },
+        ],
+      },
+    ],
+  },
+
+  // ================================================================
+  // CURSO 4 — Google Meu Negócio do Zero
+  // ================================================================
+  {
+    slug: 'google-meu-negocio-do-zero',
+    nome: 'Google Meu Negócio do Zero',
+    modulos: [
+      // ============================================================
+      // MODULO 1 — Configuração do Google Business
+      // ============================================================
+      {
+        titulo: 'Configuração do Google Business',
+        slides: [
+          {
+            type: 'content',
+            title: 'O que é o Google Business Profile e por que você precisa dele',
+            body: 'O Google Business Profile (antigo Google Meu Negócio) é uma ferramenta gratuita do Google que permite que seu negócio apareça no Google Maps e nos resultados de busca local. Quando alguém pesquisa "padaria perto de mim" ou "dentista em [sua cidade]", os negócios que aparecem no mapa são perfis do Google Business. Ter um perfil otimizado pode ser a diferença entre receber 5 ou 50 ligações por mês. Mais de 80% dos consumidores pesquisam no Google antes de visitar um negócio local. Se você não está lá, seus concorrentes estão levando seus clientes.',
+            tip: 'Um perfil completo do Google Business tem 7x mais chance de receber cliques do que um perfil incompleto. Cada detalhe importa!',
+          },
+          {
+            type: 'content',
+            title: 'Passo a passo: criando seu perfil do zero',
+            body: 'Para criar seu perfil, acesse business.google.com e faça login com sua conta Google. Clique em "Gerenciar agora" e digite o nome do seu negócio. Se ele já aparecer na lista, reivindique-o. Se não, clique em "Adicionar sua empresa." Preencha: nome do negócio (exatamente como os clientes conhecem), categoria principal (escolha a mais específica possível — "Restaurante japonês" é melhor que "Restaurante"), endereço completo, telefone e site. Se atende em domicílio, marque "Área de atendimento" em vez de endereço fixo. Salve e aguarde a verificação.',
+            tip: 'Escolha a categoria mais específica possível. "Clínica de estética" converte muito mais que "Serviços de beleza". O Google tem centenas de categorias.',
+          },
+          {
+            type: 'content',
+            title: 'Verificação: provando que seu negócio é real',
+            body: 'Após criar o perfil, o Google precisa verificar que seu negócio é real. O método mais comum é por carta: o Google envia um cartão postal com um código de 5 dígitos para o endereço cadastrado, que chega em 5-14 dias. Outros métodos incluem: verificação por telefone (SMS ou ligação), verificação por email e verificação por vídeo (você grava um vídeo curto mostrando o local e documentos). Enquanto aguarda a verificação, já pode editar seu perfil e adicionar informações. Após verificado, suas edições ficam visíveis para todos.',
+            tip: 'Não altere o nome ou endereço do negócio enquanto aguarda a verificação por carta. Isso pode cancelar o processo e você terá que recomeçar.',
+          },
+          {
+            type: 'content',
+            title: 'Preenchendo informações essenciais: horários, contato e atributos',
+            body: 'Um perfil completo transmite profissionalismo e ajuda o Google a mostrar seu negócio para as pessoas certas. Preencha: Horário de funcionamento (incluindo feriados e horários especiais), Telefone principal e secundário, Link do site, Link do WhatsApp (use wa.me/55XXXXXXXXXXX), Descrição do negócio (até 750 caracteres, use palavras-chave naturalmente), Atributos (Wi-Fi, estacionamento, acessibilidade, formas de pagamento). Quanto mais completo o perfil, melhor o posicionamento no Google Maps. Negócios com 100% das informações preenchidas recebem significativamente mais contatos.',
+            tip: 'Atualize horários especiais para feriados com antecedência. Clientes que encontram o negócio fechado quando o Google diz que está aberto deixam avaliações negativas.',
+          },
+          {
+            type: 'quiz',
+            question: 'Qual é o primeiro passo para criar um perfil no Google Business?',
+            options: [
+              'Baixar um aplicativo no celular',
+              'Acessar business.google.com e fazer login com conta Google',
+              'Enviar um email para o Google pedindo cadastro',
+              'Pagar uma taxa de registro',
+            ],
+            correctIndex: 1,
+            explanation: 'O cadastro é feito em business.google.com com sua conta Google. É 100% gratuito e leva poucos minutos para criar o perfil.',
+          },
+          {
+            type: 'quiz',
+            question: 'Por que é importante escolher a categoria mais específica possível?',
+            options: [
+              'Porque categorias genéricas são pagas',
+              'Porque o Google mostra seu negócio para buscas mais relevantes, gerando contatos mais qualificados',
+              'Porque só existe uma categoria por negócio',
+              'Não faz diferença qual categoria escolher',
+            ],
+            correctIndex: 1,
+            explanation: 'Categorias específicas fazem o Google mostrar seu negócio para pesquisas mais relevantes. "Clínica de estética" aparece para quem busca exatamente isso, gerando contatos mais qualificados.',
+          },
+          {
+            type: 'summary',
+            title: 'Resumo do Módulo 1',
+            points: [
+              'O Google Business Profile é gratuito e essencial para negócios locais aparecerem no Google Maps',
+              'Crie seu perfil em business.google.com e escolha a categoria mais específica possível',
+              'A verificação por carta leva 5-14 dias — não altere dados durante o processo',
+              'Preencha 100% das informações: horários, telefone, WhatsApp, atributos e descrição',
+              'Perfis completos recebem significativamente mais cliques e contatos que perfis incompletos',
+            ],
+          },
+        ],
+      },
+
+      // ============================================================
+      // MODULO 2 — Otimização Avançada
+      // ============================================================
+      {
+        titulo: 'Otimização Avançada',
+        slides: [
+          {
+            type: 'content',
+            title: 'Descrição SEO: as palavras que fazem você ser encontrado',
+            body: 'A descrição do seu perfil no Google Business tem até 750 caracteres e é uma das oportunidades mais desperdiçadas. Uma boa descrição inclui naturalmente as palavras-chave que seus clientes pesquisam. Em vez de "Somos uma empresa comprometida com a qualidade" (genérico), escreva: "Clínica de estética em São Luís especializada em limpeza de pele, peeling, botox e preenchimento facial. Atendimento personalizado com profissionais certificados. Estacionamento gratuito e horários flexíveis, incluindo sábados." Note como as palavras-chave (serviços + localização) aparecem naturalmente. É assim que o Google entende para quais buscas mostrar seu negócio.',
+            tip: 'Liste os 5 serviços mais procurados e a localização na descrição. Exemplo: "[serviço 1], [serviço 2] em [cidade/bairro]."',
+          },
+          {
+            type: 'content',
+            title: 'Fotos que convertem: o que e como fotografar',
+            body: 'Fotos são o fator que mais influencia a decisão do cliente no Google Business. Perfis com 100+ fotos recebem 520% mais ligações que perfis sem fotos. As fotos essenciais são: fachada (para o cliente reconhecer o local), interior do estabelecimento (mostrando ambiente limpo e acolhedor), produtos ou serviços em ação, equipe trabalhando (gera confiança), antes e depois (quando aplicável). Use luz natural sempre que possível, mantenha o enquadramento reto e limpe o ambiente antes de fotografar. Adicione pelo menos 10 fotos para começar e adicione novas semanalmente.',
+            tip: 'Tire fotos com celular mesmo, mas com boa iluminação. Fotos escuras e desfocadas espantam clientes. A foto da fachada é a mais importante.',
+          },
+          {
+            type: 'content',
+            title: 'Produtos e serviços: seu cardápio digital',
+            body: 'A seção de Produtos e Serviços do Google Business funciona como um cardápio digital. Você pode listar cada serviço com nome, descrição, faixa de preço e foto. Isso ajuda o cliente a entender o que você oferece antes de ligar. Para restaurantes, liste os pratos principais. Para salões, liste os serviços com preços. Para clínicas, liste os procedimentos. Cada produto/serviço pode ter uma descrição de até 1000 caracteres — use para detalhar benefícios e diferenciais. Negócios que preenchem essa seção recebem mais cliques e ligações qualificadas.',
+            tip: 'Inclua preços quando possível. Pesquisas mostram que perfis com preços recebem mais contatos, pois o cliente já chega pré-qualificado.',
+          },
+          {
+            type: 'content',
+            title: 'Área de atendimento e multi-localidades',
+            body: 'Se seu negócio atende em domicílio ou cobre uma região específica, configure a Área de Atendimento em vez de (ou além de) um endereço fixo. Você pode definir cidades, bairros ou um raio em quilômetros. Isso é essencial para: encanadores, eletricistas, personal trainers, fotógrafos, consultores e qualquer profissional que vai até o cliente. Se você tem mais de uma unidade, crie um perfil separado para cada endereço — cada um terá suas próprias avaliações e métricas. Mantenha informações consistentes (mesmo nome, mesma categoria) entre as unidades.',
+            tip: 'Se você atende em vários bairros, não crie perfis falsos para cada bairro. O Google penaliza isso. Use a Área de Atendimento corretamente.',
+          },
+          {
+            type: 'quiz',
+            question: 'Quantas fotos a mais seu perfil deve ter para maximizar os resultados?',
+            options: [
+              '1-2 fotos são suficientes',
+              'Nenhuma foto é necessária',
+              'Pelo menos 10 fotos para começar, adicionando novas semanalmente',
+              'Apenas a foto do logo',
+            ],
+            correctIndex: 2,
+            explanation: 'Perfis com muitas fotos recebem muito mais ligações. Comece com pelo menos 10 fotos (fachada, interior, equipe, produtos) e adicione novas semanalmente.',
+          },
+          {
+            type: 'quiz',
+            question: 'O que uma boa descrição SEO do perfil deve incluir?',
+            options: [
+              'Apenas o nome da empresa e telefone',
+              'Serviços oferecidos + localização + diferenciais, com palavras-chave naturais',
+              'Um texto motivacional sobre a empresa',
+              'Apenas emojis e hashtags',
+            ],
+            correctIndex: 1,
+            explanation: 'Uma boa descrição inclui naturalmente os serviços que você oferece, a localização e seus diferenciais. São essas palavras-chave que fazem o Google mostrar seu negócio para buscas relevantes.',
+          },
+          {
+            type: 'summary',
+            title: 'Resumo do Módulo 2',
+            points: [
+              'Use os 750 caracteres da descrição incluindo serviços, localização e diferenciais com palavras-chave naturais',
+              'Adicione pelo menos 10 fotos de qualidade: fachada, interior, equipe, produtos e serviços',
+              'Liste todos os produtos/serviços com descrição, preço e foto na seção específica',
+              'Configure a Área de Atendimento se atende em domicílio ou cobre uma região',
+              'Fotos são o fator que mais influencia a decisão — perfis com muitas fotos recebem muito mais contatos',
+            ],
+          },
+        ],
+      },
+
+      // ============================================================
+      // MODULO 3 — Reviews e Reputação
+      // ============================================================
+      {
+        titulo: 'Reviews e Reputação',
+        slides: [
+          {
+            type: 'content',
+            title: 'Por que avaliações são o fator #1 de decisão',
+            body: 'Mais de 90% dos consumidores leem avaliações online antes de visitar um negócio local. Um negócio com 4.5 estrelas e 100+ avaliações gera muito mais confiança do que um com 5 estrelas e apenas 3 avaliações. As avaliações do Google impactam diretamente: seu posicionamento no Maps (mais e melhores avaliações = melhor posição), a confiança do cliente antes de ligar, e a taxa de conversão de visualizações em contatos. Uma única avaliação negativa não respondida pode afastar dezenas de clientes potenciais. Investir em uma estratégia de avaliações é provavelmente o marketing com melhor custo-benefício que existe.',
+            tip: 'A meta ideal é ter pelo menos 50 avaliações com média acima de 4.3 estrelas. Isso coloca seu negócio acima da maioria dos concorrentes locais.',
+          },
+          {
+            type: 'content',
+            title: 'Como pedir avaliações sem ser inconveniente',
+            body: 'O segredo para conseguir avaliações é pedir no momento certo, da forma certa. O melhor momento é logo após uma experiência positiva — quando o cliente elogia, quando o serviço é entregue com sucesso ou quando ele demonstra satisfação. Crie um link direto para avaliação (no Google Business, vá em "Pedir avaliações" e copie o link) e envie por WhatsApp com uma mensagem curta e pessoal: "Olá [nome]! Fico feliz que gostou do [serviço]. Sua opinião ajuda muito nosso negócio. Poderia deixar uma avaliação rápida? [link]." Outra tática: coloque um QR code que leva direto para avaliação no balcão, no cartão de visita ou no recibo.',
+            tip: 'Imprima um QR code do link de avaliação e coloque em local visível no seu estabelecimento. Muitos clientes avaliam na hora se for fácil.',
+          },
+          {
+            type: 'content',
+            title: 'Respondendo avaliações positivas e negativas',
+            body: 'Responder TODAS as avaliações é fundamental — mostra que você se importa. Para avaliações positivas: agradeça pelo nome, mencione o serviço específico e convide para voltar. Exemplo: "Obrigado, Maria! Ficamos felizes que adorou o corte. Esperamos vê-la novamente!" Para avaliações negativas: nunca leve para o pessoal. Responda com empatia, peça desculpas pelo ocorrido, ofereça resolver o problema e convide para continuar a conversa em privado. Exemplo: "Lamentamos sua experiência, João. Gostaríamos de entender melhor o que aconteceu. Por favor, nos envie um WhatsApp no [número] para resolvermos." Uma resposta profissional a uma avaliação negativa muitas vezes convence mais que 10 avaliações positivas.',
+            tip: 'Responda avaliações negativas em até 24 horas. A velocidade da resposta mostra profissionalismo e pode reverter a situação antes que outros clientes vejam apenas o negativo.',
+          },
+          {
+            type: 'content',
+            title: 'Automação e widget: avaliações no piloto automático',
+            body: 'Para escalar sua coleta de avaliações, automatize o processo. Configure mensagens automáticas de WhatsApp (via ferramentas como Z-API ou ChatPro) que enviam o link de avaliação 24 horas após o atendimento. Outra estratégia poderosa: adicione um widget de avaliações do Google no seu site, mostrando as melhores avaliações diretamente na página. Isso reforça a confiança e incentiva novos visitantes a avaliar também. Também considere integrar avaliações no seu email de pós-venda. Negócios que automatizam a coleta de avaliações conseguem 3-5x mais reviews do que os que pedem manualmente.',
+            tip: 'Automatize a coleta, mas personalize a mensagem. Um "Olá [nome], como foi seu [serviço]?" converte muito mais que uma mensagem genérica.',
+          },
+          {
+            type: 'quiz',
+            question: 'Qual é a melhor forma de lidar com uma avaliação negativa?',
+            options: [
+              'Ignorar e esperar que ninguém veja',
+              'Responder agressivamente defendendo seu negócio',
+              'Responder com empatia, pedir desculpas e convidar para resolver em privado',
+              'Pedir para amigos deixarem avaliações positivas para cobrir a negativa',
+            ],
+            correctIndex: 2,
+            explanation: 'Responda com empatia e profissionalismo. Uma boa resposta a uma avaliação negativa mostra maturidade e pode até convencer outros clientes mais do que avaliações positivas.',
+          },
+          {
+            type: 'quiz',
+            question: 'Qual é o melhor momento para pedir uma avaliação ao cliente?',
+            options: [
+              'Antes do atendimento começar',
+              'Logo após uma experiência positiva, quando o cliente demonstra satisfação',
+              'Uma semana depois do atendimento',
+              'Nunca — avaliações devem ser espontâneas',
+            ],
+            correctIndex: 1,
+            explanation: 'O melhor momento é logo após a experiência positiva, quando a satisfação está fresca. Envie o link de avaliação por WhatsApp com uma mensagem curta e pessoal.',
+          },
+          {
+            type: 'summary',
+            title: 'Resumo do Módulo 3',
+            points: [
+              'Mais de 90% dos consumidores leem avaliações antes de visitar um negócio — avaliações são essenciais',
+              'Peça avaliações no momento certo (após experiência positiva) com link direto e mensagem pessoal',
+              'Responda TODAS as avaliações: positivas com gratidão e negativas com empatia e solução',
+              'Use QR codes no estabelecimento e automatize a coleta por WhatsApp e email',
+              'Meta: 50+ avaliações com média acima de 4.3 estrelas para se destacar dos concorrentes',
+            ],
+          },
+        ],
+      },
+
+      // ============================================================
+      // MODULO 4 — Google Posts e Métricas
+      // ============================================================
+      {
+        titulo: 'Google Posts e Métricas',
+        slides: [
+          {
+            type: 'content',
+            title: 'Tipos de Google Posts e quando usar cada um',
+            body: 'O Google Posts é uma funcionalidade pouco usada que permite publicar conteúdo diretamente no seu perfil do Google. Existem 4 tipos: Novidades — atualizações gerais, dicas ou informações relevantes (ideal para conteúdo educativo); Ofertas — promoções com data de início e fim (perfeito para descontos e ofertas especiais); Eventos — divulgação de eventos com data, hora e local; Produtos — destaque para novos produtos ou serviços. Os posts aparecem diretamente nos resultados de busca quando alguém pesquisa seu negócio, aumentando o destaque visual e as chances de clique. Cada post fica visível por 7 dias.',
+            tip: 'Google Posts são uma vantagem competitiva enorme porque pouquíssimos negócios locais usam. Fazer isso consistentemente já te coloca à frente da maioria.',
+          },
+          {
+            type: 'content',
+            title: 'Frequência ideal e calendário de posts',
+            body: 'A frequência ideal de Google Posts é de 1-2 por semana. Como cada post fica visível por 7 dias, publicar semanalmente garante que seu perfil sempre tenha conteúdo fresco. Crie um calendário simples: Segunda — Post de Novidade (dica ou informação útil do seu nicho); Quinta — Post de Oferta ou Produto (promoção da semana ou destaque de serviço). Mantenha os textos curtos (150-300 caracteres), use imagens de boa qualidade (tamanho ideal: 1200x900 pixels) e sempre inclua um botão de ação (CTA): "Ligue agora", "Saiba mais", "Faça seu pedido." Posts com CTA claro recebem significativamente mais cliques.',
+            tip: 'Crie os posts da semana toda de uma vez no domingo. Use o Canva para fazer as imagens e agende no Google Business. Leva 20 minutos por semana.',
+          },
+          {
+            type: 'content',
+            title: 'Insights do Google Business: interpretando seus dados',
+            body: 'Os Insights do Google Business mostram dados valiosos sobre como as pessoas encontram e interagem com seu negócio. Os dados mais importantes são: Pesquisas — quantas vezes seu negócio apareceu em buscas e quais termos foram usados; Visualizações — quantas pessoas viram seu perfil no Google e no Maps; Ações — quantas ligaram, pediram direção, visitaram o site ou enviaram mensagem; Fotos — quantas vezes suas fotos foram vistas comparadas com concorrentes. Acompanhe esses dados mensalmente para entender tendências. Se as visualizações estão subindo mas as ações caem, seu perfil precisa de otimização. Se tudo está subindo, continue fazendo o que está funcionando.',
+            tip: 'Compare seus dados de fotos com a média dos concorrentes (disponível nos Insights). Se estiver abaixo, adicione mais fotos imediatamente.',
+          },
+          {
+            type: 'content',
+            title: 'Relatórios de performance: medindo seu sucesso',
+            body: 'Crie um relatório mensal simples para acompanhar a evolução do seu Google Business. Inclua: número de visualizações do perfil (mês atual vs anterior), número de ações (ligações + direções + cliques no site + mensagens), número de avaliações recebidas e nota média, número de Google Posts publicados e quantidade de fotos adicionadas. Use o ChatGPT para criar uma planilha modelo: "Crie uma planilha mensal de acompanhamento do Google Business Profile com as métricas mais importantes." Ao analisar 3-6 meses de dados, você identifica padrões sazonais e pode planejar estratégias para os meses mais fortes e mais fracos.',
+            tip: 'Tire prints dos Insights todo dia 1 do mês para manter um histórico. Alguns dados do Google Business ficam disponíveis apenas por período limitado.',
+          },
+          {
+            type: 'quiz',
+            question: 'Por quanto tempo um Google Post fica visível?',
+            options: [
+              '24 horas',
+              '7 dias',
+              '30 dias',
+              'Para sempre',
+            ],
+            correctIndex: 1,
+            explanation: 'Cada Google Post fica visível por 7 dias. Por isso, a frequência ideal é publicar 1-2 posts por semana para manter seu perfil sempre com conteúdo fresco.',
+          },
+          {
+            type: 'quiz',
+            question: 'O que os Insights do Google Business mostram?',
+            options: [
+              'Apenas o número de avaliações',
+              'Pesquisas, visualizações, ações dos clientes (ligações, direções, mensagens) e comparação com concorrentes',
+              'O faturamento do seu negócio',
+              'Apenas quantas pessoas seguem seu perfil',
+            ],
+            correctIndex: 1,
+            explanation: 'Os Insights mostram dados completos: quantas vezes você apareceu em buscas, quantas pessoas viram seu perfil, quantas tomaram ação e como você se compara com concorrentes.',
+          },
+          {
+            type: 'summary',
+            title: 'Resumo do Módulo 4',
+            points: [
+              'Google Posts (Novidades, Ofertas, Eventos, Produtos) aparecem direto nos resultados de busca',
+              'Publique 1-2 posts por semana com imagens de qualidade e CTA claro',
+              'Os Insights mostram pesquisas, visualizações, ações e comparação com concorrentes',
+              'Crie relatórios mensais para acompanhar evolução e identificar tendências',
+              'Google Posts são uma vantagem competitiva enorme porque pouquíssimos negócios locais usam',
+              'Consistência é a chave: 20 minutos por semana já fazem uma diferença enorme',
+            ],
+          },
+        ],
+      },
+    ],
+  },
 ]
+
+export const cursosInterativos: CursoInterativo[] = [...cursosBase, ...cursosInterativosExtras]
