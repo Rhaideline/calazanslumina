@@ -400,10 +400,11 @@ export const cursos: Curso[] = [
   },
   {
     slug: 'ferramentas-digitais-secretarias',
-    nome: 'Ferramentas Digitais para Secretárias',
-    descricaoCurta: 'Domine as ferramentas digitais essenciais para secretárias modernas. De Google Workspace a automação de tarefas, torne-se indispensável no escritório.',
-    descricaoLonga: 'Curso completo para secretárias e assistentes administrativas que querem dominar as ferramentas digitais do dia a dia. Aprenda Google Workspace, gestão de agenda, organização de arquivos, comunicação profissional por email, criação de apresentações e uso básico de IA para aumentar sua produtividade. Tudo com exemplos práticos do cotidiano de escritório.',
-    preco: 20,
+    nome: 'Ferramentas Digitais para Secretárias — Curso Gratuito',
+    descricaoCurta: 'Domine as ferramentas digitais essenciais para secretárias modernas. De Google Workspace a automação de tarefas, torne-se indispensável no escritório. Totalmente gratuito.',
+    descricaoLonga: 'Curso completo e gratuito para secretárias e assistentes administrativas que querem dominar as ferramentas digitais do dia a dia. Aprenda Google Workspace, gestão de agenda, organização de arquivos, comunicação profissional por email, criação de apresentações e uso básico de IA para aumentar sua produtividade. Tudo com exemplos práticos do cotidiano de escritório.',
+    preco: 0,
+    gratuito: true,
     pdfDisponivel: true,
     imagem: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b9ac95dfd50100d491487.png',
     paraQuem: [

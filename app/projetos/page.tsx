@@ -194,7 +194,7 @@ const categorias = [
 
 export default function ProjetosPage() {
   const [activeTab, setActiveTab] = useState('sites')
-  const [lightbox, setLightbox] = useState<string | null>(null)
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
 
   const activeCat = categorias.find((c) => c.id === activeTab)!
 
@@ -288,7 +288,7 @@ export default function ProjetosPage() {
                   <div className="group">
                     <div
                       className="relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/3]"
-                      onClick={() => setLightbox(img.src)}
+                      onClick={() => setLightboxIndex(i)}
                     >
                       <Image
                         src={img.src}
@@ -328,7 +328,7 @@ export default function ProjetosPage() {
                   <div className="group">
                     <div
                       className="relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/3]"
-                      onClick={() => setLightbox(img.src)}
+                      onClick={() => setLightboxIndex(i + 2)}
                     >
                       <Image
                         src={img.src}
@@ -466,32 +466,94 @@ export default function ProjetosPage() {
       {/* CTA */}
       <CTAForm />
 
-      {/* Lightbox */}
-      {lightbox && (
-        <div
-          className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4 cursor-pointer"
-          onClick={() => setLightbox(null)}
-        >
-          <button
-            type="button"
-            onClick={() => setLightbox(null)}
-            className="absolute top-6 right-6 text-white/60 hover:text-white transition-colors z-10"
-            aria-label="Fechar"
-          >
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-          <Image
-            src={lightbox}
-            alt="Projeto em tamanho completo"
-            width={1200}
-            height={800}
-            className="max-w-full max-h-[85vh] object-contain rounded-lg"
-            onClick={(e) => e.stopPropagation()}
-          />
-        </div>
-      )}
+      {/* Project Viewer - Full width scrollable */}
+      {lightboxIndex !== null && (() => {
+        const img = activeCat.imagens[lightboxIndex]
+        if (!img) return null
+        const total = activeCat.imagens.length
+        const hasPrev = lightboxIndex > 0
+        const hasNext = lightboxIndex < total - 1
+        return (
+          <div className="fixed inset-0 z-[100] bg-black flex flex-col">
+            {/* Top bar with info + close */}
+            <div className="flex-shrink-0 bg-black/90 border-b border-white/10 px-4 md:px-8 py-4 flex items-center justify-between gap-4">
+              <div className="flex items-center gap-4 min-w-0">
+                <span className="text-brand-mint text-xs font-bold uppercase tracking-wider flex-shrink-0">
+                  {lightboxIndex + 1}/{total}
+                </span>
+                <div className="min-w-0">
+                  <p className="text-white font-serif font-bold text-sm md:text-lg truncate">{img.nome}</p>
+                  <p className="text-white/50 text-xs truncate">{img.tipo} · {img.resultado}</p>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => setLightboxIndex(null)}
+                className="text-white/60 hover:text-white transition-colors flex-shrink-0 p-2"
+                aria-label="Fechar"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Scrollable image area - full width */}
+            <div className="flex-1 overflow-y-auto overflow-x-hidden">
+              <div className="max-w-4xl mx-auto">
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  width={1200}
+                  height={3000}
+                  className="w-full h-auto"
+                  sizes="(max-width: 896px) 100vw, 896px"
+                  priority
+                />
+              </div>
+              {/* Description below image */}
+              {'descricao' in img && (
+                <div className="max-w-4xl mx-auto px-6 py-8 border-t border-white/10">
+                  <p className="text-white/70 text-sm md:text-base leading-relaxed">{(img as { descricao: string }).descricao}</p>
+                </div>
+              )}
+            </div>
+
+            {/* Bottom nav */}
+            <div className="flex-shrink-0 bg-black/90 border-t border-white/10 px-4 md:px-8 py-3 flex items-center justify-between">
+              <button
+                type="button"
+                onClick={() => hasPrev && setLightboxIndex(lightboxIndex - 1)}
+                className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  hasPrev ? 'text-white hover:bg-white/10' : 'text-white/20 cursor-not-allowed'
+                }`}
+                disabled={!hasPrev}
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+                Anterior
+              </button>
+              <p className="text-white/30 text-xs hidden md:block">
+                Role para ver cada seção do site
+              </p>
+              <button
+                type="button"
+                onClick={() => hasNext && setLightboxIndex(lightboxIndex + 1)}
+                className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  hasNext ? 'text-white hover:bg-white/10' : 'text-white/20 cursor-not-allowed'
+                }`}
+                disabled={!hasNext}
+              >
+                Próximo
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        )
+      })()}
     </>
   )
 }
