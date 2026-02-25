@@ -198,7 +198,7 @@ export default async function ServicoPage({ params }: { params: Promise<{ slug: 
             </ScrollReveal>
             <ScrollReveal delay={200}>
               <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-br from-brand-mint/20 to-brand-light/10 rounded-3xl blur-2xl" />
+                <div className="absolute -inset-4 bg-gradient-to-br from-black/20 to-black/5 rounded-3xl blur-2xl" />
                 <div className="relative bg-brand-dark rounded-2xl p-8 text-white">
                   <ServiceIcon name={servico.icone} className="w-16 h-16 text-brand-mint mb-6" />
                   <h3 className="font-serif text-2xl font-bold mb-4">{servico.nome}</h3>

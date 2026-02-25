@@ -268,7 +268,7 @@ export default function SobrePage() {
             <div className="lg:col-span-2">
               <ScrollReveal delay={200}>
                 <div className="relative">
-                  <div className="absolute -inset-4 bg-gradient-to-br from-brand-mint/20 to-brand-light/10 rounded-3xl blur-2xl" />
+                  <div className="absolute -inset-4 bg-gradient-to-br from-black/20 to-black/5 rounded-3xl blur-2xl" />
                   <Image
                     src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c0357f3208c418.jpeg"
                     alt="Rhaideline Calazans — freelancer para agências de marketing digital"

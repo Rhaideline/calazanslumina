@@ -15,7 +15,14 @@ export default function CursosPage() {
     <>
       {/* Hero */}
       <section className="relative py-20 md:py-28 bg-brand-dark text-white overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-mint/10 to-transparent" />
+        <Image
+          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c0357f3208c418.jpeg"
+          alt="Rhaideline Calazans — Cursos de Marketing Digital"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-brand-dark/85" />
         <div className="container-main section-padding relative z-10 text-center">
           <ScrollReveal>
             <p className="text-brand-mint font-medium mb-3 text-sm uppercase tracking-wider">
@@ -56,7 +63,7 @@ export default function CursosPage() {
                 <Link href={curso.gratuito ? `/cursos/${curso.slug}/download` : `/cursos/${curso.slug}`} className="group block h-full">
                   <div className={`relative rounded-2xl overflow-hidden h-full flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
                     curso.destaque
-                      ? 'border-2 border-brand-mint shadow-xl shadow-brand-mint/10'
+                      ? 'border-2 border-brand-mint shadow-xl shadow-black/10'
                       : 'border border-gray-100 shadow-sm'
                   }`}>
                     {curso.gratuito ? (

@@ -5,7 +5,7 @@ import { servicos } from '@/data/servicos'
 import { cursos } from '@/data/cursos'
 import { blogPosts } from '@/data/blog'
 
-const BASE = 'https://calazanslumina.com'
+const BASE = 'https://calazanslumina.com.br'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString()

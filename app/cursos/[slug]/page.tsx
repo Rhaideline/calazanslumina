@@ -30,7 +30,14 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
     <>
       {/* Hero */}
       <section className="relative py-20 md:py-28 bg-brand-dark text-white overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-mint/10 to-transparent" />
+        <Image
+          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c0357f3208c418.jpeg"
+          alt="Rhaideline Calazans — Cursos de Marketing Digital"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-brand-dark/85" />
         <div className="container-main section-padding relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <ScrollReveal>

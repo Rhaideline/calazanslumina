@@ -24,7 +24,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://calazanslumina.com'),
+  metadataBase: new URL('https://calazanslumina.com.br'),
   title: {
     default: 'Calazans Lumina | Marketing Digital para Brasileiros nos EUA e Brasil',
     template: '%s | Calazans Lumina',
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    url: 'https://calazanslumina.com',
+    url: 'https://calazanslumina.com.br',
     siteName: 'Calazans Lumina',
     title: 'Calazans Lumina | Marketing Digital para Brasileiros nos EUA e Brasil',
     description:

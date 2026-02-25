@@ -91,7 +91,7 @@ export default function PricingTable() {
               <div
                 className={`relative rounded-2xl p-8 h-full flex flex-col transition-all duration-300 hover:-translate-y-2 ${
                   pkg.destaque
-                    ? 'bg-brand-mint text-white shadow-2xl shadow-brand-mint/20 scale-[1.02]'
+                    ? 'bg-brand-mint text-white shadow-2xl shadow-black/20 scale-[1.02]'
                     : 'bg-white/5 border border-white/10 hover:border-brand-mint/30'
                 }`}
               >

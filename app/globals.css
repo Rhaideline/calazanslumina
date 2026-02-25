@@ -38,7 +38,7 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 bg-brand-mint hover:bg-brand-light text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-brand-mint/20;
+    @apply inline-flex items-center justify-center gap-2 bg-brand-mint hover:bg-brand-light text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-black/20;
   }
 
   .btn-secondary {
