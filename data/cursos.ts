@@ -398,4 +398,90 @@ export const cursos: Curso[] = [
       },
     ],
   },
+  {
+    slug: 'ferramentas-digitais-secretarias',
+    nome: 'Ferramentas Digitais para Secretárias',
+    descricaoCurta: 'Domine as ferramentas digitais essenciais para secretárias modernas. De Google Workspace a automação de tarefas, torne-se indispensável no escritório.',
+    descricaoLonga: 'Curso completo para secretárias e assistentes administrativas que querem dominar as ferramentas digitais do dia a dia. Aprenda Google Workspace, gestão de agenda, organização de arquivos, comunicação profissional por email, criação de apresentações e uso básico de IA para aumentar sua produtividade. Tudo com exemplos práticos do cotidiano de escritório.',
+    preco: 20,
+    pdfDisponivel: true,
+    imagem: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b9ac95dfd50100d491487.png',
+    paraQuem: [
+      'Secretárias que querem se atualizar com ferramentas digitais',
+      'Assistentes administrativas buscando produtividade',
+      'Recepcionistas que usam computador no trabalho',
+      'Profissionais de escritório que querem dominar Google Workspace',
+      'Quem quer organizar melhor sua rotina com tecnologia',
+    ],
+    oQueVaiAprender: [
+      'Google Workspace completo (Gmail, Drive, Agenda, Docs, Sheets)',
+      'Organização de arquivos e pastas na nuvem',
+      'Gestão profissional de agenda e compromissos',
+      'Email corporativo: etiqueta e produtividade',
+      'Criar planilhas e relatórios básicos',
+      'Apresentações profissionais no Google Slides',
+      'Automação de tarefas repetitivas',
+      'Uso básico de IA (ChatGPT) para escritório',
+      'Comunicação profissional por WhatsApp Business',
+      'Organização de reuniões online (Google Meet/Zoom)',
+    ],
+    modulos: [
+      {
+        titulo: 'Módulo 1 — Google Workspace: Seu Kit de Ferramentas',
+        aulas: [
+          'Visão geral do Google Workspace',
+          'Gmail profissional: organizar, filtrar e responder',
+          'Google Drive: organizar arquivos na nuvem',
+          'Compartilhamento de arquivos e permissões',
+        ],
+      },
+      {
+        titulo: 'Módulo 2 — Agenda e Organização',
+        aulas: [
+          'Google Agenda: criar e gerenciar compromissos',
+          'Agendamento de reuniões para chefes e equipe',
+          'Lembretes e notificações inteligentes',
+          'Integrando agenda com email e Meet',
+        ],
+      },
+      {
+        titulo: 'Módulo 3 — Documentos e Planilhas',
+        aulas: [
+          'Google Docs: criar documentos profissionais',
+          'Modelos de atas, memorandos e ofícios',
+          'Google Sheets: planilhas básicas para escritório',
+          'Controle de despesas e relatórios simples',
+          'Formatação e impressão profissional',
+        ],
+      },
+      {
+        titulo: 'Módulo 4 — Apresentações e Comunicação',
+        aulas: [
+          'Google Slides: apresentações para reuniões',
+          'Templates profissionais prontos para usar',
+          'Google Meet e Zoom: organizar reuniões online',
+          'WhatsApp Business para comunicação do escritório',
+        ],
+      },
+      {
+        titulo: 'Módulo 5 — Produtividade e Automação',
+        aulas: [
+          'Atalhos de teclado que economizam horas',
+          'Respostas automáticas e templates de email',
+          'Organização digital: método de pastas eficiente',
+          'Ferramentas de lista de tarefas (Google Tasks, Keep)',
+        ],
+      },
+      {
+        titulo: 'Módulo 6 — IA no Escritório',
+        aulas: [
+          'ChatGPT para secretárias: o que pode fazer por você',
+          'Redigir emails profissionais com IA',
+          'Resumir documentos longos com IA',
+          'Criar planilhas e fórmulas com ajuda da IA',
+          'Cuidados e limites: quando não usar IA',
+        ],
+      },
+    ],
+  },
 ]
