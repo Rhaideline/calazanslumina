@@ -236,6 +236,22 @@ R: Sim, o "Google Meu Negocio do Zero" ensina a configurar e otimizar seu perfil
 
 ---
 
+## Cursos por Cidade (917 paginas localizadas)
+
+Cada um dos 7 cursos possui paginas dedicadas para cada cidade e capital atendida, totalizando 917 paginas com conteudo localizado:
+
+- **Cursos × Cidades MA**: 7 cursos × 104 cidades = 728 paginas
+  URL pattern: /cursos/{curso-slug}/cidade/{cidade-slug}
+  Exemplo: https://calazanslumina.com.br/cursos/ia-chatgpt-completo/cidade/marlborough
+
+- **Cursos × Capitais BR**: 7 cursos × 27 capitais = 189 paginas
+  URL pattern: /cursos/{curso-slug}/brasil/{capital-slug}
+  Exemplo: https://calazanslumina.com.br/cursos/marketing-digital-iniciantes/brasil/sao-paulo
+
+Cada pagina inclui: conteudo programatico completo, contexto da cidade, JSON-LD Course schema com areaServed, breadcrumbs, CTAs de acesso/compra.
+
+---
+
 ## Cidades Atendidas em Massachusetts (EUA)
 
 Marlborough, Hudson, Framingham, Worcester, Lowell, Brockton, Somerville, Everett, Revere, Peabody, Fall River, New Bedford, Springfield, Boston, Cambridge, Quincy, Lynn, Lawrence, Haverhill, Methuen, Leominster, Fitchburg, Milford, Natick, Danvers, Salem, Beverly, Medford, Malden, Waltham, Watertown, Stoneham, Woburn, Burlington, Taunton, Attleboro, Plymouth, Hyannis, Barnstable, Weymouth, Randolph, Abington, Rockland, Whitman, Bridgewater, Middleborough, Wareham, Dartmouth, Westport, Seekonk, Swansea, Rehoboth, Dighton, Somerset, Acushnet, Fairhaven, Freetown, Lakeville, Rochester, Marion, Mattapoisett, Carver, Halifax, Hanson, East Bridgewater, West Bridgewater, Avon, Holbrook, Stoughton, Canton, Norwood, Dedham, Needham, Wellesley, Dover, Sherborn, Hopkinton, Holliston, Ashland, Southborough, Westborough, Northborough, Shrewsbury, Grafton, Upton, Mendon, Uxbridge, Blackstone, Millville, Bellingham, Franklin, Medway, Millis, Norfolk, Foxborough, Mansfield, Norton, Raynham, Easton, Sharon, Walpole, Medfield, Dover, Hingham, Hull, Cohasset, Scituate, Marshfield.

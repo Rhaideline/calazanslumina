@@ -1,12 +1,19 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
+const servicosMenu = [
+  { slug: 'sites-landing-pages', nome: 'Sites & Landing Pages', desc: 'Sites Next.js de alta performance', icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9' },
+  { slug: 'funis-automacao-ghl', nome: 'Funis & Automação GHL', desc: 'Funis que convertem no automático', icon: 'M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12' },
+  { slug: 'crm-ia-whatsapp', nome: 'CRM & IA no WhatsApp', desc: 'Chatbot IA + CRM GoHighLevel', icon: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z' },
+  { slug: 'gestao-redes-sociais', nome: 'Gestão de Redes Sociais', desc: 'Conteúdo que converte seguidores', icon: 'M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z' },
+  { slug: 'google-meu-negocio', nome: 'Google Meu Negócio', desc: 'Apareça no Google Maps', icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z' },
+]
+
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/servicos', label: 'Serviços' },
   { href: '/sobre', label: 'Sobre' },
   { href: '/projetos', label: 'Projetos' },
   { href: '/cursos', label: 'Cursos' },
@@ -17,12 +24,25 @@ const navLinks = [
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [servicosOpen, setServicosOpen] = useState(false)
+  const [mobileServicosOpen, setMobileServicosOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current)
+    setServicosOpen(true)
+  }
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => setServicosOpen(false), 150)
+  }
 
   return (
     <>
@@ -64,7 +84,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Main Header — White/Light */}
+      {/* Main Header */}
       <header className={`sticky top-0 z-50 transition-all duration-300 bg-black ${scrolled ? 'shadow-lg shadow-black/30' : ''}`}>
         <div className="container-main flex items-center justify-between px-4 sm:px-6 lg:px-8 py-3">
           <Link href="/" className="flex items-center gap-3 group">
@@ -78,8 +98,71 @@ export default function Header() {
             />
           </Link>
 
+          {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => (
+            <Link href="/" className="text-white/70 hover:text-white hover:bg-white/10 transition-all duration-200 text-sm font-medium px-4 py-2 rounded-lg">
+              Home
+            </Link>
+
+            {/* Servicos Dropdown */}
+            <div
+              ref={dropdownRef}
+              className="relative"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <Link
+                href="/servicos"
+                className={`flex items-center gap-1 text-sm font-medium px-4 py-2 rounded-lg transition-all duration-200 ${
+                  servicosOpen ? 'text-white bg-white/10' : 'text-white/70 hover:text-white hover:bg-white/10'
+                }`}
+              >
+                Serviços
+                <svg className={`w-3.5 h-3.5 transition-transform duration-200 ${servicosOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </Link>
+
+              {/* Dropdown Panel */}
+              <div
+                className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[420px] bg-black/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl shadow-black/50 overflow-hidden transition-all duration-200 origin-top ${
+                  servicosOpen ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'
+                }`}
+              >
+                <div className="p-3">
+                  {servicosMenu.map((servico) => (
+                    <Link
+                      key={servico.slug}
+                      href={`/servicos/${servico.slug}`}
+                      className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors group/item"
+                    >
+                      <div className="w-9 h-9 rounded-lg bg-brand-mint/10 flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-mint/20 transition-colors">
+                        <svg className="w-4.5 h-4.5 text-brand-mint" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d={servico.icon} />
+                        </svg>
+                      </div>
+                      <div>
+                        <p className="text-white text-sm font-medium group-hover/item:text-brand-mint transition-colors">{servico.nome}</p>
+                        <p className="text-white/40 text-xs mt-0.5">{servico.desc}</p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+                <div className="border-t border-white/5 px-3 py-3">
+                  <Link
+                    href="/servicos"
+                    className="flex items-center justify-center gap-2 text-brand-mint text-sm font-medium hover:text-brand-light transition-colors py-2 rounded-lg hover:bg-white/5"
+                  >
+                    Ver todos os serviços
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {navLinks.filter((l) => l.href !== '/').map((link) => (
               <Link key={link.href} href={link.href} className="text-white/70 hover:text-white hover:bg-white/10 transition-all duration-200 text-sm font-medium px-4 py-2 rounded-lg">
                 {link.label}
               </Link>
@@ -98,10 +181,50 @@ export default function Header() {
           </button>
         </div>
 
+        {/* Mobile Menu */}
         {menuOpen && (
           <div className="lg:hidden bg-black border-t border-white/10">
             <nav className="flex flex-col px-6 py-4 gap-1">
-              {navLinks.map((link) => (
+              <Link href="/" onClick={() => setMenuOpen(false)} className="text-white/70 hover:text-white hover:bg-white/10 transition-colors py-3 px-4 rounded-lg">
+                Home
+              </Link>
+
+              {/* Mobile Servicos Accordion */}
+              <button
+                onClick={() => setMobileServicosOpen(!mobileServicosOpen)}
+                className="flex items-center justify-between text-white/70 hover:text-white hover:bg-white/10 transition-colors py-3 px-4 rounded-lg text-left"
+              >
+                Serviços
+                <svg className={`w-4 h-4 transition-transform duration-200 ${mobileServicosOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {mobileServicosOpen && (
+                <div className="pl-4 flex flex-col gap-1 mb-2">
+                  {servicosMenu.map((servico) => (
+                    <Link
+                      key={servico.slug}
+                      href={`/servicos/${servico.slug}`}
+                      onClick={() => setMenuOpen(false)}
+                      className="flex items-center gap-3 text-white/50 hover:text-brand-mint transition-colors py-2.5 px-4 rounded-lg hover:bg-white/5"
+                    >
+                      <svg className="w-4 h-4 text-brand-mint/60 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d={servico.icon} />
+                      </svg>
+                      <span className="text-sm">{servico.nome}</span>
+                    </Link>
+                  ))}
+                  <Link
+                    href="/servicos"
+                    onClick={() => setMenuOpen(false)}
+                    className="text-brand-mint text-sm font-medium py-2.5 px-4 rounded-lg hover:bg-white/5 transition-colors"
+                  >
+                    Ver todos os serviços
+                  </Link>
+                </div>
+              )}
+
+              {navLinks.filter((l) => l.href !== '/').map((link) => (
                 <Link key={link.href} href={link.href} onClick={() => setMenuOpen(false)} className="text-white/70 hover:text-white hover:bg-white/10 transition-colors py-3 px-4 rounded-lg">
                   {link.label}
                 </Link>

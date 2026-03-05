@@ -42,6 +42,14 @@ Atendimento 100% em portugues. Tambem atendemos agencias como freelancer.
 7. **Ferramentas Digitais para Secretarias** (GRATUITO) — Google Workspace, organizacao, automacao, IA para escritorio. 6 modulos, 26 aulas.
    URL: https://calazanslumina.com.br/cursos/ferramentas-digitais-secretarias
 
+## Cursos por Cidade
+
+Cada curso possui paginas dedicadas por cidade, com conteudo localizado:
+- 728 paginas de cursos para cidades de Massachusetts: /cursos/{curso}/cidade/{cidade}
+- 189 paginas de cursos para capitais brasileiras: /cursos/{curso}/brasil/{capital}
+- Exemplo: https://calazanslumina.com.br/cursos/ia-chatgpt-completo/cidade/marlborough
+- Exemplo: https://calazanslumina.com.br/cursos/marketing-digital-iniciantes/brasil/sao-paulo
+
 ## Areas de Atuacao
 
 ### Massachusetts, EUA

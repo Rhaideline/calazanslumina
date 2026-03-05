@@ -81,6 +81,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   )
 
+  // Cursos × Cidades MA
+  const cursosCidadesPages: MetadataRoute.Sitemap = cursos.flatMap((curso) =>
+    cidadesMA.map((c) => ({
+      url: `${BASE}/cursos/${curso.slug}/cidade/${c.slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    }))
+  )
+
+  // Cursos × Capitais BR
+  const cursosCapitaisPages: MetadataRoute.Sitemap = cursos.flatMap((curso) =>
+    capitaisBR.map((c) => ({
+      url: `${BASE}/cursos/${curso.slug}/brasil/${c.slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    }))
+  )
+
   return [
     ...staticPages,
     ...cursosPages,
@@ -90,5 +110,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...cidadesServicosPages,
     ...capitaisPages,
     ...capitaisServicosPages,
+    ...cursosCidadesPages,
+    ...cursosCapitaisPages,
   ]
 }
