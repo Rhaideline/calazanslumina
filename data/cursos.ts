@@ -24,7 +24,7 @@ export const cursos: Curso[] = [
     gratuito: true,
     destaque: true,
     pdfDisponivel: true,
-    imagem: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b9a7c55d8bc1b616621c7.png',
+    imagem: '/cursos/capa-chatgpt-para-idosos.svg',
     paraQuem: [
       'Pessoas com mais de 60 anos que nunca usaram IA',
       'Avós que querem acompanhar a tecnologia dos netos',
@@ -112,7 +112,7 @@ export const cursos: Curso[] = [
     destaque: true,
     pdfDisponivel: true,
     linkPagamento: 'https://link.fastpaydirect.com/payment-link/69a8cc1484b2d7dfdd5e1370',
-    imagem: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b9a7c55d8bc1b616621c7.png',
+    imagem: '/cursos/capa-ia-chatgpt-completo.svg',
     paraQuem: [
       'Empreendedores que querem usar IA no dia a dia',
       'Profissionais de marketing que querem automatizar tarefas',
@@ -228,7 +228,7 @@ export const cursos: Curso[] = [
     preco: 20,
     pdfDisponivel: true,
     linkPagamento: 'https://link.fastpaydirect.com/payment-link/69a8e72826494b224ce21c37',
-    imagem: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b9ac95dfd50100d491487.png',
+    imagem: '/cursos/capa-marketing-digital-iniciantes.svg',
     paraQuem: [
       'Empreendedores que estão começando no digital',
       'Profissionais liberais que querem atrair clientes online',
@@ -280,7 +280,7 @@ export const cursos: Curso[] = [
     preco: 20,
     pdfDisponivel: true,
     linkPagamento: 'https://link.fastpaydirect.com/payment-link/69a8ea7284b2d750dd5e3a71',
-    imagem: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b9ac95dfd50100d491487.png',
+    imagem: '/cursos/capa-google-meu-negocio-do-zero.svg',
     paraQuem: [
       'Negócios locais que querem mais visibilidade',
       'Empresas que atendem clientes presencialmente',
@@ -324,7 +324,7 @@ export const cursos: Curso[] = [
     preco: 20,
     pdfDisponivel: true,
     linkPagamento: 'https://link.fastpaydirect.com/payment-link/69a8e8f9beb6cd210e71a584',
-    imagem: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b9ac94c8da27eb5b8f7fb.png',
+    imagem: '/cursos/capa-redes-sociais-que-vendem.svg',
     paraQuem: [
       'Empreendedores que postam mas não geram vendas',
       'Quem quer crescer no Instagram de forma orgânica',
@@ -368,7 +368,7 @@ export const cursos: Curso[] = [
     preco: 20,
     pdfDisponivel: true,
     linkPagamento: 'https://link.fastpaydirect.com/payment-link/69a8eabecd45df2539892d27',
-    imagem: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b9ac95dfd50100d491487.png',
+    imagem: '/cursos/capa-funis-de-vendas-simplificado.svg',
     paraQuem: [
       'Empreendedores que perdem leads por falta de follow-up',
       'Quem quer automatizar o processo de vendas',
@@ -412,7 +412,7 @@ export const cursos: Curso[] = [
     preco: 0,
     gratuito: true,
     pdfDisponivel: true,
-    imagem: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b9ac95dfd50100d491487.png',
+    imagem: '/cursos/capa-ferramentas-digitais-secretarias.svg',
     paraQuem: [
       'Secretárias que querem se atualizar com ferramentas digitais',
       'Assistentes administrativas buscando produtividade',
