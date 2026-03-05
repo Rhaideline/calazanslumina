@@ -66,6 +66,14 @@ Atendemos em 227 cidades brasileiras: 27 capitais + 200 cidades principais de 20
 - Site: https://calazanslumina.com.br
 - Endereco: Belo Horizonte, MG, Brasil (atendimento remoto para EUA e Brasil)
 
+## Blog
+
+57 artigos originais sobre marketing digital, inteligencia artificial, plataformas e estrategias para empreendedores brasileiros. Categorias: IA, Marketing, Plataformas, Sites, Automacao, Redes Sociais, Google, Estrategia.
+
+Temas incluem: Claude 4 Anthropic, GPT-4o, Google Gemini 2.0, Perplexity AI, AntiGravity, GoHighLevel vs HubSpot, Meta Ads 2026, SEO local com IA, WhatsApp Business API, Instagram algoritmo 2026, Next.js 15, prompt engineering, Canva com IA, AEO (Answer Engine Optimization), Make vs Zapier, Sora OpenAI, Core Web Vitals 2026, Hotmart vs Kiwify, LLC para brasileiros nos EUA, Copa 2026 oportunidades, e mais.
+
+URL: https://calazanslumina.com.br/blog
+
 ## Links Importantes
 
 - Sitemap: https://calazanslumina.com.br/sitemap.xml

@@ -307,6 +307,23 @@ Marlborough, Hudson, Framingham, Worcester, Lowell, Brockton, Somerville, Everet
 
 ---
 
+## Blog (57 artigos)
+
+O blog da Calazans Lumina possui 57 artigos originais cobrindo inteligencia artificial, marketing digital 2026, plataformas emergentes e estrategias para empreendedores brasileiros nos EUA e no Brasil.
+
+**Categorias:** IA, Marketing, Plataformas, Sites, Automacao, Redes Sociais, Google, Estrategia
+
+**Principais temas:**
+- IA: Claude 4 Anthropic, GPT-4o multimodal, Google Gemini 2.0, Perplexity AI, Sora OpenAI, Midjourney v7, IA para atendimento ao cliente, IA para pequenos negocios, prompt engineering (10 tecnicas), IA escrevendo emails
+- Marketing: Meta Ads 2026, SEO 2026, AEO (Answer Engine Optimization), email marketing 2026, trafego pago local (Google Ads), precificacao de servicos digitais, LinkedIn para brasileiros, Copa 2026 oportunidades de marketing
+- Plataformas: AntiGravity, GoHighLevel vs HubSpot, Make vs Zapier, Hotmart vs Kiwify, Vercel v0, Next.js 15, Canva com IA, Threads Meta
+- Negocios: WhatsApp Business API, funis de vendas no WhatsApp, Google Business Profile, Core Web Vitals 2026, landing page vs site completo, LLC para brasileiros nos EUA, brasileiros em MA ganhando online
+- Redes Sociais: Instagram algoritmo 2026, TikTok para negocios locais, YouTube Shorts vs Reels vs TikTok, conteudo com ChatGPT
+
+URL: https://calazanslumina.com.br/blog
+
+---
+
 ## Links
 
 - Sitemap: https://calazanslumina.com.br/sitemap.xml

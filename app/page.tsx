@@ -258,7 +258,7 @@ export default function HomePage() {
 
       {/* ===== NÚMEROS ===== */}
       <section className="bg-brand-bg py-16">
-        <div className="container-main px-4 sm:px-6 lg:px-8">
+        <div className="container-main">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { numero: '8+', label: 'Anos de experiência' },
@@ -378,6 +378,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ===== CURSOS ===== */}
+      <CoursesSection />
 
       {/* ===== CONTEUDO EM VIDEO ===== */}
       <section className="section-padding bg-brand-dark text-white" id="videos">
@@ -655,9 +658,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* ===== CURSOS ===== */}
-      <CoursesSection />
 
       {/* ===== CTA FINAL ===== */}
       <CTAForm />
