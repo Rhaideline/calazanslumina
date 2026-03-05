@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { cidadesMA } from '@/data/cidades-ma'
 import { capitaisBR } from '@/data/capitais-br'
+import { cidadesBrasil } from '@/data/cidades-brasil'
 import { servicos } from '@/data/servicos'
 import { cursos } from '@/data/cursos'
 import { blogPosts } from '@/data/blog'
@@ -63,16 +64,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   )
 
-  // Capitais BR
-  const capitaisPages: MetadataRoute.Sitemap = capitaisBR.map((c) => ({
+  // Capitais BR + Cidades BR
+  const allCidadesBR = [...capitaisBR, ...cidadesBrasil]
+  const capitaisPages: MetadataRoute.Sitemap = allCidadesBR.map((c) => ({
     url: `${BASE}/brasil/${c.slug}`,
     lastModified: now,
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }))
 
-  // Capitais BR + Serviços
-  const capitaisServicosPages: MetadataRoute.Sitemap = capitaisBR.flatMap((c) =>
+  // Capitais BR + Cidades BR + Serviços
+  const capitaisServicosPages: MetadataRoute.Sitemap = allCidadesBR.flatMap((c) =>
     servicos.map((s) => ({
       url: `${BASE}/brasil/${c.slug}/${s.slug}`,
       lastModified: now,
@@ -91,9 +93,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   )
 
-  // Cursos × Capitais BR
+  // Cursos × Capitais BR + Cidades BR
   const cursosCapitaisPages: MetadataRoute.Sitemap = cursos.flatMap((curso) =>
-    capitaisBR.map((c) => ({
+    allCidadesBR.map((c) => ({
       url: `${BASE}/cursos/${curso.slug}/brasil/${c.slug}`,
       lastModified: now,
       changeFrequency: 'monthly' as const,

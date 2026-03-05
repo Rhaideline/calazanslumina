@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { servicos } from '@/data/servicos'
 import { capitaisBR, getCapitalBRBySlug } from '@/data/capitais-br'
+import { cidadesBrasil, getCidadeBRBySlug } from '@/data/cidades-brasil'
 import ScrollReveal from '@/components/ScrollReveal'
 import CTAForm from '@/components/CTAForm'
 import ReviewsWidget from '@/components/ReviewsWidget'
@@ -15,12 +16,13 @@ import ServiceIcon from '@/components/ServiceIcon'
 import CoursesSection from '@/components/CoursesSection'
 
 export async function generateStaticParams() {
-  return capitaisBR.map((c) => ({ capital: c.slug }))
+  const allCidades = [...capitaisBR, ...cidadesBrasil]
+  return allCidades.map((c) => ({ capital: c.slug }))
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ capital: string }> }): Promise<Metadata> {
   const { capital: capitalSlug } = await params
-  const capital = getCapitalBRBySlug(capitalSlug)
+  const capital = getCapitalBRBySlug(capitalSlug) || getCidadeBRBySlug(capitalSlug)
   if (!capital) return {}
   return {
     title: `Marketing Digital em ${capital.nome} | Sites, Funis e Google Maps`,
@@ -37,7 +39,7 @@ export async function generateMetadata({ params }: { params: Promise<{ capital: 
 
 export default async function CapitalPage({ params }: { params: Promise<{ capital: string }> }) {
   const { capital: capitalSlug } = await params
-  const capital = getCapitalBRBySlug(capitalSlug)
+  const capital = getCapitalBRBySlug(capitalSlug) || getCidadeBRBySlug(capitalSlug)
   if (!capital) notFound()
 
   return (

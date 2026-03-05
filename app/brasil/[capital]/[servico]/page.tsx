@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { servicos, getServicoBySlug } from '@/data/servicos'
 import { capitaisBR, getCapitalBRBySlug } from '@/data/capitais-br'
+import { cidadesBrasil, getCidadeBRBySlug } from '@/data/cidades-brasil'
 import ScrollReveal from '@/components/ScrollReveal'
 import CTAForm from '@/components/CTAForm'
 import ReviewsWidget from '@/components/ReviewsWidget'
@@ -15,14 +16,15 @@ import ServiceIcon from '@/components/ServiceIcon'
 import CoursesSection from '@/components/CoursesSection'
 
 export async function generateStaticParams() {
-  return capitaisBR.flatMap((capital) =>
+  const allCidades = [...capitaisBR, ...cidadesBrasil]
+  return allCidades.flatMap((capital) =>
     servicos.map((servico) => ({ capital: capital.slug, servico: servico.slug }))
   )
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ capital: string; servico: string }> }): Promise<Metadata> {
   const { capital: capitalSlug, servico: servicoSlug } = await params
-  const capital = getCapitalBRBySlug(capitalSlug)
+  const capital = getCapitalBRBySlug(capitalSlug) || getCidadeBRBySlug(capitalSlug)
   const servico = getServicoBySlug(servicoSlug)
   if (!capital || !servico) return {}
   return {
@@ -34,7 +36,7 @@ export async function generateMetadata({ params }: { params: Promise<{ capital: 
 
 export default async function CapitalServicoPage({ params }: { params: Promise<{ capital: string; servico: string }> }) {
   const { capital: capitalSlug, servico: servicoSlug } = await params
-  const capital = getCapitalBRBySlug(capitalSlug)
+  const capital = getCapitalBRBySlug(capitalSlug) || getCidadeBRBySlug(capitalSlug)
   const servico = getServicoBySlug(servicoSlug)
   if (!capital || !servico) notFound()
 

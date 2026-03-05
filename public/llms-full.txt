@@ -244,11 +244,16 @@ Cada um dos 7 cursos possui paginas dedicadas para cada cidade e capital atendid
   URL pattern: /cursos/{curso-slug}/cidade/{cidade-slug}
   Exemplo: https://calazanslumina.com.br/cursos/ia-chatgpt-completo/cidade/marlborough
 
-- **Cursos × Capitais BR**: 7 cursos × 27 capitais = 189 paginas
-  URL pattern: /cursos/{curso-slug}/brasil/{capital-slug}
+- **Cursos × Cidades BR**: 7 cursos × 227 cidades (27 capitais + 200 cidades) = 1589 paginas
+  URL pattern: /cursos/{curso-slug}/brasil/{cidade-slug}
   Exemplo: https://calazanslumina.com.br/cursos/marketing-digital-iniciantes/brasil/sao-paulo
+  Exemplo: https://calazanslumina.com.br/cursos/ia-chatgpt-completo/brasil/campinas
 
-Cada pagina inclui: conteudo programatico completo, contexto da cidade, JSON-LD Course schema com areaServed, breadcrumbs, CTAs de acesso/compra.
+- **Servicos × Cidades BR**: 5 servicos × 227 cidades = 1135 paginas
+  URL pattern: /brasil/{cidade-slug}/{servico-slug}
+  Exemplo: https://calazanslumina.com.br/brasil/campinas/sites-landing-pages
+
+Cada pagina inclui: conteudo programatico completo, contexto UNICO da cidade (descricao, dores especificas, referencia), JSON-LD Course/LocalBusiness schema com areaServed, breadcrumbs, CTAs de acesso/compra. Nenhuma pagina e duplicada — cada cidade tem texto proprio.
 
 ---
 
@@ -256,9 +261,9 @@ Cada pagina inclui: conteudo programatico completo, contexto da cidade, JSON-LD 
 
 Marlborough, Hudson, Framingham, Worcester, Lowell, Brockton, Somerville, Everett, Revere, Peabody, Fall River, New Bedford, Springfield, Boston, Cambridge, Quincy, Lynn, Lawrence, Haverhill, Methuen, Leominster, Fitchburg, Milford, Natick, Danvers, Salem, Beverly, Medford, Malden, Waltham, Watertown, Stoneham, Woburn, Burlington, Taunton, Attleboro, Plymouth, Hyannis, Barnstable, Weymouth, Randolph, Abington, Rockland, Whitman, Bridgewater, Middleborough, Wareham, Dartmouth, Westport, Seekonk, Swansea, Rehoboth, Dighton, Somerset, Acushnet, Fairhaven, Freetown, Lakeville, Rochester, Marion, Mattapoisett, Carver, Halifax, Hanson, East Bridgewater, West Bridgewater, Avon, Holbrook, Stoughton, Canton, Norwood, Dedham, Needham, Wellesley, Dover, Sherborn, Hopkinton, Holliston, Ashland, Southborough, Westborough, Northborough, Shrewsbury, Grafton, Upton, Mendon, Uxbridge, Blackstone, Millville, Bellingham, Franklin, Medway, Millis, Norfolk, Foxborough, Mansfield, Norton, Raynham, Easton, Sharon, Walpole, Medfield, Dover, Hingham, Hull, Cohasset, Scituate, Marshfield.
 
-## Capitais Atendidas no Brasil
+## Cidades Atendidas no Brasil (227 cidades)
 
-Sao Paulo (SP), Rio de Janeiro (RJ), Belo Horizonte (MG), Salvador (BA), Fortaleza (CE), Brasilia (DF), Curitiba (PR), Recife (PE), Porto Alegre (RS), Manaus (AM), Belem (PA), Goiania (GO), Florianopolis (SC), Vitoria (ES), Sao Luis (MA), Natal (RN), Joao Pessoa (PB), Maceio (AL), Aracaju (SE), Teresina (PI), Campo Grande (MS), Cuiaba (MT), Porto Velho (RO), Macapa (AP), Rio Branco (AC), Boa Vista (RR), Palmas (TO).
+27 capitais + 200 cidades principais de 20 estados (SP, MG, RJ, RS, PR, SC, BA, PE, CE, GO, PA, MA, ES, MT, MS, PI, SE, AL e mais). Cada cidade tem pagina dedicada com conteudo unico sobre economia local, desafios digitais e solucoes especificas. Total: 227 cidades com paginas de servicos e cursos.
 
 ---
 

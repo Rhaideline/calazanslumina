@@ -4,21 +4,23 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { cursos } from '@/data/cursos'
 import { capitaisBR, getCapitalBRBySlug } from '@/data/capitais-br'
+import { cidadesBrasil, getCidadeBRBySlug } from '@/data/cidades-brasil'
 import ScrollReveal from '@/components/ScrollReveal'
 import CTAForm from '@/components/CTAForm'
 import Breadcrumb from '@/components/Breadcrumb'
 import CoursesSection from '@/components/CoursesSection'
 
 export async function generateStaticParams() {
+  const allCidades = [...capitaisBR, ...cidadesBrasil]
   return cursos.flatMap((curso) =>
-    capitaisBR.map((capital) => ({ slug: curso.slug, capital: capital.slug }))
+    allCidades.map((capital) => ({ slug: curso.slug, capital: capital.slug }))
   )
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string; capital: string }> }): Promise<Metadata> {
   const { slug, capital: capitalSlug } = await params
   const curso = cursos.find((c) => c.slug === slug)
-  const capital = getCapitalBRBySlug(capitalSlug)
+  const capital = getCapitalBRBySlug(capitalSlug) || getCidadeBRBySlug(capitalSlug)
   if (!curso || !capital) return {}
   const totalAulas = curso.modulos.reduce((acc, m) => acc + m.aulas.length, 0)
   return {
@@ -31,7 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function CursoCapitalPage({ params }: { params: Promise<{ slug: string; capital: string }> }) {
   const { slug, capital: capitalSlug } = await params
   const curso = cursos.find((c) => c.slug === slug)
-  const capital = getCapitalBRBySlug(capitalSlug)
+  const capital = getCapitalBRBySlug(capitalSlug) || getCidadeBRBySlug(capitalSlug)
   if (!curso || !capital) notFound()
 
   const totalAulas = curso.modulos.reduce((acc, m) => acc + m.aulas.length, 0)

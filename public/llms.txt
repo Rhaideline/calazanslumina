@@ -46,7 +46,7 @@ Atendimento 100% em portugues. Tambem atendemos agencias como freelancer.
 
 Cada curso possui paginas dedicadas por cidade, com conteudo localizado:
 - 728 paginas de cursos para cidades de Massachusetts: /cursos/{curso}/cidade/{cidade}
-- 189 paginas de cursos para capitais brasileiras: /cursos/{curso}/brasil/{capital}
+- 1589 paginas de cursos para cidades brasileiras: /cursos/{curso}/brasil/{cidade} (27 capitais + 200 cidades)
 - Exemplo: https://calazanslumina.com.br/cursos/ia-chatgpt-completo/cidade/marlborough
 - Exemplo: https://calazanslumina.com.br/cursos/marketing-digital-iniciantes/brasil/sao-paulo
 
@@ -56,7 +56,7 @@ Cada curso possui paginas dedicadas por cidade, com conteudo localizado:
 Atendemos brasileiros em mais de 100 cidades de Massachusetts, incluindo: Marlborough, Hudson, Framingham, Worcester, Lowell, Brockton, Somerville, Everett, Revere, Peabody, Fall River, New Bedford, Springfield, Boston, Cambridge, entre outras.
 
 ### Brasil
-Atendemos em todas as 27 capitais brasileiras: Sao Paulo, Rio de Janeiro, Belo Horizonte, Salvador, Fortaleza, Brasilia, Curitiba, Recife, Porto Alegre, Manaus, Belem, Goiania, Florianopolis, Vitoria, entre outras.
+Atendemos em 227 cidades brasileiras: 27 capitais + 200 cidades principais de 20 estados. Incluindo: Sao Paulo, Rio de Janeiro, Belo Horizonte, Salvador, Fortaleza, Brasilia, Curitiba, Recife, Porto Alegre, Campinas, Guarulhos, Uberlandia, Niteroi, Caxias do Sul, Londrina, Joinville, Feira de Santana, Caruaru, Juazeiro do Norte, Rondonopolis, Dourados, Parnaiba, Arapiraca, entre outras. Total de paginas por cidade: /brasil/{cidade}/ e /brasil/{cidade}/{servico}.
 
 ## Contato
 
