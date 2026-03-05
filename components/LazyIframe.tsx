@@ -70,8 +70,14 @@ export default function LazyIframe({ src, title, className, height, id, trigger 
             </div>
           </div>
         ) : (
-          <div className="flex items-center justify-center h-full text-white/40 text-sm">
-            Carregando formulário...
+          <div className="flex flex-col items-center justify-center h-full gap-4">
+            <div className="space-y-3 w-full max-w-sm">
+              <div className="bg-white/10 rounded-lg h-11 w-full border border-white/20 animate-pulse" />
+              <div className="bg-white/10 rounded-lg h-11 w-full border border-white/20 animate-pulse" />
+              <div className="bg-white/10 rounded-lg h-11 w-full border border-white/20 animate-pulse" />
+              <div className="bg-white/10 rounded-lg h-24 w-full border border-white/20 animate-pulse" />
+              <div className="bg-brand-mint/50 rounded-lg h-12 w-full animate-pulse" />
+            </div>
           </div>
         )}
       </div>

@@ -34,7 +34,7 @@ export default function LazyVideo({ src, className }: LazyVideoProps) {
       {isVisible ? (
         <video
           controls
-          preload="none"
+          preload="metadata"
           playsInline
           className="w-full aspect-video rounded-t-2xl"
         >
@@ -43,7 +43,7 @@ export default function LazyVideo({ src, className }: LazyVideoProps) {
         </video>
       ) : (
         <div className="w-full aspect-video rounded-t-2xl bg-white/10 flex items-center justify-center">
-          <svg className="w-12 h-12 text-white/30" fill="currentColor" viewBox="0 0 24 24">
+          <svg className="w-16 h-16 text-white/40" fill="currentColor" viewBox="0 0 24 24">
             <path d="M8 5v14l11-7z" />
           </svg>
         </div>
