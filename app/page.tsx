@@ -10,6 +10,7 @@ import HeroForm from '@/components/HeroForm'
 import HeroBadges from '@/components/HeroBadges'
 import PricingTable from '@/components/PricingTable'
 import CoursesSection from '@/components/CoursesSection'
+import LazyVideo from '@/components/LazyVideo'
 
 export const metadata: Metadata = {
   title: 'Marketing Digital para Brasileiros nos EUA e Brasil | Calazans Lumina',
@@ -199,6 +200,8 @@ export default function HomePage() {
           fill
           className="object-cover"
           priority
+          sizes="100vw"
+          fetchPriority="high"
         />
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-brand-dark/85" />
@@ -415,15 +418,7 @@ export default function HomePage() {
             ].map((video, i) => (
               <ScrollReveal key={i} delay={i * 150}>
                 <div className="bg-white/5 rounded-2xl overflow-hidden border border-white/10">
-                  <video
-                    controls
-                    preload="metadata"
-                    playsInline
-                    className="w-full aspect-video rounded-t-2xl"
-                  >
-                    <source src={video.src} type="video/mp4" />
-                    Seu navegador nao suporta video HTML5.
-                  </video>
+                  <LazyVideo src={video.src} />
                   <div className="p-4">
                     <p className="text-brand-mint font-bold text-sm uppercase tracking-wider mb-1">
                       Video {i + 1}

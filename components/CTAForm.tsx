@@ -1,3 +1,5 @@
+import LazyIframe from './LazyIframe'
+
 export default function CTAForm({ cidade, servico }: { cidade?: string; servico?: string }) {
   const title = cidade && servico
     ? `Solicite um orçamento de ${servico} em ${cidade}`
@@ -16,23 +18,12 @@ export default function CTAForm({ cidade, servico }: { cidade?: string; servico?
           </p>
         </div>
         <div className="max-w-2xl mx-auto bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-10">
-          <iframe
+          <LazyIframe
             src="https://api.leadconnectorhq.com/widget/form/ncofzws1iEKhN6iFEA6H"
-            style={{ width: '100%', height: '100%', border: 'none', borderRadius: '3px' }}
-            id="inline-ncofzws1iEKhN6iFEA6H"
-            data-layout={"{'id':'INLINE'}"}
-            data-trigger-type="alwaysShow"
-            data-trigger-value=""
-            data-activation-type="alwaysActivated"
-            data-activation-value=""
-            data-deactivation-type="neverDeactivate"
-            data-deactivation-value=""
-            data-form-name="Form 2"
-            data-height="493"
-            data-layout-iframe-id="inline-ncofzws1iEKhN6iFEA6H"
-            data-form-id="ncofzws1iEKhN6iFEA6H"
             title="Form 2"
+            id="inline-ncofzws1iEKhN6iFEA6H"
             className="min-h-[500px]"
+            height="500px"
           />
         </div>
       </div>

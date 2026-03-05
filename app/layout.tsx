@@ -158,6 +158,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR" className={`${dmSerif.variable} ${dmSans.variable}`}>
       <head>
+        <link rel="preconnect" href="https://assets.cdn.filesafe.space" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://assets.cdn.filesafe.space" />
+        <link rel="dns-prefetch" href="https://api.leadconnectorhq.com" />
+        <link rel="dns-prefetch" href="https://stcdn.leadconnectorhq.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}

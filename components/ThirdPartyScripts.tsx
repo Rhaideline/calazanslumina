@@ -4,13 +4,31 @@ import { useEffect, useState } from 'react'
 import Script from 'next/script'
 
 export default function ThirdPartyScripts() {
-  const [mounted, setMounted] = useState(false)
+  const [shouldLoad, setShouldLoad] = useState(false)
 
   useEffect(() => {
-    setMounted(true)
+    // Only load third-party scripts after user interaction or 5s idle
+    let loaded = false
+    const load = () => {
+      if (!loaded) {
+        loaded = true
+        setShouldLoad(true)
+      }
+    }
+
+    const timer = setTimeout(load, 5000)
+
+    const events = ['scroll', 'touchstart', 'click', 'mousemove'] as const
+    const handler = () => load()
+    events.forEach((e) => window.addEventListener(e, handler, { once: true, passive: true }))
+
+    return () => {
+      clearTimeout(timer)
+      events.forEach((e) => window.removeEventListener(e, handler))
+    }
   }, [])
 
-  if (!mounted) return null
+  if (!shouldLoad) return null
 
   return (
     <>
