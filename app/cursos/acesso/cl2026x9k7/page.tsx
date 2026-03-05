@@ -4,9 +4,10 @@ import { cursos } from '@/data/cursos'
 export const metadata = {
   title: 'Obrigado pela Compra! | Calazans Lumina',
   description: 'Seu pagamento foi confirmado. Acesse seus cursos agora.',
+  robots: 'noindex, nofollow',
 }
 
-export default function ObrigadoPage() {
+export default function AcessoCursosPage() {
   const cursosPagos = cursos.filter((c) => !c.gratuito)
 
   return (
