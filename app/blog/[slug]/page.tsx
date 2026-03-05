@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { blogPosts, getBlogPostBySlug } from '@/data/blog'
 import ScrollReveal from '@/components/ScrollReveal'
 import CTAForm from '@/components/CTAForm'
+import CoursesSection from '@/components/CoursesSection'
 
 export async function generateStaticParams() {
   return blogPosts.map((p) => ({ slug: p.slug }))
@@ -184,6 +185,8 @@ export default async function BlogPostPage({
           </div>
         </div>
       </section>
+
+      <CoursesSection />
 
       <CTAForm />
     </>

@@ -12,6 +12,7 @@ import Breadcrumb from '@/components/Breadcrumb'
 import ServiceIcon from '@/components/ServiceIcon'
 import AnimatedCounter from '@/components/AnimatedCounter'
 import FAQAccordion from '@/components/FAQAccordion'
+import CoursesSection from '@/components/CoursesSection'
 
 export async function generateStaticParams() {
   return servicos.map((s) => ({ slug: s.slug }))
@@ -361,7 +362,10 @@ export default async function ServicoPage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
 
-      {/* ===== 13. CTA FORM ===== */}
+      {/* ===== 13. CURSOS ===== */}
+      <CoursesSection />
+
+      {/* ===== 14. CTA FORM ===== */}
       <CTAForm servico={servico.nome} />
     </>
   )

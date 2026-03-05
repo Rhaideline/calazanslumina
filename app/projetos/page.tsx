@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import ScrollReveal from '@/components/ScrollReveal'
 import CTAForm from '@/components/CTAForm'
+import CoursesSection from '@/components/CoursesSection'
 
 const categorias = [
   {
@@ -462,6 +463,8 @@ export default function ProjetosPage() {
           </ScrollReveal>
         </div>
       </section>
+
+      <CoursesSection />
 
       {/* CTA */}
       <CTAForm />

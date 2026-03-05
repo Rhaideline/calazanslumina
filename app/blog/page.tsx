@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import ScrollReveal from '@/components/ScrollReveal'
 import BlogFilter from '@/components/BlogFilter'
+import CoursesSection from '@/components/CoursesSection'
 
 export const metadata: Metadata = {
   title: 'Blog de Marketing Digital | Estrategias que Geram Resultado',
@@ -36,6 +37,8 @@ export default function BlogPage() {
           <BlogFilter />
         </div>
       </section>
+
+      <CoursesSection />
     </>
   )
 }

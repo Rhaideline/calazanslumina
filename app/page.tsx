@@ -9,6 +9,7 @@ import ReviewsWidget from '@/components/ReviewsWidget'
 import HeroForm from '@/components/HeroForm'
 import HeroBadges from '@/components/HeroBadges'
 import PricingTable from '@/components/PricingTable'
+import CoursesSection from '@/components/CoursesSection'
 
 export const metadata: Metadata = {
   title: 'Marketing Digital para Brasileiros nos EUA e Brasil | Calazans Lumina',
@@ -531,6 +532,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ===== CURSOS ===== */}
+      <CoursesSection />
 
       {/* ===== CTA FINAL ===== */}
       <CTAForm />

@@ -12,6 +12,7 @@ import HeroBadges from '@/components/HeroBadges'
 import Breadcrumb from '@/components/Breadcrumb'
 import PricingTable from '@/components/PricingTable'
 import ServiceIcon from '@/components/ServiceIcon'
+import CoursesSection from '@/components/CoursesSection'
 
 export async function generateStaticParams() {
   return cidadesMA.flatMap((cidade) =>
@@ -159,6 +160,8 @@ export default async function CidadeServicoPage({ params }: { params: Promise<{ 
           </div>
         </div>
       </section>
+
+      <CoursesSection />
 
       <CTAForm cidade={cidade.nome} servico={servico.nome} />
     </>

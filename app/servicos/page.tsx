@@ -4,6 +4,7 @@ import { servicos } from '@/data/servicos'
 import ScrollReveal from '@/components/ScrollReveal'
 import CTAForm from '@/components/CTAForm'
 import ServiceIcon from '@/components/ServiceIcon'
+import CoursesSection from '@/components/CoursesSection'
 
 export const metadata: Metadata = {
   title: 'Servicos de Marketing Digital | Sites, Funis GHL, CRM com IA',
@@ -67,6 +68,8 @@ export default function ServicosPage() {
           </div>
         </div>
       </section>
+
+      <CoursesSection />
 
       <CTAForm />
     </>

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import ScrollReveal from '@/components/ScrollReveal'
 import CTAForm from '@/components/CTAForm'
+import CoursesSection from '@/components/CoursesSection'
 
 export const metadata: Metadata = {
   title: 'Contato | Fale Agora pelo WhatsApp ou Formulario',
@@ -119,6 +120,8 @@ export default function ContatoPage() {
           </div>
         </div>
       </section>
+
+      <CoursesSection />
 
       <CTAForm />
     </>

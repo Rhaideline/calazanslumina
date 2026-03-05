@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
 import CTAForm from '@/components/CTAForm'
+import CoursesSection from '@/components/CoursesSection'
 
 export const metadata: Metadata = {
   title: 'Sobre Rhaideline Calazans | 8+ Anos em Marketing Digital',
@@ -289,6 +290,8 @@ export default function SobrePage() {
           </div>
         </div>
       </section>
+
+      <CoursesSection />
 
       {/* CTA */}
       <CTAForm />

@@ -12,6 +12,7 @@ import HeroBadges from '@/components/HeroBadges'
 import Breadcrumb from '@/components/Breadcrumb'
 import PricingTable from '@/components/PricingTable'
 import ServiceIcon from '@/components/ServiceIcon'
+import CoursesSection from '@/components/CoursesSection'
 
 export async function generateStaticParams() {
   return capitaisBR.flatMap((capital) =>
@@ -155,6 +156,8 @@ export default async function CapitalServicoPage({ params }: { params: Promise<{
           </div>
         </div>
       </section>
+
+      <CoursesSection />
 
       <CTAForm cidade={capital.nome} servico={servico.nome} />
     </>

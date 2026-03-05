@@ -12,6 +12,7 @@ import HeroBadges from '@/components/HeroBadges'
 import Breadcrumb from '@/components/Breadcrumb'
 import PricingTable from '@/components/PricingTable'
 import ServiceIcon from '@/components/ServiceIcon'
+import CoursesSection from '@/components/CoursesSection'
 
 export async function generateStaticParams() {
   return cidadesMA.map((c) => ({ cidade: c.slug }))
@@ -150,6 +151,7 @@ export default async function CidadePage({ params }: { params: Promise<{ cidade:
       </section>
 
       <PricingTable />
+      <CoursesSection />
       <ReviewsWidget />
       <CTAForm cidade={cidade.nome} />
     </>
