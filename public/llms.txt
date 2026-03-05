@@ -1,0 +1,67 @@
+# Calazans Lumina
+
+> Agencia de marketing digital especializada em brasileiros nos EUA (Massachusetts) e no Brasil. Fundada por Rhaideline Calazans.
+
+## Sobre
+
+Calazans Lumina e uma agencia de marketing digital que atende empreendedores brasileiros nos Estados Unidos (foco em Massachusetts) e em todo o Brasil. Oferecemos sites profissionais em Next.js, funis de vendas no GoHighLevel, CRM com IA conversacional no WhatsApp, gestao de redes sociais, trafego pago (Google Ads e Meta Ads) e otimizacao de Google Business Profile.
+
+Atendimento 100% em portugues. Tambem atendemos agencias como freelancer.
+
+## Servicos
+
+- **Sites & Landing Pages**: Sites Next.js com PageSpeed 95+, SEO tecnico integrado, design responsivo premium
+- **Funis de Vendas (GoHighLevel)**: Landing pages de alta conversao, automacao de follow-up, pipeline visual
+- **CRM & Automacao**: GoHighLevel all-in-one, inbox unificada (WhatsApp, SMS, email, DMs), workflows automaticos
+- **IA no WhatsApp**: Chatbot com inteligencia artificial que atende e qualifica leads 24h
+- **Gestao de Redes Sociais**: Conteudo estrategico, calendario editorial, design de posts, metricas
+- **Google Business Profile**: Configuracao, otimizacao, gestao de reviews, Google Posts
+- **Trafego Pago**: Google Ads e Meta Ads com foco em ROI para negocios locais
+- **SEO Local e Nacional**: Otimizacao on-page, off-page, tecnico e local
+
+## Cursos Online
+
+1. **ChatGPT para Idosos** (GRATUITO) — Curso para pessoas 60+ aprenderem a usar ChatGPT. 6 modulos, 24 aulas.
+   URL: https://calazanslumina.com.br/cursos/chatgpt-para-idosos
+
+2. **IA & ChatGPT — Curso Completo** (R$20) — Do zero ao avancado: prompt engineering, automacao, marketing com IA. 8 modulos, 43 aulas.
+   URL: https://calazanslumina.com.br/cursos/ia-chatgpt-completo
+
+3. **Marketing Digital para Iniciantes** (R$20) — Fundamentos de marketing digital, SEO, redes sociais, anuncios. 6 modulos, 24 aulas.
+   URL: https://calazanslumina.com.br/cursos/marketing-digital-iniciantes
+
+4. **Google Meu Negocio do Zero** (R$20) — Configurar e otimizar Google Business Profile para negocios locais. 4 modulos, 16 aulas.
+   URL: https://calazanslumina.com.br/cursos/google-meu-negocio-do-zero
+
+5. **Redes Sociais que Vendem** (R$20) — Estrategia Info-First, conteudo que converte, calendario editorial. 4 modulos, 16 aulas.
+   URL: https://calazanslumina.com.br/cursos/redes-sociais-que-vendem
+
+6. **Funis de Vendas Simplificado** (R$20) — Criar funis que convertem, landing pages, automacao, CRM. 4 modulos, 16 aulas.
+   URL: https://calazanslumina.com.br/cursos/funis-de-vendas-simplificado
+
+7. **Ferramentas Digitais para Secretarias** (GRATUITO) — Google Workspace, organizacao, automacao, IA para escritorio. 6 modulos, 26 aulas.
+   URL: https://calazanslumina.com.br/cursos/ferramentas-digitais-secretarias
+
+## Areas de Atuacao
+
+### Massachusetts, EUA
+Atendemos brasileiros em mais de 100 cidades de Massachusetts, incluindo: Marlborough, Hudson, Framingham, Worcester, Lowell, Brockton, Somerville, Everett, Revere, Peabody, Fall River, New Bedford, Springfield, Boston, Cambridge, entre outras.
+
+### Brasil
+Atendemos em todas as 27 capitais brasileiras: Sao Paulo, Rio de Janeiro, Belo Horizonte, Salvador, Fortaleza, Brasilia, Curitiba, Recife, Porto Alegre, Manaus, Belem, Goiania, Florianopolis, Vitoria, entre outras.
+
+## Contato
+
+- WhatsApp: +55 31 98294-8067
+- Email: contato@calazanslumina.com.br
+- Instagram: @calazanslumina
+- Site: https://calazanslumina.com.br
+- Endereco: Belo Horizonte, MG, Brasil (atendimento remoto para EUA e Brasil)
+
+## Links Importantes
+
+- Sitemap: https://calazanslumina.com.br/sitemap.xml
+- Versao completa: https://calazanslumina.com.br/llms-full.txt
+- Blog: https://calazanslumina.com.br/blog
+- Cursos: https://calazanslumina.com.br/cursos
+- Servicos: https://calazanslumina.com.br/servicos

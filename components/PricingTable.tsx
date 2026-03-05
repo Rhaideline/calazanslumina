@@ -66,9 +66,42 @@ const ferramentasGHL = [
   { nome: 'IA Conversacional', desc: 'Chatbot que atende e qualifica leads' },
 ]
 
+const pricingJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'AggregateOffer',
+  '@id': 'https://calazanslumina.com.br/#pricing',
+  lowPrice: '500',
+  highPrice: '5000',
+  priceCurrency: 'BRL',
+  offerCount: 3,
+  offers: [
+    {
+      '@type': 'Offer',
+      name: 'Site Básico',
+      price: '500',
+      priceCurrency: 'BRL',
+      description: 'Site profissional Next.js de 2 páginas com design responsivo e formulário integrado',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Site + SEO',
+      description: 'Site completo com SEO técnico, blog, Google Business Profile e páginas por cidade',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Solução Completa',
+      description: 'Site + SEO + funil GoHighLevel + CRM + IA no WhatsApp + gestão de redes sociais',
+    },
+  ],
+}
+
 export default function PricingTable() {
   return (
     <section className="section-padding bg-brand-dark text-white" id="pacotes">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingJsonLd) }}
+      />
       <div className="container-main">
         <ScrollReveal className="text-center mb-16">
           <p className="text-brand-mint font-medium mb-2 text-sm uppercase tracking-wider">

@@ -1,7 +1,41 @@
+# Calazans Lumina — Marketing Digital para Brasileiros nos EUA e Brasil
+# https://calazanslumina.com.br
+
 User-agent: *
 Allow: /
 Disallow: /cursos/acesso/
 Disallow: /_next/
 Disallow: /api/
+
+# AI Crawlers — Explicitly Allowed
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
 
 Sitemap: https://calazanslumina.com.br/sitemap.xml

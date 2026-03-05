@@ -8,6 +8,7 @@ export interface BlogPost {
   dataPublicacao: string
   tempoLeitura: string
   autor: string
+  tldr?: string
 }
 
 export const blogPosts: BlogPost[] = [
@@ -45,6 +46,7 @@ A presença digital não substitui o boca a boca — ela potencializa. Quando al
     dataPublicacao: '15 de Março de 2025',
     tempoLeitura: '6 min de leitura',
     autor: 'Rhaideline Calazans',
+    tldr: 'Empreendedores brasileiros em Massachusetts que dependem apenas do boca a boca estao perdendo clientes. 80% dos consumidores americanos pesquisam online antes de contratar. Um site profissional, Google Business Profile e redes sociais sao o minimo para competir. A concorrencia digital na comunidade brasileira ainda e baixa — quem agir primeiro ganha.',
   },
   {
     slug: 'ghl-vs-outros-crms-por-que-escolhi-o-gohighlevel-para-meus-clientes',
@@ -80,6 +82,7 @@ Se você é um empreendedor brasileiro nos EUA que quer parar de perder leads e 
     dataPublicacao: '28 de Janeiro de 2025',
     tempoLeitura: '7 min de leitura',
     autor: 'Rhaideline Calazans',
+    tldr: 'O GoHighLevel (GHL) e uma plataforma all-in-one que substitui 5-6 ferramentas separadas (CRM, email marketing, funis, agendamento, automacao). Para pequenos negocios faturando entre 5-30 mil dolares/mes, oferece o melhor custo-beneficio. A automacao de follow-up sozinha aumentou a taxa de conversao dos clientes da Calazans Lumina em mais de 40%.',
   },
   {
     slug: 'funil-de-vendas-vs-site-comum-qual-a-diferenca-real-para-o-seu-bolso',
@@ -115,6 +118,7 @@ Na minha experiência com clientes brasileiros nos EUA, o caminho ideal é come�
     dataPublicacao: '10 de Dezembro de 2024',
     tempoLeitura: '6 min de leitura',
     autor: 'Rhaideline Calazans',
+    tldr: 'Sites comuns convertem 1-3% dos visitantes. Funis de vendas bem construidos capturam 15-30% dos leads e convertem 10-20% em clientes via follow-up automatizado. Para o mesmo investimento de R$500 em marketing, um funil pode gerar 10x mais leads que um site comum. Comece com um site que ja tenha elementos de funil integrados.',
   },
   {
     slug: 'robo-de-whatsapp-como-automatizar-seu-atendimento-sem-perder-o-lado-humano',
@@ -150,6 +154,7 @@ O caminho mais eficiente para implementar automação de WhatsApp é usar uma pl
     dataPublicacao: '05 de Novembro de 2024',
     tempoLeitura: '7 min de leitura',
     autor: 'Rhaideline Calazans',
+    tldr: 'Leads que recebem resposta em menos de 5 minutos tem 21x mais chance de conversao. Um robo de WhatsApp responde instantaneamente, qualifica leads e agenda compromissos 24h. O segredo e configurar o robo para cuidar das perguntas repetitivas e transferir para voce quando o lead esta qualificado. GoHighLevel integra WhatsApp Business API com CRM e automacoes.',
   },
   {
     slug: 'seo-local-para-brasileiros-nos-eua-como-aparecer-no-google-da-sua-cidade',
@@ -185,6 +190,7 @@ O SEO local é uma maratona, não uma corrida de 100 metros. Os resultados levam
     dataPublicacao: '22 de Fevereiro de 2025',
     tempoLeitura: '8 min de leitura',
     autor: 'Rhaideline Calazans',
+    tldr: 'SEO local faz seu negocio aparecer quando alguem pesquisa servicos na sua regiao. O "Map Pack" do Google e como um ponto comercial na rua mais movimentada — de graca. Para aparecer: Google Business Profile completo, avaliacoes positivas, consistencia de NAP (Nome, Endereco, Telefone) em todos os canais. A concorrencia digital na comunidade brasileira nos EUA ainda e baixa.',
   },
   {
     slug: 'do-zero-ao-primeiro-cliente-digital-minha-historia-e-o-que-aprendi',
@@ -220,6 +226,7 @@ Hoje, a Calazans Lumina é resultado de cada erro, cada aprendizado e cada madru
     dataPublicacao: '18 de Agosto de 2024',
     tempoLeitura: '6 min de leitura',
     autor: 'Rhaideline Calazans',
+    tldr: 'Defina seu nicho desde o dia 1 (brasileiros com negocios de servicos nos EUA). Crie conteudo de valor mesmo sem clientes. Invista em networking na comunidade brasileira local. Cobre um preco justo desde o inicio. Consistencia gera resultados — os melhores clientes vem de conexoes reais e indicacoes.',
   },
   {
     slug: 'por-que-seu-google-meu-negocio-incompleto-esta-te-custando-clientes-todos-os-dias',
@@ -255,6 +262,7 @@ O mais frustrante sobre tudo isso é que otimizar seu Google Business Profile é
     dataPublicacao: '03 de Outubro de 2024',
     tempoLeitura: '7 min de leitura',
     autor: 'Rhaideline Calazans',
+    tldr: 'Perfis com fotos no Google Business Profile recebem 42% mais solicitacoes de direcoes e 35% mais cliques. Um perfil completo inclui: nome correto, endereco, telefone, categorias certas, descricao com palavras-chave, 10+ fotos, posts regulares e avaliacoes respondidas. A maioria dos perfis de brasileiros nos EUA tem menos da metade preenchida — corrija isso hoje gratuitamente.',
   },
   {
     slug: 'social-media-para-brasileiros-nos-eua-como-usar-o-instagram-para-atrair-clientes-locais',
@@ -290,6 +298,7 @@ O maior erro que vejo é empreendedor que posta todo dia por uma semana e depois
     dataPublicacao: '12 de Junho de 2025',
     tempoLeitura: '8 min de leitura',
     autor: 'Rhaideline Calazans',
+    tldr: 'Use conta comercial no Instagram com bio clara (o que faz, para quem, onde). Poste 3 tipos de conteudo: prova social (antes/depois), educacao (dicas do seu servico) e bastidores. Use hashtags locais (#FraminghamMA, #BrasileirosEmBoston). Faca Reels curtos de 15-30 segundos. Consistencia vence perfeicao — 3 posts/semana por 6 meses > 3 posts/dia por 2 semanas.',
   },
 ]
 

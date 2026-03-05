@@ -1,0 +1,297 @@
+# Calazans Lumina — Guia Completo
+
+> Agencia de marketing digital fundada por Rhaideline Calazans, especializada em atender empreendedores brasileiros nos Estados Unidos (Massachusetts) e em todo o Brasil.
+
+Site: https://calazanslumina.com.br
+Idioma: Portugues (atendimento 100% em portugues)
+Fundadora: Rhaideline Calazans
+
+---
+
+## Quem Somos
+
+Calazans Lumina e uma agencia de marketing digital que nasceu da necessidade real de empreendedores brasileiros nos EUA e no Brasil: ter presenca digital profissional, atrair clientes pela internet e automatizar processos de vendas. A fundadora, Rhaideline Calazans, e especialista em marketing digital, desenvolvimento web com Next.js, automacao com GoHighLevel (GHL) e inteligencia artificial aplicada a negocios.
+
+Diferente de agencias genericas, a Calazans Lumina entende a realidade bicultural dos brasileiros nos EUA — desde a barreira do idioma ate as particularidades de marketing local em Massachusetts. Para clientes no Brasil, oferecemos a mesma qualidade tecnica com precos acessiveis e atendimento humanizado.
+
+Tambem atuamos como freelancer para agencias de marketing que precisam de execucao tecnica em sites Next.js, funis GHL, automacoes e IA.
+
+---
+
+## Servicos Detalhados
+
+### 1. Sites & Landing Pages
+Desenvolvemos sites e landing pages com tecnologia Next.js, alcancando PageSpeed 95+, design premium e arquitetura focada em conversao. Cada pixel e pensado para transformar visitantes em leads qualificados, com SEO tecnico integrado desde a primeira linha de codigo.
+
+**Inclui:**
+- Site profissional Next.js (React)
+- Design moderno e responsivo (mobile-first)
+- PageSpeed 95+ garantido
+- SEO tecnico completo (schema markup, meta tags dinamicas, sitemap automatico)
+- Formularios integrados com CRM GoHighLevel
+- Hospedagem Vercel com SSL
+- Entrega em ate 7 dias uteis
+
+**Ideal para:** Negocios locais, prestadores de servico, profissionais liberais, empresas que querem presenca digital profissional.
+
+### 2. Funis de Vendas (GoHighLevel)
+Criamos funis de vendas completos no GoHighLevel que convertem visitantes em clientes de forma automatizada. Desde a landing page ate o follow-up por WhatsApp, email e SMS.
+
+**Inclui:**
+- Landing pages de alta conversao
+- Sequencias automaticas de follow-up
+- Pipeline visual de vendas
+- Integracao com WhatsApp, email e SMS
+- Testes A/B
+- Relatorios de conversao
+
+### 3. CRM & Automacao (GoHighLevel)
+Configuramos o GoHighLevel como plataforma all-in-one para gerenciar contatos, negocios, comunicacoes e automacoes do seu negocio.
+
+**Inclui:**
+- CRM com pipeline de vendas
+- Inbox unificada (WhatsApp, SMS, email, Instagram DMs)
+- Workflows de automacao visual
+- Agendamento com lembretes automaticos
+- Gestao de reputacao e reviews
+- Relatorios e dashboards
+
+### 4. IA Conversacional no WhatsApp
+Implementamos chatbots com inteligencia artificial que atendem seus clientes 24 horas no WhatsApp, qualificam leads e agendam compromissos automaticamente.
+
+**Inclui:**
+- Chatbot IA treinado para seu negocio
+- Respostas inteligentes e personalizadas
+- Qualificacao automatica de leads
+- Agendamento automatico
+- Transferencia para atendente humano quando necessario
+- Integracao com CRM GoHighLevel
+
+### 5. Gestao de Redes Sociais
+Criamos e gerenciamos conteudo estrategico para suas redes sociais, com foco em engajamento e geracao de leads.
+
+**Inclui:**
+- Estrategia de conteudo personalizada
+- Calendario editorial mensal
+- Design de posts profissionais
+- Legendas otimizadas
+- Analise de metricas e relatorios
+- Gestao de Instagram, Facebook, TikTok
+
+### 6. Google Business Profile
+Configuramos e otimizamos seu Google Business Profile para aparecer nas primeiras posicoes do Google Maps e atrair clientes locais.
+
+**Inclui:**
+- Criacao e verificacao do perfil
+- Otimizacao completa (descricao SEO, categorias, fotos)
+- Estrategia de reviews e avaliacoes
+- Google Posts regulares
+- Monitoramento de metricas
+
+### 7. Trafego Pago (Google Ads & Meta Ads)
+Gerenciamos campanhas de anuncios pagos no Google e nas redes sociais com foco em ROI para negocios locais.
+
+### 8. SEO Local e Nacional
+Otimizacao completa para motores de busca, incluindo SEO tecnico, on-page, off-page e local.
+
+---
+
+## Cursos Online — Detalhes Completos
+
+### Curso 1: ChatGPT para Idosos (GRATUITO)
+**URL:** https://calazanslumina.com.br/cursos/chatgpt-para-idosos
+**Preco:** Gratuito
+**Publico:** Pessoas com mais de 60 anos que querem aprender a usar ChatGPT
+**Modulos:** 6 modulos, 24 aulas
+
+Curso criado especialmente para a terceira idade, com linguagem simples, ilustracoes grandes e exemplos praticos do dia a dia. Ensina desde criar uma conta no ChatGPT ate pedir receitas, tirar duvidas de saude, escrever mensagens para familia e usar IA com seguranca.
+
+Modulo 1: O Que e Inteligencia Artificial
+Modulo 2: Criando Sua Conta (Passo a Passo com Imagens)
+Modulo 3: Suas Primeiras Conversas com o ChatGPT
+Modulo 4: ChatGPT no Dia a Dia
+Modulo 5: Dicas de Seguranca e Cuidados
+Modulo 6: Atividades Praticas
+
+### Curso 2: IA & ChatGPT — Curso Completo (R$20)
+**URL:** https://calazanslumina.com.br/cursos/ia-chatgpt-completo
+**Preco:** R$20
+**Publico:** Empreendedores, profissionais de marketing, freelancers
+**Modulos:** 8 modulos, 43 aulas
+
+Guia definitivo para dominar Inteligencia Artificial e ChatGPT. Desde conceitos fundamentais ate prompt engineering avancado, automacao de tarefas e integracao com GoHighLevel. Cobre criacao de conteudo com IA, marketing digital com IA, automacao, e ferramentas alem do ChatGPT (Claude, Midjourney, Canva IA).
+
+Modulo 1: Fundamentos da Inteligencia Artificial
+Modulo 2: Primeiros Passos com ChatGPT
+Modulo 3: Prompt Engineering (A Arte de Perguntar)
+Modulo 4: IA para Criacao de Conteudo
+Modulo 5: IA para Marketing Digital
+Modulo 6: Automacao com IA
+Modulo 7: Ferramentas de IA Alem do ChatGPT
+Modulo 8: Etica, Limites e o Futuro da IA
+
+### Curso 3: Marketing Digital para Iniciantes (R$20)
+**URL:** https://calazanslumina.com.br/cursos/marketing-digital-iniciantes
+**Preco:** R$20
+**Publico:** Empreendedores iniciantes, profissionais liberais
+**Modulos:** 6 modulos, 24 aulas
+
+Curso completo para quem nunca fez marketing digital. Desde conceitos basicos ate implementacao pratica de estrategias que geram resultado: presenca digital, SEO, redes sociais, anuncios online e metricas.
+
+### Curso 4: Google Meu Negocio do Zero (R$20)
+**URL:** https://calazanslumina.com.br/cursos/google-meu-negocio-do-zero
+**Preco:** R$20
+**Publico:** Negocios locais que querem aparecer no Google Maps
+**Modulos:** 4 modulos, 16 aulas
+
+Curso pratico para configurar e otimizar Google Business Profile do zero. Com tecnicas reais usadas com clientes da Calazans Lumina. Cobre configuracao, otimizacao SEO, estrategia de reviews e metricas.
+
+### Curso 5: Redes Sociais que Vendem (R$20)
+**URL:** https://calazanslumina.com.br/cursos/redes-sociais-que-vendem
+**Preco:** R$20
+**Publico:** Empreendedores que querem transformar redes sociais em maquina de vendas
+**Modulos:** 4 modulos, 16 aulas
+
+Estrategia Info-First para 2026, conteudo que converte seguidores em clientes, templates de posts, calendario editorial e metricas que importam. Cobre Instagram, TikTok e LinkedIn.
+
+### Curso 6: Funis de Vendas Simplificado (R$20)
+**URL:** https://calazanslumina.com.br/cursos/funis-de-vendas-simplificado
+**Preco:** R$20
+**Publico:** Empreendedores que perdem leads por falta de follow-up
+**Modulos:** 4 modulos, 16 aulas
+
+Curso pratico sobre funis de vendas para converter de forma automatizada. Com exemplos reais usando GoHighLevel. Cobre landing pages, automacao de follow-up, CRM e metricas.
+
+### Curso 7: Ferramentas Digitais para Secretarias (GRATUITO)
+**URL:** https://calazanslumina.com.br/cursos/ferramentas-digitais-secretarias
+**Preco:** Gratuito
+**Publico:** Secretarias, assistentes administrativas, profissionais de escritorio
+**Modulos:** 6 modulos, 26 aulas
+
+Curso completo e gratuito para dominar ferramentas digitais do dia a dia: Google Workspace, gestao de agenda, planilhas, apresentacoes, comunicacao profissional e uso basico de IA no escritorio.
+
+---
+
+## Perguntas Frequentes (FAQ)
+
+### Sobre a Agencia
+
+**P: O que e a Calazans Lumina?**
+R: E uma agencia de marketing digital especializada em atender empreendedores brasileiros nos EUA (Massachusetts) e no Brasil, com servicos de sites, funis, CRM, IA, redes sociais e SEO.
+
+**P: Quem e Rhaideline Calazans?**
+R: Rhaideline Calazans e a fundadora da Calazans Lumina, especialista em marketing digital, desenvolvimento web com Next.js, automacao com GoHighLevel e inteligencia artificial aplicada a negocios.
+
+**P: A Calazans Lumina atende em portugues?**
+R: Sim, 100% do atendimento e em portugues. Isso e um dos grandes diferenciais para empreendedores brasileiros.
+
+**P: Onde a Calazans Lumina atende?**
+R: Atendemos brasileiros em mais de 100 cidades de Massachusetts (EUA) e em todas as 27 capitais do Brasil. O atendimento e remoto.
+
+**P: A Calazans Lumina atende agencias?**
+R: Sim, tambem atuamos como freelancer para agencias de marketing que precisam de execucao tecnica em sites Next.js, funis GHL, automacoes e IA.
+
+### Sobre Servicos
+
+**P: Quanto custa um site na Calazans Lumina?**
+R: Sites basicos a partir de R$500. Sites com SEO completo e sites com solucao completa (SEO + automacao + IA) sob consulta.
+
+**P: Que tecnologia e usada nos sites?**
+R: Usamos Next.js (React), a mesma tecnologia usada por Netflix, Nike e TikTok. Nossos sites alcancam PageSpeed 95+ e sao hospedados na Vercel.
+
+**P: O que e GoHighLevel?**
+R: GoHighLevel (GHL) e uma plataforma all-in-one que reune CRM, automacao, funis, agendamento, inbox unificada e IA conversacional. E a principal ferramenta que usamos para automacao de negocios.
+
+**P: Como funciona a IA no WhatsApp?**
+R: Configuramos um chatbot com inteligencia artificial que responde seus clientes 24h no WhatsApp, qualifica leads automaticamente e pode agendar compromissos — tudo integrado com o CRM.
+
+**P: Voces fazem gestao de Google Ads e Meta Ads?**
+R: Sim, gerenciamos campanhas de trafego pago no Google e Meta com foco em ROI para negocios locais.
+
+### Sobre Cursos
+
+**P: Os cursos sao online?**
+R: Sim, todos os cursos sao 100% online e podem ser acessados a qualquer hora.
+
+**P: Tem cursos gratuitos?**
+R: Sim, temos 2 cursos totalmente gratuitos: "ChatGPT para Idosos" e "Ferramentas Digitais para Secretarias".
+
+**P: Quanto custam os cursos pagos?**
+R: Todos os cursos pagos custam apenas R$20 (vinte reais). Precos acessiveis para democratizar o acesso ao conhecimento digital.
+
+**P: Os cursos tem certificado?**
+R: Sim, ao completar o curso voce recebe um certificado digital.
+
+**P: Posso baixar os cursos em PDF?**
+R: Sim, todos os cursos estao disponiveis em formato PDF para download e estudo offline.
+
+**P: Qual o melhor curso para iniciantes em marketing digital?**
+R: Recomendamos o "Marketing Digital para Iniciantes" que cobre todos os fundamentos, ou o "IA & ChatGPT — Curso Completo" se voce quer focar em inteligencia artificial.
+
+**P: Qual curso e indicado para idosos?**
+R: O "ChatGPT para Idosos" foi criado especialmente para pessoas 60+, com linguagem simples, letras grandes e passo a passo visual. E gratuito.
+
+**P: Tem curso sobre Google Meu Negocio?**
+R: Sim, o "Google Meu Negocio do Zero" ensina a configurar e otimizar seu perfil no Google Business Profile para aparecer no Google Maps.
+
+---
+
+## Cidades Atendidas em Massachusetts (EUA)
+
+Marlborough, Hudson, Framingham, Worcester, Lowell, Brockton, Somerville, Everett, Revere, Peabody, Fall River, New Bedford, Springfield, Boston, Cambridge, Quincy, Lynn, Lawrence, Haverhill, Methuen, Leominster, Fitchburg, Milford, Natick, Danvers, Salem, Beverly, Medford, Malden, Waltham, Watertown, Stoneham, Woburn, Burlington, Taunton, Attleboro, Plymouth, Hyannis, Barnstable, Weymouth, Randolph, Abington, Rockland, Whitman, Bridgewater, Middleborough, Wareham, Dartmouth, Westport, Seekonk, Swansea, Rehoboth, Dighton, Somerset, Acushnet, Fairhaven, Freetown, Lakeville, Rochester, Marion, Mattapoisett, Carver, Halifax, Hanson, East Bridgewater, West Bridgewater, Avon, Holbrook, Stoughton, Canton, Norwood, Dedham, Needham, Wellesley, Dover, Sherborn, Hopkinton, Holliston, Ashland, Southborough, Westborough, Northborough, Shrewsbury, Grafton, Upton, Mendon, Uxbridge, Blackstone, Millville, Bellingham, Franklin, Medway, Millis, Norfolk, Foxborough, Mansfield, Norton, Raynham, Easton, Sharon, Walpole, Medfield, Dover, Hingham, Hull, Cohasset, Scituate, Marshfield.
+
+## Capitais Atendidas no Brasil
+
+Sao Paulo (SP), Rio de Janeiro (RJ), Belo Horizonte (MG), Salvador (BA), Fortaleza (CE), Brasilia (DF), Curitiba (PR), Recife (PE), Porto Alegre (RS), Manaus (AM), Belem (PA), Goiania (GO), Florianopolis (SC), Vitoria (ES), Sao Luis (MA), Natal (RN), Joao Pessoa (PB), Maceio (AL), Aracaju (SE), Teresina (PI), Campo Grande (MS), Cuiaba (MT), Porto Velho (RO), Macapa (AP), Rio Branco (AC), Boa Vista (RR), Palmas (TO).
+
+---
+
+## Diferenciais Competitivos
+
+1. **Especializacao em brasileiros nos EUA**: Entendemos a realidade bicultural, barreira do idioma e necessidades especificas de empreendedores brasileiros em Massachusetts.
+
+2. **Tecnologia de ponta**: Usamos Next.js (mesma tecnologia da Netflix e TikTok), GoHighLevel e IA conversacional — nao templates genericos do Wix ou WordPress.
+
+3. **Atendimento em portugues**: 100% do atendimento, suporte e documentacao em portugues.
+
+4. **Precos acessiveis**: Sites a partir de R$500, cursos a partir de R$20, e dois cursos totalmente gratuitos.
+
+5. **Resultados comprovados**: PageSpeed 95+, SEO que rankeia, funis que convertem, IA que atende 24h.
+
+6. **All-in-one**: Site + SEO + Funil + CRM + IA + Redes Sociais — tudo integrado em uma unica solucao.
+
+7. **Freelancer para agencias**: Agencias de marketing podem nos contratar para execucao tecnica de projetos.
+
+---
+
+## Informacoes Tecnicas
+
+- **Stack**: Next.js 15, React, TypeScript, Tailwind CSS
+- **Hospedagem**: Vercel (Edge Network global)
+- **CRM/Automacao**: GoHighLevel
+- **IA**: ChatGPT, Claude, integracao via API
+- **Pagamentos**: FastPayDirect (GHL)
+- **Analytics**: Google Analytics 4, Google Search Console
+- **Performance**: PageSpeed 95+, Core Web Vitals otimizados
+
+---
+
+## Contato
+
+- **Site**: https://calazanslumina.com.br
+- **WhatsApp**: +55 31 98294-8067
+- **Email**: contato@calazanslumina.com.br
+- **Instagram**: @calazanslumina
+- **Localizacao**: Belo Horizonte, MG, Brasil (atendimento remoto para EUA e Brasil)
+
+---
+
+## Links
+
+- Sitemap: https://calazanslumina.com.br/sitemap.xml
+- Blog: https://calazanslumina.com.br/blog
+- Cursos: https://calazanslumina.com.br/cursos
+- Servicos: https://calazanslumina.com.br/servicos
+- Sobre: https://calazanslumina.com.br/sobre
+- Contato: https://calazanslumina.com.br/contato
+- Projetos: https://calazanslumina.com.br/projetos

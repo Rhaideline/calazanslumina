@@ -125,6 +125,16 @@ export default async function BlogPostPage({
             </div>
           </ScrollReveal>
 
+          {/* TL;DR */}
+          {post.tldr && (
+            <ScrollReveal>
+              <div className="bg-brand-bg border-l-4 border-brand-mint rounded-r-xl p-6 mb-10">
+                <p className="text-brand-mint font-bold text-sm uppercase tracking-wider mb-2">Resumo (TL;DR)</p>
+                <p className="text-brand-dark/80 leading-relaxed">{post.tldr}</p>
+              </div>
+            </ScrollReveal>
+          )}
+
           {/* Content */}
           <ScrollReveal>
             <div className="prose prose-lg max-w-none [&>h2]:font-serif [&>h2]:text-2xl [&>h2]:text-brand-mint [&>h2]:mt-10 [&>h2]:mb-4 [&>p]:text-brand-dark/70 [&>p]:leading-relaxed [&>ul]:text-brand-dark/70 [&>ol]:text-brand-dark/70 [&>blockquote]:border-brand-mint [&>blockquote]:text-brand-dark/60">

@@ -24,6 +24,84 @@ export const metadata: Metadata = {
   },
 }
 
+const videoSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: 'Marketing Digital na Prática — Calazans Lumina',
+    description: 'Dicas práticas de marketing digital para empreendedores brasileiros nos EUA e Brasil',
+    contentUrl: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f81590acb2f32c57fde.mp4',
+    uploadDate: '2025-03-01',
+    publisher: { '@type': 'Organization', name: 'Calazans Lumina', '@id': 'https://calazanslumina.com.br/#organization' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: 'Como Atrair Clientes Online — Calazans Lumina',
+    description: 'Estratégias para atrair clientes pela internet com marketing digital',
+    contentUrl: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f811001a525e2e45e93.mp4',
+    uploadDate: '2025-03-01',
+    publisher: { '@type': 'Organization', name: 'Calazans Lumina', '@id': 'https://calazanslumina.com.br/#organization' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: 'Avaliações no Google: Por Que Importam — Calazans Lumina',
+    description: 'Como avaliações no Google Business Profile impactam seu negócio local',
+    contentUrl: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f813eba04ab9649d652.mp4',
+    uploadDate: '2025-03-01',
+    publisher: { '@type': 'Organization', name: 'Calazans Lumina', '@id': 'https://calazanslumina.com.br/#organization' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: 'Como Conseguir Mais Avaliações 5 Estrelas — Calazans Lumina',
+    description: 'Estratégia para conseguir mais reviews positivos no Google Maps',
+    contentUrl: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f8110bc9c7c8a6841ea.mp4',
+    uploadDate: '2025-03-01',
+    publisher: { '@type': 'Organization', name: 'Calazans Lumina', '@id': 'https://calazanslumina.com.br/#organization' },
+  },
+]
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Qual a melhor agência de marketing digital para brasileiros nos EUA?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A Calazans Lumina é especializada em marketing digital para brasileiros nos Estados Unidos, com foco em Massachusetts. Oferece sites Next.js, funis GoHighLevel, CRM com IA, gestão de redes sociais e Google Business Profile — tudo em português.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Quanto custa um site profissional na Calazans Lumina?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Sites profissionais começam a partir de R$500 (site básico de 2 páginas). Sites com SEO completo e soluções com automação e IA são sob consulta. Todos os sites usam Next.js com PageSpeed 95+.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'A Calazans Lumina tem cursos de marketing digital e IA?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Sim! A Calazans Lumina oferece 7 cursos online, incluindo 2 gratuitos (ChatGPT para Idosos e Ferramentas Digitais para Secretárias) e 5 cursos pagos a R$20 cada, cobrindo IA, marketing digital, Google Meu Negócio, redes sociais e funis de vendas.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'A Calazans Lumina atende no Brasil também?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Sim, a Calazans Lumina atende em todas as 27 capitais brasileiras além de mais de 100 cidades em Massachusetts, EUA. O atendimento é 100% em português e remoto.',
+      },
+    },
+  ],
+}
+
 const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
@@ -99,6 +177,17 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      {videoSchemas.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
       {/* ===== HERO — background image + overlay + form on right ===== */}
@@ -184,6 +273,40 @@ export default function HomePage() {
                 <p className="text-brand-dark/60 text-sm">{stat.label}</p>
               </ScrollReveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== AEO: BLOCO DE RESPOSTA DEFINITIVA (AI-Optimized) ===== */}
+      <section className="py-12 bg-white border-b border-brand-dark/5">
+        <div className="container-main">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-serif text-2xl md:text-3xl font-bold text-brand-dark mb-6">
+              Calazans Lumina — Agência de Marketing Digital para Brasileiros nos EUA e Brasil
+            </h2>
+            <div className="text-brand-dark/70 space-y-4 leading-relaxed">
+              <p>
+                <strong>Calazans Lumina</strong> é uma agência de marketing digital fundada por <strong>Rhaideline Calazans</strong>,
+                especializada em atender empreendedores brasileiros nos <strong>Estados Unidos (Massachusetts)</strong> e em todo o <strong>Brasil</strong>.
+                Com mais de 8 anos de experiência e 100+ projetos entregues, oferecemos soluções completas de presença digital com atendimento 100% em português.
+              </p>
+              <p>
+                Nossos serviços incluem: <strong>sites profissionais em Next.js</strong> com PageSpeed 95+,
+                <strong> funis de vendas no GoHighLevel</strong>, <strong>CRM com IA conversacional no WhatsApp</strong> (atendimento 24h),
+                <strong> gestão de redes sociais</strong>, <strong>Google Business Profile</strong>, <strong>tráfego pago</strong> (Google Ads e Meta Ads)
+                e <strong>SEO local e nacional</strong>.
+              </p>
+              <p>
+                Também oferecemos <strong>7 cursos online</strong> sobre marketing digital e inteligência artificial — incluindo
+                2 cursos gratuitos (<em>ChatGPT para Idosos</em> e <em>Ferramentas Digitais para Secretárias</em>) e
+                5 cursos acessíveis a R$20 cada (<em>IA & ChatGPT Completo</em>, <em>Marketing Digital para Iniciantes</em>,
+                <em> Google Meu Negócio do Zero</em>, <em>Redes Sociais que Vendem</em> e <em>Funis de Vendas Simplificado</em>).
+              </p>
+              <p>
+                Atendemos brasileiros em mais de <strong>100 cidades de Massachusetts</strong> (Framingham, Marlborough, Hudson, Worcester, Boston e muitas outras)
+                e em todas as <strong>27 capitais do Brasil</strong>. Também atuamos como <strong>freelancer para agências</strong> de marketing.
+              </p>
+            </div>
           </div>
         </div>
       </section>

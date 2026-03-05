@@ -18,9 +18,47 @@ export const metadata: Metadata = {
   },
 }
 
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': 'https://calazanslumina.com.br/sobre#person',
+  name: 'Rhaideline Calazans',
+  jobTitle: 'Especialista em Marketing Digital & Fundadora da Calazans Lumina',
+  url: 'https://calazanslumina.com.br/sobre',
+  image: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d74aa28b2801643ac3f117.jpeg',
+  description:
+    'Especialista em marketing digital com 8+ anos de experiência e 100+ projetos. Fundadora da Calazans Lumina, agência focada em brasileiros nos EUA e Brasil.',
+  worksFor: {
+    '@type': 'Organization',
+    '@id': 'https://calazanslumina.com.br/#organization',
+    name: 'Calazans Lumina',
+  },
+  nationality: { '@type': 'Country', name: 'Brazil' },
+  knowsAbout: [
+    'Marketing Digital',
+    'Next.js',
+    'GoHighLevel',
+    'SEO',
+    'Google Business Profile',
+    'Inteligência Artificial',
+    'ChatGPT',
+    'Funis de Vendas',
+    'CRM',
+    'Automação de Marketing',
+    'Gestão de Redes Sociais',
+    'Google Ads',
+    'Meta Ads',
+  ],
+  sameAs: ['https://www.instagram.com/calazanslumina'],
+}
+
 export default function SobrePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
       {/* Hero — full-width background image with overlay */}
       <section className="relative min-h-[70vh] flex items-center">
         {/* Background Image */}

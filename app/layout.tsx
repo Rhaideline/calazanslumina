@@ -91,9 +91,78 @@ export const metadata: Metadata = {
   },
 }
 
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': 'https://calazanslumina.com.br/#organization',
+  name: 'Calazans Lumina',
+  url: 'https://calazanslumina.com.br',
+  logo: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6da0830220a0c3e452.png',
+  description:
+    'Agência de marketing digital especializada em brasileiros nos EUA (Massachusetts) e Brasil. Sites Next.js, funis GoHighLevel, CRM com IA, gestão de redes sociais e Google Business Profile.',
+  foundingDate: '2024',
+  founder: {
+    '@type': 'Person',
+    name: 'Rhaideline Calazans',
+  },
+  contactPoint: [
+    {
+      '@type': 'ContactPoint',
+      telephone: '+55-31-98294-8067',
+      contactType: 'customer service',
+      availableLanguage: ['Portuguese', 'English'],
+      areaServed: ['BR', 'US'],
+    },
+  ],
+  sameAs: ['https://www.instagram.com/calazanslumina'],
+  areaServed: [
+    {
+      '@type': 'State',
+      name: 'Massachusetts',
+      containedInPlace: { '@type': 'Country', name: 'United States' },
+    },
+    { '@type': 'Country', name: 'Brazil' },
+  ],
+  knowsAbout: [
+    'Marketing Digital',
+    'Next.js',
+    'GoHighLevel',
+    'SEO',
+    'Google Business Profile',
+    'Inteligência Artificial',
+    'ChatGPT',
+    'Funis de Vendas',
+    'CRM',
+    'Automação de Marketing',
+    'Gestão de Redes Sociais',
+    'Google Ads',
+    'Meta Ads',
+    'WhatsApp Business',
+    'IA Conversacional',
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Serviços de Marketing Digital',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Sites & Landing Pages Next.js' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Funis de Vendas GoHighLevel' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'CRM & Automação' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'IA Conversacional no WhatsApp' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Gestão de Redes Sociais' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Google Business Profile' } },
+    ],
+  },
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" className={`${dmSerif.variable} ${dmSans.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+      </head>
       <body className="min-h-screen flex flex-col" suppressHydrationWarning>
         <Header />
         <main className="flex-1">{children}</main>
