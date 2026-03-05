@@ -31,6 +31,12 @@ export async function generateMetadata({ params }: { params: Promise<{ capital: 
     title: `${servico.nome} em ${capital.nome} | Resultados Comprovados`,
     description: `${servico.descricaoCurta} Para negocios em ${capital.nome}, ${capital.siglaEstado}. 8+ anos de experiencia, 100+ projetos entregues. Fale agora!`,
     alternates: { canonical: `https://calazanslumina.com.br/brasil/${capitalSlug}/${servicoSlug}` },
+    openGraph: {
+      title: `${servico.nome} em ${capital.nome}, ${capital.siglaEstado} | Calazans Lumina`,
+      description: `${servico.descricaoCurta} Para negocios em ${capital.nome}, ${capital.estado}.`,
+      url: `https://calazanslumina.com.br/brasil/${capitalSlug}/${servicoSlug}`,
+      type: 'website',
+    },
   }
 }
 
@@ -42,8 +48,32 @@ export default async function CapitalServicoPage({ params }: { params: Promise<{
 
   const outrosServicos = servicos.filter((s) => s.slug !== servicoSlug)
 
+  const localBusinessSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Calazans Lumina',
+    description: `${servico.nome} em ${capital.nome}, ${capital.estado}`,
+    url: `https://calazanslumina.com.br/brasil/${capitalSlug}/${servicoSlug}`,
+    telephone: '+5531982948067',
+    areaServed: { '@type': 'City', name: capital.nome, containedInPlace: { '@type': 'State', name: capital.estado } },
+    serviceType: servico.nome,
+  }
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: servico.faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.pergunta,
+      acceptedAnswer: { '@type': 'Answer', text: f.resposta },
+    })),
+  }
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+
       <section className="relative min-h-[80vh] flex items-center">
         <Image
           src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d74aa28b2801643ac3f117.jpeg"

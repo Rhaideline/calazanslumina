@@ -12,6 +12,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/blog/robo-whatsapp-automacao-atendimento',
+        destination: '/blog/robo-de-whatsapp-como-automatizar-seu-atendimento-sem-perder-o-lado-humano',
+        permanent: true,
+      },
+    ]
+  },
   async headers() {
     return [
       {

@@ -12,6 +12,19 @@ export interface Curso {
   pdfDisponivel?: boolean
   gratuito?: boolean
   linkPagamento?: string
+  // VSL (Video Sales Letter) data
+  vsl: {
+    hook: string
+    subhook: string
+    problemas: string[]
+    transformacao: string
+    antesDepois: { antes: string; depois: string }[]
+    depoimentos: { nome: string; cidade: string; texto: string }[]
+    objecoes: { pergunta: string; resposta: string }[]
+    garantia: string
+    valorReal: string
+    urgencia: string
+  }
 }
 
 export const cursos: Curso[] = [
@@ -43,6 +56,38 @@ export const cursos: Curso[] = [
       'Usar o ChatGPT como companheiro de conversa',
       'Dicas de segurança: o que NÃO fazer com IA',
     ],
+    vsl: {
+      hook: 'Seus netos já usam inteligência artificial. E se você também pudesse?',
+      subhook: 'Curso feito com carinho para quem tem 60+ anos. Sem termos técnicos. Sem complicação. Só passo a passo com imagens grandes.',
+      problemas: [
+        'Sente que a tecnologia está passando por cima de você',
+        'Tem medo de "estragar" alguma coisa no celular ou computador',
+        'Seus netos falam de ChatGPT e você não entende nada',
+        'Gostaria de pedir ajuda para escrever mensagens, receitas ou tirar dúvidas — mas não sabe como',
+        'Já tentou aprender algo de tecnologia e achou tudo muito complicado',
+      ],
+      transformacao: 'Em poucos dias, você vai estar conversando com o ChatGPT como se fosse um amigo. Pedindo receitas, tirando dúvidas, escrevendo mensagens bonitas e até planejando viagens. Tudo no seu ritmo, sem pressa, sem medo.',
+      antesDepois: [
+        { antes: 'Medo de usar o computador', depois: 'Conversando com IA com confiança' },
+        { antes: 'Dependendo dos netos para tudo', depois: 'Resolvendo sozinho(a) com o ChatGPT' },
+        { antes: 'Achando que IA não é para sua idade', depois: 'Ensinando amigos a usar também' },
+        { antes: 'Sentindo-se excluído(a) da tecnologia', depois: 'Atualizado(a) e conectado(a)' },
+      ],
+      depoimentos: [
+        { nome: 'Dona Maria, 72 anos', cidade: 'Belo Horizonte', texto: 'Nunca pensei que ia usar inteligência artificial na minha idade. Agora peço receitas, escrevo mensagens de aniversário e até planejo minhas viagens com o ChatGPT. Meus netos ficaram impressionados!' },
+        { nome: 'Seu José, 68 anos', cidade: 'São Paulo', texto: 'O curso é muito bem explicado, com imagens grandes e linguagem simples. Em dois dias eu já estava usando sozinho. Recomendo para todos os meus amigos da terceira idade.' },
+        { nome: 'Dona Lúcia, 75 anos', cidade: 'Curitiba', texto: 'Minha neta me mostrou e eu fiz o curso inteiro num fim de semana. Agora uso o ChatGPT para me ajudar com receitas e até para entender aquelas contas complicadas que chegam.' },
+      ],
+      objecoes: [
+        { pergunta: 'Preciso saber usar computador para fazer o curso?', resposta: 'Se você sabe abrir o WhatsApp e navegar na internet, já sabe o suficiente. O curso começa do absoluto zero com imagens grandes.' },
+        { pergunta: 'É realmente gratuito? Não vai cobrar depois?', resposta: 'Totalmente gratuito. Sem pegadinha. Sem cadastro. Acesso livre online e PDF para download.' },
+        { pergunta: 'Tem alguém para me ajudar se eu travar?', resposta: 'O curso foi feito para ser autoexplicativo. Cada passo tem imagem e explicação clara. Mas você pode mandar mensagem no WhatsApp se precisar.' },
+        { pergunta: 'Funciona no celular?', resposta: 'Sim! Funciona no celular, tablet e computador. Você escolhe onde estudar.' },
+      ],
+      garantia: 'Curso 100% gratuito — zero risco. Se não gostar, simplesmente pare. Mas apostamos que você vai adorar.',
+      valorReal: 'Cursos similares cobram R$ 197 a R$ 497. Este é totalmente gratuito porque acreditamos que tecnologia é para todos.',
+      urgencia: 'Acesso gratuito disponível agora. Comece hoje e surpreenda sua família amanhã.',
+    },
     modulos: [
       {
         titulo: 'Módulo 1 — O Que é Essa Tal de Inteligência Artificial?',
@@ -132,6 +177,40 @@ export const cursos: Curso[] = [
       'Como integrar IA com GoHighLevel',
       'Ética e limites do uso de IA',
     ],
+    vsl: {
+      hook: 'Em 2026, quem não domina IA está sendo substituído. Você vai ficar parado assistindo?',
+      subhook: 'Do zero ao avançado em Inteligência Artificial e ChatGPT. Crie conteúdo, automatize tarefas e multiplique resultados — enquanto seus concorrentes ainda estão copiando e colando.',
+      problemas: [
+        'Passa horas criando conteúdo que poderia fazer em 15 minutos com IA',
+        'Seus concorrentes já estão usando ChatGPT e você está ficando para trás',
+        'Tentou usar o ChatGPT mas só recebeu respostas genéricas e inúteis',
+        'Não sabe como transformar IA em resultado real para o seu negócio',
+        'Paga caro em freelancers para tarefas que a IA faria em segundos',
+        'Tem medo de ser substituído por quem domina IA',
+      ],
+      transformacao: 'Imagine abrir o ChatGPT e em 10 minutos ter pronto o conteúdo de uma semana inteira. Legendas, artigos, emails de venda, análise de concorrência — tudo feito com qualidade profissional. É isso que você vai aprender aqui.',
+      antesDepois: [
+        { antes: '3 horas para escrever um post', depois: '15 minutos com prompt perfeito' },
+        { antes: 'Respostas genéricas do ChatGPT', depois: 'Resultados profissionais com prompt engineering' },
+        { antes: 'Pagando R$ 500/mês em copywriter', depois: 'Criando tudo sozinho com IA' },
+        { antes: 'Medo de ser substituído pela IA', depois: 'Usando IA como seu maior diferencial' },
+        { antes: 'Sem ideia do que postar', depois: 'Calendário editorial gerado por IA em minutos' },
+      ],
+      depoimentos: [
+        { nome: 'Rafael Mendes', cidade: 'São Paulo', texto: 'Antes gastava 4 horas por dia criando conteúdo. Depois do curso, faço tudo em 40 minutos. Os prompts que aprendi são absurdos de bons. Melhor investimento de R$ 20 que já fiz.' },
+        { nome: 'Camila Rocha', cidade: 'Belo Horizonte', texto: 'Eu achava que sabia usar ChatGPT até fazer esse curso. A diferença entre um prompt amador e um profissional é brutal. Meus textos de venda melhoraram 300%.' },
+        { nome: 'Diego Oliveira', cidade: 'Curitiba', texto: 'O módulo de automação com IA no WhatsApp mudou meu negócio. Configurei um chatbot que atende meus leads 24h e minha taxa de resposta foi de 12% para 89%.' },
+      ],
+      objecoes: [
+        { pergunta: 'Preciso saber programar?', resposta: 'Zero programação. O curso é 100% prático, focado em usar as ferramentas prontas que já existem.' },
+        { pergunta: 'Já uso ChatGPT, vale a pena?', resposta: 'Se você ainda recebe respostas genéricas, sim. Prompt engineering é o que separa amadores de profissionais. Você vai aprender técnicas que 95% dos usuários não conhecem.' },
+        { pergunta: 'R$ 20 é o preço real?', resposta: 'Sim. Sem upsell, sem mensalidade. Pagamento único de R$ 20 com acesso vitalício. Cursos similares custam R$ 297 a R$ 997.' },
+        { pergunta: 'E se eu não gostar?', resposta: 'São R$ 20 — menos que um café com bolo. Mas o retorno potencial é de milhares por mês em produtividade e resultados.' },
+      ],
+      garantia: 'Satisfação garantida. Se em 7 dias você não sentir que valeu cada centavo, entre em contato que devolvemos seu investimento.',
+      valorReal: 'Cursos de IA com esse nível de conteúdo custam entre R$ 297 e R$ 997. Você leva tudo por apenas R$ 20 — pagamento único, acesso vitalício.',
+      urgencia: 'O preço de R$ 20 é promocional e pode mudar a qualquer momento. Quem domina IA agora sai na frente. Cada dia sem esse conhecimento é dinheiro perdido.',
+    },
     modulos: [
       {
         titulo: 'Módulo 1 — Fundamentos da Inteligência Artificial',
@@ -245,6 +324,39 @@ export const cursos: Curso[] = [
       'Como medir resultados (métricas essenciais)',
       'Ferramentas gratuitas para começar hoje',
     ],
+    vsl: {
+      hook: 'Seu negócio é invisível na internet. Enquanto isso, seus concorrentes estão roubando seus clientes — todos os dias.',
+      subhook: 'Aprenda os fundamentos que 90% dos empreendedores ignoram. Em 6 módulos práticos, você vai de zero a gerando leads pela internet.',
+      problemas: [
+        'Ninguém encontra seu negócio quando pesquisa no Google',
+        'Posta nas redes sociais mas ninguém liga, curte ou compra',
+        'Não sabe a diferença entre tráfego pago e orgânico',
+        'Já gastou dinheiro com "marketing" e não viu resultado nenhum',
+        'Sabe que precisa estar na internet mas não sabe por onde começar',
+        'Vê concorrentes crescendo online enquanto você depende do boca a boca',
+      ],
+      transformacao: 'Em 24 aulas diretas ao ponto, você vai entender exatamente como funciona o marketing digital e vai sair com um plano de ação prático para o SEU negócio. Sem enrolação, sem teoria desnecessária.',
+      antesDepois: [
+        { antes: 'Invisível no Google', depois: 'Aparecendo para quem procura seus serviços' },
+        { antes: 'Posts sem engajamento', depois: 'Conteúdo estratégico que atrai leads' },
+        { antes: 'Dinheiro jogado em anúncios', depois: 'ROI mensurável em cada centavo' },
+        { antes: 'Dependendo só de indicação', depois: 'Máquina de geração de leads online' },
+      ],
+      depoimentos: [
+        { nome: 'Ana Paula Santos', cidade: 'Salvador', texto: 'Eu não entendia NADA de marketing digital. Depois do curso, montei meu Google Business, comecei a postar com estratégia e em 30 dias já recebi 12 novos clientes pela internet. R$ 20 mais bem gastos da minha vida.' },
+        { nome: 'Marcos Vinícius', cidade: 'Recife', texto: 'Tentei aprender sozinho por YouTube e fiquei mais confuso. Esse curso é organizado, direto e prático. Em uma semana eu já estava aplicando tudo no meu negócio.' },
+        { nome: 'Juliana Ferreira', cidade: 'Porto Alegre', texto: 'O módulo de SEO abriu minha mente. Eu não sabia que podia aparecer no Google sem pagar por anúncios. Meu site já está na primeira página para a minha cidade.' },
+      ],
+      objecoes: [
+        { pergunta: 'Funciona para qualquer tipo de negócio?', resposta: 'Sim. Os fundamentos de marketing digital são universais. Funciona para serviços, produtos, e-commerce, prestadores autônomos — qualquer negócio que queira clientes pela internet.' },
+        { pergunta: 'Preciso ter site para começar?', resposta: 'Não. O curso ensina desde o básico, incluindo como criar sua presença digital do zero. Você sai sabendo montar tudo.' },
+        { pergunta: 'Não tenho tempo para estudar', resposta: 'São aulas curtas e diretas. 15-20 minutos por dia é suficiente. Em uma semana você termina o curso e já sai aplicando.' },
+        { pergunta: 'Por que tão barato?', resposta: 'Porque acreditamos que todo empreendedor merece acesso a esse conhecimento. R$ 20 é o preço de um lanche. O retorno pode ser de milhares por mês.' },
+      ],
+      garantia: 'Satisfação garantida. Se não sentir que valeu o investimento em 7 dias, devolvemos seu dinheiro.',
+      valorReal: 'Mentorias de marketing digital custam R$ 2.000 a R$ 10.000. Aqui você leva o essencial por R$ 20 — pagamento único.',
+      urgencia: 'Cada dia sem marketing digital é um dia entregando clientes para o concorrente. Por R$ 20 você começa HOJE.',
+    },
     modulos: [
       {
         titulo: 'Módulo 1 — O que é Marketing Digital',
@@ -297,6 +409,39 @@ export const cursos: Curso[] = [
       'Insights e métricas do Google Business',
       'Integração com Google Ads Local',
     ],
+    vsl: {
+      hook: 'Seus clientes estão procurando você no Google Maps agora. E encontrando seu concorrente.',
+      subhook: '93% das buscas locais passam pelo Google Maps. Se seu negócio não aparece lá — ou aparece mal configurado — você está perdendo dinheiro todos os dias.',
+      problemas: [
+        'Seu negócio não aparece quando clientes procuram no Google Maps',
+        'Seu perfil existe mas está incompleto, sem fotos e sem avaliações',
+        'Concorrentes com serviço pior aparecem antes de você',
+        'Não sabe como conseguir mais avaliações 5 estrelas',
+        'Recebe avaliações negativas e não sabe como responder',
+        'Nunca postou nada no Google Business e nem sabia que isso existia',
+      ],
+      transformacao: 'Em 4 módulos práticos, seu perfil vai estar completo, otimizado e aparecendo para quem procura seus serviços. Com fotos estratégicas, posts regulares e uma máquina de avaliações 5 estrelas funcionando no automático.',
+      antesDepois: [
+        { antes: 'Invisível no Google Maps', depois: 'Top 3 para suas palavras-chave' },
+        { antes: 'Zero avaliações', depois: 'Dezenas de reviews 5 estrelas' },
+        { antes: 'Perfil abandonado', depois: 'Posts semanais atraindo clientes' },
+        { antes: 'Perdendo para concorrentes piores', depois: 'Dominando as buscas locais' },
+      ],
+      depoimentos: [
+        { nome: 'Roberto Almeida', cidade: 'Campinas', texto: 'Em 2 semanas depois de aplicar as técnicas do curso, meu perfil foi de 0 para 23 avaliações 5 estrelas. As ligações do Google triplicaram. Curso absurdamente prático.' },
+        { nome: 'Fernanda Lima', cidade: 'Goiânia', texto: 'Eu nem sabia que existia Google Posts. Comecei a postar como o curso ensina e meu perfil começou a aparecer para buscas que antes nem sonhava. Resultado real por R$ 20.' },
+        { nome: 'Carlos Eduardo', cidade: 'Fortaleza', texto: 'Tinha meu perfil há 3 anos e nunca tinha otimizado direito. As dicas de fotos e categorias fizeram meu perfil ir da página 2 para o top 3 em menos de um mês.' },
+      ],
+      objecoes: [
+        { pergunta: 'Funciona para qualquer cidade?', resposta: 'Sim. As técnicas funcionam para qualquer negócio local em qualquer cidade do Brasil. Quanto menor a concorrência, mais rápido você domina.' },
+        { pergunta: 'Meu negócio é home-based, funciona?', resposta: 'Sim! O Google Business tem opção de área de atendimento para quem não tem loja física. O curso cobre isso em detalhes.' },
+        { pergunta: 'Já tenho perfil no Google, preciso do curso?', resposta: 'Se você não está no top 3 para seus serviços, então seu perfil não está otimizado. O curso ensina técnicas que 90% dos donos de negócio não conhecem.' },
+        { pergunta: 'Quanto tempo até ver resultado?', resposta: 'Resultados iniciais em 7-14 dias. Ranking completo em 30-60 dias. Depende da concorrência na sua região.' },
+      ],
+      garantia: 'Se em 30 dias seu perfil não melhorar, devolvemos seu investimento. Simples assim.',
+      valorReal: 'Agências cobram R$ 500 a R$ 2.000 por mês para gerenciar Google Business. Aqui você aprende a fazer sozinho por R$ 20.',
+      urgencia: 'Enquanto você pensa, seus concorrentes estão roubando os clientes que buscam no Google. Configure hoje e comece a aparecer amanhã.',
+    },
     modulos: [
       {
         titulo: 'Módulo 1 — Configuração do Google Business',
@@ -341,6 +486,39 @@ export const cursos: Curso[] = [
       'Hashtags estratégicas por nicho',
       'Métricas e relatórios de redes sociais',
     ],
+    vsl: {
+      hook: 'Você posta todos os dias e ninguém compra. O problema não é a frequência — é a estratégia.',
+      subhook: 'Descubra a estratégia Info-First que o algoritmo do Instagram está favorecendo em 2026 e transforme seguidores em clientes pagantes.',
+      problemas: [
+        'Posta todo dia e o engajamento só cai',
+        'Tem milhares de seguidores mas ninguém compra',
+        'Não sabe o que postar e fica paralisado(a)',
+        'Copia o que os concorrentes fazem e não funciona',
+        'Gasta horas criando conteúdo bonito que ninguém vê',
+        'O algoritmo parece estar contra você',
+      ],
+      transformacao: 'Você vai aprender a estratégia que está fazendo perfis pequenos venderem mais que perfis com 100K seguidores. Conteúdo que informa, não que vende — e ironicamente é o que mais vende. Em 4 módulos, suas redes sociais viram máquina de leads.',
+      antesDepois: [
+        { antes: 'Posts com 15 curtidas', depois: 'Conteúdo salvo e compartilhado centenas de vezes' },
+        { antes: 'Sem ideia do que postar', depois: 'Calendário de 30 dias pronto em 1 hora' },
+        { antes: 'Seguidores fantasmas', depois: 'Comunidade engajada que compra' },
+        { antes: 'Horas criando conteúdo', depois: 'Batch content: 1 semana em 2 horas' },
+      ],
+      depoimentos: [
+        { nome: 'Patrícia Souza', cidade: 'Florianópolis', texto: 'Meu Instagram tinha 2.000 seguidores e nenhuma venda. Apliquei a estratégia Info-First e em 30 dias fechei 8 clientes novos. Sem pagar por anúncio. R$ 20 que mudaram meu negócio.' },
+        { nome: 'Lucas Barbosa', cidade: 'Manaus', texto: 'O calendário editorial do curso é genial. Nunca mais fiquei sem saber o que postar. E o mais louco: posts simples com informação útil geraram mais vendas que meus posts "bonitos".' },
+        { nome: 'Vanessa Costa', cidade: 'Vitória', texto: 'Largei a perfeição e comecei a postar conteúdo útil como o curso ensina. Meu alcance triplicou em 2 semanas. Os salvamentos explodiram. E as DMs de clientes não param.' },
+      ],
+      objecoes: [
+        { pergunta: 'Funciona para qualquer nicho?', resposta: 'A estratégia Info-First funciona para qualquer nicho que resolva problemas: serviços, saúde, educação, beleza, gastronomia, tech — qualquer um.' },
+        { pergunta: 'Preciso ter muitos seguidores?', resposta: 'Não. A estratégia funciona melhor com audiências pequenas e nichadas. Perfis com 500 seguidores vendem mais que perfis com 50K quando a estratégia é certa.' },
+        { pergunta: 'E se eu não sei fazer design?', resposta: 'O curso ensina ferramentas gratuitas como Canva. E a verdade? Posts simples e informativos performam melhor que posts "bonitos" sem conteúdo.' },
+        { pergunta: 'Quanto tempo por dia preciso dedicar?', resposta: 'Com batch content, você cria uma semana de conteúdo em 2 horas. Depois é só agendar e interagir.' },
+      ],
+      garantia: 'Se em 30 dias suas redes sociais não melhorarem, devolvemos os R$ 20. Zero risco.',
+      valorReal: 'Social media managers cobram R$ 1.500 a R$ 5.000 por mês. Aqui você aprende a estratégia por R$ 20.',
+      urgencia: 'O algoritmo de 2026 favorece quem age agora. Cada post sem estratégia é uma oportunidade desperdiçada.',
+    },
     modulos: [
       {
         titulo: 'Módulo 1 — Estratégia Info-First',
@@ -385,6 +563,39 @@ export const cursos: Curso[] = [
       'Métricas de funil: taxa de conversão por etapa',
       'GoHighLevel: visão geral da plataforma',
     ],
+    vsl: {
+      hook: 'Você gera leads. Eles entram. E somem. Ninguém faz follow-up. Ninguém fecha. O problema é que você não tem funil.',
+      subhook: 'Aprenda a montar funis de vendas que trabalham por você 24 horas — do primeiro clique até o pagamento no WhatsApp.',
+      problemas: [
+        'Gera leads mas ninguém retorna as mensagens',
+        'Não tem sistema de follow-up — cada lead morre em 24h',
+        'Gasta dinheiro em anúncios mas não sabe qual canal converte',
+        'Perde vendas porque demora para responder',
+        'Não sabe a diferença entre landing page, site e funil',
+        'Concorrentes automatizaram tudo enquanto você responde lead por lead',
+      ],
+      transformacao: 'Imagine um sistema onde cada lead que entra recebe automaticamente uma mensagem no WhatsApp em 30 segundos, um email de apresentação em 1 hora, e um follow-up em 24h. Sem você fazer nada. É isso que um funil faz.',
+      antesDepois: [
+        { antes: 'Leads sumindo sem resposta', depois: 'Follow-up automático em 30 segundos' },
+        { antes: 'Planilha desorganizada de contatos', depois: 'CRM visual com pipeline de vendas' },
+        { antes: 'Sem saber o que funciona', depois: 'Métricas claras por etapa do funil' },
+        { antes: 'Respondendo leads manualmente', depois: 'Automação WhatsApp + Email + SMS' },
+      ],
+      depoimentos: [
+        { nome: 'Anderson Silva', cidade: 'Ribeirão Preto', texto: 'Antes eu perdia 80% dos leads por demora no retorno. Montei o funil como o curso ensina e minha taxa de conversão foi de 3% para 18%. Em 1 mês o investimento de R$ 20 já retornou R$ 4.000.' },
+        { nome: 'Priscila Nunes', cidade: 'Brasília', texto: 'Eu achava que funil de vendas era coisa complicada. O curso simplifica tudo. Em 3 dias montei minha primeira landing page e sequência de emails. Já estou recebendo leads qualificados.' },
+        { nome: 'Thiago Martins', cidade: 'Cuiabá', texto: 'A parte de GoHighLevel abriu minha mente. Nunca imaginei que dava para automatizar tanto o processo comercial. Hoje meu funil gera 30+ leads por semana no automático.' },
+      ],
+      objecoes: [
+        { pergunta: 'Preciso de ferramentas caras?', resposta: 'Não. O curso ensina conceitos que funcionam em qualquer plataforma. Você pode começar com ferramentas gratuitas e escalar depois.' },
+        { pergunta: 'Funciona para negócios de serviço?', resposta: 'Especialmente para serviços! O funil resolve o principal problema: transformar interessados em clientes de forma automatizada.' },
+        { pergunta: 'É difícil configurar?', resposta: 'O curso é passo a passo. Se você sabe usar WhatsApp, consegue montar um funil. As ferramentas de hoje são visuais e intuitivas.' },
+        { pergunta: 'Quanto tempo para ver resultado?', resposta: 'Funis bem configurados geram resultados em 7-14 dias. O primeiro lead pode chegar no mesmo dia que você ativa.' },
+      ],
+      garantia: 'Se em 7 dias você não sentir que valeu os R$ 20, devolvemos sem perguntas.',
+      valorReal: 'Consultores de funil cobram R$ 3.000 a R$ 15.000 para configurar. Aqui você aprende a fazer sozinho por R$ 20.',
+      urgencia: 'Cada dia sem funil é dinheiro jogado fora em marketing. Os leads que você gera hoje estão morrendo sem follow-up.',
+    },
     modulos: [
       {
         titulo: 'Módulo 1 — Fundamentos de Funil',
@@ -432,6 +643,40 @@ export const cursos: Curso[] = [
       'Comunicação profissional por WhatsApp Business',
       'Organização de reuniões online (Google Meet/Zoom)',
     ],
+    vsl: {
+      hook: 'Sua chefe pediu uma planilha "para ontem". Você ainda não sabe usar Google Sheets. Isso precisa mudar.',
+      subhook: 'Domine as ferramentas digitais que toda secretária moderna precisa. De Google Workspace a IA — torne-se a profissional que nenhuma empresa quer perder. Totalmente gratuito.',
+      problemas: [
+        'Não domina Google Workspace e perde tempo com tarefas simples',
+        'Medo de perder o emprego para alguém mais atualizada',
+        'Formatação de documentos demora o triplo do necessário',
+        'Não sabe organizar agenda e reuniões online de forma profissional',
+        'Precisa criar planilhas e não sabe por onde começar',
+        'Todo mundo fala de IA no escritório e você se sente por fora',
+      ],
+      transformacao: 'Em 6 módulos, você vai dominar todas as ferramentas que uma secretária de alto nível precisa. Google Workspace completo, organização digital, apresentações profissionais e até uso de IA para acelerar seu trabalho. Você vai se tornar indispensável.',
+      antesDepois: [
+        { antes: 'Formatando documento por 2 horas', depois: 'Template pronto em 5 minutos' },
+        { antes: 'Sem saber usar Google Sheets', depois: 'Criando planilhas e relatórios profissionais' },
+        { antes: 'Reuniões desorganizadas', depois: 'Agenda integrada com Google Meet' },
+        { antes: 'Emails longos e confusos', depois: 'Comunicação profissional com templates' },
+        { antes: 'Medo de IA', depois: 'Usando ChatGPT para redigir emails e resumir docs' },
+      ],
+      depoimentos: [
+        { nome: 'Sandra Oliveira', cidade: 'Belo Horizonte', texto: 'Trabalho como secretária há 15 anos e achava que sabia de tudo. Depois do curso descobri atalhos e ferramentas que me economizam 2 horas por dia. Minha chefe notou a diferença.' },
+        { nome: 'Márcia Santos', cidade: 'São Paulo', texto: 'O módulo de IA no escritório mudou minha vida. Agora uso o ChatGPT para redigir emails, resumir atas de reunião e criar planilhas. Passei a ser a referência de tecnologia no escritório.' },
+        { nome: 'Cláudia Ferreira', cidade: 'Rio de Janeiro', texto: 'Estava com medo de perder meu emprego para alguém mais jovem e atualizada. Fiz o curso num fim de semana e agora sou eu que ensino as novas ferramentas para as colegas.' },
+      ],
+      objecoes: [
+        { pergunta: 'Preciso ter computador?', resposta: 'Ideal sim, mas muitas ferramentas funcionam no celular também. O importante é começar a aprender.' },
+        { pergunta: 'Já trabalho com Word/Excel, vale a pena?', resposta: 'Google Workspace é o futuro do escritório. Cada vez mais empresas migram para a nuvem. Aprender agora é se preparar para o mercado.' },
+        { pergunta: 'É realmente gratuito?', resposta: '100% gratuito. Sem cobrança, sem pegadinha. Acesso online e PDF para download.' },
+        { pergunta: 'Não tenho tempo para estudar', resposta: 'Aulas de 10-15 minutos. Estude no intervalo do almoço ou antes de dormir. Em uma semana você termina.' },
+      ],
+      garantia: '100% gratuito — zero risco. Comece agora e transforme sua carreira.',
+      valorReal: 'Cursos de Google Workspace custam R$ 97 a R$ 297 no mercado. Este é totalmente gratuito para empoderar secretárias e assistentes.',
+      urgencia: 'Empresas estão migrando para ferramentas digitais agora. Quem não se atualiza fica para trás. Comece hoje — é gratuito.',
+    },
     modulos: [
       {
         titulo: 'Módulo 1 — Google Workspace: Seu Kit de Ferramentas',

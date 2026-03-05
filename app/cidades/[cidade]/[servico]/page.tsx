@@ -29,6 +29,12 @@ export async function generateMetadata({ params }: { params: Promise<{ cidade: s
     title: `${servico.nome} em ${cidade.nome}, MA | Para Brasileiros`,
     description: `${servico.descricaoCurta} Especialista em brasileiros em ${cidade.nome}, Massachusetts. Atendimento em portugues, resultados reais. Fale agora!`,
     alternates: { canonical: `https://calazanslumina.com.br/cidades/${cidadeSlug}/${servicoSlug}` },
+    openGraph: {
+      title: `${servico.nome} em ${cidade.nome}, MA | Calazans Lumina`,
+      description: `${servico.descricaoCurta} Para brasileiros em ${cidade.nome}, Massachusetts.`,
+      url: `https://calazanslumina.com.br/cidades/${cidadeSlug}/${servicoSlug}`,
+      type: 'website',
+    },
   }
 }
 
@@ -40,8 +46,32 @@ export default async function CidadeServicoPage({ params }: { params: Promise<{ 
 
   const outrosServicos = servicos.filter((s) => s.slug !== servicoSlug)
 
+  const localBusinessSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Calazans Lumina',
+    description: `${servico.nome} para brasileiros em ${cidade.nome}, Massachusetts`,
+    url: `https://calazanslumina.com.br/cidades/${cidadeSlug}/${servicoSlug}`,
+    telephone: '+5531982948067',
+    areaServed: { '@type': 'City', name: cidade.nome, containedInPlace: { '@type': 'State', name: 'Massachusetts' } },
+    serviceType: servico.nome,
+  }
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: servico.faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.pergunta,
+      acceptedAnswer: { '@type': 'Answer', text: f.resposta },
+    })),
+  }
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+
       {/* Hero */}
       <section className="relative min-h-[80vh] flex items-center">
         <Image
