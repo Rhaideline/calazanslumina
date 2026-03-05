@@ -4,9 +4,16 @@ import ScrollReveal from '@/components/ScrollReveal'
 import CTAForm from '@/components/CTAForm'
 
 export const metadata: Metadata = {
-  title: 'Contato | Fale com a Calazans Lumina',
+  title: 'Contato | Fale Agora pelo WhatsApp ou Formulario',
   description:
-    'Entre em contato com a Calazans Lumina pelo WhatsApp, Instagram ou formulário. Marketing digital para brasileiros nos EUA e Brasil. Resposta em até 24h.',
+    'Fale com a Calazans Lumina pelo WhatsApp, Instagram ou formulario. Marketing digital para brasileiros nos EUA e Brasil. Resposta em ate 24h. Orcamento gratuito!',
+  alternates: { canonical: 'https://calazanslumina.com.br/contato' },
+  openGraph: {
+    title: 'Contato | Calazans Lumina',
+    description: 'Fale pelo WhatsApp, Instagram ou formulario. Resposta em ate 24h.',
+    url: 'https://calazanslumina.com.br/contato',
+    type: 'website',
+  },
 }
 
 const canais = [

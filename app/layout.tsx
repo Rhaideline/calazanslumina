@@ -67,6 +67,17 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Calazans Lumina | Marketing Digital para Brasileiros nos EUA e Brasil',
+    description:
+      'Sites, funis GHL, CRM com IA, redes sociais e Google Maps para empreendedores brasileiros. Atendimento em português.',
+    images: ['https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3c6855d8bc9a8c44fb4d.png'],
+    creator: '@calazanslumina',
+  },
+  alternates: {
+    canonical: 'https://calazanslumina.com.br',
+  },
   robots: {
     index: true,
     follow: true,

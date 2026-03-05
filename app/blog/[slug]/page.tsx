@@ -21,12 +21,21 @@ export async function generateMetadata({
   return {
     title: post.titulo,
     description: post.resumo,
+    alternates: { canonical: `https://calazanslumina.com.br/blog/${slug}` },
     openGraph: {
       title: post.titulo,
       description: post.resumo,
       type: 'article',
       authors: [post.autor],
-      images: [{ url: post.imagem }],
+      publishedTime: post.dataPublicacao,
+      images: [{ url: post.imagem, width: 1200, height: 630, alt: post.titulo }],
+      url: `https://calazanslumina.com.br/blog/${slug}`,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.titulo,
+      description: post.resumo,
+      images: [post.imagem],
     },
   }
 }
@@ -42,8 +51,25 @@ export default async function BlogPostPage({
 
   const outrosPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 3)
 
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.titulo,
+    description: post.resumo,
+    image: post.imagem,
+    author: { '@type': 'Person', name: post.autor },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Calazans Lumina',
+      logo: { '@type': 'ImageObject', url: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6da0830220a0c3e452.png' },
+    },
+    datePublished: post.dataPublicacao,
+    mainEntityOfPage: `https://calazanslumina.com.br/blog/${slug}`,
+  }
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       {/* Header */}
       <article className="section-padding bg-white">
         <div className="container-main max-w-3xl">

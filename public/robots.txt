@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /cursos/acesso/
+Disallow: /_next/
+Disallow: /api/
+
+Sitemap: https://calazanslumina.com.br/sitemap.xml

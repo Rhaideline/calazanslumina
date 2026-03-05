@@ -22,8 +22,15 @@ export async function generateMetadata({ params }: { params: Promise<{ capital: 
   const capital = getCapitalBRBySlug(capitalSlug)
   if (!capital) return {}
   return {
-    title: `Agência de Marketing Digital em ${capital.nome}`,
-    description: `Sites Next.js, funis de vendas, CRM com IA, redes sociais e Google Meu Negócio para negócios em ${capital.nome}. Calazans Lumina.`,
+    title: `Marketing Digital em ${capital.nome} | Sites, Funis e Google Maps`,
+    description: `Agencia de marketing digital em ${capital.nome}. Sites de alta performance, funis automatizados, CRM com IA no WhatsApp e Google Meu Negocio. Resultados reais. Fale agora!`,
+    alternates: { canonical: `https://calazanslumina.com.br/brasil/${capitalSlug}` },
+    openGraph: {
+      title: `Marketing Digital em ${capital.nome} | Calazans Lumina`,
+      description: `Sites, funis GHL, CRM com IA e Google Maps para negocios em ${capital.nome}.`,
+      url: `https://calazanslumina.com.br/brasil/${capitalSlug}`,
+      type: 'website',
+    },
   }
 }
 

@@ -13,9 +13,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params
   const curso = cursos.find((c) => c.slug === slug)
   if (!curso) return {}
+  const totalAulas = curso.modulos.reduce((acc, m) => acc + m.aulas.length, 0)
   return {
-    title: `${curso.nome} | ${curso.gratuito ? 'Curso Gratuito' : `Curso R$ ${curso.preco}`}`,
-    description: curso.descricaoCurta,
+    title: `${curso.nome} | ${curso.gratuito ? 'Gratuito' : `R$ ${curso.preco}`} — ${curso.modulos.length} Modulos`,
+    description: `${curso.descricaoCurta} ${curso.modulos.length} modulos, ${totalAulas} aulas. ${curso.gratuito ? 'Acesso gratuito + PDF.' : `Apenas R$ ${curso.preco},00. Acesso imediato.`}`,
+    alternates: { canonical: `https://calazanslumina.com.br/cursos/${slug}` },
+    openGraph: {
+      title: `${curso.nome} | ${curso.gratuito ? 'Curso Gratuito' : `R$ ${curso.preco}`}`,
+      description: curso.descricaoCurta,
+      url: `https://calazanslumina.com.br/cursos/${slug}`,
+      type: 'website',
+      images: [{ url: curso.imagem, width: 600, height: 600, alt: curso.nome }],
+    },
   }
 }
 
@@ -26,8 +35,28 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
 
   const totalAulas = curso.modulos.reduce((acc, m) => acc + m.aulas.length, 0)
 
+  const courseSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: curso.nome,
+    description: curso.descricaoCurta,
+    provider: { '@type': 'Organization', name: 'Calazans Lumina', url: 'https://calazanslumina.com.br' },
+    offers: {
+      '@type': 'Offer',
+      price: curso.preco,
+      priceCurrency: 'BRL',
+      availability: 'https://schema.org/InStock',
+    },
+    hasCourseInstance: {
+      '@type': 'CourseInstance',
+      courseMode: 'online',
+      courseWorkload: `${totalAulas} aulas`,
+    },
+  }
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }} />
       {/* Hero */}
       <section className="relative py-20 md:py-28 bg-brand-dark text-white overflow-hidden">
         <Image

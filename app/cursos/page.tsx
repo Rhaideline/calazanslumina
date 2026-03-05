@@ -5,9 +5,16 @@ import ScrollReveal from '@/components/ScrollReveal'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Cursos de Marketing Digital | Gratuitos e a partir de R$ 20',
+  title: 'Cursos de Marketing Digital | 2 Gratuitos + 5 por R$20',
   description:
-    'Cursos de marketing digital para iniciantes. IA & ChatGPT, Google Meu Negócio, Redes Sociais, Funis de Vendas. Cursos gratuitos e a partir de R$ 20. Por Rhaideline Calazans.',
+    'Aprenda marketing digital do zero: IA & ChatGPT, Google Meu Negocio, Redes Sociais, Funis de Vendas. 2 cursos gratuitos + 5 por apenas R$20. PDF + acesso online. Comece agora!',
+  alternates: { canonical: 'https://calazanslumina.com.br/cursos' },
+  openGraph: {
+    title: 'Cursos de Marketing Digital | 2 Gratuitos + 5 por R$20',
+    description: 'Aprenda marketing digital do zero. 7 cursos disponiveis, 2 gratuitos. PDF + acesso online.',
+    url: 'https://calazanslumina.com.br/cursos',
+    type: 'website',
+  },
 }
 
 export default function CursosPage() {

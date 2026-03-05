@@ -6,9 +6,16 @@ import CTAForm from '@/components/CTAForm'
 import ServiceIcon from '@/components/ServiceIcon'
 
 export const metadata: Metadata = {
-  title: 'Serviços de Marketing Digital | Sites, Funis, CRM, Redes Sociais',
+  title: 'Servicos de Marketing Digital | Sites, Funis GHL, CRM com IA',
   description:
-    'Sites Next.js, funis GHL, CRM com IA, gestão de redes sociais e Google Business Profile. Soluções completas para brasileiros nos EUA e Brasil.',
+    'Sites de alta performance, funis automatizados no GoHighLevel, CRM com IA no WhatsApp, gestao de redes sociais e Google Maps. Para brasileiros nos EUA e Brasil.',
+  alternates: { canonical: 'https://calazanslumina.com.br/servicos' },
+  openGraph: {
+    title: 'Servicos de Marketing Digital | Calazans Lumina',
+    description: 'Sites, funis GHL, CRM com IA, redes sociais e Google Maps. Solucoes completas para brasileiros.',
+    url: 'https://calazanslumina.com.br/servicos',
+    type: 'website',
+  },
 }
 
 export default function ServicosPage() {

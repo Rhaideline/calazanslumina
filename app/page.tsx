@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { servicos } from '@/data/servicos'
@@ -9,12 +10,25 @@ import HeroForm from '@/components/HeroForm'
 import HeroBadges from '@/components/HeroBadges'
 import PricingTable from '@/components/PricingTable'
 
+export const metadata: Metadata = {
+  title: 'Marketing Digital para Brasileiros nos EUA e Brasil | Calazans Lumina',
+  description:
+    'Sites de alta performance, funis automatizados, CRM com IA e Google Maps para brasileiros nos EUA e Brasil. 8+ anos, 100+ projetos. Resultado garantido.',
+  alternates: { canonical: 'https://calazanslumina.com.br' },
+  openGraph: {
+    title: 'Marketing Digital para Brasileiros nos EUA e Brasil | Calazans Lumina',
+    description: 'Sites, funis GHL, CRM com IA e Google Maps. 8+ anos transformando negocios de brasileiros.',
+    url: 'https://calazanslumina.com.br',
+    type: 'website',
+  },
+}
+
 const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: 'Calazans Lumina',
   description: 'Agência de marketing digital especializada em brasileiros nos EUA e Brasil. Sites profissionais, funis de vendas, CRM com IA e Google Business Profile.',
-  url: 'https://calazanslumina.com',
+  url: 'https://calazanslumina.com.br',
   telephone: '+5531982948067',
   address: {
     '@type': 'PostalAddress',

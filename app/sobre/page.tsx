@@ -5,9 +5,16 @@ import ScrollReveal from '@/components/ScrollReveal'
 import CTAForm from '@/components/CTAForm'
 
 export const metadata: Metadata = {
-  title: 'Sobre Rhaideline Calazans | Fundadora da Calazans Lumina',
+  title: 'Sobre Rhaideline Calazans | 8+ Anos em Marketing Digital',
   description:
-    'Conheça a história de Rhaideline Calazans: de secretária médica a especialista em marketing digital com 8+ anos de experiência. Atendendo brasileiros nos EUA e Brasil.',
+    'De secretaria medica a especialista em marketing digital com 8+ anos e 100+ projetos. Fundadora da Calazans Lumina, atendendo brasileiros nos EUA e Brasil.',
+  alternates: { canonical: 'https://calazanslumina.com.br/sobre' },
+  openGraph: {
+    title: 'Sobre Rhaideline Calazans | Calazans Lumina',
+    description: 'De secretaria medica a especialista em marketing digital. 8+ anos, 100+ projetos.',
+    url: 'https://calazanslumina.com.br/sobre',
+    type: 'profile',
+  },
 }
 
 export default function SobrePage() {

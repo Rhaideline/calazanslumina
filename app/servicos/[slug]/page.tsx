@@ -25,13 +25,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: servico.metaTitle,
     description: servico.metaDescription,
     alternates: {
-      canonical: `https://calazanslumina.com/servicos/${servico.slug}`,
+      canonical: `https://calazanslumina.com.br/servicos/${servico.slug}`,
     },
     openGraph: {
       title: servico.metaTitle,
       description: servico.metaDescription,
       type: 'website',
-      url: `https://calazanslumina.com/servicos/${servico.slug}`,
+      url: `https://calazanslumina.com.br/servicos/${servico.slug}`,
     },
   }
 }
@@ -54,7 +54,7 @@ export default async function ServicoPage({ params }: { params: Promise<{ slug: 
       url: 'https://calazanslumina.com',
     },
     areaServed: ['Massachusetts, USA', 'Brasil'],
-    url: `https://calazanslumina.com/servicos/${servico.slug}`,
+    url: `https://calazanslumina.com.br/servicos/${servico.slug}`,
   }
 
   const faqSchema = {
