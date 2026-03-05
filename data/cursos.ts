@@ -279,7 +279,7 @@ export const cursos: Curso[] = [
     descricaoLonga: 'Curso prático e direto para configurar seu Google Business Profile do zero e otimizar para aparecer nas primeiras posições do Google Maps. Com dados reais e técnicas que aplicamos nos clientes da Calazans Lumina.',
     preco: 20,
     pdfDisponivel: true,
-    linkPagamento: 'https://link.fastpaydirect.com/payment-link/69a8eabecd45df2539892d27',
+    linkPagamento: 'https://link.fastpaydirect.com/payment-link/69a8ea7284b2d750dd5e3a71',
     imagem: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b9ac95dfd50100d491487.png',
     paraQuem: [
       'Negócios locais que querem mais visibilidade',
