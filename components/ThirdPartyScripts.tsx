@@ -16,7 +16,7 @@ export default function ThirdPartyScripts() {
       }
     }
 
-    const timer = setTimeout(load, 5000)
+    const timer = setTimeout(load, 12000)
 
     const events = ['scroll', 'touchstart', 'click', 'mousemove'] as const
     const handler = () => load()

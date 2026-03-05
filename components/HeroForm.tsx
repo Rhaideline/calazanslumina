@@ -15,6 +15,7 @@ export default function HeroForm({ titulo }: { titulo?: string }) {
         id="inline-ncofzws1iEKhN6iFEA6H"
         className="min-h-[480px]"
         height="480px"
+        trigger="click"
       />
     </div>
   )
