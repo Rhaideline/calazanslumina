@@ -144,7 +144,7 @@ export default function CursosPage() {
                       ) : (
                         <>
                           <a
-                            href="https://link.fastpaydirect.com/payment-link/69a8cc1484b2d7dfdd5e1370"
+                            href={curso.linkPagamento || '#'}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn-primary text-sm py-3 text-center w-full inline-flex items-center justify-center gap-2"

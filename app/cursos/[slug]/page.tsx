@@ -106,7 +106,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                   </>
                 ) : (
                   <a
-                    href="https://link.fastpaydirect.com/payment-link/69a8cc1484b2d7dfdd5e1370"
+                    href={curso.linkPagamento || '#'}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-primary text-base"
@@ -248,7 +248,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                 </>
               ) : (
                 <a
-                  href="https://link.fastpaydirect.com/payment-link/69a8cc1484b2d7dfdd5e1370"
+                  href={curso.linkPagamento || '#'}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary text-base"

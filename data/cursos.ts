@@ -11,6 +11,7 @@ export interface Curso {
   destaque?: boolean
   pdfDisponivel?: boolean
   gratuito?: boolean
+  linkPagamento?: string
 }
 
 export const cursos: Curso[] = [
@@ -110,6 +111,7 @@ export const cursos: Curso[] = [
     preco: 20,
     destaque: true,
     pdfDisponivel: true,
+    linkPagamento: 'https://link.fastpaydirect.com/payment-link/69a8cc1484b2d7dfdd5e1370',
     imagem: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b9a7c55d8bc1b616621c7.png',
     paraQuem: [
       'Empreendedores que querem usar IA no dia a dia',
@@ -225,6 +227,7 @@ export const cursos: Curso[] = [
     descricaoLonga: 'Curso completo para quem nunca fez marketing digital. Desde os conceitos básicos até a implementação prática de estratégias que geram resultado. Você vai aprender a criar presença digital, atrair visitantes, gerar leads e converter em vendas.',
     preco: 20,
     pdfDisponivel: true,
+    linkPagamento: 'https://link.fastpaydirect.com/payment-link/69a8e72826494b224ce21c37',
     imagem: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b9ac95dfd50100d491487.png',
     paraQuem: [
       'Empreendedores que estão começando no digital',
@@ -276,6 +279,7 @@ export const cursos: Curso[] = [
     descricaoLonga: 'Curso prático e direto para configurar seu Google Business Profile do zero e otimizar para aparecer nas primeiras posições do Google Maps. Com dados reais e técnicas que aplicamos nos clientes da Calazans Lumina.',
     preco: 20,
     pdfDisponivel: true,
+    linkPagamento: 'https://link.fastpaydirect.com/payment-link/69a8eabecd45df2539892d27',
     imagem: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b9ac95dfd50100d491487.png',
     paraQuem: [
       'Negócios locais que querem mais visibilidade',
@@ -319,6 +323,7 @@ export const cursos: Curso[] = [
     descricaoLonga: 'Curso focado em transformar redes sociais de vitrine para máquina de vendas. Usando a estratégia Info-First que o algoritmo do Instagram e outras plataformas favorecem. Com templates de posts, calendário editorial e métricas que importam.',
     preco: 20,
     pdfDisponivel: true,
+    linkPagamento: 'https://link.fastpaydirect.com/payment-link/69a8e8f9beb6cd210e71a584',
     imagem: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b9ac94c8da27eb5b8f7fb.png',
     paraQuem: [
       'Empreendedores que postam mas não geram vendas',
@@ -362,6 +367,7 @@ export const cursos: Curso[] = [
     descricaoLonga: 'Curso prático sobre funis de vendas para quem quer parar de perder leads e começar a converter de forma automatizada. Com exemplos reais de funis que implementamos na Calazans Lumina usando GoHighLevel.',
     preco: 20,
     pdfDisponivel: true,
+    linkPagamento: 'https://link.fastpaydirect.com/payment-link/69a8eabecd45df2539892d27',
     imagem: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b9ac95dfd50100d491487.png',
     paraQuem: [
       'Empreendedores que perdem leads por falta de follow-up',

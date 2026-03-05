@@ -35,7 +35,7 @@ export default function AprenderPage() {
 
           <div className="flex flex-col gap-3 max-w-xs mx-auto">
             <a
-              href="https://link.fastpaydirect.com/payment-link/69a8cc1484b2d7dfdd5e1370"
+              href={cursoInfo.linkPagamento || '#'}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary text-sm justify-center inline-flex items-center gap-2"
