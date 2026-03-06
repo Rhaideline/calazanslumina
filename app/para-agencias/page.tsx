@@ -329,6 +329,144 @@ export default function ParaAgenciasPage() {
         </div>
       </section>
 
+      {/* === PORTFOLIO DE AUTOMACOES === */}
+      <section className="section-padding bg-white">
+        <div className="container-main">
+          <ScrollReveal className="text-center mb-16">
+            <p className="text-brand-mint text-sm font-bold uppercase tracking-wider mb-3">Automacoes reais em producao</p>
+            <h2 className="heading-2 text-brand-dark mb-4">Exemplos do que eu construo</h2>
+            <p className="text-brand-dark/50 max-w-2xl mx-auto">
+              Esses sao workflows reais rodando em producao para clientes. Automacoes completas que funcionam 24/7 sem intervencao humana.
+            </p>
+          </ScrollReveal>
+
+          <div className="space-y-12 max-w-5xl mx-auto">
+            {/* Workflow n8n — Auto Publicacao */}
+            <ScrollReveal>
+              <div className="bg-brand-bg border border-gray-100 rounded-2xl overflow-hidden">
+                <div className="p-6 md:p-8">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 bg-[#FF6D5A]/10 rounded-xl flex items-center justify-center">
+                      <svg className="w-5 h-5 text-[#FF6D5A]" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="font-serif text-lg font-bold text-brand-dark">Auto Publicacao de Noticias com IA</h3>
+                      <p className="text-brand-dark/40 text-xs">n8n + IA + Unsplash + GoHighLevel + GitHub</p>
+                    </div>
+                    <span className="ml-auto bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full">Em producao</span>
+                  </div>
+
+                  <p className="text-brand-dark/60 text-sm leading-relaxed mb-6">
+                    Workflow completo que roda automaticamente: coleta noticias de 4+ fontes RSS, filtra e pontua por relevancia,
+                    gera legendas com IA, busca imagens no Unsplash, monta o design do post, publica automaticamente no social media
+                    via GHL e tambem gera artigos completos para o blog do site via GitHub. Tudo sem intervencao humana.
+                  </p>
+
+                  {/* Visual Flow Diagram */}
+                  <div className="bg-white rounded-xl border border-gray-100 p-6 overflow-x-auto">
+                    <div className="flex items-center gap-2 flex-wrap justify-center min-w-[600px]">
+                      {[
+                        { label: 'Schedule Trigger', cor: 'bg-green-500' },
+                        { label: 'RSS Feeds (4+)', cor: 'bg-orange-400' },
+                        { label: 'Merge + Pontuar', cor: 'bg-purple-400' },
+                        { label: 'Filtrar Top 3', cor: 'bg-blue-400' },
+                        { label: 'Google Sheets', cor: 'bg-green-400' },
+                        { label: 'IA Gerar Legenda', cor: 'bg-pink-400' },
+                        { label: 'Unsplash Imagem', cor: 'bg-teal-400' },
+                        { label: 'Design HTML', cor: 'bg-indigo-400' },
+                        { label: 'Gerar Post', cor: 'bg-yellow-500' },
+                        { label: 'Publicar GHL', cor: 'bg-brand-mint' },
+                      ].map((step, i) => (
+                        <div key={i} className="flex items-center gap-2">
+                          <div className="flex flex-col items-center">
+                            <div className={`w-3 h-3 ${step.cor} rounded-full`} />
+                            <span className="text-[10px] text-brand-dark/50 mt-1 whitespace-nowrap">{step.label}</span>
+                          </div>
+                          {i < 9 && (
+                            <svg className="w-4 h-4 text-brand-dark/20 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                    <div className="mt-4 pt-4 border-t border-gray-50 flex items-center justify-center gap-6 text-xs text-brand-dark/40">
+                      <span>Ramo alternativo: Sem noticias → Gerar artigo HTML → GitHub → Publicar no site</span>
+                    </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-3 gap-4 mt-6">
+                    <div className="bg-white rounded-xl border border-gray-100 p-4 text-center">
+                      <p className="font-serif text-2xl font-bold text-brand-dark">177k+</p>
+                      <p className="text-brand-dark/40 text-xs">Execucoes realizadas</p>
+                    </div>
+                    <div className="bg-white rounded-xl border border-gray-100 p-4 text-center">
+                      <p className="font-serif text-2xl font-bold text-brand-dark">24/7</p>
+                      <p className="text-brand-dark/40 text-xs">Rodando automaticamente</p>
+                    </div>
+                    <div className="bg-white rounded-xl border border-gray-100 p-4 text-center">
+                      <p className="font-serif text-2xl font-bold text-brand-dark">0</p>
+                      <p className="text-brand-dark/40 text-xs">Intervencao humana</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Workflow GHL — Automacao de Atendimento */}
+            <ScrollReveal delay={100}>
+              <div className="bg-brand-bg border border-gray-100 rounded-2xl overflow-hidden">
+                <div className="p-6 md:p-8">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 bg-brand-mint/10 rounded-xl flex items-center justify-center">
+                      <svg className="w-5 h-5 text-brand-mint" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="font-serif text-lg font-bold text-brand-dark">Automacao Completa de Atendimento</h3>
+                      <p className="text-brand-dark/40 text-xs">GoHighLevel — Workflow de follow-up + chatbot + CRM</p>
+                    </div>
+                    <span className="ml-auto bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full">Em producao</span>
+                  </div>
+
+                  <p className="text-brand-dark/60 text-sm leading-relaxed mb-6">
+                    Sistema completo configurado dentro do GHL para clinica de saude: chatbot IA no WhatsApp qualifica o paciente,
+                    agenda consulta automaticamente, envia lembretes, faz follow-up pos-consulta e reativa pacientes inativos.
+                    Pipeline CRM com movimentacao automatica entre etapas.
+                  </p>
+
+                  <div className="bg-white rounded-xl border border-gray-100 p-6">
+                    <div className="grid md:grid-cols-2 gap-4">
+                      {[
+                        { titulo: 'Chatbot IA WhatsApp', desc: 'Atende, qualifica e agenda automaticamente' },
+                        { titulo: 'Pipeline CRM', desc: '6 etapas com movimentacao automatica' },
+                        { titulo: 'Follow-up sequencial', desc: 'Dia 1, 3, 7, 14 e 30 apos contato' },
+                        { titulo: 'Anti no-show', desc: 'Lembretes 24h e 1h antes + reengajamento' },
+                        { titulo: 'Reativacao', desc: 'Workflow para pacientes inativos ha 60+ dias' },
+                        { titulo: 'Relatorios', desc: 'Dashboard com metricas de conversao e agendamento' },
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-start gap-3">
+                          <svg className="w-4 h-4 text-brand-mint flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <div>
+                            <p className="text-brand-dark font-medium text-sm">{item.titulo}</p>
+                            <p className="text-brand-dark/40 text-xs">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       {/* === TRIGGERS & AUTOMACOES GHL === */}
       <section className="section-padding bg-brand-dark text-white">
         <div className="container-main">
