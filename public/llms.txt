@@ -58,6 +58,22 @@ Atendemos brasileiros em mais de 100 cidades de Massachusetts, incluindo: Marlbo
 ### Brasil
 Atendemos em 227 cidades brasileiras: 27 capitais + 200 cidades principais de 20 estados. Incluindo: Sao Paulo, Rio de Janeiro, Belo Horizonte, Salvador, Fortaleza, Brasilia, Curitiba, Recife, Porto Alegre, Campinas, Guarulhos, Uberlandia, Niteroi, Caxias do Sul, Londrina, Joinville, Feira de Santana, Caruaru, Juazeiro do Norte, Rondonopolis, Dourados, Parnaiba, Arapiraca, entre outras. Total de paginas por cidade: /brasil/{cidade}/ e /brasil/{cidade}/{servico}.
 
+## Para Agencias — Freelancer GoHighLevel
+
+Rhaideline Calazans atua como freelancer especialista em GoHighLevel para agencias que compram o white-label e precisam de implementacao tecnica. Servicos incluem:
+
+- Templates de mensagens WhatsApp (boas-vindas, follow-up, reativacao)
+- Automacao de follow-up completa (workflows, triggers, condicoes if/else)
+- Chatbot & agente IA no WhatsApp (qualificacao, agendamento, transferencia)
+- CRM & pipeline de vendas (etapas, tags, automacoes de movimentacao)
+- Funis de vendas & landing pages (A/B testing, upsell, pagamento)
+- Calendario & agendamento (lembretes, anti-no-show, round-robin)
+- Relatorios & dashboards (metricas por sub-account, exportacao)
+- Campanhas de email & SMS (sequencias, segmentacao, testes A/B)
+
+Modelos: Setup unico, pacote mensal, ou sob demanda.
+URL: https://calazanslumina.com.br/para-agencias
+
 ## Contato
 
 - WhatsApp: +55 31 98294-8067

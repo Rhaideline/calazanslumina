@@ -297,6 +297,57 @@ Marlborough, Hudson, Framingham, Worcester, Lowell, Brockton, Somerville, Everet
 
 ---
 
+## Para Agencias — Freelancer GoHighLevel
+
+Rhaideline Calazans atua como freelancer especialista em GoHighLevel para agencias que compram o white-label mas nao tem equipe tecnica para implementar. A agencia vende, Rhaideline implementa.
+
+### Servicos oferecidos para agencias:
+
+**1. Templates de Mensagens WhatsApp**
+- Mapeamento da jornada do cliente
+- 10-20 templates por fluxo (boas-vindas, follow-up, lembrete, pos-venda, reativacao)
+- Mensagens com botoes de resposta rapida e listas interativas
+- Personalizacao com campos customizados
+
+**2. Automacao de Follow-Up**
+- Workflows de nurturing (5-10 mensagens automaticas)
+- Triggers baseados em acoes (formulario, clique, resposta, tag)
+- Condicoes if/else, delays inteligentes, notificacao ao vendedor
+- Workflow de no-show e reengajamento
+
+**3. Chatbot & Agente IA no WhatsApp**
+- Bot de conversacao com fluxos condicionais
+- Integracao com IA (OpenAI/ChatGPT) para respostas inteligentes
+- Qualificacao automatica, agendamento via bot, transferencia para humano
+- Respostas fora do horario comercial
+
+**4. CRM & Pipeline de Vendas**
+- Pipelines customizados, etapas, campos customizados
+- Automacao de movimentacao entre etapas
+- Tags automaticas, tarefas automaticas, dashboard de metricas
+
+**5. Funis de Vendas & Landing Pages**
+- Landing pages otimizadas, paginas de obrigado, upsell/downsell
+- A/B testing, integracao com Stripe/PayPal
+- Formularios multi-step, pop-ups de saida
+
+**6. Calendario & Agendamento**
+- Horarios configurados, lembretes automaticos (WhatsApp + email)
+- Confirmacao de presenca, anti-no-show, round-robin
+
+**7. Relatorios & Dashboards**
+- Dashboard por cliente e visao geral da agencia
+- Metricas de leads, conversao, agendamentos, campanhas
+
+**8. Campanhas de Email & SMS**
+- Templates responsivos, sequencias automatizadas
+- Segmentacao por tags/pipeline, testes A/B
+
+**Modelos de contratacao**: Setup unico (5-7 dias), pacote mensal, ou sob demanda.
+**URL**: https://calazanslumina.com.br/para-agencias
+
+---
+
 ## Contato
 
 - **Site**: https://calazanslumina.com.br
