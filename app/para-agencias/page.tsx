@@ -329,6 +329,100 @@ export default function ParaAgenciasPage() {
         </div>
       </section>
 
+      {/* === TRIGGERS & AUTOMACOES GHL === */}
+      <section className="section-padding bg-brand-dark text-white">
+        <div className="container-main">
+          <ScrollReveal className="text-center mb-16">
+            <p className="text-brand-mint text-sm font-bold uppercase tracking-wider mb-3">100+ gatilhos disponiveis</p>
+            <h2 className="heading-2 mb-4">Todos os triggers do GHL que eu domino</h2>
+            <p className="text-white/50 max-w-2xl mx-auto">
+              Cada automacao comeca com um gatilho. Abaixo estao todos os triggers que configuro nos workflows dos seus clientes — organizados por categoria.
+            </p>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {[
+              {
+                cat: 'Contatos & CRM',
+                triggers: ['Contact Created', 'Contact Changed', 'Contact Tag', 'Contact DND', 'Contact Engagement Score', 'Note Added', 'Note Changed', 'Task Added', 'Task Reminder', 'Task Completed', 'Birthday Reminder', 'Custom Date Reminder', 'Number Validation'],
+              },
+              {
+                cat: 'Comunicacao & Respostas',
+                triggers: ['Customer Replied', 'Email Events', 'Messaging Error - SMS', 'Conversation AI Trigger', 'Trigger Link Clicked', 'Inbound Webhook', 'Custom Trigger'],
+              },
+              {
+                cat: 'Formularios & Captura',
+                triggers: ['Form Submitted', 'Survey Submitted', 'Quiz Submitted', 'Facebook Lead Form Submitted', 'TikTok Form Submitted', 'LinkedIn Lead Form Submitted', 'Google Lead Form Submitted', 'Click to WhatsApp Ads'],
+              },
+              {
+                cat: 'Agendamento & Calendario',
+                triggers: ['Customer Booked Appointment', 'Appointment Status', 'Service Booking', 'Rental Booking', 'Scheduler'],
+              },
+              {
+                cat: 'Pipeline & Oportunidades',
+                triggers: ['Opportunity Created', 'Opportunity Changed', 'Opportunity Status Changed', 'Pipeline Stage Changed', 'Stale Opportunities', 'Prospect Generated'],
+              },
+              {
+                cat: 'Pagamentos & E-commerce',
+                triggers: ['Payment Received', 'Invoice', 'Order Form Submission', 'Order Submitted', 'Order Fulfilled', 'Subscription', 'Refund', 'Coupon Code Applied', 'Coupon Redemption Limit Reached', 'Coupon Code Expired', 'Coupon Code Redeemed', 'Abandoned Checkout'],
+              },
+              {
+                cat: 'Cursos & Memberships',
+                triggers: ['New Signup', 'User Login', 'Offer Access Granted', 'Offer Access Removed', 'Product Access Granted', 'Product Access Removed', 'Product Started', 'Product Completed', 'Category Started', 'Category Completed', 'Lesson Started', 'Lesson Completed', 'Lead Created', 'Certificates Issued'],
+              },
+              {
+                cat: 'Redes Sociais',
+                triggers: ['Facebook - Comments on a Post', 'Instagram - Comments on a Post', 'TikTok - Comments on a Video', 'External Tracking Event', 'Video Tracking'],
+              },
+              {
+                cat: 'Afiliados & Comunidade',
+                triggers: ['Affiliate Created', 'New Affiliate Sales', 'Affiliate enrolled in campaign', 'Group Access Granted', 'Group Access Revoked', 'Private Channel Access Granted', 'Private Channel Access Revoked', 'Community Group Member Leaderboard Level Changed'],
+              },
+              {
+                cat: 'Telefonia & IVR',
+                triggers: ['Call Details', 'Start IVR Trigger', 'Transcript Generated'],
+              },
+              {
+                cat: 'Funis & Sites',
+                triggers: ['Funnel/Website PageView', 'Product Review Submitted', 'Shopify Order Placed'],
+              },
+              {
+                cat: 'Documentos & Contratos',
+                triggers: ['Documents & Contracts', 'Estimates', 'New Review Received'],
+              },
+            ].map((grupo, i) => (
+              <ScrollReveal key={i} delay={i * 60}>
+                <div className="bg-white/5 border border-white/10 rounded-2xl p-6 h-full">
+                  <h3 className="font-serif text-base font-bold text-brand-mint mb-4">{grupo.cat}</h3>
+                  <ul className="space-y-1.5">
+                    {grupo.triggers.map((t, j) => (
+                      <li key={j} className="flex items-center gap-2 text-xs text-white/60">
+                        <span className="w-1.5 h-1.5 bg-brand-mint/60 rounded-full flex-shrink-0" />
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <ScrollReveal className="text-center mt-12">
+            <p className="text-white/40 text-sm mb-6">
+              Cada trigger pode ser combinado com condicoes, filtros, delays e acoes para criar workflows complexos e personalizados.
+            </p>
+            <a
+              href="https://wa.me/5531982948067?text=Olá, preciso configurar automações no GoHighLevel"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              Quero configurar minhas automacoes
+            </a>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* === QUEM SOU EU === */}
       <section className="section-padding bg-brand-dark text-white">
         <div className="container-main max-w-4xl">
