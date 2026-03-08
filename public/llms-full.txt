@@ -348,55 +348,46 @@ Rhaideline Calazans atua como freelancer especialista em GoHighLevel para agenci
 
 ---
 
-## Para Clinicas — MedSaaS
+## Ferramentas Recomendadas
 
-Sistema SaaS completo para gestao de clinicas medicas e profissionais de saude. Desenvolvido com Next.js, React, TypeScript e Supabase.
+Pagina de curadoria com produtos selecionados por Rhaideline Calazans para empreendedores digitais. Links de afiliado Amazon e Shopee — o visitante nao paga nada a mais.
 
-### Modulos do Sistema:
+### Categorias:
 
-**1. Agenda Inteligente**
-- Visao dia, semana e mes com controle por profissional
-- Status: agendado, confirmado, em atendimento, concluido, cancelado, no-show
-- Suporte a consultas presenciais e telemedicina
-- Duracao personalizada e bloqueio de horarios
+**1. Criacao de Conteudo** (6 produtos)
+- Ring Light 26cm com Tripe 2.1m (R$79-149, Amazon)
+- Microfone de Lapela Sem Fio K9 Pro (R$49-99, Shopee)
+- Tripe Profissional com Suporte para Celular (R$59-99, Amazon)
+- Webcam Logitech C920s Full HD 1080p (R$249-349, Amazon)
+- Kit Softbox Iluminacao 50x70cm (R$179-279, Amazon)
+- Teleprompter para Smartphone (R$69-129, Shopee)
 
-**2. Prontuario Eletronico**
-- Formato SOAP: queixa, anamnese, exame fisico, conduta
-- Codigos CID-10 para diagnostico e hipoteses
-- Assinatura digital e status rascunho/finalizado
-- Historico completo por paciente
+**2. Home Office Produtivo** (6 produtos)
+- Monitor LG 24" IPS Full HD (R$549-749, Amazon)
+- Teclado Mecanico Redragon Kumara K552 (R$149-199, Amazon)
+- Mouse Logitech Pebble 2 M750 (R$199-249, Amazon)
+- Headset Logitech H390 USB (R$149-199, Amazon)
+- Suporte Ergonomico para Notebook (R$79-129, Amazon)
+- Hub USB-C 7 em 1 (R$89-149, Shopee)
 
-**3. Gestao de Pacientes**
-- Ficha completa: dados pessoais, CPF, RG, convenio
-- Contato de emergencia, status ativo/inativo
-- Criptografia de dados sensiveis
+**3. Livros de Marketing & Negocios** (6 produtos)
+- Gatilhos Mentais — Gustavo Ferreira (R$34-45, Amazon)
+- Expert Secrets — Russell Brunson (R$59-79, Amazon)
+- Marketing 5.0 — Philip Kotler (R$54-69, Amazon)
+- A Biblia do Marketing Digital — Claudio Torres (R$44-59, Amazon)
+- DotCom Secrets — Russell Brunson (R$59-79, Amazon)
+- Se o Conteudo e Rei, o Contexto e Deus — Icaro de Carvalho (R$39-49, Amazon)
 
-**4. Telemedicina**
-- Integracao com Jitsi Meet (video gratuito)
-- Geracao automatica de link da sala
-- Historico de teleconsultas
+**4. Acessorios para Celular** (6 produtos)
+- Suporte Articulado de Mesa para Celular (R$29-59, Shopee)
+- Kit Lentes Clip-on Wide+Macro+Fisheye (R$25-49, Shopee)
+- Power Bank 20000mAh Fast Charge (R$79-139, Shopee)
+- Fone Bluetooth com Cancelamento de Ruido (R$69-129, Shopee)
+- Estabilizador Gimbal para Celular (R$139-229, Shopee)
+- Carregador Rapido USB-C 33W (R$39-69, Shopee)
 
-**5. Financeiro Completo**
-- Receitas: consultas, procedimentos, exames, retornos
-- Despesas: aluguel, salarios, materiais, equipamentos
-- Metodos: dinheiro, cartao, PIX, convenio, transferencia
-- Resumo mensal com saldo e vinculo a pacientes
-
-**6. Prescricoes Digitais**
-- Receituario com medicamentos, posologia e duracao
-- Vinculada ao prontuario, historico completo
-
-**7. Dashboard & Relatorios**
-- Metricas diarias e mensais (atendimentos, faturamento, pacientes)
-- Tendencias, comparativos e insights
-
-**8. Seguranca & LGPD**
-- Multi-tenant com Row Level Security
-- Controle de acesso: admin, medico, recepcionista
-- Logs de auditoria, campo DPO, criptografia
-
-**Stack**: Next.js 16, React 19, TypeScript, Supabase (PostgreSQL), Tailwind CSS, shadcn/ui, Jitsi Meet
-**URL**: https://calazanslumina.com.br/para-clinicas
+**Total**: 24 produtos curados em 4 categorias
+**URL**: https://calazanslumina.com.br/ferramentas
 
 ---
 
