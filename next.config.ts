@@ -10,6 +10,11 @@ const nextConfig: NextConfig = {
         hostname: 'assets.cdn.filesafe.space',
         pathname: '/MR3yMqtdBa4732pi4ZCw/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'm.media-amazon.com',
+        pathname: '/images/**',
+      },
     ],
   },
   async redirects() {

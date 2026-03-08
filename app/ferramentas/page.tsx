@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
 import Breadcrumb from '@/components/Breadcrumb'
@@ -22,6 +23,7 @@ type Produto = {
   preco: string
   loja: 'amazon' | 'shopee'
   link: string
+  imagem?: string
   destaque?: boolean
   tag?: string
 }
@@ -53,11 +55,12 @@ const categorias: Categoria[] = [
         tag: 'Mais Vendido',
       },
       {
-        nome: 'Microfone de Lapela Sem Fio K9 Pro',
-        desc: 'Áudio cristalino para gravações com celular. Sem fio, alcance de 20m, redução de ruído. Compatível com iPhone e Android.',
+        nome: 'Microfone de Lapela Sem Fio Bluetooth AGold Premium (Kit 2)',
+        desc: 'Kit com 2 microfones sem fio Bluetooth, abafamento de ruído, até 10h de bateria. Conexão Android USB-C e câmera. Áudio profissional para Reels, lives e gravações.',
         preco: 'R$ 49 – R$ 99',
-        loja: 'shopee',
-        link: '#',
+        loja: 'amazon',
+        link: 'https://amzn.to/40jzera',
+        imagem: 'https://m.media-amazon.com/images/I/512CTzqVu9L._AC_SL1000_.jpg',
         destaque: true,
         tag: 'Escolha da Rhai',
       },
@@ -441,26 +444,40 @@ export default function FerramentasPage() {
                   <ScrollReveal key={i} delay={i * 80}>
                     <div className={`group bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col ${produto.destaque ? 'ring-2 ring-brand-mint/30' : ''}`}>
                       {/* Product Visual */}
-                      <div className={`relative h-48 bg-gradient-to-br ${cat.gradient} p-6 flex items-center justify-center`}>
-                        <svg className="w-16 h-16 text-white/30 group-hover:text-white/50 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d={icon} />
-                        </svg>
+                      <div className={`relative h-48 bg-gradient-to-br ${cat.gradient} p-6 flex items-center justify-center overflow-hidden`}>
+                        {produto.imagem ? (
+                          <Image
+                            src={produto.imagem}
+                            alt={produto.nome}
+                            fill
+                            className="object-contain p-4 drop-shadow-lg group-hover:scale-105 transition-transform duration-300"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          />
+                        ) : (
+                          <svg className="w-16 h-16 text-white/30 group-hover:text-white/50 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d={icon} />
+                          </svg>
+                        )}
 
                         {/* Store Badge */}
-                        <div className={`absolute top-4 left-4 ${store.bg} text-white text-xs font-bold px-3 py-1 rounded-full`}>
+                        <div className={`absolute top-4 left-4 ${store.bg} text-white text-xs font-bold px-3 py-1 rounded-full z-10`}>
                           {produto.loja === 'amazon' ? 'Amazon' : 'Shopee'}
                         </div>
 
                         {/* Tag Badge */}
                         {produto.tag && (
-                          <div className={`absolute top-4 right-4 ${getTagColor(produto.tag)} text-xs font-bold px-3 py-1 rounded-full`}>
+                          <div className={`absolute top-4 right-4 ${getTagColor(produto.tag)} text-xs font-bold px-3 py-1 rounded-full z-10`}>
                             {produto.tag}
                           </div>
                         )}
 
                         {/* Decorative circles */}
-                        <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-white/10 rounded-full" />
-                        <div className="absolute -top-4 -left-4 w-16 h-16 bg-white/5 rounded-full" />
+                        {!produto.imagem && (
+                          <>
+                            <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-white/10 rounded-full" />
+                            <div className="absolute -top-4 -left-4 w-16 h-16 bg-white/5 rounded-full" />
+                          </>
+                        )}
                       </div>
 
                       {/* Product Info */}
