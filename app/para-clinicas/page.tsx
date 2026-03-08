@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { ScrollReveal } from '@/components/scroll-reveal'
-import { CTAForm } from '@/components/cta-form'
+import { ScrollReveal } from '@/components/ScrollReveal'
+import { CTAForm } from '@/components/CTAForm'
 import { Check, X, ArrowRight, Zap, Users, Calendar, BarChart3, Lock, Cloud, Smartphone } from 'lucide-react'
 
 export default function ParaClinicasPage() {
