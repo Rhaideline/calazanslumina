@@ -1,7 +1,9 @@
 import type { CursoInterativo } from '@/components/curso-viewer/types'
 import { cursosInterativosExtras } from './cursos-interativos-extras'
+import { cursoIAMarketing } from './ia-marketing-curso'
 
 const cursosBase: CursoInterativo[] = [
+  cursoIAMarketing,
   {
     slug: 'chatgpt-para-idosos',
     nome: 'ChatGPT para Idosos — Curso Gratuito',
