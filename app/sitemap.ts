@@ -22,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/projetos`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/para-agencias`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/ferramentas`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${BASE}/itens-para-casa`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
   ]
 
   // Cursos
