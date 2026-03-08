@@ -329,6 +329,95 @@ export default function ParaAgenciasPage() {
         </div>
       </section>
 
+      {/* === EXEMPLOS DE AUTOMACAO GHL === */}
+      <section className="section-padding bg-brand-bg">
+        <div className="container-main">
+          <ScrollReveal className="text-center mb-16">
+            <p className="text-brand-mint text-sm font-bold uppercase tracking-wider mb-3">Casos de Uso</p>
+            <h2 className="heading-2 text-brand-dark mb-4">4 Exemplos de Automações GHL</h2>
+            <p className="text-brand-dark/60 max-w-2xl mx-auto">
+              Veja como transformo processos manuais em máquinas de conversão dentro do GoHighLevel para seus clientes.
+            </p>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {[
+              {
+                titulo: 'Follow-up Instantâneo (Formulário)',
+                desc: 'Garante que nenhum lead esfrie. Assim que o formulário é preenchido, o sistema inicia o contato em segundos.',
+                passos: [
+                  'Trigger: Form Submitted (Site/Landing Page)',
+                  'Ação: Envio imediato de WhatsApp personalizado',
+                  'Ação: Notificação push/email para o time de vendas',
+                  'Ação: Adicionar tag "Lead Quente" e mover no Pipeline',
+                  'Wait: 15 minutos (se não responder) > Envio de SMS'
+                ],
+                icone: 'M13 10V3L4 14h7v7l9-11h-7z'
+              },
+              {
+                titulo: 'Triagem e Qualificação com IA',
+                desc: 'A IA conversa com o lead, faz perguntas estratégicas de triagem e só transfere para o humano se o lead for qualificado.',
+                passos: [
+                  'Trigger: Customer Replied (WhatsApp/Instagram)',
+                  'Ação: IA inicia conversa amigável de triagem',
+                  'Ação: Verificação de critérios (ex: orçamento, urgência)',
+                  'Condição: Lead qualificado? Sim > Notificar Humano',
+                  'Ação: Transferência com resumo da conversa para o CRM'
+                ],
+                icone: 'M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z'
+              },
+              {
+                titulo: 'Recuperação de No-Show (Agendamento)',
+                desc: 'Automatiza o re-agendamento de leads que não compareceram à reunião, sem precisar de esforço manual.',
+                passos: [
+                  'Trigger: Appointment Status Changed (No-Show)',
+                  'Ação: Envio de WhatsApp: "Sentimos sua falta!"',
+                  'Ação: Link direto para o calendário de re-agendamento',
+                  'Ação: Sequência de 3 dias de lembretes suaves',
+                  'Ação: Tag "Reengajamento" para controle do time'
+                ],
+                icone: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z'
+              },
+              {
+                titulo: 'Onboarding de Novos Clientes',
+                desc: 'Assim que o contrato é assinado ou pagamento aprovado, o sistema inicia o processo de boas-vindas e coleta de dados.',
+                passos: [
+                  'Trigger: Payment Received / Contract Signed',
+                  'Ação: Envio de email de boas-vindas com login/acesso',
+                  'Ação: Link para formulário de Onboarding (Briefing)',
+                  'Ação: Criação automática de pasta no Drive/Dropbox',
+                  'Ação: Notificação no Slack/WhatsApp para o Gestor'
+                ],
+                icone: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'
+              }
+            ].map((ex, i) => (
+              <ScrollReveal key={i} delay={i * 100}>
+                <div className="bg-white rounded-2xl p-8 border border-gray-100 h-full flex flex-col shadow-sm hover:shadow-md transition-shadow">
+                  <div className="w-12 h-12 bg-brand-mint/10 rounded-xl flex items-center justify-center mb-6 text-brand-mint">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={ex.icone} />
+                    </svg>
+                  </div>
+                  <h3 className="font-serif text-xl font-bold text-brand-dark mb-3">{ex.titulo}</h3>
+                  <p className="text-brand-dark/60 text-sm mb-6 flex-1">{ex.desc}</p>
+                  <div className="bg-brand-bg rounded-xl p-5 border border-gray-50">
+                    <p className="text-xs font-bold uppercase tracking-wider text-brand-dark/40 mb-3">Fluxo do Workflow:</p>
+                    <ul className="space-y-2">
+                      {ex.passos.map((p, j) => (
+                        <li key={j} className="flex items-start gap-2 text-xs text-brand-dark/70">
+                          <span className="text-brand-mint font-bold">•</span>
+                          {p}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* === PORTFOLIO DE AUTOMACOES === */}
       <section className="section-padding bg-white">
         <div className="container-main">
