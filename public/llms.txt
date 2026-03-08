@@ -74,6 +74,15 @@ Rhaideline Calazans atua como freelancer especialista em GoHighLevel para agenci
 Modelos: Setup unico, pacote mensal, ou sob demanda.
 URL: https://calazanslumina.com.br/para-agencias
 
+## Para Clinicas — MedSaaS
+
+Sistema SaaS completo para gestao de clinicas medicas. Modulos: agenda inteligente, prontuario eletronico (SOAP + CID-10), gestao de pacientes, telemedicina (Jitsi Meet), financeiro (receitas/despesas/fluxo de caixa), prescricoes digitais, dashboard com relatorios, e seguranca LGPD com logs de auditoria.
+
+Stack: Next.js, React, TypeScript, Supabase (PostgreSQL), Tailwind CSS, shadcn/ui, Jitsi Meet.
+Multi-tenant com Row Level Security. Multi-usuarios (admin, medico, recepcionista).
+
+URL: https://calazanslumina.com.br/para-clinicas
+
 ## Contato
 
 - WhatsApp: +55 31 98294-8067

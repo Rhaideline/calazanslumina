@@ -348,6 +348,58 @@ Rhaideline Calazans atua como freelancer especialista em GoHighLevel para agenci
 
 ---
 
+## Para Clinicas — MedSaaS
+
+Sistema SaaS completo para gestao de clinicas medicas e profissionais de saude. Desenvolvido com Next.js, React, TypeScript e Supabase.
+
+### Modulos do Sistema:
+
+**1. Agenda Inteligente**
+- Visao dia, semana e mes com controle por profissional
+- Status: agendado, confirmado, em atendimento, concluido, cancelado, no-show
+- Suporte a consultas presenciais e telemedicina
+- Duracao personalizada e bloqueio de horarios
+
+**2. Prontuario Eletronico**
+- Formato SOAP: queixa, anamnese, exame fisico, conduta
+- Codigos CID-10 para diagnostico e hipoteses
+- Assinatura digital e status rascunho/finalizado
+- Historico completo por paciente
+
+**3. Gestao de Pacientes**
+- Ficha completa: dados pessoais, CPF, RG, convenio
+- Contato de emergencia, status ativo/inativo
+- Criptografia de dados sensiveis
+
+**4. Telemedicina**
+- Integracao com Jitsi Meet (video gratuito)
+- Geracao automatica de link da sala
+- Historico de teleconsultas
+
+**5. Financeiro Completo**
+- Receitas: consultas, procedimentos, exames, retornos
+- Despesas: aluguel, salarios, materiais, equipamentos
+- Metodos: dinheiro, cartao, PIX, convenio, transferencia
+- Resumo mensal com saldo e vinculo a pacientes
+
+**6. Prescricoes Digitais**
+- Receituario com medicamentos, posologia e duracao
+- Vinculada ao prontuario, historico completo
+
+**7. Dashboard & Relatorios**
+- Metricas diarias e mensais (atendimentos, faturamento, pacientes)
+- Tendencias, comparativos e insights
+
+**8. Seguranca & LGPD**
+- Multi-tenant com Row Level Security
+- Controle de acesso: admin, medico, recepcionista
+- Logs de auditoria, campo DPO, criptografia
+
+**Stack**: Next.js 16, React 19, TypeScript, Supabase (PostgreSQL), Tailwind CSS, shadcn/ui, Jitsi Meet
+**URL**: https://calazanslumina.com.br/para-clinicas
+
+---
+
 ## Contato
 
 - **Site**: https://calazanslumina.com.br

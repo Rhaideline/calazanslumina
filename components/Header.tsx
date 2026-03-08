@@ -26,6 +26,7 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/sobre', label: 'Sobre' },
   { href: '/para-agencias', label: 'Para Agencias' },
+  { href: '/para-clinicas', label: 'Para Clinicas' },
   { href: '/projetos', label: 'Projetos' },
   { href: '/blog', label: 'Blog' },
   { href: '/contato', label: 'Contato' },
