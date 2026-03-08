@@ -25,7 +25,8 @@ const cursosMenu = [
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/sobre', label: 'Sobre' },
-  { href: '/para-agencias', label: 'Para Agencias' },
+  { href: '/para-agencias', label: 'Para Agências' },
+  { href: '/para-clinicas', label: 'Para Clínicas' },
   { href: '/projetos', label: 'Projetos' },
   { href: '/blog', label: 'Blog' },
   { href: '/contato', label: 'Contato' },
