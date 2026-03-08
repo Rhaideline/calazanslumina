@@ -291,6 +291,151 @@ export default function ParaClinicasPage() {
         </div>
       </section>
 
+      {/* MedSaaS Features */}
+      <section className="px-4 py-20 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <ScrollReveal>
+            <h2 className="text-4xl font-bold text-center text-foreground mb-4">
+              Conheça o MedSaaS
+            </h2>
+            <p className="text-center text-muted mb-12 max-w-2xl mx-auto">
+              A plataforma completa que sua clínica precisa para gerenciar pacientes, agendamentos e telemedicina em um único lugar.
+            </p>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Calendar,
+                title: 'Agendamento Online',
+                desc: 'Seus pacientes marcam consultas 24/7. Você controla a disponibilidade e recebe confirmações automáticas.',
+              },
+              {
+                icon: Users,
+                title: 'Prontuário Digital',
+                desc: 'Histórico completo de cada paciente: consultas, exames, prescrições e anotações do médico.',
+              },
+              {
+                icon: Smartphone,
+                title: 'Telemedicina',
+                desc: 'Consultas por vídeo integradas. Seus pacientes não precisam sair de casa.',
+              },
+              {
+                icon: BarChart3,
+                title: 'Relatórios Avançados',
+                desc: 'Dashboard com métricas em tempo real: receita, pacientes, consultas e tendências.',
+              },
+              {
+                icon: Lock,
+                title: 'Segurança LGPD',
+                desc: 'Seus dados e dos pacientes protegidos com criptografia de ponta a ponta.',
+              },
+              {
+                icon: Cloud,
+                title: 'Backup Automático',
+                desc: 'Seus dados sempre seguros na nuvem. Nunca perca informações importantes.',
+              },
+            ].map((feature, i) => (
+              <ScrollReveal key={i} delay={0.1 * i}>
+                <div className="p-6 rounded-xl bg-surface border border-border hover:border-primary/50 transition">
+                  <feature.icon className="w-12 h-12 text-primary mb-4" />
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{feature.title}</h3>
+                  <p className="text-muted">{feature.desc}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <ScrollReveal delay={0.6}>
+            <div className="mt-12 text-center">
+              <a href="https://medsaas.vercel.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-background rounded-lg font-semibold hover:bg-primary/90 transition">
+                Ver Demo do MedSaaS <ArrowRight size={20} />
+              </a>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Contact Form for Clinics */}
+      <section className="px-4 py-20 sm:px-6 lg:px-8 bg-surface/50">
+        <div className="max-w-2xl mx-auto">
+          <ScrollReveal>
+            <h2 className="text-4xl font-bold text-center text-foreground mb-4">
+              Comece Sua Transformação Digital
+            </h2>
+            <p className="text-center text-muted mb-12">
+              Preencha o formulário abaixo e um especialista entrará em contato para entender as necessidades da sua clínica.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.2}>
+            <form className="bg-background border border-border rounded-2xl p-8 space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-semibold text-foreground mb-2">Nome Completo</label>
+                  <input type="text" placeholder="Dr. João Silva" className="w-full px-4 py-3 rounded-lg bg-surface border border-border text-foreground placeholder-muted focus:outline-none focus:border-primary transition" />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-foreground mb-2">Email</label>
+                  <input type="email" placeholder="joao@clinica.com.br" className="w-full px-4 py-3 rounded-lg bg-surface border border-border text-foreground placeholder-muted focus:outline-none focus:border-primary transition" />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-semibold text-foreground mb-2">Telefone</label>
+                  <input type="tel" placeholder="(31) 98294-8067" className="w-full px-4 py-3 rounded-lg bg-surface border border-border text-foreground placeholder-muted focus:outline-none focus:border-primary transition" />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-foreground mb-2">Nome da Clínica</label>
+                  <input type="text" placeholder="Clínica Silva Cardiologia" className="w-full px-4 py-3 rounded-lg bg-surface border border-border text-foreground placeholder-muted focus:outline-none focus:border-primary transition" />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-foreground mb-2">Especialidade</label>
+                <select className="w-full px-4 py-3 rounded-lg bg-surface border border-border text-foreground focus:outline-none focus:border-primary transition">
+                  <option value="">Selecione uma especialidade</option>
+                  <option value="cardiologia">Cardiologia</option>
+                  <option value="dermatologia">Dermatologia</option>
+                  <option value="oftalmologia">Oftalmologia</option>
+                  <option value="odontologia">Odontologia</option>
+                  <option value="fisioterapia">Fisioterapia</option>
+                  <option value="psicologia">Psicologia</option>
+                  <option value="clinica-geral">Clínica Geral</option>
+                  <option value="outra">Outra</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-foreground mb-2">Quantos pacientes sua clínica tem?</label>
+                <select className="w-full px-4 py-3 rounded-lg bg-surface border border-border text-foreground focus:outline-none focus:border-primary transition">
+                  <option value="">Selecione uma faixa</option>
+                  <option value="0-50">Até 50 pacientes</option>
+                  <option value="50-100">50 a 100 pacientes</option>
+                  <option value="100-500">100 a 500 pacientes</option>
+                  <option value="500+">Mais de 500 pacientes</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-foreground mb-2">Qual é seu maior desafio?</label>
+                <textarea placeholder="Descreva brevemente o que sua clínica mais precisa..." className="w-full px-4 py-3 rounded-lg bg-surface border border-border text-foreground placeholder-muted focus:outline-none focus:border-primary transition resize-none h-32"></textarea>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <input type="checkbox" id="terms" className="w-4 h-4 rounded border-border" />
+                <label htmlFor="terms" className="text-sm text-muted">Concordo em receber informações sobre o MedSaaS por email</label>
+              </div>
+
+              <button type="submit" className="w-full py-4 bg-primary text-background rounded-lg font-semibold hover:bg-primary/90 transition flex items-center justify-center gap-2">
+                Solicitar Demonstração <ArrowRight size={20} />
+              </button>
+            </form>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="px-4 py-20 sm:px-6 lg:px-8 bg-surface/50">
         <div className="max-w-3xl mx-auto">
