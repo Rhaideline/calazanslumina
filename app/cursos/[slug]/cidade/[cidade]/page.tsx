@@ -22,8 +22,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!curso || !cidade) return {}
   const totalAulas = curso.modulos.reduce((acc, m) => acc + m.aulas.length, 0)
   return {
-    title: `${curso.nome} em ${cidade.nome}, MA | ${curso.gratuito ? 'Gratuito' : `R$ ${curso.preco}`}`,
-    description: `${curso.descricaoCurta} Disponível para brasileiros em ${cidade.nome}, Massachusetts. ${curso.modulos.length} módulos, ${totalAulas} aulas. ${curso.gratuito ? 'Acesso gratuito.' : `Apenas R$ ${curso.preco},00.`}`,
+    title: `${curso.nome} em ${cidade.nome}, MA (2026) | ${curso.gratuito ? 'GRATUITO' : `R$${curso.preco}`} — ${totalAulas} Aulas`,
+    description: `${curso.descricaoCurta} Para brasileiros em ${cidade.nome}, MA. ${curso.modulos.length} modulos, ${totalAulas} aulas. ${curso.gratuito ? 'Acesso 100% gratuito. Comece agora →' : `So R$${curso.preco}. Acesso vitalicio →`}`,
     alternates: { canonical: `https://calazanslumina.com.br/cursos/${slug}/cidade/${cidadeSlug}` },
   }
 }

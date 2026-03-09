@@ -23,8 +23,8 @@ export async function generateMetadata({ params }: { params: Promise<{ cidade: s
   const cidade = getCidadeMABySlug(cidadeSlug)
   if (!cidade) return {}
   return {
-    title: `Marketing Digital em ${cidade.nome}, MA | Sites, Funis e Google Maps`,
-    description: `Agencia de marketing digital para brasileiros em ${cidade.nome}, Massachusetts. Sites profissionais, funis de vendas, CRM com IA e Google Maps. Atendimento em portugues. Fale agora!`,
+    title: `Marketing Digital em ${cidade.nome}, MA (2026) | Sites + Funis + Google Maps`,
+    description: `A agencia #1 para brasileiros em ${cidade.nome}, MA. Sites com PageSpeed 95+, funis que convertem 3x mais, CRM com IA no WhatsApp e Google Maps otimizado. Atendimento 100% em portugues. Orcamento gratis →`,
     alternates: { canonical: `https://calazanslumina.com.br/cidades/${cidadeSlug}` },
     openGraph: {
       title: `Marketing Digital em ${cidade.nome}, MA | Calazans Lumina`,

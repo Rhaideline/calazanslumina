@@ -26,8 +26,8 @@ export async function generateMetadata({ params }: { params: Promise<{ cidade: s
   const servico = getServicoBySlug(servicoSlug)
   if (!cidade || !servico) return {}
   return {
-    title: `${servico.nome} em ${cidade.nome}, MA | Para Brasileiros`,
-    description: `${servico.descricaoCurta} Especialista em brasileiros em ${cidade.nome}, Massachusetts. Atendimento em portugues, resultados reais. Fale agora!`,
+    title: `${servico.nome} em ${cidade.nome}, MA (2026) | Especialista em Brasileiros`,
+    description: `${servico.descricaoCurta} Para brasileiros em ${cidade.nome}, MA. 100+ projetos entregues, atendimento em portugues. Resultados em 30 dias ou menos. Orcamento gratis →`,
     alternates: { canonical: `https://calazanslumina.com.br/cidades/${cidadeSlug}/${servicoSlug}` },
     openGraph: {
       title: `${servico.nome} em ${cidade.nome}, MA | Calazans Lumina`,

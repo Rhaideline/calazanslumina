@@ -22,7 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/projetos`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/para-agencias`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/ferramentas`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${BASE}/itens-para-casa`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${BASE}/enxoval-de-bebe`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
   ]
 
   // Cursos
@@ -106,6 +106,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   )
 
+  // Enxoval de Bebê × Cidades BR
+  const enxovalCidadesPages: MetadataRoute.Sitemap = allCidadesBR.map((c) => ({
+    url: `${BASE}/enxoval-de-bebe/${c.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
   return [
     ...staticPages,
     ...cursosPages,
@@ -117,5 +125,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...capitaisServicosPages,
     ...cursosCidadesPages,
     ...cursosCapitaisPages,
+    ...enxovalCidadesPages,
   ]
 }

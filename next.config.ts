@@ -29,6 +29,11 @@ const nextConfig: NextConfig = {
         destination: '/blog/robo-de-whatsapp-como-automatizar-seu-atendimento-sem-perder-o-lado-humano',
         permanent: true,
       },
+      {
+        source: '/itens-para-casa',
+        destination: '/enxoval-de-bebe',
+        permanent: true,
+      },
     ]
   },
   async headers() {

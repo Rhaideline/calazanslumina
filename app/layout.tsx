@@ -26,11 +26,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://calazanslumina.com.br'),
   title: {
-    default: 'Calazans Lumina | Marketing Digital para Brasileiros nos EUA e Brasil',
+    default: 'Calazans Lumina | Agencia de Marketing Digital #1 para Brasileiros nos EUA e Brasil (2026)',
     template: '%s | Calazans Lumina',
   },
   description:
-    'Agência de marketing digital especializada em sites Next.js, funis GHL, CRM com IA, redes sociais e Google Business Profile para brasileiros nos EUA (Massachusetts) e Brasil. Atendimento em português.',
+    'Agencia de marketing digital para brasileiros nos EUA e Brasil. Sites com PageSpeed 95+, funis GHL, CRM com IA no WhatsApp, redes sociais e Google Maps. 100+ projetos. Atendimento 100% em portugues. Orcamento gratis →',
   keywords: [
     'marketing digital para brasileiros',
     'agência de marketing Massachusetts',

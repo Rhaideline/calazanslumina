@@ -4,9 +4,9 @@ import BlogFilter from '@/components/BlogFilter'
 import CoursesSection from '@/components/CoursesSection'
 
 export const metadata: Metadata = {
-  title: 'Blog de Marketing Digital | Estrategias que Geram Resultado',
+  title: 'Blog de Marketing Digital e Maternidade (2026) | 60+ Artigos Gratuitos',
   description:
-    'Artigos praticos sobre marketing digital, SEO local, Google Maps, funis de vendas e automacao para brasileiros nos EUA e Brasil. Conteudo gratuito.',
+    '60+ artigos sobre marketing digital, SEO, Google Maps, funis de vendas, IA, maternidade e enxoval de bebe. Conteudo 100% gratuito para brasileiros nos EUA e Brasil. Leia agora →',
   alternates: { canonical: 'https://calazanslumina.com.br/blog' },
   openGraph: {
     title: 'Blog de Marketing Digital | Calazans Lumina',

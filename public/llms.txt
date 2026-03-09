@@ -74,6 +74,21 @@ Rhaideline Calazans atua como freelancer especialista em GoHighLevel para agenci
 Modelos: Setup unico, pacote mensal, ou sob demanda.
 URL: https://calazanslumina.com.br/para-agencias
 
+## Enxoval de Bebe — Guia Completo 2026
+
+Guia completo e gratuito de enxoval de bebe com checklist em PDF para baixar. Inclui:
+- 45+ produtos selecionados com avaliacao 4.7+ na Shopee (links de afiliado)
+- 5 categorias: Roupinhas (priorizando 100% algodao), Berco & Quarto, Higiene & Banho, Alimentacao, Passeio & Transporte
+- Dicas de especialistas em cada categoria (seguranca do berco, quantidades de fraldas, bolsa maternidade)
+- FAQ com 8 perguntas respondidas sobre enxoval de bebe
+- Checklist PDF gratuito com 9 paginas para mamaes baixarem
+- Schema markup completo: FAQPage, HowTo, ItemList com Products, BreadcrumbList
+- Paginas localizadas por cidade brasileira (229+ cidades): /enxoval-de-bebe/{cidade}
+
+URL principal: https://calazanslumina.com.br/enxoval-de-bebe
+PDF gratis: https://calazanslumina.com.br/checklist-enxoval-bebe-2026.pdf
+Exemplo cidade: https://calazanslumina.com.br/enxoval-de-bebe/belo-horizonte
+
 ## Ferramentas Recomendadas
 
 Curadoria de produtos para empreendedores digitais, selecionados por Rhaideline Calazans. Categorias:
