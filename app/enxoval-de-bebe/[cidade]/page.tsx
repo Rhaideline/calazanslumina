@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import ScrollReveal from '@/components/ScrollReveal'
-import CTAForm from '@/components/CTAForm'
 import { capitaisBR, getCapitalBRBySlug } from '@/data/capitais-br'
 import { cidadesBrasil, getCidadeBRBySlug } from '@/data/cidades-brasil'
 
@@ -187,7 +186,6 @@ export default async function EnxovalCidadePage({ params }: Props) {
     name: 'Calazans Lumina',
     description: `Guia de enxoval de bebe para mamaes em ${cidade.nome}, ${cidade.siglaEstado}. Checklist completo com produtos selecionados e dicas de especialistas.`,
     url: `${BASE}/enxoval-de-bebe/${slug}`,
-    telephone: '+5531982948067',
     areaServed: {
       '@type': 'City',
       name: cidade.nome,
@@ -446,7 +444,6 @@ export default async function EnxovalCidadePage({ params }: Props) {
         </div>
       </section>
 
-      <CTAForm />
     </>
   )
 }

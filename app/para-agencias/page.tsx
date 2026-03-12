@@ -6,129 +6,80 @@ import Breadcrumb from '@/components/Breadcrumb'
 import CTAForm from '@/components/CTAForm'
 
 export const metadata: Metadata = {
-  title: 'Freelancer GoHighLevel para Agencias | Setup, Automacao & IA — Calazans Lumina',
-  description: 'Especialista GoHighLevel para agencias white-label. Configuro automacoes, chatbots IA no WhatsApp, funis, CRM, pipelines, templates de mensagens e follow-up. Sua agencia vende, eu implemento.',
+  title: 'GoHighLevel para Clinicas de Estetica & Agencias | Sub-contas Prontas + Freelancer GHL — Calazans Lumina',
+  description: 'Sub-contas GoHighLevel prontas para clinicas de estetica com automacoes, chatbot IA e CRM. Tambem ofereço servicos de freelancer GHL para agencias: automacoes, treinamento de robo e operacional.',
   alternates: { canonical: 'https://calazanslumina.com.br/para-agencias' },
   openGraph: {
-    title: 'Freelancer GoHighLevel para Agencias | Calazans Lumina',
-    description: 'Especialista GHL para agencias white-label. Automacoes, chatbots IA, funis, CRM e muito mais.',
+    title: 'GoHighLevel para Clinicas de Estetica & Agencias | Calazans Lumina',
+    description: 'Sub-contas GHL prontas para clinicas de estetica + freelancer operacional para agencias.',
     url: 'https://calazanslumina.com.br/para-agencias',
     type: 'website',
   },
 }
 
-const servicos = [
+const subAccountFeatures = [
   {
     icone: 'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z',
-    titulo: 'Templates de Mensagens WhatsApp',
-    desc: 'Crio templates de mensagens personalizados para cada etapa do funil: boas-vindas, follow-up, lembrete de agendamento, pos-venda e reativacao de leads inativos.',
-    escopo: [
-      'Mapeamento da jornada do cliente (awareness > decisao > pos-venda)',
-      'Criacao de 10-20 templates por fluxo (texto + variaveis dinamicas)',
-      'Mensagens com botoes de resposta rapida e listas interativas',
-      'Templates de follow-up sequencial (dia 1, 3, 7, 14, 30)',
-      'Mensagens de reativacao para leads frios',
-      'Personalizacao com campos customizados (nome, cidade, servico)',
-    ],
+    titulo: 'Chatbot IA no WhatsApp',
+    desc: 'Robo de atendimento com IA que responde pacientes 24h, agenda procedimentos e tira duvidas sobre tratamentos esteticos.',
   },
   {
     icone: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15',
-    titulo: 'Automacao de Follow-Up',
-    desc: 'Configuro workflows completos de follow-up automatizado que acompanham o lead em cada etapa, garantindo que nenhuma oportunidade seja perdida.',
-    escopo: [
-      'Workflow de nurturing: sequencia de 5-10 mensagens automaticas',
-      'Triggers baseados em acoes (formulario, clique, resposta, tag)',
-      'Condicoes if/else para personalizar caminhos do lead',
-      'Delays inteligentes entre mensagens (horas, dias, semanas)',
-      'Integracao com pipeline: mover lead de etapa automaticamente',
-      'Notificacao para o vendedor quando lead responde ou engaja',
-      'Workflow de no-show: reengajar quem nao compareceu ao agendamento',
-    ],
-  },
-  {
-    icone: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
-    titulo: 'Chatbot & Agente IA no WhatsApp',
-    desc: 'Configuro o robo de atendimento com IA dentro do GHL que responde leads 24h, qualifica, agenda reunioes e transfere para humano quando necessario.',
-    escopo: [
-      'Configuracao do bot de conversacao com fluxos condicionais',
-      'Integracao com IA (OpenAI/ChatGPT) para respostas inteligentes',
-      'Treinamento do agente IA com base de conhecimento do cliente',
-      'Qualificacao automatica de leads (perguntas-filtro)',
-      'Agendamento automatico via bot (conecta ao calendario GHL)',
-      'Transferencia para atendente humano com contexto da conversa',
-      'Respostas fora do horario comercial com coleta de dados',
-      'Relatorio de conversas e taxa de resolucao do bot',
-    ],
+    titulo: 'Follow-up Automatico',
+    desc: 'Sequencias de mensagens automaticas pos-procedimento, lembretes de retorno e reativacao de pacientes inativos.',
   },
   {
     icone: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
     titulo: 'CRM & Pipeline de Vendas',
-    desc: 'Estruturo todo o CRM: pipelines, etapas, automacoes de movimentacao, campos customizados e dashboards para a agencia e seus clientes acompanharem.',
-    escopo: [
-      'Criacao de pipelines customizados por tipo de servico/produto',
-      'Definicao de etapas (novo lead > qualificado > proposta > fechado)',
-      'Campos customizados para cada tipo de negocio',
-      'Automacao de movimentacao entre etapas (baseado em acoes)',
-      'Tags automaticas para segmentacao de leads',
-      'Configuracao de tarefas automaticas para a equipe de vendas',
-      'Dashboard com metricas: leads, conversoes, valor do pipeline',
-    ],
-  },
-  {
-    icone: 'M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12',
-    titulo: 'Funis de Vendas & Landing Pages',
-    desc: 'Construo funis completos dentro do GHL: landing pages, paginas de obrigado, upsell, downsell e integracao com pagamento e automacoes.',
-    escopo: [
-      'Landing page otimizada para conversao (formulario + CTA)',
-      'Pagina de obrigado com proximos passos + pixel de conversao',
-      'Funil de upsell/downsell para maximizar ticket medio',
-      'A/B testing de headlines e CTAs',
-      'Integracao com Stripe/PayPal para pagamento direto',
-      'Formularios multi-step para qualificacao progressiva',
-      'Pop-ups de saida e captura de leads',
-    ],
+    desc: 'Pipeline completo: novo lead > agendou > compareceu > fechou pacote. Tags automaticas por tipo de procedimento.',
   },
   {
     icone: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
     titulo: 'Calendario & Agendamento',
-    desc: 'Configuro o sistema de agendamento do GHL com disponibilidade, lembretes automaticos, confirmacao e anti-no-show.',
-    escopo: [
-      'Calendario com horarios disponiveis configurados',
-      'Pagina de agendamento com branding do cliente',
-      'Lembretes automaticos por WhatsApp e email (24h, 1h antes)',
-      'Confirmacao de presenca automatica',
-      'Workflow anti-no-show (reengajamento automatico)',
-      'Round-robin para distribuir agendamentos entre equipe',
-      'Integracao com Google Calendar',
-    ],
-  },
-  {
-    icone: 'M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z',
-    titulo: 'Relatorios & Dashboards',
-    desc: 'Configuro dashboards customizados para a agencia e seus clientes acompanharem metricas de leads, conversoes, agendamentos e ROI.',
-    escopo: [
-      'Dashboard da agencia com visao geral de todos os sub-accounts',
-      'Dashboard por cliente com metricas especificas do negocio',
-      'Relatorio de leads: origem, status, tempo de resposta',
-      'Relatorio de conversao: taxa de fechamento por etapa',
-      'Relatorio de agendamentos: realizados vs no-shows',
-      'Relatorio de campanhas: email, SMS e WhatsApp',
-      'Exportacao automatica semanal/mensal por email',
-    ],
+    desc: 'Sistema de agendamento online com lembretes automaticos por WhatsApp (24h e 1h antes) e anti-no-show.',
   },
   {
     icone: 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
     titulo: 'Campanhas de Email & SMS',
-    desc: 'Crio campanhas de email marketing e SMS dentro do GHL com segmentacao, automacao e testes A/B.',
-    escopo: [
-      'Templates de email responsivos com branding do cliente',
-      'Sequencias de email automatizadas (welcome, nurture, venda)',
-      'Segmentacao de listas por tags, pipeline e comportamento',
-      'Campanhas de SMS para lembretes e ofertas rapidas',
-      'Testes A/B de assunto e conteudo',
-      'Configuracao de dominio de envio e aquecimento',
-      'Relatorio de entregabilidade, aberturas e cliques',
-    ],
+    desc: 'Sequencias automatizadas de email e SMS para promocoes, datas comemorativas e lembretes de retorno.',
+  },
+  {
+    icone: 'M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z',
+    titulo: 'Dashboard & Relatorios',
+    desc: 'Painel visual com metricas de leads, agendamentos, taxa de no-show, conversao e faturamento.',
+  },
+]
+
+const freelancerServices = [
+  {
+    titulo: 'Configuracao de Automacoes',
+    desc: 'Crio workflows completos dentro do GHL: follow-up, nurturing, onboarding, anti-no-show, reativacao de leads e qualquer fluxo customizado.',
+    items: ['Workflows com triggers, condicoes e acoes', 'Sequencias multi-canal (WhatsApp, email, SMS)', 'Delays inteligentes e condicoes if/else', 'Integracao com pipeline e tags automaticas'],
+  },
+  {
+    titulo: 'Treinamento de Chatbot IA',
+    desc: 'Configuro e treino o agente IA do GHL com a base de conhecimento do seu cliente para atendimento automatizado inteligente.',
+    items: ['Setup do bot de conversacao com IA', 'Treinamento com FAQ e info do negocio', 'Qualificacao automatica de leads', 'Transferencia para humano com contexto'],
+  },
+  {
+    titulo: 'Setup de Sub-accounts',
+    desc: 'Configuro sub-accounts do zero para novos clientes da sua agencia: CRM, pipeline, automacoes, chatbot, calendario.',
+    items: ['Sub-account completo pronto para uso', 'Pipeline e campos customizados', 'Templates de mensagem WhatsApp', 'Video-walkthrough de entrega'],
+  },
+  {
+    titulo: 'Funis & Landing Pages',
+    desc: 'Construo funis completos dentro do GHL: landing pages, paginas de obrigado, formularios multi-step e integracao com pagamento.',
+    items: ['Landing pages otimizadas para conversao', 'Formularios multi-step de qualificacao', 'Integracao com Stripe/PayPal', 'A/B testing de headlines e CTAs'],
+  },
+  {
+    titulo: 'CRM, Pipeline & Relatorios',
+    desc: 'Estruturo o CRM completo: pipelines por servico, etapas de venda, automacao de movimentacao e dashboards.',
+    items: ['Pipelines customizados por nicho', 'Movimentacao automatica entre etapas', 'Dashboard com metricas de conversao', 'Relatorios automatizados semanais/mensais'],
+  },
+  {
+    titulo: 'Calendario & Integrações',
+    desc: 'Configuro agendamento, lembretes anti-no-show, round-robin, webhooks e integracoes com ferramentas externas.',
+    items: ['Calendario com disponibilidade configurada', 'Lembretes automaticos (24h, 1h antes)', 'Integracoes via API/Webhook/Zapier/Make', 'Round-robin para equipes'],
   },
 ]
 
@@ -143,8 +94,8 @@ export default function ParaAgenciasPage() {
   const pageSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'Freelancer GoHighLevel para Agencias',
-    description: 'Especialista GoHighLevel para agencias white-label. Setup, automacoes, chatbots IA, funis e CRM.',
+    name: 'GoHighLevel para Clinicas de Estetica e Agencias',
+    description: 'Sub-contas GoHighLevel prontas para clinicas de estetica com automacoes e chatbot IA. Freelancer GHL para agencias.',
     provider: {
       '@type': 'Organization',
       name: 'Calazans Lumina',
@@ -152,17 +103,53 @@ export default function ParaAgenciasPage() {
     },
     areaServed: { '@type': 'Country', name: 'Brazil' },
     serviceType: 'GoHighLevel Implementation',
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Servicos GoHighLevel',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Sub-conta GHL para Clinicas de Estetica',
+            description: 'Sub-conta GoHighLevel pronta com automacoes, chatbot IA, CRM e agendamento para clinicas de estetica.',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Freelancer GHL para Agencias',
+            description: 'Servicos operacionais de GoHighLevel para agencias: automacoes, treinamento de chatbot, setup de sub-accounts.',
+          },
+        },
+      ],
+    },
+  }
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'O que esta incluso na sub-conta GHL para clinicas de estetica?', acceptedAnswer: { '@type': 'Answer', text: 'A sub-conta vem pronta com: chatbot IA no WhatsApp, follow-up automatico, CRM com pipeline de vendas, calendario de agendamento com lembretes, campanhas de email/SMS e dashboard de metricas. Funis e landing pages podem ser adicionados a criterio do cliente.' } },
+      { '@type': 'Question', name: 'Como funciona o pagamento da sub-conta?', acceptedAnswer: { '@type': 'Answer', text: 'O pagamento e dividido em duas partes: uma taxa unica de configuracao (setup inicial com todas as automacoes) e uma mensalidade para manutencao, suporte e atualizacoes continuas.' } },
+      { '@type': 'Question', name: 'Posso adicionar funis de vendas a minha sub-conta?', acceptedAnswer: { '@type': 'Answer', text: 'Sim! Os funis e landing pages sao opcionais e podem ser adicionados a qualquer momento conforme sua necessidade. Construo funis otimizados para conversao com formularios multi-step e integracao com pagamento.' } },
+      { '@type': 'Question', name: 'Voce trabalha como freelancer para agencias que ja tem GHL?', acceptedAnswer: { '@type': 'Answer', text: 'Sim! Ofereço servicos operacionais para agencias que ja possuem GoHighLevel: configuracao de automacoes, treinamento de chatbot IA, setup de sub-accounts, funis, CRM e integracoes. Trabalho como white-label da sua agencia.' } },
+      { '@type': 'Question', name: 'Qual versao do GHL voce trabalha?', acceptedAnswer: { '@type': 'Answer', text: 'Trabalho com todas as versoes: Agency Pro, Agency Starter e SaaS Mode. Tambem configuro sub-accounts em white-label de outras agencias.' } },
+      { '@type': 'Question', name: 'Quanto tempo leva o setup de uma sub-conta?', acceptedAnswer: { '@type': 'Answer', text: 'Um sub-account completo (CRM + automacoes + chatbot + agendamento) leva em media 5-7 dias uteis. Tarefas pontuais como criar um workflow ou template, 1-2 dias.' } },
+    ],
   }
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* === HERO === */}
       <section className="relative py-20 md:py-28 bg-brand-dark text-white overflow-hidden">
         <Image
           src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c0357f3208c418.jpeg"
-          alt="Freelancer GoHighLevel para Agencias — Calazans Lumina"
+          alt="GoHighLevel para Clinicas de Estetica e Agencias — Calazans Lumina"
           fill
           className="object-cover"
           priority
@@ -171,63 +158,61 @@ export default function ParaAgenciasPage() {
         <div className="container-main section-padding relative z-10">
           <Breadcrumb items={[
             { label: 'Home', href: '/' },
-            { label: 'Para Agencias' },
+            { label: 'GoHighLevel para Clinicas & Agencias' },
           ]} />
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <ScrollReveal>
               <div className="inline-flex items-center gap-2 bg-brand-mint/20 border border-brand-mint/30 rounded-full px-4 py-1.5 mb-6">
                 <span className="w-2 h-2 bg-brand-mint rounded-full animate-pulse" />
-                <span className="text-brand-mint text-sm font-medium">Freelancer Especialista GoHighLevel</span>
+                <span className="text-brand-mint text-sm font-medium">Especialista GoHighLevel</span>
               </div>
 
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                Sua agencia vende o GHL.<br />
-                <span className="text-brand-mint">Eu implemento.</span>
+                GoHighLevel pronto<br />
+                <span className="text-brand-mint">para sua clinica ou agencia.</span>
               </h1>
+              <p className="text-white/70 text-lg md:text-xl leading-relaxed mb-4">
+                Sub-contas GHL completas para <strong className="text-white">clinicas de estetica</strong> — com automacoes, chatbot IA e CRM prontos para usar.
+              </p>
               <p className="text-white/70 text-lg md:text-xl leading-relaxed mb-8">
-                Voce comprou o white-label do GoHighLevel, revende para clientes, mas nao tem tempo (ou equipe) para configurar tudo.
-                Eu entro como sua implementadora: configuro automacoes, chatbots IA, funis, CRM, WhatsApp, pipelines — tudo pronto para o cliente usar.
+                Tambem trabalho como <strong className="text-white">freelancer para agencias</strong> que ja tem GHL e precisam de operacional: automacoes, treinamento de robo, setup de sub-accounts.
               </p>
 
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="https://wa.me/5531982948067?text=Olá, sou de uma agência e preciso de ajuda com GoHighLevel"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#clinicas"
                   className="btn-primary text-lg px-8 py-4"
                 >
-                  Falar pelo WhatsApp
+                  Para Clinicas de Estetica
                 </a>
-                <Link
-                  href="/contato"
+                <a
+                  href="#agencias"
                   className="border border-white/20 text-white hover:bg-white/10 px-6 py-4 rounded-full text-base font-medium transition-colors inline-flex items-center gap-2"
                 >
-                  Solicitar Orcamento
-                </Link>
+                  Para Agencias com GHL
+                </a>
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={200}>
               <div className="relative bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm">
-                <h2 className="font-serif text-xl font-bold text-center mb-6">Como funciona</h2>
+                <h2 className="font-serif text-xl font-bold text-center mb-6">Dois caminhos, um objetivo</h2>
                 <div className="space-y-6">
-                  {[
-                    { step: '1', title: 'Voce me envia o briefing', desc: 'O que o cliente precisa: nicho, servicos, fluxos de atendimento.' },
-                    { step: '2', title: 'Eu configuro tudo no GHL', desc: 'Sub-account, automacoes, funis, chatbot, CRM — tudo pronto.' },
-                    { step: '3', title: 'Entrego documentado', desc: 'Video-walkthrough + documento com tudo que foi feito.' },
-                    { step: '4', title: 'Seu cliente usa e voce escala', desc: 'O cliente ve resultado, voce fatura mais, sem equipe fixa.' },
-                  ].map((item) => (
-                    <div key={item.step} className="flex items-start gap-4">
-                      <div className="w-8 h-8 bg-brand-mint rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
-                        {item.step}
-                      </div>
-                      <div>
-                        <p className="text-white font-medium text-sm">{item.title}</p>
-                        <p className="text-white/50 text-xs mt-0.5">{item.desc}</p>
-                      </div>
+                  <div className="bg-brand-mint/10 border border-brand-mint/20 rounded-xl p-5">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-8 h-8 bg-brand-mint rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0">1</div>
+                      <p className="text-white font-bold text-sm">Clinica de Estetica?</p>
                     </div>
-                  ))}
+                    <p className="text-white/60 text-xs ml-11">Receba uma sub-conta GHL pronta com tudo configurado: chatbot IA, agendamento, follow-up, CRM. Pague a configuracao + mensalidade. Funis opcionais.</p>
+                  </div>
+                  <div className="bg-white/5 border border-white/10 rounded-xl p-5">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0">2</div>
+                      <p className="text-white font-bold text-sm">Agencia com GHL?</p>
+                    </div>
+                    <p className="text-white/60 text-xs ml-11">Contrate meus servicos de freelancer: configuro automacoes, treino chatbots, monto sub-accounts para seus clientes. Trabalho white-label.</p>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>
@@ -249,172 +234,364 @@ export default function ParaAgenciasPage() {
         </div>
       </section>
 
-      {/* === DOR DA AGENCIA === */}
-      <section className="section-padding bg-white">
-        <div className="container-main max-w-4xl">
-          <ScrollReveal className="text-center mb-12">
-            <p className="text-red-500 text-sm font-bold uppercase tracking-wider mb-3">Isso parece familiar?</p>
-            <h2 className="heading-2 text-brand-dark mb-4">Os problemas de toda agencia que revende GHL</h2>
+      {/* ============================================================ */}
+      {/* === OFERTA 1: SUB-CONTAS PARA CLINICAS DE ESTETICA ========= */}
+      {/* ============================================================ */}
+
+      <section id="clinicas" className="section-padding bg-white scroll-mt-20">
+        <div className="container-main">
+          <ScrollReveal className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-pink-50 border border-pink-200 rounded-full px-4 py-1.5 mb-4">
+              <span className="w-2 h-2 bg-pink-400 rounded-full" />
+              <span className="text-pink-600 text-sm font-medium">Para Clinicas de Estetica</span>
+            </div>
+            <h2 className="heading-2 text-brand-dark mb-4">Sub-conta GoHighLevel pronta para sua clinica</h2>
+            <p className="text-brand-dark/60 max-w-3xl mx-auto text-lg">
+              Voce recebe um sistema completo ja configurado: chatbot IA atendendo seus pacientes no WhatsApp, agendamento automatico, follow-up pos-procedimento, CRM com pipeline de vendas e muito mais. Sem dor de cabeca tecnica.
+            </p>
           </ScrollReveal>
-          <div className="grid md:grid-cols-2 gap-4">
-            {[
-              'Comprou o white-label mas nao sabe configurar direito',
-              'Perde horas assistindo tutoriais em ingles para cada funcao',
-              'Clientes reclamam que o sistema esta mal configurado',
-              'Nao tem equipe tecnica para implementar automacoes',
-              'Workflows quebrados que ninguem sabe consertar',
-              'Chatbot respondendo errado ou nao respondendo',
-              'Funis que nao convertem porque faltam automacoes',
-              'Paga o GHL todo mes mas usa 10% das funcionalidades',
-            ].map((dor, i) => (
-              <ScrollReveal key={i} delay={i * 60}>
-                <div className="flex items-start gap-4 bg-red-50 border border-red-100 rounded-xl p-5">
-                  <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+          {/* Pain Points Clinica */}
+          <ScrollReveal className="mb-16">
+            <div className="bg-red-50/50 border border-red-100 rounded-2xl p-8 max-w-4xl mx-auto">
+              <p className="text-red-500 text-sm font-bold uppercase tracking-wider mb-4 text-center">Isso parece familiar?</p>
+              <div className="grid md:grid-cols-2 gap-3">
+                {[
+                  'Pacientes marcam e nao aparecem (no-show)',
+                  'Respondendo WhatsApp manualmente o dia inteiro',
+                  'Pacientes somem depois do primeiro procedimento',
+                  'Nao sabe quantos leads viraram pacientes este mes',
+                  'Perde tempo com agendamento por telefone',
+                  'Nao faz follow-up pos-procedimento',
+                ].map((dor, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <svg className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>
+                    <p className="text-brand-dark/70 text-sm">{dor}</p>
                   </div>
-                  <p className="text-brand-dark/80 text-sm font-medium">{dor}</p>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* O que vem na sub-conta */}
+          <ScrollReveal className="text-center mb-8">
+            <h3 className="font-serif text-2xl font-bold text-brand-dark">O que vem pronto na sua sub-conta</h3>
+            <p className="text-brand-dark/50 mt-2">Tudo configurado e funcionando desde o dia 1</p>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16">
+            {subAccountFeatures.map((feat, i) => (
+              <ScrollReveal key={i} delay={i * 80}>
+                <div className="bg-brand-bg rounded-2xl p-6 border border-gray-100 h-full hover:shadow-md transition-shadow">
+                  <div className="w-12 h-12 bg-brand-mint/10 rounded-xl flex items-center justify-center mb-4">
+                    <svg className="w-6 h-6 text-brand-mint" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d={feat.icone} />
+                    </svg>
+                  </div>
+                  <h4 className="font-serif text-lg font-bold text-brand-dark mb-2">{feat.titulo}</h4>
+                  <p className="text-brand-dark/60 text-sm leading-relaxed">{feat.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
           </div>
+
+          {/* Funis Opcionais */}
+          <ScrollReveal className="max-w-4xl mx-auto mb-16">
+            <div className="bg-gradient-to-r from-brand-dark to-brand-dark/95 rounded-2xl p-8 text-white">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-brand-mint/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-brand-mint" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 className="font-serif text-xl font-bold mb-2">Funis & Landing Pages <span className="text-brand-mint text-sm font-normal">(opcional)</span></h4>
+                  <p className="text-white/70 text-sm leading-relaxed mb-4">
+                    A criterio do cliente, posso criar funis de vendas e landing pages dentro do GHL para captar novos pacientes.
+                    Paginas otimizadas para conversao com formularios, integracao com pagamento e automacoes de follow-up.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {['Landing page de captacao', 'Formulario multi-step', 'Pagina de obrigado', 'Integracao Stripe/PayPal', 'A/B testing'].map((item) => (
+                      <span key={item} className="bg-white/10 border border-white/10 rounded-full px-3 py-1 text-xs text-white/70">{item}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Pricing Clinica */}
+          <ScrollReveal className="max-w-3xl mx-auto">
+            <div className="text-center mb-8">
+              <h3 className="font-serif text-2xl font-bold text-brand-dark mb-2">Como funciona o investimento</h3>
+              <p className="text-brand-dark/50">Simples e transparente</p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-brand-bg border border-gray-100 rounded-2xl p-8 text-center">
+                <div className="w-14 h-14 bg-brand-mint/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-7 h-7 text-brand-mint" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <p className="text-brand-dark/40 text-xs font-bold uppercase tracking-wider mb-2">Pagamento Unico</p>
+                <h4 className="font-serif text-xl font-bold text-brand-dark mb-3">Taxa de Configuracao</h4>
+                <p className="text-brand-dark/60 text-sm leading-relaxed">
+                  Setup inicial completo: todas as automacoes, chatbot IA treinado, CRM, pipeline, calendario e templates configurados do zero para sua clinica.
+                </p>
+                <div className="mt-4 pt-4 border-t border-gray-200">
+                  <p className="text-brand-dark/40 text-xs">Entrega em 5-7 dias uteis</p>
+                </div>
+              </div>
+
+              <div className="bg-brand-dark text-white rounded-2xl p-8 text-center border-2 border-brand-mint">
+                <div className="w-14 h-14 bg-brand-mint/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-7 h-7 text-brand-mint" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                  </svg>
+                </div>
+                <p className="text-brand-mint text-xs font-bold uppercase tracking-wider mb-2">Recorrente</p>
+                <h4 className="font-serif text-xl font-bold mb-3">Mensalidade</h4>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  Manutencao continua: ajustes nas automacoes, atualizacoes do chatbot, suporte tecnico, otimizacoes e novas funcionalidades conforme necessario.
+                </p>
+                <div className="mt-4 pt-4 border-t border-white/10">
+                  <p className="text-white/40 text-xs">Suporte prioritario incluso</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center mt-8">
+              <a
+                href="https://wa.me/5531982948067?text=Olá! Tenho uma clínica de estética e quero saber mais sobre a sub-conta GoHighLevel"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary text-lg px-10 py-4"
+              >
+                Quero minha sub-conta GHL
+              </a>
+              <p className="text-brand-dark/40 text-xs mt-3">Vamos conversar sobre valores e escopo para sua clinica</p>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* === SERVICOS COM ESCOPO DETALHADO === */}
+      {/* === EXEMPLO: COMO FUNCIONA NA PRATICA === */}
       <section className="section-padding bg-brand-bg">
+        <div className="container-main max-w-5xl">
+          <ScrollReveal className="text-center mb-12">
+            <h2 className="heading-2 text-brand-dark mb-4">Na pratica: como funciona para sua clinica</h2>
+            <p className="text-brand-dark/60">Exemplo real de automacao rodando em clinica de estetica</p>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
+              <div className="p-6 md:p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 bg-brand-mint/10 rounded-xl flex items-center justify-center">
+                    <svg className="w-5 h-5 text-brand-mint" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-serif text-lg font-bold text-brand-dark">Jornada Completa do Paciente</h3>
+                    <p className="text-brand-dark/40 text-xs">Do primeiro contato ao retorno — tudo automatizado</p>
+                  </div>
+                  <span className="ml-auto bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full">Automatizado</span>
+                </div>
+
+                <div className="space-y-4">
+                  {[
+                    { step: '1', titulo: 'Paciente manda mensagem no WhatsApp', desc: 'Chatbot IA responde instantaneamente, tira duvidas sobre procedimentos e precos.', cor: 'bg-blue-500' },
+                    { step: '2', titulo: 'Chatbot qualifica e agenda', desc: 'Identifica o procedimento desejado, verifica horarios disponiveis e agenda automaticamente.', cor: 'bg-purple-500' },
+                    { step: '3', titulo: 'Lembretes automaticos', desc: '24h e 1h antes do procedimento, o paciente recebe lembrete no WhatsApp. Anti-no-show.', cor: 'bg-orange-500' },
+                    { step: '4', titulo: 'Pos-procedimento', desc: 'Follow-up automatico: como esta se sentindo? Cuidados pos-procedimento. Avaliacao.', cor: 'bg-pink-500' },
+                    { step: '5', titulo: 'Reativacao', desc: 'Paciente nao volta ha 60 dias? Mensagem automatica com oferta especial de retorno.', cor: 'bg-brand-mint' },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-4 bg-brand-bg rounded-xl p-4">
+                      <div className={`w-8 h-8 ${item.cor} rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0`}>
+                        {item.step}
+                      </div>
+                      <div>
+                        <p className="text-brand-dark font-medium text-sm">{item.titulo}</p>
+                        <p className="text-brand-dark/50 text-xs mt-0.5">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-4 mt-6 pt-6 border-t border-gray-100">
+                  <div className="text-center">
+                    <p className="font-serif text-2xl font-bold text-brand-dark">24/7</p>
+                    <p className="text-brand-dark/40 text-xs">Atendimento automatico</p>
+                  </div>
+                  <div className="text-center">
+                    <p className="font-serif text-2xl font-bold text-brand-dark">-70%</p>
+                    <p className="text-brand-dark/40 text-xs">Reducao de no-shows</p>
+                  </div>
+                  <div className="text-center">
+                    <p className="font-serif text-2xl font-bold text-brand-dark">+40%</p>
+                    <p className="text-brand-dark/40 text-xs">Pacientes reativados</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ============================================================ */}
+      {/* === OFERTA 2: FREELANCER PARA AGENCIAS ===================== */}
+      {/* ============================================================ */}
+
+      <section id="agencias" className="section-padding bg-brand-dark text-white scroll-mt-20">
         <div className="container-main">
           <ScrollReveal className="text-center mb-16">
-            <p className="text-brand-mint text-sm font-bold uppercase tracking-wider mb-3">Escopo completo</p>
-            <h2 className="heading-2 text-brand-dark mb-4">Tudo que eu configuro dentro do GoHighLevel</h2>
-            <p className="text-brand-dark/50 max-w-2xl mx-auto">
-              Cada servico abaixo pode ser contratado individualmente ou em pacote completo.
-              Tudo e feito diretamente no sub-account do seu cliente.
+            <div className="inline-flex items-center gap-2 bg-brand-mint/20 border border-brand-mint/30 rounded-full px-4 py-1.5 mb-4">
+              <span className="w-2 h-2 bg-brand-mint rounded-full" />
+              <span className="text-brand-mint text-sm font-medium">Para Agencias com GoHighLevel</span>
+            </div>
+            <h2 className="heading-2 mb-4">Sua agencia vende o GHL.<br /><span className="text-brand-mint">Eu implemento.</span></h2>
+            <p className="text-white/60 max-w-3xl mx-auto text-lg">
+              Voce ja tem GoHighLevel e revende para clientes, mas precisa de alguem para o operacional?
+              Eu entro como sua freelancer: configuro automacoes, treino chatbots, monto sub-accounts — tudo white-label, como parte da sua equipe.
             </p>
           </ScrollReveal>
 
-          <div className="space-y-8 max-w-5xl mx-auto">
-            {servicos.map((servico, i) => (
-              <ScrollReveal key={i} delay={i * 80}>
-                <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
-                  <div className="flex items-start gap-4 p-6 md:p-8 border-b border-gray-50">
-                    <div className="w-12 h-12 bg-brand-mint/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-brand-mint" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d={servico.icone} />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="font-serif text-xl font-bold text-brand-dark mb-2">{servico.titulo}</h3>
-                      <p className="text-brand-dark/60 text-sm leading-relaxed">{servico.desc}</p>
-                    </div>
+          {/* Pain Points Agencia */}
+          <ScrollReveal className="mb-16">
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-8 max-w-4xl mx-auto">
+              <p className="text-red-400 text-sm font-bold uppercase tracking-wider mb-4 text-center">Isso parece familiar?</p>
+              <div className="grid md:grid-cols-2 gap-3">
+                {[
+                  'Comprou o white-label mas nao tem tempo de configurar',
+                  'Perde horas assistindo tutoriais em ingles',
+                  'Clientes reclamam que o sistema ta mal configurado',
+                  'Nao tem equipe tecnica para automacoes complexas',
+                  'Workflows quebrados que ninguem sabe consertar',
+                  'Chatbot respondendo errado ou nao respondendo',
+                  'Funis que nao convertem porque faltam automacoes',
+                  'Paga o GHL todo mes mas usa 10% das funcionalidades',
+                ].map((dor, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <svg className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                    <p className="text-white/70 text-sm">{dor}</p>
                   </div>
-                  <div className="p-6 md:p-8">
-                    <p className="text-brand-dark/40 text-xs font-bold uppercase tracking-wider mb-4">O que esta incluso:</p>
-                    <ul className="grid md:grid-cols-2 gap-2">
-                      {servico.escopo.map((item, j) => (
-                        <li key={j} className="flex items-start gap-2 text-sm text-brand-dark/70">
-                          <svg className="w-4 h-4 text-brand-mint flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Servicos Freelancer */}
+          <ScrollReveal className="text-center mb-8">
+            <h3 className="font-serif text-2xl font-bold">Servicos que ofereco para sua agencia</h3>
+            <p className="text-white/40 mt-2">Contrate por projeto, pacote mensal ou sob demanda</p>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
+            {freelancerServices.map((servico, i) => (
+              <ScrollReveal key={i} delay={i * 80}>
+                <div className="bg-white/5 border border-white/10 rounded-2xl p-6 h-full hover:bg-white/[0.08] transition-colors">
+                  <h4 className="font-serif text-lg font-bold text-brand-mint mb-2">{servico.titulo}</h4>
+                  <p className="text-white/60 text-sm leading-relaxed mb-4">{servico.desc}</p>
+                  <ul className="space-y-2">
+                    {servico.items.map((item, j) => (
+                      <li key={j} className="flex items-start gap-2 text-xs text-white/50">
+                        <svg className="w-3.5 h-3.5 text-brand-mint flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          {/* Como Contratar — Agencia */}
+          <ScrollReveal className="max-w-4xl mx-auto mb-12">
+            <div className="text-center mb-8">
+              <h3 className="font-serif text-2xl font-bold">Modelos de contratacao</h3>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                {
+                  titulo: 'Setup Unico',
+                  desc: 'Configuracao completa de um sub-account do zero. Ideal para onboarding de novo cliente.',
+                  items: ['Sub-account completo', 'Automacoes + CRM + Chatbot', 'Video-walkthrough', 'Entrega em 5-7 dias'],
+                  cta: 'Solicitar Setup',
+                },
+                {
+                  titulo: 'Pacote Mensal',
+                  desc: 'Manutencao e implementacoes continuas. Para agencias com volume constante.',
+                  items: ['X sub-accounts/mes', 'Ajustes e otimizacoes', 'Suporte prioritario', 'Reuniao de alinhamento'],
+                  cta: 'Ver Pacotes',
+                  destaque: true,
+                },
+                {
+                  titulo: 'Sob Demanda',
+                  desc: 'Tarefas pontuais: consertar workflow, criar automacao, treinar chatbot.',
+                  items: ['Tarefas avulsas', 'Preco por hora/tarefa', 'Sem compromisso mensal', 'Entrega rapida'],
+                  cta: 'Enviar Tarefa',
+                },
+              ].map((modelo, i) => (
+                <ScrollReveal key={i} delay={i * 100}>
+                  <div className={`rounded-2xl p-6 md:p-8 h-full flex flex-col ${modelo.destaque ? 'bg-brand-mint text-white' : 'bg-white/5 border border-white/10'}`}>
+                    <h4 className="font-serif text-xl font-bold mb-2">{modelo.titulo}</h4>
+                    <p className={`text-sm mb-6 ${modelo.destaque ? 'text-white/80' : 'text-white/50'}`}>{modelo.desc}</p>
+                    <ul className="space-y-2 mb-8 flex-1">
+                      {modelo.items.map((item, j) => (
+                        <li key={j} className={`flex items-center gap-2 text-sm ${modelo.destaque ? 'text-white/90' : 'text-white/60'}`}>
+                          <svg className={`w-4 h-4 flex-shrink-0 ${modelo.destaque ? 'text-white' : 'text-brand-mint'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
                           {item}
                         </li>
                       ))}
                     </ul>
+                    <a
+                      href="https://wa.me/5531982948067?text=Olá, sou de uma agência e quero saber sobre o modelo de contratação"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`text-center font-bold py-3 rounded-full transition-all text-sm ${modelo.destaque ? 'bg-white text-brand-dark hover:bg-white/90' : 'border border-white/20 text-white hover:bg-white/10'}`}
+                    >
+                      {modelo.cta}
+                    </a>
                   </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* === EXEMPLOS DE AUTOMACAO GHL === */}
-      <section className="section-padding bg-brand-bg">
-        <div className="container-main">
-          <ScrollReveal className="text-center mb-16">
-            <p className="text-brand-mint text-sm font-bold uppercase tracking-wider mb-3">Casos de Uso</p>
-            <h2 className="heading-2 text-brand-dark mb-4">4 Exemplos de Automações GHL</h2>
-            <p className="text-brand-dark/60 max-w-2xl mx-auto">
-              Veja como transformo processos manuais em máquinas de conversão dentro do GoHighLevel para seus clientes.
-            </p>
+                </ScrollReveal>
+              ))}
+            </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {[
-              {
-                titulo: 'Follow-up Instantâneo (Formulário)',
-                desc: 'Garante que nenhum lead esfrie. Assim que o formulário é preenchido, o sistema inicia o contato em segundos.',
-                passos: [
-                  'Trigger: Form Submitted (Site/Landing Page)',
-                  'Ação: Envio imediato de WhatsApp personalizado',
-                  'Ação: Notificação push/email para o time de vendas',
-                  'Ação: Adicionar tag "Lead Quente" e mover no Pipeline',
-                  'Wait: 15 minutos (se não responder) > Envio de SMS'
-                ],
-                icone: 'M13 10V3L4 14h7v7l9-11h-7z'
-              },
-              {
-                titulo: 'Triagem e Qualificação com IA',
-                desc: 'A IA conversa com o lead, faz perguntas estratégicas de triagem e só transfere para o humano se o lead for qualificado.',
-                passos: [
-                  'Trigger: Customer Replied (WhatsApp/Instagram)',
-                  'Ação: IA inicia conversa amigável de triagem',
-                  'Ação: Verificação de critérios (ex: orçamento, urgência)',
-                  'Condição: Lead qualificado? Sim > Notificar Humano',
-                  'Ação: Transferência com resumo da conversa para o CRM'
-                ],
-                icone: 'M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z'
-              },
-              {
-                titulo: 'Recuperação de No-Show (Agendamento)',
-                desc: 'Automatiza o re-agendamento de leads que não compareceram à reunião, sem precisar de esforço manual.',
-                passos: [
-                  'Trigger: Appointment Status Changed (No-Show)',
-                  'Ação: Envio de WhatsApp: "Sentimos sua falta!"',
-                  'Ação: Link direto para o calendário de re-agendamento',
-                  'Ação: Sequência de 3 dias de lembretes suaves',
-                  'Ação: Tag "Reengajamento" para controle do time'
-                ],
-                icone: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z'
-              },
-              {
-                titulo: 'Onboarding de Novos Clientes',
-                desc: 'Assim que o contrato é assinado ou pagamento aprovado, o sistema inicia o processo de boas-vindas e coleta de dados.',
-                passos: [
-                  'Trigger: Payment Received / Contract Signed',
-                  'Ação: Envio de email de boas-vindas com login/acesso',
-                  'Ação: Link para formulário de Onboarding (Briefing)',
-                  'Ação: Criação automática de pasta no Drive/Dropbox',
-                  'Ação: Notificação no Slack/WhatsApp para o Gestor'
-                ],
-                icone: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'
-              }
-            ].map((ex, i) => (
-              <ScrollReveal key={i} delay={i * 100}>
-                <div className="bg-white rounded-2xl p-8 border border-gray-100 h-full flex flex-col shadow-sm hover:shadow-md transition-shadow">
-                  <div className="w-12 h-12 bg-brand-mint/10 rounded-xl flex items-center justify-center mb-6 text-brand-mint">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={ex.icone} />
-                    </svg>
+          {/* Como funciona (steps) */}
+          <ScrollReveal className="max-w-3xl mx-auto">
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
+              <h3 className="font-serif text-xl font-bold text-center mb-6">Como funciona</h3>
+              <div className="space-y-6">
+                {[
+                  { step: '1', title: 'Voce me envia o briefing', desc: 'O que o cliente precisa: nicho, servicos, fluxos de atendimento.' },
+                  { step: '2', title: 'Eu configuro tudo no GHL', desc: 'Sub-account, automacoes, funis, chatbot, CRM — tudo pronto.' },
+                  { step: '3', title: 'Entrego documentado', desc: 'Video-walkthrough + documento com tudo que foi feito.' },
+                  { step: '4', title: 'Seu cliente usa e voce escala', desc: 'O cliente ve resultado, voce fatura mais, sem equipe fixa.' },
+                ].map((item) => (
+                  <div key={item.step} className="flex items-start gap-4">
+                    <div className="w-8 h-8 bg-brand-mint rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+                      {item.step}
+                    </div>
+                    <div>
+                      <p className="text-white font-medium text-sm">{item.title}</p>
+                      <p className="text-white/50 text-xs mt-0.5">{item.desc}</p>
+                    </div>
                   </div>
-                  <h3 className="font-serif text-xl font-bold text-brand-dark mb-3">{ex.titulo}</h3>
-                  <p className="text-brand-dark/60 text-sm mb-6 flex-1">{ex.desc}</p>
-                  <div className="bg-brand-bg rounded-xl p-5 border border-gray-50">
-                    <p className="text-xs font-bold uppercase tracking-wider text-brand-dark/40 mb-3">Fluxo do Workflow:</p>
-                    <ul className="space-y-2">
-                      {ex.passos.map((p, j) => (
-                        <li key={j} className="flex items-start gap-2 text-xs text-brand-dark/70">
-                          <span className="text-brand-mint font-bold">•</span>
-                          {p}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -425,13 +602,62 @@ export default function ParaAgenciasPage() {
             <p className="text-brand-mint text-sm font-bold uppercase tracking-wider mb-3">Automacoes reais em producao</p>
             <h2 className="heading-2 text-brand-dark mb-4">Exemplos do que eu construo</h2>
             <p className="text-brand-dark/50 max-w-2xl mx-auto">
-              Esses sao workflows reais rodando em producao para clientes. Automacoes completas que funcionam 24/7 sem intervencao humana.
+              Workflows reais rodando em producao. Automacoes completas que funcionam 24/7 sem intervencao humana.
             </p>
           </ScrollReveal>
 
           <div className="space-y-12 max-w-5xl mx-auto">
-            {/* Workflow n8n — Auto Publicacao */}
+            {/* Workflow GHL — Automacao Clinica Estetica */}
             <ScrollReveal>
+              <div className="bg-brand-bg border border-gray-100 rounded-2xl overflow-hidden">
+                <div className="p-6 md:p-8">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 bg-brand-mint/10 rounded-xl flex items-center justify-center">
+                      <svg className="w-5 h-5 text-brand-mint" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="font-serif text-lg font-bold text-brand-dark">Automacao Completa — Clinica de Estetica</h3>
+                      <p className="text-brand-dark/40 text-xs">GoHighLevel — Chatbot IA + Agendamento + Follow-up + CRM</p>
+                    </div>
+                    <span className="ml-auto bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full">Em producao</span>
+                  </div>
+
+                  <p className="text-brand-dark/60 text-sm leading-relaxed mb-6">
+                    Sistema completo configurado dentro do GHL para clinica de estetica: chatbot IA no WhatsApp qualifica o paciente,
+                    agenda procedimento automaticamente, envia lembretes, faz follow-up pos-procedimento e reativa pacientes inativos.
+                    Pipeline CRM com movimentacao automatica entre etapas.
+                  </p>
+
+                  <div className="bg-white rounded-xl border border-gray-100 p-6">
+                    <div className="grid md:grid-cols-2 gap-4">
+                      {[
+                        { titulo: 'Chatbot IA WhatsApp', desc: 'Atende, qualifica e agenda automaticamente' },
+                        { titulo: 'Pipeline CRM', desc: '6 etapas com movimentacao automatica' },
+                        { titulo: 'Follow-up sequencial', desc: 'Dia 1, 3, 7, 14 e 30 apos contato' },
+                        { titulo: 'Anti no-show', desc: 'Lembretes 24h e 1h antes + reengajamento' },
+                        { titulo: 'Reativacao', desc: 'Workflow para pacientes inativos ha 60+ dias' },
+                        { titulo: 'Relatorios', desc: 'Dashboard com metricas de conversao e agendamento' },
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-start gap-3">
+                          <svg className="w-4 h-4 text-brand-mint flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <div>
+                            <p className="text-brand-dark font-medium text-sm">{item.titulo}</p>
+                            <p className="text-brand-dark/40 text-xs">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Workflow n8n — Auto Publicacao */}
+            <ScrollReveal delay={100}>
               <div className="bg-brand-bg border border-gray-100 rounded-2xl overflow-hidden">
                 <div className="p-6 md:p-8">
                   <div className="flex items-center gap-3 mb-4">
@@ -453,7 +679,6 @@ export default function ParaAgenciasPage() {
                     via GHL e tambem gera artigos completos para o blog do site via GitHub. Tudo sem intervencao humana.
                   </p>
 
-                  {/* Visual Flow Diagram */}
                   <div className="bg-white rounded-xl border border-gray-100 p-6 overflow-x-auto">
                     <div className="flex items-center gap-2 flex-wrap justify-center min-w-[600px]">
                       {[
@@ -503,55 +728,6 @@ export default function ParaAgenciasPage() {
                 </div>
               </div>
             </ScrollReveal>
-
-            {/* Workflow GHL — Automacao de Atendimento */}
-            <ScrollReveal delay={100}>
-              <div className="bg-brand-bg border border-gray-100 rounded-2xl overflow-hidden">
-                <div className="p-6 md:p-8">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 bg-brand-mint/10 rounded-xl flex items-center justify-center">
-                      <svg className="w-5 h-5 text-brand-mint" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="font-serif text-lg font-bold text-brand-dark">Automacao Completa de Atendimento</h3>
-                      <p className="text-brand-dark/40 text-xs">GoHighLevel — Workflow de follow-up + chatbot + CRM</p>
-                    </div>
-                    <span className="ml-auto bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full">Em producao</span>
-                  </div>
-
-                  <p className="text-brand-dark/60 text-sm leading-relaxed mb-6">
-                    Sistema completo configurado dentro do GHL para clinica de saude: chatbot IA no WhatsApp qualifica o paciente,
-                    agenda consulta automaticamente, envia lembretes, faz follow-up pos-consulta e reativa pacientes inativos.
-                    Pipeline CRM com movimentacao automatica entre etapas.
-                  </p>
-
-                  <div className="bg-white rounded-xl border border-gray-100 p-6">
-                    <div className="grid md:grid-cols-2 gap-4">
-                      {[
-                        { titulo: 'Chatbot IA WhatsApp', desc: 'Atende, qualifica e agenda automaticamente' },
-                        { titulo: 'Pipeline CRM', desc: '6 etapas com movimentacao automatica' },
-                        { titulo: 'Follow-up sequencial', desc: 'Dia 1, 3, 7, 14 e 30 apos contato' },
-                        { titulo: 'Anti no-show', desc: 'Lembretes 24h e 1h antes + reengajamento' },
-                        { titulo: 'Reativacao', desc: 'Workflow para pacientes inativos ha 60+ dias' },
-                        { titulo: 'Relatorios', desc: 'Dashboard com metricas de conversao e agendamento' },
-                      ].map((item, i) => (
-                        <div key={i} className="flex items-start gap-3">
-                          <svg className="w-4 h-4 text-brand-mint flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          <div>
-                            <p className="text-brand-dark font-medium text-sm">{item.titulo}</p>
-                            <p className="text-brand-dark/40 text-xs">{item.desc}</p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -563,7 +739,7 @@ export default function ParaAgenciasPage() {
             <p className="text-brand-mint text-sm font-bold uppercase tracking-wider mb-3">100+ gatilhos disponiveis</p>
             <h2 className="heading-2 mb-4">Todos os triggers do GHL que eu domino</h2>
             <p className="text-white/50 max-w-2xl mx-auto">
-              Cada automacao comeca com um gatilho. Abaixo estao todos os triggers que configuro nos workflows dos seus clientes — organizados por categoria.
+              Cada automacao comeca com um gatilho. Abaixo estao todos os triggers que configuro nos workflows — organizados por categoria.
             </p>
           </ScrollReveal>
 
@@ -669,7 +845,7 @@ export default function ParaAgenciasPage() {
               <p className="text-brand-mint text-sm font-bold uppercase tracking-wider mb-2">Quem vai implementar</p>
               <h2 className="font-serif text-2xl md:text-3xl font-bold mb-4">Rhaideline Calazans</h2>
               <p className="text-white/70 text-sm leading-relaxed mb-4">
-                Trabalho com GoHighLevel desde 2022. Ja configurei dezenas de sub-accounts para agencias nos EUA e no Brasil.
+                Trabalho com GoHighLevel desde 2022. Ja configurei dezenas de sub-accounts para agencias e clinicas nos EUA e no Brasil.
                 Minha especialidade e pegar um GHL zerado e entregar um sistema completo funcionando: automacoes, chatbot IA,
                 funis, CRM, WhatsApp, calendario — tudo integrado e documentado.
               </p>
@@ -687,63 +863,6 @@ export default function ParaAgenciasPage() {
         </div>
       </section>
 
-      {/* === COMO CONTRATAR === */}
-      <section className="section-padding bg-white">
-        <div className="container-main max-w-4xl">
-          <ScrollReveal className="text-center mb-12">
-            <h2 className="heading-2 text-brand-dark mb-4">Modelos de contratacao</h2>
-          </ScrollReveal>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                titulo: 'Setup Unico',
-                desc: 'Configuracao completa de um sub-account do zero. Ideal para onboarding de novo cliente.',
-                items: ['Sub-account completo', 'Automacoes + CRM', 'Funil + Chatbot', 'Video-walkthrough', 'Entrega em 5-7 dias'],
-                cta: 'Solicitar Setup',
-              },
-              {
-                titulo: 'Pacote Mensal',
-                desc: 'Manutencao e melhorias continuas. Para agencias com volume constante de clientes.',
-                items: ['X sub-accounts/mes', 'Ajustes e otimizacoes', 'Suporte prioritario', 'Relatorios mensais', 'Reuniao de alinhamento'],
-                cta: 'Ver Pacotes',
-                destaque: true,
-              },
-              {
-                titulo: 'Sob Demanda',
-                desc: 'Tarefas pontuais: consertar workflow, criar automacao, configurar chatbot.',
-                items: ['Tarefas avulsas', 'Preco por hora/tarefa', 'Sem compromisso mensal', 'Entrega rapida', 'Ideal para urgencias'],
-                cta: 'Enviar Tarefa',
-              },
-            ].map((modelo, i) => (
-              <ScrollReveal key={i} delay={i * 100}>
-                <div className={`rounded-2xl p-6 md:p-8 h-full flex flex-col ${modelo.destaque ? 'bg-brand-dark text-white border-2 border-brand-mint' : 'bg-brand-bg border border-gray-100'}`}>
-                  <h3 className="font-serif text-xl font-bold mb-2">{modelo.titulo}</h3>
-                  <p className={`text-sm mb-6 ${modelo.destaque ? 'text-white/60' : 'text-brand-dark/60'}`}>{modelo.desc}</p>
-                  <ul className="space-y-2 mb-8 flex-1">
-                    {modelo.items.map((item, j) => (
-                      <li key={j} className={`flex items-center gap-2 text-sm ${modelo.destaque ? 'text-white/70' : 'text-brand-dark/70'}`}>
-                        <svg className="w-4 h-4 text-brand-mint flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  <a
-                    href="https://wa.me/5531982948067?text=Olá, sou de uma agência e quero saber sobre o modelo de contratação"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`text-center font-bold py-3 rounded-full transition-all text-sm ${modelo.destaque ? 'btn-primary' : 'border border-brand-dark/20 text-brand-dark hover:bg-brand-dark hover:text-white'}`}
-                  >
-                    {modelo.cta}
-                  </a>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* === FAQ === */}
       <section className="section-padding bg-brand-bg">
         <div className="container-main max-w-3xl">
@@ -752,12 +871,14 @@ export default function ParaAgenciasPage() {
           </ScrollReveal>
           <div className="space-y-4">
             {[
+              { p: 'O que esta incluso na sub-conta GHL para clinicas de estetica?', r: 'A sub-conta vem pronta com: chatbot IA no WhatsApp, follow-up automatico, CRM com pipeline de vendas, calendario de agendamento com lembretes, campanhas de email/SMS e dashboard de metricas. Funis e landing pages podem ser adicionados a criterio do cliente.' },
+              { p: 'Como funciona o pagamento da sub-conta?', r: 'O pagamento e dividido em duas partes: uma taxa unica de configuracao (setup inicial com todas as automacoes) e uma mensalidade para manutencao, suporte e atualizacoes continuas.' },
+              { p: 'Posso adicionar funis de vendas a minha sub-conta?', r: 'Sim! Os funis e landing pages sao opcionais e podem ser adicionados a qualquer momento conforme sua necessidade. Construo funis otimizados para conversao com formularios multi-step e integracao com pagamento.' },
+              { p: 'Voce trabalha como freelancer para agencias que ja tem GHL?', r: 'Sim! Ofereço servicos operacionais para agencias que ja possuem GoHighLevel: configuracao de automacoes, treinamento de chatbot IA, setup de sub-accounts, funis, CRM e integracoes. Trabalho como white-label da sua agencia.' },
               { p: 'Voce trabalha com qual versao do GHL?', r: 'Trabalho com todas as versoes: Agency Pro, Agency Starter e SaaS Mode. Tambem configuro sub-accounts em white-label de outras agencias.' },
+              { p: 'Quanto tempo leva um setup completo?', r: 'Um sub-account completo (CRM + automacoes + chatbot + agendamento) leva em media 5-7 dias uteis. Tarefas pontuais como criar um workflow ou template, 1-2 dias.' },
               { p: 'Preciso dar acesso admin ao meu GHL?', r: 'Nao. Trabalho diretamente no sub-account do cliente. Voce cria um acesso de usuario para mim com as permissoes necessarias e eu configuro tudo la dentro.' },
-              { p: 'Quanto tempo leva um setup completo?', r: 'Um sub-account completo (CRM + automacoes + chatbot + funil) leva em media 5-7 dias uteis. Tarefas pontuais como criar um workflow ou template, 1-2 dias.' },
-              { p: 'Voce faz reuniao com o cliente final da agencia?', r: 'Posso fazer se necessario, como white-label da sua agencia (apareco como sua equipe). Ou entrego tudo documentado com video-walkthrough para voce apresentar.' },
-              { p: 'E se o workflow quebrar depois?', r: 'Ofereco 7 dias de suporte gratuito apos a entrega de cada setup. Para manutencao continua, temos o modelo de pacote mensal.' },
-              { p: 'Trabalha com integracao via API/Webhook?', r: 'Sim. Integro GHL com ferramentas externas via webhooks, API, Zapier ou Make. Exemplos: integrar com ERP, CRM externo, plataformas de pagamento, etc.' },
+              { p: 'E se o workflow quebrar depois?', r: 'Ofereco 7 dias de suporte gratuito apos a entrega de cada setup. Para manutencao continua, temos o modelo de pacote mensal com suporte prioritario.' },
             ].map((faq, i) => (
               <ScrollReveal key={i} delay={i * 60}>
                 <div className="bg-white rounded-2xl p-6 border border-gray-100">
@@ -774,13 +895,13 @@ export default function ParaAgenciasPage() {
       <section className="section-padding bg-brand-dark text-white text-center">
         <div className="container-main max-w-3xl">
           <ScrollReveal>
-            <h2 className="heading-2 mb-4">Pare de perder tempo configurando GHL.</h2>
+            <h2 className="heading-2 mb-4">Pronta para automatizar sua clinica ou agencia?</h2>
             <p className="text-white/50 mb-8 text-lg">
-              Foque em vender e prospectar novos clientes. Eu cuido de toda a parte tecnica do GoHighLevel para sua agencia.
+              Seja uma sub-conta GHL completa para sua clinica de estetica ou servicos de freelancer para sua agencia — eu cuido de toda a parte tecnica.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <a
-                href="https://wa.me/5531982948067?text=Olá, sou de uma agência e preciso de ajuda com GoHighLevel"
+                href="https://wa.me/5531982948067?text=Olá! Quero saber mais sobre GoHighLevel para minha clínica/agência"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary text-lg px-10 py-4"

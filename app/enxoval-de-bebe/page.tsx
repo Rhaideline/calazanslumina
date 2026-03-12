@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
-import CTAForm from '@/components/CTAForm'
 
 const BASE = 'https://calazanslumina.com.br'
 
@@ -148,6 +147,14 @@ const categorias: Categoria[] = [
         imagem: 'https://cf.shopee.com.br/file/br-11134207-7r98o-m8p0k8n32o0258',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F424219988%2F22592975480',
         tag: 'Essencial RN',
+      },
+      {
+        nome: 'Kit Calcinhas Algodao Gestante e Pos-Parto',
+        desc: 'Calcinhas 100% algodao ideais para gestantes e mamães no pos-parto. Confortaveis, macias e com cintura alta para nao apertar a barriga. Essencial no enxoval da mamae!',
+        preco: 29.90, precoOriginal: 49.90, desconto: 40, rating: 4.70, likes: 5000,
+        imagem: 'https://cf.shopee.com.br/file/sg-11134201-7rdvu-mc7g31995bxq06',
+        link: 'https://s.shopee.com.br/4qApqASsHM',
+        tag: 'Para Mamae', algodao: true,
       },
     ],
   },
@@ -572,6 +579,7 @@ function getTagColor(tag?: string) {
   if (tag === 'Custo-Beneficio') return 'bg-blue-500 text-white'
   if (tag === 'Essencial RN') return 'bg-pink-500 text-white'
   if (tag === 'Kit Completo') return 'bg-indigo-500 text-white'
+  if (tag === 'Para Mamae') return 'bg-fuchsia-500 text-white'
   return 'bg-gray-500 text-white'
 }
 
@@ -1158,7 +1166,6 @@ export default function EnxovalBebePage() {
         </div>
       </section>
 
-      <CTAForm />
     </>
   )
 }
