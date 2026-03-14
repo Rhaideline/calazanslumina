@@ -142,6 +142,27 @@ export default async function CapitalPage({ params }: { params: Promise<{ capita
       <PricingTable />
       <CoursesSection />
       <ReviewsWidget />
+
+      {/* Cross-Links */}
+      <section className="section-padding bg-brand-bg">
+        <div className="container-main">
+          <h2 className="font-serif text-xl font-bold text-brand-dark mb-4">Serviços Disponíveis</h2>
+          <div className="flex flex-wrap gap-2 mb-6">
+            {servicos.map(s => (
+              <Link key={s.slug} href={`/servicos/${s.slug}`} className="bg-white text-brand-dark text-sm px-4 py-2 rounded-full hover:bg-brand-mint hover:text-white transition-colors shadow-sm">
+                {s.nome}
+              </Link>
+            ))}
+          </div>
+          <div className="flex flex-wrap gap-4 text-sm">
+            <Link href="/cursos" className="text-brand-mint hover:text-brand-dark transition-colors">Cursos de Marketing Digital →</Link>
+            <Link href="/blog" className="text-brand-mint hover:text-brand-dark transition-colors">Blog →</Link>
+            <Link href="/sobre" className="text-brand-mint hover:text-brand-dark transition-colors">Sobre Nós →</Link>
+            <Link href="/contato" className="text-brand-mint hover:text-brand-dark transition-colors">Contato →</Link>
+          </div>
+        </div>
+      </section>
+
       <CTAForm cidade={capital.nome} />
     </>
   )

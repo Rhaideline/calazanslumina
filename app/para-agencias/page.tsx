@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import ScrollReveal from '@/components/ScrollReveal'
-import Breadcrumb from '@/components/Breadcrumb'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import CTAForm from '@/components/CTAForm'
 
 export const metadata: Metadata = {
@@ -145,6 +145,8 @@ export default function ParaAgenciasPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
+      <Breadcrumbs items={[{ name: 'Para Agências' }]} />
+
       {/* === HERO === */}
       <section className="relative py-20 md:py-28 bg-brand-dark text-white overflow-hidden">
         <Image
@@ -156,11 +158,6 @@ export default function ParaAgenciasPage() {
         />
         <div className="absolute inset-0 bg-brand-dark/90" />
         <div className="container-main section-padding relative z-10">
-          <Breadcrumb items={[
-            { label: 'Home', href: '/' },
-            { label: 'GoHighLevel para Clinicas & Agencias' },
-          ]} />
-
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <ScrollReveal>
               <div className="inline-flex items-center gap-2 bg-brand-mint/20 border border-brand-mint/30 rounded-full px-4 py-1.5 mb-6">

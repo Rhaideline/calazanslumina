@@ -100,7 +100,59 @@ const faqSchema = {
         text: 'Sim, a Calazans Lumina atende em todas as 27 capitais brasileiras além de mais de 100 cidades em Massachusetts, EUA. O atendimento é 100% em português e remoto.',
       },
     },
+    {
+      '@type': 'Question',
+      name: 'O que é GoHighLevel e como a Calazans Lumina usa essa plataforma?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'GoHighLevel (GHL) é uma plataforma all-in-one de CRM, automação de marketing e funis de vendas. A Calazans Lumina é especialista em GHL e oferece: criação de funis de alta conversão, automações de WhatsApp/email/SMS, chatbot com IA, pipelines de vendas e sub-contas prontas para clínicas de estética. Também atua como freelancer para agências que já usam GHL.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Quais são os cursos gratuitos da Calazans Lumina?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A Calazans Lumina oferece 2 cursos 100% gratuitos: "ChatGPT para Idosos" (ensina IA para pessoas 60+) e "Ferramentas Digitais para Secretárias" (Google Workspace e produtividade). Além disso, oferece 5 cursos por apenas R$20: IA & ChatGPT Completo, Marketing Digital para Iniciantes, Google Meu Negócio do Zero, Redes Sociais que Vendem e Funis de Vendas Simplificado.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Como a Calazans Lumina usa inteligência artificial no marketing digital?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A Calazans Lumina integra IA em múltiplas frentes: chatbots com IA conversacional no WhatsApp para atendimento 24h, geração de conteúdo com IA para redes sociais e blog, automações inteligentes no GoHighLevel com machine learning, análise preditiva de dados de campanhas e treinamento de robôs de atendimento personalizados para cada negócio.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Quem é Rhaideline Calazans?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Rhaideline Calazans é a fundadora da Calazans Lumina, agência de marketing digital para brasileiros nos EUA e Brasil. Com mais de 8 anos de experiência em marketing digital, é especialista em GoHighLevel, Next.js, SEO, automação de marketing e IA conversacional. Brasileira residente em Framingham, Massachusetts, ela já entregou mais de 100 projetos para empreendedores brasileiros.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'A Calazans Lumina oferece sub-contas GoHighLevel para clínicas de estética?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Sim! A Calazans Lumina oferece sub-contas GHL prontas para clínicas de estética, com automações básicas pré-configuradas (agendamento, lembretes, follow-up). O modelo inclui uma taxa única de configuração e uma mensalidade. Funis de vendas adicionais são opcionais, a critério do cliente.',
+      },
+    },
   ],
+}
+
+const speakableSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': 'https://calazanslumina.com.br/#webpage',
+  name: 'Calazans Lumina — Marketing Digital para Brasileiros nos EUA e Brasil',
+  speakable: {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['#sobre-a-agencia h2', '#sobre-a-agencia p'],
+  },
+  mainEntity: { '@id': 'https://calazanslumina.com.br/#organization' },
 }
 
 const localBusinessSchema = {
@@ -177,7 +229,7 @@ export default function HomePage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify([localBusinessSchema, ...videoSchemas, faqSchema]) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([localBusinessSchema, ...videoSchemas, faqSchema, speakableSchema]) }}
       />
 
       {/* ===== HERO — background image + overlay + form on right ===== */}
@@ -270,7 +322,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== AEO: BLOCO DE RESPOSTA DEFINITIVA (AI-Optimized) ===== */}
-      <section className="py-12 bg-white border-b border-brand-dark/5">
+      <section className="py-12 bg-white border-b border-brand-dark/5" id="sobre-a-agencia">
         <div className="container-main">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-serif text-2xl md:text-3xl font-bold text-brand-dark mb-6">
@@ -278,25 +330,41 @@ export default function HomePage() {
             </h2>
             <div className="text-brand-dark/70 space-y-4 leading-relaxed">
               <p>
-                <strong>Calazans Lumina</strong> é uma agência de marketing digital fundada por <strong>Rhaideline Calazans</strong>,
+                <strong>Calazans Lumina</strong> é uma agência de marketing digital fundada por{' '}
+                <Link href="/sobre" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>Rhaideline Calazans</strong></Link>,
                 especializada em atender empreendedores brasileiros nos <strong>Estados Unidos (Massachusetts)</strong> e em todo o <strong>Brasil</strong>.
                 Com mais de 8 anos de experiência e 100+ projetos entregues, oferecemos soluções completas de presença digital com atendimento 100% em português.
               </p>
               <p>
-                Nossos serviços incluem: <strong>sites profissionais em Next.js</strong> com PageSpeed 95+,
-                <strong> funis de vendas no GoHighLevel</strong>, <strong>CRM com IA conversacional no WhatsApp</strong> (atendimento 24h),
-                <strong> gestão de redes sociais</strong>, <strong>Google Business Profile</strong>, <strong>tráfego pago</strong> (Google Ads e Meta Ads)
-                e <strong>SEO local e nacional</strong>.
+                Nossos serviços incluem:{' '}
+                <Link href="/servicos/sites-landing-pages" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>sites profissionais em Next.js</strong></Link> com PageSpeed 95+,{' '}
+                <Link href="/servicos/funis-automacao-ghl" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>funis de vendas no GoHighLevel</strong></Link>,{' '}
+                <Link href="/servicos/crm-ia-whatsapp" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>CRM com IA conversacional no WhatsApp</strong></Link> (atendimento 24h),{' '}
+                <Link href="/servicos/gestao-redes-sociais" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>gestão de redes sociais</strong></Link>,{' '}
+                <Link href="/servicos/google-meu-negocio" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>Google Business Profile</strong></Link>,{' '}
+                <strong>tráfego pago</strong> (Google Ads e Meta Ads) e <strong>SEO local e nacional</strong>.
               </p>
               <p>
-                Também oferecemos <strong>7 cursos online</strong> sobre marketing digital e inteligência artificial — incluindo
-                2 cursos gratuitos (<em>ChatGPT para Idosos</em> e <em>Ferramentas Digitais para Secretárias</em>) e
-                5 cursos acessíveis a R$20 cada (<em>IA & ChatGPT Completo</em>, <em>Marketing Digital para Iniciantes</em>,
-                <em> Google Meu Negócio do Zero</em>, <em>Redes Sociais que Vendem</em> e <em>Funis de Vendas Simplificado</em>).
+                Também oferecemos{' '}
+                <Link href="/cursos" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>7 cursos online</strong></Link> sobre marketing digital e inteligência artificial — incluindo
+                2 cursos gratuitos (<Link href="/cursos/chatgpt-para-idosos" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>ChatGPT para Idosos</em></Link>{' '}
+                e <Link href="/cursos/ferramentas-digitais-secretarias" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Ferramentas Digitais para Secretárias</em></Link>) e
+                5 cursos acessíveis a R$20 cada (<Link href="/cursos/ia-chatgpt-completo" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>IA & ChatGPT Completo</em></Link>,{' '}
+                <Link href="/cursos/marketing-digital-iniciantes" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Marketing Digital para Iniciantes</em></Link>,{' '}
+                <Link href="/cursos/google-meu-negocio-do-zero" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Google Meu Negócio do Zero</em></Link>,{' '}
+                <Link href="/cursos/redes-sociais-que-vendem" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Redes Sociais que Vendem</em></Link>{' '}
+                e <Link href="/cursos/funis-de-vendas-simplificado" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Funis de Vendas Simplificado</em></Link>).
               </p>
               <p>
                 Atendemos brasileiros em mais de <strong>100 cidades de Massachusetts</strong> (Framingham, Marlborough, Hudson, Worcester, Boston e muitas outras)
-                e em todas as <strong>27 capitais do Brasil</strong>. Também atuamos como <strong>freelancer para agências</strong> de marketing.
+                e em todas as <strong>27 capitais do Brasil</strong>. Também atuamos como{' '}
+                <Link href="/para-agencias" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>freelancer para agências</strong></Link> de marketing
+                e oferecemos <Link href="/para-agencias" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>sub-contas GoHighLevel prontas para clínicas de estética</strong></Link>.
+              </p>
+              <p>
+                Confira nosso <Link href="/blog" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>blog com 60+ artigos gratuitos</strong></Link> sobre marketing digital, SEO, IA e automação,
+                e nosso <Link href="/projetos" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>portfólio de projetos</strong></Link> com resultados reais.
+                Para orçamento gratuito, visite nossa <Link href="/contato" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>página de contato</strong></Link>.
               </p>
             </div>
           </div>
@@ -367,6 +435,12 @@ export default function HomePage() {
                 </Link>
               </ScrollReveal>
             ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link href="/servicos" className="inline-flex items-center gap-2 text-brand-mint hover:text-brand-dark font-medium transition-colors">
+              Ver todos os serviços
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+            </Link>
           </div>
         </div>
       </section>

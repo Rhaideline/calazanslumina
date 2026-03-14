@@ -91,6 +91,23 @@ export const metadata: Metadata = {
   },
 }
 
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': 'https://calazanslumina.com.br/#website',
+  name: 'Calazans Lumina',
+  url: 'https://calazanslumina.com.br',
+  description:
+    'Agência de marketing digital para brasileiros nos EUA e Brasil. Sites Next.js, funis GoHighLevel, CRM com IA, Google Maps.',
+  publisher: { '@id': 'https://calazanslumina.com.br/#organization' },
+  inLanguage: 'pt-BR',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: 'https://calazanslumina.com.br/blog?q={search_term_string}',
+    'query-input': 'required name=search_term_string',
+  },
+}
+
 const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
@@ -163,6 +180,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
       </head>
       <body className="min-h-screen flex flex-col" suppressHydrationWarning>

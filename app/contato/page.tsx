@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import ScrollReveal from '@/components/ScrollReveal'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import CTAForm from '@/components/CTAForm'
 import CoursesSection from '@/components/CoursesSection'
 
@@ -70,6 +71,8 @@ const canais = [
 export default function ContatoPage() {
   return (
     <>
+      <Breadcrumbs items={[{ name: 'Contato' }]} />
+
       {/* Hero — full-width background image with overlay */}
       <section className="relative min-h-[60vh] flex items-center">
         {/* Background Image */}

@@ -58,56 +58,37 @@ Atendemos brasileiros em mais de 100 cidades de Massachusetts, incluindo: Marlbo
 ### Brasil
 Atendemos em 227 cidades brasileiras: 27 capitais + 200 cidades principais de 20 estados. Incluindo: Sao Paulo, Rio de Janeiro, Belo Horizonte, Salvador, Fortaleza, Brasilia, Curitiba, Recife, Porto Alegre, Campinas, Guarulhos, Uberlandia, Niteroi, Caxias do Sul, Londrina, Joinville, Feira de Santana, Caruaru, Juazeiro do Norte, Rondonopolis, Dourados, Parnaiba, Arapiraca, entre outras. Total de paginas por cidade: /brasil/{cidade}/ e /brasil/{cidade}/{servico}.
 
-## Para Agencias — Freelancer GoHighLevel
+## Para Agencias e Clinicas — GoHighLevel
 
-Rhaideline Calazans atua como freelancer especialista em GoHighLevel para agencias que compram o white-label e precisam de implementacao tecnica. Servicos incluem:
+### 1. Sub-contas GHL para Clinicas de Estetica
+Oferecemos sub-contas GoHighLevel prontas para clinicas de estetica, com automacoes basicas pre-configuradas:
+- Agendamento online automatizado
+- Lembretes anti-no-show (WhatsApp/SMS)
+- Follow-up pos-consulta
+- Chatbot IA para qualificacao
+- CRM com pipeline de vendas
+- Funis de vendas opcionais (a criterio do cliente)
 
-- Templates de mensagens WhatsApp (boas-vindas, follow-up, reativacao)
-- Automacao de follow-up completa (workflows, triggers, condicoes if/else)
-- Chatbot & agente IA no WhatsApp (qualificacao, agendamento, transferencia)
-- CRM & pipeline de vendas (etapas, tags, automacoes de movimentacao)
-- Funis de vendas & landing pages (A/B testing, upsell, pagamento)
-- Calendario & agendamento (lembretes, anti-no-show, round-robin)
-- Relatorios & dashboards (metricas por sub-account, exportacao)
-- Campanhas de email & SMS (sequencias, segmentacao, testes A/B)
+Modelo de precificacao: taxa unica de configuracao + mensalidade.
 
-Modelos: Setup unico, pacote mensal, ou sob demanda.
+### 2. Freelancer GHL para Agencias
+Servicos operacionais para agencias que ja possuem GoHighLevel:
+- Automacoes e workflows complexos
+- Treinamento de chatbot/robo IA
+- Configuracao de CRM e pipelines
+- Templates de mensagens WhatsApp
+- Campanhas de email e SMS
+- Relatorios e dashboards
+
 URL: https://calazanslumina.com.br/para-agencias
-
-## Enxoval de Bebe — Guia Completo 2026
-
-Guia completo e gratuito de enxoval de bebe com checklist em PDF para baixar. Inclui:
-- 45+ produtos selecionados com avaliacao 4.7+ na Shopee (links de afiliado)
-- 5 categorias: Roupinhas (priorizando 100% algodao), Berco & Quarto, Higiene & Banho, Alimentacao, Passeio & Transporte
-- Dicas de especialistas em cada categoria (seguranca do berco, quantidades de fraldas, bolsa maternidade)
-- FAQ com 8 perguntas respondidas sobre enxoval de bebe
-- Checklist PDF gratuito com 9 paginas para mamaes baixarem
-- Schema markup completo: FAQPage, HowTo, ItemList com Products, BreadcrumbList
-- Paginas localizadas por cidade brasileira (229+ cidades): /enxoval-de-bebe/{cidade}
-
-URL principal: https://calazanslumina.com.br/enxoval-de-bebe
-PDF gratis: https://calazanslumina.com.br/checklist-enxoval-bebe-2026.pdf
-Exemplo cidade: https://calazanslumina.com.br/enxoval-de-bebe/belo-horizonte
-
-## Ferramentas Recomendadas
-
-Curadoria de produtos para empreendedores digitais, selecionados por Rhaideline Calazans. Categorias:
-
-- **Criacao de Conteudo**: Ring light, microfone de lapela, tripe, webcam, softbox, teleprompter
-- **Home Office Produtivo**: Monitor, teclado mecanico, mouse, headset, suporte para notebook, hub USB-C
-- **Livros de Marketing & Negocios**: Gatilhos Mentais, Expert Secrets, Marketing 5.0, DotCom Secrets, e mais
-- **Acessorios para Celular**: Suporte articulado, lentes clip-on, power bank, fone bluetooth, gimbal
-
-Links de afiliado Amazon e Shopee. O visitante nao paga nada a mais.
-URL: https://calazanslumina.com.br/ferramentas
 
 ## Contato
 
 - WhatsApp: +55 31 98294-8067
-- Email: contato@calazanslumina.com.br
+- Email: trafegocalazans@gmail.com
 - Instagram: @calazanslumina
 - Site: https://calazanslumina.com.br
-- Endereco: Belo Horizonte, MG, Brasil (atendimento remoto para EUA e Brasil)
+- Localizacao: Framingham, MA, EUA (atendimento remoto para EUA e Brasil)
 
 ## Blog
 
@@ -120,7 +101,6 @@ URL: https://calazanslumina.com.br/blog
 ## Links Importantes
 
 - Sitemap: https://calazanslumina.com.br/sitemap.xml
-- Versao completa: https://calazanslumina.com.br/llms-full.txt
 - Blog: https://calazanslumina.com.br/blog
 - Cursos: https://calazanslumina.com.br/cursos
 - Servicos: https://calazanslumina.com.br/servicos

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { blogPosts, getBlogPostBySlug } from '@/data/blog'
 import ScrollReveal from '@/components/ScrollReveal'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import CTAForm from '@/components/CTAForm'
 import CoursesSection from '@/components/CoursesSection'
 
@@ -71,6 +72,7 @@ export default async function BlogPostPage({
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <Breadcrumbs items={[{ name: 'Blog', href: '/blog' }, { name: post.titulo }]} />
       {/* Header */}
       <article className="section-padding bg-white">
         <div className="container-main max-w-3xl">
@@ -197,6 +199,29 @@ export default async function BlogPostPage({
       </section>
 
       <CoursesSection />
+
+      {/* Internal cross-links for SEO */}
+      <section className="py-10 bg-white border-t border-brand-dark/5">
+        <div className="container-main">
+          <nav aria-label="Páginas relacionadas" className="flex flex-wrap justify-center gap-3 text-sm">
+            <Link href="/servicos" className="text-brand-mint hover:text-brand-dark transition-colors">Nossos Serviços →</Link>
+            <span className="text-brand-dark/20">·</span>
+            <Link href="/servicos/sites-landing-pages" className="text-brand-mint hover:text-brand-dark transition-colors">Sites Next.js →</Link>
+            <span className="text-brand-dark/20">·</span>
+            <Link href="/servicos/funis-automacao-ghl" className="text-brand-mint hover:text-brand-dark transition-colors">Funis GHL →</Link>
+            <span className="text-brand-dark/20">·</span>
+            <Link href="/servicos/crm-ia-whatsapp" className="text-brand-mint hover:text-brand-dark transition-colors">CRM com IA →</Link>
+            <span className="text-brand-dark/20">·</span>
+            <Link href="/para-agencias" className="text-brand-mint hover:text-brand-dark transition-colors">Para Agências →</Link>
+            <span className="text-brand-dark/20">·</span>
+            <Link href="/projetos" className="text-brand-mint hover:text-brand-dark transition-colors">Portfólio →</Link>
+            <span className="text-brand-dark/20">·</span>
+            <Link href="/sobre" className="text-brand-mint hover:text-brand-dark transition-colors">Sobre Nós →</Link>
+            <span className="text-brand-dark/20">·</span>
+            <Link href="/contato" className="text-brand-mint hover:text-brand-dark transition-colors">Contato →</Link>
+          </nav>
+        </div>
+      </section>
 
       <CTAForm />
     </>

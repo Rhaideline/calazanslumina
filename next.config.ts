@@ -15,11 +15,6 @@ const nextConfig: NextConfig = {
         hostname: 'm.media-amazon.com',
         pathname: '/images/**',
       },
-      {
-        protocol: 'https',
-        hostname: 'cf.shopee.com.br',
-        pathname: '/file/**',
-      },
     ],
   },
   async redirects() {

@@ -636,6 +636,23 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
       )}
 
       <CoursesSection />
+
+      {/* Cross-Links */}
+      <section className="section-padding bg-white">
+        <div className="container-main text-center">
+          <h2 className="font-serif text-2xl font-bold text-brand-dark mb-6">Explore Mais</h2>
+          <div className="flex flex-wrap justify-center gap-3">
+            {outrosCursos.map(c => (
+              <Link key={c.slug} href={`/cursos/${c.slug}`} className="bg-brand-mint text-white px-5 py-2.5 rounded-full hover:bg-brand-dark transition-colors text-sm font-medium">
+                {c.nome}
+              </Link>
+            ))}
+            <Link href="/servicos" className="bg-brand-mint text-white px-5 py-2.5 rounded-full hover:bg-brand-dark transition-colors text-sm font-medium">Nossos Serviços</Link>
+            <Link href="/blog" className="bg-brand-mint text-white px-5 py-2.5 rounded-full hover:bg-brand-dark transition-colors text-sm font-medium">Blog</Link>
+            <Link href="/contato" className="bg-brand-mint text-white px-5 py-2.5 rounded-full hover:bg-brand-dark transition-colors text-sm font-medium">Contato</Link>
+          </div>
+        </div>
+      </section>
     </>
   )
 }

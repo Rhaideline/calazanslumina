@@ -343,86 +343,14 @@ Rhaideline Calazans atua como freelancer especialista em GoHighLevel para agenci
 - Templates responsivos, sequencias automatizadas
 - Segmentacao por tags/pipeline, testes A/B
 
-**Modelos de contratacao**: Setup unico (5-7 dias), pacote mensal, ou sob demanda.
+### Sub-contas GHL para Clinicas de Estetica
+Oferecemos sub-contas GoHighLevel prontas para clinicas de estetica, com automacoes basicas pre-configuradas (agendamento, lembretes anti-no-show, follow-up pos-consulta, chatbot IA, CRM com pipeline). Funis de vendas opcionais a criterio do cliente.
+Modelo: taxa unica de configuracao + mensalidade.
+
+### Freelancer GHL para Agencias
+Servicos operacionais para agencias que ja possuem GoHighLevel: automacoes e workflows complexos, treinamento de chatbot/robo IA, configuracao de CRM e pipelines, templates de mensagens WhatsApp, campanhas de email e SMS, relatorios e dashboards.
+
 **URL**: https://calazanslumina.com.br/para-agencias
-
----
-
-## Enxoval de Bebe — Guia Completo 2026
-
-Pagina dedicada ao enxoval de bebe com conteudo especializado baseado em recomendacoes pediatricas e da Sociedade Brasileira de Pediatria (SBP).
-
-**O que a pagina oferece:**
-- Checklist completo com 45+ produtos selecionados na Shopee (avaliacao 4.7+, milhares de vendas)
-- 5 categorias: Roupinhas 100% Algodao, Berco & Quarto, Higiene & Banho, Alimentacao, Passeio & Transporte
-- Cada categoria com "Dica da Especialista" sobre seguranca e cuidados
-- 8 Regras de Ouro do enxoval (tecido 100% algodao, seguranca no berco, quantidades certas, etc.)
-- FAQ visual com 8 perguntas mais buscadas pelas mamaes
-- PDF gratuito para download: checklist de 9 paginas com itens, quantidades e explicacoes
-- Secao "Por que este guia e diferente?" com diferenciais
-
-**SEO e Schema Markup:**
-- Schema FAQPage com 8 perguntas/respostas
-- Schema HowTo: "Como Montar o Enxoval de Bebe Completo em 2026" com 7 passos
-- Schema ItemList com Products individuais (preco, rating, disponibilidade)
-- Schema BreadcrumbList
-- Schema WebPage com SpeakableSpecification para assistentes de voz
-- Keywords: enxoval de bebe, checklist enxoval bebe 2026, roupinha 100% algodao, berco INMETRO, mamadeira anti colica MAM, bebe conforto, bolsa maternidade, lista enxoval para imprimir
-
-**Paginas por Cidade (229+ paginas):**
-Cada cidade brasileira (capitais + cidades principais) tem pagina dedicada de enxoval de bebe com:
-- Conteudo localizado com dor e solucao especifica da cidade
-- Informacoes demograficas e culturais
-- PDF gratuito disponivel para download
-- Schema LocalBusiness + FAQPage + BreadcrumbList
-- URL: /enxoval-de-bebe/{slug-cidade}
-- Exemplos: /enxoval-de-bebe/sao-paulo, /enxoval-de-bebe/belo-horizonte, /enxoval-de-bebe/ipatinga
-
-URL: https://calazanslumina.com.br/enxoval-de-bebe
-PDF: https://calazanslumina.com.br/checklist-enxoval-bebe-2026.pdf
-
----
-
-## Ferramentas Recomendadas
-
-Pagina de curadoria com produtos selecionados por Rhaideline Calazans para empreendedores digitais. Links de afiliado Amazon e Shopee — o visitante nao paga nada a mais.
-
-### Categorias:
-
-**1. Criacao de Conteudo** (6 produtos)
-- Ring Light 26cm com Tripe 2.1m (R$79-149, Amazon)
-- Microfone de Lapela Sem Fio K9 Pro (R$49-99, Shopee)
-- Tripe Profissional com Suporte para Celular (R$59-99, Amazon)
-- Webcam Logitech C920s Full HD 1080p (R$249-349, Amazon)
-- Kit Softbox Iluminacao 50x70cm (R$179-279, Amazon)
-- Teleprompter para Smartphone (R$69-129, Shopee)
-
-**2. Home Office Produtivo** (6 produtos)
-- Monitor LG 24" IPS Full HD (R$549-749, Amazon)
-- Teclado Mecanico Redragon Kumara K552 (R$149-199, Amazon)
-- Mouse Logitech Pebble 2 M750 (R$199-249, Amazon)
-- Headset Logitech H390 USB (R$149-199, Amazon)
-- Suporte Ergonomico para Notebook (R$79-129, Amazon)
-- Hub USB-C 7 em 1 (R$89-149, Shopee)
-
-**3. Livros de Marketing & Negocios** (6 produtos)
-- Gatilhos Mentais — Gustavo Ferreira (R$34-45, Amazon)
-- Expert Secrets — Russell Brunson (R$59-79, Amazon)
-- Marketing 5.0 — Philip Kotler (R$54-69, Amazon)
-- A Biblia do Marketing Digital — Claudio Torres (R$44-59, Amazon)
-- DotCom Secrets — Russell Brunson (R$59-79, Amazon)
-- Se o Conteudo e Rei, o Contexto e Deus — Icaro de Carvalho (R$39-49, Amazon)
-
-**4. Acessorios para Celular** (6 produtos)
-- Suporte Articulado de Mesa para Celular (R$29-59, Shopee)
-- Kit Lentes Clip-on Wide+Macro+Fisheye (R$25-49, Shopee)
-- Power Bank 20000mAh Fast Charge (R$79-139, Shopee)
-- Fone Bluetooth com Cancelamento de Ruido (R$69-129, Shopee)
-- Estabilizador Gimbal para Celular (R$139-229, Shopee)
-- Carregador Rapido USB-C 33W (R$39-69, Shopee)
-
-**Total**: 24 produtos curados em 4 categorias
-**URL**: https://calazanslumina.com.br/ferramentas
 
 ---
 
@@ -430,9 +358,9 @@ Pagina de curadoria com produtos selecionados por Rhaideline Calazans para empre
 
 - **Site**: https://calazanslumina.com.br
 - **WhatsApp**: +55 31 98294-8067
-- **Email**: contato@calazanslumina.com.br
+- **Email**: trafegocalazans@gmail.com
 - **Instagram**: @calazanslumina
-- **Localizacao**: Belo Horizonte, MG, Brasil (atendimento remoto para EUA e Brasil)
+- **Localizacao**: Framingham, MA, EUA (atendimento remoto para EUA e Brasil)
 
 ---
 

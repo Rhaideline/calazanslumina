@@ -2,7 +2,9 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import CTAForm from '@/components/CTAForm'
 import CoursesSection from '@/components/CoursesSection'
 
@@ -201,6 +203,8 @@ export default function ProjetosPage() {
 
   return (
     <>
+      <Breadcrumbs items={[{ name: 'Projetos' }]} />
+
       {/* Magazine Cover Hero */}
       <section className="relative min-h-[60vh] flex items-end bg-brand-dark overflow-hidden">
         <div className="absolute inset-0">
@@ -465,6 +469,20 @@ export default function ProjetosPage() {
       </section>
 
       <CoursesSection />
+
+      {/* Cross-Links */}
+      <section className="section-padding bg-brand-bg">
+        <div className="container-main text-center">
+          <h2 className="font-serif text-2xl font-bold text-brand-dark mb-6">Explore Mais</h2>
+          <div className="flex flex-wrap justify-center gap-3">
+            <Link href="/servicos" className="bg-brand-mint text-white px-5 py-2.5 rounded-full hover:bg-brand-dark transition-colors text-sm font-medium">Nossos Serviços</Link>
+            <Link href="/cursos" className="bg-brand-mint text-white px-5 py-2.5 rounded-full hover:bg-brand-dark transition-colors text-sm font-medium">Cursos Online</Link>
+            <Link href="/blog" className="bg-brand-mint text-white px-5 py-2.5 rounded-full hover:bg-brand-dark transition-colors text-sm font-medium">Blog</Link>
+            <Link href="/sobre" className="bg-brand-mint text-white px-5 py-2.5 rounded-full hover:bg-brand-dark transition-colors text-sm font-medium">Sobre Nós</Link>
+            <Link href="/contato" className="bg-brand-mint text-white px-5 py-2.5 rounded-full hover:bg-brand-dark transition-colors text-sm font-medium">Contato</Link>
+          </div>
+        </div>
+      </section>
 
       {/* CTA */}
       <CTAForm />

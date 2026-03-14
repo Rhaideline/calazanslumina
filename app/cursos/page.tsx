@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { cursos } from '@/data/cursos'
 import ScrollReveal from '@/components/ScrollReveal'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -20,6 +21,8 @@ export const metadata: Metadata = {
 export default function CursosPage() {
   return (
     <>
+      <Breadcrumbs items={[{ name: 'Cursos' }]} />
+
       {/* Hero */}
       <section className="relative py-20 md:py-28 bg-brand-dark text-white overflow-hidden">
         <Image

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import ScrollReveal from '@/components/ScrollReveal'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import BlogFilter from '@/components/BlogFilter'
 import CoursesSection from '@/components/CoursesSection'
 
@@ -19,6 +20,8 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   return (
     <>
+      <Breadcrumbs items={[{ name: 'Blog' }]} />
+
       <section className="section-padding bg-brand-bg">
         <div className="container-main">
           <ScrollReveal className="text-center mb-12">

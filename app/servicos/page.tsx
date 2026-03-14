@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { servicos } from '@/data/servicos'
 import ScrollReveal from '@/components/ScrollReveal'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import CTAForm from '@/components/CTAForm'
 import ServiceIcon from '@/components/ServiceIcon'
 import CoursesSection from '@/components/CoursesSection'
@@ -22,6 +23,8 @@ export const metadata: Metadata = {
 export default function ServicosPage() {
   return (
     <>
+      <Breadcrumbs items={[{ name: 'Serviços' }]} />
+
       <section className="section-padding bg-brand-bg">
         <div className="container-main">
           <ScrollReveal className="text-center mb-16">
@@ -70,6 +73,31 @@ export default function ServicosPage() {
       </section>
 
       <CoursesSection />
+
+      {/* ===== EXPLORE MAIS — CROSS-LINKS ===== */}
+      <section className="section-padding bg-brand-bg">
+        <div className="container-main">
+          <h2 className="font-serif text-2xl font-bold text-brand-dark mb-6 text-center">Explore Mais</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 className="text-lg font-bold text-brand-dark mb-4">Conteúdo Relacionado</h3>
+              <ul className="space-y-2">
+                <li><Link href="/cursos" className="text-brand-mint hover:text-brand-dark text-sm transition-colors">Cursos de Marketing Digital →</Link></li>
+                <li><Link href="/blog" className="text-brand-mint hover:text-brand-dark text-sm transition-colors">Blog com 60+ Artigos Gratuitos →</Link></li>
+                <li><Link href="/para-agencias" className="text-brand-mint hover:text-brand-dark text-sm transition-colors">Para Agências — Sub-contas GHL →</Link></li>
+                <li><Link href="/projetos" className="text-brand-mint hover:text-brand-dark text-sm transition-colors">Portfólio de Projetos →</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-brand-dark mb-4">Saiba Mais</h3>
+              <ul className="space-y-2">
+                <li><Link href="/sobre" className="text-brand-mint hover:text-brand-dark text-sm transition-colors">Sobre Rhaideline Calazans →</Link></li>
+                <li><Link href="/contato" className="text-brand-mint hover:text-brand-dark text-sm transition-colors">Solicitar Orçamento Gratuito →</Link></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <CTAForm />
     </>
