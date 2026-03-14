@@ -6,12 +6,12 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import CTAForm from '@/components/CTAForm'
 
 export const metadata: Metadata = {
-  title: 'GoHighLevel para Clinicas de Estetica & Agencias | Sub-contas Prontas + Freelancer GHL — Calazans Lumina',
-  description: 'Sub-contas GoHighLevel prontas para clinicas de estetica com automacoes, chatbot IA e CRM. Tambem ofereço servicos de freelancer GHL para agencias: automacoes, treinamento de robo e operacional.',
+  title: 'GoHighLevel para Empresas & Agencias | Sub-contas Prontas + Freelancer GHL — Calazans Lumina',
+  description: 'Sub-contas GoHighLevel prontas para qualquer tipo de empresa (clinicas, construction, energia solar, pintura e mais) com automacoes, chatbot IA e CRM. Tambem ofereço servicos de freelancer GHL para agencias.',
   alternates: { canonical: 'https://calazanslumina.com.br/para-agencias' },
   openGraph: {
-    title: 'GoHighLevel para Clinicas de Estetica & Agencias | Calazans Lumina',
-    description: 'Sub-contas GHL prontas para clinicas de estetica + freelancer operacional para agencias.',
+    title: 'GoHighLevel para Empresas & Agencias | Calazans Lumina',
+    description: 'Sub-contas GHL prontas para qualquer empresa + freelancer operacional para agencias.',
     url: 'https://calazanslumina.com.br/para-agencias',
     type: 'website',
   },
@@ -21,17 +21,17 @@ const subAccountFeatures = [
   {
     icone: 'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z',
     titulo: 'Chatbot IA no WhatsApp',
-    desc: 'Robo de atendimento com IA que responde pacientes 24h, agenda procedimentos e tira duvidas sobre tratamentos esteticos.',
+    desc: 'Robo de atendimento com IA que responde clientes 24h, agenda servicos e tira duvidas automaticamente — funciona para qualquer nicho.',
   },
   {
     icone: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15',
     titulo: 'Follow-up Automatico',
-    desc: 'Sequencias de mensagens automaticas pos-procedimento, lembretes de retorno e reativacao de pacientes inativos.',
+    desc: 'Sequencias de mensagens automaticas pos-servico, lembretes de retorno e reativacao de clientes inativos.',
   },
   {
     icone: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
     titulo: 'CRM & Pipeline de Vendas',
-    desc: 'Pipeline completo: novo lead > agendou > compareceu > fechou pacote. Tags automaticas por tipo de procedimento.',
+    desc: 'Pipeline completo: novo lead > orcamento > fechou > em execucao > finalizado. Tags automaticas por tipo de servico.',
   },
   {
     icone: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
@@ -94,8 +94,8 @@ export default function ParaAgenciasPage() {
   const pageSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'GoHighLevel para Clinicas de Estetica e Agencias',
-    description: 'Sub-contas GoHighLevel prontas para clinicas de estetica com automacoes e chatbot IA. Freelancer GHL para agencias.',
+    name: 'GoHighLevel para Empresas e Agencias',
+    description: 'Sub-contas GoHighLevel prontas para qualquer tipo de empresa com automacoes e chatbot IA. Freelancer GHL para agencias.',
     provider: {
       '@type': 'Organization',
       name: 'Calazans Lumina',
@@ -111,8 +111,8 @@ export default function ParaAgenciasPage() {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Sub-conta GHL para Clinicas de Estetica',
-            description: 'Sub-conta GoHighLevel pronta com automacoes, chatbot IA, CRM e agendamento para clinicas de estetica.',
+            name: 'Sub-conta GHL para Empresas',
+            description: 'Sub-conta GoHighLevel pronta com automacoes, chatbot IA, CRM e agendamento para qualquer tipo de empresa.',
           },
         },
         {
@@ -131,7 +131,7 @@ export default function ParaAgenciasPage() {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
-      { '@type': 'Question', name: 'O que esta incluso na sub-conta GHL para clinicas de estetica?', acceptedAnswer: { '@type': 'Answer', text: 'A sub-conta vem pronta com: chatbot IA no WhatsApp, follow-up automatico, CRM com pipeline de vendas, calendario de agendamento com lembretes, campanhas de email/SMS e dashboard de metricas. Funis e landing pages podem ser adicionados a criterio do cliente.' } },
+      { '@type': 'Question', name: 'O que esta incluso na sub-conta GHL?', acceptedAnswer: { '@type': 'Answer', text: 'A sub-conta vem pronta com: chatbot IA no WhatsApp, follow-up automatico, CRM com pipeline de vendas, calendario de agendamento com lembretes, campanhas de email/SMS e dashboard de metricas. Funciona para qualquer nicho: clinicas, construction, energia solar, pintura, servicos em geral. Funis e landing pages podem ser adicionados a criterio do cliente.' } },
       { '@type': 'Question', name: 'Como funciona o pagamento da sub-conta?', acceptedAnswer: { '@type': 'Answer', text: 'O pagamento e dividido em duas partes: uma taxa unica de configuracao (setup inicial com todas as automacoes) e uma mensalidade para manutencao, suporte e atualizacoes continuas.' } },
       { '@type': 'Question', name: 'Posso adicionar funis de vendas a minha sub-conta?', acceptedAnswer: { '@type': 'Answer', text: 'Sim! Os funis e landing pages sao opcionais e podem ser adicionados a qualquer momento conforme sua necessidade. Construo funis otimizados para conversao com formularios multi-step e integracao com pagamento.' } },
       { '@type': 'Question', name: 'Voce trabalha como freelancer para agencias que ja tem GHL?', acceptedAnswer: { '@type': 'Answer', text: 'Sim! Ofereço servicos operacionais para agencias que ja possuem GoHighLevel: configuracao de automacoes, treinamento de chatbot IA, setup de sub-accounts, funis, CRM e integracoes. Trabalho como white-label da sua agencia.' } },
@@ -151,7 +151,7 @@ export default function ParaAgenciasPage() {
       <section className="relative py-20 md:py-28 bg-brand-dark text-white overflow-hidden">
         <Image
           src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c0357f3208c418.jpeg"
-          alt="GoHighLevel para Clinicas de Estetica e Agencias — Calazans Lumina"
+          alt="GoHighLevel para Empresas e Agencias — Calazans Lumina"
           fill
           className="object-cover"
           priority
@@ -167,10 +167,10 @@ export default function ParaAgenciasPage() {
 
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                 GoHighLevel pronto<br />
-                <span className="text-brand-mint">para sua clinica ou agencia.</span>
+                <span className="text-brand-mint">para sua empresa ou agencia.</span>
               </h1>
               <p className="text-white/70 text-lg md:text-xl leading-relaxed mb-4">
-                Sub-contas GHL completas para <strong className="text-white">clinicas de estetica</strong> — com automacoes, chatbot IA e CRM prontos para usar.
+                Sub-contas GHL completas para <strong className="text-white">qualquer tipo de empresa</strong> — clinicas, construction, energia solar, pintura, servicos e mais. Automacoes, chatbot IA e CRM prontos para usar.
               </p>
               <p className="text-white/70 text-lg md:text-xl leading-relaxed mb-8">
                 Tambem trabalho como <strong className="text-white">freelancer para agencias</strong> que ja tem GHL e precisam de operacional: automacoes, treinamento de robo, setup de sub-accounts.
@@ -178,10 +178,10 @@ export default function ParaAgenciasPage() {
 
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="#clinicas"
+                  href="#empresas"
                   className="btn-primary text-lg px-8 py-4"
                 >
-                  Para Clinicas de Estetica
+                  Para Empresas
                 </a>
                 <a
                   href="#agencias"
@@ -199,9 +199,9 @@ export default function ParaAgenciasPage() {
                   <div className="bg-brand-mint/10 border border-brand-mint/20 rounded-xl p-5">
                     <div className="flex items-center gap-3 mb-2">
                       <div className="w-8 h-8 bg-brand-mint rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0">1</div>
-                      <p className="text-white font-bold text-sm">Clinica de Estetica?</p>
+                      <p className="text-white font-bold text-sm">Tem uma empresa?</p>
                     </div>
-                    <p className="text-white/60 text-xs ml-11">Receba uma sub-conta GHL pronta com tudo configurado: chatbot IA, agendamento, follow-up, CRM. Pague a configuracao + mensalidade. Funis opcionais.</p>
+                    <p className="text-white/60 text-xs ml-11">Receba uma sub-conta GHL pronta com tudo configurado: chatbot IA, agendamento, follow-up, CRM. Qualquer nicho — clinicas, construction, energia solar, pintura etc. Pague configuracao + mensalidade.</p>
                   </div>
                   <div className="bg-white/5 border border-white/10 rounded-xl p-5">
                     <div className="flex items-center gap-3 mb-2">
@@ -235,31 +235,31 @@ export default function ParaAgenciasPage() {
       {/* === OFERTA 1: SUB-CONTAS PARA CLINICAS DE ESTETICA ========= */}
       {/* ============================================================ */}
 
-      <section id="clinicas" className="section-padding bg-white scroll-mt-20">
+      <section id="empresas" className="section-padding bg-white scroll-mt-20">
         <div className="container-main">
           <ScrollReveal className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-pink-50 border border-pink-200 rounded-full px-4 py-1.5 mb-4">
-              <span className="w-2 h-2 bg-pink-400 rounded-full" />
-              <span className="text-pink-600 text-sm font-medium">Para Clinicas de Estetica</span>
+            <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 rounded-full px-4 py-1.5 mb-4">
+              <span className="w-2 h-2 bg-blue-400 rounded-full" />
+              <span className="text-blue-600 text-sm font-medium">Para Empresas de Qualquer Nicho</span>
             </div>
-            <h2 className="heading-2 text-brand-dark mb-4">Sub-conta GoHighLevel pronta para sua clinica</h2>
+            <h2 className="heading-2 text-brand-dark mb-4">Sub-conta GoHighLevel pronta para sua empresa</h2>
             <p className="text-brand-dark/60 max-w-3xl mx-auto text-lg">
-              Voce recebe um sistema completo ja configurado: chatbot IA atendendo seus pacientes no WhatsApp, agendamento automatico, follow-up pos-procedimento, CRM com pipeline de vendas e muito mais. Sem dor de cabeca tecnica.
+              Voce recebe um sistema completo ja configurado: chatbot IA atendendo seus clientes no WhatsApp, agendamento automatico, follow-up pos-servico, CRM com pipeline de vendas e muito mais. Funciona para clinicas, construction, energia solar, pintura, e qualquer outro nicho.
             </p>
           </ScrollReveal>
 
-          {/* Pain Points Clinica */}
+          {/* Pain Points Empresa */}
           <ScrollReveal className="mb-16">
             <div className="bg-red-50/50 border border-red-100 rounded-2xl p-8 max-w-4xl mx-auto">
               <p className="text-red-500 text-sm font-bold uppercase tracking-wider mb-4 text-center">Isso parece familiar?</p>
               <div className="grid md:grid-cols-2 gap-3">
                 {[
-                  'Pacientes marcam e nao aparecem (no-show)',
+                  'Clientes marcam e nao aparecem (no-show)',
                   'Respondendo WhatsApp manualmente o dia inteiro',
-                  'Pacientes somem depois do primeiro procedimento',
-                  'Nao sabe quantos leads viraram pacientes este mes',
+                  'Clientes somem depois do primeiro servico',
+                  'Nao sabe quantos leads viraram clientes este mes',
                   'Perde tempo com agendamento por telefone',
-                  'Nao faz follow-up pos-procedimento',
+                  'Nao faz follow-up pos-servico',
                 ].map((dor, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <svg className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -306,7 +306,7 @@ export default function ParaAgenciasPage() {
                 <div>
                   <h4 className="font-serif text-xl font-bold mb-2">Funis & Landing Pages <span className="text-brand-mint text-sm font-normal">(opcional)</span></h4>
                   <p className="text-white/70 text-sm leading-relaxed mb-4">
-                    A criterio do cliente, posso criar funis de vendas e landing pages dentro do GHL para captar novos pacientes.
+                    A criterio do cliente, posso criar funis de vendas e landing pages dentro do GHL para captar novos clientes.
                     Paginas otimizadas para conversao com formularios, integracao com pagamento e automacoes de follow-up.
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -319,7 +319,7 @@ export default function ParaAgenciasPage() {
             </div>
           </ScrollReveal>
 
-          {/* Pricing Clinica */}
+          {/* Pricing Empresa */}
           <ScrollReveal className="max-w-3xl mx-auto">
             <div className="text-center mb-8">
               <h3 className="font-serif text-2xl font-bold text-brand-dark mb-2">Como funciona o investimento</h3>
@@ -336,7 +336,7 @@ export default function ParaAgenciasPage() {
                 <p className="text-brand-dark/40 text-xs font-bold uppercase tracking-wider mb-2">Pagamento Unico</p>
                 <h4 className="font-serif text-xl font-bold text-brand-dark mb-3">Taxa de Configuracao</h4>
                 <p className="text-brand-dark/60 text-sm leading-relaxed">
-                  Setup inicial completo: todas as automacoes, chatbot IA treinado, CRM, pipeline, calendario e templates configurados do zero para sua clinica.
+                  Setup inicial completo: todas as automacoes, chatbot IA treinado, CRM, pipeline, calendario e templates configurados do zero para sua empresa.
                 </p>
                 <div className="mt-4 pt-4 border-t border-gray-200">
                   <p className="text-brand-dark/40 text-xs">Entrega em 5-7 dias uteis</p>
@@ -362,14 +362,14 @@ export default function ParaAgenciasPage() {
 
             <div className="text-center mt-8">
               <a
-                href="https://wa.me/5531982948067?text=Olá! Tenho uma clínica de estética e quero saber mais sobre a sub-conta GoHighLevel"
+                href="https://wa.me/5531982948067?text=Olá! Quero saber mais sobre a sub-conta GoHighLevel para minha empresa"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary text-lg px-10 py-4"
               >
                 Quero minha sub-conta GHL
               </a>
-              <p className="text-brand-dark/40 text-xs mt-3">Vamos conversar sobre valores e escopo para sua clinica</p>
+              <p className="text-brand-dark/40 text-xs mt-3">Vamos conversar sobre valores e escopo para sua empresa</p>
             </div>
           </ScrollReveal>
         </div>
@@ -379,8 +379,8 @@ export default function ParaAgenciasPage() {
       <section className="section-padding bg-brand-bg">
         <div className="container-main max-w-5xl">
           <ScrollReveal className="text-center mb-12">
-            <h2 className="heading-2 text-brand-dark mb-4">Na pratica: como funciona para sua clinica</h2>
-            <p className="text-brand-dark/60">Exemplo real de automacao rodando em clinica de estetica</p>
+            <h2 className="heading-2 text-brand-dark mb-4">Na pratica: como funciona para sua empresa</h2>
+            <p className="text-brand-dark/60">Exemplo real de automacao rodando para empresas de servicos</p>
           </ScrollReveal>
 
           <ScrollReveal>
@@ -393,7 +393,7 @@ export default function ParaAgenciasPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-serif text-lg font-bold text-brand-dark">Jornada Completa do Paciente</h3>
+                    <h3 className="font-serif text-lg font-bold text-brand-dark">Jornada Completa do Cliente</h3>
                     <p className="text-brand-dark/40 text-xs">Do primeiro contato ao retorno — tudo automatizado</p>
                   </div>
                   <span className="ml-auto bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full">Automatizado</span>
@@ -401,11 +401,11 @@ export default function ParaAgenciasPage() {
 
                 <div className="space-y-4">
                   {[
-                    { step: '1', titulo: 'Paciente manda mensagem no WhatsApp', desc: 'Chatbot IA responde instantaneamente, tira duvidas sobre procedimentos e precos.', cor: 'bg-blue-500' },
-                    { step: '2', titulo: 'Chatbot qualifica e agenda', desc: 'Identifica o procedimento desejado, verifica horarios disponiveis e agenda automaticamente.', cor: 'bg-purple-500' },
-                    { step: '3', titulo: 'Lembretes automaticos', desc: '24h e 1h antes do procedimento, o paciente recebe lembrete no WhatsApp. Anti-no-show.', cor: 'bg-orange-500' },
-                    { step: '4', titulo: 'Pos-procedimento', desc: 'Follow-up automatico: como esta se sentindo? Cuidados pos-procedimento. Avaliacao.', cor: 'bg-pink-500' },
-                    { step: '5', titulo: 'Reativacao', desc: 'Paciente nao volta ha 60 dias? Mensagem automatica com oferta especial de retorno.', cor: 'bg-brand-mint' },
+                    { step: '1', titulo: 'Cliente manda mensagem no WhatsApp', desc: 'Chatbot IA responde instantaneamente, tira duvidas sobre servicos e precos.', cor: 'bg-blue-500' },
+                    { step: '2', titulo: 'Chatbot qualifica e agenda', desc: 'Identifica o servico desejado, verifica horarios disponiveis e agenda automaticamente.', cor: 'bg-purple-500' },
+                    { step: '3', titulo: 'Lembretes automaticos', desc: '24h e 1h antes do servico, o cliente recebe lembrete no WhatsApp. Anti-no-show.', cor: 'bg-orange-500' },
+                    { step: '4', titulo: 'Pos-servico', desc: 'Follow-up automatico: como foi a experiencia? Solicita avaliacao no Google.', cor: 'bg-pink-500' },
+                    { step: '5', titulo: 'Reativacao', desc: 'Cliente nao volta ha 60 dias? Mensagem automatica com oferta especial de retorno.', cor: 'bg-brand-mint' },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-4 bg-brand-bg rounded-xl p-4">
                       <div className={`w-8 h-8 ${item.cor} rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0`}>
@@ -430,7 +430,7 @@ export default function ParaAgenciasPage() {
                   </div>
                   <div className="text-center">
                     <p className="font-serif text-2xl font-bold text-brand-dark">+40%</p>
-                    <p className="text-brand-dark/40 text-xs">Pacientes reativados</p>
+                    <p className="text-brand-dark/40 text-xs">Clientes reativados</p>
                   </div>
                 </div>
               </div>
@@ -604,7 +604,7 @@ export default function ParaAgenciasPage() {
           </ScrollReveal>
 
           <div className="space-y-12 max-w-5xl mx-auto">
-            {/* Workflow GHL — Automacao Clinica Estetica */}
+            {/* Workflow GHL — Automacao Empresa */}
             <ScrollReveal>
               <div className="bg-brand-bg border border-gray-100 rounded-2xl overflow-hidden">
                 <div className="p-6 md:p-8">
@@ -615,15 +615,15 @@ export default function ParaAgenciasPage() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="font-serif text-lg font-bold text-brand-dark">Automacao Completa — Clinica de Estetica</h3>
+                      <h3 className="font-serif text-lg font-bold text-brand-dark">Automacao Completa — Empresa de Servicos</h3>
                       <p className="text-brand-dark/40 text-xs">GoHighLevel — Chatbot IA + Agendamento + Follow-up + CRM</p>
                     </div>
                     <span className="ml-auto bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full">Em producao</span>
                   </div>
 
                   <p className="text-brand-dark/60 text-sm leading-relaxed mb-6">
-                    Sistema completo configurado dentro do GHL para clinica de estetica: chatbot IA no WhatsApp qualifica o paciente,
-                    agenda procedimento automaticamente, envia lembretes, faz follow-up pos-procedimento e reativa pacientes inativos.
+                    Sistema completo configurado dentro do GHL: chatbot IA no WhatsApp qualifica o cliente,
+                    agenda servico automaticamente, envia lembretes, faz follow-up pos-servico e reativa clientes inativos.
                     Pipeline CRM com movimentacao automatica entre etapas.
                   </p>
 
@@ -634,7 +634,7 @@ export default function ParaAgenciasPage() {
                         { titulo: 'Pipeline CRM', desc: '6 etapas com movimentacao automatica' },
                         { titulo: 'Follow-up sequencial', desc: 'Dia 1, 3, 7, 14 e 30 apos contato' },
                         { titulo: 'Anti no-show', desc: 'Lembretes 24h e 1h antes + reengajamento' },
-                        { titulo: 'Reativacao', desc: 'Workflow para pacientes inativos ha 60+ dias' },
+                        { titulo: 'Reativacao', desc: 'Workflow para clientes inativos ha 60+ dias' },
                         { titulo: 'Relatorios', desc: 'Dashboard com metricas de conversao e agendamento' },
                       ].map((item, i) => (
                         <div key={i} className="flex items-start gap-3">
@@ -842,7 +842,7 @@ export default function ParaAgenciasPage() {
               <p className="text-brand-mint text-sm font-bold uppercase tracking-wider mb-2">Quem vai implementar</p>
               <h2 className="font-serif text-2xl md:text-3xl font-bold mb-4">Rhaideline Calazans</h2>
               <p className="text-white/70 text-sm leading-relaxed mb-4">
-                Trabalho com GoHighLevel desde 2022. Ja configurei dezenas de sub-accounts para agencias e clinicas nos EUA e no Brasil.
+                Trabalho com GoHighLevel desde 2022. Ja configurei dezenas de sub-accounts para agencias e empresas de diversos nichos nos EUA e no Brasil — construction, clinicas, energia solar, pintura, servicos em geral.
                 Minha especialidade e pegar um GHL zerado e entregar um sistema completo funcionando: automacoes, chatbot IA,
                 funis, CRM, WhatsApp, calendario — tudo integrado e documentado.
               </p>
@@ -868,7 +868,7 @@ export default function ParaAgenciasPage() {
           </ScrollReveal>
           <div className="space-y-4">
             {[
-              { p: 'O que esta incluso na sub-conta GHL para clinicas de estetica?', r: 'A sub-conta vem pronta com: chatbot IA no WhatsApp, follow-up automatico, CRM com pipeline de vendas, calendario de agendamento com lembretes, campanhas de email/SMS e dashboard de metricas. Funis e landing pages podem ser adicionados a criterio do cliente.' },
+              { p: 'O que esta incluso na sub-conta GHL?', r: 'A sub-conta vem pronta com: chatbot IA no WhatsApp, follow-up automatico, CRM com pipeline de vendas, calendario de agendamento com lembretes, campanhas de email/SMS e dashboard de metricas. Funciona para qualquer nicho — clinicas, construction, energia solar, pintura etc. Funis e landing pages podem ser adicionados a criterio do cliente.' },
               { p: 'Como funciona o pagamento da sub-conta?', r: 'O pagamento e dividido em duas partes: uma taxa unica de configuracao (setup inicial com todas as automacoes) e uma mensalidade para manutencao, suporte e atualizacoes continuas.' },
               { p: 'Posso adicionar funis de vendas a minha sub-conta?', r: 'Sim! Os funis e landing pages sao opcionais e podem ser adicionados a qualquer momento conforme sua necessidade. Construo funis otimizados para conversao com formularios multi-step e integracao com pagamento.' },
               { p: 'Voce trabalha como freelancer para agencias que ja tem GHL?', r: 'Sim! Ofereço servicos operacionais para agencias que ja possuem GoHighLevel: configuracao de automacoes, treinamento de chatbot IA, setup de sub-accounts, funis, CRM e integracoes. Trabalho como white-label da sua agencia.' },
@@ -892,9 +892,9 @@ export default function ParaAgenciasPage() {
       <section className="section-padding bg-brand-dark text-white text-center">
         <div className="container-main max-w-3xl">
           <ScrollReveal>
-            <h2 className="heading-2 mb-4">Pronta para automatizar sua clinica ou agencia?</h2>
+            <h2 className="heading-2 mb-4">Pronta para automatizar sua empresa ou agencia?</h2>
             <p className="text-white/50 mb-8 text-lg">
-              Seja uma sub-conta GHL completa para sua clinica de estetica ou servicos de freelancer para sua agencia — eu cuido de toda a parte tecnica.
+              Seja uma sub-conta GHL completa para sua empresa ou servicos de freelancer para sua agencia — eu cuido de toda a parte tecnica.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <a

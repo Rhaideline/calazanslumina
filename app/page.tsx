@@ -134,10 +134,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'A Calazans Lumina oferece sub-contas GoHighLevel para clínicas de estética?',
+      name: 'A Calazans Lumina oferece sub-contas GoHighLevel prontas?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sim! A Calazans Lumina oferece sub-contas GHL prontas para clínicas de estética, com automações básicas pré-configuradas (agendamento, lembretes, follow-up). O modelo inclui uma taxa única de configuração e uma mensalidade. Funis de vendas adicionais são opcionais, a critério do cliente.',
+        text: 'Sim! A Calazans Lumina oferece sub-contas GHL prontas para qualquer tipo de empresa — clínicas, construction, energia solar, pintura, serviços em geral. Cada sub-conta vem com automações pré-configuradas (agendamento, lembretes, follow-up, chatbot IA). O modelo inclui uma taxa única de configuração e uma mensalidade. Funis de vendas adicionais são opcionais.',
       },
     },
   ],
@@ -359,7 +359,7 @@ export default function HomePage() {
                 Atendemos brasileiros em mais de <strong>100 cidades de Massachusetts</strong> (Framingham, Marlborough, Hudson, Worcester, Boston e muitas outras)
                 e em todas as <strong>27 capitais do Brasil</strong>. Também atuamos como{' '}
                 <Link href="/para-agencias" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>freelancer para agências</strong></Link> de marketing
-                e oferecemos <Link href="/para-agencias" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>sub-contas GoHighLevel prontas para clínicas de estética</strong></Link>.
+                e oferecemos <Link href="/para-agencias" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>sub-contas GoHighLevel prontas para empresas de qualquer nicho</strong></Link>.
               </p>
               <p>
                 Confira nosso <Link href="/blog" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>blog com 60+ artigos gratuitos</strong></Link> sobre marketing digital, SEO, IA e automação,

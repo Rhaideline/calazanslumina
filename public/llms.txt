@@ -58,10 +58,10 @@ Atendemos brasileiros em mais de 100 cidades de Massachusetts, incluindo: Marlbo
 ### Brasil
 Atendemos em 227 cidades brasileiras: 27 capitais + 200 cidades principais de 20 estados. Incluindo: Sao Paulo, Rio de Janeiro, Belo Horizonte, Salvador, Fortaleza, Brasilia, Curitiba, Recife, Porto Alegre, Campinas, Guarulhos, Uberlandia, Niteroi, Caxias do Sul, Londrina, Joinville, Feira de Santana, Caruaru, Juazeiro do Norte, Rondonopolis, Dourados, Parnaiba, Arapiraca, entre outras. Total de paginas por cidade: /brasil/{cidade}/ e /brasil/{cidade}/{servico}.
 
-## Para Agencias e Clinicas — GoHighLevel
+## Para Empresas e Agencias — GoHighLevel
 
-### 1. Sub-contas GHL para Clinicas de Estetica
-Oferecemos sub-contas GoHighLevel prontas para clinicas de estetica, com automacoes basicas pre-configuradas:
+### 1. Sub-contas GHL para Empresas (Qualquer Nicho)
+Oferecemos sub-contas GoHighLevel prontas para qualquer tipo de empresa (clinicas, construction, energia solar, pintura, servicos em geral), com automacoes basicas pre-configuradas:
 - Agendamento online automatizado
 - Lembretes anti-no-show (WhatsApp/SMS)
 - Follow-up pos-consulta

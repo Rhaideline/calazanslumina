@@ -128,7 +128,7 @@ export default function Footer() {
             <Link href="/servicos/crm-ia-whatsapp" className="hover:text-white/70 transition-colors">CRM com IA no WhatsApp</Link>{' · '}
             <Link href="/servicos/gestao-redes-sociais" className="hover:text-white/70 transition-colors">Gestão de redes sociais</Link>{' · '}
             <Link href="/servicos/google-meu-negocio" className="hover:text-white/70 transition-colors">Google Meu Negócio</Link>{' · '}
-            <Link href="/para-agencias" className="hover:text-white/70 transition-colors">Sub-contas GHL para clínicas</Link>{' · '}
+            <Link href="/para-agencias" className="hover:text-white/70 transition-colors">Sub-contas GHL para empresas</Link>{' · '}
             <Link href="/cursos/ia-chatgpt-completo" className="hover:text-white/70 transition-colors">Curso de IA e ChatGPT</Link>{' · '}
             <Link href="/cursos/marketing-digital-iniciantes" className="hover:text-white/70 transition-colors">Curso de marketing digital</Link>{' · '}
             <Link href="/blog" className="hover:text-white/70 transition-colors">Blog de marketing digital</Link>{' · '}
