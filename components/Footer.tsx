@@ -77,7 +77,7 @@ export default function Footer() {
           <p className="text-white/70 text-sm">&copy; {new Date().getFullYear()} Calazans Lumina. Todos os direitos reservados.</p>
           <div className="flex flex-col items-center md:items-end gap-2">
             <p className="text-white/60 text-xs text-center md:text-right max-w-lg">Agência de marketing digital para brasileiros nos EUA e Brasil — Sites, Funis GHL, CRM com IA, Redes Sociais e Google Business Profile.</p>
-            <Link href="/enxoval-de-bebe" className="text-white/40 hover:text-white/60 text-xs transition-colors">Enxoval de Bebê</Link>
+
           </div>
         </div>
       </div>
