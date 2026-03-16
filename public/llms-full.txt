@@ -354,6 +354,23 @@ Servicos operacionais para agencias que ja possuem GoHighLevel: automacoes e wor
 
 ---
 
+## Enxoval de Bebe
+
+Pagina completa com produtos reais de enxoval de bebe selecionados com links de afiliado Shopee. Mais de 50 produtos em 5 categorias: roupinhas do bebe (body, mijao, macacao, saida maternidade), berco e quarto (berco moises, colchao, cueiro), higiene e banho (banheiras, fraldas RN, kit higiene), alimentacao (mamadeiras, bomba de leite, chupetas) e passeio (carrinhos, bebe conforto). Todos com avaliacoes reais, precos com desconto e links diretos para compra na Shopee.
+
+URL: https://calazanslumina.com.br/enxoval-de-bebe
+
+Paginas por cidade disponíveis para Massachusetts e Brasil:
+- Exemplo: /enxoval-de-bebe/marlborough, /enxoval-de-bebe/sao-paulo
+
+## Ferramentas
+
+Pagina com ferramentas e produtos recomendados para empreendedores digitais, com links de afiliado Amazon. Notebooks, monitores, microfones, iluminacao, cameras e acessorios para home office e criacao de conteudo.
+
+URL: https://calazanslumina.com.br/ferramentas
+
+---
+
 ## Contato
 
 - **Site**: https://calazanslumina.com.br

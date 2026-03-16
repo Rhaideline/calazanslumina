@@ -15,6 +15,11 @@ const nextConfig: NextConfig = {
         hostname: 'm.media-amazon.com',
         pathname: '/images/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'cf.shopee.com.br',
+        pathname: '/file/**',
+      },
     ],
   },
   async redirects() {
@@ -22,6 +27,11 @@ const nextConfig: NextConfig = {
       {
         source: '/blog/robo-whatsapp-automacao-atendimento',
         destination: '/blog/robo-de-whatsapp-como-automatizar-seu-atendimento-sem-perder-o-lado-humano',
+        permanent: true,
+      },
+      {
+        source: '/itens-para-casa',
+        destination: '/enxoval-de-bebe',
         permanent: true,
       },
     ]

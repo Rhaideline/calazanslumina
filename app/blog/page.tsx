@@ -1,13 +1,12 @@
 import type { Metadata } from 'next'
 import ScrollReveal from '@/components/ScrollReveal'
-import Breadcrumbs from '@/components/Breadcrumbs'
 import BlogFilter from '@/components/BlogFilter'
 import CoursesSection from '@/components/CoursesSection'
 
 export const metadata: Metadata = {
-  title: 'Blog de Marketing Digital (2026) | 60+ Artigos Gratuitos',
+  title: 'Blog de Marketing Digital e Maternidade (2026) | 60+ Artigos Gratuitos',
   description:
-    '60+ artigos sobre marketing digital, SEO, Google Maps, funis de vendas, IA e automação. Conteudo 100% gratuito para brasileiros nos EUA e Brasil. Leia agora →',
+    '60+ artigos sobre marketing digital, SEO, Google Maps, funis de vendas, IA, maternidade e enxoval de bebe. Conteudo 100% gratuito para brasileiros nos EUA e Brasil. Leia agora →',
   alternates: { canonical: 'https://calazanslumina.com.br/blog' },
   openGraph: {
     title: 'Blog de Marketing Digital | Calazans Lumina',
@@ -20,8 +19,6 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   return (
     <>
-      <Breadcrumbs items={[{ name: 'Blog' }]} />
-
       <section className="section-padding bg-brand-bg">
         <div className="container-main">
           <ScrollReveal className="text-center mb-12">
