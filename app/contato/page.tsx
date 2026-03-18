@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import CTAForm from '@/components/CTAForm'
@@ -68,9 +69,30 @@ const canais = [
   },
 ]
 
+const contactSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Contato — Calazans Lumina',
+  description: 'Entre em contato com a Calazans Lumina para servicos de marketing digital.',
+  url: 'https://calazanslumina.com.br/contato',
+  mainEntity: {
+    '@type': 'Organization',
+    name: 'Calazans Lumina',
+    telephone: '+55-31-98294-8067',
+    email: 'trafegocalazans@gmail.com',
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+55-31-98294-8067',
+      contactType: 'customer service',
+      availableLanguage: ['Portuguese', 'English'],
+    },
+  },
+}
+
 export default function ContatoPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }} />
       <Breadcrumbs items={[{ name: 'Contato' }]} />
 
       {/* Hero — full-width background image with overlay */}
@@ -125,6 +147,27 @@ export default function ContatoPage() {
       </section>
 
       <CoursesSection />
+
+      {/* Internal Links */}
+      <section className="py-12 bg-brand-bg">
+        <div className="container-main">
+          <h2 className="font-serif text-2xl font-bold text-brand-dark text-center mb-8">Explore Nossos Servicos</h2>
+          <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+            <Link href="/servicos" className="bg-white rounded-xl p-5 border border-gray-100 hover:shadow-md transition-shadow text-center">
+              <p className="font-bold text-brand-dark mb-1">Servicos</p>
+              <p className="text-brand-dark/50 text-xs">Sites, funis, CRM e mais</p>
+            </Link>
+            <Link href="/para-agencias" className="bg-white rounded-xl p-5 border border-gray-100 hover:shadow-md transition-shadow text-center">
+              <p className="font-bold text-brand-dark mb-1">GoHighLevel</p>
+              <p className="text-brand-dark/50 text-xs">Sub-contas prontas para empresas</p>
+            </Link>
+            <Link href="/cursos" className="bg-white rounded-xl p-5 border border-gray-100 hover:shadow-md transition-shadow text-center">
+              <p className="font-bold text-brand-dark mb-1">Cursos</p>
+              <p className="text-brand-dark/50 text-xs">Marketing digital e IA</p>
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <CTAForm />
     </>

@@ -195,6 +195,14 @@ const categorias = [
   },
 ]
 
+const portfolioSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Portfolio de Projetos — Calazans Lumina',
+  description: 'Portfolio de sites, automacoes e projetos de marketing digital da Calazans Lumina.',
+  url: 'https://calazanslumina.com.br/projetos',
+}
+
 export default function ProjetosPage() {
   const [activeTab, setActiveTab] = useState('sites')
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
@@ -203,6 +211,7 @@ export default function ProjetosPage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(portfolioSchema) }} />
       <Breadcrumbs items={[{ name: 'Projetos' }]} />
 
       {/* Magazine Cover Hero */}
