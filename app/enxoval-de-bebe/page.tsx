@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 const BASE = 'https://calazanslumina.com.br'
 
@@ -720,6 +721,8 @@ export default function EnxovalBebePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
+      <Breadcrumbs items={[{ name: 'Enxoval de Bebê' }]} />
+
       {/* === HERO === */}
       <section className="relative py-20 md:py-28 bg-brand-dark text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -1126,6 +1129,31 @@ export default function EnxovalBebePage() {
               </Link>
             </div>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* === INTERNAL LINKS SECTION === */}
+      <section className="py-12 bg-white">
+        <div className="container-main">
+          <h2 className="font-serif text-2xl font-bold text-brand-dark text-center mb-8">Explore Mais Conteudo</h2>
+          <div className="grid md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+            <Link href="/ferramentas" className="bg-brand-bg rounded-xl p-5 border border-gray-100 hover:shadow-md transition-shadow text-center">
+              <p className="font-bold text-brand-dark mb-1">Ferramentas</p>
+              <p className="text-brand-dark/50 text-xs">Produtos para empreendedores</p>
+            </Link>
+            <Link href="/blog" className="bg-brand-bg rounded-xl p-5 border border-gray-100 hover:shadow-md transition-shadow text-center">
+              <p className="font-bold text-brand-dark mb-1">Blog</p>
+              <p className="text-brand-dark/50 text-xs">60+ artigos gratuitos</p>
+            </Link>
+            <Link href="/cursos" className="bg-brand-bg rounded-xl p-5 border border-gray-100 hover:shadow-md transition-shadow text-center">
+              <p className="font-bold text-brand-dark mb-1">Cursos</p>
+              <p className="text-brand-dark/50 text-xs">Marketing digital e IA</p>
+            </Link>
+            <Link href="/para-agencias" className="bg-brand-bg rounded-xl p-5 border border-gray-100 hover:shadow-md transition-shadow text-center">
+              <p className="font-bold text-brand-dark mb-1">GoHighLevel</p>
+              <p className="text-brand-dark/50 text-xs">Sub-contas prontas</p>
+            </Link>
+          </div>
         </div>
       </section>
 

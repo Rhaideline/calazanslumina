@@ -6,8 +6,8 @@ import Breadcrumb from '@/components/Breadcrumb'
 import CTAForm from '@/components/CTAForm'
 
 export const metadata: Metadata = {
-  title: 'Ferramentas Recomendadas para Empreendedores Digitais | Calazans Lumina',
-  description: 'As melhores ferramentas para criação de conteúdo, home office, marketing digital e produtividade. Curadoria feita por Rhaideline Calazans para empreendedores brasileiros.',
+  title: '18 Ferramentas Essenciais para Empreendedores Digitais (2026) | Testadas e Aprovadas',
+  description: 'Curadoria com 18 ferramentas testadas para criacao de conteudo, home office e marketing digital. Ring light, microfone, tripe, livros e mais — com precos a partir de R$29. Compre com desconto na Amazon e Shopee →',
   alternates: { canonical: 'https://calazanslumina.com.br/ferramentas' },
   openGraph: {
     title: 'Ferramentas Recomendadas | Calazans Lumina',
@@ -325,25 +325,59 @@ function getTagColor(tag?: string) {
 }
 
 export default function FerramentasPage() {
+  const totalProdutos = categorias.reduce((acc, cat) => acc + cat.produtos.length, 0)
+
   const pageSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'Ferramentas Recomendadas para Empreendedores Digitais',
     description: 'Curadoria de produtos para criação de conteúdo, home office, marketing e produtividade.',
-    numberOfItems: categorias.reduce((acc, cat) => acc + cat.produtos.length, 0),
+    numberOfItems: totalProdutos,
     itemListElement: categorias.flatMap((cat, ci) =>
       cat.produtos.map((prod, pi) => ({
         '@type': 'ListItem',
         position: ci * 10 + pi + 1,
-        name: prod.nome,
-        description: prod.desc,
+        item: {
+          '@type': 'Product',
+          name: prod.nome,
+          description: prod.desc,
+          url: prod.link,
+          ...(prod.imagem ? { image: prod.imagem } : {}),
+          offers: {
+            '@type': 'Offer',
+            price: prod.preco.replace(/[^\d,.]/g, '').replace(',', '.'),
+            priceCurrency: 'BRL',
+            availability: 'https://schema.org/InStock',
+          },
+        },
       }))
     ),
+  }
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'Quais ferramentas sao essenciais para criacao de conteudo?', acceptedAnswer: { '@type': 'Answer', text: 'As ferramentas essenciais incluem: ring light para iluminacao profissional, microfone lapela para audio claro, tripe com suporte para celular, e fundo verde para cenarios. Esses equipamentos basicos transformam a qualidade dos videos e lives.' } },
+      { '@type': 'Question', name: 'Como montar um home office produtivo gastando pouco?', acceptedAnswer: { '@type': 'Answer', text: 'Invista em um suporte para notebook (melhora a ergonomia), mouse sem fio, organizador de mesa e iluminacao adequada. Com menos de R$300 voce monta um setup funcional para trabalhar de casa com produtividade.' } },
+      { '@type': 'Question', name: 'Esses links de produtos sao de afiliados?', acceptedAnswer: { '@type': 'Answer', text: 'Sim, esta pagina contem links de afiliado da Amazon e Shopee. Ao comprar pelos nossos links, voce nao paga nada a mais e nos ajuda a manter o conteudo gratuito. Todos os produtos foram testados ou criteriosamente selecionados.' } },
+    ],
+  }
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://calazanslumina.com.br' },
+      { '@type': 'ListItem', position: 2, name: 'Ferramentas', item: 'https://calazanslumina.com.br/ferramentas' },
+    ],
   }
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       {/* === HERO === */}
       <section className="relative py-20 md:py-28 bg-brand-dark text-white overflow-hidden">
@@ -607,6 +641,31 @@ export default function FerramentasPage() {
               </a>
             </div>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* === INTERNAL LINKS === */}
+      <section className="py-12 bg-brand-bg">
+        <div className="container-main">
+          <h2 className="font-serif text-2xl font-bold text-brand-dark text-center mb-8">Explore Mais</h2>
+          <div className="grid md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+            <Link href="/enxoval-de-bebe" className="bg-white rounded-xl p-5 border border-gray-100 hover:shadow-md transition-shadow text-center">
+              <p className="font-bold text-brand-dark mb-1">Enxoval de Bebe</p>
+              <p className="text-brand-dark/50 text-xs">Checklist completo + PDF gratis</p>
+            </Link>
+            <Link href="/blog" className="bg-white rounded-xl p-5 border border-gray-100 hover:shadow-md transition-shadow text-center">
+              <p className="font-bold text-brand-dark mb-1">Blog</p>
+              <p className="text-brand-dark/50 text-xs">60+ artigos de marketing digital</p>
+            </Link>
+            <Link href="/cursos" className="bg-white rounded-xl p-5 border border-gray-100 hover:shadow-md transition-shadow text-center">
+              <p className="font-bold text-brand-dark mb-1">Cursos Gratuitos</p>
+              <p className="text-brand-dark/50 text-xs">Marketing digital e IA</p>
+            </Link>
+            <Link href="/para-agencias" className="bg-white rounded-xl p-5 border border-gray-100 hover:shadow-md transition-shadow text-center">
+              <p className="font-bold text-brand-dark mb-1">GoHighLevel</p>
+              <p className="text-brand-dark/50 text-xs">Sub-contas prontas para empresas</p>
+            </Link>
+          </div>
         </div>
       </section>
 
