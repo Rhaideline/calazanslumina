@@ -5,6 +5,7 @@ import ScrollReveal from '@/components/ScrollReveal'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import CTAForm from '@/components/CTAForm'
 import CoursesSection from '@/components/CoursesSection'
+import PortfolioSites from '@/components/PortfolioSites'
 
 export const metadata: Metadata = {
   title: 'Sobre Rhaideline Calazans | 8+ Anos em Marketing Digital',
@@ -360,6 +361,7 @@ export default function SobrePage() {
         </div>
       </section>
 
+      <PortfolioSites compact />
       {/* CTA */}
       <CTAForm />
     </>

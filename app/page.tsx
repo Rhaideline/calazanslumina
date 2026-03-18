@@ -11,6 +11,7 @@ import HeroBadges from '@/components/HeroBadges'
 import PricingTable from '@/components/PricingTable'
 import CoursesSection from '@/components/CoursesSection'
 import LazyVideo from '@/components/LazyVideo'
+import PortfolioSites from '@/components/PortfolioSites'
 
 export const metadata: Metadata = {
   title: 'Marketing Digital para Brasileiros nos EUA e Brasil | Calazans Lumina',
@@ -550,6 +551,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <PortfolioSites />
 
       {/* ===== PORTFÓLIO ===== */}
       <section className="section-padding bg-brand-dark text-white" id="portfolio">

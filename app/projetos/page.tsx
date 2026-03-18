@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import CTAForm from '@/components/CTAForm'
 import CoursesSection from '@/components/CoursesSection'
+import PortfolioSites from '@/components/PortfolioSites'
 
 const categorias = [
   {
@@ -179,15 +180,15 @@ const categorias = [
       },
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b410c4c8da2445e99c973.png',
-        alt: 'Bot de IA com OpenAI GPT para atendimento automatizado de clínica',
-        nome: 'Clínica de Fisioterapia',
+        alt: 'Bot de IA com OpenAI GPT para atendimento automatizado',
+        nome: 'Clinica de Saude',
         tipo: 'Bot de IA · OpenAI GPT',
-        resultado: 'Atendimento 24h para clínica',
+        resultado: 'Atendimento 24h automatizado',
       },
       {
         src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b418ddf9bdf249608cf87.png',
-        alt: 'Templates de avaliação automatizados no GoHighLevel para clínica',
-        nome: 'Clínica de Fisioterapia',
+        alt: 'Templates de avaliacao automatizados no GoHighLevel',
+        nome: 'Clinica de Saude',
         tipo: 'Templates de Avaliação',
         resultado: 'Coleta automática de feedback',
       },
@@ -493,6 +494,7 @@ export default function ProjetosPage() {
         </div>
       </section>
 
+      <PortfolioSites compact />
       {/* CTA */}
       <CTAForm />
 

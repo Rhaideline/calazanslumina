@@ -6,6 +6,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import CTAForm from '@/components/CTAForm'
 import ServiceIcon from '@/components/ServiceIcon'
 import CoursesSection from '@/components/CoursesSection'
+import PortfolioSites from '@/components/PortfolioSites'
 
 export const metadata: Metadata = {
   title: 'Servicos de Marketing Digital | Sites, Funis GHL, CRM com IA',
@@ -121,6 +122,7 @@ export default function ServicosPage() {
         </div>
       </section>
 
+      <PortfolioSites compact />
       <CTAForm />
     </>
   )

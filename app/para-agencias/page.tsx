@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import ScrollReveal from '@/components/ScrollReveal'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import CTAForm from '@/components/CTAForm'
+import PortfolioSites from '@/components/PortfolioSites'
 
 export const metadata: Metadata = {
   title: 'GoHighLevel para Empresas & Agencias | Sub-contas Prontas + Freelancer GHL — Calazans Lumina',
@@ -591,6 +592,8 @@ export default function ParaAgenciasPage() {
           </ScrollReveal>
         </div>
       </section>
+
+      <PortfolioSites />
 
       {/* === PORTFOLIO DE AUTOMACOES === */}
       <section className="section-padding bg-white">
