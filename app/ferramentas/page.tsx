@@ -7,7 +7,7 @@ import CTAForm from '@/components/CTAForm'
 
 export const metadata: Metadata = {
   title: '18 Ferramentas Essenciais para Empreendedores Digitais (2026) | Testadas e Aprovadas',
-  description: 'Curadoria com 18 ferramentas testadas para criacao de conteudo, home office e marketing digital. Ring light, microfone, tripe, livros e mais — com precos a partir de R$29. Compre com desconto na Amazon e Shopee →',
+  description: '18 ferramentas testadas para criacao de conteudo e marketing digital. Ring light, microfone, tripe, livros — precos a partir de R$29 na Amazon e Shopee.',
   alternates: { canonical: 'https://calazanslumina.com.br/ferramentas' },
   openGraph: {
     title: 'Ferramentas Recomendadas | Calazans Lumina',
@@ -334,23 +334,39 @@ export default function FerramentasPage() {
     description: 'Curadoria de produtos para criação de conteúdo, home office, marketing e produtividade.',
     numberOfItems: totalProdutos,
     itemListElement: categorias.flatMap((cat, ci) =>
-      cat.produtos.map((prod, pi) => ({
-        '@type': 'ListItem',
-        position: ci * 10 + pi + 1,
-        item: {
-          '@type': 'Product',
-          name: prod.nome,
-          description: prod.desc,
-          url: prod.link,
-          ...(prod.imagem ? { image: prod.imagem } : {}),
-          offers: {
-            '@type': 'Offer',
-            price: prod.preco.replace(/[^\d,.]/g, '').replace(',', '.'),
-            priceCurrency: 'BRL',
-            availability: 'https://schema.org/InStock',
+      cat.produtos.map((prod, pi) => {
+        const minPrice = prod.preco.match(/R\$\s*([\d.,]+)/)?.[1]?.replace('.', '').replace(',', '.') || '0'
+        const maxPrice = prod.preco.match(/R\$\s*[\d.,]+\s*[–-]\s*R\$\s*([\d.,]+)/)?.[1]?.replace('.', '').replace(',', '.') || minPrice
+        return {
+          '@type': 'ListItem',
+          position: ci * 10 + pi + 1,
+          item: {
+            '@type': 'Product',
+            name: prod.nome,
+            description: prod.desc,
+            url: prod.link,
+            ...(prod.imagem ? { image: prod.imagem } : {}),
+            brand: {
+              '@type': 'Brand',
+              name: prod.nome.split(' ')[0],
+            },
+            category: cat.titulo,
+            offers: {
+              '@type': 'AggregateOffer',
+              lowPrice: minPrice,
+              highPrice: maxPrice,
+              priceCurrency: 'BRL',
+              availability: 'https://schema.org/InStock',
+              itemCondition: 'https://schema.org/NewCondition',
+              offerCount: 2,
+              seller: {
+                '@type': 'Organization',
+                name: prod.loja === 'amazon' ? 'Amazon Brasil' : 'Shopee Brasil',
+              },
+            },
           },
-        },
-      }))
+        }
+      })
     ),
   }
 
@@ -361,6 +377,8 @@ export default function FerramentasPage() {
       { '@type': 'Question', name: 'Quais ferramentas sao essenciais para criacao de conteudo?', acceptedAnswer: { '@type': 'Answer', text: 'As ferramentas essenciais incluem: ring light para iluminacao profissional, microfone lapela para audio claro, tripe com suporte para celular, e fundo verde para cenarios. Esses equipamentos basicos transformam a qualidade dos videos e lives.' } },
       { '@type': 'Question', name: 'Como montar um home office produtivo gastando pouco?', acceptedAnswer: { '@type': 'Answer', text: 'Invista em um suporte para notebook (melhora a ergonomia), mouse sem fio, organizador de mesa e iluminacao adequada. Com menos de R$300 voce monta um setup funcional para trabalhar de casa com produtividade.' } },
       { '@type': 'Question', name: 'Esses links de produtos sao de afiliados?', acceptedAnswer: { '@type': 'Answer', text: 'Sim, esta pagina contem links de afiliado da Amazon e Shopee. Ao comprar pelos nossos links, voce nao paga nada a mais e nos ajuda a manter o conteudo gratuito. Todos os produtos foram testados ou criteriosamente selecionados.' } },
+      { '@type': 'Question', name: 'Qual o melhor microfone para gravar Reels e videos no celular?', acceptedAnswer: { '@type': 'Answer', text: 'O microfone de lapela sem fio Bluetooth e a melhor opcao custo-beneficio para gravar Reels, TikToks e videos no celular. Ele elimina ruidos do ambiente, conecta via Bluetooth e tem bateria para ate 10 horas de gravacao. E o equipamento que mais melhora a qualidade do conteudo.' } },
+      { '@type': 'Question', name: 'Quais livros de marketing digital todo empreendedor deveria ler?', acceptedAnswer: { '@type': 'Answer', text: 'Os livros essenciais para empreendedores digitais sao: Gatilhos Mentais de Gustavo Ferreira (persuasao e copywriting), Expert Secrets de Russell Brunson (funis e audiencia), A Biblia do Marketing Digital de Claudio Torres (guia completo brasileiro) e Marketing 5.0 de Philip Kotler (tendencias e tecnologia). Comece por Gatilhos Mentais se voce esta iniciando.' } },
     ],
   }
 

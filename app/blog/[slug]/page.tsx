@@ -141,14 +141,72 @@ export default async function BlogPostPage({
           <ScrollReveal>
             <div className="prose prose-lg max-w-none [&>h2]:font-serif [&>h2]:text-2xl [&>h2]:text-brand-mint [&>h2]:mt-10 [&>h2]:mb-4 [&>p]:text-brand-dark/70 [&>p]:leading-relaxed [&>ul]:text-brand-dark/70 [&>ol]:text-brand-dark/70 [&>blockquote]:border-brand-mint [&>blockquote]:text-brand-dark/60">
               {post.conteudo.split('\n').map((line, i) => {
+                if (line.startsWith('### ')) {
+                  return <h3 key={i} className="font-serif text-xl text-brand-dark mt-8 mb-3">{line.replace('### ', '')}</h3>
+                }
                 if (line.startsWith('## ')) {
                   return <h2 key={i}>{line.replace('## ', '')}</h2>
                 }
                 if (line.trim() === '') return <br key={i} />
-                return <p key={i}>{line}</p>
+                // Parse markdown links [text](url) and **bold**
+                const parts = line.split(/(\[.*?\]\(.*?\)|\*\*.*?\*\*)/g)
+                const rendered = parts.map((part, j) => {
+                  const linkMatch = part.match(/^\[(.*?)\]\((.*?)\)$/)
+                  if (linkMatch) {
+                    const [, text, href] = linkMatch
+                    if (href.startsWith('/')) {
+                      return <Link key={j} href={href} className="text-pink-600 hover:text-pink-700 underline underline-offset-2 font-medium">{text}</Link>
+                    }
+                    return <a key={j} href={href} target="_blank" rel="noopener noreferrer nofollow" className="text-pink-600 hover:text-pink-700 underline underline-offset-2 font-medium">{text}</a>
+                  }
+                  const boldMatch = part.match(/^\*\*(.*?)\*\*$/)
+                  if (boldMatch) {
+                    return <strong key={j} className="text-brand-dark font-semibold">{boldMatch[1]}</strong>
+                  }
+                  return part
+                })
+                return <p key={i}>{rendered}</p>
               })}
             </div>
           </ScrollReveal>
+
+          {/* Enxoval Product Recommendation — only on maternidade posts */}
+          {post.categoria === 'Maternidade' && (
+            <ScrollReveal>
+              <div className="bg-gradient-to-r from-pink-50 to-rose-50 border border-pink-200 rounded-2xl p-6 mt-12">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-2xl">🍼</span>
+                  <div>
+                    <p className="font-bold text-brand-dark">Montando o enxoval?</p>
+                    <p className="text-brand-dark/50 text-sm">Confira nossa selecao com os melhores precos da Shopee</p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+                  {[
+                    { nome: 'Roupinhas 100% Algodao', emoji: '👶', anchor: '#roupas-bebe' },
+                    { nome: 'Berco & Quarto', emoji: '🛏️', anchor: '#berco-quarto' },
+                    { nome: 'Higiene & Banho', emoji: '🛁', anchor: '#higiene-banho' },
+                    { nome: 'Alimentacao', emoji: '🍼', anchor: '#alimentacao' },
+                  ].map((cat) => (
+                    <Link
+                      key={cat.anchor}
+                      href={`/enxoval-de-bebe${cat.anchor}`}
+                      className="bg-white rounded-xl p-3 text-center border border-pink-100 hover:border-pink-300 hover:shadow-md transition-all"
+                    >
+                      <span className="text-xl block mb-1">{cat.emoji}</span>
+                      <span className="text-brand-dark text-xs font-medium">{cat.nome}</span>
+                    </Link>
+                  ))}
+                </div>
+                <Link
+                  href="/enxoval-de-bebe"
+                  className="block w-full text-center bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-xl transition-colors text-sm"
+                >
+                  Ver Checklist Completo de Enxoval (PDF Gratis)
+                </Link>
+              </div>
+            </ScrollReveal>
+          )}
 
           {/* Share */}
           <div className="border-t border-gray-200 mt-12 pt-8 flex items-center justify-between">
