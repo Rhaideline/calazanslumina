@@ -175,7 +175,7 @@ const localBusinessSchema = {
   },
   areaServed: ['Massachusetts, USA', 'Brasil'],
   priceRange: '$$',
-  image: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3c6855d8bc9a8c44fb4d.png',
+  image: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6d8ea4c91ee3015cbc.png',
   sameAs: ['https://www.instagram.com/calazanslumina/'],
 }
 
