@@ -3,6 +3,7 @@ import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
 import BlogFilter from '@/components/BlogFilter'
 import CoursesSection from '@/components/CoursesSection'
+import PortfolioSites from '@/components/PortfolioSites'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { blogPosts, categoriasBlog } from '@/data/blog'
 
@@ -145,6 +146,7 @@ export default function BlogPage() {
         </div>
       </section>
 
+      <PortfolioSites compact />
       <CoursesSection />
     </>
   )

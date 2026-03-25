@@ -27,7 +27,7 @@ const personJsonLd = {
   name: 'Rhaideline Calazans',
   jobTitle: 'Especialista em Marketing Digital & Fundadora da Calazans Lumina',
   url: 'https://calazanslumina.com.br/sobre',
-  image: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d74aa28b2801643ac3f117.jpeg',
+  image: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c035285908c419.jpeg',
   description:
     'Especialista em marketing digital com 8+ anos de experiência e 100+ projetos. Fundadora da Calazans Lumina, agência focada em brasileiros nos EUA e Brasil.',
   worksFor: {
@@ -226,7 +226,7 @@ export default function SobrePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d74aa28b2801643ac3f117.jpeg',
+                src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c035285908c419.jpeg',
                 alt: 'Rhaideline Calazans em ambiente profissional — marketing digital para brasileiros',
               },
               {

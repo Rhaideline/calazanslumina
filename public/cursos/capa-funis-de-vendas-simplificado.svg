@@ -1,60 +1,75 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#d97706"/>
-      <stop offset="100%" style="stop-color:#451a03"/>
+      <stop offset="0%" style="stop-color:#064e3b"/>
+      <stop offset="50%" style="stop-color:#047857"/>
+      <stop offset="100%" style="stop-color:#10b981"/>
     </linearGradient>
     <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#fbbf24"/>
-      <stop offset="100%" style="stop-color:#fde68a"/>
+      <stop offset="0%" style="stop-color:#6ee7b7"/>
+      <stop offset="100%" style="stop-color:#a7f3d0"/>
     </linearGradient>
   </defs>
   <rect width="800" height="500" fill="url(#bg)"/>
-  <!-- Decorative -->
-  <circle cx="680" cy="100" r="140" fill="#ffffff" opacity="0.03"/>
-  <!-- Funnel icon -->
-  <g transform="translate(560, 70)">
-    <!-- Funnel shape -->
-    <path d="M20 20 L200 20 L160 120 L130 220 L130 280 L90 280 L90 220 L60 120Z" fill="#fbbf24" opacity="0.12"/>
-    <path d="M30 30 L190 30 L155 115 L125 210 L125 270 L95 270 L95 210 L65 115Z" fill="none" stroke="#fbbf24" stroke-width="2" opacity="0.4"/>
-    <!-- Dots flowing through funnel -->
-    <circle cx="60" cy="50" r="6" fill="#fde68a" opacity="0.6"/>
-    <circle cx="100" cy="45" r="6" fill="#fde68a" opacity="0.5"/>
-    <circle cx="140" cy="50" r="6" fill="#fde68a" opacity="0.6"/>
-    <circle cx="170" cy="42" r="6" fill="#fde68a" opacity="0.4"/>
-    <circle cx="80" cy="55" r="5" fill="#fde68a" opacity="0.3"/>
-    <!-- Mid funnel -->
-    <circle cx="100" cy="100" r="5" fill="#fbbf24" opacity="0.5"/>
-    <circle cx="120" cy="95" r="5" fill="#fbbf24" opacity="0.4"/>
-    <!-- Bottom - money -->
-    <circle cx="110" cy="260" r="12" fill="#fbbf24" opacity="0.6"/>
-    <text x="110" y="265" font-family="Georgia,serif" font-size="14" font-weight="bold" fill="#451a03" text-anchor="middle">$</text>
-    <!-- Arrow down -->
-    <path d="M105 290 L110 305 L115 290" fill="none" stroke="#fbbf24" stroke-width="2" opacity="0.5"/>
+  <!-- Abstract diagonal lines -->
+  <g opacity="0.05" stroke="#ffffff" stroke-width="1">
+    <line x1="500" y1="0" x2="800" y2="300"/>
+    <line x1="530" y1="0" x2="800" y2="270"/>
+    <line x1="560" y1="0" x2="800" y2="240"/>
+    <line x1="590" y1="0" x2="800" y2="210"/>
+    <line x1="500" y1="200" x2="800" y2="500"/>
+    <line x1="530" y1="200" x2="800" y2="470"/>
   </g>
-  <!-- Small conversion arrows -->
-  <g transform="translate(600, 370)" opacity="0.25">
-    <path d="M0 0 L40 0 L35 -8 M40 0 L35 8" fill="none" stroke="#fde68a" stroke-width="2"/>
-    <text x="50" y="5" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#fde68a">Lead</text>
-    <path d="M90 0 L130 0 L125 -8 M130 0 L125 8" fill="none" stroke="#fde68a" stroke-width="2"/>
-    <text x="140" y="5" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#fde68a">Venda</text>
+  <!-- Funnel icon (right side, large, semi-transparent) -->
+  <g transform="translate(555, 55)" opacity="0.15">
+    <!-- Funnel shape -->
+    <path d="M10 0 L200 0 L125 130 L125 210 L85 210 L85 130 Z" fill="none" stroke="#6ee7b7" stroke-width="4.5" stroke-linejoin="round"/>
+    <!-- Funnel level lines -->
+    <line x1="32" y1="40" x2="178" y2="40" stroke="#6ee7b7" stroke-width="2" stroke-dasharray="8 4"/>
+    <line x1="58" y1="80" x2="152" y2="80" stroke="#6ee7b7" stroke-width="2" stroke-dasharray="8 4"/>
+    <!-- Arrow out of bottom -->
+    <line x1="105" y1="210" x2="105" y2="250" stroke="#6ee7b7" stroke-width="3"/>
+    <path d="M92 240 L105 258 L118 240" fill="none" stroke="#6ee7b7" stroke-width="3"/>
+  </g>
+  <!-- Dollar signs floating -->
+  <g opacity="0.2" font-family="Georgia,serif" fill="#6ee7b7">
+    <text x="575" y="340" font-size="32">$</text>
+    <text x="640" y="310" font-size="24">$</text>
+    <text x="710" y="355" font-size="28">$</text>
+    <text x="665" y="390" font-size="20">$</text>
+    <text x="735" y="310" font-size="22">$</text>
+  </g>
+  <!-- Coins entering funnel top -->
+  <g transform="translate(590, 25)" opacity="0.12">
+    <circle cx="22" cy="8" r="11" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+    <text x="22" y="13" font-family="Arial" font-size="13" fill="#ffffff" text-anchor="middle">$</text>
+    <circle cx="60" cy="12" r="11" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+    <text x="60" y="17" font-family="Arial" font-size="13" fill="#ffffff" text-anchor="middle">$</text>
+    <circle cx="98" cy="6" r="11" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+    <text x="98" y="11" font-family="Arial" font-size="13" fill="#ffffff" text-anchor="middle">$</text>
+  </g>
+  <!-- Sparkle dots -->
+  <g opacity="0.3">
+    <circle cx="540" cy="180" r="3" fill="#6ee7b7"/>
+    <circle cx="760" cy="150" r="2" fill="#a7f3d0"/>
+    <circle cx="700" cy="420" r="2.5" fill="#6ee7b7"/>
+    <circle cx="530" cy="400" r="2" fill="#a7f3d0"/>
   </g>
   <!-- Badge -->
-  <rect x="50" y="30" width="100" height="36" rx="18" fill="#f59e0b"/>
-  <text x="100" y="54" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="1">R$20</text>
+  <rect x="40" y="28" width="110" height="42" rx="21" fill="#059669"/>
+  <text x="95" y="55" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="1">R$20</text>
   <!-- Title -->
-  <text x="50" y="155" font-family="Georgia,serif" font-size="40" font-weight="bold" fill="#ffffff">Funis de</text>
-  <text x="50" y="205" font-family="Georgia,serif" font-size="40" font-weight="bold" fill="#ffffff">Vendas</text>
-  <text x="50" y="248" font-family="Georgia,serif" font-size="30" font-weight="bold" fill="#fde68a">Simplificado</text>
+  <text x="50" y="152" font-family="Georgia,serif" font-size="48" font-weight="bold" fill="#ffffff">Funis de</text>
+  <text x="50" y="210" font-family="Georgia,serif" font-size="48" font-weight="bold" fill="#ffffff">Vendas</text>
+  <text x="50" y="262" font-family="Georgia,serif" font-size="40" font-weight="bold" fill="#a7f3d0">Simplificado</text>
   <!-- Divider -->
-  <rect x="50" y="265" width="80" height="4" rx="2" fill="url(#accent)"/>
+  <rect x="50" y="280" width="90" height="4" rx="2" fill="url(#accent)"/>
   <!-- Subtitle -->
-  <text x="50" y="305" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#ffffff" opacity="0.7">Crie funis que convertem</text>
-  <text x="50" y="330" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#ffffff" opacity="0.7">visitantes em clientes.</text>
-  <text x="50" y="355" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#ffffff" opacity="0.7">Landing pages + automacao.</text>
+  <text x="50" y="318" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#ffffff" opacity="0.85">Crie funis que convertem</text>
+  <text x="50" y="343" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#ffffff" opacity="0.85">visitantes em compradores.</text>
   <!-- Stats -->
-  <text x="50" y="398" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#fbbf24" font-weight="bold">5 modulos  ·  25 aulas  ·  Templates GHL</text>
+  <text x="50" y="392" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#6ee7b7" font-weight="bold">8 módulos  ·  36 aulas  ·  Certificado</text>
   <!-- Footer -->
-  <rect x="0" y="440" width="800" height="60" fill="#000000" opacity="0.3"/>
-  <text x="50" y="478" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#ffffff" opacity="0.6" letter-spacing="3">CALAZANS LUMINA</text>
+  <rect x="0" y="440" width="800" height="60" fill="#000000" opacity="0.25"/>
+  <text x="50" y="478" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#ffffff" opacity="0.45" letter-spacing="3">CALAZANS LUMINA</text>
 </svg>

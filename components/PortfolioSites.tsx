@@ -7,6 +7,8 @@ const sites = [
   { nome: 'AM Painter Inc', url: 'https://www.ampainterinc.com', nicho: 'Painting Company', bandeira: '🇺🇸' },
   { nome: 'RS Development Group', url: 'https://rs-developmentgroup.com', nicho: 'Construction / Development', bandeira: '🇺🇸' },
   { nome: 'Mass Painter Pro', url: 'https://masspainter.pro', nicho: 'Painting Services', bandeira: '🇺🇸' },
+  { nome: 'Mass HVAC', url: 'https://masshvac.net', nicho: 'HVAC Services', bandeira: '🇺🇸' },
+  { nome: 'Maia Construction', url: 'https://maiaconstruction.com', nicho: 'Construction Company', bandeira: '🇺🇸' },
   { nome: 'Calazans Lumina', url: 'https://www.calazanslumina.com.br', nicho: 'Marketing Digital', bandeira: '🇧🇷' },
 ]
 

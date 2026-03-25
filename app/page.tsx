@@ -237,7 +237,7 @@ export default function HomePage() {
       <section className="relative min-h-[85vh] flex items-center">
         {/* Background Image */}
         <Image
-          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d74aa28b2801643ac3f117.jpeg"
+          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c035285908c419.jpeg"
           alt="Rhaideline Calazans — Especialista em Marketing Digital para Brasileiros nos EUA e Brasil"
           fill
           className="object-cover"
@@ -482,7 +482,7 @@ export default function HomePage() {
             ].map((video, i) => (
               <ScrollReveal key={i} delay={i * 150}>
                 <div className="bg-white/5 rounded-2xl overflow-hidden border border-white/10">
-                  <LazyVideo src={video.src} />
+                  <LazyVideo src={video.src} label={video.label} />
                   <div className="p-4">
                     <p className="text-brand-mint font-bold text-sm uppercase tracking-wider mb-1">
                       Video {i + 1}

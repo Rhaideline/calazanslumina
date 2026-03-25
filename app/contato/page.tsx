@@ -5,6 +5,7 @@ import ScrollReveal from '@/components/ScrollReveal'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import CTAForm from '@/components/CTAForm'
 import CoursesSection from '@/components/CoursesSection'
+import PortfolioSites from '@/components/PortfolioSites'
 
 export const metadata: Metadata = {
   title: 'Contato | Fale Agora pelo WhatsApp ou Formulario',
@@ -99,7 +100,7 @@ export default function ContatoPage() {
       <section className="relative min-h-[60vh] flex items-center">
         {/* Background Image */}
         <Image
-          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d74aa28b2801643ac3f117.jpeg"
+          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c035285908c419.jpeg"
           alt="Rhaideline Calazans — Contato Calazans Lumina"
           fill
           className="object-cover"
@@ -169,6 +170,7 @@ export default function ContatoPage() {
         </div>
       </section>
 
+      <PortfolioSites compact />
       <CTAForm />
     </>
   )

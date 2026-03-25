@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { cursos } from '@/data/cursos'
 import ScrollReveal from '@/components/ScrollReveal'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import PortfolioSites from '@/components/PortfolioSites'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -205,6 +206,8 @@ export default function CursosPage() {
           </div>
         </div>
       </section>
+
+      <PortfolioSites compact />
 
       {/* CTA */}
       <section className="section-padding bg-brand-dark text-white text-center">

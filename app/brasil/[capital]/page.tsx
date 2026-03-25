@@ -14,6 +14,7 @@ import Breadcrumb from '@/components/Breadcrumb'
 import PricingTable from '@/components/PricingTable'
 import ServiceIcon from '@/components/ServiceIcon'
 import CoursesSection from '@/components/CoursesSection'
+import PortfolioSites from '@/components/PortfolioSites'
 
 export async function generateStaticParams() {
   const allCidades = [...capitaisBR, ...cidadesBrasil]
@@ -73,7 +74,7 @@ export default async function CapitalPage({ params }: { params: Promise<{ capita
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <section className="relative min-h-[80vh] flex items-center">
         <Image
-          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d74aa28b2801643ac3f117.jpeg"
+          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c035285908c419.jpeg"
           alt={`Marketing Digital em ${capital.nome} — Calazans Lumina`}
           fill
           className="object-cover"
@@ -190,6 +191,7 @@ export default async function CapitalPage({ params }: { params: Promise<{ capita
         </div>
       </section>
 
+      <PortfolioSites compact />
       <CTAForm cidade={capital.nome} />
     </>
   )

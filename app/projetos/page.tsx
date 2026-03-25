@@ -8,6 +8,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import CTAForm from '@/components/CTAForm'
 import CoursesSection from '@/components/CoursesSection'
 import PortfolioSites from '@/components/PortfolioSites'
+import LazyVideo from '@/components/LazyVideo'
 
 const categorias = [
   {
@@ -435,15 +436,7 @@ export default function ProjetosPage() {
             ].map((video, i) => (
               <ScrollReveal key={i} delay={i * 100}>
                 <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
-                  <video
-                    controls
-                    preload="metadata"
-                    playsInline
-                    className="w-full aspect-video"
-                  >
-                    <source src={video.src} type="video/mp4" />
-                    Seu navegador não suporta vídeo HTML5.
-                  </video>
+                  <LazyVideo src={video.src} label={video.label} />
                   <div className="p-5">
                     <p className="text-brand-mint text-xs font-bold uppercase tracking-wider mb-1">
                       Video {i + 1}

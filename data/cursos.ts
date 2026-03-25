@@ -260,6 +260,7 @@ export const cursos: Curso[] = [
   },
   {
     slug: 'ia-chatgpt-completo',
+    // IA & ChatGPT Completo
     nome: 'IA & ChatGPT — Curso Completo',
     descricaoCurta: 'Domine a Inteligência Artificial do zero ao avançado. Aprenda a usar o ChatGPT para criar conteúdo, automatizar tarefas e impulsionar seu negócio.',
     descricaoLonga: 'Este é o guia definitivo para dominar a Inteligência Artificial e o ChatGPT. Desde os conceitos fundamentais até técnicas avançadas de prompt engineering, automação de tarefas e integração com ferramentas de marketing digital. Ideal para empreendedores que querem usar IA para multiplicar seus resultados.',
@@ -267,7 +268,7 @@ export const cursos: Curso[] = [
     destaque: true,
     pdfDisponivel: true,
     linkPagamento: 'https://link.fastpaydirect.com/payment-link/69a8cc1484b2d7dfdd5e1370',
-    imagem: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b9a7c55d8bc1b616621c7.png',
+    imagem: '/cursos/capa-ia-chatgpt-completo.svg',
     paraQuem: [
       'Empreendedores que querem usar IA no dia a dia',
       'Profissionais de marketing que querem automatizar tarefas',
@@ -337,7 +338,7 @@ export const cursos: Curso[] = [
     preco: 20,
     pdfDisponivel: true,
     linkPagamento: 'https://link.fastpaydirect.com/payment-link/69a8e72826494b224ce21c37',
-    imagem: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b9ac95dfd50100d491487.png',
+    imagem: '/cursos/capa-marketing-digital-iniciantes.svg',
     paraQuem: ['Empreendedores que estão começando no digital', 'Profissionais liberais que querem atrair clientes online', 'Quem quer mudar de carreira para marketing digital', 'Donos de negócio sem presença digital'],
     oQueVaiAprender: ['O que é marketing digital e por que importa', 'Como criar uma presença digital profissional', 'Fundamentos de SEO (aparecer no Google)', 'Redes sociais: estratégia que gera resultado', 'Introdução a anúncios online (Google e Meta)', 'Email marketing básico', 'Como medir resultados (métricas essenciais)', 'Ferramentas gratuitas para começar hoje'],
     vsl: {
@@ -369,7 +370,7 @@ export const cursos: Curso[] = [
     preco: 20,
     pdfDisponivel: true,
     linkPagamento: 'https://link.fastpaydirect.com/payment-link/69a8eabecd45df2539892d27',
-    imagem: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b9ac95dfd50100d491487.png',
+    imagem: '/cursos/capa-google-meu-negocio-do-zero.svg',
     paraQuem: ['Negócios locais que querem mais visibilidade', 'Empresas que atendem clientes presencialmente', 'Profissionais que querem aparecer no Google Maps', 'Quem quer mais avaliações e reviews no Google'],
     oQueVaiAprender: ['Criar perfil completo no Google Business Profile', 'Otimizar para aparecer nas 3 primeiras posições', 'Estratégia de fotos que aumentam cliques em 42%', 'Como conseguir mais avaliações 5 estrelas', 'Google Posts: o que postar e quando', 'Responder reviews de forma estratégica', 'Insights e métricas do Google Business', 'Integração com Google Ads Local'],
     vsl: {
@@ -399,7 +400,7 @@ export const cursos: Curso[] = [
     preco: 20,
     pdfDisponivel: true,
     linkPagamento: 'https://link.fastpaydirect.com/payment-link/69a8e8f9beb6cd210e71a584',
-    imagem: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b9ac94c8da27eb5b8f7fb.png',
+    imagem: '/cursos/capa-redes-sociais-que-vendem.svg',
     paraQuem: ['Empreendedores que postam mas não geram vendas', 'Quem quer crescer no Instagram de forma orgânica', 'Profissionais que querem entender o algoritmo', 'Negócios que querem mais engajamento e leads'],
     oQueVaiAprender: ['Estratégia Info-First para 2026', 'Como o algoritmo funciona (Instagram, TikTok, LinkedIn)', 'Criação de conteúdo que gera salvamentos e compartilhamentos', 'Calendário editorial prático', 'Design de posts (sem ser designer)', 'Legendas que convertem (com templates)', 'Hashtags estratégicas por nicho', 'Métricas e relatórios de redes sociais'],
     vsl: {
@@ -429,7 +430,7 @@ export const cursos: Curso[] = [
     preco: 20,
     pdfDisponivel: true,
     linkPagamento: 'https://link.fastpaydirect.com/payment-link/69a8eabecd45df2539892d27',
-    imagem: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b9ac95dfd50100d491487.png',
+    imagem: '/cursos/capa-funis-de-vendas-simplificado.svg',
     paraQuem: ['Empreendedores que perdem leads por falta de follow-up', 'Quem quer automatizar o processo de vendas', 'Negócios que investem em marketing mas não convertem', 'Profissionais que querem entender CRM e automação'],
     oQueVaiAprender: ['O que é um funil de vendas e como funciona', 'Tipos de funis: captação, vendas, nurturing', 'Landing pages que convertem', 'Automação de follow-up (WhatsApp, email, SMS)', 'CRM básico: como organizar seus leads', 'Pipeline de vendas visual', 'Métricas de funil: taxa de conversão por etapa', 'GoHighLevel: visão geral da plataforma'],
     vsl: {
@@ -459,7 +460,7 @@ export const cursos: Curso[] = [
     preco: 0,
     gratuito: true,
     pdfDisponivel: true,
-    imagem: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b9ac95dfd50100d491487.png',
+    imagem: '/cursos/capa-ferramentas-digitais-secretarias.svg',
     paraQuem: ['Secretárias que querem se atualizar com ferramentas digitais', 'Assistentes administrativas buscando produtividade', 'Recepcionistas que usam computador no trabalho', 'Profissionais de escritório que querem dominar Google Workspace', 'Quem quer organizar melhor sua rotina com tecnologia'],
     oQueVaiAprender: ['Google Workspace completo (Gmail, Drive, Agenda, Docs, Sheets)', 'Organização de arquivos e pastas na nuvem', 'Gestão profissional de agenda e compromissos', 'Email corporativo: etiqueta e produtividade', 'Criar planilhas e relatórios básicos', 'Apresentações profissionais no Google Slides', 'Automação de tarefas repetitivas', 'Uso básico de IA (ChatGPT) para escritório'],
     vsl: {

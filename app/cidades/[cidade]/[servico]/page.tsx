@@ -75,7 +75,7 @@ export default async function CidadeServicoPage({ params }: { params: Promise<{ 
       {/* Hero */}
       <section className="relative min-h-[80vh] flex items-center">
         <Image
-          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d74aa28b2801643ac3f117.jpeg"
+          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c035285908c419.jpeg"
           alt={`${servico.nome} em ${cidade.nome}, MA — Calazans Lumina`}
           fill
           className="object-cover"
