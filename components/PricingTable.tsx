@@ -80,7 +80,7 @@ const pricingJsonLd = {
       name: 'Site Básico',
       price: '500',
       priceCurrency: 'BRL',
-      description: 'Site profissional Next.js de 2 páginas com design responsivo e formulário integrado',
+      description: 'Site profissional de 2 páginas com design responsivo e formulário integrado',
     },
     {
       '@type': 'Offer',

@@ -49,7 +49,7 @@ export default function Footer() {
               className="h-10 w-auto mb-4"
             />
             <p className="text-white/60 text-sm leading-relaxed mb-4">
-              Agência de marketing digital especializada em brasileiros nos EUA e Brasil. Sites Next.js de alta performance, funis GoHighLevel, CRM com IA no WhatsApp, gestão de redes sociais e Google Business Profile.
+              Agência de marketing digital especializada em brasileiros nos EUA e Brasil. Sites profissionais de alta performance, funis GoHighLevel, CRM com IA no WhatsApp, gestão de redes sociais e Google Business Profile.
             </p>
             <div className="flex gap-4 mb-4">
               <a href="https://www.instagram.com/calazanslumina/" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-brand-mint transition-colors" aria-label="Instagram da Calazans Lumina">
@@ -158,7 +158,7 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-white/70 text-sm">&copy; {new Date().getFullYear()} Calazans Lumina. Todos os direitos reservados.</p>
           <p className="text-white/50 text-xs text-center md:text-right max-w-lg">
-            Agência de marketing digital para brasileiros nos EUA e Brasil — Sites Next.js, Funis GHL, CRM com IA, Redes Sociais e Google Business Profile.
+            Agência de marketing digital para brasileiros nos EUA e Brasil — Sites profissionais, Funis GHL, CRM com IA, Redes Sociais e Google Business Profile.
           </p>
         </div>
       </div>

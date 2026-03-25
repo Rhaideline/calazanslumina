@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const servicosMenu = [
-  { slug: 'sites-landing-pages', nome: 'Sites & Landing Pages', desc: 'Sites Next.js de alta performance', icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9' },
+  { slug: 'sites-landing-pages', nome: 'Sites & Landing Pages', desc: 'Sites profissionais de alta performance', icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9' },
   { slug: 'funis-automacao-ghl', nome: 'Funis & Automação GHL', desc: 'Funis que convertem no automático', icon: 'M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12' },
   { slug: 'crm-ia-whatsapp', nome: 'CRM & IA no WhatsApp', desc: 'Chatbot IA + CRM GoHighLevel', icon: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z' },
   { slug: 'gestao-redes-sociais', nome: 'Gestão de Redes Sociais', desc: 'Conteúdo que converte seguidores', icon: 'M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z' },

@@ -74,7 +74,7 @@ const faqSchema = {
       name: 'Qual a melhor agência de marketing digital para brasileiros nos EUA?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A Calazans Lumina é especializada em marketing digital para brasileiros nos Estados Unidos, com foco em Massachusetts. Oferece sites Next.js, funis GoHighLevel, CRM com IA, gestão de redes sociais e Google Business Profile — tudo em português.',
+        text: 'A Calazans Lumina é especializada em marketing digital para brasileiros nos Estados Unidos, com foco em Massachusetts. Oferece sites profissionais, funis de vendas, CRM com IA, gestão de redes sociais e Google Business Profile — tudo em português.',
       },
     },
     {
@@ -82,7 +82,7 @@ const faqSchema = {
       name: 'Quanto custa um site profissional na Calazans Lumina?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sites profissionais começam a partir de R$500 (site básico de 2 páginas). Sites com SEO completo e soluções com automação e IA são sob consulta. Todos os sites usam Next.js com PageSpeed 95+.',
+        text: 'Sites profissionais começam a partir de R$500 (site básico de 2 páginas). Sites com SEO completo e soluções com automação e IA são sob consulta. Todos os sites são otimizados para velocidade e conversão.',
       },
     },
     {
@@ -130,7 +130,7 @@ const faqSchema = {
       name: 'Quem é Rhaideline Calazans?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Rhaideline Calazans é a fundadora da Calazans Lumina, agência de marketing digital para brasileiros nos EUA e Brasil. Com mais de 8 anos de experiência em marketing digital, é especialista em GoHighLevel, Next.js, SEO, automação de marketing e IA conversacional. Brasileira residente em Framingham, Massachusetts, ela já entregou mais de 100 projetos para empreendedores brasileiros.',
+        text: 'Rhaideline Calazans é a fundadora da Calazans Lumina, agência de marketing digital para brasileiros nos EUA e Brasil. Com mais de 8 anos de experiência em marketing digital, é especialista em sites, SEO, automação de marketing e IA conversacional. Brasileira residente em Framingham, Massachusetts, ela já entregou mais de 100 projetos para empreendedores brasileiros.',
       },
     },
     {
@@ -338,7 +338,7 @@ export default function HomePage() {
               </p>
               <p>
                 Nossos serviços incluem:{' '}
-                <Link href="/servicos/sites-landing-pages" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>sites profissionais em Next.js</strong></Link> com PageSpeed 95+,{' '}
+                <Link href="/servicos/sites-landing-pages" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>sites profissionais de alta performance</strong></Link>,{' '}
                 <Link href="/servicos/funis-automacao-ghl" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>funis de vendas no GoHighLevel</strong></Link>,{' '}
                 <Link href="/servicos/crm-ia-whatsapp" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>CRM com IA conversacional no WhatsApp</strong></Link> (atendimento 24h),{' '}
                 <Link href="/servicos/gestao-redes-sociais" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>gestão de redes sociais</strong></Link>,{' '}

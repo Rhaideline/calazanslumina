@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ cidade: s
   if (!cidade) return {}
   return {
     title: `Marketing Digital em ${cidade.nome}, MA (2026) | Sites + Funis + Google Maps`,
-    description: `A agencia #1 para brasileiros em ${cidade.nome}, MA. Sites com PageSpeed 95+, funis que convertem 3x mais, CRM com IA no WhatsApp e Google Maps otimizado. Atendimento 100% em portugues. Orcamento gratis →`,
+    description: `A agencia #1 para brasileiros em ${cidade.nome}, MA. Sites profissionais, funis que convertem 3x mais, CRM com IA no WhatsApp e Google Maps otimizado. Atendimento 100% em portugues. Orcamento gratis →`,
     alternates: { canonical: `https://calazanslumina.com.br/cidades/${cidadeSlug}` },
     openGraph: {
       title: `Marketing Digital em ${cidade.nome}, MA | Calazans Lumina`,
@@ -60,8 +60,8 @@ export default async function CidadePage({ params }: { params: Promise<{ cidade:
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
-      { '@type': 'Question', name: `Qual a melhor agencia de marketing digital para brasileiros em ${cidade.nome}, MA?`, acceptedAnswer: { '@type': 'Answer', text: `A Calazans Lumina e a agencia #1 para brasileiros em ${cidade.nome}, Massachusetts. Oferecemos sites profissionais com PageSpeed 95+, funis GoHighLevel, CRM com IA no WhatsApp, Google Business Profile e gestao de redes sociais. Atendimento 100% em portugues.` } },
-      { '@type': 'Question', name: `Quanto custa um site profissional em ${cidade.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `Sites profissionais para empresas brasileiras em ${cidade.nome} a partir de $997. Inclui design premium, SEO tecnico, PageSpeed 95+, versao mobile e integracao com Google Business Profile. Orcamento gratuito disponivel.` } },
+      { '@type': 'Question', name: `Qual a melhor agencia de marketing digital para brasileiros em ${cidade.nome}, MA?`, acceptedAnswer: { '@type': 'Answer', text: `A Calazans Lumina e a agencia #1 para brasileiros em ${cidade.nome}, Massachusetts. Oferecemos sites profissionais de alta performance, funis de vendas, CRM com IA no WhatsApp, Google Business Profile e gestao de redes sociais. Atendimento 100% em portugues.` } },
+      { '@type': 'Question', name: `Quanto custa um site profissional em ${cidade.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `Sites profissionais para empresas brasileiras em ${cidade.nome} a partir de $997. Inclui design premium, SEO completo, velocidade otimizada, versao mobile e integracao com Google Business Profile. Orcamento gratuito disponivel.` } },
       { '@type': 'Question', name: `A Calazans Lumina atende empresas em ${cidade.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `Sim! Atendemos cleaning companies, landscaping, saloes de beleza, restaurantes e todos os tipos de negocios brasileiros em ${cidade.nome}, MA. Atendimento remoto 100% em portugues com resultados comprovados.` } },
     ],
   }

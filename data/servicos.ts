@@ -28,7 +28,7 @@ export const servicos: Servico[] = [
     slug: 'sites-landing-pages',
     nome: 'Sites & Landing Pages',
     descricaoCurta: 'Sites profissionais de alta performance que convertem visitantes em clientes',
-    descricaoLonga: 'Desenvolvemos sites e landing pages com tecnologia Next.js, alcançando PageSpeed 95+, design premium e arquitetura focada em conversão. Cada pixel é pensado para transformar visitantes em leads qualificados, com SEO técnico integrado desde a primeira linha de código.',
+    descricaoLonga: 'Desenvolvemos sites e landing pages com tecnologia moderna, alcançando PageSpeed 95+, design premium e arquitetura focada em conversão. Cada pixel é pensado para transformar visitantes em leads qualificados, com SEO técnico integrado desde a primeira linha de código.',
     icone: 'globe',
     dores: [
       'Seu site é lento e perde visitantes antes de carregar',
@@ -37,9 +37,9 @@ export const servicos: Servico[] = [
       'Feito no Wix ou Canva, sem performance real',
       'Vergonha de enviar o link para clientes potenciais',
     ],
-    solucao: 'Sites Next.js ultra-performáticos com PageSpeed 95+, SEO técnico integrado, design premium responsivo e arquitetura focada em conversão — do hero à última seção.',
+    solucao: 'Sites ultra-performáticos de alta velocidade, SEO técnico integrado, design premium responsivo e arquitetura focada em conversão — do hero à última seção.',
     diferenciais: [
-      'Tecnologia Next.js — a mesma usada por Netflix, Nike e TikTok',
+      'Tecnologia de ponta — a mesma usada por empresas como Netflix e Nike',
       'PageSpeed 95+ garantido — seu site carrega em menos de 2 segundos',
       'SEO técnico desde o código — schema markup, meta tags dinâmicas, sitemap automático',
       'Design premium responsivo — perfeito no celular, tablet e desktop',
@@ -48,7 +48,7 @@ export const servicos: Servico[] = [
     cta: 'Quero meu site profissional',
     ctaTexto: 'Olá, quero saber mais sobre criação de sites profissionais',
     metaTitle: 'Sites & Landing Pages de Alta Conversão | Calazans Lumina',
-    metaDescription: 'Criamos sites e landing pages em Next.js com PageSpeed 95+, SEO técnico e design premium. Mais de 8 anos transformando negócios brasileiros nos EUA e no Brasil.',
+    metaDescription: 'Criamos sites e landing pages em de alta performance, SEO técnico e design premium. Mais de 8 anos transformando negócios brasileiros nos EUA e no Brasil.',
     h1: 'Sites e Landing Pages Que Transformam Visitantes em Clientes Reais',
     beneficios: [
       {
@@ -100,8 +100,8 @@ export const servicos: Servico[] = [
       },
       {
         passo: 4,
-        titulo: 'Desenvolvimento Next.js',
-        descricao: 'Codificação do site em Next.js com SEO técnico, otimização de imagens, formulários integrados ao CRM e testes de performance.',
+        titulo: 'Desenvolvimento Web',
+        descricao: 'Desenvolvimento do site com SEO técnico, otimização de imagens, formulários integrados ao CRM e testes de performance.',
       },
       {
         passo: 5,
@@ -117,8 +117,8 @@ export const servicos: Servico[] = [
     ],
     faqs: [
       {
-        pergunta: 'Qual a diferença entre um site Next.js e um site feito no Wix ou WordPress?',
-        resposta: 'Next.js é uma tecnologia de código utilizada por empresas como Netflix e Nike. Enquanto plataformas como Wix geram código genérico e pesado, o Next.js permite controle total sobre performance, SEO e personalização. O resultado é um site até 5x mais rápido, melhor posicionado no Google e com taxa de conversão significativamente maior.',
+        pergunta: 'Qual a diferença entre um site de alta performance e um site feito no Wix ou WordPress?',
+        resposta: 'Usamos tecnologia de ponta, a mesma utilizada por empresas como Netflix e Nike. Enquanto plataformas como Wix geram código genérico e pesado, nossa abordagem permite controle total sobre performance, SEO e personalização. O resultado é um site até 5x mais rápido, melhor posicionado no Google e com taxa de conversão significativamente maior.',
       },
       {
         pergunta: 'Quanto tempo leva para ficar pronto?',
@@ -144,7 +144,7 @@ export const servicos: Servico[] = [
       'Profissionais liberais no Brasil que querem lançar seu negócio digital com um site de alta conversão',
       'Empresas que já têm site mas estão insatisfeitas com a velocidade, design ou resultados de conversão',
     ],
-    conteudoSEO: 'Ter um site profissional não é mais diferencial — é requisito mínimo para qualquer negócio que deseja crescer nos Estados Unidos ou no Brasil. Na Calazans Lumina, desenvolvemos sites e landing pages utilizando Next.js, a mesma tecnologia empregada por gigantes como Netflix, Nike e TikTok, garantindo performance de carregamento, SEO técnico avançado e design que transmite credibilidade desde o primeiro segundo.\n\nPara empreendedores brasileiros em Massachusetts e em todo o território americano, um site lento ou com aparência amadora pode significar perder clientes para concorrentes locais todos os dias. Nossos sites alcançam PageSpeed 95+ de forma consistente, carregam em menos de 2 segundos e são construídos com arquitetura de conversão — cada seção, botão e formulário é pensado para transformar visitantes em leads qualificados.\n\nRhaideline Calazans, fundadora da agência, traz mais de 8 anos de experiência em marketing digital e tecnologia, tendo ajudado centenas de empreendedores brasileiros a estabelecer sua presença digital nos EUA. Entendemos os desafios únicos de quem empreende longe de casa: a necessidade de sites bilíngues, a importância de aparecer nas buscas locais e a urgência de converter cada visitante em oportunidade de negócio.\n\nNosso processo inclui briefing estratégico, wireframe detalhado, design premium, desenvolvimento em código limpo e otimizado, integração com CRM e acompanhamento pós-lançamento. Não usamos templates genéricos — cada site é criado do zero para refletir a identidade e os objetivos do seu negócio. Se você quer parar de perder clientes por causa de um site que não converte, a Calazans Lumina é o parceiro certo para transformar sua presença digital.',
+    conteudoSEO: 'Ter um site profissional não é mais diferencial — é requisito mínimo para qualquer negócio que deseja crescer nos Estados Unidos ou no Brasil. Na Calazans Lumina, desenvolvemos sites e landing pages utilizando tecnologia de ponta, a mesma empregada por gigantes como Netflix e Nike, garantindo performance de carregamento, SEO técnico avançado e design que transmite credibilidade desde o primeiro segundo.\n\nPara empreendedores brasileiros em Massachusetts e em todo o território americano, um site lento ou com aparência amadora pode significar perder clientes para concorrentes locais todos os dias. Nossos sites alcançam notas máximas de performance de forma consistente, carregam em menos de 2 segundos e são construídos com arquitetura de conversão — cada seção, botão e formulário é pensado para transformar visitantes em leads qualificados.\n\nRhaideline Calazans, fundadora da agência, traz mais de 8 anos de experiência em marketing digital e tecnologia, tendo ajudado centenas de empreendedores brasileiros a estabelecer sua presença digital nos EUA. Entendemos os desafios únicos de quem empreende longe de casa: a necessidade de sites bilíngues, a importância de aparecer nas buscas locais e a urgência de converter cada visitante em oportunidade de negócio.\n\nNosso processo inclui briefing estratégico, wireframe detalhado, design premium, desenvolvimento em código limpo e otimizado, integração com CRM e acompanhamento pós-lançamento. Não usamos templates genéricos — cada site é criado do zero para refletir a identidade e os objetivos do seu negócio. Se você quer parar de perder clientes por causa de um site que não converte, a Calazans Lumina é o parceiro certo para transformar sua presença digital.',
   },
   {
     slug: 'funis-automacao-ghl',

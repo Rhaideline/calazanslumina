@@ -850,11 +850,11 @@ export default function ParaAgenciasPage() {
                 funis, CRM, WhatsApp, calendario — tudo integrado e documentado.
               </p>
               <p className="text-white/70 text-sm leading-relaxed mb-4">
-                Alem de GHL, domino Next.js, marketing digital, IA aplicada e automacao. Isso me permite criar solucoes
+                Alem de GHL, domino marketing digital, IA aplicada e automacao. Isso me permite criar solucoes
                 que vao alem do basico — integrando sites de alta performance, chatbots inteligentes e estrategias de conversao reais.
               </p>
               <div className="flex flex-wrap gap-3">
-                {['GoHighLevel', 'Automacoes', 'Chatbot IA', 'WhatsApp API', 'CRM', 'Funis', 'Next.js'].map((tag) => (
+                {['GoHighLevel', 'Automacoes', 'Chatbot IA', 'WhatsApp API', 'CRM', 'Funis', 'Web Development'].map((tag) => (
                   <span key={tag} className="bg-white/10 border border-white/10 rounded-full px-3 py-1 text-xs text-white/60">{tag}</span>
                 ))}
               </div>

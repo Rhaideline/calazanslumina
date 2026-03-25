@@ -227,7 +227,7 @@ export default async function BlogPostPage({
           <nav aria-label="Páginas relacionadas" className="flex flex-wrap justify-center gap-3 text-sm">
             <Link href="/servicos" className="text-brand-mint hover:text-brand-dark transition-colors">Nossos Serviços →</Link>
             <span className="text-brand-dark/20">·</span>
-            <Link href="/servicos/sites-landing-pages" className="text-brand-mint hover:text-brand-dark transition-colors">Sites Next.js →</Link>
+            <Link href="/servicos/sites-landing-pages" className="text-brand-mint hover:text-brand-dark transition-colors">Sites Profissionais →</Link>
             <span className="text-brand-dark/20">·</span>
             <Link href="/servicos/funis-automacao-ghl" className="text-brand-mint hover:text-brand-dark transition-colors">Funis GHL →</Link>
             <span className="text-brand-dark/20">·</span>

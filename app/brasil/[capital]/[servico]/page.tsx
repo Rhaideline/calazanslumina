@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ capital: 
   if (!capital || !servico) return {}
   return {
     title: `${servico.nome} em ${capital.nome}, ${capital.siglaEstado} (2026) | Resultados Reais`,
-    description: `${servico.descricaoCurta} Para negocios em ${capital.nome}. PageSpeed 95+, ROI comprovado, 100+ projetos entregues. Orcamento gratis em 24h →`,
+    description: `${servico.descricaoCurta} Para negocios em ${capital.nome}. velocidade otimizada, ROI comprovado, 100+ projetos entregues. Orcamento gratis em 24h →`,
     alternates: { canonical: `https://calazanslumina.com.br/brasil/${capitalSlug}/${servicoSlug}` },
     openGraph: {
       title: `${servico.nome} em ${capital.nome}, ${capital.siglaEstado} | Calazans Lumina`,

@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ capital: 
   if (!capital) return {}
   return {
     title: `Marketing Digital em ${capital.nome} (2026) | Sites + Funis + Google Maps`,
-    description: `Agencia de marketing digital em ${capital.nome}, ${capital.siglaEstado}. Sites com PageSpeed 95+, funis automatizados que convertem 3x mais, CRM com IA no WhatsApp e Google Meu Negocio. 100+ projetos. Orcamento gratis →`,
+    description: `Agencia de marketing digital em ${capital.nome}, ${capital.siglaEstado}. Sites profissionais, funis automatizados que convertem 3x mais, CRM com IA no WhatsApp e Google Meu Negocio. 100+ projetos. Orcamento gratis →`,
     alternates: { canonical: `https://calazanslumina.com.br/brasil/${capitalSlug}` },
     openGraph: {
       title: `Marketing Digital em ${capital.nome} | Calazans Lumina`,
@@ -62,8 +62,8 @@ export default async function CapitalPage({ params }: { params: Promise<{ capita
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
-      { '@type': 'Question', name: `Qual a melhor agencia de marketing digital em ${capital.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `A Calazans Lumina oferece servicos completos de marketing digital em ${capital.nome}, ${capital.siglaEstado}: sites profissionais com PageSpeed 95+, funis GoHighLevel, CRM com IA no WhatsApp, Google Meu Negocio e gestao de redes sociais. Mais de 100 projetos entregues.` } },
-      { '@type': 'Question', name: `Quanto custa criar um site profissional em ${capital.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `Sites profissionais para empresas em ${capital.nome} com precos acessiveis. Inclui design premium, SEO tecnico, PageSpeed 95+, versao mobile e integracao com Google Meu Negocio. Solicite um orcamento gratuito.` } },
+      { '@type': 'Question', name: `Qual a melhor agencia de marketing digital em ${capital.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `A Calazans Lumina oferece servicos completos de marketing digital em ${capital.nome}, ${capital.siglaEstado}: sites profissionais de alta performance, funis de vendas, CRM com IA no WhatsApp, Google Meu Negocio e gestao de redes sociais. Mais de 100 projetos entregues.` } },
+      { '@type': 'Question', name: `Quanto custa criar um site profissional em ${capital.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `Sites profissionais para empresas em ${capital.nome} com precos acessiveis. Inclui design premium, SEO completo, velocidade otimizada, versao mobile e integracao com Google Meu Negocio. Solicite um orcamento gratuito.` } },
       { '@type': 'Question', name: `A Calazans Lumina atende empresas em ${capital.nome}, ${capital.siglaEstado}?`, acceptedAnswer: { '@type': 'Answer', text: `Sim! Atendemos empresas de todos os segmentos em ${capital.nome}: clinicas, energia solar, construction, pintura, servicos em geral. Atendimento remoto com resultados comprovados em mais de 200 cidades brasileiras.` } },
     ],
   }

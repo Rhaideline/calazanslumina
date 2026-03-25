@@ -372,7 +372,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                 Fundadora da Calazans Lumina, especialista em marketing digital, automacao com GoHighLevel e inteligencia artificial aplicada a negocios. Atua nos EUA e Brasil ajudando empresas e profissionais a crescerem com tecnologia e estrategia digital.
               </p>
               <div className="flex flex-wrap gap-3">
-                {['Marketing Digital', 'GoHighLevel Expert', 'IA & ChatGPT', 'Automacao', 'Next.js & Web'].map((tag) => (
+                {['Marketing Digital', 'GoHighLevel Expert', 'IA & ChatGPT', 'Automacao', 'Web Development'].map((tag) => (
                   <span key={tag} className="bg-white/10 border border-white/10 rounded-full px-3 py-1 text-xs text-white/60">{tag}</span>
                 ))}
               </div>

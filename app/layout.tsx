@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: '%s | Calazans Lumina',
   },
   description:
-    'Agencia de marketing digital para brasileiros nos EUA e Brasil. Sites com PageSpeed 95+, funis GHL, CRM com IA no WhatsApp, redes sociais e Google Maps. 100+ projetos. Atendimento 100% em portugues. Orcamento gratis →',
+    'Agencia de marketing digital para brasileiros nos EUA e Brasil. Sites profissionais, funis GHL, CRM com IA no WhatsApp, redes sociais e Google Maps. 100+ projetos. Atendimento 100% em portugues. Orcamento gratis →',
   keywords: [
     'marketing digital para brasileiros',
     'agência de marketing Massachusetts',
@@ -98,7 +98,7 @@ const websiteJsonLd = {
   name: 'Calazans Lumina',
   url: 'https://calazanslumina.com.br',
   description:
-    'Agência de marketing digital para brasileiros nos EUA e Brasil. Sites Next.js, funis GoHighLevel, CRM com IA, Google Maps.',
+    'Agência de marketing digital para brasileiros nos EUA e Brasil. Sites Profissionais, funis GoHighLevel, CRM com IA, Google Maps.',
   publisher: { '@id': 'https://calazanslumina.com.br/#organization' },
   inLanguage: 'pt-BR',
   potentialAction: {
@@ -116,7 +116,7 @@ const organizationJsonLd = {
   url: 'https://calazanslumina.com.br',
   logo: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6da0830220a0c3e452.png',
   description:
-    'Agência de marketing digital especializada em brasileiros nos EUA (Massachusetts) e Brasil. Sites Next.js, funis GoHighLevel, CRM com IA, gestão de redes sociais e Google Business Profile.',
+    'Agência de marketing digital especializada em brasileiros nos EUA (Massachusetts) e Brasil. Sites Profissionais, funis GoHighLevel, CRM com IA, gestão de redes sociais e Google Business Profile.',
   foundingDate: '2024',
   founder: {
     '@type': 'Person',
@@ -142,7 +142,7 @@ const organizationJsonLd = {
   ],
   knowsAbout: [
     'Marketing Digital',
-    'Next.js',
+    'Web Development',
     'GoHighLevel',
     'SEO',
     'Google Business Profile',
@@ -161,7 +161,7 @@ const organizationJsonLd = {
     '@type': 'OfferCatalog',
     name: 'Serviços de Marketing Digital',
     itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Sites & Landing Pages Next.js' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Sites & Landing Pages Profissionais' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Funis de Vendas GoHighLevel' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'CRM & Automação' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'IA Conversacional no WhatsApp' } },

@@ -4,13 +4,13 @@
 
 ## Sobre
 
-Calazans Lumina e uma agencia de marketing digital que atende empreendedores brasileiros nos Estados Unidos (foco em Massachusetts) e em todo o Brasil. Oferecemos sites profissionais em Next.js, funis de vendas no GoHighLevel, CRM com IA conversacional no WhatsApp, gestao de redes sociais, trafego pago (Google Ads e Meta Ads) e otimizacao de Google Business Profile.
+Calazans Lumina e uma agencia de marketing digital que atende empreendedores brasileiros nos Estados Unidos (foco em Massachusetts) e em todo o Brasil. Oferecemos sites profissionais em sites profissionais, funis de vendas no GoHighLevel, CRM com IA conversacional no WhatsApp, gestao de redes sociais, trafego pago (Google Ads e Meta Ads) e otimizacao de Google Business Profile.
 
 Atendimento 100% em portugues. Tambem atendemos agencias como freelancer.
 
 ## Servicos
 
-- **Sites & Landing Pages**: Sites Next.js com PageSpeed 95+, SEO tecnico integrado, design responsivo premium
+- **Sites & Landing Pages**: Sites sites profissionais com alta performance, SEO tecnico integrado, design responsivo premium
 - **Funis de Vendas (GoHighLevel)**: Landing pages de alta conversao, automacao de follow-up, pipeline visual
 - **CRM & Automacao**: GoHighLevel all-in-one, inbox unificada (WhatsApp, SMS, email, DMs), workflows automaticos
 - **IA no WhatsApp**: Chatbot com inteligencia artificial que atende e qualifica leads 24h
@@ -95,7 +95,7 @@ URL: https://calazanslumina.com.br/para-agencias
 
 57 artigos originais sobre marketing digital, inteligencia artificial, plataformas e estrategias para empreendedores brasileiros. Categorias: IA, Marketing, Plataformas, Sites, Automacao, Redes Sociais, Google, Estrategia.
 
-Temas incluem: Claude 4 Anthropic, GPT-4o, Google Gemini 2.0, Perplexity AI, AntiGravity, GoHighLevel vs HubSpot, Meta Ads 2026, SEO local com IA, WhatsApp Business API, Instagram algoritmo 2026, Next.js 15, prompt engineering, Canva com IA, AEO (Answer Engine Optimization), Make vs Zapier, Sora OpenAI, Core Web Vitals 2026, Hotmart vs Kiwify, LLC para brasileiros nos EUA, Copa 2026 oportunidades, e mais.
+Temas incluem: Claude 4 Anthropic, GPT-4o, Google Gemini 2.0, Perplexity AI, AntiGravity, GoHighLevel vs HubSpot, Meta Ads 2026, SEO local com IA, WhatsApp Business API, Instagram algoritmo 2026, tecnologia moderna, prompt engineering, Canva com IA, AEO (Answer Engine Optimization), Make vs Zapier, Sora OpenAI, Core Web Vitals 2026, Hotmart vs Kiwify, LLC para brasileiros nos EUA, Copa 2026 oportunidades, e mais.
 
 URL: https://calazanslumina.com.br/blog
 
