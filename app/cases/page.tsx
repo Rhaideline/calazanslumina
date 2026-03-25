@@ -126,16 +126,16 @@ const cases = [
     },
     depois: {
       periodo: 'Março 2026',
-      impressoes: '54 leads no pipeline',
+      impressoes: 'Automatizado',
       cliques: 'Bot 24/7',
       posicao: '5.0 ⭐ Google',
     },
     crescimento: {
-      impressoes: '54 leads',
-      cliques: 'Automação total',
+      impressoes: 'Automação completa',
+      cliques: 'Bot qualifica 24/7',
       posicao: '5.0 ⭐ (20 reviews)',
     },
-    leads: '54 oportunidades ativas no pipeline CRM',
+    leads: 'Leads qualificados automaticamente pelo chatbot IA',
     destaques: [
       'Chatbot IA (GPT 4.1) qualificando leads 24/7',
       'Bot treinado como secretária virtual personalizada',
@@ -295,8 +295,8 @@ export default function CasesPage() {
                 <p className="text-white/40 text-sm mt-1">Cliques (Wolf&apos;s)</p>
               </div>
               <div className="text-center">
-                <p className="font-serif text-3xl md:text-4xl font-bold text-brand-mint">54</p>
-                <p className="text-white/40 text-sm mt-1">Leads no CRM (JH)</p>
+                <p className="font-serif text-3xl md:text-4xl font-bold text-brand-mint">24/7</p>
+                <p className="text-white/40 text-sm mt-1">Chatbot IA (JH)</p>
               </div>
               <div className="text-center">
                 <p className="font-serif text-3xl md:text-4xl font-bold text-brand-mint">100%</p>
