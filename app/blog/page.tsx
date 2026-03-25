@@ -9,9 +9,9 @@ import { blogPosts, categoriasBlog } from '@/data/blog'
 const BASE = 'https://calazanslumina.com.br'
 
 export const metadata: Metadata = {
-  title: 'Blog de Marketing Digital e Maternidade (2026) | 60+ Artigos Gratuitos',
+  title: 'Blog de Marketing Digital (2026) | 60+ Artigos Gratuitos',
   description:
-    '60+ artigos sobre marketing digital, SEO, Google Maps, funis de vendas, IA, maternidade e enxoval de bebe. Conteudo 100% gratuito para brasileiros nos EUA e Brasil. Leia agora →',
+    '60+ artigos sobre marketing digital, SEO, Google Maps, funis de vendas, IA e automacao. Conteudo 100% gratuito para brasileiros nos EUA e Brasil. Leia agora →',
   alternates: { canonical: `${BASE}/blog` },
   openGraph: {
     title: 'Blog de Marketing Digital | Calazans Lumina',
@@ -129,13 +129,13 @@ export default function BlogPage() {
         <div className="container-main">
           <h2 className="font-serif text-2xl font-bold text-brand-dark text-center mb-8">Explore Mais Conteudo</h2>
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <Link href="/enxoval-de-bebe" className="bg-brand-bg rounded-xl p-6 border border-gray-100 hover:shadow-md transition-shadow text-center">
-              <p className="font-serif text-lg font-bold text-brand-dark mb-1">Enxoval de Bebe</p>
-              <p className="text-brand-dark/50 text-sm">Checklist completo + PDF gratis</p>
+            <Link href="/servicos" className="bg-brand-bg rounded-xl p-6 border border-gray-100 hover:shadow-md transition-shadow text-center">
+              <p className="font-serif text-lg font-bold text-brand-dark mb-1">Servicos</p>
+              <p className="text-brand-dark/50 text-sm">Marketing digital completo para sua empresa</p>
             </Link>
-            <Link href="/ferramentas" className="bg-brand-bg rounded-xl p-6 border border-gray-100 hover:shadow-md transition-shadow text-center">
-              <p className="font-serif text-lg font-bold text-brand-dark mb-1">Ferramentas</p>
-              <p className="text-brand-dark/50 text-sm">Produtos recomendados para empreendedores</p>
+            <Link href="/cursos" className="bg-brand-bg rounded-xl p-6 border border-gray-100 hover:shadow-md transition-shadow text-center">
+              <p className="font-serif text-lg font-bold text-brand-dark mb-1">Cursos Gratuitos</p>
+              <p className="text-brand-dark/50 text-sm">Aprenda marketing digital do zero</p>
             </Link>
             <Link href="/para-agencias" className="bg-brand-bg rounded-xl p-6 border border-gray-100 hover:shadow-md transition-shadow text-center">
               <p className="font-serif text-lg font-bold text-brand-dark mb-1">GoHighLevel</p>

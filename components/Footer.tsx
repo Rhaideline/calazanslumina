@@ -132,8 +132,6 @@ export default function Footer() {
             <Link href="/cursos/ia-chatgpt-completo" className="hover:text-white/70 transition-colors">Curso de IA e ChatGPT</Link>{' · '}
             <Link href="/cursos/marketing-digital-iniciantes" className="hover:text-white/70 transition-colors">Curso de marketing digital</Link>{' · '}
             <Link href="/blog" className="hover:text-white/70 transition-colors">Blog de marketing digital</Link>{' · '}
-            <Link href="/enxoval-de-bebe" className="hover:text-white/70 transition-colors">Enxoval de Bebê</Link>{' · '}
-            <Link href="/ferramentas" className="hover:text-white/70 transition-colors">Ferramentas</Link>{' · '}
             <Link href="/sobre" className="hover:text-white/70 transition-colors">Sobre a fundadora</Link>{' · '}
             <Link href="/projetos" className="hover:text-white/70 transition-colors">Portfólio</Link>{' · '}
             <Link href="/contato" className="hover:text-white/70 transition-colors">Orçamento gratuito</Link>

@@ -170,43 +170,6 @@ export default async function BlogPostPage({
             </div>
           </ScrollReveal>
 
-          {/* Enxoval Product Recommendation — only on maternidade posts */}
-          {post.categoria === 'Maternidade' && (
-            <ScrollReveal>
-              <div className="bg-gradient-to-r from-pink-50 to-rose-50 border border-pink-200 rounded-2xl p-6 mt-12">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl">🍼</span>
-                  <div>
-                    <p className="font-bold text-brand-dark">Montando o enxoval?</p>
-                    <p className="text-brand-dark/50 text-sm">Confira nossa selecao com os melhores precos da Shopee</p>
-                  </div>
-                </div>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
-                  {[
-                    { nome: 'Roupinhas 100% Algodao', emoji: '👶', anchor: '#roupas-bebe' },
-                    { nome: 'Berco & Quarto', emoji: '🛏️', anchor: '#berco-quarto' },
-                    { nome: 'Higiene & Banho', emoji: '🛁', anchor: '#higiene-banho' },
-                    { nome: 'Alimentacao', emoji: '🍼', anchor: '#alimentacao' },
-                  ].map((cat) => (
-                    <Link
-                      key={cat.anchor}
-                      href={`/enxoval-de-bebe${cat.anchor}`}
-                      className="bg-white rounded-xl p-3 text-center border border-pink-100 hover:border-pink-300 hover:shadow-md transition-all"
-                    >
-                      <span className="text-xl block mb-1">{cat.emoji}</span>
-                      <span className="text-brand-dark text-xs font-medium">{cat.nome}</span>
-                    </Link>
-                  ))}
-                </div>
-                <Link
-                  href="/enxoval-de-bebe"
-                  className="block w-full text-center bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-xl transition-colors text-sm"
-                >
-                  Ver Checklist Completo de Enxoval (PDF Gratis)
-                </Link>
-              </div>
-            </ScrollReveal>
-          )}
 
           {/* Share */}
           <div className="border-t border-gray-200 mt-12 pt-8 flex items-center justify-between">
