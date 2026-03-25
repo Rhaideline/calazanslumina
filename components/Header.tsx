@@ -27,6 +27,7 @@ const navLinks = [
   { href: '/sobre', label: 'Sobre' },
   { href: '/para-agencias', label: 'Para Agências' },
 
+  { href: '/cases', label: 'Cases' },
   { href: '/projetos', label: 'Projetos' },
   { href: '/blog', label: 'Blog' },
   { href: '/contato', label: 'Contato' },
