@@ -24,6 +24,36 @@ const nextConfig: NextConfig = {
         destination: '/blog/robo-de-whatsapp-como-automatizar-seu-atendimento-sem-perder-o-lado-humano',
         permanent: true,
       },
+      {
+        source: '/blog/brasileiros-massachusetts-presenca-digital',
+        destination: '/blog/como-brasileiros-em-massachusetts-estao-perdendo-clientes-por-falta-de-presenca-digital',
+        permanent: true,
+      },
+      {
+        source: '/blog/seo-local-brasileiros-eua',
+        destination: '/blog/seo-local-para-brasileiros-nos-eua-como-aparecer-no-google-da-sua-cidade',
+        permanent: true,
+      },
+      {
+        source: '/projetos',
+        destination: '/cases',
+        permanent: true,
+      },
+      {
+        source: '/ferramentas',
+        destination: '/cursos',
+        permanent: true,
+      },
+      {
+        source: '/enxoval-de-bebe',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/itens-para-casa',
+        destination: '/',
+        permanent: true,
+      },
     ]
   },
   async headers() {

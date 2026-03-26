@@ -17,7 +17,7 @@ export default function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
-      ...(item.href ? { item: `https://calazanslumina.com.br${item.href}` } : {}),
+      item: item.href ? `https://calazanslumina.com.br${item.href}` : typeof window !== 'undefined' ? window.location.href : 'https://calazanslumina.com.br',
     })),
   }
 

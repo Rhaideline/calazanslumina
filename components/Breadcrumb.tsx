@@ -9,11 +9,11 @@ export default function Breadcrumb({ items }: { items: BreadcrumbItem[] }) {
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
-    itemListElement: items.map((item, i) => ({
+    itemListElement: items.filter((item) => item.href).map((item, i) => ({
       '@type': 'ListItem',
       position: i + 1,
       name: item.label,
-      ...(item.href ? { item: `https://calazanslumina.com.br${item.href}` } : {}),
+      item: `https://calazanslumina.com.br${item.href}`,
     })),
   }
 

@@ -33,7 +33,7 @@ const videoSchemas = [
     name: 'Marketing Digital na Prática — Calazans Lumina',
     description: 'Dicas práticas de marketing digital para empreendedores brasileiros nos EUA e Brasil',
     contentUrl: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f81590acb2f32c57fde.mp4',
-    uploadDate: '2025-03-01',
+    uploadDate: '2025-03-01T00:00:00-03:00',
     publisher: { '@type': 'Organization', name: 'Calazans Lumina', '@id': 'https://calazanslumina.com.br/#organization' },
   },
   {
@@ -42,7 +42,7 @@ const videoSchemas = [
     name: 'Como Atrair Clientes Online — Calazans Lumina',
     description: 'Estratégias para atrair clientes pela internet com marketing digital',
     contentUrl: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f811001a525e2e45e93.mp4',
-    uploadDate: '2025-03-01',
+    uploadDate: '2025-03-01T00:00:00-03:00',
     publisher: { '@type': 'Organization', name: 'Calazans Lumina', '@id': 'https://calazanslumina.com.br/#organization' },
   },
   {
@@ -51,7 +51,7 @@ const videoSchemas = [
     name: 'Avaliações no Google: Por Que Importam — Calazans Lumina',
     description: 'Como avaliações no Google Business Profile impactam seu negócio local',
     contentUrl: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f813eba04ab9649d652.mp4',
-    uploadDate: '2025-03-01',
+    uploadDate: '2025-03-01T00:00:00-03:00',
     publisher: { '@type': 'Organization', name: 'Calazans Lumina', '@id': 'https://calazanslumina.com.br/#organization' },
   },
   {
@@ -60,7 +60,7 @@ const videoSchemas = [
     name: 'Como Conseguir Mais Avaliações 5 Estrelas — Calazans Lumina',
     description: 'Estratégia para conseguir mais reviews positivos no Google Maps',
     contentUrl: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f8110bc9c7c8a6841ea.mp4',
-    uploadDate: '2025-03-01',
+    uploadDate: '2025-03-01T00:00:00-03:00',
     publisher: { '@type': 'Organization', name: 'Calazans Lumina', '@id': 'https://calazanslumina.com.br/#organization' },
   },
 ]
