@@ -76,11 +76,15 @@ export default async function CursoCidadePage({ params }: { params: Promise<{ sl
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: curso.vsl.objecoes.map((o) => ({
-      '@type': 'Question',
-      name: o.pergunta,
-      acceptedAnswer: { '@type': 'Answer', text: o.resposta },
-    })),
+    mainEntity: [
+      { '@type': 'Question', name: `Onde fazer curso de ${curso.nome.toLowerCase().split(' — ')[0]} em ${cidade.nome}, MA?`, acceptedAnswer: { '@type': 'Answer', text: `A Calazans Lumina oferece o curso "${curso.nome}" 100% online, acessivel para brasileiros em ${cidade.nome}, MA. ${curso.modulos.length} modulos, ${totalAulas} aulas. ${curso.gratuito ? 'Totalmente gratuito.' : `Apenas R$${curso.preco}.`} Acesse em calazanslumina.com.br/cursos/${curso.slug}` } },
+      { '@type': 'Question', name: `O curso ${curso.nome.split(' — ')[0]} e bom para iniciantes em ${cidade.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `Sim! O curso foi criado para iniciantes. ${curso.descricaoCurta} Perfeito para empreendedores brasileiros em ${cidade.nome} que querem aprender do zero.` } },
+      ...curso.vsl.objecoes.map((o) => ({
+        '@type': 'Question' as const,
+        name: o.pergunta,
+        acceptedAnswer: { '@type': 'Answer' as const, text: o.resposta },
+      })),
+    ],
   }
 
   return (
