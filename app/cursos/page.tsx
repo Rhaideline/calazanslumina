@@ -7,12 +7,12 @@ import PortfolioSites from '@/components/PortfolioSites'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Cursos de Marketing Digital | 2 Gratuitos + 5 por R$20',
+  title: 'Cursos de Marketing Digital | 2 Gratuitos + 5 a partir de R$10',
   description:
-    'Aprenda marketing digital do zero: IA & ChatGPT, Google Meu Negocio, Redes Sociais, Funis de Vendas. 2 cursos gratuitos + 5 por apenas R$20. PDF + acesso online. Comece agora!',
+    'Aprenda marketing digital do zero: IA & ChatGPT, Google Meu Negocio, Redes Sociais, Funis de Vendas. 2 cursos gratuitos + 5 a partir de R$10. PDF + acesso online. Comece agora!',
   alternates: { canonical: 'https://calazanslumina.com.br/cursos' },
   openGraph: {
-    title: 'Cursos de Marketing Digital | 2 Gratuitos + 5 por R$20',
+    title: 'Cursos de Marketing Digital | 2 Gratuitos + 5 a partir de R$10',
     description: 'Aprenda marketing digital do zero. 7 cursos disponiveis, 2 gratuitos. PDF + acesso online.',
     url: 'https://calazanslumina.com.br/cursos',
     type: 'website',
@@ -24,7 +24,7 @@ export default function CursosPage() {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: 'Cursos de Marketing Digital e IA — Calazans Lumina',
-    description: 'Cursos online de marketing digital, ChatGPT, Google Meu Negocio, funis de vendas e redes sociais. A partir de R$20.',
+    description: 'Cursos online de marketing digital, ChatGPT, Google Meu Negocio, funis de vendas e redes sociais. A partir de R$10.',
     url: 'https://calazanslumina.com.br/cursos',
     mainEntity: {
       '@type': 'ItemList',
@@ -70,7 +70,7 @@ export default function CursosPage() {
             </h1>
             <p className="text-white/60 text-lg md:text-xl max-w-3xl mx-auto mb-8">
               Conhecimento prático e direto ao ponto. Temos cursos <strong className="text-white">gratuitos</strong> e cursos a partir de{' '}
-              <strong className="text-white">R$ 20,00</strong> — menos que um almoço, mais que muitos cursos caros ensinam.
+              <strong className="text-white">R$ 10,00</strong> — menos que um café, mais que muitos cursos caros ensinam.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <div className="bg-white/5 border border-white/10 rounded-xl px-6 py-3 text-center">

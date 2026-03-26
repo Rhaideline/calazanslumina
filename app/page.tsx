@@ -114,7 +114,7 @@ const faqSchema = {
       name: 'Quais são os cursos gratuitos da Calazans Lumina?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A Calazans Lumina oferece 2 cursos 100% gratuitos: "ChatGPT para Idosos" (ensina IA para pessoas 60+) e "Ferramentas Digitais para Secretárias" (Google Workspace e produtividade). Além disso, oferece 5 cursos por apenas R$20: IA & ChatGPT Completo, Marketing Digital para Iniciantes, Google Meu Negócio do Zero, Redes Sociais que Vendem e Funis de Vendas Simplificado.',
+        text: 'A Calazans Lumina oferece 2 cursos 100% gratuitos: "ChatGPT para Idosos" (ensina IA para pessoas 60+) e "Ferramentas Digitais para Secretárias" (Google Workspace e produtividade). Além disso, oferece 5 cursos a partir de R$10: IA & ChatGPT Completo, Marketing Digital para Iniciantes, Google Meu Negócio do Zero, Redes Sociais que Vendem e Funis de Vendas Simplificado.',
       },
     },
     {
