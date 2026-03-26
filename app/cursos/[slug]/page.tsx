@@ -485,8 +485,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
       <section className="section-padding bg-brand-dark text-white">
         <div className="container-main max-w-3xl text-center">
           <ScrollReveal>
-            <p className="text-brand-mint text-sm font-bold uppercase tracking-wider mb-3">Investimento</p>
-            <h2 className="heading-2 mb-4">{curso.vsl.valorReal}</h2>
+            <p className="text-brand-mint text-sm font-bold uppercase tracking-wider mb-3">Acesso ao Curso</p>
 
             <div className="bg-white/5 border border-white/10 rounded-2xl p-8 md:p-10 mt-8 mb-8">
               <div className="mb-6">
@@ -494,11 +493,10 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                   <p className="font-serif text-6xl font-bold text-brand-mint">GRATUITO</p>
                 ) : (
                   <>
-                    <p className="text-white/30 text-lg line-through mb-1">De R$ 197,00</p>
                     <p className="font-serif text-6xl font-bold text-white">
                       R$ {curso.preco}<span className="text-3xl text-white/40">,00</span>
                     </p>
-                    <p className="text-brand-mint text-sm mt-2">Pagamento unico · Acesso vitalicio</p>
+                    <p className="text-brand-mint text-sm mt-2">Pagamento unico · Conteudo em PDF · Acesso imediato</p>
                   </>
                 )}
               </div>
