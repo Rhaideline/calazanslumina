@@ -489,7 +489,7 @@ export const cursos: Curso[] = [
     nome: 'Ebook: IA para Marketing Digital — Como Criar Sites com Claude',
     descricaoCurta: 'Guia completo de 44 páginas: aprenda a criar sites profissionais usando Inteligência Artificial, sem saber programar. Inclui prompts prontos e cases reais.',
     descricaoLonga: 'Este ebook ensina passo a passo como usar o Claude (IA) para criar sites profissionais do zero. Você não precisa saber programar — se sabe digitar, consegue. Inclui 7 módulos completos, 10 prompts prontos para copiar e usar, 3 cases reais com dados do Google Search Console, tabela de preços para cobrar clientes e checklist completo.',
-    preco: 39.90,
+    preco: 17.90,
     destaque: true,
     pdfDisponivel: true,
     linkPagamento: 'https://lp.beeprohub.com/payment-link/69c4a64bfb727d9c905d2823',
