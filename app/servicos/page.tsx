@@ -108,7 +108,7 @@ export default function ServicosPage() {
                 <li><Link href="/cursos" className="text-brand-mint hover:text-brand-dark text-sm transition-colors">Cursos de Marketing Digital →</Link></li>
                 <li><Link href="/blog" className="text-brand-mint hover:text-brand-dark text-sm transition-colors">Blog com 60+ Artigos Gratuitos →</Link></li>
                 <li><Link href="/para-agencias" className="text-brand-mint hover:text-brand-dark text-sm transition-colors">Para Agências — Sub-contas GHL →</Link></li>
-                <li><Link href="/projetos" className="text-brand-mint hover:text-brand-dark text-sm transition-colors">Portfólio de Projetos →</Link></li>
+                <li><Link href="/cases" className="text-brand-mint hover:text-brand-dark text-sm transition-colors">Portfólio de Cases →</Link></li>
               </ul>
             </div>
             <div>

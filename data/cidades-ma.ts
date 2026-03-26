@@ -1152,6 +1152,215 @@ export const cidadesMA: CidadeMA[] = [
     referencia:
       'Segunda maior cidade de Massachusetts e da Nova Inglaterra, centro de saúde e educação com UMass Medical, WPI, Holy Cross e Clark University, em plena revitalização urbana.',
   },
+  {
+    slug: 'everett',
+    nome: 'Everett',
+    estado: 'MA',
+    comunidade:
+      'Everett possui uma das maiores comunidades brasileiras da Grande Boston, com forte presença ao longo da Broadway e em bairros residenciais. Restaurantes, padarias, salões e igrejas brasileiras fazem parte do cotidiano da cidade.',
+    doresEspecificas:
+      'Empreendedores brasileiros em Everett enfrentam competição intensa com negócios em cidades vizinhas como Malden e Chelsea. Sem um site profissional bilíngue e presença digital otimizada, perdem clientes para concorrentes que dominam as buscas locais no Google.',
+    referencia:
+      'Cidade densamente povoada ao norte de Boston, vizinha de Chelsea e Malden, conhecida pelo Encore Boston Harbor Casino e pela proximidade com o centro de Boston.',
+  },
+  {
+    slug: 'lowell',
+    nome: 'Lowell',
+    estado: 'MA',
+    comunidade:
+      'Lowell abriga uma comunidade brasileira crescente que se soma à rica diversidade cultural da cidade. Brasileiros empreendem em construção, limpeza, restaurantes e serviços profissionais, atendendo tanto a comunidade latina quanto o público americano.',
+    doresEspecificas:
+      'Em Lowell, brasileiros competem em um mercado multicultural onde diversas comunidades imigrantes oferecem serviços similares. Sem diferenciação digital — site profissional, SEO local e Google Business Profile otimizado — ficam invisíveis no quarto maior município de Massachusetts.',
+    referencia:
+      'Quarta maior cidade de Massachusetts, com rica herança industrial, o Lowell National Historical Park, UMass Lowell e uma população altamente diversificada.',
+  },
+  {
+    slug: 'brockton',
+    nome: 'Brockton',
+    estado: 'MA',
+    comunidade:
+      'Brockton possui uma comunidade brasileira significativa que contribui para a diversidade cultural da cidade. Brasileiros atuam em construção civil, serviços de limpeza, gastronomia e comércio, com presença visível no centro e bairros adjacentes.',
+    doresEspecificas:
+      'Negócios brasileiros em Brockton enfrentam o desafio de se destacar em uma cidade grande e diversificada. Sem investimento em marketing digital e presença online profissional, perdem espaço para concorrentes mais bem posicionados nas buscas do Google.',
+    referencia:
+      'Sétima maior cidade de Massachusetts, conhecida como "City of Champions", localizada no South Shore com fácil acesso a Boston e ao Cape Cod via Route 24.',
+  },
+  {
+    slug: 'hyannis',
+    nome: 'Hyannis',
+    estado: 'MA',
+    comunidade:
+      'Hyannis é o coração da comunidade brasileira no Cape Cod, com uma concentração impressionante de brasileiros que trabalham e empreendem em hotelaria, restaurantes, limpeza, paisagismo e construção — sustentando a economia turística da região.',
+    doresEspecificas:
+      'A economia sazonal do Cape Cod torna o marketing digital essencial para brasileiros em Hyannis. Na alta temporada, quem não aparece no Google perde para concorrentes. Na baixa temporada, uma presença digital forte mantém o fluxo de clientes locais durante o inverno.',
+    referencia:
+      'Principal centro comercial e de transporte do Cape Cod, porto de ferries para Nantucket e Martha\'s Vineyard, e famosa pela conexão com a família Kennedy.',
+  },
+  {
+    slug: 'nantucket',
+    nome: 'Nantucket',
+    estado: 'MA',
+    comunidade:
+      'Nantucket possui uma das maiores comunidades brasileiras per capita dos EUA. Brasileiros são essenciais para a economia da ilha, atuando em construção, paisagismo, limpeza, hotelaria e gastronomia — sustentando o estilo de vida de alto padrão dos moradores e turistas.',
+    doresEspecificas:
+      'Em Nantucket, os clientes têm altíssimo poder aquisitivo e esperam profissionalismo impecável. Brasileiros que não possuem site profissional em inglês, reviews sólidos e presença digital refinada perdem contratos milionários para empresas americanas com marketing consolidado.',
+    referencia:
+      'Ilha exclusiva a 30 milhas do Cape Cod, destino de veraneio da elite americana, com arquitetura histórica preservada e uma das maiores rendas per capita do país.',
+  },
+  {
+    slug: 'vineyard-haven',
+    nome: 'Vineyard Haven',
+    estado: 'MA',
+    comunidade:
+      'Martha\'s Vineyard abriga uma comunidade brasileira ativa, concentrada em Vineyard Haven e outras vilas da ilha. Brasileiros são fundamentais para a economia local, atuando em construção, serviços residenciais, hotelaria e restaurantes.',
+    doresEspecificas:
+      'Na ilha, o boca a boca funciona mas é limitado. Brasileiros que investem em presença digital — site profissional, Google Business Profile e reviews — capturam turistas e proprietários de segundas residências que pesquisam serviços online antes de chegar à ilha.',
+    referencia:
+      'Principal porto de entrada de Martha\'s Vineyard, ilha icônica com destinos de veraneio como Oak Bluffs e Edgartown, e forte turismo sazonal.',
+  },
+  {
+    slug: 'barnstable',
+    nome: 'Barnstable',
+    estado: 'MA',
+    comunidade:
+      'Barnstable, que engloba sete vilas incluindo Hyannis, possui uma das maiores comunidades brasileiras do Cape Cod. Brasileiros empreendem em serviços essenciais para a economia turística — limpeza de casas de temporada, paisagismo, construção e gastronomia.',
+    doresEspecificas:
+      'Como maior município do Cape Cod, Barnstable oferece oportunidades enormes mas exige visibilidade digital. Brasileiros sem site profissional e estratégia de SEO local perdem para empresas americanas que dominam buscas como "cleaning service Barnstable" ou "contractor Cape Cod".',
+    referencia:
+      'Maior município do Cape Cod em população, sede do condado de Barnstable, composto por sete vilas: Barnstable Village, Centerville, Cotuit, Hyannis, Marstons Mills, Osterville e West Barnstable.',
+  },
+  {
+    slug: 'falmouth',
+    nome: 'Falmouth',
+    estado: 'MA',
+    comunidade:
+      'Falmouth possui uma comunidade brasileira ativa que serve a economia turística e residencial da região. Brasileiros atuam em serviços de limpeza, paisagismo, construção e manutenção de propriedades de veraneio ao longo da costa.',
+    doresEspecificas:
+      'Empreendedores brasileiros em Falmouth competem por clientes que também consideram prestadores de outras cidades do Cape Cod. Uma presença digital forte focada em Falmouth — com menções a Woods Hole, Falmouth Heights e praias locais — diferencia do resto da concorrência.',
+    referencia:
+      'Segunda maior cidade do Cape Cod, lar do Woods Hole Oceanographic Institution, porto de ferries para Martha\'s Vineyard, e destino de veraneio com praias premiadas.',
+  },
+  {
+    slug: 'yarmouth',
+    nome: 'Yarmouth',
+    estado: 'MA',
+    comunidade:
+      'Yarmouth, vizinha de Hyannis, abriga brasileiros que atuam em serviços turísticos e residenciais. A proximidade com o centro comercial do Cape Cod atrai empreendedores brasileiros que atendem tanto turistas quanto moradores permanentes.',
+    doresEspecificas:
+      'Em Yarmouth, a competição com prestadores de Hyannis e Dennis é constante. Brasileiros sem presença digital focada na cidade perdem clientes para concorrentes que aparecem nas buscas locais. Um site otimizado para "Yarmouth MA" captura demanda que hoje vai para outros.',
+    referencia:
+      'Town no mid-Cape entre Hyannis e Dennis, conhecida pela Route 28, praias familiares em South Yarmouth e Bass Hole Boardwalk.',
+  },
+  {
+    slug: 'dennis',
+    nome: 'Dennis',
+    estado: 'MA',
+    comunidade:
+      'Dennis possui brasileiros que trabalham em serviços residenciais e turísticos, atendendo proprietários de casas de veraneio e turistas. A demanda por serviços de qualidade na região é constante durante a temporada.',
+    doresEspecificas:
+      'Brasileiros em Dennis dependem de indicações sazonais. Marketing digital permite capturar clientes durante todo o ano — proprietários que buscam manutenção no inverno e turistas que pesquisam serviços antes da temporada de verão.',
+    referencia:
+      'Town no mid-Cape com cinco vilas, praias tanto no lado da baía quanto do oceano, o Cape Playhouse — teatro mais antigo dos EUA — e o Scargo Tower.',
+  },
+  {
+    slug: 'sandwich',
+    nome: 'Sandwich',
+    estado: 'MA',
+    comunidade:
+      'Sandwich, a entrada do Cape Cod, possui brasileiros que atuam em construção, paisagismo e serviços residenciais. A posição estratégica da cidade como porta de entrada da região oferece oportunidades únicas para negócios brasileiros.',
+    doresEspecificas:
+      'Empreendedores brasileiros em Sandwich têm a vantagem geográfica de estarem na entrada do Cape Cod mas precisam de visibilidade online para capturar moradores e turistas que cruzam a ponte. Sem presença digital, esse fluxo passa direto.',
+    referencia:
+      'Town mais antiga do Cape Cod, fundada em 1637, conhecida pelo Sandwich Glass Museum, Heritage Museums & Gardens, e pela Sagamore Bridge que conecta o Cape ao continente.',
+  },
+  {
+    slug: 'provincetown',
+    nome: 'Provincetown',
+    estado: 'MA',
+    comunidade:
+      'Provincetown possui uma comunidade brasileira dedicada, com brasileiros trabalhando em restaurantes, hotelaria, limpeza e serviços turísticos que sustentam a vibrante economia artística e turística da ponta do Cape Cod.',
+    doresEspecificas:
+      'O mercado de Provincetown é altamente sazonal e competitivo. Brasileiros que investem em marketing digital capturam turistas que planejam viagens online com antecedência, garantindo reservas e contratos antes mesmo da temporada começar.',
+    referencia:
+      'Destino turístico icônico na ponta do Cape Cod, conhecido pela comunidade artística, cultura LGBTQ+, Pilgrim Monument e whale watching de classe mundial.',
+  },
+  {
+    slug: 'mashpee',
+    nome: 'Mashpee',
+    estado: 'MA',
+    comunidade:
+      'Mashpee abriga brasileiros que atendem tanto o Mashpee Commons — principal centro comercial da região — quanto residências e condomínios de alto padrão ao redor de New Seabury e Popponesset.',
+    doresEspecificas:
+      'Em Mashpee, o público é afluente e exigente. Brasileiros que não demonstram profissionalismo digital — site em inglês, fotos de portfólio, reviews no Google — perdem contratos para empresas americanas que investem pesado em marketing local.',
+    referencia:
+      'Town no Upper Cape conhecida pelo Mashpee Commons, Mashpee National Wildlife Refuge, comunidade Wampanoag e desenvolvimento residencial de alto padrão em New Seabury.',
+  },
+  {
+    slug: 'bourne',
+    nome: 'Bourne',
+    estado: 'MA',
+    comunidade:
+      'Bourne, que abrange ambos os lados do Cape Cod Canal, possui brasileiros que atuam em construção, manutenção e serviços residenciais, beneficiando-se da posição estratégica como porta de entrada do Cape.',
+    doresEspecificas:
+      'Brasileiros em Bourne precisam alcançar clientes tanto do lado continental quanto do Cape Cod. Uma estratégia digital que cubra ambas as áreas — com foco em Buzzards Bay, Sagamore e Monument Beach — maximiza o alcance geográfico do negócio.',
+    referencia:
+      'Town na entrada do Cape Cod, dividida pelo Cape Cod Canal, com as pontes Bourne e Sagamore, a Massachusetts Maritime Academy e a Joint Base Cape Cod.',
+  },
+  {
+    slug: 'millbury',
+    nome: 'Millbury',
+    estado: 'MA',
+    comunidade:
+      'Millbury possui uma comunidade brasileira em crescimento, muitos dos quais trabalham em Worcester e nas cidades vizinhas do Central Massachusetts. Brasileiros atuam em construção, serviços automotivos e manutenção residencial.',
+    doresEspecificas:
+      'Negócios brasileiros em Millbury ficam na sombra de Worcester nas buscas online. Investir em SEO local focado em Millbury permite capturar moradores que preferem contratar prestadores da própria cidade em vez de ir até Worcester.',
+    referencia:
+      'Town ao sul de Worcester na junção das interstaduals I-90 e I-146, com o outlet New England Commons e fácil acesso à Mass Pike.',
+  },
+  {
+    slug: 'webster',
+    nome: 'Webster',
+    estado: 'MA',
+    comunidade:
+      'Webster tem uma comunidade brasileira estabelecida que atende a região do South Central Massachusetts. Brasileiros empreendem em serviços de construção, paisagismo e restaurantes, servindo tanto a comunidade local quanto turistas do Lake Chargoggagoggmanchauggagoggchaubunagungamaugg.',
+    doresEspecificas:
+      'Empreendedores brasileiros em Webster competem com prestadores de Southbridge e Auburn. Presença digital focada em Webster — mencionando landmarks locais e o famoso lago — cria conexão com moradores e diferencia dos concorrentes regionais.',
+    referencia:
+      'Town no South Central Massachusetts famosa pelo lago com o nome mais longo dos EUA, fronteira com Connecticut, e forte herança de indústria têxtil.',
+  },
+  {
+    slug: 'southbridge',
+    nome: 'Southbridge',
+    estado: 'MA',
+    comunidade:
+      'Southbridge possui uma comunidade brasileira ativa, parte da diversidade cultural da cidade. Brasileiros atuam em manufatura, serviços e comércio, contribuindo para a revitalização econômica do centro da cidade.',
+    doresEspecificas:
+      'Em Southbridge, brasileiros enfrentam o desafio de atrair clientes de uma região ampla do Sul de Massachusetts. Marketing digital permite alcançar clientes além das fronteiras da cidade, capturando demanda de Sturbridge, Charlton e Dudley.',
+    referencia:
+      'Town no South Central Massachusetts com herança industrial, vizinha de Sturbridge e do famoso Old Sturbridge Village, e corredor da Route 20.',
+  },
+  {
+    slug: 'chicopee',
+    nome: 'Chicopee',
+    estado: 'MA',
+    comunidade:
+      'Chicopee abriga uma comunidade brasileira crescente no Western Massachusetts. Brasileiros empreendem em restaurantes, serviços de limpeza, construção e comércio, atendendo tanto a comunidade brasileira quanto o público americano da região de Springfield.',
+    doresEspecificas:
+      'Brasileiros em Chicopee competem no mercado metropolitano de Springfield sem visibilidade digital adequada. Um site profissional bilíngue e estratégia de SEO local permite capturar clientes de Chicopee, Holyoke e South Hadley que buscam serviços online.',
+    referencia:
+      'Cidade no Western Massachusetts entre Springfield e Holyoke, lar da Westover Air Reserve Base, Chicopee Falls e do RiverMills Senior Living.',
+  },
+  {
+    slug: 'amherst',
+    nome: 'Amherst',
+    estado: 'MA',
+    comunidade:
+      'Amherst, cidade universitária por excelência, possui brasileiros conectados à comunidade acadêmica da UMass e do Five College Consortium. Além de estudantes e pesquisadores, brasileiros empreendem em serviços e gastronomia atendendo o público universitário.',
+    doresEspecificas:
+      'O mercado de Amherst é educado e pesquisa online antes de contratar. Brasileiros sem presença digital profissional perdem para concorrentes que aparecem nas buscas. O público universitário espera sites modernos e comunicação profissional em inglês.',
+    referencia:
+      'Cidade universitária no Pioneer Valley, lar da UMass Amherst — maior universidade pública da Nova Inglaterra —, Amherst College e Hampshire College.',
+  },
 ]
 
 export function getCidadeMABySlug(slug: string): CidadeMA | undefined {

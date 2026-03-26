@@ -235,7 +235,7 @@ export default async function BlogPostPage({
             <span className="text-brand-dark/20">·</span>
             <Link href="/para-agencias" className="text-brand-mint hover:text-brand-dark transition-colors">Para Agências →</Link>
             <span className="text-brand-dark/20">·</span>
-            <Link href="/projetos" className="text-brand-mint hover:text-brand-dark transition-colors">Portfólio →</Link>
+            <Link href="/cases" className="text-brand-mint hover:text-brand-dark transition-colors">Portfólio →</Link>
             <span className="text-brand-dark/20">·</span>
             <Link href="/sobre" className="text-brand-mint hover:text-brand-dark transition-colors">Sobre Nós →</Link>
             <span className="text-brand-dark/20">·</span>

@@ -364,7 +364,7 @@ export default function HomePage() {
               </p>
               <p>
                 Confira nosso <Link href="/blog" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>blog com 60+ artigos gratuitos</strong></Link> sobre marketing digital, SEO, IA e automação,
-                e nosso <Link href="/projetos" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>portfólio de projetos</strong></Link> com resultados reais.
+                e nosso <Link href="/cases" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>portfólio de projetos</strong></Link> com resultados reais.
                 Para orçamento gratuito, visite nossa <Link href="/contato" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>página de contato</strong></Link>.
               </p>
             </div>
@@ -573,7 +573,7 @@ export default function HomePage() {
             ))}
           </div>
           <div className="text-center mt-10">
-            <Link href="/projetos" className="btn-secondary-light">Ver todos os projetos</Link>
+            <Link href="/cases" className="btn-secondary-light">Ver todos os projetos</Link>
           </div>
         </div>
       </section>

@@ -98,9 +98,9 @@ export default function DownloadCursoPage() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h1 className="font-serif text-3xl font-bold text-brand-dark mb-4">
+          <h2 className="font-serif text-3xl font-bold text-brand-dark mb-4">
             Seu PDF esta sendo baixado!
-          </h1>
+          </h2>
           <p className="text-brand-dark/60 mb-2">
             O download do curso <strong className="text-brand-dark">{curso.nome}</strong> deve comecar automaticamente.
           </p>
