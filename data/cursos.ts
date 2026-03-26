@@ -492,7 +492,7 @@ export const cursos: Curso[] = [
     preco: 39.90,
     destaque: true,
     pdfDisponivel: true,
-    linkPagamento: '',
+    linkPagamento: 'https://lp.beeprohub.com/payment-link/69c4a64bfb727d9c905d2823',
     imagem: '/cursos/capa-ebook-ia-marketing-sites.svg',
     paraQuem: ['Empreendedores que querem criar sites sem depender de programadores', 'Freelancers que querem vender sites usando IA', 'Agências que querem escalar a criação de sites', 'Iniciantes que nunca programaram na vida', 'Profissionais de marketing que querem adicionar sites ao portfólio'],
     oQueVaiAprender: ['Criar sites profissionais usando IA (sem programar)', 'Publicar sites gratuitamente na internet', 'Fazer sites aparecerem no Google (SEO)', 'Fazer sites aparecerem nas IAs como ChatGPT e Gemini (AEO)', 'Adicionar formulários, WhatsApp, chatbot IA', 'Integrar com GoHighLevel (CRM e automações)', 'Cobrar clientes R$3.000 a R$15.000 por site'],
