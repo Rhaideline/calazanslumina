@@ -264,7 +264,7 @@ export const cursos: Curso[] = [
     nome: 'IA & ChatGPT — Curso Completo',
     descricaoCurta: 'Domine a Inteligência Artificial do zero ao avançado. Aprenda a usar o ChatGPT para criar conteúdo, automatizar tarefas e impulsionar seu negócio.',
     descricaoLonga: 'Este é o guia definitivo para dominar a Inteligência Artificial e o ChatGPT. Desde os conceitos fundamentais até técnicas avançadas de prompt engineering, automação de tarefas e integração com ferramentas de marketing digital. Ideal para empreendedores que querem usar IA para multiplicar seus resultados.',
-    preco: 1,
+    preco: 10,
     destaque: true,
     pdfDisponivel: true,
     linkPagamento: 'https://link.fastpaydirect.com/payment-link/69a8cc1484b2d7dfdd5e1370',
