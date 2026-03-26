@@ -62,11 +62,16 @@ export default async function CapitalServicoPage({ params }: { params: Promise<{
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: servico.faqs.map((f) => ({
-      '@type': 'Question',
-      name: f.pergunta,
-      acceptedAnswer: { '@type': 'Answer', text: f.resposta },
-    })),
+    mainEntity: [
+      { '@type': 'Question', name: `Quanto custa ${servico.nome.toLowerCase()} em ${capital.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `Os precos de ${servico.nome.toLowerCase()} em ${capital.nome}, ${capital.siglaEstado} variam conforme o escopo. A Calazans Lumina oferece orcamento gratuito e personalizado. ${capital.descricao ? capital.descricao.slice(0, 150) : ''}` } },
+      { '@type': 'Question', name: `Qual a melhor agencia de ${servico.nome.toLowerCase()} em ${capital.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `A Calazans Lumina e especialista em ${servico.nome.toLowerCase()} em ${capital.nome}, ${capital.siglaEstado}. Com 8+ anos de experiencia e 100+ projetos, oferecemos ${servico.descricaoCurta.toLowerCase()}` } },
+      { '@type': 'Question', name: `A Calazans Lumina atende em ${capital.nome}, ${capital.siglaEstado}?`, acceptedAnswer: { '@type': 'Answer', text: `Sim! Atendemos empresas em ${capital.nome} e em mais de 260 cidades do Brasil. Nosso atendimento e 100% remoto com resultados comprovados.` } },
+      ...servico.faqs.slice(0, 2).map((f) => ({
+        '@type': 'Question' as const,
+        name: f.pergunta,
+        acceptedAnswer: { '@type': 'Answer' as const, text: f.resposta },
+      })),
+    ],
   }
 
   return (
