@@ -27,7 +27,7 @@ const personJsonLd = {
   name: 'Rhaideline Calazans',
   jobTitle: 'Especialista em Marketing Digital & Fundadora da Calazans Lumina',
   url: 'https://calazanslumina.com.br/sobre',
-  image: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c035285908c419.jpeg',
+  image: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d742765106d5f70635510a.jpeg',
   description:
     'Especialista em marketing digital com 8+ anos de experiência e 100+ projetos. Fundadora da Calazans Lumina, agência focada em brasileiros nos EUA e Brasil.',
   worksFor: {
@@ -78,7 +78,7 @@ export default function SobrePage() {
       <section className="relative min-h-[70vh] flex items-center">
         {/* Background Image */}
         <Image
-          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c035285908c419.jpeg"
+          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d742765106d5f70635510a.jpeg"
           alt="Rhaideline Calazans — Fundadora da Calazans Lumina, especialista em marketing digital para brasileiros nos EUA e Brasil"
           fill
           className="object-cover"
@@ -226,7 +226,7 @@ export default function SobrePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c035285908c419.jpeg',
+                src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d742765106d5f70635510a.jpeg',
                 alt: 'Rhaideline Calazans em ambiente profissional — marketing digital para brasileiros',
               },
               {
@@ -234,11 +234,11 @@ export default function SobrePage() {
                 alt: 'Rhaideline Calazans — estrategista de marketing digital e empreendedora',
               },
               {
-                src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c0357f3208c418.jpeg',
+                src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d859c95106d5e512376e8e.jpeg',
                 alt: 'Rhaideline Calazans — fundadora e CEO da Calazans Lumina',
               },
               {
-                src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c035285908c419.jpeg',
+                src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d742765106d5f70635510a.jpeg',
                 alt: 'Rhaideline Calazans trabalhando em estratégias de marketing digital',
               },
             ].map((img, i) => (
@@ -331,7 +331,7 @@ export default function SobrePage() {
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-to-br from-black/20 to-black/5 rounded-3xl blur-2xl" />
                   <Image
-                    src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c0357f3208c418.jpeg"
+                    src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d859c95106d5e512376e8e.jpeg"
                     alt="Rhaideline Calazans — freelancer para agências de marketing digital"
                     width={400}
                     height={500}

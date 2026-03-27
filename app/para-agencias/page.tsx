@@ -151,7 +151,7 @@ export default function ParaAgenciasPage() {
       {/* === HERO === */}
       <section className="relative py-20 md:py-28 bg-brand-dark text-white overflow-hidden">
         <Image
-          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c0357f3208c418.jpeg"
+          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d859c95106d5e512376e8e.jpeg"
           alt="GoHighLevel para Empresas e Agencias — Calazans Lumina"
           fill
           className="object-cover"
@@ -833,7 +833,7 @@ export default function ParaAgenciasPage() {
             <ScrollReveal>
               <div className="relative w-48 h-48 mx-auto md:mx-0 rounded-2xl overflow-hidden border-2 border-brand-mint/30">
                 <Image
-                  src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c0357f3208c418.jpeg"
+                  src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d859c95106d5e512376e8e.jpeg"
                   alt="Rhaideline Calazans — Especialista GoHighLevel"
                   fill
                   className="object-cover"

@@ -100,7 +100,7 @@ export default async function BlogPostPage({
 
             <div className="flex items-center gap-3 mb-10">
               <Image
-                src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c035285908c419.jpeg"
+                src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d742765106d5f70635510a.jpeg"
                 alt="Rhaideline Calazans — autora do blog Calazans Lumina"
                 width={40}
                 height={40}

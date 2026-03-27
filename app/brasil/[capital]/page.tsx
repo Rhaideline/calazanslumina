@@ -74,7 +74,7 @@ export default async function CapitalPage({ params }: { params: Promise<{ capita
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <section className="relative min-h-[80vh] flex items-center">
         <Image
-          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c035285908c419.jpeg"
+          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d742765106d5f70635510a.jpeg"
           alt={`Marketing Digital em ${capital.nome} — Calazans Lumina`}
           fill
           className="object-cover"

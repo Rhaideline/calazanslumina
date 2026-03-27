@@ -81,7 +81,7 @@ export default async function CapitalServicoPage({ params }: { params: Promise<{
 
       <section className="relative min-h-[80vh] flex items-center">
         <Image
-          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c035285908c419.jpeg"
+          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d742765106d5f70635510a.jpeg"
           alt={`${servico.nome} em ${capital.nome} — Calazans Lumina`}
           fill
           className="object-cover"
