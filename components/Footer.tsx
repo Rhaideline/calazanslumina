@@ -16,8 +16,8 @@ const cursosDestaque = [
   { slug: 'chatgpt-para-idosos', nome: 'ChatGPT para Idosos', tag: 'Grátis' },
   { slug: 'ia-chatgpt-completo', nome: 'IA & ChatGPT Completo', tag: 'R$10' },
   { slug: 'marketing-digital-iniciantes', nome: 'Marketing Digital', tag: 'R$10' },
-  { slug: 'google-meu-negocio-do-zero', nome: 'Google Meu Negócio', tag: 'R$20' },
-  { slug: 'redes-sociais-que-vendem', nome: 'Redes Sociais', tag: 'R$10' },
+  { slug: 'google-meu-negocio-do-zero', nome: 'Google Meu Negócio', tag: 'Grátis' },
+  { slug: 'redes-sociais-que-vendem', nome: 'Redes Sociais', tag: 'Grátis' },
   { slug: 'funis-de-vendas-simplificado', nome: 'Funis de Vendas', tag: 'R$20' },
   { slug: 'ferramentas-digitais-secretarias', nome: 'Ferramentas Digitais', tag: 'Grátis' },
 ]

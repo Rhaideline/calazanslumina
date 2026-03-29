@@ -7,12 +7,12 @@ import PortfolioSites from '@/components/PortfolioSites'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Cursos de Marketing Digital | 2 Gratuitos + 5 a partir de R$10',
+  title: 'Cursos de Marketing Digital | 4 Gratuitos + 3 a partir de R$10',
   description:
     'Aprenda marketing digital do zero: IA & ChatGPT, Google Meu Negocio, Redes Sociais, Funis de Vendas. 2 cursos gratuitos + 5 a partir de R$10. PDF + acesso online. Comece agora!',
   alternates: { canonical: 'https://calazanslumina.com.br/cursos' },
   openGraph: {
-    title: 'Cursos de Marketing Digital | 2 Gratuitos + 5 a partir de R$10',
+    title: 'Cursos de Marketing Digital | 4 Gratuitos + 3 a partir de R$10',
     description: 'Aprenda marketing digital do zero. 7 cursos disponiveis, 2 gratuitos. PDF + acesso online.',
     url: 'https://calazanslumina.com.br/cursos',
     type: 'website',
