@@ -305,8 +305,11 @@ O maior erro que vejo é empreendedor que posta todo dia por uma semana e depois
 // Importar os 50 novos artigos
 import { novosBlogPosts } from './blog-novos'
 
+// Importar 6 artigos SEO urgentes
+import { blogSeoUrgentes } from './blog-seo-urgentes'
+
 // Combinar todos os artigos
-blogPosts.push(...novosBlogPosts)
+blogPosts.push(...novosBlogPosts, ...blogSeoUrgentes)
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find((p) => p.slug === slug)
