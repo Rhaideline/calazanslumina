@@ -4,7 +4,6 @@
 User-agent: *
 Allow: /
 Disallow: /cursos/acesso/
-Disallow: /_next/
 Disallow: /api/
 
 # AI Crawlers — Explicitly Allowed

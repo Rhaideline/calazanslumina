@@ -30,13 +30,17 @@ export default function ServicosPage() {
     url: 'https://calazanslumina.com.br/servicos',
     mainEntity: {
       '@type': 'ItemList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, item: { '@type': 'Service', name: 'Sites & Landing Pages', url: 'https://calazanslumina.com.br/servicos/sites-landing-pages' } },
-        { '@type': 'ListItem', position: 2, item: { '@type': 'Service', name: 'Funis & Automacao GHL', url: 'https://calazanslumina.com.br/servicos/funis-automacao-ghl' } },
-        { '@type': 'ListItem', position: 3, item: { '@type': 'Service', name: 'CRM & IA no WhatsApp', url: 'https://calazanslumina.com.br/servicos/crm-ia-whatsapp' } },
-        { '@type': 'ListItem', position: 4, item: { '@type': 'Service', name: 'Gestao de Redes Sociais', url: 'https://calazanslumina.com.br/servicos/gestao-redes-sociais' } },
-        { '@type': 'ListItem', position: 5, item: { '@type': 'Service', name: 'Google Business Profile', url: 'https://calazanslumina.com.br/servicos/google-business-profile' } },
-      ],
+      numberOfItems: servicos.length,
+      itemListElement: servicos.map((s, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        item: {
+          '@type': 'Service',
+          name: s.nome,
+          description: s.descricaoCurta,
+          url: `https://calazanslumina.com.br/servicos/${s.slug}`,
+        },
+      })),
     },
   }
 
