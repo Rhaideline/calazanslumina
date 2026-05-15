@@ -72,8 +72,20 @@ export default async function CidadeServicoPage({ params }: { params: Promise<{ 
     ],
   }
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://calazanslumina.com.br/' },
+      { '@type': 'ListItem', position: 2, name: 'Cidades MA', item: 'https://calazanslumina.com.br/' },
+      { '@type': 'ListItem', position: 3, name: `${cidade.nome}, MA`, item: `https://calazanslumina.com.br/cidades/${cidadeSlug}` },
+      { '@type': 'ListItem', position: 4, name: servico.nome, item: `https://calazanslumina.com.br/cidades/${cidadeSlug}/${servicoSlug}` },
+    ],
+  }
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 

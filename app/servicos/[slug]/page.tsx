@@ -74,9 +74,23 @@ export default async function ServicoPage({ params }: { params: Promise<{ slug: 
     })),
   }
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://calazanslumina.com.br/' },
+      { '@type': 'ListItem', position: 2, name: 'Serviços', item: 'https://calazanslumina.com.br/servicos' },
+      { '@type': 'ListItem', position: 3, name: servico.nome, item: `https://calazanslumina.com.br/servicos/${servico.slug}` },
+    ],
+  }
+
   return (
     <>
       {/* JSON-LD Schemas */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}

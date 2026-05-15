@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { servicos } from '@/data/servicos'
+import { capitaisBR } from '@/data/capitais-br'
 
 const cidadesDestaque = [
   'Framingham', 'Marlborough', 'Hudson', 'Worcester', 'Cambridge',
@@ -11,6 +12,9 @@ const capitaisDestaque = [
   'São Paulo', 'Rio de Janeiro', 'Belo Horizonte', 'Brasília', 'Curitiba',
   'Salvador', 'Fortaleza', 'Recife', 'Porto Alegre', 'Goiânia',
 ]
+
+// Top 20 capitais para bloco SEO de atendimento nacional
+const top20Capitais = capitaisBR.slice(0, 20)
 
 const cursosDestaque = [
   { slug: 'chatgpt-para-idosos', nome: 'ChatGPT para Idosos', tag: 'Grátis' },
@@ -136,6 +140,24 @@ export default function Footer() {
             <Link href="/cases" className="hover:text-white/70 transition-colors">Cases de Sucesso</Link>{' · '}
             <Link href="/contato" className="hover:text-white/70 transition-colors">Orçamento gratuito</Link>
           </p>
+        </div>
+
+        {/* Atendimento nacional \u2014 top 20 capitais para crawl depth */}
+        <div className="border-t border-white/10 pt-6 pb-2 mb-2">
+          <h3 className="text-white/70 text-xs uppercase tracking-wider mb-3 text-center">
+            Atendemos em mais de 488 cidades do Brasil
+          </h3>
+          <div className="flex flex-wrap justify-center gap-x-3 gap-y-2 max-w-5xl mx-auto">
+            {top20Capitais.map((c) => (
+              <Link
+                key={c.slug}
+                href={`/brasil/${c.slug}`}
+                className="text-white/50 hover:text-brand-mint text-xs transition-colors"
+              >
+                Marketing Digital em {c.nome}
+              </Link>
+            ))}
+          </div>
         </div>
 
         {/* Additional city links for SEO */}

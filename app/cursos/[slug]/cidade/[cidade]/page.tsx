@@ -87,8 +87,20 @@ export default async function CursoCidadePage({ params }: { params: Promise<{ sl
     ],
   }
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://calazanslumina.com.br/' },
+      { '@type': 'ListItem', position: 2, name: 'Cursos', item: 'https://calazanslumina.com.br/cursos' },
+      { '@type': 'ListItem', position: 3, name: curso.nome, item: `https://calazanslumina.com.br/cursos/${slug}` },
+      { '@type': 'ListItem', position: 4, name: `${cidade.nome}, MA`, item: `https://calazanslumina.com.br/cursos/${slug}/cidade/${cidadeSlug}` },
+    ],
+  }
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 

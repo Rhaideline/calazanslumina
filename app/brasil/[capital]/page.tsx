@@ -68,8 +68,24 @@ export default async function CapitalPage({ params }: { params: Promise<{ capita
     ],
   }
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://calazanslumina.com.br/' },
+      { '@type': 'ListItem', position: 2, name: 'Brasil', item: 'https://calazanslumina.com.br/' },
+      { '@type': 'ListItem', position: 3, name: `${capital.nome}, ${capital.siglaEstado}`, item: `https://calazanslumina.com.br/brasil/${capitalSlug}` },
+    ],
+  }
+
+  // Cidades próximas no mesmo estado (até 8)
+  const cidadesProximas = cidadesBrasil
+    .filter((c) => c.siglaEstado === capital.siglaEstado && c.slug !== capitalSlug)
+    .slice(0, 8)
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <section className="relative min-h-[80vh] flex items-center">
@@ -190,6 +206,31 @@ export default async function CapitalPage({ params }: { params: Promise<{ capita
           </div>
         </div>
       </section>
+
+      {/* Cidades próximas no mesmo estado */}
+      {cidadesProximas.length > 0 && (
+        <section className="section-padding bg-white border-t border-gray-100">
+          <div className="container-main max-w-5xl">
+            <h2 className="font-serif text-2xl font-bold text-brand-dark mb-2">
+              Atendemos também em {capital.estado}
+            </h2>
+            <p className="text-brand-dark/60 text-sm mb-6">
+              Marketing digital em outras cidades de {capital.estado} ({capital.siglaEstado})
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {cidadesProximas.map((c) => (
+                <Link
+                  key={c.slug}
+                  href={`/brasil/${c.slug}`}
+                  className="bg-brand-bg text-brand-dark text-sm px-4 py-2 rounded-full hover:bg-brand-mint hover:text-white transition-colors"
+                >
+                  Marketing Digital em {c.nome}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <PortfolioSites compact />
       <CTAForm cidade={capital.nome} />
