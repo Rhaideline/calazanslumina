@@ -8,8 +8,14 @@ import { blogPosts } from '@/data/blog'
 
 const BASE = 'https://calazanslumina.com.br'
 
+// Data fixa do último update significativo do site.
+// Google só respeita lastmod quando é estável — usar new Date() faz com que
+// cada build mude todas as datas, o que sinaliza "ruído" e Google ignora.
+// Atualize esta string quando houver mudanças relevantes em conteúdo/dados.
+const SITE_LAST_UPDATE = '2026-05-14T00:00:00.000Z'
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date().toISOString()
+  const now = SITE_LAST_UPDATE
 
   // Páginas estáticas
   const staticPages: MetadataRoute.Sitemap = [

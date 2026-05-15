@@ -44,6 +44,9 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
     '@type': 'Course',
     name: curso.nome,
     description: curso.descricaoCurta,
+    inLanguage: 'pt-BR',
+    educationalLevel: 'Beginner',
+    teaches: curso.descricaoCurta,
     provider: { '@type': 'Organization', name: 'Calazans Lumina', url: 'https://calazanslumina.com.br' },
     offers: {
       '@type': 'Offer',
@@ -54,6 +57,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
     hasCourseInstance: {
       '@type': 'CourseInstance',
       courseMode: 'online',
+      inLanguage: 'pt-BR',
       courseWorkload: `${totalAulas} aulas`,
     },
     review: curso.vsl.depoimentos.map((d) => ({
