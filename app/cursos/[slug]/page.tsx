@@ -452,7 +452,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
             {[
               { titulo: 'PDF Completo do Curso', desc: 'Material em PDF para baixar e estudar offline, no seu ritmo, a qualquer momento.', valor: 'R$ 47' },
               { titulo: 'Acesso Vitalicio', desc: 'Comprou uma vez, acessa para sempre. Todas as atualizacoes futuras inclusas.', valor: 'R$ 97' },
-              { titulo: 'Compativel com Qualquer Dispositivo', desc: 'Assista no celular, tablet ou computador. Layout responsivo e otimizado.', valor: 'R$ 27' },
+              { titulo: 'Leia em Qualquer Dispositivo', desc: 'Abre no celular, tablet ou computador. PDF otimizado para leitura em qualquer tela.', valor: 'R$ 27' },
             ].map((bonus, i) => (
               <ScrollReveal key={i} delay={i * 100}>
                 <div className="flex items-start gap-4 bg-brand-bg border border-brand-mint/20 rounded-2xl p-6">
