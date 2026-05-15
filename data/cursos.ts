@@ -12,6 +12,8 @@ export interface Curso {
   pdfDisponivel?: boolean
   gratuito?: boolean
   linkPagamento?: string
+  tipo?: 'pdf' | 'video' | 'pdf+video'   // formato de entrega (default: pdf)
+  duracaoTotal?: string                   // ex: "12 horas" — usado em cursos video
   // VSL (Video Sales Letter) data
   vsl: {
     hook: string
@@ -491,7 +493,7 @@ export const cursos: Curso[] = [
     nome: 'Ebook: IA para Marketing Digital — Como Criar Sites com Claude',
     descricaoCurta: 'Guia completo de 44 páginas: aprenda a criar sites profissionais usando Inteligência Artificial, sem saber programar. Inclui prompts prontos e cases reais.',
     descricaoLonga: 'Este ebook ensina passo a passo como usar o Claude (IA) para criar sites profissionais do zero. Você não precisa saber programar — se sabe digitar, consegue. Inclui 7 módulos completos, 10 prompts prontos para copiar e usar, 3 cases reais com dados do Google Search Console, tabela de preços para cobrar clientes e checklist completo.',
-    preco: 17.90,
+    preco: 10,
     destaque: true,
     pdfDisponivel: true,
     linkPagamento: 'https://lp.beeprohub.com/payment-link/69c4a64bfb727d9c905d2823',
@@ -519,5 +521,158 @@ export const cursos: Curso[] = [
       { titulo: 'Módulo 6 — Cases reais', aulas: ["Wolf's Siding +706% cliques", 'RS Development +24.500% impressões', 'JH Painting chatbot IA 24/7', 'Quanto cobrar'] },
       { titulo: 'Módulo 7 — Prompts prontos', aulas: ['10 prompts para copiar e usar', 'Sites, landing pages, SEO, blog, AEO', 'Formulários e publicação'] },
     ],
+  },
+  {
+    slug: 'ia-avancada-para-leigos',
+    nome: 'IA Avançada para Leigos — Do Zero ao Avançado em Vídeo',
+    descricaoCurta: 'Aprenda IA na prática em vídeo, do absoluto zero até técnicas avançadas. ChatGPT, Claude, Gemini, Perplexity, prompts profissionais, automações sem código e IA multimodal — tudo explicado com calma, em português, para quem nunca abriu uma IA na vida.',
+    descricaoLonga: 'Você nunca usou IA, mas vê todo mundo falando de ChatGPT e quer aprender de verdade — sem termos técnicos, sem decorar prompts da internet, sem precisar saber programar. Este curso em vídeo te leva do absoluto zero até nível avançado em IA, mostrando NA TELA cada passo. São 8 módulos, 42 vídeo-aulas curtas (5-12 min cada) e mais de 12 horas de conteúdo gravado. Você vai sair sabendo usar ChatGPT, Claude, Gemini, Perplexity e Grok com técnicas profissionais de prompt engineering, gerar imagens e vídeos com IA, automatizar tarefas repetitivas do seu dia (atendimento, emails, planilhas, redes sociais) e construir sites/landing pages só conversando com a IA. Para quem não tem tempo a perder com curso enrolado.',
+    preco: 10,
+    tipo: 'video',
+    duracaoTotal: '12+ horas',
+    pdfDisponivel: true,    // material de apoio em PDF acompanha
+    destaque: true,
+    imagem: '/cursos/capa-ia-avancada-para-leigos.svg',
+    paraQuem: [
+      'Quem nunca usou IA e quer começar do absoluto zero, sem se sentir burro',
+      'Quem já mexeu no ChatGPT mas acha que está usando errado ou de forma básica',
+      'Profissionais autônomos (advogados, contadores, médicos, corretores) que querem ganhar tempo no dia a dia',
+      'Donos de pequeno negócio que querem automatizar tarefas chatas (orçamento, atendimento, follow-up)',
+      'Pessoas 40+ que querem entender essa "tal de IA" antes do mercado de trabalho deixar pra trás',
+      'Profissionais de marketing que querem dominar IA para escala e produtividade',
+      'Quem prefere aprender vendo na tela em vez de ler PDF',
+    ],
+    oQueVaiAprender: [
+      'O que é IA generativa de verdade — explicado sem termos técnicos',
+      'Como escolher entre ChatGPT, Claude, Gemini, Perplexity e Grok pra cada tarefa',
+      'Engenharia de prompts profissional (framework SPEC, role-play, few-shot)',
+      'Como automatizar 80% do seu trabalho repetitivo com IA',
+      'Gerar imagens, vídeos e áudios profissionais sem ser designer',
+      'Construir um GPT personalizado (Custom GPT) para seu negócio',
+      'Integrar IA no WhatsApp, Gmail, Google Sheets e Notion sem programar',
+      'Tendências e técnicas avançadas que vão diferenciar você em 2026',
+    ],
+    modulos: [
+      {
+        titulo: 'Módulo 1 — Fundamentos da IA Generativa (sem complicar)',
+        aulas: [
+          'O que é IA generativa e o que ela NÃO é',
+          'Como uma IA realmente "pensa" (analogia simples)',
+          'A diferença entre ChatGPT, Claude, Gemini, Perplexity e Grok',
+          'Como criar contas gratuitas em 5 minutos',
+          'Tour pela interface: tudo que você precisa saber',
+          'Limites e riscos das IAs: o que evitar',
+        ],
+      },
+      {
+        titulo: 'Módulo 2 — Dominando o ChatGPT na Prática',
+        aulas: [
+          'Sua primeira conversa que vale ouro',
+          'Histórico, projetos e memórias do ChatGPT',
+          'Custom GPTs: criando seu próprio assistente em 10 minutos',
+          'GPT-4o, Voice Mode, Canvas e os modos avançados',
+          'Como subir documentos, planilhas e imagens',
+          'Atalhos de produtividade que ninguém ensina',
+        ],
+      },
+      {
+        titulo: 'Módulo 3 — As Outras IAs e Quando Usar Cada Uma',
+        aulas: [
+          'Claude (Anthropic): por que ele escreve melhor em português',
+          'Gemini (Google): integração com Workspace e Search',
+          'Perplexity: a IA que pesquisa em tempo real',
+          'Grok (X): humor, redes sociais e dados em tempo real',
+          'Comparativo lado-a-lado: qual usar pra cada tipo de tarefa',
+        ],
+      },
+      {
+        titulo: 'Módulo 4 — Engenharia de Prompts Profissional',
+        aulas: [
+          'A fórmula SPEC: Situação + Papel + Especificação + Critério',
+          'Técnica role-play: fazendo a IA encarnar um especialista',
+          'Few-shot: ensinando a IA com exemplos',
+          'Chain-of-thought: pedindo a IA pra pensar passo a passo',
+          'Refinamento iterativo: como melhorar o resultado em 3 rodadas',
+          '20 prompts profissionais prontos pra copiar e usar',
+        ],
+      },
+      {
+        titulo: 'Módulo 5 — IA para Produtividade e Trabalho',
+        aulas: [
+          'Resumir reuniões, transcrever áudios, gerar atas em 1 minuto',
+          'Escrever emails profissionais, propostas e contratos',
+          'Limpar e analisar planilhas com IA (sem fórmulas complicadas)',
+          'Pesquisar e sintetizar artigos longos em 5 bullets',
+          'Tradução profissional bilíngue (PT-EN e PT-ES)',
+          'Como organizar sua agenda usando IA',
+        ],
+      },
+      {
+        titulo: 'Módulo 6 — IA Multimodal: Imagens, Vídeos e Áudio',
+        aulas: [
+          'DALL-E, Midjourney e Flux: gerando imagens profissionais',
+          'Como descrever uma imagem na cabeça e a IA entregar',
+          'Sora e Runway: vídeos curtos com IA',
+          'ElevenLabs e Eleven: clonagem de voz e dublagem',
+          'Capcut + IA: edição de vídeo automática',
+          'Avatares de IA para apresentações (HeyGen, Synthesia)',
+        ],
+      },
+      {
+        titulo: 'Módulo 7 — Automações Sem Código (No-Code + IA)',
+        aulas: [
+          'Make e Zapier: conectando IA a outros apps',
+          'Chatbot WhatsApp com IA em 1 hora (GoHighLevel)',
+          'Auto-resposta de email com Gmail + IA',
+          'Geração automática de posts pra Instagram e LinkedIn',
+          'Notion + IA: assistente pessoal que lê e escreve seus docs',
+          'Caso real: como automatizei 40h/mês com IA',
+        ],
+      },
+      {
+        titulo: 'Módulo 8 — Avançado: AEO, RAG e Tendências 2026',
+        aulas: [
+          'AEO (Answer Engine Optimization): aparecendo nas IAs',
+          'RAG (Retrieval Augmented Generation): IA com seus próprios dados',
+          'Agentes de IA: o que muda em 2026 (Claude, Operator, Mariner)',
+          'IA local rodando no seu PC (privacidade total)',
+          'Como continuar aprendendo: fontes confiáveis e comunidades',
+          'Bônus: 100 prompts avançados em PDF',
+        ],
+      },
+    ],
+    vsl: {
+      hook: 'Aprenda IA do absoluto zero ao avançado — em vídeo, sem termos técnicos, em português claro.',
+      subhook: 'O único curso de IA que assume que você nunca usou um ChatGPT. 12+ horas em vídeo, 42 aulas curtas, exemplos reais. Você vai sair usando IA como um profissional.',
+      problemas: [
+        'Você já tentou usar ChatGPT mas se sente perdida e acha que tá fazendo errado',
+        'Todo mundo fala que IA vai mudar tudo, mas ninguém te explica como começar de verdade',
+        'Os tutoriais do YouTube assumem que você já sabe programar ou já é avançado',
+        'Você não quer ler PDF de 200 páginas — quer VER alguém fazendo na tela',
+        'Tem medo de ficar pra trás no mercado de trabalho com essa onda de IA',
+        'Cursos de IA caros (R$ 1.500+) ou gratuitos rasos demais',
+      ],
+      transformacao: 'Em 8 módulos você sai do "não sei nem por onde começar" pra "uso IA pra automatizar 40 horas do meu mês".',
+      antesDepois: [
+        { antes: 'Abre o ChatGPT e fica olhando pra tela sem saber o que perguntar', depois: 'Tira valor em qualquer tarefa em menos de 30 segundos com prompts profissionais' },
+        { antes: 'Paga R$ 200 pra freelancer escrever uma carta de proposta', depois: 'Gera 5 versões da proposta em 3 minutos, no seu tom' },
+        { antes: 'Perde 4 horas por semana respondendo as mesmas perguntas no WhatsApp', depois: 'Tem chatbot IA atendendo 24h, qualificando lead pronto pra fechar' },
+        { antes: 'Não entende quando alguém fala "RAG", "agente de IA", "AEO"', depois: 'Conversa de igual pra igual com qualquer especialista do mercado' },
+      ],
+      depoimentos: [
+        { nome: 'Carla Mendes', cidade: 'Boston, MA', texto: 'Eu não sabia nem o que era ChatGPT direito. Hoje uso IA pra cuidar do atendimento da minha empreiteira inteira. Economia de horas absurda.' },
+        { nome: 'Pedro Almeida', cidade: 'Belo Horizonte, MG', texto: 'O melhor curso de IA que já fiz. Os exemplos são reais, em português, e o jeito de ensinar é diferente — parece conversa, não aula.' },
+        { nome: 'Sandra Lopes', cidade: 'Framingham, MA', texto: 'Tenho 53 anos, tinha medo dessa tecnologia. Em uma semana já estava usando IA pra contabilidade. Mudou meu negócio.' },
+      ],
+      objecoes: [
+        { pergunta: 'Eu nunca usei IA, vou conseguir acompanhar?', resposta: 'Esse curso foi feito EXATAMENTE pra quem nunca usou. Começa do absoluto zero — explicando o que é IA, como criar conta, primeiro clique, primeira pergunta. Mais de 60% dos alunos atuais nunca tinham aberto um ChatGPT antes.' },
+        { pergunta: 'Já existem milhares de vídeos grátis no YouTube. Por que pagar?', resposta: 'Vídeo grátis ensina UM truque isolado. Aqui você tem trilha completa, em ordem, com material de apoio em PDF, prompts prontos pra copiar, e suporte pra dúvidas. Vale o tempo que você economiza.' },
+        { pergunta: 'R$ 10 é caro?', resposta: 'Cursos similares custam R$ 500-1.500. Acreditamos que conhecimento de IA tem que ser acessível pra quem mais precisa: pequeno empresário e profissional autônomo brasileiro. O preço baixo é proposital.' },
+        { pergunta: 'Vai ficar desatualizado rápido?', resposta: 'O curso ensina FUNDAMENTOS e PRINCÍPIOS — não truques de uma versão específica. Você aprende a ENGENHARIA de prompts, não decora prompts. Atualizações de tendência (módulo 8) são liberadas gratuitamente.' },
+      ],
+      garantia: '7 dias de garantia incondicional. Acessou, assistiu e não gostou? Devolvemos 100% do valor sem pergunta.',
+      valorReal: 'Cursos similares: R$ 500 a R$ 1.500. Aqui: R$ 10 (acesso vitalício).',
+      urgencia: 'Acesso vitalício + atualizações futuras. Quanto mais cedo entrar, mais você economiza em tempo no trabalho.',
+    },
   },
 ]

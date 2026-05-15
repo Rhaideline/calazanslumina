@@ -464,11 +464,15 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
             <h2 className="heading-2 text-brand-dark mb-4">Alem do curso, voce recebe</h2>
           </ScrollReveal>
           <div className="space-y-4">
-            {[
+            {(curso.tipo === 'video' ? [
+              { titulo: 'Vídeo-aulas em HD', desc: 'Mais de 12 horas de aulas em vídeo. Assista no celular, tablet ou computador, no seu ritmo.', valor: 'R$ 297' },
+              { titulo: 'Acesso Vitalicio', desc: 'Comprou uma vez, acessa para sempre. Todas as atualizacoes futuras inclusas.', valor: 'R$ 97' },
+              { titulo: 'Material de Apoio em PDF', desc: 'Resumos, 20 prompts prontos e checklist em PDF para baixar e consultar offline.', valor: 'R$ 47' },
+            ] : [
               { titulo: 'PDF Completo do Curso', desc: 'Material em PDF para baixar e estudar offline, no seu ritmo, a qualquer momento.', valor: 'R$ 47' },
               { titulo: 'Acesso Vitalicio', desc: 'Comprou uma vez, acessa para sempre. Todas as atualizacoes futuras inclusas.', valor: 'R$ 97' },
               { titulo: 'Leia em Qualquer Dispositivo', desc: 'Abre no celular, tablet ou computador. PDF otimizado para leitura em qualquer tela.', valor: 'R$ 27' },
-            ].map((bonus, i) => (
+            ]).map((bonus, i) => (
               <ScrollReveal key={i} delay={i * 100}>
                 <div className="flex items-start gap-4 bg-brand-bg border border-brand-mint/20 rounded-2xl p-6">
                   <div className="w-12 h-12 bg-brand-mint/10 rounded-xl flex items-center justify-center flex-shrink-0">
