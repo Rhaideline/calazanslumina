@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="cine-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A0E0B"/>
+      <stop offset="60%" stop-color="#0d0706"/>
+      <stop offset="100%" stop-color="#1A0E0B"/>
+    </linearGradient>
+    <radialGradient id="spot" cx="80%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#FF0005" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#FF0005" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <!-- Background: cinematic dark -->
+  <rect width="800" height="500" fill="url(#cine-grad)"/>
+  <rect width="800" height="500" fill="url(#spot)"/>
+  <!-- Right side: large play button geometric -->
+  <g transform="translate(640, 250)">
+    <!-- Outer ring -->
+    <circle cx="0" cy="0" r="135" fill="none" stroke="#F1EAE0" stroke-width="1.5" opacity="0.35"/>
+    <!-- Inner ring -->
+    <circle cx="0" cy="0" r="110" fill="#FF0005"/>
+    <!-- Play triangle -->
+    <path d="M -30 -45 L 50 0 L -30 45 Z" fill="#1A0E0B"/>
+  </g>
+  <!-- Badge VÍDEO -->
+  <rect x="40" y="28" width="130" height="38" rx="2" fill="#FF0005"/>
+  <text x="105" y="53" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="3">VÍDEO ▶</text>
+  <!-- Title -->
+  <text x="50" y="170" font-family="Georgia, 'DM Serif Display', serif" font-size="62" font-weight="700" fill="#F1EAE0">IA avançada</text>
+  <text x="50" y="232" font-family="Georgia, 'DM Serif Display', serif" font-size="62" font-style="italic" font-weight="400" fill="#FF0005">para leigos.</text>
+  <!-- Subtitle -->
+  <text x="50" y="282" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#F1EAE0" opacity="0.65">Vídeo-curso direto ao ponto —</text>
+  <text x="50" y="308" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#F1EAE0" opacity="0.65">domine IA sem ser técnico.</text>
+  <!-- Stats -->
+  <text x="50" y="430" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#F1EAE0" letter-spacing="1" opacity="0.85">10 módulos · 4h de vídeo · Acesso vitalício</text>
+  <!-- Brand mark -->
+  <text x="750" y="475" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#F1EAE0" text-anchor="end" letter-spacing="3" opacity="0.5">CALAZANS LUMINA</text>
+</svg>

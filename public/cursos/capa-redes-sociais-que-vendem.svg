@@ -1,67 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
-  <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#831843"/>
-      <stop offset="50%" style="stop-color:#be185d"/>
-      <stop offset="100%" style="stop-color:#e11d48"/>
-    </linearGradient>
-    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#fda4af"/>
-      <stop offset="100%" style="stop-color:#fecdd3"/>
-    </linearGradient>
-  </defs>
-  <rect width="800" height="500" fill="url(#bg)"/>
-  <!-- Abstract blobs -->
-  <circle cx="680" cy="120" r="150" fill="#ffffff" opacity="0.04"/>
-  <circle cx="600" cy="380" r="100" fill="#ffffff" opacity="0.03"/>
-  <!-- Heart icon (large, right side) -->
-  <g transform="translate(565, 65)" opacity="0.16">
-    <path d="M55 28 Q55 0 28 0 Q0 0 0 25 Q0 55 55 90 Q110 55 110 25 Q110 0 83 0 Q55 0 55 28 Z" fill="#ffffff"/>
-  </g>
-  <!-- Comment bubble -->
-  <g transform="translate(620, 170)" opacity="0.13">
-    <path d="M0 12 Q0 0 18 0 L102 0 Q120 0 120 12 L120 65 Q120 77 102 77 L35 77 L12 100 L18 77 L18 77 Q0 77 0 65 Z" fill="none" stroke="#ffffff" stroke-width="3.5"/>
-    <!-- Dots inside -->
-    <circle cx="35" cy="38" r="6" fill="#ffffff" opacity="0.5"/>
-    <circle cx="60" cy="38" r="6" fill="#ffffff" opacity="0.5"/>
-    <circle cx="85" cy="38" r="6" fill="#ffffff" opacity="0.5"/>
-  </g>
-  <!-- Share/forward arrow -->
-  <g transform="translate(570, 300)" opacity="0.13">
-    <path d="M0 50 L70 0 L70 32 Q110 32 110 65 Q98 42 70 48 L70 78 Z" fill="none" stroke="#ffffff" stroke-width="3.5"/>
-  </g>
-  <!-- Thumbs up -->
-  <g transform="translate(700, 310)" opacity="0.11">
-    <path d="M15 35 L15 70 L0 70 L0 35 Z" fill="none" stroke="#ffffff" stroke-width="3"/>
-    <path d="M15 40 L28 18 Q33 8 42 13 L38 35 L62 35 Q68 35 66 46 L58 70 L15 70" fill="none" stroke="#ffffff" stroke-width="3"/>
-  </g>
-  <!-- Floating hearts -->
-  <g opacity="0.3" font-family="Arial,sans-serif" fill="#fda4af">
-    <text x="740" y="85" font-size="20">&#9829;</text>
-    <text x="545" y="400" font-size="15">&#9829;</text>
-    <text x="720" y="260" font-size="13">&#9829;</text>
-    <text x="760" y="380" font-size="10">&#9829;</text>
-  </g>
-  <!-- Notification badge -->
-  <g transform="translate(700, 60)" opacity="0.2">
-    <circle cx="12" cy="12" r="12" fill="#ffffff"/>
-    <text x="12" y="17" font-family="Arial,sans-serif" font-size="14" font-weight="bold" fill="#e11d48" text-anchor="middle">9+</text>
-  </g>
-  <!-- Badge -->
-  <rect x="40" y="28" width="110" height="42" rx="21" fill="#f43f5e"/>
-  <text x="95" y="55" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="1">R$20</text>
+  <!-- Background: ink -->
+  <rect width="800" height="500" fill="#1A0E0B"/>
+  <!-- Right side: huge 10x typographic -->
+  <text x="780" y="370" font-family="Georgia, 'DM Serif Display', serif" font-size="360" font-weight="700" fill="#F1EAE0" text-anchor="end" opacity="0.95">10</text>
+  <text x="780" y="370" font-family="Georgia, 'DM Serif Display', serif" font-size="160" font-style="italic" font-weight="400" fill="#FF0005" text-anchor="end">x</text>
+  <!-- Small label above 10x -->
+  <text x="780" y="120" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#F1EAE0" text-anchor="end" letter-spacing="4" opacity="0.5">SEU ALCANCE</text>
+  <!-- Badge GRÁTIS -->
+  <rect x="40" y="28" width="120" height="38" rx="2" fill="#16a34a"/>
+  <text x="100" y="53" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="3">GRÁTIS</text>
   <!-- Title -->
-  <text x="50" y="152" font-family="Georgia,serif" font-size="48" font-weight="bold" fill="#ffffff">Redes Sociais</text>
-  <text x="50" y="210" font-family="Georgia,serif" font-size="46" font-weight="bold" fill="#fecdd3">que Vendem</text>
-  <!-- Divider -->
-  <rect x="50" y="230" width="90" height="4" rx="2" fill="url(#accent)"/>
+  <text x="50" y="170" font-family="Georgia, 'DM Serif Display', serif" font-size="62" font-weight="700" fill="#F1EAE0">Redes sociais</text>
+  <text x="50" y="232" font-family="Georgia, 'DM Serif Display', serif" font-size="62" font-style="italic" font-weight="400" fill="#FF0005">que vendem.</text>
   <!-- Subtitle -->
-  <text x="50" y="270" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#ffffff" opacity="0.85">Transforme seguidores em</text>
-  <text x="50" y="295" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#ffffff" opacity="0.85">clientes. Conteúdo, engajamento</text>
-  <text x="50" y="320" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#ffffff" opacity="0.85">e vendas nas redes sociais.</text>
+  <text x="50" y="282" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#F1EAE0" opacity="0.65">Conteúdo que atrai, conecta</text>
+  <text x="50" y="308" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#F1EAE0" opacity="0.65">e converte — sem gurus.</text>
   <!-- Stats -->
-  <text x="50" y="372" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#fda4af" font-weight="bold">8 módulos  ·  42 aulas  ·  Certificado</text>
-  <!-- Footer -->
-  <rect x="0" y="440" width="800" height="60" fill="#000000" opacity="0.25"/>
-  <text x="50" y="478" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#ffffff" opacity="0.45" letter-spacing="3">CALAZANS LUMINA</text>
+  <text x="50" y="430" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#F1EAE0" letter-spacing="1" opacity="0.85">6 módulos · 26 aulas · Templates de post</text>
+  <!-- Brand mark -->
+  <text x="750" y="475" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#F1EAE0" text-anchor="end" letter-spacing="3" opacity="0.5">CALAZANS LUMINA</text>
 </svg>

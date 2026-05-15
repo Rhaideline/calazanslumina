@@ -1,63 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
-  <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0c1445"/>
-      <stop offset="50%" style="stop-color:#1e3a8a"/>
-      <stop offset="100%" style="stop-color:#1e40af"/>
-    </linearGradient>
-    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#60a5fa"/>
-      <stop offset="100%" style="stop-color:#93c5fd"/>
-    </linearGradient>
-  </defs>
-  <rect width="800" height="500" fill="url(#bg)"/>
-  <!-- Abstract wave pattern -->
-  <path d="M0 380 Q200 340 400 370 Q600 400 800 350 L800 500 L0 500 Z" fill="#ffffff" opacity="0.03"/>
-  <path d="M0 400 Q200 370 400 390 Q600 410 800 380 L800 500 L0 500 Z" fill="#ffffff" opacity="0.02"/>
-  <!-- Megaphone icon (right side, semi-transparent) -->
-  <g transform="translate(540, 80)" opacity="0.14">
-    <!-- Megaphone body -->
-    <path d="M60 65 L170 15 L170 175 L60 125 Z" fill="none" stroke="#60a5fa" stroke-width="4"/>
-    <rect x="25" y="60" width="40" height="70" rx="6" fill="none" stroke="#60a5fa" stroke-width="4"/>
-    <!-- Sound waves -->
-    <path d="M182 55 Q215 95 182 135" fill="none" stroke="#93c5fd" stroke-width="3.5" stroke-linecap="round"/>
-    <path d="M195 35 Q240 95 195 155" fill="none" stroke="#93c5fd" stroke-width="3" stroke-linecap="round"/>
-    <path d="M208 18 Q265 95 208 172" fill="none" stroke="#93c5fd" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
-  </g>
-  <!-- Rocket icon (smaller, offset) -->
-  <g transform="translate(620, 290)" opacity="0.12">
-    <path d="M40 0 Q55 5 55 35 L55 70 L48 80 L40 65 L32 80 L25 70 L25 35 Q25 5 40 0 Z" fill="none" stroke="#60a5fa" stroke-width="3"/>
-    <!-- Window -->
-    <circle cx="40" cy="30" r="8" fill="#60a5fa" opacity="0.4"/>
-    <!-- Flame -->
-    <path d="M32 80 Q40 100 48 80" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
-    <!-- Stars -->
-    <circle cx="10" cy="20" r="2.5" fill="#93c5fd" opacity="0.7"/>
-    <circle cx="72" cy="15" r="2" fill="#93c5fd" opacity="0.6"/>
-    <circle cx="68" cy="55" r="1.5" fill="#93c5fd" opacity="0.5"/>
-  </g>
-  <!-- Floating dots -->
-  <g opacity="0.25">
-    <circle cx="560" cy="50" r="3" fill="#60a5fa"/>
-    <circle cx="740" cy="200" r="2.5" fill="#93c5fd"/>
-    <circle cx="680" cy="400" r="2" fill="#60a5fa"/>
-    <circle cx="530" cy="350" r="2" fill="#93c5fd"/>
-  </g>
-  <!-- Badge -->
-  <rect x="40" y="28" width="110" height="42" rx="21" fill="#3b82f6"/>
-  <text x="95" y="55" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="1">R$20</text>
+  <!-- Background: ink -->
+  <rect width="800" height="500" fill="#1A0E0B"/>
+  <!-- Right side: bold red block with R$ tipográfico -->
+  <rect x="500" y="80" width="280" height="340" fill="#FF0005"/>
+  <text x="640" y="290" font-family="Georgia, 'DM Serif Display', serif" font-size="200" font-style="italic" font-weight="700" fill="#1A0E0B" text-anchor="middle">R$</text>
+  <!-- Small label below R$ -->
+  <text x="640" y="340" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#1A0E0B" text-anchor="middle" letter-spacing="3">VENDA MAIS</text>
+  <!-- Badge R$ 10 -->
+  <rect x="40" y="28" width="110" height="38" rx="2" fill="#FF0005"/>
+  <text x="95" y="53" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#0d0706" text-anchor="middle" letter-spacing="2">R$ 10</text>
   <!-- Title -->
-  <text x="50" y="150" font-family="Georgia,serif" font-size="46" font-weight="bold" fill="#ffffff">Marketing</text>
-  <text x="50" y="204" font-family="Georgia,serif" font-size="46" font-weight="bold" fill="#ffffff">Digital para</text>
-  <text x="50" y="256" font-family="Georgia,serif" font-size="44" font-weight="bold" fill="#93c5fd">Iniciantes</text>
-  <!-- Divider -->
-  <rect x="50" y="274" width="90" height="4" rx="2" fill="url(#accent)"/>
+  <text x="50" y="170" font-family="Georgia, 'DM Serif Display', serif" font-size="58" font-weight="700" fill="#F1EAE0">Marketing</text>
+  <text x="50" y="226" font-family="Georgia, 'DM Serif Display', serif" font-size="58" font-weight="700" fill="#F1EAE0">digital para</text>
+  <text x="50" y="282" font-family="Georgia, 'DM Serif Display', serif" font-size="58" font-style="italic" font-weight="400" fill="#FF0005">iniciantes.</text>
   <!-- Subtitle -->
-  <text x="50" y="310" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#ffffff" opacity="0.8">Estratégias práticas para</text>
-  <text x="50" y="335" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#ffffff" opacity="0.8">atrair clientes e vender online.</text>
+  <text x="50" y="328" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#F1EAE0" opacity="0.65">Do tráfego à conversão —</text>
+  <text x="50" y="352" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#F1EAE0" opacity="0.65">um plano real pra começar a vender.</text>
   <!-- Stats -->
-  <text x="50" y="385" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#60a5fa" font-weight="bold">8 módulos  ·  40 aulas  ·  Certificado</text>
-  <!-- Footer -->
-  <rect x="0" y="440" width="800" height="60" fill="#000000" opacity="0.25"/>
-  <text x="50" y="478" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#ffffff" opacity="0.45" letter-spacing="3">CALAZANS LUMINA</text>
+  <text x="50" y="430" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#F1EAE0" letter-spacing="1" opacity="0.85">7 módulos · 28 aulas · Templates inclusos</text>
+  <!-- Brand mark -->
+  <text x="750" y="475" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#F1EAE0" text-anchor="end" letter-spacing="3" opacity="0.5">CALAZANS LUMINA</text>
 </svg>
