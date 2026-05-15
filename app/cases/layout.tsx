@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Cases de Sucesso | Resultados Reais de SEO, GHL e Marketing Digital — Calazans Lumina',
+  title: { absolute: 'Cases SEO + GHL +24.500% Impressões | Calazans Lumina' },
   description: 'Veja resultados reais: +24.500% impressoes, pagina 1 do Google, 18 leads organicos em 28 dias, chatbot IA qualificando 24/7. Cases de SEO, AEO, GEO e GoHighLevel.',
   alternates: { canonical: 'https://calazanslumina.com.br/cases' },
   openGraph: {

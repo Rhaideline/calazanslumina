@@ -9,7 +9,7 @@ import CoursesSection from '@/components/CoursesSection'
 import PortfolioSites from '@/components/PortfolioSites'
 
 export const metadata: Metadata = {
-  title: 'Servicos de Marketing Digital | Sites, Funis GHL, CRM com IA',
+  title: 'Serviços — Sites, Funis GHL e CRM com IA',
   description:
     'Sites de alta performance, funis automatizados no GoHighLevel, CRM com IA no WhatsApp, gestao de redes sociais e Google Maps. Para brasileiros nos EUA e Brasil.',
   alternates: { canonical: 'https://calazanslumina.com.br/servicos' },

@@ -10,7 +10,7 @@ import { blogPosts, categoriasBlog } from '@/data/blog'
 const BASE = 'https://calazanslumina.com.br'
 
 export const metadata: Metadata = {
-  title: 'Blog de Marketing Digital (2026) | 60+ Artigos Gratuitos',
+  title: 'Blog — 60+ Artigos de Marketing Digital',
   description:
     '60+ artigos sobre marketing digital, SEO, Google Maps, funis de vendas, IA e automacao. Conteudo 100% gratuito para brasileiros nos EUA e Brasil. Leia agora →',
   alternates: { canonical: `${BASE}/blog` },

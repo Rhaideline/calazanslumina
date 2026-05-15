@@ -14,7 +14,9 @@ import LazyVideo from '@/components/LazyVideo'
 import PortfolioSites from '@/components/PortfolioSites'
 
 export const metadata: Metadata = {
-  title: 'Marketing Digital para Brasileiros nos EUA e Brasil | Calazans Lumina',
+  title: {
+    absolute: 'Marketing Digital para Brasileiros | Calazans Lumina',
+  },
   description:
     'Sites de alta performance, funis automatizados, CRM com IA e Google Maps para brasileiros nos EUA e Brasil. 8+ anos, 100+ projetos. Resultado garantido.',
   alternates: { canonical: 'https://calazanslumina.com.br' },

@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!curso) return {}
   const totalAulas = curso.modulos.reduce((acc, m) => acc + m.aulas.length, 0)
   return {
-    title: `${curso.nome} (2026) | ${curso.gratuito ? 'GRATUITO' : `Apenas R$${curso.preco}`} — ${totalAulas} Aulas`,
+    title: `${curso.nome} — ${curso.gratuito ? 'Grátis' : `R$${curso.preco}`}`,
     description: `${curso.descricaoCurta} ${curso.modulos.length} modulos, ${totalAulas} aulas com certificado. ${curso.gratuito ? 'Acesso 100% gratuito + material PDF. Comece agora →' : `So R$${curso.preco}. Acesso vitalicio + atualizacoes. Comece agora →`}`,
     alternates: { canonical: `https://calazanslumina.com.br/cursos/${slug}` },
     openGraph: {

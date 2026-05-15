@@ -23,8 +23,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params
   const servico = getServicoBySlug(slug)
   if (!servico) return {}
+  // metaTitle from data already contains "| Calazans Lumina";
+  // use absolute to skip layout template duplication
   return {
-    title: servico.metaTitle,
+    title: { absolute: servico.metaTitle },
     description: servico.metaDescription,
     alternates: {
       canonical: `https://calazanslumina.com.br/servicos/${servico.slug}`,

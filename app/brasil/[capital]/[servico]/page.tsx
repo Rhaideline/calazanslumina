@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ capital: 
   const servico = getServicoBySlug(servicoSlug)
   if (!capital || !servico) return {}
   return {
-    title: `${servico.nome} em ${capital.nome}, ${capital.siglaEstado} (2026) | Resultados Reais`,
+    title: `${servico.nome} em ${capital.nome}, ${capital.siglaEstado}`,
     description: `${servico.descricaoCurta} Para negocios em ${capital.nome}. velocidade otimizada, ROI comprovado, 100+ projetos entregues. Orcamento gratis em 24h →`,
     alternates: { canonical: `https://calazanslumina.com.br/brasil/${capitalSlug}/${servicoSlug}` },
     openGraph: {

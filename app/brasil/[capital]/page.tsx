@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ capital: 
   const capital = getCapitalBRBySlug(capitalSlug) || getCidadeBRBySlug(capitalSlug)
   if (!capital) return {}
   return {
-    title: `Marketing Digital em ${capital.nome} (2026) | Sites + Funis + Google Maps`,
+    title: `Marketing Digital em ${capital.nome}, ${capital.siglaEstado}`,
     description: `Agencia de marketing digital em ${capital.nome}, ${capital.siglaEstado}. Sites profissionais, funis automatizados que convertem 3x mais, CRM com IA no WhatsApp e Google Meu Negocio. 100+ projetos. Orcamento gratis →`,
     alternates: { canonical: `https://calazanslumina.com.br/brasil/${capitalSlug}` },
     openGraph: {
