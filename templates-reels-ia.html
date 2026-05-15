@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Reels · 3 prompts de IA — Calazans Lumina</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --burgundy:#1A0E0B;
+    --ivory:#F1EAE0;
+    --red:#D11217;
+    --red-bright:#FF0005;
+    --gold:#C9A96E;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:#070605;color:var(--ivory);font-family:'DM Sans',system-ui,sans-serif}
+
+  .page{max-width:1400px;margin:0 auto;padding:64px 32px}
+  h1.page-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:clamp(32px,4vw,52px);margin:0 0 8px;letter-spacing:-.01em}
+  h1.page-title em{font-style:normal;color:var(--red-bright);font-weight:600}
+  .meta-line{font-family:'DM Sans',sans-serif;font-size:12px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;opacity:.5;margin-bottom:24px}
+  .intro{opacity:.7;max-width:64ch;line-height:1.6;font-weight:300;margin:0 0 48px;font-size:16px}
+
+  /* SECTION HEADER */
+  .section-title{
+    margin-top:80px;padding-bottom:18px;border-bottom:1px solid rgba(241,234,224,.1);
+    display:flex;align-items:baseline;justify-content:space-between;gap:24px;
+  }
+  .section-title h2{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:30px;margin:0}
+  .section-title .tag{font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:.32em;text-transform:uppercase;font-weight:500;opacity:.5}
+
+  /* FRAMES GRID — 5 reels 9:16 frames lado a lado */
+  .frames{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:32px}
+  .frame-wrap{position:relative;background:#222;border-radius:18px;overflow:hidden;aspect-ratio:9/16;box-shadow:0 24px 60px -24px rgba(0,0,0,.5)}
+  .frame-label{position:absolute;left:10px;top:10px;z-index:9;font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;background:rgba(0,0,0,.65);color:#fff;padding:5px 9px;border-radius:999px;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+  .reel{
+    width:1080px;height:1920px;
+    transform-origin:top left;
+    transform:scale(.222);  /* 240px container width */
+    font-family:'DM Sans',sans-serif;
+    position:relative;overflow:hidden;
+    display:flex;flex-direction:column;
+  }
+
+  /* BRAND MARK + handle bottom — consistent across frames */
+  .ph-top{position:absolute;top:80px;left:60px;right:60px;z-index:5;display:flex;justify-content:space-between;align-items:center}
+  .logo-mini{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:32px;letter-spacing:-.01em;line-height:1}
+  .logo-mini .sub{font-family:'DM Sans',sans-serif;font-style:normal;font-size:11px;letter-spacing:.5em;text-transform:uppercase;font-weight:500;display:block;margin-top:4px;color:var(--red)}
+  .timer{font-family:'DM Sans',sans-serif;font-size:14px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;opacity:.5}
+  .ph-bot{position:absolute;bottom:80px;left:60px;right:60px;z-index:5;display:flex;justify-content:space-between;align-items:flex-end;font-family:'DM Sans',sans-serif;font-size:14px;letter-spacing:.22em;text-transform:uppercase;font-weight:500}
+
+  /* FRAME 1 — HOOK */
+  .f1{background:var(--burgundy);color:var(--ivory)}
+  .f1::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 50% at 50% 30%, rgba(209,18,23,.35), transparent 60%);z-index:1}
+  .f1 .hook{
+    position:absolute;left:60px;right:60px;top:50%;transform:translateY(-50%);z-index:5;
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:124px;line-height:.96;letter-spacing:-.02em;
+  }
+  .f1 .hook em{font-style:normal;color:var(--red-bright);font-weight:600;font-family:inherit;text-decoration:underline;text-decoration-thickness:6px;text-underline-offset:14px}
+  .f1 .hook .strike{text-decoration:line-through;text-decoration-thickness:6px;text-decoration-color:var(--red);opacity:.55}
+  .f1 .stamp{position:absolute;bottom:280px;left:60px;font-family:'DM Sans',sans-serif;font-size:20px;letter-spacing:.32em;text-transform:uppercase;font-weight:600;background:var(--red);padding:14px 22px;border-radius:6px;color:#fff;z-index:5}
+
+  /* FRAME 2 — PROMPT 1 */
+  .f2{background:var(--burgundy);color:var(--ivory)}
+  .f2 .label{position:absolute;left:60px;top:300px;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:34px;color:var(--red-bright);z-index:5}
+  .f2 .num{position:absolute;left:60px;top:340px;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:280px;line-height:.85;color:var(--ivory);z-index:5}
+  .f2 .title{position:absolute;left:60px;right:60px;top:680px;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:84px;line-height:1;letter-spacing:-.015em;z-index:5}
+  .f2 .prompt-box{
+    position:absolute;left:60px;right:60px;top:920px;z-index:5;
+    background:rgba(241,234,224,.07);border:1px solid rgba(241,234,224,.15);border-radius:14px;padding:36px;
+  }
+  .f2 .prompt-label{font-family:'DM Sans',sans-serif;font-size:18px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;color:var(--red-bright);margin-bottom:18px}
+  .f2 .prompt-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:36px;line-height:1.4;color:var(--ivory);opacity:.92}
+  .f2 .arrow{position:absolute;left:60px;top:1450px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:120px;color:var(--red-bright);z-index:5;animation:bob 1.4s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(12px)}}
+
+  /* FRAME 3 — PROMPT 2 */
+  .f3{background:var(--ivory);color:var(--burgundy)}
+  .f3 .ph-top, .f3 .ph-bot{color:var(--burgundy)}
+  .f3 .ph-top .timer{opacity:.4}
+  .f3 .label{position:absolute;left:60px;top:300px;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:34px;color:var(--red);z-index:5}
+  .f3 .num{position:absolute;left:60px;top:340px;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:280px;line-height:.85;color:var(--burgundy);z-index:5}
+  .f3 .title{position:absolute;left:60px;right:60px;top:680px;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:84px;line-height:1;letter-spacing:-.015em;z-index:5}
+  .f3 .prompt-box{position:absolute;left:60px;right:60px;top:920px;z-index:5;background:var(--burgundy);color:var(--ivory);border-radius:14px;padding:36px}
+  .f3 .prompt-label{font-family:'DM Sans',sans-serif;font-size:18px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;color:var(--red-bright);margin-bottom:18px}
+  .f3 .prompt-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:36px;line-height:1.4}
+
+  /* FRAME 4 — PROMPT 3 */
+  .f4{background:var(--red);color:var(--ivory)}
+  .f4::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 50% at 70% 80%, rgba(0,0,0,.4), transparent 60%);z-index:1}
+  .f4 .label{position:absolute;left:60px;top:300px;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:34px;color:var(--ivory);opacity:.85;z-index:5}
+  .f4 .num{position:absolute;left:60px;top:340px;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:280px;line-height:.85;color:var(--ivory);z-index:5}
+  .f4 .title{position:absolute;left:60px;right:60px;top:680px;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:84px;line-height:1;letter-spacing:-.015em;z-index:5}
+  .f4 .prompt-box{position:absolute;left:60px;right:60px;top:920px;z-index:5;background:rgba(0,0,0,.35);border:1px solid rgba(241,234,224,.25);border-radius:14px;padding:36px;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+  .f4 .prompt-label{font-family:'DM Sans',sans-serif;font-size:18px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;color:var(--ivory);margin-bottom:18px}
+  .f4 .prompt-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:36px;line-height:1.4}
+
+  /* FRAME 5 — CTA */
+  .f5{background:var(--burgundy);color:var(--ivory)}
+  .f5::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 50% at 50% 60%, rgba(209,18,23,.4), transparent 60%);z-index:1}
+  .f5 .center{position:absolute;left:60px;right:60px;top:50%;transform:translateY(-50%);z-index:5;text-align:center}
+  .f5 .kicker{font-family:'DM Sans',sans-serif;font-size:18px;letter-spacing:.32em;text-transform:uppercase;font-weight:600;color:var(--red-bright);margin-bottom:32px}
+  .f5 .big{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:124px;line-height:.96;letter-spacing:-.02em;margin:0}
+  .f5 .big em{font-style:normal;color:var(--red-bright);font-weight:600;font-family:inherit}
+  .f5 .price{margin-top:38px;display:inline-flex;align-items:baseline;gap:20px}
+  .f5 .price s{font-family:'DM Sans',sans-serif;font-weight:600;font-size:28px;opacity:.4}
+  .f5 .price b{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:120px;color:var(--red-bright);line-height:1}
+  .f5 .cta-line{margin-top:36px;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:38px;color:var(--ivory);opacity:.78}
+
+  /* SCRIPT TABLE */
+  .script-table{margin-top:24px;width:100%;border-collapse:collapse;font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.55}
+  .script-table th{font-weight:600;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);text-align:left;padding:14px 12px;border-bottom:1px solid rgba(241,234,224,.15)}
+  .script-table td{padding:18px 12px;border-bottom:1px solid rgba(241,234,224,.05);vertical-align:top;color:var(--ivory)}
+  .script-table td.time{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:20px;color:var(--red-bright);white-space:nowrap}
+  .script-table td.shot{font-weight:600;color:var(--gold);width:160px}
+  .script-table td.voice{font-style:italic;color:var(--ivory);opacity:.85}
+  .script-table td.onscreen{font-weight:500;color:var(--ivory)}
+
+  /* CAPTION BOX */
+  .caption-box{
+    margin-top:32px;background:rgba(241,234,224,.04);border:1px solid rgba(241,234,224,.1);
+    border-radius:18px;padding:32px 36px;
+  }
+  .caption-box h3{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:24px;margin:0 0 18px;color:var(--red-bright)}
+  .caption-box pre{
+    font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.65;color:var(--ivory);opacity:.92;
+    white-space:pre-wrap;margin:0;font-weight:400;
+  }
+  .copy-btn{
+    margin-top:16px;font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;
+    background:var(--red-bright);color:#fff;border:0;padding:12px 22px;border-radius:999px;cursor:pointer;
+  }
+
+  .hashtags{margin-top:20px;font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.8;color:var(--gold);font-weight:500;word-spacing:6px}
+
+  .music-suggest{margin-top:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+  .music-card{background:rgba(241,234,224,.04);border:1px solid rgba(241,234,224,.1);border-radius:14px;padding:20px 24px}
+  .music-card h4{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:20px;margin:0 0 8px;color:var(--red-bright)}
+  .music-card p{font-family:'DM Sans',sans-serif;font-size:13px;line-height:1.5;color:var(--ivory);opacity:.7;margin:0}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="meta-line">CALAZANS LUMINA · REELS · 9:16 · 1080×1920</div>
+  <h1 class="page-title">Reels — <em>3 prompts</em> que valem R$1.000 cada</h1>
+  <p class="intro">Reels de ~45 segundos pra converter tráfego em comprador dos cursos R$10. Hook agressivo, 3 prompts em demo rápida, CTA pro link da bio. Tom: confiante, direto, "te ensino o que freelancer cobra". 5 frames-chave + script com timing + caption + hashtags.</p>
+
+  <!-- ═══════════════════════ FRAMES ═══════════════════════ -->
+  <div class="section-title">
+    <h2>5 frames-chave</h2>
+    <span class="tag">9:16 · pronto pra export</span>
+  </div>
+
+  <div class="frames">
+
+    <!-- FRAME 1 — HOOK -->
+    <div class="frame-wrap">
+      <span class="frame-label">01 · Hook · 0-3s</span>
+      <div class="reel f1">
+        <div class="ph-top">
+          <div class="logo-mini">Calazans <span class="sub">Lumina</span></div>
+          <div class="timer">00:00</div>
+        </div>
+        <div class="hook"><span class="strike">Contratar</span><br><em>freelancer</em><br>nunca mais.</div>
+        <div class="stamp">3 PROMPTS · DENTRO</div>
+        <div class="ph-bot" style="color:var(--ivory);opacity:.5"><span>@calazanslumina</span><span>↓ swipe</span></div>
+      </div>
+    </div>
+
+    <!-- FRAME 2 — PROMPT 1 -->
+    <div class="frame-wrap">
+      <span class="frame-label">02 · Prompt 1 · 3-15s</span>
+      <div class="reel f2">
+        <div class="ph-top">
+          <div class="logo-mini">Calazans <span class="sub">Lumina</span></div>
+          <div class="timer">00:03</div>
+        </div>
+        <div class="label">— Proposta comercial</div>
+        <div class="num">01</div>
+        <div class="title">Proposta de <em style="font-style:normal;color:var(--red-bright)">R$ 5.000</em><br>em 30 segundos.</div>
+        <div class="prompt-box">
+          <div class="prompt-label">PROMPT</div>
+          <div class="prompt-text">"Escreva uma proposta comercial profissional pra [SERVIÇO] de [CLIENTE]. Objetivo: [META]. Tom: confiante. Inclua escopo, prazo, valor e garantia."</div>
+        </div>
+        <div class="ph-bot" style="color:var(--ivory);opacity:.5"><span>@calazanslumina</span><span>cola no ChatGPT</span></div>
+      </div>
+    </div>
+
+    <!-- FRAME 3 — PROMPT 2 -->
+    <div class="frame-wrap">
+      <span class="frame-label">03 · Prompt 2 · 15-27s</span>
+      <div class="reel f3">
+        <div class="ph-top">
+          <div class="logo-mini" style="color:var(--burgundy)">Calazans <span class="sub" style="color:var(--red)">Lumina</span></div>
+          <div class="timer">00:15</div>
+        </div>
+        <div class="label">— Email de cobrança</div>
+        <div class="num">02</div>
+        <div class="title">Cobrar cliente<br>sem <em style="font-style:normal;color:var(--red)">parecer chato.</em></div>
+        <div class="prompt-box">
+          <div class="prompt-label">PROMPT</div>
+          <div class="prompt-text">"Escreva email cordial cobrando [VALOR] de [CLIENTE] vencido há [X dias]. Lembre serviço entregue, ofereça parcelamento, mantenha relacionamento."</div>
+        </div>
+        <div class="ph-bot" style="color:var(--burgundy);opacity:.5"><span>@calazanslumina</span><span>salva esse</span></div>
+      </div>
+    </div>
+
+    <!-- FRAME 4 — PROMPT 3 -->
+    <div class="frame-wrap">
+      <span class="frame-label">04 · Prompt 3 · 27-39s</span>
+      <div class="reel f4">
+        <div class="ph-top">
+          <div class="logo-mini">Calazans <span class="sub" style="color:var(--ivory)">Lumina</span></div>
+          <div class="timer">00:27</div>
+        </div>
+        <div class="label">— Roteiro de venda</div>
+        <div class="num">03</div>
+        <div class="title">Vendedor <em style="font-style:normal">profissional</em><br>em 1 minuto.</div>
+        <div class="prompt-box">
+          <div class="prompt-label">PROMPT</div>
+          <div class="prompt-text">"Crie roteiro de ligação pra vender [PRODUTO] a [TIPO DE CLIENTE]. Use SPIN selling: situação, problema, implicação, necessidade. 4 minutos."</div>
+        </div>
+        <div class="ph-bot" style="color:var(--ivory);opacity:.7"><span>@calazanslumina</span><span>↓ próximo</span></div>
+      </div>
+    </div>
+
+    <!-- FRAME 5 — CTA -->
+    <div class="frame-wrap">
+      <span class="frame-label">05 · CTA · 39-45s</span>
+      <div class="reel f5">
+        <div class="ph-top">
+          <div class="logo-mini">Calazans <span class="sub">Lumina</span></div>
+          <div class="timer">00:39</div>
+        </div>
+        <div class="center">
+          <div class="kicker">+ 100 prompts no curso</div>
+          <p class="big">Pega tudo<br>por <em>R$ 10</em>.</p>
+          <div class="price">
+            <s>R$ 497</s>
+            <b>R$ 10</b>
+          </div>
+          <p class="cta-line">— link na bio. promo de hoje.</p>
+        </div>
+        <div class="ph-bot"><span>@calazanslumina</span><span>↗ link bio</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════════ SCRIPT ═══════════════════════ -->
+  <div class="section-title">
+    <h2>Script com timing</h2>
+    <span class="tag">~45 segundos</span>
+  </div>
+
+  <table class="script-table">
+    <thead>
+      <tr>
+        <th style="width:80px">Tempo</th>
+        <th style="width:170px">Shot / Tela</th>
+        <th>Fala (voice-over)</th>
+        <th style="width:280px">Texto na tela</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="time">0-3s</td>
+        <td class="shot">FRAME 01<br>Close-up nervoso<br>(você na câmera)</td>
+        <td class="voice">"Para de gastar com freelancer. Esses 3 prompts fazem o trabalho deles."</td>
+        <td class="onscreen">— "Contratar freelancer nunca mais."<br>(palavra "Contratar" cortada)</td>
+      </tr>
+      <tr>
+        <td class="time">3-15s</td>
+        <td class="shot">FRAME 02<br>Tela do ChatGPT<br>+ overlay do prompt</td>
+        <td class="voice">"Prompt um: proposta comercial. Cola, troca os colchetes, manda. Em 30 segundos sai uma proposta de R$ 5.000 melhor do que a do seu copywriter."</td>
+        <td class="onscreen">01<br>"Proposta de R$ 5.000 em 30 segundos."<br>+ box com prompt</td>
+      </tr>
+      <tr>
+        <td class="time">15-27s</td>
+        <td class="shot">FRAME 03<br>Tela cream (clean)<br>+ box dark do prompt</td>
+        <td class="voice">"Prompt dois: aquele cliente que sumiu? Cobra ele sem parecer mendigo. Esse email chega e o cara paga sem reclamar."</td>
+        <td class="onscreen">02<br>"Cobrar cliente sem parecer chato."<br>+ box com prompt</td>
+      </tr>
+      <tr>
+        <td class="time">27-39s</td>
+        <td class="shot">FRAME 04<br>Tela red (atenção)<br>+ box translúcido</td>
+        <td class="voice">"Prompt três: se você vende, esse é o ouro. Roteiro de venda SPIN selling em 60 segundos. Vendedor sênior de R$ 8 mil. Custo: zero."</td>
+        <td class="onscreen">03<br>"Vendedor profissional em 1 minuto."<br>+ box com prompt</td>
+      </tr>
+      <tr>
+        <td class="time">39-45s</td>
+        <td class="shot">FRAME 05<br>Tela centered<br>preço grande</td>
+        <td class="voice">"Tem mais 100 prompts assim no curso. R$ 10. Link da bio. Salva esse, vai virar dinheiro."</td>
+        <td class="onscreen">"Pega tudo por R$ 10."<br>R$ 497 cortado → R$ 10<br>"link na bio · promo de hoje"</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ═══════════════════════ CAPTION ═══════════════════════ -->
+  <div class="section-title">
+    <h2>Caption pronta</h2>
+    <span class="tag">2.200 chars max · primeiros 125 contam</span>
+  </div>
+
+  <div class="caption-box">
+    <h3>Caption</h3>
+    <pre id="caption">3 prompts que custariam R$ 1.000 cada se você pagasse freelancer.
+
+Salva esse antes que eu apague.
+
+Pega 100 prompts assim no meu ebook: R$ 10 (era R$ 497).
+Link na bio ↗
+
+Esses 3 prompts substituem:
+→ Copywriter de proposta (R$ 200 cada)
+→ Cobrador profissional (R$ 150 a cada email)
+→ Vendedor SPIN (R$ 8.000/mês)
+
+Você só precisa do ChatGPT (de graça) e dos prompts certos.
+
+A IA não vai te substituir.
+Quem usa IA vai.
+
+Comenta "EU" que te mando os 3 prompts no DM agora.
+
+—
+Rhaideline Calazans · founder Calazans Lumina
+Marketing digital + IA pra brasileiros nos EUA e Brasil</pre>
+    <button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('caption').innerText).then(()=>this.textContent='COPIADO ✓')">Copiar caption</button>
+  </div>
+
+  <!-- ═══════════════════════ HASHTAGS ═══════════════════════ -->
+  <div class="section-title">
+    <h2>Hashtags</h2>
+    <span class="tag">20-30 mix · 1º comentário</span>
+  </div>
+
+  <div class="caption-box">
+    <h3>Stack hashtags (cole no PRIMEIRO comentário, não na caption)</h3>
+    <p class="hashtags" id="hashtags">#chatgpt #promptengineering #iaparanegocios #marketingdigitalbrasil #brasileirosnoseua #calazanslumina #empreendedorismodigital #freelancerbrasil #produtividadecomia #gohighlevel #marketingdigitalbrasileiro #empreendedorbrasileiro #propostadevendas #vendasonline #copywritingbr #automacao #inteligenciaartificial #empresariobrasileiro #brasileirosemboston #brasileirosnamerica #marketingmassachusetts #cursoia #cursomarketing #ebookmarketing #cursogratis</p>
+    <button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('hashtags').innerText).then(()=>this.textContent='COPIADO ✓')">Copiar hashtags</button>
+  </div>
+
+  <!-- ═══════════════════════ MÚSICA ═══════════════════════ -->
+  <div class="section-title">
+    <h2>Música sugerida</h2>
+    <span class="tag">tendência · áudio nativo</span>
+  </div>
+
+  <div class="music-suggest">
+    <div class="music-card">
+      <h4>Aesthetic / Editorial</h4>
+      <p>"Cornfield Chase" (Hans Zimmer · trending instrumental). Confere autoridade, vibe premium. Volume baixo (-12dB) abaixo da voz.</p>
+    </div>
+    <div class="music-card">
+      <h4>Punchy / Sales</h4>
+      <p>Áudios trending da semana — abre o Reels, vai em "Audio", filtra por "Trending". Pega um remix lo-fi/hip-hop instrumental. Reels usa áudio trending pega 3-5x mais alcance.</p>
+    </div>
+    <div class="music-card">
+      <h4>Direto sem música</h4>
+      <p>Só sua voz + áudio ambiente. Mais íntimo, mais conversão pra educacional. Pode adicionar 1 "swoosh" sound effect em cada transição de frame (free no CapCut).</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════ COMO PRODUZIR ═══════════════════════ -->
+  <div class="section-title">
+    <h2>Como produzir (15 min)</h2>
+    <span class="tag">passo a passo</span>
+  </div>
+
+  <div class="caption-box">
+    <h3>Workflow rápido (sem editor profissional)</h3>
+    <pre>1. GRAVAR (5 min)
+   • Câmera frontal celular, 4K, vertical 9:16
+   • Iluminação: janela atrás de você (NÃO de frente)
+   • Microfone do fone de ouvido pega melhor som
+   • Grave 5 takes de cada frase do script — usa o melhor
+
+2. EXPORTAR OS 5 FRAMES (3 min)
+   • Abre este HTML no Chrome
+   • DevTools (F12) → seleciona cada .reel
+   • Capture node screenshot → salva 5 PNGs 1080×1920
+
+3. EDITAR (5 min)
+   • CapCut (free) ou InShot (free)
+   • Drop os 5 takes na timeline
+   • Coloca cada PNG como overlay no momento da fala
+   • Transições: "swoosh" 0.2s entre frames
+   • Música em -12dB, voz em 0dB
+
+4. EXPORTAR + POSTAR (2 min)
+   • Resolução: 1080×1920, 30fps, MP4
+   • Posta como Reels (não como story)
+   • Cover: usa o Frame 1 como capa
+   • Caption + hashtags no primeiro comentário
+   • Marca "@calazanslumina"
+
+5. NAS 24H SEGUINTES
+   • Responde TODO comentário em até 10min (algoritmo)
+   • Comentário "EU"? Manda DM com os 3 prompts
+   • Anota: comentário "EU" = lead quente pro ebook</pre>
+  </div>
+
+</div>
+
+</body>
+</html>

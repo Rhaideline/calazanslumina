@@ -178,8 +178,8 @@ export default async function CursoCidadePage({ params }: { params: Promise<{ sl
 
             <ScrollReveal delay={200}>
               <div className="relative bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm">
-                <div className="flex items-center justify-center mb-6">
-                  <Image src={curso.imagem} alt={curso.nome} width={100} height={100} className="object-contain opacity-80" />
+                <div className="relative w-full aspect-[8/5] rounded-xl overflow-hidden mb-6">
+                  <Image src={curso.imagem} alt={curso.nome} fill sizes="(max-width:768px) 100vw, 400px" className="object-cover" />
                 </div>
                 <h3 className="font-serif text-lg font-bold text-white mb-4">O que você vai aprender:</h3>
                 <ul className="space-y-3">

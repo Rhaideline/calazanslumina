@@ -111,22 +111,15 @@ export default function CursosPage() {
                     </div>
                   ) : null}
 
-                  {/* Image area */}
-                  <Link href={`/cursos/${curso.slug}`} className="group">
-                    <div className="relative h-48 bg-brand-dark flex items-center justify-center overflow-hidden">
-                      <Image
-                        src={curso.imagem}
-                        alt={curso.nome}
-                        width={120}
-                        height={120}
-                        className="object-contain opacity-30 group-hover:opacity-50 transition-opacity"
-                      />
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <p className="text-white font-serif text-xl font-bold text-center px-6 leading-snug">
-                          {curso.nome}
-                        </p>
-                      </div>
-                    </div>
+                  {/* Image area — full-bleed cover */}
+                  <Link href={`/cursos/${curso.slug}`} className="group block relative aspect-[8/5] bg-brand-dark overflow-hidden">
+                    <Image
+                      src={curso.imagem}
+                      alt={curso.nome}
+                      fill
+                      sizes="(max-width:768px) 100vw, (max-width:1280px) 50vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
                   </Link>
 
                   {/* Content */}
