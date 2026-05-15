@@ -89,6 +89,12 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  other: {
+    'geo.region': 'US-MA',
+    'geo.placename': 'Framingham, Massachusetts',
+    'geo.position': '42.2793;-71.4162',
+    'ICBM': '42.2793, -71.4162',
+  },
 }
 
 const websiteJsonLd = {
@@ -176,6 +182,38 @@ const organizationJsonLd = {
   },
 }
 
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': 'https://calazanslumina.com.br/#rhaideline',
+  name: 'Rhaideline Calazans',
+  givenName: 'Rhaideline',
+  familyName: 'Calazans',
+  jobTitle: 'Founder & CEO',
+  worksFor: { '@id': 'https://calazanslumina.com.br/#organization' },
+  url: 'https://calazanslumina.com.br/sobre',
+  sameAs: [
+    'https://www.instagram.com/calazanslumina',
+    'https://www.linkedin.com/in/rhaideline-calazans',
+  ],
+  knowsAbout: [
+    'GoHighLevel',
+    'Marketing Digital',
+    'SEO Local',
+    'Answer Engine Optimization',
+    'CRM Automation',
+    'WhatsApp Business API',
+    'Google Business Profile',
+    'Marketing para Brasileiros nos Estados Unidos',
+  ],
+  alumniOf: 'Marketing Digital — Autodidata',
+  award: ['8+ anos de experiência em marketing digital', '+50 sub-contas GoHighLevel ativas'],
+  homeLocation: {
+    '@type': 'Place',
+    address: { '@type': 'PostalAddress', addressLocality: 'Framingham', addressRegion: 'MA', addressCountry: 'US' },
+  },
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" className={`${dmSerif.variable} ${dmSans.variable}`}>
@@ -190,6 +228,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
         />
       </head>
       <body className="min-h-screen flex flex-col" suppressHydrationWarning>

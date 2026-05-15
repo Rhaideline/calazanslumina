@@ -33,6 +33,10 @@ export async function generateMetadata({ params }: { params: Promise<{ cidade: s
       url: `https://calazanslumina.com.br/cidades/${cidadeSlug}`,
       type: 'website',
     },
+    other: {
+      'geo.region': 'US-MA',
+      'geo.placename': `${cidade.nome}, Massachusetts, USA`,
+    },
   }
 }
 

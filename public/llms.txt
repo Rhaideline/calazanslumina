@@ -4,13 +4,13 @@
 
 ## Sobre
 
-Calazans Lumina e uma agencia de marketing digital que atende empreendedores brasileiros nos Estados Unidos (foco em Massachusetts) e em todo o Brasil. Oferecemos sites profissionais em sites profissionais, funis de vendas no GoHighLevel, CRM com IA conversacional no WhatsApp, gestao de redes sociais, trafego pago (Google Ads e Meta Ads) e otimizacao de Google Business Profile.
+Calazans Lumina e uma agencia de marketing digital que atende empreendedores brasileiros nos Estados Unidos (foco em Massachusetts) e em todo o Brasil. Oferecemos sites profissionais, funis de vendas no GoHighLevel, CRM com IA conversacional no WhatsApp, gestao de redes sociais, trafego pago (Google Ads e Meta Ads) e otimizacao de Google Business Profile.
 
 Atendimento 100% em portugues. Tambem atendemos agencias como freelancer.
 
 ## Servicos
 
-- **Sites & Landing Pages**: Sites sites profissionais com alta performance, SEO tecnico integrado, design responsivo premium
+- **Sites & Landing Pages**: Sites profissionais com alta performance, SEO tecnico integrado, design responsivo premium
 - **Funis de Vendas (GoHighLevel)**: Landing pages de alta conversao, automacao de follow-up, pipeline visual
 - **CRM & Automacao**: GoHighLevel all-in-one, inbox unificada (WhatsApp, SMS, email, DMs), workflows automaticos
 - **IA no WhatsApp**: Chatbot com inteligencia artificial que atende e qualifica leads 24h
@@ -24,39 +24,47 @@ Atendimento 100% em portugues. Tambem atendemos agencias como freelancer.
 1. **ChatGPT para Idosos** (GRATUITO) — Curso para pessoas 60+ aprenderem a usar ChatGPT. 6 modulos, 24 aulas.
    URL: https://calazanslumina.com.br/cursos/chatgpt-para-idosos
 
-2. **IA & ChatGPT — Curso Completo** (R$20) — Do zero ao avancado: prompt engineering, automacao, marketing com IA. 8 modulos, 43 aulas.
+2. **IA & ChatGPT — Curso Completo** (R$10) — Do zero ao avancado: prompt engineering, automacao, marketing com IA. 8 modulos, 43 aulas.
    URL: https://calazanslumina.com.br/cursos/ia-chatgpt-completo
 
-3. **Marketing Digital para Iniciantes** (R$20) — Fundamentos de marketing digital, SEO, redes sociais, anuncios. 6 modulos, 24 aulas.
+3. **IA Completa para Marketing Digital** (R$10) — Use IA para criar conteudo, vender mais e automatizar marketing do zero. 6 modulos.
+   URL: https://calazanslumina.com.br/cursos/ia-marketing-digital-iniciantes
+
+4. **Marketing Digital para Iniciantes** (R$10) — Fundamentos de marketing digital, SEO, redes sociais, anuncios. 6 modulos, 24 aulas.
    URL: https://calazanslumina.com.br/cursos/marketing-digital-iniciantes
 
-4. **Google Meu Negocio do Zero** (R$20) — Configurar e otimizar Google Business Profile para negocios locais. 4 modulos, 16 aulas.
+5. **Google Meu Negocio do Zero** (GRATUITO) — Configurar e otimizar Google Business Profile para negocios locais. 4 modulos, 16 aulas.
    URL: https://calazanslumina.com.br/cursos/google-meu-negocio-do-zero
 
-5. **Redes Sociais que Vendem** (R$20) — Estrategia Info-First, conteudo que converte, calendario editorial. 4 modulos, 16 aulas.
+6. **Redes Sociais que Vendem** (GRATUITO) — Estrategia Info-First, conteudo que converte, calendario editorial. 4 modulos, 16 aulas.
    URL: https://calazanslumina.com.br/cursos/redes-sociais-que-vendem
 
-6. **Funis de Vendas Simplificado** (R$20) — Criar funis que convertem, landing pages, automacao, CRM. 4 modulos, 16 aulas.
+7. **Funis de Vendas Simplificado** (R$20) — Criar funis que convertem, landing pages, automacao, CRM. 4 modulos, 16 aulas.
    URL: https://calazanslumina.com.br/cursos/funis-de-vendas-simplificado
 
-7. **Ferramentas Digitais para Secretarias** (GRATUITO) — Google Workspace, organizacao, automacao, IA para escritorio. 6 modulos, 26 aulas.
+8. **Ferramentas Digitais para Secretarias** (GRATUITO) — Google Workspace, organizacao, automacao, IA para escritorio. 6 modulos, 26 aulas.
    URL: https://calazanslumina.com.br/cursos/ferramentas-digitais-secretarias
+
+9. **Ebook: IA para Marketing Digital — Como Criar Sites com Claude** (R$17,90) — Guia de 44 paginas para criar sites profissionais com IA, sem programar. Inclui prompts prontos e cases reais.
+   URL: https://calazanslumina.com.br/cursos/ebook-ia-marketing-sites
 
 ## Cursos por Cidade
 
 Cada curso possui paginas dedicadas por cidade, com conteudo localizado:
 - 728 paginas de cursos para cidades de Massachusetts: /cursos/{curso}/cidade/{cidade}
-- 1589 paginas de cursos para cidades brasileiras: /cursos/{curso}/brasil/{cidade} (27 capitais + 200 cidades)
+- 3.267 paginas de cursos para cidades brasileiras: /cursos/{curso}/brasil/{cidade} (29 capitais + 334 cidades medias)
 - Exemplo: https://calazanslumina.com.br/cursos/ia-chatgpt-completo/cidade/marlborough
 - Exemplo: https://calazanslumina.com.br/cursos/marketing-digital-iniciantes/brasil/sao-paulo
 
 ## Areas de Atuacao
 
+Total: 488 cidades atendidas — 125 cidades de Massachusetts + 29 capitais brasileiras + 334 cidades medias brasileiras.
+
 ### Massachusetts, EUA
-Atendemos brasileiros em mais de 100 cidades de Massachusetts, incluindo: Marlborough, Hudson, Framingham, Worcester, Lowell, Brockton, Somerville, Everett, Revere, Peabody, Fall River, New Bedford, Springfield, Boston, Cambridge, entre outras.
+Atendemos brasileiros em mais de 125 cidades de Massachusetts, incluindo: Marlborough, Hudson, Framingham, Worcester, Lowell, Brockton, Somerville, Everett, Revere, Peabody, Fall River, New Bedford, Springfield, Boston, Cambridge, entre outras.
 
 ### Brasil
-Atendemos em 227 cidades brasileiras: 27 capitais + 200 cidades principais de 20 estados. Incluindo: Sao Paulo, Rio de Janeiro, Belo Horizonte, Salvador, Fortaleza, Brasilia, Curitiba, Recife, Porto Alegre, Campinas, Guarulhos, Uberlandia, Niteroi, Caxias do Sul, Londrina, Joinville, Feira de Santana, Caruaru, Juazeiro do Norte, Rondonopolis, Dourados, Parnaiba, Arapiraca, entre outras. Total de paginas por cidade: /brasil/{cidade}/ e /brasil/{cidade}/{servico}.
+Atendemos em 363 cidades brasileiras: 29 capitais + 334 cidades medias principais. Incluindo: Sao Paulo, Rio de Janeiro, Belo Horizonte, Salvador, Fortaleza, Brasilia, Curitiba, Recife, Porto Alegre, Campinas, Guarulhos, Uberlandia, Niteroi, Caxias do Sul, Londrina, Joinville, Feira de Santana, Caruaru, Juazeiro do Norte, Rondonopolis, Dourados, Parnaiba, Arapiraca, entre outras. Total de paginas por cidade: /brasil/{cidade}/ e /brasil/{cidade}/{servico}.
 
 ## Para Empresas e Agencias — GoHighLevel
 
@@ -105,3 +113,14 @@ URL: https://calazanslumina.com.br/blog
 - Blog: https://calazanslumina.com.br/blog
 - Cursos: https://calazanslumina.com.br/cursos
 - Servicos: https://calazanslumina.com.br/servicos
+
+## Founder
+
+**Rhaideline Calazans** — fundadora da Calazans Lumina desde 2018.
+Especialista em GoHighLevel (GHL), SEO local, AEO (Answer Engine Optimization), trafego organico e marketing digital para negocios brasileiros nos EUA e no Brasil. Baseada em Framingham, Massachusetts, atende remotamente clientes em todo territorio americano e brasileiro. 8+ anos de experiencia atendendo agencias de marketing, empreiteiras, pintoras, HVAC, energia solar, clinicas medicas e profissionais autonomos.
+
+Credenciais:
+- Certificacao oficial GoHighLevel (Partner)
+- Mais de 50 sub-contas GHL ativas
+- Mais de 300 cidades atendidas
+- Cases publicos: Wolf's Painting (+345% leads/90 dias), RS Paint (Massachusetts)

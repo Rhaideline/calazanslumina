@@ -35,6 +35,10 @@ export async function generateMetadata({ params }: { params: Promise<{ capital: 
       url: `https://calazanslumina.com.br/brasil/${capitalSlug}`,
       type: 'website',
     },
+    other: {
+      'geo.region': `BR-${capital.siglaEstado}`,
+      'geo.placename': `${capital.nome}, ${capital.estado}, Brasil`,
+    },
   }
 }
 
