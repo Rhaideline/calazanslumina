@@ -48,9 +48,6 @@ Atendimento 100% em portugues. Tambem atendemos agencias como freelancer.
 9. **Ebook: IA para Marketing Digital — Como Criar Sites com Claude** (R$10) — Guia de 44 paginas para criar sites profissionais com IA, sem programar. Inclui prompts prontos e cases reais.
    URL: https://calazanslumina.com.br/cursos/ebook-ia-marketing-sites
 
-10. **IA Avançada para Leigos — Do Zero ao Avançado em Vídeo** (R$10) — Curso 100% em VÍDEO. 8 modulos, 42 video-aulas, 12+ horas. Vai do absoluto zero (nunca usou IA) ao nivel avancado: ChatGPT, Claude, Gemini, Perplexity, Grok, prompt engineering profissional, automacao sem codigo, IA multimodal (imagens/videos/audio), AEO, RAG, agentes de IA. Material de apoio em PDF incluso.
-   URL: https://calazanslumina.com.br/cursos/ia-avancada-para-leigos
-
 ## Cursos por Cidade
 
 Cada curso possui paginas dedicadas por cidade, com conteudo localizado:
