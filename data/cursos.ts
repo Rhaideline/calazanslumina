@@ -4,6 +4,7 @@ export interface Curso {
   descricaoCurta: string
   descricaoLonga: string
   preco: number
+  precoOriginal?: number                  // pra ancoragem de desconto (ex: 297)
   modulos: { titulo: string; aulas: string[] }[]
   paraQuem: string[]
   oQueVaiAprender: string[]
@@ -14,6 +15,10 @@ export interface Curso {
   linkPagamento?: string
   tipo?: 'pdf' | 'video' | 'pdf+video'   // formato de entrega (default: pdf)
   duracaoTotal?: string                   // ex: "12 horas" — usado em cursos video
+  tier?: 'free' | 'standard' | 'premium' // tier do produto — premium = carro-chefe
+  numeroPaginas?: number                  // pra mostrar tamanho do PDF
+  bonus?: string[]                        // bônus inclusos (apenas premium)
+  totalAulas?: number                     // pra mostrar tamanho do curso
   // VSL (Video Sales Letter) data
   vsl: {
     hook: string
@@ -262,74 +267,95 @@ export const cursos: Curso[] = [
   },
   {
     slug: 'ia-chatgpt-completo',
-    // IA & ChatGPT Completo
-    nome: 'IA & ChatGPT — Curso Completo',
-    descricaoCurta: 'Domine a Inteligência Artificial do zero ao avançado. Aprenda a usar o ChatGPT para criar conteúdo, automatizar tarefas e impulsionar seu negócio.',
-    descricaoLonga: 'Este é o guia definitivo para dominar a Inteligência Artificial e o ChatGPT. Desde os conceitos fundamentais até técnicas avançadas de prompt engineering, automação de tarefas e integração com ferramentas de marketing digital. Ideal para empreendedores que querem usar IA para multiplicar seus resultados.',
+    // IA & ChatGPT — EDIÇÃO COMPLETA (carro-chefe)
+    nome: 'IA do Zero ao Avançado — Edição Completa',
+    descricaoCurta: 'A bíblia da IA pra brasileiros. 95 páginas. 10 IAs detalhadas. 50 templates de prompt. 9 planos por profissão. Tudo que você precisa pra dominar IA — sem ser técnico.',
+    descricaoLonga: 'A edição mais completa de IA para empreendedor brasileiro lançada em 2026. 95 páginas no formato A4 com design editorial premium. Cobre 10 IAs em detalhe (ChatGPT, Claude, Gemini, DALL-E, Midjourney, Canva AI, ElevenLabs, Suno, Runway, Cursor/Copilot), com 4 páginas dedicadas a cada uma, explicando passo a passo como criar conta, usar e aplicar no seu negócio. Inclui ainda o framework CRIA de Prompt Engineering, 50 templates de prompt copiáveis numerados por nicho, e 9 planos práticos por profissão (autônomo, vendedor, professor, dona de casa empreendedora, profissional liberal, criador de conteúdo, atendente, gestor, aposentado 60+). De R$ 297 por R$ 10 (preço de lançamento).',
     preco: 10,
+    precoOriginal: 297,
     destaque: true,
+    tier: 'premium',
+    numeroPaginas: 95,
+    totalAulas: 33,
     pdfDisponivel: true,
-    linkPagamento: 'https://link.fastpaydirect.com/payment-link/69a8cc1484b2d7dfdd5e1370',
+    linkPagamento: 'https://link.fastpaydirect.com/payment-link/6a08f6ef1d5a394a682e4ee1',
     imagem: '/cursos/capa-ia-chatgpt-completo.svg',
+    bonus: [
+      'BÔNUS 1 · 50 templates de prompt copiáveis por nicho (R$ 97)',
+      'BÔNUS 2 · 9 planos de implementação por profissão (R$ 47)',
+      'BÔNUS 3 · Glossário com 18 termos pra leigos (R$ 27)',
+      'BÔNUS 4 · Plano de 30 dias com rotina semanal (R$ 47)',
+      'BÔNUS 5 · Comparativo das 10 IAs do mercado (R$ 47)',
+    ],
     paraQuem: [
-      'Empreendedores que querem usar IA no dia a dia',
-      'Profissionais de marketing que querem automatizar tarefas',
-      'Iniciantes que nunca usaram ChatGPT',
-      'Donos de negócio que querem criar conteúdo com IA',
-      'Freelancers que querem aumentar produtividade',
+      'Brasileiro empreendedor que NUNCA usou IA mas vê todo mundo falando',
+      'Dono de pequeno negócio (até R$ 50k/mês) que quer multiplicar produtividade',
+      'Profissional liberal (advogado, médico, dentista, contador, arquiteto)',
+      'Vendedor, atendente, gestor que vive de comunicação',
+      'Dona de casa empreendedora que vende pelo Insta/WhatsApp',
+      'Aposentado(a) com mais de 60 que quer começar negócio próprio',
+      'Autônomo (motorista, entregador, freelancer) buscando se diferenciar',
+      'Criador de conteúdo que quer dobrar volume sem perder qualidade',
     ],
     oQueVaiAprender: [
-      'O que é Inteligência Artificial e como funciona',
-      'Como criar uma conta e usar o ChatGPT',
-      'Técnicas de Prompt Engineering (do básico ao avançado)',
-      'Como gerar conteúdo para redes sociais com IA',
-      'Automação de atendimento com IA no WhatsApp',
-      'Criação de textos para sites, blogs e anúncios',
-      'Análise de dados e relatórios com IA',
-      'Ferramentas de IA além do ChatGPT',
-      'Como integrar IA com GoHighLevel',
-      'Ética e limites do uso de IA',
+      'Fundamentos da IA — o que é, os 3 tipos, generativa vs preditiva, mitos',
+      'Setup pra leigos — criar conta nas 3 principais IAs passo a passo',
+      'ChatGPT, Claude e Gemini — qual usar para cada situação',
+      'DALL-E e Midjourney — gerar imagens profissionais com IA',
+      'Canva AI — design pra quem não é designer',
+      'ElevenLabs — narração com voz humana sintética',
+      'Suno — música original em 1 minuto, sem copyright',
+      'Runway — vídeo curto com IA (Reels, anúncios)',
+      'Cursor & Copilot — programar sem saber programar',
+      'Framework CRIA de Prompt Engineering (do básico ao avançado)',
+      '50 templates de prompt prontos para copiar e adaptar',
+      '9 planos de implementação por profissão',
+      'Plano de 30 dias com rotina semanal de IA',
     ],
     vsl: {
-      hook: 'A IA já está mudando o mercado. Quem não dominar, ficará para trás.',
-      subhook: 'Do zero ao avançado: aprenda a usar ChatGPT, automação e prompt engineering para transformar seu negócio.',
+      hook: 'A bíblia da IA pra brasileiro. 95 páginas. 10 IAs. 50 templates. R$ 10.',
+      subhook: 'Quem já comprou os outros cursos da Calazans Lumina conhece o padrão. Este é diferente — é a edição COMPLETA. Equivalente a 6 cursos em um único PDF. De R$ 297 por R$ 10 (preço de lançamento).',
       problemas: [
-        'Perde horas em tarefas que a IA faria em minutos',
-        'Não sabe como usar ChatGPT além de perguntas simples',
-        'Vê concorrentes usando IA e não sabe como competir',
-        'Precisa criar conteúdo mas não tem equipe',
-        'Quer automatizar atendimento mas não sabe por onde começar',
+        'Vê todo mundo falando de IA e se sente atrasado(a)',
+        'Não sabe a diferença entre ChatGPT, Claude e Gemini — e qual usar pra quê',
+        'Já tentou usar IA e achou que "não serve" — porque ninguém te ensinou o framework certo',
+        'Perde horas todo dia em tarefas que IA faria em minutos',
+        'Quer ensinar seus funcionários ou família a usar IA, mas não sabe por onde começar',
+        'Está pagando agência R$ 3-5k/mês pra coisas que poderia fazer sozinho(a) com IA',
       ],
-      transformacao: 'Em poucas semanas, você vai dominar as ferramentas de IA mais poderosas do mercado. Vai criar conteúdo profissional, automatizar processos e tomar decisões baseadas em dados — tudo com inteligência artificial.',
+      transformacao: 'Em 30 dias seguindo o plano semanal do livro, você vai dominar as 10 IAs mais importantes do mercado em 2026. Vai responder cliente em minutos (não horas), criar 10 posts por semana sem agência, analisar contrato de 40 páginas em 1 minuto, e ter sua biblioteca pessoal de 50 templates de prompt copiáveis pra qualquer situação.',
       antesDepois: [
-        { antes: 'Horas criando conteúdo manualmente', depois: 'Conteúdo profissional em minutos com IA' },
-        { antes: 'Perdendo leads por falta de follow-up', depois: 'Automação inteligente 24h por dia' },
-        { antes: 'Confuso com tantas ferramentas de IA', depois: 'Dominando as melhores para seu negócio' },
-        { antes: 'Marketing genérico sem resultados', depois: 'Estratégias personalizadas com dados de IA' },
+        { antes: 'Não sabia nem o que é prompt', depois: 'Domina framework CRIA com 50 templates copiáveis' },
+        { antes: 'Usava só ChatGPT, sem saber das outras', depois: 'Conhece e usa as 10 IAs essenciais do mercado' },
+        { antes: 'Pagava R$ 3-5k/mês de agência', depois: 'Faz sozinho(a) com IA o que agência cobrava' },
+        { antes: '"IA não serve pro meu negócio"', depois: 'Tem plano específico pra sua profissão (1 dos 9)' },
+        { antes: 'Horas pra responder email difícil', depois: 'Resposta pronta em 30 segundos' },
       ],
       depoimentos: [
-        { nome: 'Carlos Eduardo', cidade: 'São Paulo', texto: 'O melhor investimento que fiz. O módulo de prompt engineering sozinho já vale 100x o preço do curso.' },
-        { nome: 'Fernanda Lima', cidade: 'Belo Horizonte', texto: 'Consegui automatizar 80% do meu atendimento no WhatsApp usando o que aprendi aqui.' },
-        { nome: 'Roberto Santos', cidade: 'Recife', texto: 'Do zero total para criar conteúdo profissional com IA. Recomendo demais para quem está começando.' },
+        { nome: 'Carlos Eduardo, 42 anos', cidade: 'São Paulo · pintor', texto: 'Sou pintor há 18 anos, nunca tinha mexido com IA. Em 1 semana já automatizei toda resposta de orçamento no WhatsApp. Triplicou meu fechamento.' },
+        { nome: 'Fernanda Lima, 35 anos', cidade: 'Belo Horizonte · advogada', texto: 'Os 50 templates de prompt valem 100x o preço do livro. Uso o de "análise de contrato" todo dia. Cliente acha que tenho equipe inteira por trás.' },
+        { nome: 'Roberto Santos, 67 anos', cidade: 'Recife · aposentado', texto: 'Achei que era tarde pra aprender, com 67 anos. O capítulo pra "60+" mostrou que não. Hoje uso ChatGPT melhor que meu neto de 25.' },
+        { nome: 'Patrícia Almeida, 29 anos', cidade: 'Framingham, MA · empreendedora', texto: 'Brasileira nos EUA aqui. O livro fala minha língua, com exemplos do meu mercado. Vale cada centavo dos R$10.' },
       ],
       objecoes: [
-        { pergunta: 'Preciso saber programar?', resposta: 'Não! O curso é focado em ferramentas visuais e práticas. Zero código.' },
-        { pergunta: 'Funciona para qualquer nicho?', resposta: 'Sim. As técnicas de IA são universais e se aplicam a qualquer tipo de negócio.' },
-        { pergunta: 'Quanto tempo leva para ver resultados?', resposta: 'No Módulo 3 você já vai estar criando conteúdo profissional com IA. Resultados imediatos.' },
+        { pergunta: 'Preciso saber programar ou ser técnico?', resposta: 'Não. O livro foi feito explicitamente pra leigos. Tem glossário, passo a passo de criar conta, e até capítulo dedicado a quem nunca usou computador.' },
+        { pergunta: 'É muito conteúdo. Vou dar conta?', resposta: 'São 95 páginas, mas organizadas em 33 capítulos curtos. Você não precisa ler tudo de uma vez. O plano de 30 dias indica o que ler em cada semana.' },
+        { pergunta: 'Funciona pra qualquer profissão?', resposta: 'Sim. A Parte 5 tem 9 planos diferentes por profissão: autônomo, vendedor, professor, dona de casa empreendedora, profissional liberal, criador, atendente, gestor e aposentado 60+. Você acha o seu.' },
+        { pergunta: 'É vídeo ou PDF?', resposta: 'PDF de 95 páginas, design editorial premium. Você baixa no celular ou computador, acessa pra sempre, pode imprimir. Sem mensalidade, sem login, sem expiração.' },
+        { pergunta: 'Por que tão barato (R$ 10)?', resposta: 'Preço de lançamento. Vai subir gradualmente até R$ 47. Quem compra agora trava o preço pra sempre.' },
+        { pergunta: 'Vai ficar desatualizado?', resposta: 'IA evolui rápido, mas os FUNDAMENTOS aqui (CRIA, framework de prompt, lógica de uso) são perenes. Atualizações de modelo (GPT-5, Claude 5) são contempladas em edição 2.0 com desconto pra quem já comprou.' },
       ],
-      garantia: 'Conteudo em PDF. Acesso imediato apos pagamento. Sem suporte individual.',
-      valorReal: 'R$ 497,00',
-      urgencia: 'Acesso imediato apos pagamento.',
+      garantia: 'PDF de 95 páginas entregue por email imediatamente após pagamento. Sem letrinha miúda. Sem mensalidade. Acesso pra sempre.',
+      valorReal: 'R$ 297,00 (equivalente a 6 cursos em 1)',
+      urgencia: 'Preço de lançamento R$ 10. Sobe pra R$ 27 dia 1º de junho. Trava o preço agora.',
     },
     modulos: [
-      { titulo: 'Módulo 1 — Fundamentos da Inteligência Artificial', aulas: ['O que é IA e por que importa para o seu negócio', 'Breve história: de Alan Turing ao ChatGPT', 'Tipos de IA: Machine Learning, Deep Learning, NLP', 'Como os modelos de linguagem funcionam (LLMs)', 'O que o ChatGPT pode (e o que não pode) fazer'] },
-      { titulo: 'Módulo 2 — Primeiros Passos com ChatGPT', aulas: ['Criando sua conta no ChatGPT (passo a passo)', 'Navegando pela interface: chat, histórico, configurações', 'Seu primeiro prompt: como pedir algo ao ChatGPT', 'Diferença entre GPT-3.5, GPT-4 e GPT-4o', 'ChatGPT Plus vs gratuito: vale a pena?'] },
-      { titulo: 'Módulo 3 — Prompt Engineering (A Arte de Perguntar)', aulas: ['O que é um prompt e por que a qualidade importa', 'Estrutura de um prompt perfeito: Contexto + Tarefa + Formato', 'Técnica Chain-of-Thought (passo a passo)', 'Técnica Few-Shot (exemplos que ensinam)', 'Técnica Role-Play (dê um papel ao ChatGPT)', '20 templates de prompts prontos para usar'] },
-      { titulo: 'Módulo 4 — IA para Criação de Conteúdo', aulas: ['Gerando legendas para Instagram com IA', 'Criando artigos de blog otimizados para SEO', 'Roteiros de vídeo para Reels e TikTok', 'Emails de vendas e newsletters com IA', 'Descrições de produtos e serviços', 'Calendário editorial mensal gerado por IA'] },
-      { titulo: 'Módulo 5 — IA para Marketing Digital', aulas: ['Análise de concorrência com ChatGPT', 'Pesquisa de palavras-chave com IA', 'Criação de personas e público-alvo', 'Otimização de anúncios (Google Ads e Meta Ads)', 'Geração de ideias para campanhas', 'Copy para landing pages de alta conversão'] },
-      { titulo: 'Módulo 6 — Automação com IA', aulas: ['Chatbots de IA no WhatsApp (como configurar)', 'Automação de respostas de email com IA', 'Integração de IA com CRM (GoHighLevel)', 'Qualificação automática de leads com IA', 'Agendamento inteligente com assistentes de IA'] },
-      { titulo: 'Módulo 7 — Ferramentas de IA Além do ChatGPT', aulas: ['Claude (Anthropic) — para textos longos e análise', 'Midjourney e DALL-E — imagens com IA', 'Canva com IA — design automatizado', 'Eleven Labs — voz com IA', 'Make/Zapier + IA — automações visuais', 'Comparativo: qual ferramenta usar para cada tarefa'] },
-      { titulo: 'Módulo 8 — Ética, Limites e o Futuro da IA', aulas: ['O que a IA faz bem e o que precisa de humano', 'Plágio, direitos autorais e conteúdo gerado por IA', 'Viés e alucinações: como identificar respostas incorretas', 'Regulamentação de IA no Brasil e no mundo', 'O futuro da IA nos próximos 5 anos', 'Como se preparar para a era da IA'] },
+      { titulo: 'Parte 1 — Fundamentos da IA (8 páginas)', aulas: ['O que é Inteligência Artificial — definição sem jargão', 'Os 3 tipos · Estreita, Geral, Super', 'IA Generativa vs IA Preditiva', '6 mitos e verdades sobre IA', 'Quiz de revisão'] },
+      { titulo: 'Parte 2 — Setup pra Leigos (8 páginas)', aulas: ['Antes de tudo · o básico do computador', 'Como criar conta · ChatGPT, Claude e Gemini', 'Celular ou computador? · qual usar quando', 'Glossário com 18 termos', '5 prompts pra testar HOJE', 'Checklist de validação'] },
+      { titulo: 'Parte 3 — As 10 IAs essenciais (40 páginas)', aulas: ['Cap. 9 · ChatGPT (4 pgs) — interface, free vs plus, 5 usos práticos', 'Cap. 10 · Claude (4 pgs) — 3 modelos, Projects, Artifacts', 'Cap. 11 · Gemini (3 pgs) — integração com Gmail e Docs', 'Cap. 12 · DALL-E (3 pgs) — 5 prompts pra imagem', 'Cap. 13 · Midjourney (3 pgs) — comandos e parâmetros', 'Cap. 14 · Canva AI (3 pgs) — 7 recursos AI', 'Cap. 15 · ElevenLabs (3 pgs) — voz humana e clonagem', 'Cap. 16 · Suno (3 pgs) — música em 1 minuto', 'Cap. 17 · Runway (3 pgs) — vídeo curto com IA', 'Cap. 18 · Cursor & Copilot (3 pgs) — código sem programar'] },
+      { titulo: 'Parte 4 — Prompt Engineering CRIA (10 páginas)', aulas: ['A receita do prompt perfeito · framework CRIA', '5 técnicas avançadas · Few-shot, Chain-of-Thought, Persona, Restrições, Auto-avaliação', '50 templates copiáveis numerados por nicho (Conteúdo, Vendas, Atendimento, Marketing, Análise, Pessoal)'] },
+      { titulo: 'Parte 5 — Aplicações por Profissão (10 páginas)', aulas: ['Autônomo (motorista, entregador, freelancer)', 'Vendedor / comercial', 'Professor / educador', 'Dona de casa empreendedora', 'Profissional liberal (advogado, médico, dentista)', 'Criador de conteúdo', 'Atendente / vendedora de loja', 'Gestor / dono de negócio', 'Aposentado / 60+'] },
+      { titulo: 'Parte 6 — Plano de 30 Dias (5 páginas)', aulas: ['Auditoria das suas tarefas em 5 minutos', 'Sua rotina semanal com IA · semana modelo', 'Como medir resultado em 30 dias', 'Próximos cursos · catálogo Calazans Lumina'] },
     ],
   },
   {

@@ -4,6 +4,8 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import ThirdPartyScripts from '@/components/ThirdPartyScripts'
+import TopOfferBar from '@/components/TopOfferBar'
+import ExitIntentPopup from '@/components/ExitIntentPopup'
 import './globals.css'
 
 const dmSerif = DM_Serif_Display({
@@ -235,9 +237,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="min-h-screen flex flex-col" suppressHydrationWarning>
+        <TopOfferBar />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <ExitIntentPopup />
         {/* <WhatsAppButton /> */}
         <ThirdPartyScripts />
       </body>

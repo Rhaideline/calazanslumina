@@ -90,11 +90,124 @@ export default function CursosPage() {
         </div>
       </section>
 
+      {/* ═══════════════ CURSO PREMIUM · CARRO-CHEFE ═══════════════ */}
+      {(() => {
+        const premium = cursos.find((c) => c.tier === 'premium')
+        if (!premium) return null
+        const totalAulas = premium.modulos.reduce((acc, m) => acc + m.aulas.length, 0)
+        return (
+          <section className="py-16 md:py-20 bg-gradient-to-br from-brand-dark via-brand-dark to-black text-white relative overflow-hidden">
+            <div className="absolute inset-0 opacity-30">
+              <div className="absolute -top-1/2 -right-1/4 w-[600px] h-[600px] bg-gradient-radial from-red-500/40 via-transparent to-transparent rounded-full blur-3xl" />
+              <div className="absolute -bottom-1/2 -left-1/4 w-[500px] h-[500px] bg-gradient-radial from-amber-500/20 via-transparent to-transparent rounded-full blur-3xl" />
+            </div>
+            <div className="container-main relative z-10">
+              <ScrollReveal>
+                <div className="text-center mb-10">
+                  <span className="inline-block bg-red-500 text-white text-[10px] font-bold tracking-[0.4em] uppercase px-4 py-2 rounded-full mb-4">
+                    🔥 Edição completa · Lançamento 2026
+                  </span>
+                  <h2 className="font-serif italic font-normal text-4xl md:text-6xl leading-tight mb-4">
+                    O <span className="text-red-400">único curso</span> de IA que você precisa.
+                  </h2>
+                  <p className="text-white/70 text-lg md:text-xl max-w-3xl mx-auto">
+                    95 páginas. 10 IAs detalhadas. 50 templates de prompt. 9 planos por profissão.
+                    <br className="hidden md:block" />
+                    De <span className="line-through text-white/40">R$ 297</span> por <strong className="text-white text-2xl">R$ 10</strong>. Edição de lançamento.
+                  </p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto bg-white/[0.03] border border-white/10 rounded-3xl p-6 md:p-10 backdrop-blur-sm">
+                  <div className="relative aspect-[8/5] md:aspect-[3/4] rounded-2xl overflow-hidden bg-brand-dark border border-white/10">
+                    <Image src={premium.imagem} alt={premium.nome} fill className="object-cover" sizes="(max-width:768px) 100vw, 50vw" />
+                    <div className="absolute top-3 left-3 bg-red-500 text-white text-[10px] tracking-[0.32em] uppercase font-bold px-3 py-1.5 rounded-full">
+                      Premium
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="font-serif italic font-normal text-3xl md:text-4xl leading-tight mb-3">{premium.nome}</h3>
+                    <p className="text-white/65 leading-relaxed mb-5">{premium.descricaoCurta}</p>
+
+                    <div className="grid grid-cols-3 gap-3 mb-6">
+                      <div className="bg-white/5 rounded-xl p-3 text-center border border-white/5">
+                        <p className="font-serif italic text-3xl text-red-400">{premium.numeroPaginas || 95}</p>
+                        <p className="text-[9px] tracking-[0.28em] uppercase text-white/40 mt-1">páginas</p>
+                      </div>
+                      <div className="bg-white/5 rounded-xl p-3 text-center border border-white/5">
+                        <p className="font-serif italic text-3xl text-red-400">10</p>
+                        <p className="text-[9px] tracking-[0.28em] uppercase text-white/40 mt-1">IAs</p>
+                      </div>
+                      <div className="bg-white/5 rounded-xl p-3 text-center border border-white/5">
+                        <p className="font-serif italic text-3xl text-red-400">50</p>
+                        <p className="text-[9px] tracking-[0.28em] uppercase text-white/40 mt-1">prompts</p>
+                      </div>
+                    </div>
+
+                    {premium.bonus && (
+                      <div className="mb-6 bg-amber-500/[0.08] border border-amber-500/20 rounded-xl p-4">
+                        <p className="text-[10px] tracking-[0.32em] uppercase text-amber-400 font-bold mb-3">+ 5 bônus inclusos</p>
+                        <ul className="space-y-1.5 text-sm text-white/75">
+                          {premium.bonus.slice(0, 3).map((b, i) => (
+                            <li key={i} className="flex gap-2"><span className="text-amber-400">✓</span><span>{b}</span></li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    <div className="flex items-end gap-3 mb-5">
+                      <div>
+                        <p className="text-[10px] tracking-[0.32em] uppercase text-white/40 mb-1">Investimento</p>
+                        <div className="flex items-baseline gap-3">
+                          <span className="font-serif italic text-5xl md:text-6xl text-white">R$ 10</span>
+                          <span className="font-serif italic text-2xl text-white/40 line-through">R$ 297</span>
+                        </div>
+                        <p className="text-amber-300 text-xs font-medium mt-1">Acesso vitalício · pagamento único</p>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col gap-3">
+                      <a
+                        href={premium.linkPagamento || '#'}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-red-500 hover:bg-red-600 text-white font-bold text-base py-4 rounded-full text-center inline-flex items-center justify-center gap-2 transition-all hover:scale-105 shadow-lg shadow-red-500/30"
+                      >
+                        Garantir agora por R$ 10
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                      </a>
+                      <Link
+                        href={`/cursos/${premium.slug}`}
+                        className="border border-white/20 hover:bg-white/5 text-white text-sm py-3 rounded-full text-center font-medium transition-colors"
+                      >
+                        Ver o que tem dentro
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+            </div>
+          </section>
+        )
+      })()}
+
       {/* Cursos Grid */}
       <section className="section-padding bg-white">
         <div className="container-main">
+          <div className="mb-10 text-center">
+            <p className="text-brand-mint font-medium text-sm uppercase tracking-wider mb-2">Outros cursos · individuais</p>
+            <h2 className="font-serif font-bold text-3xl md:text-4xl text-brand-dark">
+              Ou compre <span className="text-brand-mint">individualmente</span>
+            </h2>
+            <p className="text-brand-dark/60 mt-3 max-w-2xl mx-auto">
+              Quer focar em apenas um tema? Cada curso isolado custa R$ 10 (ou é gratuito). Mas se quiser tudo, a Edição Completa acima entrega mais que 6 desses juntos.
+            </p>
+          </div>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {cursos.map((curso, i) => (
+            {cursos.filter((c) => c.tier !== 'premium').map((curso, i) => (
               <ScrollReveal key={curso.slug} delay={i * 100}>
                 <div className={`relative rounded-2xl overflow-hidden h-full flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
                   curso.destaque
