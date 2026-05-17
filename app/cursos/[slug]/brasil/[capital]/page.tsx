@@ -9,6 +9,13 @@ import ScrollReveal from '@/components/ScrollReveal'
 import CTAForm from '@/components/CTAForm'
 import Breadcrumb from '@/components/Breadcrumb'
 import CoursesSection from '@/components/CoursesSection'
+import {
+  buildCursoCidadeFAQ,
+  buildLocalBusinessSchema,
+  buildCursoCidadeMetaDescription,
+  buildAlternates,
+  buildQuotableIntro,
+} from '@/lib/seo-schemas'
 
 export async function generateStaticParams() {
   const allCidades = [...capitaisBR, ...cidadesBrasil]
@@ -23,10 +30,19 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const capital = getCapitalBRBySlug(capitalSlug) || getCidadeBRBySlug(capitalSlug)
   if (!curso || !capital) return {}
   const totalAulas = curso.modulos.reduce((acc, m) => acc + m.aulas.length, 0)
+  const canonical = `https://calazanslumina.com.br/cursos/${slug}/brasil/${capitalSlug}`
   return {
     title: `${curso.nome} — ${capital.nome}, ${capital.siglaEstado}`,
-    description: `${curso.descricaoCurta} Para profissionais em ${capital.nome}. ${curso.modulos.length} modulos, ${totalAulas} aulas. ${curso.gratuito ? 'Acesso 100% gratuito. Comece agora →' : `So R$${curso.preco}. Acesso vitalicio →`}`,
-    alternates: { canonical: `https://calazanslumina.com.br/cursos/${slug}/brasil/${capitalSlug}` },
+    description: buildCursoCidadeMetaDescription({
+      curso,
+      cidadeNome: capital.nome,
+      siglaEstado: capital.siglaEstado,
+      estadoNome: capital.estado,
+      pais: 'BR',
+      url: canonical,
+      totalAulas,
+    }),
+    alternates: buildAlternates(canonical),
   }
 }
 
@@ -75,19 +91,18 @@ export default async function CursoCapitalPage({ params }: { params: Promise<{ s
     },
   }
 
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      { '@type': 'Question', name: `Onde fazer curso de ${curso.nome.toLowerCase().split(' — ')[0]} em ${capital.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `A Calazans Lumina oferece o curso "${curso.nome}" 100% online para ${capital.nome}, ${capital.siglaEstado}. ${curso.modulos.length} modulos, ${totalAulas} aulas. ${curso.gratuito ? 'Totalmente gratuito.' : `Apenas R$${curso.preco}.`} Acesse em calazanslumina.com.br/cursos/${curso.slug}` } },
-      { '@type': 'Question', name: `O curso ${curso.nome.split(' — ')[0]} e bom para quem mora em ${capital.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `Sim! O curso e 100% online e acessivel de ${capital.nome}. ${curso.descricaoCurta} Ideal para empreendedores em ${capital.nome}, ${capital.siglaEstado}.` } },
-      ...curso.vsl.objecoes.map((o) => ({
-        '@type': 'Question' as const,
-        name: o.pergunta,
-        acceptedAnswer: { '@type': 'Answer' as const, text: o.resposta },
-      })),
-    ],
+  const seoCtx = {
+    curso,
+    cidadeNome: capital.nome,
+    siglaEstado: capital.siglaEstado,
+    estadoNome: capital.estado,
+    pais: 'BR' as const,
+    url: `https://calazanslumina.com.br/cursos/${slug}/brasil/${capitalSlug}`,
+    totalAulas,
   }
+  const faqSchema = buildCursoCidadeFAQ(seoCtx)
+  const localBusinessSchema = buildLocalBusinessSchema(capital.nome, capital.siglaEstado, 'BR')
+  const quotableIntro = buildQuotableIntro(seoCtx)
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -105,6 +120,7 @@ export default async function CursoCapitalPage({ params }: { params: Promise<{ s
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
 
       {/* === HERO VSL === */}
       <section className="relative py-20 md:py-28 bg-brand-dark text-white overflow-hidden">
@@ -138,6 +154,7 @@ export default async function CursoCapitalPage({ params }: { params: Promise<{ s
                 <span className="text-brand-mint">Para profissionais em {capital.nome}.</span>
               </h1>
               <p className="text-white/70 text-lg leading-relaxed mb-4">{curso.vsl.subhook}</p>
+              <p className="text-white/55 text-sm leading-relaxed mb-4 italic border-l-2 border-brand-mint/40 pl-4">{quotableIntro}</p>
               <p className="text-white/40 text-base mb-8">{capital.descricao}</p>
 
               <div className="flex flex-wrap gap-4 mb-8">

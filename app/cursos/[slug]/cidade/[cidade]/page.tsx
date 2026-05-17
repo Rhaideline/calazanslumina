@@ -8,6 +8,13 @@ import ScrollReveal from '@/components/ScrollReveal'
 import CTAForm from '@/components/CTAForm'
 import Breadcrumb from '@/components/Breadcrumb'
 import CoursesSection from '@/components/CoursesSection'
+import {
+  buildCursoCidadeFAQ,
+  buildLocalBusinessSchema,
+  buildCursoCidadeMetaDescription,
+  buildAlternates,
+  buildQuotableIntro,
+} from '@/lib/seo-schemas'
 
 export async function generateStaticParams() {
   return cursos.flatMap((curso) =>
@@ -21,10 +28,19 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const cidade = getCidadeMABySlug(cidadeSlug)
   if (!curso || !cidade) return {}
   const totalAulas = curso.modulos.reduce((acc, m) => acc + m.aulas.length, 0)
+  const canonical = `https://calazanslumina.com.br/cursos/${slug}/cidade/${cidadeSlug}`
   return {
     title: `${curso.nome} — ${cidade.nome}, MA`,
-    description: `${curso.descricaoCurta} Para brasileiros em ${cidade.nome}, MA. ${curso.modulos.length} modulos, ${totalAulas} aulas. ${curso.gratuito ? 'Acesso 100% gratuito. Comece agora →' : `So R$${curso.preco}. Acesso vitalicio →`}`,
-    alternates: { canonical: `https://calazanslumina.com.br/cursos/${slug}/cidade/${cidadeSlug}` },
+    description: buildCursoCidadeMetaDescription({
+      curso,
+      cidadeNome: cidade.nome,
+      siglaEstado: 'MA',
+      estadoNome: 'Massachusetts',
+      pais: 'US',
+      url: canonical,
+      totalAulas,
+    }),
+    alternates: buildAlternates(canonical),
   }
 }
 
@@ -73,19 +89,18 @@ export default async function CursoCidadePage({ params }: { params: Promise<{ sl
     },
   }
 
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      { '@type': 'Question', name: `Onde fazer curso de ${curso.nome.toLowerCase().split(' — ')[0]} em ${cidade.nome}, MA?`, acceptedAnswer: { '@type': 'Answer', text: `A Calazans Lumina oferece o curso "${curso.nome}" 100% online, acessivel para brasileiros em ${cidade.nome}, MA. ${curso.modulos.length} modulos, ${totalAulas} aulas. ${curso.gratuito ? 'Totalmente gratuito.' : `Apenas R$${curso.preco}.`} Acesse em calazanslumina.com.br/cursos/${curso.slug}` } },
-      { '@type': 'Question', name: `O curso ${curso.nome.split(' — ')[0]} e bom para iniciantes em ${cidade.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `Sim! O curso foi criado para iniciantes. ${curso.descricaoCurta} Perfeito para empreendedores brasileiros em ${cidade.nome} que querem aprender do zero.` } },
-      ...curso.vsl.objecoes.map((o) => ({
-        '@type': 'Question' as const,
-        name: o.pergunta,
-        acceptedAnswer: { '@type': 'Answer' as const, text: o.resposta },
-      })),
-    ],
+  const seoCtx = {
+    curso,
+    cidadeNome: cidade.nome,
+    siglaEstado: 'MA',
+    estadoNome: 'Massachusetts',
+    pais: 'US' as const,
+    url: `https://calazanslumina.com.br/cursos/${slug}/cidade/${cidadeSlug}`,
+    totalAulas,
   }
+  const faqSchema = buildCursoCidadeFAQ(seoCtx)
+  const localBusinessSchema = buildLocalBusinessSchema(cidade.nome, 'MA', 'US')
+  const quotableIntro = buildQuotableIntro(seoCtx)
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -103,6 +118,7 @@ export default async function CursoCidadePage({ params }: { params: Promise<{ sl
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
 
       {/* === HERO VSL === */}
       <section className="relative py-20 md:py-28 bg-brand-dark text-white overflow-hidden">
@@ -136,6 +152,7 @@ export default async function CursoCidadePage({ params }: { params: Promise<{ sl
                 <span className="text-brand-mint">Para brasileiros em {cidade.nome}.</span>
               </h1>
               <p className="text-white/70 text-lg leading-relaxed mb-4">{curso.vsl.subhook}</p>
+              <p className="text-white/55 text-sm leading-relaxed mb-4 italic border-l-2 border-brand-mint/40 pl-4">{quotableIntro}</p>
               <p className="text-white/40 text-base mb-8">{cidade.comunidade}</p>
 
               <div className="flex flex-wrap gap-4 mb-8">
