@@ -8,30 +8,37 @@ interface LeadPayload {
   whatsapp: string
   email?: string
   source: string
+  cidade?: string
+  cidadeSlug?: string
+  pais?: 'BR' | 'US'
 }
 
 export async function POST(req: Request) {
   try {
     const body: LeadPayload = await req.json()
-    const { nome, whatsapp, email, source } = body
+    const { nome, whatsapp, email, source, cidade, cidadeSlug, pais } = body
 
     if (!nome || !whatsapp) {
       return NextResponse.json({ error: 'Nome e WhatsApp obrigatórios' }, { status: 400 })
     }
 
-    // Normaliza WhatsApp brasileiro
     const phoneClean = whatsapp.replace(/\D/g, '')
-    const phoneFull = phoneClean.startsWith('55') ? phoneClean : `55${phoneClean}`
+    const countryCode = pais === 'US' ? '1' : '55'
+    const phoneFull = phoneClean.startsWith(countryCode) ? phoneClean : `${countryCode}${phoneClean}`
 
-    // Envia pro GHL — Create Contact
+    const tagsBase = ['preview-ia-completo', 'lead-magnet', source]
+    if (cidadeSlug) tagsBase.push(`cidade-${cidadeSlug}`)
+    if (pais) tagsBase.push(`pais-${pais.toLowerCase()}`)
+
     const ghlPayload = {
       locationId: GHL_LOCATION,
       firstName: nome.split(' ')[0],
       lastName: nome.split(' ').slice(1).join(' ') || '',
       phone: `+${phoneFull}`,
       ...(email && { email }),
-      tags: ['preview-ia-completo', 'lead-magnet', source],
-      source: 'site-ia-preview',
+      ...(cidade && { city: cidade }),
+      tags: tagsBase,
+      source: cidadeSlug ? `site-ia-preview-${cidadeSlug}` : 'site-ia-preview',
       customFields: [
         { id: 'curso_interesse', value: 'IA do Zero ao Avançado' },
       ],
