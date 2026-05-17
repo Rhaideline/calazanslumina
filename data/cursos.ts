@@ -269,9 +269,9 @@ export const cursos: Curso[] = [
     slug: 'ia-chatgpt-completo',
     // IA & ChatGPT — EDIÇÃO COMPLETA (carro-chefe)
     nome: 'IA do Zero ao Avançado — Edição Completa',
-    descricaoCurta: 'A bíblia da IA pra brasileiros. 95 páginas. 10 IAs detalhadas. 50 templates de prompt. 9 planos por profissão. Tudo que você precisa pra dominar IA — sem ser técnico.',
-    descricaoLonga: 'A edição mais completa de IA para empreendedor brasileiro lançada em 2026. 95 páginas no formato A4 com design editorial premium. Cobre 10 IAs em detalhe (ChatGPT, Claude, Gemini, DALL-E, Midjourney, Canva AI, ElevenLabs, Suno, Runway, Cursor/Copilot), com 4 páginas dedicadas a cada uma, explicando passo a passo como criar conta, usar e aplicar no seu negócio. Inclui ainda o framework CRIA de Prompt Engineering, 50 templates de prompt copiáveis numerados por nicho, e 9 planos práticos por profissão (autônomo, vendedor, professor, dona de casa empreendedora, profissional liberal, criador de conteúdo, atendente, gestor, aposentado 60+). De R$ 297 por R$ 10 (preço de lançamento).',
-    preco: 10,
+    descricaoCurta: 'A bíblia da IA pra brasileiros. 95 páginas. 10 IAs detalhadas. 50 templates de prompt. 9 planos por profissão. Tudo que você precisa pra dominar IA — sem ser técnico. Apenas R$ 9,90.',
+    descricaoLonga: 'A edição mais completa de IA para empreendedor brasileiro lançada em 2026. 95 páginas no formato A4 com design editorial premium. Cobre 10 IAs em detalhe (ChatGPT, Claude, Gemini, DALL-E, Midjourney, Canva AI, ElevenLabs, Suno, Runway, Cursor/Copilot), com 4 páginas dedicadas a cada uma, explicando passo a passo como criar conta, usar e aplicar no seu negócio. Inclui ainda o framework CRIA de Prompt Engineering, 50 templates de prompt copiáveis numerados por nicho, e 9 planos práticos por profissão (autônomo, vendedor, professor, dona de casa empreendedora, profissional liberal, criador de conteúdo, atendente, gestor, aposentado 60+). De R$ 297 por R$ 9,90 (preço de lançamento).',
+    preco: 9.9,
     precoOriginal: 297,
     destaque: true,
     tier: 'premium',

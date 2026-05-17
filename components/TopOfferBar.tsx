@@ -23,7 +23,7 @@ export default function TopOfferBar() {
         <span className="font-medium">
           <strong>IA do Zero ao Avançado</strong> — Edição Completa · 95 págs ·{' '}
           <span className="line-through opacity-60">R$ 297</span>{' '}
-          por <strong className="text-base">R$ 10</strong>
+          por <strong className="text-base">R$ 9,90</strong>
         </span>
         <Link
           href="/cursos/ia-chatgpt-completo"

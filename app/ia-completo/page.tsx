@@ -5,13 +5,13 @@ import { cursos } from '@/data/cursos'
 import StickyBuyBar from '@/components/StickyBuyBar'
 
 export const metadata: Metadata = {
-  title: 'IA do Zero ao Avançado · Curso Completo · R$ 10 (era R$ 297)',
+  title: 'IA do Zero ao Avançado · Curso Completo · R$ 9,90 (era R$ 297)',
   description:
-    'A bíblia da IA pra brasileiro. 95 páginas. 10 IAs detalhadas (ChatGPT, Claude, Gemini, Midjourney, Canva, ElevenLabs, Suno e mais). 50 templates de prompt. 9 planos por profissão. De R$ 297 por R$ 10. Acesso vitalício.',
+    'A bíblia da IA pra brasileiro. 95 páginas. 10 IAs detalhadas (ChatGPT, Claude, Gemini, Midjourney, Canva, ElevenLabs, Suno e mais). 50 templates de prompt. 9 planos por profissão. De R$ 297 por R$ 9,90. Acesso vitalício.',
   alternates: { canonical: 'https://calazanslumina.com.br/ia-completo' },
   openGraph: {
-    title: 'IA do Zero ao Avançado · A Bíblia da IA pra Brasileiro · R$ 10',
-    description: '95 páginas. 10 IAs. 50 templates. 9 planos por profissão. R$ 297 → R$ 10 (lançamento).',
+    title: 'IA do Zero ao Avançado · A Bíblia da IA pra Brasileiro · R$ 9,90',
+    description: '95 páginas. 10 IAs. 50 templates. 9 planos por profissão. R$ 297 → R$ 9,90 (lançamento).',
     url: 'https://calazanslumina.com.br/ia-completo',
     type: 'website',
   },
@@ -57,7 +57,7 @@ export default function IACompletoPage() {
                   rel="noopener noreferrer"
                   className="group relative bg-red-500 hover:bg-red-600 text-white font-bold text-lg md:text-xl px-10 py-5 rounded-full inline-flex items-center gap-3 transition-all hover:scale-105 shadow-2xl shadow-red-500/40"
                 >
-                  Garantir por R$ 10
+                  Garantir por R$ 9,90
                   <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
@@ -217,7 +217,7 @@ export default function IACompletoPage() {
 
             <div className="text-center mt-12">
               <a href={link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white font-bold text-lg px-10 py-5 rounded-full transition-all hover:scale-105 shadow-xl shadow-red-500/30">
-                Quero acesso por R$ 10
+                Quero acesso por R$ 9,90
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
@@ -314,7 +314,7 @@ export default function IACompletoPage() {
               <p className="text-red-400 text-xs tracking-[0.4em] uppercase font-bold mb-4">Preço de lançamento</p>
               <h2 className="font-serif italic font-normal text-4xl md:text-6xl leading-tight mb-6">
                 Vale <span className="line-through text-white/30">R$ 297</span>.<br />
-                Você paga <span className="text-red-400">R$ 10</span>.
+                Você paga <span className="text-red-400">R$ 9,90</span>.
               </h2>
               <p className="text-white/65 text-lg max-w-xl mx-auto">{curso.vsl.urgencia}</p>
             </div>
@@ -323,7 +323,7 @@ export default function IACompletoPage() {
               <div className="mb-6">
                 <p className="text-white/40 text-sm tracking-[0.28em] uppercase mb-2">Investimento único</p>
                 <div className="flex items-baseline justify-center gap-4 mb-2">
-                  <span className="font-serif italic text-7xl md:text-9xl text-white">R$ 10</span>
+                  <span className="font-serif italic text-7xl md:text-9xl text-white">R$ 9,90</span>
                   <span className="font-serif italic text-3xl md:text-4xl text-white/30 line-through">R$ 297</span>
                 </div>
                 <p className="text-amber-300 text-sm">96% de desconto · acesso vitalício</p>
@@ -398,7 +398,7 @@ export default function IACompletoPage() {
               <span className="text-red-400">sabendo</span> que precisa.
             </h2>
             <p className="text-white/70 text-lg md:text-xl mb-10 max-w-xl mx-auto leading-relaxed">
-              R$ 10 não muda sua vida. Mas <em>aprender IA</em> em 2026 muda. Acessa, lê, aplica nessa semana mesmo.
+              R$ 9,90 não muda sua vida. Mas <em>aprender IA</em> em 2026 muda. Acessa, lê, aplica nessa semana mesmo.
             </p>
 
             <a
@@ -407,7 +407,7 @@ export default function IACompletoPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-white hover:bg-amber-50 text-red-600 font-bold text-xl md:text-2xl px-12 py-6 rounded-full transition-all hover:scale-105 shadow-2xl shadow-black/40"
             >
-              Acessar por R$ 10
+              Acessar por R$ 9,90
               <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>

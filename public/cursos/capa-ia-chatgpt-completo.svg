@@ -7,13 +7,13 @@
   </defs>
   <!-- Background: ink -->
   <rect width="800" height="500" fill="url(#ink-grad)"/>
-  <!-- Right side visual: gigantic "10" cream -->
-  <text x="780" y="370" font-family="Georgia, 'DM Serif Display', serif" font-size="380" font-weight="700" fill="#F1EAE0" text-anchor="end" opacity="0.95">10</text>
-  <!-- Subtle red underline accent on the 10 -->
-  <rect x="555" y="378" width="200" height="5" fill="#FF0005"/>
-  <!-- Badge R$ 10 -->
-  <rect x="40" y="28" width="110" height="38" rx="2" fill="#FF0005"/>
-  <text x="95" y="53" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#0d0706" text-anchor="middle" letter-spacing="2">R$ 10</text>
+  <!-- Right side visual: gigantic "9,90" cream -->
+  <text x="780" y="370" font-family="Georgia, 'DM Serif Display', serif" font-size="280" font-weight="700" fill="#F1EAE0" text-anchor="end" opacity="0.95">9,90</text>
+  <!-- Subtle red underline accent -->
+  <rect x="440" y="378" width="315" height="5" fill="#FF0005"/>
+  <!-- Badge R$ 9,90 -->
+  <rect x="40" y="28" width="120" height="38" rx="2" fill="#FF0005"/>
+  <text x="100" y="53" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#0d0706" text-anchor="middle" letter-spacing="1.5">R$ 9,90</text>
   <!-- Title -->
   <text x="50" y="170" font-family="Georgia, 'DM Serif Display', serif" font-size="62" font-weight="700" fill="#F1EAE0">IA &amp; ChatGPT</text>
   <text x="50" y="232" font-family="Georgia, 'DM Serif Display', serif" font-size="58" font-style="italic" font-weight="400" fill="#FF0005">curso completo.</text>

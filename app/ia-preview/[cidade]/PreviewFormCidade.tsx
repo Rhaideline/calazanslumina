@@ -71,7 +71,7 @@ export default function PreviewFormCidade({ cidadeNome, cidadeSlug, pais }: Prop
           href="/ia-completo"
           className="mt-6 inline-block bg-red-500 hover:bg-red-600 text-white font-bold text-sm py-3 px-6 rounded-full transition-colors"
         >
-          Ver o livro completo (R$ 10)
+          Ver o livro completo (R$ 9,90)
         </Link>
       </div>
     )

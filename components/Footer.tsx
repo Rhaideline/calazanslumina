@@ -18,7 +18,7 @@ const top20Capitais = capitaisBR.slice(0, 20)
 
 const cursosDestaque = [
   { slug: 'chatgpt-para-idosos', nome: 'ChatGPT para Idosos', tag: 'Grátis' },
-  { slug: 'ia-chatgpt-completo', nome: 'IA & ChatGPT Completo', tag: 'R$10' },
+  { slug: 'ia-chatgpt-completo', nome: 'IA & ChatGPT Completo', tag: 'R$ 9,90' },
   { slug: 'marketing-digital-iniciantes', nome: 'Marketing Digital', tag: 'R$10' },
   { slug: 'google-meu-negocio-do-zero', nome: 'Google Meu Negócio', tag: 'Grátis' },
   { slug: 'redes-sociais-que-vendem', nome: 'Redes Sociais', tag: 'Grátis' },

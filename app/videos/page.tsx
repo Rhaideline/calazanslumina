@@ -190,14 +190,14 @@ export default function VideosPage() {
               Curtiu os vídeos? Pega o <span className="text-red-400">livro completo</span>.
             </h2>
             <p className="text-white/60 mb-8 max-w-xl mx-auto">
-              95 páginas, 10 IAs explicadas, 50 prompts prontos. Por R$ 10.
+              95 páginas, 10 IAs explicadas, 50 prompts prontos. Por R$ 9,90.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
                 href="/ia-completo"
                 className="inline-block bg-red-500 hover:bg-red-600 text-white font-bold text-base py-4 px-10 rounded-full transition-colors"
               >
-                Ver o livro · R$ 10
+                Ver o livro · R$ 9,90
               </Link>
               <Link
                 href="/ia-preview"

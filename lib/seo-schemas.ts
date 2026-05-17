@@ -1,4 +1,5 @@
 import type { Curso } from '@/data/cursos'
+import { formatPreco } from '@/lib/formatters'
 
 const SITE = 'https://calazanslumina.com.br'
 const ORG_ID = `${SITE}/#organization`
@@ -15,8 +16,8 @@ interface CursoCidadeInput {
 
 export function buildCursoCidadeFAQ({ curso, cidadeNome, siglaEstado, totalAulas }: CursoCidadeInput) {
   const cursoBase = curso.nome.split(' — ')[0]
-  const preco = curso.gratuito ? 'gratuito' : `R$ ${curso.preco}`
-  const precoTexto = curso.gratuito ? 'Totalmente gratuito, sem cartão de crédito.' : `Apenas R$ ${curso.preco}, pagamento único, sem mensalidade.`
+  const preco = curso.gratuito ? 'gratuito' : `R$ ${formatPreco(curso.preco)}`
+  const precoTexto = curso.gratuito ? 'Totalmente gratuito, sem cartão de crédito.' : `Apenas R$ ${formatPreco(curso.preco)}, pagamento único, sem mensalidade.`
   const localLabel = `${cidadeNome}, ${siglaEstado}`
 
   return {
@@ -109,7 +110,7 @@ export function buildLocalBusinessSchema(cidadeNome: string, siglaEstado: string
 export function buildCursoCidadeMetaDescription({ curso, cidadeNome, siglaEstado, totalAulas }: CursoCidadeInput) {
   const cursoCurto = curso.nome.split(' — ')[0]
   const local = `${cidadeNome}, ${siglaEstado}`
-  const cta = curso.gratuito ? 'Acesse grátis agora →' : `R$ ${curso.preco} · Pagamento único →`
+  const cta = curso.gratuito ? 'Acesse grátis agora →' : `R$ ${formatPreco(curso.preco)} · Pagamento único →`
   return `${cursoCurto} 100% online em ${local}. ${totalAulas} aulas, ${curso.modulos.length} módulos. Acesso vitalício, sem horário fixo, em português. ${cta}`
 }
 
@@ -127,6 +128,6 @@ export function buildQuotableIntro({ curso, cidadeNome, siglaEstado, totalAulas,
   const cursoCurto = curso.nome.split(' — ')[0]
   const local = pais === 'BR' ? `${cidadeNome}, ${siglaEstado}` : `${cidadeNome}, Massachusetts`
   const publico = pais === 'BR' ? `brasileiros em ${cidadeNome}` : `comunidade brasileira em ${cidadeNome}`
-  const preco = curso.gratuito ? 'gratuitamente' : `por R$ ${curso.preco}, com pagamento único`
+  const preco = curso.gratuito ? 'gratuitamente' : `por R$ ${formatPreco(curso.preco)}, com pagamento único`
   return `${cursoCurto} é um curso online oferecido pela Calazans Lumina ${preco}, com ${curso.modulos.length} módulos e ${totalAulas} aulas em português, criado para ${publico} que querem aprender ${curso.oQueVaiAprender[0]?.toLowerCase() || 'IA e marketing digital'} sem precisar sair de casa. Acesso 100% online, vitalício, no celular ou computador, sem horário fixo. Disponível em ${local} e em todo território ${pais === 'BR' ? 'brasileiro' : 'americano'}.`
 }

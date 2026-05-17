@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { cursos } from '@/data/cursos'
+import { formatPrecoCompacto } from '@/lib/formatters'
 import ScrollReveal from '@/components/ScrollReveal'
 
 export default function CoursesSection() {
@@ -96,7 +97,7 @@ export default function CoursesSection() {
                             : 'bg-brand-mint'
                         }`}
                       >
-                        {curso.gratuito ? 'GRATUITO' : `R$${curso.preco}`}
+                        {curso.gratuito ? 'GRATUITO' : `R$ ${formatPrecoCompacto(curso.preco)}`}
                       </span>
                     </div>
                   </div>

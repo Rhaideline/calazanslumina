@@ -86,7 +86,7 @@ export default async function IAPreviewCidadePage({ params }: { params: Promise<
             href="/ia-completo"
             className="inline-block bg-red-500 hover:bg-red-600 text-white font-bold text-base py-4 px-8 rounded-full transition-colors"
           >
-            Ver o livro completo · R$ 10
+            Ver o livro completo · R$ 9,90
           </Link>
         </div>
       </section>

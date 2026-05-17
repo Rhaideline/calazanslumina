@@ -23,7 +23,7 @@ export default function StickyBuyBar({ link }: { link: string }) {
           <div className="flex-1 min-w-0">
             <p className="text-white/55 text-[10px] tracking-[0.28em] uppercase font-bold">IA Completo · 95 pgs</p>
             <p className="text-white font-bold leading-tight">
-              <span className="text-2xl">R$ 10</span>
+              <span className="text-2xl">R$ 9,90</span>
               <span className="text-white/30 line-through ml-2 text-sm">R$ 297</span>
             </p>
           </div>

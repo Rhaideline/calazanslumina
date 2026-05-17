@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { cursos } from '@/data/cursos'
+import { formatPreco, formatPrecoCompacto } from '@/lib/formatters'
 import ScrollReveal from '@/components/ScrollReveal'
 import FloatingCTA from '@/components/FloatingCTA'
 import { notFound } from 'next/navigation'
@@ -18,11 +19,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!curso) return {}
   const totalAulas = curso.modulos.reduce((acc, m) => acc + m.aulas.length, 0)
   return {
-    title: `${curso.nome} — ${curso.gratuito ? 'Grátis' : `R$${curso.preco}`}`,
-    description: `${curso.descricaoCurta} ${curso.modulos.length} modulos, ${totalAulas} aulas com certificado. ${curso.gratuito ? 'Acesso 100% gratuito + material PDF. Comece agora →' : `So R$${curso.preco}. Acesso vitalicio + atualizacoes. Comece agora →`}`,
+    title: `${curso.nome} — ${curso.gratuito ? 'Grátis' : `R$ ${formatPrecoCompacto(curso.preco)}`}`,
+    description: `${curso.descricaoCurta} ${curso.modulos.length} modulos, ${totalAulas} aulas com certificado. ${curso.gratuito ? 'Acesso 100% gratuito + material PDF. Comece agora →' : `So R$ ${formatPreco(curso.preco)}. Acesso vitalicio + atualizacoes. Comece agora →`}`,
     alternates: { canonical: `https://calazanslumina.com.br/cursos/${slug}` },
     openGraph: {
-      title: `${curso.nome} | ${curso.gratuito ? 'Curso Gratuito' : `R$ ${curso.preco}`}`,
+      title: `${curso.nome} | ${curso.gratuito ? 'Curso Gratuito' : `R$ ${formatPreco(curso.preco)}`}`,
       description: curso.descricaoCurta,
       url: `https://calazanslumina.com.br/cursos/${slug}`,
       type: 'website',
@@ -127,7 +128,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
               <div className="inline-flex items-center gap-2 bg-brand-mint/20 border border-brand-mint/30 rounded-full px-4 py-1.5 mb-6">
                 <span className="w-2 h-2 bg-brand-mint rounded-full animate-pulse" />
                 <span className="text-brand-mint text-sm font-medium">
-                  {curso.gratuito ? 'Curso 100% Gratuito' : `Apenas R$ ${curso.preco},00 — Pagamento Unico`}
+                  {curso.gratuito ? 'Curso 100% Gratuito' : `Apenas R$ ${formatPreco(curso.preco)} — Pagamento Unico`}
                 </span>
               </div>
 
@@ -494,7 +495,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
           <ScrollReveal delay={300} className="text-center mt-6">
             <p className="text-brand-dark/40 text-sm">
               Valor total dos bonus: <span className="line-through">R$ 171,00</span>{' '}
-              <span className="text-brand-mint font-bold">INCLUSO {curso.gratuito ? 'GRATIS' : `por R$ ${curso.preco},00`}</span>
+              <span className="text-brand-mint font-bold">INCLUSO {curso.gratuito ? 'GRATIS' : `por R$ ${formatPreco(curso.preco)}`}</span>
             </p>
           </ScrollReveal>
         </div>
@@ -642,7 +643,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                     <Image src={c.imagem} alt={c.nome} width={60} height={60} className="mx-auto mb-3 opacity-70" />
                     <h3 className="font-bold text-sm group-hover:text-brand-mint transition-colors">{c.nome}</h3>
                     <p className="text-brand-dark/40 text-xs mt-1">
-                      {c.gratuito ? 'Gratuito' : `R$ ${c.preco},00`}
+                      {c.gratuito ? 'Gratuito' : `R$ ${formatPreco(c.preco)}`}
                     </p>
                   </Link>
                 </ScrollReveal>
