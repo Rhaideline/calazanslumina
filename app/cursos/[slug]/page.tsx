@@ -458,22 +458,44 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
       </section>
 
       {/* === BONUS STACK === */}
+      {(() => {
+        type Bonus = { titulo: string; desc: string; valor: string }
+        let bonusList: Bonus[] = []
+        if (curso.bonus && curso.bonus.length > 0) {
+          // Curso premium com bonus reais. Parse formato "BÔNUS N · titulo (R$ XX)"
+          bonusList = curso.bonus.map((b) => {
+            const match = b.match(/^(?:BÔNUS\s*\d+\s*·\s*)?(.+?)\s*\((R\$\s*[\d,.]+)\)\s*$/)
+            return match
+              ? { titulo: match[1].trim(), desc: '', valor: match[2] }
+              : { titulo: b, desc: '', valor: '' }
+          })
+        } else if (curso.tipo === 'video') {
+          bonusList = [
+            { titulo: 'Vídeo-aulas em HD', desc: 'Mais de 12 horas de aulas em vídeo. Assista no celular, tablet ou computador, no seu ritmo.', valor: 'R$ 297' },
+            { titulo: 'Acesso Vitalicio', desc: 'Comprou uma vez, acessa para sempre. Todas as atualizacoes futuras inclusas.', valor: 'R$ 97' },
+            { titulo: 'Material de Apoio em PDF', desc: 'Resumos, 20 prompts prontos e checklist em PDF para baixar e consultar offline.', valor: 'R$ 47' },
+          ]
+        } else {
+          // Curso PDF sem bonus customizado — extras reais, sem chamar o proprio PDF de "bonus"
+          bonusList = [
+            { titulo: 'Acesso Vitalicio', desc: 'Pagou uma vez, e seu pra sempre. Todas as atualizacoes futuras inclusas sem custo adicional.', valor: 'R$ 97' },
+            { titulo: 'Leitura em Qualquer Dispositivo', desc: 'PDF otimizado para celular, tablet, computador e Kindle. Abre offline, sem precisar de app.', valor: 'R$ 27' },
+            { titulo: 'Garantia de 7 dias', desc: 'Nao gostou? Devolvemos 100% do seu dinheiro em ate 7 dias, sem perguntas.', valor: 'R$ 47' },
+          ]
+        }
+        const totalBonus = bonusList
+          .map((b) => Number(b.valor.replace(/[^\d.,]/g, '').replace(/\./g, '').replace(',', '.')))
+          .filter((n) => !Number.isNaN(n) && n > 0)
+          .reduce((a, b) => a + b, 0)
+        return (
       <section className="section-padding bg-white">
         <div className="container-main max-w-3xl">
           <ScrollReveal className="text-center mb-12">
-            <p className="text-brand-mint text-sm font-bold uppercase tracking-wider mb-3">Bonus inclusos</p>
-            <h2 className="heading-2 text-brand-dark mb-4">Alem do curso, voce recebe</h2>
+            <p className="text-brand-mint text-sm font-bold uppercase tracking-wider mb-3">{curso.bonus ? 'Bonus exclusivos' : 'O que esta incluso'}</p>
+            <h2 className="heading-2 text-brand-dark mb-4">{curso.bonus ? 'Voce ainda leva de bonus' : 'Comprando hoje voce recebe'}</h2>
           </ScrollReveal>
           <div className="space-y-4">
-            {(curso.tipo === 'video' ? [
-              { titulo: 'Vídeo-aulas em HD', desc: 'Mais de 12 horas de aulas em vídeo. Assista no celular, tablet ou computador, no seu ritmo.', valor: 'R$ 297' },
-              { titulo: 'Acesso Vitalicio', desc: 'Comprou uma vez, acessa para sempre. Todas as atualizacoes futuras inclusas.', valor: 'R$ 97' },
-              { titulo: 'Material de Apoio em PDF', desc: 'Resumos, 20 prompts prontos e checklist em PDF para baixar e consultar offline.', valor: 'R$ 47' },
-            ] : [
-              { titulo: 'PDF Completo do Curso', desc: 'Material em PDF para baixar e estudar offline, no seu ritmo, a qualquer momento.', valor: 'R$ 47' },
-              { titulo: 'Acesso Vitalicio', desc: 'Comprou uma vez, acessa para sempre. Todas as atualizacoes futuras inclusas.', valor: 'R$ 97' },
-              { titulo: 'Leia em Qualquer Dispositivo', desc: 'Abre no celular, tablet ou computador. PDF otimizado para leitura em qualquer tela.', valor: 'R$ 27' },
-            ]).map((bonus, i) => (
+            {bonusList.map((bonus, i) => (
               <ScrollReveal key={i} delay={i * 100}>
                 <div className="flex items-start gap-4 bg-brand-bg border border-brand-mint/20 rounded-2xl p-6">
                   <div className="w-12 h-12 bg-brand-mint/10 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -492,14 +514,18 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
               </ScrollReveal>
             ))}
           </div>
-          <ScrollReveal delay={300} className="text-center mt-6">
-            <p className="text-brand-dark/40 text-sm">
-              Valor total dos bonus: <span className="line-through">R$ 171,00</span>{' '}
-              <span className="text-brand-mint font-bold">INCLUSO {curso.gratuito ? 'GRATIS' : `por R$ ${formatPreco(curso.preco)}`}</span>
-            </p>
-          </ScrollReveal>
+          {totalBonus > 0 && (
+            <ScrollReveal delay={300} className="text-center mt-6">
+              <p className="text-brand-dark/40 text-sm">
+                Valor total: <span className="line-through">R$ {totalBonus.toFixed(2).replace('.', ',')}</span>{' '}
+                <span className="text-brand-mint font-bold">INCLUSO {curso.gratuito ? 'GRATIS' : `por R$ ${formatPreco(curso.preco)}`}</span>
+              </p>
+            </ScrollReveal>
+          )}
         </div>
       </section>
+        )
+      })()}
 
       {/* === PRECO (Anchor + Value Stack + Garantia Visual) === */}
       <section className="section-padding bg-brand-dark text-white">
