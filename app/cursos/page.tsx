@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { cursos } from '@/data/cursos'
+import { formatPreco } from '@/lib/formatters'
 import ScrollReveal from '@/components/ScrollReveal'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import PortfolioSites from '@/components/PortfolioSites'
@@ -197,17 +198,17 @@ export default function CursosPage() {
       <section className="section-padding bg-white">
         <div className="container-main">
           <div className="mb-10 text-center">
-            <p className="text-brand-mint font-medium text-sm uppercase tracking-wider mb-2">Outros cursos · individuais</p>
+            <p className="text-brand-mint font-medium text-sm uppercase tracking-wider mb-2">Todos os cursos</p>
             <h2 className="font-serif font-bold text-3xl md:text-4xl text-brand-dark">
-              Ou compre <span className="text-brand-mint">individualmente</span>
+              Cursos <span className="text-brand-mint">disponíveis</span>
             </h2>
             <p className="text-brand-dark/60 mt-3 max-w-2xl mx-auto">
-              Quer focar em apenas um tema? Cada curso isolado custa R$ 10 (ou é gratuito). Mas se quiser tudo, a Edição Completa acima entrega mais que 6 desses juntos.
+              Cursos focados em um tema só, do gratuito ao premium. Escolha o que se encaixa no seu objetivo.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {cursos.filter((c) => c.tier !== 'premium').map((curso, i) => (
+            {cursos.map((curso, i) => (
               <ScrollReveal key={curso.slug} delay={i * 100}>
                 <div className={`relative rounded-2xl overflow-hidden h-full flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
                   curso.destaque
@@ -248,7 +249,7 @@ export default function CursosPage() {
                           <p className="font-serif text-3xl font-bold text-green-600">GRÁTIS</p>
                         ) : (
                           <p className="font-serif text-3xl font-bold text-brand-dark">
-                            R$ {curso.preco}<span className="text-base text-brand-dark/40">,00</span>
+                            R$ {formatPreco(curso.preco)}
                           </p>
                         )}
                       </div>
@@ -294,7 +295,7 @@ export default function CursosPage() {
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
                             </svg>
-                            Comprar por R$ {curso.preco},00
+                            Comprar por R$ {formatPreco(curso.preco)}
                           </a>
                           <Link
                             href={`/cursos/${curso.slug}`}

@@ -180,7 +180,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                     rel="noopener noreferrer"
                     className="btn-primary text-lg px-8 py-4"
                   >
-                    Garantir por R$ {curso.preco},00
+                    Garantir por R$ {formatPreco(curso.preco)}
                   </a>
                 )}
               </div>
@@ -196,11 +196,15 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                     <p className="font-serif text-5xl font-bold text-brand-mint">GRATUITO</p>
                   ) : (
                     <div>
-                      <p className="text-white/30 text-sm line-through mb-1">De R$ 197,00</p>
+                      {curso.precoOriginal && (
+                        <p className="text-white/30 text-sm line-through mb-1">De R$ {formatPreco(curso.precoOriginal)}</p>
+                      )}
                       <p className="font-serif text-5xl font-bold text-white">
-                        R$ {curso.preco}<span className="text-2xl text-white/40">,00</span>
+                        R$ {formatPreco(curso.preco)}
                       </p>
-                      <p className="text-brand-mint text-sm mt-1">Economia de R$ {197 - curso.preco},00</p>
+                      {curso.precoOriginal && (
+                        <p className="text-brand-mint text-sm mt-1">Economia de R$ {formatPreco(curso.precoOriginal - curso.preco)}</p>
+                      )}
                     </div>
                   )}
                 </div>
@@ -540,7 +544,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                 ) : (
                   <>
                     <p className="font-serif text-6xl font-bold text-white">
-                      R$ {curso.preco}<span className="text-3xl text-white/40">,00</span>
+                      R$ {formatPreco(curso.preco)}
                     </p>
                     <p className="text-brand-mint text-sm mt-2">Pagamento unico · Conteudo em PDF · Acesso imediato</p>
                   </>
@@ -567,7 +571,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                     rel="noopener noreferrer"
                     className="btn-primary text-lg px-10 py-4"
                   >
-                    Garantir por R$ {curso.preco},00
+                    Garantir por R$ {formatPreco(curso.preco)}
                   </a>
                 )}
               </div>
@@ -647,7 +651,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                   rel="noopener noreferrer"
                   className="btn-primary text-lg px-10 py-4"
                 >
-                  Garantir por R$ {curso.preco},00 — Acesso Imediato
+                  Garantir por R$ {formatPreco(curso.preco)} — Acesso Imediato
                 </a>
               )}
             </div>

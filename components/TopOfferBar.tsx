@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 const STORAGE_KEY = 'topbar-dismissed-v1'
@@ -25,13 +24,16 @@ export default function TopOfferBar() {
           <span className="line-through opacity-60">R$ 297</span>{' '}
           por <strong className="text-base">R$ 9,90</strong>
         </span>
-        <Link
-          href="/cursos/ia-chatgpt-completo"
+        <a
+          href="https://link.fastpaydirect.com/payment-link/6a08f6ef1d5a394a682e4ee1"
+          target="_blank"
+          rel="noopener noreferrer"
           className="bg-white text-red-600 font-bold text-xs px-4 py-1.5 rounded-full hover:bg-amber-50 transition-colors uppercase tracking-wider flex-shrink-0"
         >
           Garantir agora →
-        </Link>
+        </a>
         <button
+          type="button"
           onClick={() => {
             localStorage.setItem(STORAGE_KEY, '1')
             setDismissed(true)

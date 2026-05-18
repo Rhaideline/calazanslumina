@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { cursos } from '@/data/cursos'
-import { formatPrecoCompacto } from '@/lib/formatters'
+import { formatPreco, formatPrecoCompacto } from '@/lib/formatters'
 import ScrollReveal from '@/components/ScrollReveal'
 
 export default function CoursesSection() {
@@ -49,15 +49,15 @@ export default function CoursesSection() {
                       95 páginas · 10 IAs detalhadas · 50 templates de prompt · 9 planos por profissão. Tudo num único PDF.
                     </p>
                     <div className="flex items-baseline gap-3 mb-5">
-                      <span className="font-serif italic text-4xl md:text-5xl">R$ {premium.preco}</span>
+                      <span className="font-serif italic text-4xl md:text-5xl">R$ {formatPreco(premium.preco)}</span>
                       {premium.precoOriginal && (
-                        <span className="font-serif italic text-xl text-white/30 line-through">R$ {premium.precoOriginal}</span>
+                        <span className="font-serif italic text-xl text-white/30 line-through">R$ {formatPreco(premium.precoOriginal)}</span>
                       )}
                       <span className="text-amber-300 text-xs font-medium ml-auto">Acesso vitalício</span>
                     </div>
                     <div className="flex flex-col sm:flex-row gap-3">
                       <span className="bg-red-500 group-hover:bg-red-600 text-white font-bold text-sm py-3 px-6 rounded-full text-center inline-flex items-center justify-center gap-2 transition-colors">
-                        Garantir por R$ 10
+                        Garantir por R$ {formatPreco(premium.preco)}
                         <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                         </svg>

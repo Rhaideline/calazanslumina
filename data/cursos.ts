@@ -313,8 +313,8 @@ export const cursos: Curso[] = [
       'Plano de 30 dias com rotina semanal de IA',
     ],
     vsl: {
-      hook: 'A bíblia da IA pra brasileiro. 95 páginas. 10 IAs. 50 templates. R$ 10.',
-      subhook: 'Quem já comprou os outros cursos da Calazans Lumina conhece o padrão. Este é diferente — é a edição COMPLETA. Equivalente a 6 cursos em um único PDF. De R$ 297 por R$ 10 (preço de lançamento).',
+      hook: 'A bíblia da IA pra brasileiro. 95 páginas. 10 IAs. 50 templates. R$ 9,90.',
+      subhook: 'A edição mais completa de IA já feita pra brasileiro. 95 páginas no formato A4 com design editorial premium, cobrindo as 10 principais IAs do mercado em profundidade. De R$ 297 por R$ 9,90 (preço de lançamento).',
       problemas: [
         'Vê todo mundo falando de IA e se sente atrasado(a)',
         'Não sabe a diferença entre ChatGPT, Claude e Gemini — e qual usar pra quê',
