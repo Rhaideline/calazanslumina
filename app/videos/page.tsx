@@ -28,14 +28,15 @@ function VideoCard({ v }: { v: (typeof videos)[number] }) {
       <div className="relative aspect-[9/16] md:aspect-video bg-black">
         <video
           src={v.url}
+          poster={v.thumbnail}
           controls
-          preload="metadata"
+          preload="none"
           playsInline
           className="w-full h-full object-cover"
         >
           Seu navegador não suporta vídeo HTML5.
         </video>
-        <span className="absolute top-3 right-3 bg-black/70 backdrop-blur text-white text-xs font-bold px-2.5 py-1 rounded-full">
+        <span className="absolute top-3 right-3 bg-black/70 backdrop-blur text-white text-xs font-bold px-2.5 py-1 rounded-full pointer-events-none">
           {v.duracao}
         </span>
       </div>
