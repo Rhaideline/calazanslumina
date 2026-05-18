@@ -104,7 +104,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([courseSchema, faqSchema]) }} />
 
       {/* Floating CTA */}
-      <FloatingCTA gratuito={!!curso.gratuito} preco={curso.preco} slug={curso.slug} linkPagamento={curso.linkPagamento} />
+      <FloatingCTA gratuito={!!curso.gratuito} preco={curso.preco} precoOriginal={curso.precoOriginal} slug={curso.slug} linkPagamento={curso.linkPagamento} />
 
       {/* === HERO VSL — Hook + Preco + CTA === */}
       <section className="relative py-20 md:py-28 bg-brand-dark text-white overflow-hidden">

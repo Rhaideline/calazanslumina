@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 
-const STORAGE_KEY = 'topbar-dismissed-v1'
+const STORAGE_KEY = 'topbar-dismissed-v2'
 
 export default function TopOfferBar() {
   const [dismissed, setDismissed] = useState(true) // start hidden, render only after mount

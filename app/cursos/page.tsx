@@ -10,10 +10,10 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Cursos de Marketing Digital — 4 Grátis',
   description:
-    'Aprenda marketing digital do zero: IA & ChatGPT, Google Meu Negocio, Redes Sociais, Funis de Vendas. 2 cursos gratuitos + 5 a partir de R$10. PDF + acesso online. Comece agora!',
+    'Aprenda marketing digital do zero: IA & ChatGPT, Google Meu Negocio, Redes Sociais, Funis de Vendas. 2 cursos gratuitos + 5 a partir de R$ 9,90. PDF + acesso online. Comece agora!',
   alternates: { canonical: 'https://calazanslumina.com.br/cursos' },
   openGraph: {
-    title: 'Cursos de Marketing Digital | 4 Gratuitos + 3 a partir de R$10',
+    title: 'Cursos de Marketing Digital | 4 Gratuitos + 3 a partir de R$ 9,90',
     description: 'Aprenda marketing digital do zero. 7 cursos disponiveis, 2 gratuitos. PDF + acesso online.',
     url: 'https://calazanslumina.com.br/cursos',
     type: 'website',
@@ -25,7 +25,7 @@ export default function CursosPage() {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: 'Cursos de Marketing Digital e IA — Calazans Lumina',
-    description: 'Cursos online de marketing digital, ChatGPT, Google Meu Negocio, funis de vendas e redes sociais. A partir de R$10.',
+    description: 'Cursos online de marketing digital, ChatGPT, Google Meu Negocio, funis de vendas e redes sociais. A partir de R$ 9,90.',
     url: 'https://calazanslumina.com.br/cursos',
     mainEntity: {
       '@type': 'ItemList',
@@ -71,7 +71,7 @@ export default function CursosPage() {
             </h1>
             <p className="text-white/60 text-lg md:text-xl max-w-3xl mx-auto mb-8">
               Conhecimento prático e direto ao ponto. Temos cursos <strong className="text-white">gratuitos</strong> e cursos a partir de{' '}
-              <strong className="text-white">R$ 10,00</strong> — menos que um café, mais que muitos cursos caros ensinam.
+              <strong className="text-white">R$ 9,90</strong> — menos que um café, mais que muitos cursos caros ensinam.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <div className="bg-white/5 border border-white/10 rounded-xl px-6 py-3 text-center">
@@ -114,7 +114,7 @@ export default function CursosPage() {
                   <p className="text-white/70 text-lg md:text-xl max-w-3xl mx-auto">
                     95 páginas. 10 IAs detalhadas. 50 templates de prompt. 9 planos por profissão.
                     <br className="hidden md:block" />
-                    De <span className="line-through text-white/40">R$ 297</span> por <strong className="text-white text-2xl">R$ 10</strong>. Edição de lançamento.
+                    De <span className="line-through text-white/40">R$ {formatPreco(premium.precoOriginal || 297)}</span> por <strong className="text-white text-2xl">R$ {formatPreco(premium.preco)}</strong>. Edição de lançamento.
                   </p>
                 </div>
 
@@ -160,8 +160,8 @@ export default function CursosPage() {
                       <div>
                         <p className="text-[10px] tracking-[0.32em] uppercase text-white/40 mb-1">Investimento</p>
                         <div className="flex items-baseline gap-3">
-                          <span className="font-serif italic text-5xl md:text-6xl text-white">R$ 10</span>
-                          <span className="font-serif italic text-2xl text-white/40 line-through">R$ 297</span>
+                          <span className="font-serif italic text-5xl md:text-6xl text-white">R$ {formatPreco(premium.preco)}</span>
+                          <span className="font-serif italic text-2xl text-white/40 line-through">R$ {formatPreco(premium.precoOriginal || 297)}</span>
                         </div>
                         <p className="text-amber-300 text-xs font-medium mt-1">Acesso vitalício · pagamento único</p>
                       </div>
@@ -174,7 +174,7 @@ export default function CursosPage() {
                         rel="noopener noreferrer"
                         className="bg-red-500 hover:bg-red-600 text-white font-bold text-base py-4 rounded-full text-center inline-flex items-center justify-center gap-2 transition-all hover:scale-105 shadow-lg shadow-red-500/30"
                       >
-                        Garantir agora por R$ 10
+                        Garantir agora por R$ {formatPreco(premium.preco)}
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                         </svg>

@@ -23,7 +23,7 @@ export default function CoursesSection() {
           </h2>
           <p className="text-brand-dark/60 text-lg max-w-2xl mx-auto">
             Aprenda marketing digital, IA, redes sociais e funis de vendas com cursos
-            práticos. 4 cursos gratuitos + 3 a partir de R$10.
+            práticos. 4 cursos gratuitos + 3 a partir de R$ 9,90.
           </p>
         </ScrollReveal>
 
