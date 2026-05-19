@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import CountdownBar from './CountdownBar'
 
 const STORAGE_KEY = 'topbar-dismissed-v2'
 
@@ -20,9 +21,9 @@ export default function TopOfferBar() {
           🔥 Lançamento
         </span>
         <span className="font-medium">
-          <strong>IA do Zero ao Avançado</strong> — Edição Completa · 95 págs ·{' '}
+          <strong>IA do Zero ao Avançado</strong> · 95 págs ·{' '}
           <span className="line-through opacity-60">R$ 297</span>{' '}
-          por <strong className="text-base">R$ 9,90</strong>
+          por <strong className="text-base">R$ 9,90</strong> · <CountdownBar />
         </span>
         <a
           href="https://link.fastpaydirect.com/payment-link/6a08f6ef1d5a394a682e4ee1"

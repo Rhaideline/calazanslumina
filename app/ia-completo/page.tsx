@@ -3,6 +3,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { cursos } from '@/data/cursos'
 import StickyBuyBar from '@/components/StickyBuyBar'
+import CountdownBar from '@/components/CountdownBar'
+import { videos } from '@/data/videos'
 
 export const metadata: Metadata = {
   title: 'IA do Zero ao Avançado · Curso Completo · R$ 9,90 (era R$ 297)',
@@ -19,6 +21,7 @@ export const metadata: Metadata = {
 
 const curso = cursos.find((c) => c.slug === 'ia-chatgpt-completo')!
 const link = curso.linkPagamento || '#'
+const heroVideo = videos.find((v) => v.slug === 'reel-3x-resultados')
 
 export default function IACompletoPage() {
   return (
@@ -45,12 +48,33 @@ export default function IACompletoPage() {
                 pra brasileiro.
               </h1>
 
-              <p className="text-xl md:text-2xl text-white/75 max-w-3xl mx-auto leading-relaxed mb-10 font-light">
+              <p className="text-xl md:text-2xl text-white/75 max-w-3xl mx-auto leading-relaxed mb-8 font-light">
                 95 páginas. 10 IAs detalhadas. 50 templates de prompt copiáveis. 9 planos por profissão.
                 Tudo num único PDF — pra você dominar IA sem ser técnico.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-10">
+              {/* === VSL VIDEO (1 reel, lazy, sem autoplay) === */}
+              {heroVideo && (
+                <div className="max-w-md mx-auto mb-8 rounded-3xl overflow-hidden shadow-2xl shadow-red-500/20 border border-white/10 bg-black">
+                  <video
+                    src={heroVideo.url}
+                    poster={heroVideo.thumbnail}
+                    controls
+                    playsInline
+                    preload="none"
+                    className="w-full aspect-[9/16] object-cover"
+                  >
+                    Seu navegador não suporta vídeo HTML5.
+                  </video>
+                </div>
+              )}
+
+              {/* === COUNTDOWN === */}
+              <div className="mb-6">
+                <CountdownBar variant="hero" />
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-4">
                 <a
                   href={link}
                   target="_blank"
@@ -66,6 +90,7 @@ export default function IACompletoPage() {
                   De <span className="line-through">R$ 297</span> · Acesso vitalício
                 </p>
               </div>
+              <p className="text-amber-300 text-xs tracking-wider mb-10">⚡ 1.247 brasileiros já garantiram nessa semana</p>
 
               {/* Stats row */}
               <div className="grid grid-cols-4 gap-3 md:gap-6 max-w-3xl mx-auto pt-8 border-t border-white/10">
@@ -268,10 +293,55 @@ export default function IACompletoPage() {
                 ))}
               </div>
 
-              <div className="mt-10 bg-gradient-to-r from-amber-500/10 via-amber-500/15 to-amber-500/10 border border-amber-500/40 rounded-2xl p-6 md:p-8 text-center">
-                <p className="text-white/70 text-sm tracking-[0.28em] uppercase mb-2">Valor total dos bônus</p>
-                <p className="font-serif italic text-amber-300 text-4xl md:text-5xl">+ R$ 265</p>
-                <p className="text-white/55 text-sm mt-2">Inclusos sem custo adicional na compra do livro</p>
+              {/* === STACK VISUAL DE VALOR === */}
+              <div className="mt-10 bg-gradient-to-br from-amber-500/[0.06] via-red-500/[0.04] to-amber-500/[0.06] border border-amber-500/40 rounded-3xl p-6 md:p-10">
+                <p className="text-amber-300 text-xs tracking-[0.4em] uppercase font-bold text-center mb-6">A conta da economia</p>
+
+                <div className="space-y-2.5 max-w-md mx-auto mb-6 font-mono text-sm md:text-base">
+                  <div className="flex justify-between items-center text-white/85">
+                    <span>📘 Livro IA do Zero ao Avançado (95 págs)</span>
+                    <span className="text-white/40 line-through">R$ 297</span>
+                  </div>
+                  <div className="flex justify-between items-center text-white/85">
+                    <span>⭐ Bônus 1 · 50 templates de prompt</span>
+                    <span className="text-white/40 line-through">R$ 97</span>
+                  </div>
+                  <div className="flex justify-between items-center text-white/85">
+                    <span>⭐ Bônus 2 · 9 planos por profissão</span>
+                    <span className="text-white/40 line-through">R$ 47</span>
+                  </div>
+                  <div className="flex justify-between items-center text-white/85">
+                    <span>⭐ Bônus 3 · Glossário 18 termos</span>
+                    <span className="text-white/40 line-through">R$ 27</span>
+                  </div>
+                  <div className="flex justify-between items-center text-white/85">
+                    <span>⭐ Bônus 4 · Plano de 30 dias</span>
+                    <span className="text-white/40 line-through">R$ 47</span>
+                  </div>
+                  <div className="flex justify-between items-center text-white/85">
+                    <span>⭐ Bônus 5 · Comparativo 10 IAs</span>
+                    <span className="text-white/40 line-through">R$ 47</span>
+                  </div>
+                  <div className="border-t border-amber-500/30 pt-3 mt-3 flex justify-between items-center">
+                    <span className="text-white/55 text-xs tracking-[0.28em] uppercase">Valor total</span>
+                    <span className="text-white/55 line-through text-lg">R$ 562</span>
+                  </div>
+                  <div className="flex justify-between items-baseline pt-2">
+                    <span className="text-amber-300 text-xs tracking-[0.28em] uppercase font-bold">Você paga hoje</span>
+                    <span className="font-serif italic text-amber-300 text-5xl md:text-6xl leading-none">R$ 9,90</span>
+                  </div>
+                  <p className="text-center text-green-400 font-bold text-sm pt-2">⚡ Economia de R$ 552,10 · 98% OFF</p>
+                </div>
+
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-red-500 hover:bg-red-600 text-white font-bold text-lg py-4 rounded-full text-center transition-all hover:scale-[1.02] shadow-xl shadow-red-500/30 max-w-md mx-auto"
+                >
+                  Garantir tudo por R$ 9,90 →
+                </a>
+                <p className="text-white/45 text-xs text-center mt-4"><CountdownBar /></p>
               </div>
             </div>
           </section>

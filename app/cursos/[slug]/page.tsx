@@ -484,7 +484,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
           bonusList = [
             { titulo: 'Acesso Vitalicio', desc: 'Pagou uma vez, e seu pra sempre. Todas as atualizacoes futuras inclusas sem custo adicional.', valor: 'R$ 97' },
             { titulo: 'Leitura em Qualquer Dispositivo', desc: 'PDF otimizado para celular, tablet, computador e Kindle. Abre offline, sem precisar de app.', valor: 'R$ 27' },
-            { titulo: 'Garantia de 7 dias', desc: 'Nao gostou? Devolvemos 100% do seu dinheiro em ate 7 dias, sem perguntas.', valor: 'R$ 47' },
+            { titulo: 'Atualizacoes Gratuitas', desc: 'Quando o conteudo for atualizado, voce recebe a nova versao automaticamente, sem custo.', valor: 'R$ 47' },
           ]
         }
         const totalBonus = bonusList
