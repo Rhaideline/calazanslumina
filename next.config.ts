@@ -53,14 +53,61 @@ const nextConfig: NextConfig = {
         destination: '/cursos',
         permanent: true,
       },
+      // Conteudo de bebe/maternidade removido — redirect tudo pra home/blog
       {
         source: '/enxoval-de-bebe',
         destination: '/',
         permanent: true,
       },
       {
+        source: '/enxoval-de-bebe/:path*',
+        destination: '/',
+        permanent: true,
+      },
+      {
         source: '/itens-para-casa',
         destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/itens-para-casa/:path*',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/maternidade/:path*',
+        destination: '/',
+        permanent: true,
+      },
+      // Blog posts antigos de bebe — redirect pro blog ativo
+      {
+        source: '/blog/recem-nascido-:path*',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/amamentacao-:path*',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/rotina-de-sono-:path*',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/colica-:path*',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/bebe-:path*',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/gravidez-:path*',
+        destination: '/blog',
         permanent: true,
       },
     ]
