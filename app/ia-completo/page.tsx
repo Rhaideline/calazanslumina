@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { cursos } from '@/data/cursos'
 import StickyBuyBar from '@/components/StickyBuyBar'
 import CountdownBar from '@/components/CountdownBar'
+import TrackedCheckoutLink from '@/components/TrackedCheckoutLink'
 import { videos } from '@/data/videos'
 
 export const metadata: Metadata = {
@@ -75,17 +76,19 @@ export default function IACompletoPage() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-4">
-                <a
+                <TrackedCheckoutLink
                   href={link}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  courseSlug={curso.slug}
+                  courseName={curso.nome}
+                  preco={curso.preco}
+                  utmMedium="hero-vsl"
                   className="group relative bg-red-500 hover:bg-red-600 text-white font-bold text-lg md:text-xl px-10 py-5 rounded-full inline-flex items-center gap-3 transition-all hover:scale-105 shadow-2xl shadow-red-500/40"
                 >
                   Garantir por R$ 9,90
                   <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
-                </a>
+                </TrackedCheckoutLink>
                 <p className="text-white/50 text-sm">
                   De <span className="line-through">R$ 297</span> · Acesso vitalício
                 </p>
@@ -241,12 +244,12 @@ export default function IACompletoPage() {
             </div>
 
             <div className="text-center mt-12">
-              <a href={link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white font-bold text-lg px-10 py-5 rounded-full transition-all hover:scale-105 shadow-xl shadow-red-500/30">
+              <TrackedCheckoutLink href={link} courseSlug={curso.slug} courseName={curso.nome} preco={curso.preco} utmMedium="ias-grid" className="inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white font-bold text-lg px-10 py-5 rounded-full transition-all hover:scale-105 shadow-xl shadow-red-500/30">
                 Quero acesso por R$ 9,90
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
-              </a>
+              </TrackedCheckoutLink>
             </div>
           </div>
         </section>
@@ -333,14 +336,16 @@ export default function IACompletoPage() {
                   <p className="text-center text-green-400 font-bold text-sm pt-2">⚡ Economia de R$ 552,10 · 98% OFF</p>
                 </div>
 
-                <a
+                <TrackedCheckoutLink
                   href={link}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  courseSlug={curso.slug}
+                  courseName={curso.nome}
+                  preco={curso.preco}
+                  utmMedium="bonus-stack"
                   className="block bg-red-500 hover:bg-red-600 text-white font-bold text-lg py-4 rounded-full text-center transition-all hover:scale-[1.02] shadow-xl shadow-red-500/30 max-w-md mx-auto"
                 >
                   Garantir tudo por R$ 9,90 →
-                </a>
+                </TrackedCheckoutLink>
                 <p className="text-white/45 text-xs text-center mt-4"><CountdownBar /></p>
               </div>
             </div>
@@ -399,14 +404,16 @@ export default function IACompletoPage() {
                 <p className="text-amber-300 text-sm">96% de desconto · acesso vitalício</p>
               </div>
 
-              <a
+              <TrackedCheckoutLink
                 href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-red-500 hover:bg-red-600 text-white font-bold text-xl md:text-2xl py-5 md:py-6 rounded-full transition-all hover:scale-[1.02] shadow-2xl shadow-red-500/40 mb-6"
+                courseSlug={curso.slug}
+                courseName={curso.nome}
+                preco={curso.preco}
+                utmMedium="oferta-section"
+                className="block bg-red-500 hover:bg-red-600 text-white font-bold text-xl md:text-2xl py-5 md:py-6 rounded-full transition-all hover:scale-[1.02] shadow-2xl shadow-red-500/40 mb-6 text-center"
               >
                 Garantir meu acesso vitalício →
-              </a>
+              </TrackedCheckoutLink>
 
               <div className="grid sm:grid-cols-3 gap-3 text-sm">
                 <div className="flex items-center justify-center gap-2 text-white/65">
@@ -471,17 +478,19 @@ export default function IACompletoPage() {
               R$ 9,90 não muda sua vida. Mas <em>aprender IA</em> em 2026 muda. Acessa, lê, aplica nessa semana mesmo.
             </p>
 
-            <a
+            <TrackedCheckoutLink
               href={link}
-              target="_blank"
-              rel="noopener noreferrer"
+              courseSlug={curso.slug}
+              courseName={curso.nome}
+              preco={curso.preco}
+              utmMedium="cta-final"
               className="inline-flex items-center gap-3 bg-white hover:bg-amber-50 text-red-600 font-bold text-xl md:text-2xl px-12 py-6 rounded-full transition-all hover:scale-105 shadow-2xl shadow-black/40"
             >
               Acessar por R$ 9,90
               <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
-            </a>
+            </TrackedCheckoutLink>
 
             <p className="text-white/50 text-sm mt-6">95 páginas · 10 IAs · 50 templates · acesso vitalício</p>
           </div>

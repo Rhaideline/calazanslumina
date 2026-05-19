@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { trackLead } from '@/lib/analytics'
 
 interface Props {
   cidadeNome: string
@@ -37,6 +38,7 @@ export default function PreviewFormCidade({ cidadeNome, cidadeSlug, pais }: Prop
 
       if (!res.ok) throw new Error('Falha ao enviar')
 
+      trackLead({ source: `ia-preview-cidade-${cidadeSlug}`, content_name: `IA Preview · ${cidadeNome}` })
       setStatus('success')
       const link = document.createElement('a')
       link.href = '/pdfs/ia-completo-preview.pdf'

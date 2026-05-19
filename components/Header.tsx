@@ -24,7 +24,7 @@ const cursosMenu = [
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/sobre', label: 'Sobre' },
+  { href: '/sobre', label: 'Sobre a Rhaideline' },
   { href: '/para-agencias', label: 'Para Agências' },
 
   { href: '/cases', label: 'Cases' },

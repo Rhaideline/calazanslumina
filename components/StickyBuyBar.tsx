@@ -1,8 +1,11 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { trackInitiateCheckout } from '@/lib/analytics'
+import { buildUtm } from '@/lib/utm-builder'
 
 export default function StickyBuyBar({ link }: { link: string }) {
+  const trackedLink = buildUtm(link, { source: 'site', medium: 'sticky-mobile', campaign: 'ia-zero-avancado' })
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -28,10 +31,11 @@ export default function StickyBuyBar({ link }: { link: string }) {
             </p>
           </div>
           <a
-            href={link}
+            href={trackedLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-red-500 hover:bg-red-600 text-white font-bold text-sm px-5 py-3 rounded-full flex-shrink-0 inline-flex items-center gap-2 transition-colors"
+            onClick={() => trackInitiateCheckout({ courseSlug: 'ia-chatgpt-completo', courseName: 'IA do Zero ao Avançado', preco: 9.9 })}
+            className="bg-red-500 hover:bg-red-600 text-white font-bold text-base px-6 py-3.5 rounded-full flex-shrink-0 inline-flex items-center gap-2 transition-colors min-h-[48px]"
           >
             Comprar
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

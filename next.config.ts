@@ -80,33 +80,35 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       // Blog posts antigos de bebe — redirect pro blog ativo
+      // path-to-regexp v6 nao aceita :param* direto apos texto literal,
+      // entao usamos regex pattern: :slug(prefix.*) captura tudo que comeca com prefix.
       {
-        source: '/blog/recem-nascido-:path*',
+        source: '/blog/:slug(recem-nascido-.*)',
         destination: '/blog',
         permanent: true,
       },
       {
-        source: '/blog/amamentacao-:path*',
+        source: '/blog/:slug(amamentacao-.*)',
         destination: '/blog',
         permanent: true,
       },
       {
-        source: '/blog/rotina-de-sono-:path*',
+        source: '/blog/:slug(rotina-de-sono-.*)',
         destination: '/blog',
         permanent: true,
       },
       {
-        source: '/blog/colica-:path*',
+        source: '/blog/:slug(colica-.*)',
         destination: '/blog',
         permanent: true,
       },
       {
-        source: '/blog/bebe-:path*',
+        source: '/blog/:slug(bebe-.*)',
         destination: '/blog',
         permanent: true,
       },
       {
-        source: '/blog/gravidez-:path*',
+        source: '/blog/:slug(gravidez-.*)',
         destination: '/blog',
         permanent: true,
       },

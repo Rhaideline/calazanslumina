@@ -3,6 +3,9 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { formatPreco } from '@/lib/formatters'
+import { trackInitiateCheckout } from '@/lib/analytics'
+import { buildUtm } from '@/lib/utm-builder'
+import { cursos } from '@/data/cursos'
 
 interface FloatingCTAProps {
   gratuito: boolean
@@ -44,10 +47,14 @@ export default function FloatingCTA({ gratuito, preco, precoOriginal, slug, link
           </Link>
         ) : (
           <a
-            href={linkPagamento || '#'}
+            href={buildUtm(linkPagamento || '#', { source: 'site', medium: 'floating-cta', campaign: slug, content: slug })}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary text-sm px-6 py-2.5 whitespace-nowrap"
+            onClick={() => {
+              const c = cursos.find((x) => x.slug === slug)
+              trackInitiateCheckout({ courseSlug: slug, courseName: c?.nome || slug, preco })
+            }}
+            className="btn-primary text-sm px-6 py-3 whitespace-nowrap min-h-[48px] inline-flex items-center"
           >
             Garantir por R$ {formatPreco(preco)}
           </a>

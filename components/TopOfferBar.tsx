@@ -2,6 +2,11 @@
 
 import { useEffect, useState } from 'react'
 import CountdownBar from './CountdownBar'
+import { trackInitiateCheckout } from '@/lib/analytics'
+import { buildUtm } from '@/lib/utm-builder'
+
+const PAYMENT_URL = 'https://link.fastpaydirect.com/payment-link/6a08f6ef1d5a394a682e4ee1'
+const CHECKOUT_URL = buildUtm(PAYMENT_URL, { source: 'site', medium: 'topbar', campaign: 'ia-zero-avancado' })
 
 const STORAGE_KEY = 'topbar-dismissed-v2'
 
@@ -26,9 +31,10 @@ export default function TopOfferBar() {
           por <strong className="text-base">R$ 9,90</strong> · <CountdownBar />
         </span>
         <a
-          href="https://link.fastpaydirect.com/payment-link/6a08f6ef1d5a394a682e4ee1"
+          href={CHECKOUT_URL}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackInitiateCheckout({ courseSlug: 'ia-chatgpt-completo', courseName: 'IA do Zero ao Avançado', preco: 9.9 })}
           className="bg-white text-red-600 font-bold text-xs px-4 py-1.5 rounded-full hover:bg-amber-50 transition-colors uppercase tracking-wider flex-shrink-0"
         >
           Garantir agora →
