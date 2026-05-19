@@ -5,6 +5,7 @@ import { cidadesBrasil } from '@/data/cidades-brasil'
 import { servicos } from '@/data/servicos'
 import { cursos } from '@/data/cursos'
 import { blogPosts } from '@/data/blog'
+import { todasCidades } from '@/data/todas-cidades'
 
 const BASE = 'https://calazanslumina.com.br'
 
@@ -12,7 +13,7 @@ const BASE = 'https://calazanslumina.com.br'
 // Google só respeita lastmod quando é estável — usar new Date() faz com que
 // cada build mude todas as datas, o que sinaliza "ruído" e Google ignora.
 // Atualize esta string quando houver mudanças relevantes em conteúdo/dados.
-const SITE_LAST_UPDATE = '2026-05-14T00:00:00.000Z'
+const SITE_LAST_UPDATE = '2026-05-19T00:00:00.000Z'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = SITE_LAST_UPDATE
@@ -25,9 +26,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/cursos`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${BASE}/servicos`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
-
     { url: `${BASE}/para-agencias`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/cases`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    // Carro-chefe + lead magnet + videos (criados em maio/2026)
+    { url: `${BASE}/ia-completo`, lastModified: now, changeFrequency: 'weekly', priority: 1 },
+    { url: `${BASE}/ia-preview`, lastModified: now, changeFrequency: 'weekly', priority: 0.95 },
+    { url: `${BASE}/videos`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
   ]
 
   // Cursos
@@ -111,6 +115,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   )
 
+  // Lead magnet /ia-preview/[cidade] × todas as cidades (BR + MA)
+  const iaPreviewCidadesPages: MetadataRoute.Sitemap = todasCidades.map((c) => ({
+    url: `${BASE}/ia-preview/${c.slug}`,
+    lastModified: now,
+    changeFrequency: 'weekly' as const,
+    priority: 0.65,
+  }))
+
   return [
     ...staticPages,
     ...cursosPages,
@@ -122,5 +134,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...capitaisServicosPages,
     ...cursosCidadesPages,
     ...cursosCapitaisPages,
+    ...iaPreviewCidadesPages,
   ]
 }
