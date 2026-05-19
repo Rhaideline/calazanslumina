@@ -157,14 +157,14 @@ export const cursos: Curso[] = [
   },
   {
     slug: 'ia-marketing-digital-iniciantes',
-    nome: 'IA Completa para Marketing Digital',
+    nome: 'IA & ChatGPT — Curso Completo',
     descricaoCurta: 'O guia definitivo para quem está começando. Aprenda a usar Inteligência Artificial para criar conteúdo, vender mais e automatizar seu marketing do zero.',
     descricaoLonga: 'Este curso foi desenhado especificamente para quem está iniciando no marketing digital e quer usar o poder da IA para acelerar seus resultados. Você vai aprender a usar as principais ferramentas do mercado para criar artes, textos, vídeos e estratégias completas, mesmo que nunca tenha trabalhado com marketing antes.',
-    preco: 10,
+    preco: 9.9,
     destaque: true,
     pdfDisponivel: true,
     linkPagamento: 'https://link.fastpaydirect.com/payment-link/69a8cc1484b2d7dfdd5e1370',
-    imagem: '/cursos/capa-marketing-digital-iniciantes.svg',
+    imagem: '/cursos/capa-ia-chatgpt-completo.svg',
     paraQuem: [
       'Iniciantes no marketing digital que querem vantagem competitiva',
       'Empreendedores que precisam fazer seu próprio marketing',
