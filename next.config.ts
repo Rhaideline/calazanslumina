@@ -19,6 +19,15 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // CANONICAL: forca www → non-www (301 permanente)
+      // Resolve duplicate-content do Google Search Console:
+      // antes Google indexava 50% das URLs como www.calazanslumina.com.br
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.calazanslumina.com.br' }],
+        destination: 'https://calazanslumina.com.br/:path*',
+        permanent: true,
+      },
       {
         source: '/blog/robo-whatsapp-automacao-atendimento',
         destination: '/blog/robo-de-whatsapp-como-automatizar-seu-atendimento-sem-perder-o-lado-humano',
