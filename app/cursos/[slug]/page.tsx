@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { cursos } from '@/data/cursos'
+import { cursos, getRelatedCursos } from '@/data/cursos'
 import { formatPreco, formatPrecoCompacto } from '@/lib/formatters'
 import ScrollReveal from '@/components/ScrollReveal'
 import FloatingCTA from '@/components/FloatingCTA'
@@ -8,6 +8,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Breadcrumb from '@/components/Breadcrumb'
 import CoursesSection from '@/components/CoursesSection'
+import CourseViewTracker from '@/components/CourseViewTracker'
 
 export function generateStaticParams() {
   return cursos.map((c) => ({ slug: c.slug }))
@@ -38,7 +39,9 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
   if (!curso) notFound()
 
   const totalAulas = curso.modulos.reduce((acc, m) => acc + m.aulas.length, 0)
-  const outrosCursos = cursos.filter((c) => c.slug !== slug).slice(0, 3)
+  // Smart upsell: pega cursos COMPLEMENTARES baseado em regras de cross-sell
+  // (data/cursos.ts:RELATED_RULES), nao apenas 3 primeiros aleatorios.
+  const outrosCursos = getRelatedCursos(slug, 3)
 
   const courseSchema = {
     '@context': 'https://schema.org',
@@ -122,6 +125,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
             { label: 'Cursos', href: '/cursos' },
             { label: curso.nome },
           ]} />
+          <CourseViewTracker courseSlug={curso.slug} courseName={curso.nome} preco={curso.preco} />
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <ScrollReveal>

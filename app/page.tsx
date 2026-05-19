@@ -534,15 +534,18 @@ export default function HomePage() {
                   Ela não é só especialista em ferramentas — ela viveu o que é ser dona de negócio.
                 </p>
               </div>
-              <div className="grid grid-cols-3 gap-4 mt-8">
+              <div className="grid grid-cols-3 gap-3 mt-8">
                 {[
-                  { valor: '8+', desc: 'anos' },
-                  { valor: '100+', desc: 'projetos' },
-                  { valor: '2', desc: 'países' },
+                  { valor: '8+', desc: 'anos de mercado' },
+                  { valor: '100+', desc: 'projetos entregues' },
+                  { valor: '50+', desc: 'sub-contas GHL' },
+                  { valor: '9k+', desc: 'paginas SEO' },
+                  { valor: '2', desc: 'paises (BR + EUA)' },
+                  { valor: 'GHL', desc: 'certified partner' },
                 ].map((s) => (
-                  <div key={s.desc} className="text-center bg-white rounded-xl p-4 shadow-sm">
-                    <p className="font-serif text-2xl font-bold text-brand-dark">{s.valor}</p>
-                    <p className="text-brand-dark/50 text-xs">{s.desc}</p>
+                  <div key={s.desc} className="text-center bg-white rounded-xl p-3 shadow-sm">
+                    <p className="font-serif text-xl md:text-2xl font-bold text-brand-dark">{s.valor}</p>
+                    <p className="text-brand-dark/50 text-[10px] md:text-xs leading-tight">{s.desc}</p>
                   </div>
                 ))}
               </div>

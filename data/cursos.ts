@@ -549,3 +549,30 @@ export const cursos: Curso[] = [
     ],
   },
 ]
+
+// Smart upsell — recomenda cursos COMPLEMENTARES (não competidores).
+// Cada curso aponta pra outros 3 que naturalmente fazem sentido depois.
+// Regra: quem comprou IA, recomenda ferramentas de aplicação. Quem comprou
+// ferramenta especifica, recomenda fundamentos. Quem comprou idoso/iniciante,
+// recomenda proximo nivel.
+const RELATED_RULES: Record<string, string[]> = {
+  'ia-chatgpt-completo': ['ia-marketing-digital-iniciantes', 'redes-sociais-que-vendem', 'funis-de-vendas-simplificado'],
+  'ia-marketing-digital-iniciantes': ['ia-chatgpt-completo', 'google-meu-negocio-do-zero', 'redes-sociais-que-vendem'],
+  'chatgpt-para-idosos': ['ia-chatgpt-completo', 'marketing-digital-iniciantes', 'ferramentas-digitais-secretarias'],
+  'marketing-digital-iniciantes': ['ia-marketing-digital-iniciantes', 'google-meu-negocio-do-zero', 'redes-sociais-que-vendem'],
+  'google-meu-negocio-do-zero': ['ia-marketing-digital-iniciantes', 'redes-sociais-que-vendem', 'funis-de-vendas-simplificado'],
+  'redes-sociais-que-vendem': ['ia-marketing-digital-iniciantes', 'funis-de-vendas-simplificado', 'google-meu-negocio-do-zero'],
+  'funis-de-vendas-simplificado': ['ia-marketing-digital-iniciantes', 'redes-sociais-que-vendem', 'ferramentas-digitais-secretarias'],
+  'ferramentas-digitais-secretarias': ['chatgpt-para-idosos', 'ia-chatgpt-completo', 'marketing-digital-iniciantes'],
+  'ebook-ia-marketing-sites': ['ia-chatgpt-completo', 'ia-marketing-digital-iniciantes', 'redes-sociais-que-vendem'],
+}
+
+export function getRelatedCursos(slug: string, fallback: number = 3): Curso[] {
+  const rule = RELATED_RULES[slug]
+  if (rule) {
+    const related = rule.map((s) => cursos.find((c) => c.slug === s)).filter(Boolean) as Curso[]
+    if (related.length >= fallback) return related.slice(0, fallback)
+  }
+  // Fallback: outros cursos que não o atual
+  return cursos.filter((c) => c.slug !== slug).slice(0, fallback)
+}

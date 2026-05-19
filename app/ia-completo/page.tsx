@@ -5,6 +5,7 @@ import { cursos } from '@/data/cursos'
 import StickyBuyBar from '@/components/StickyBuyBar'
 import CountdownBar from '@/components/CountdownBar'
 import TrackedCheckoutLink from '@/components/TrackedCheckoutLink'
+import CourseViewTracker from '@/components/CourseViewTracker'
 import { videos } from '@/data/videos'
 
 export const metadata: Metadata = {
@@ -28,6 +29,7 @@ export default function IACompletoPage() {
   return (
     <>
       <StickyBuyBar link={link} />
+      <CourseViewTracker courseSlug={curso.slug} courseName={curso.nome} preco={curso.preco} />
 
       <main className="bg-[#0a0a0a] text-white overflow-x-hidden">
         {/* ════ HERO ════ */}
@@ -93,7 +95,21 @@ export default function IACompletoPage() {
                   De <span className="line-through">R$ 297</span> · Acesso vitalício
                 </p>
               </div>
-              <p className="text-amber-300 text-xs tracking-wider mb-10">⚡ 1.247 brasileiros já garantiram nessa semana</p>
+              <p className="text-amber-300 text-xs tracking-wider mb-6">⚡ 1.247 brasileiros já garantiram nessa semana</p>
+
+              {/* Authority strip — quem escreveu */}
+              <a href="/sobre" className="inline-flex items-center gap-3 bg-white/5 border border-white/10 hover:border-white/25 rounded-full pl-1 pr-5 py-1 mb-10 transition-all group">
+                <Image
+                  src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d859c95106d5e512376e8e.jpeg"
+                  alt="Rhaideline Calazans"
+                  width={36}
+                  height={36}
+                  className="w-9 h-9 rounded-full object-cover"
+                />
+                <span className="text-white/65 text-xs md:text-sm">
+                  Escrito por <strong className="text-white">Rhaideline Calazans</strong> · 8+ anos · 50+ subcontas GHL
+                </span>
+              </a>
 
               {/* Stats row */}
               <div className="grid grid-cols-4 gap-3 md:gap-6 max-w-3xl mx-auto pt-8 border-t border-white/10">
