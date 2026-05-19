@@ -50,6 +50,14 @@ export default function ThirdPartyScripts() {
         </Script>
       )}
 
+      {/* === GHL External Tracking (visitor sessions -> GHL contacts) === */}
+      <Script
+        id="ghl-tracking"
+        src="https://link.msgsndr.com/js/external-tracking.js"
+        data-tracking-id="tk_d9f7ee4a0a234153bf523599ffc43c2a"
+        strategy="afterInteractive"
+      />
+
       {/* === GA4 (gtag) === */}
       {GA4_ID && (
         <>
