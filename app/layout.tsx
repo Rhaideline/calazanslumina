@@ -34,19 +34,8 @@ export const metadata: Metadata = {
   },
   description:
     'Agencia de marketing digital para brasileiros nos EUA e Brasil. Sites profissionais, funis GHL, CRM com IA no WhatsApp, redes sociais e Google Maps. 100+ projetos. Atendimento 100% em portugues. Orcamento gratis →',
-  keywords: [
-    'marketing digital para brasileiros',
-    'agência de marketing Massachusetts',
-    'marketing digital Brasil',
-    'sites para brasileiros nos EUA',
-    'GoHighLevel',
-    'funis de vendas',
-    'CRM WhatsApp',
-    'gestão de redes sociais',
-    'Google Meu Negócio',
-    'Calazans Lumina',
-    'Rhaideline Calazans',
-  ],
+  // keywords meta foi descontinuado pelo Google em 2009 — removido para limpar payload.
+  // Topic clustering + semantic HTML + schema.org cobrem a função melhor.
   icons: {
     icon: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6da0830220a0c3e452.png',
     apple: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6da0830220a0c3e452.png',
@@ -80,6 +69,11 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://calazanslumina.com.br',
+    languages: {
+      'pt-BR': 'https://calazanslumina.com.br',
+      'pt': 'https://calazanslumina.com.br',
+      'x-default': 'https://calazanslumina.com.br',
+    },
   },
   robots: {
     index: true,
@@ -159,6 +153,8 @@ const organizationJsonLd = {
     'Web Development',
     'GoHighLevel',
     'SEO',
+    'AEO (Answer Engine Optimization)',
+    'GEO (Generative Engine Optimization)',
     'Google Business Profile',
     'Inteligência Artificial',
     'ChatGPT',
@@ -170,7 +166,9 @@ const organizationJsonLd = {
     'Meta Ads',
     'WhatsApp Business',
     'IA Conversacional',
+    'Framework CRIA da Calazans Lumina',
   ],
+  slogan: 'Marketing Digital para Brasileiros nos EUA e Brasil — Framework CRIA: Conteúdo, Relevância, IA, Automação',
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Serviços de Marketing Digital',

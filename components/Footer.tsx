@@ -178,9 +178,14 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-white/70 text-sm">&copy; {new Date().getFullYear()} Calazans Lumina. Todos os direitos reservados.</p>
+          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6">
+            <p className="text-white/70 text-sm">&copy; {new Date().getFullYear()} Calazans Lumina. Todos os direitos reservados.</p>
+            <p className="text-white/40 text-xs">
+              <span className="text-brand-mint/70">●</span> Conteúdo atualizado em {new Date().toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' })}
+            </p>
+          </div>
           <p className="text-white/50 text-xs text-center md:text-right max-w-lg">
-            Agência de marketing digital para brasileiros nos EUA e Brasil — Sites profissionais, Funis GHL, CRM com IA, Redes Sociais e Google Business Profile.
+            Agência de marketing digital para brasileiros nos EUA e Brasil — Operando sob o Framework CRIA (Conteúdo · Relevância · IA · Automação).
           </p>
         </div>
       </div>

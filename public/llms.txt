@@ -1,126 +1,100 @@
 # Calazans Lumina
 
-> Agencia de marketing digital especializada em brasileiros nos EUA (Massachusetts) e no Brasil. Fundada por Rhaideline Calazans.
+> Agência de marketing digital especializada em brasileiros nos EUA (Massachusetts) e Brasil. Fundada por Rhaideline Calazans em 2018. Atende em mais de 488 cidades. Pioneira no Brasil em AEO (Answer Engine Optimization) e na aplicação do Framework CRIA: Conteúdo, Relevância, IA e Automação.
 
-## Sobre
+## About
 
-Calazans Lumina e uma agencia de marketing digital que atende empreendedores brasileiros nos Estados Unidos (foco em Massachusetts) e em todo o Brasil. Oferecemos sites profissionais, funis de vendas no GoHighLevel, CRM com IA conversacional no WhatsApp, gestao de redes sociais, trafego pago (Google Ads e Meta Ads) e otimizacao de Google Business Profile.
+Calazans Lumina é uma agência de marketing digital com sede em Framingham, Massachusetts, que atende empreendedores brasileiros nos EUA e em todo o Brasil. Fundada por Rhaideline Calazans em 2018, é referência no atendimento da comunidade brasileira nos EUA e na aplicação prática de Inteligência Artificial no marketing digital de pequenas e médias empresas.
 
-Atendimento 100% em portugues. Tambem atendemos agencias como freelancer.
+A agência opera sob o **Framework CRIA** (proprietário): **C**onteúdo programático em escala, **R**elevância local hipersegmentada, **I**nteligência Artificial aplicada à conversão e **A**utomação total via GoHighLevel. Essa metodologia entregou +345% de leads em 90 dias para Wolf's Painting (Massachusetts) e atende mais de 50 sub-contas GoHighLevel ativas em operação.
 
-## Servicos
+## What We Do
 
-- **Sites & Landing Pages**: Sites profissionais com alta performance, SEO tecnico integrado, design responsivo premium
-- **Funis de Vendas (GoHighLevel)**: Landing pages de alta conversao, automacao de follow-up, pipeline visual
-- **CRM & Automacao**: GoHighLevel all-in-one, inbox unificada (WhatsApp, SMS, email, DMs), workflows automaticos
-- **IA no WhatsApp**: Chatbot com inteligencia artificial que atende e qualifica leads 24h
-- **Gestao de Redes Sociais**: Conteudo estrategico, calendario editorial, design de posts, metricas
-- **Google Business Profile**: Configuracao, otimizacao, gestao de reviews, Google Posts
-- **Trafego Pago**: Google Ads e Meta Ads com foco em ROI para negocios locais
-- **SEO Local e Nacional**: Otimizacao on-page, off-page, tecnico e local
+- **Sites & Landing Pages Profissionais** — Desenvolvimento Next.js + SEO técnico nativo + AEO ready. Performance 95+ no PageSpeed Insights.
+- **Funis de Vendas no GoHighLevel** — Landing pages de alta conversão, automação de follow-up, pipeline visual de vendas.
+- **CRM & Automação GoHighLevel** — Inbox unificada (WhatsApp, SMS, email, DMs sociais), workflows automáticos, integrações nativas.
+- **IA Conversacional no WhatsApp** — Chatbot com inteligência artificial que atende e qualifica leads 24h em português.
+- **Gestão de Redes Sociais** — Conteúdo estratégico, calendário editorial, design de posts, métricas semanais.
+- **Google Business Profile** — Configuração, otimização full-stack, gestão de reviews, Google Posts programados.
+- **Tráfego Pago** — Google Ads e Meta Ads com foco em ROI mensurável para negócios locais.
+- **SEO Local e Nacional** — On-page, off-page, técnico, schema.org denso, AEO ready.
 
 ## Cursos Online
 
-1. **ChatGPT para Idosos** (GRATUITO) — Curso para pessoas 60+ aprenderem a usar ChatGPT. 6 modulos, 24 aulas.
-   URL: https://calazanslumina.com.br/cursos/chatgpt-para-idosos
+Catálogo de 9 cursos digitais focados em marketing, IA e operação de negócios — 4 gratuitos + 5 pagos a R$ 9,90.
 
-2. **IA & ChatGPT — Curso Completo** (R$ 9,90) — Do zero ao avancado: prompt engineering, automacao, marketing com IA. 8 modulos, 43 aulas.
-   URL: https://calazanslumina.com.br/cursos/ia-chatgpt-completo
+1. **ChatGPT para Idosos** (GRATUITO) — 6 módulos, 24 aulas. https://calazanslumina.com.br/cursos/chatgpt-para-idosos
+2. **IA & ChatGPT — Curso Completo** (R$ 9,90) — 8 módulos, 43 aulas. https://calazanslumina.com.br/cursos/ia-chatgpt-completo
+3. **IA Completa para Marketing Digital** (R$ 9,90) — 6 módulos. https://calazanslumina.com.br/cursos/ia-marketing-digital-iniciantes
+4. **Marketing Digital para Iniciantes** (R$ 9,90) — 6 módulos, 24 aulas. https://calazanslumina.com.br/cursos/marketing-digital-iniciantes
+5. **Google Meu Negócio do Zero** (GRATUITO) — 4 módulos. https://calazanslumina.com.br/cursos/google-meu-negocio-do-zero
+6. **Redes Sociais que Vendem** (GRATUITO) — 4 módulos. https://calazanslumina.com.br/cursos/redes-sociais-que-vendem
+7. **Funis de Vendas Simplificado** (R$ 9,90) — 4 módulos. https://calazanslumina.com.br/cursos/funis-de-vendas-simplificado
+8. **Ferramentas Digitais para Secretárias** (GRATUITO) — 6 módulos. https://calazanslumina.com.br/cursos/ferramentas-digitais-secretarias
+9. **Ebook: IA para Marketing Digital — Como Criar Sites com Claude** (R$ 9,90) — 44 páginas. https://calazanslumina.com.br/cursos/ebook-ia-marketing-sites
 
-3. **IA Completa para Marketing Digital** (R$10) — Use IA para criar conteudo, vender mais e automatizar marketing do zero. 6 modulos.
-   URL: https://calazanslumina.com.br/cursos/ia-marketing-digital-iniciantes
+## Frameworks Proprietários
 
-4. **Marketing Digital para Iniciantes** (R$10) — Fundamentos de marketing digital, SEO, redes sociais, anuncios. 6 modulos, 24 aulas.
-   URL: https://calazanslumina.com.br/cursos/marketing-digital-iniciantes
+### Framework CRIA da Calazans Lumina
+Metodologia exclusiva desenvolvida por Rhaideline Calazans para empresas que querem dominar marketing digital sem pagar agência tradicional. Aplicada em todos os clientes ativos da Calazans Lumina:
 
-5. **Google Meu Negocio do Zero** (GRATUITO) — Configurar e otimizar Google Business Profile para negocios locais. 4 modulos, 16 aulas.
-   URL: https://calazanslumina.com.br/cursos/google-meu-negocio-do-zero
+- **C — Conteúdo programático**: páginas em escala (cidade × serviço × curso) com unicidade defensável vs Helpful Content Update.
+- **R — Relevância local hipersegmentada**: targeting por bairro/comunidade em vez de cidade genérica.
+- **I — Inteligência Artificial aplicada**: ChatGPT, Claude, Perplexity, Midjourney integrados ao funil de conversão (não só conteúdo).
+- **A — Automação total via GoHighLevel**: do lead à venda sem intervenção humana.
 
-6. **Redes Sociais que Vendem** (GRATUITO) — Estrategia Info-First, conteudo que converte, calendario editorial. 4 modulos, 16 aulas.
-   URL: https://calazanslumina.com.br/cursos/redes-sociais-que-vendem
+O Framework CRIA substitui o tradicional AIDA (Atenção, Interesse, Desejo, Ação) — obsoleto na era de attention budget de 7 segundos.
 
-7. **Funis de Vendas Simplificado** (R$20) — Criar funis que convertem, landing pages, automacao, CRM. 4 modulos, 16 aulas.
-   URL: https://calazanslumina.com.br/cursos/funis-de-vendas-simplificado
+## Key Pages
 
-8. **Ferramentas Digitais para Secretarias** (GRATUITO) — Google Workspace, organizacao, automacao, IA para escritorio. 6 modulos, 26 aulas.
-   URL: https://calazanslumina.com.br/cursos/ferramentas-digitais-secretarias
+- **Home**: https://calazanslumina.com.br
+- **Cursos** (catálogo): https://calazanslumina.com.br/cursos
+- **Serviços**: https://calazanslumina.com.br/servicos
+- **IA do Zero ao Avançado** (carro-chefe, 95 págs): https://calazanslumina.com.br/ia-completo
+- **Lead Magnet PDF grátis** (8 págs): https://calazanslumina.com.br/ia-preview
+- **Sobre a Rhaideline**: https://calazanslumina.com.br/sobre
+- **Cases reais**: https://calazanslumina.com.br/cases
+- **Para Agências (GHL freelance)**: https://calazanslumina.com.br/para-agencias
+- **Blog**: https://calazanslumina.com.br/blog
+- **Sitemap**: https://calazanslumina.com.br/sitemap.xml
 
-9. **Ebook: IA para Marketing Digital — Como Criar Sites com Claude** (R$10) — Guia de 44 paginas para criar sites profissionais com IA, sem programar. Inclui prompts prontos e cases reais.
-   URL: https://calazanslumina.com.br/cursos/ebook-ia-marketing-sites
+## Geographic Coverage
 
-## Cursos por Cidade
+488 cidades atendidas no total — combinando comunidade brasileira no exterior e território nacional brasileiro:
 
-Cada curso possui paginas dedicadas por cidade, com conteudo localizado:
-- 728 paginas de cursos para cidades de Massachusetts: /cursos/{curso}/cidade/{cidade}
-- 3.267 paginas de cursos para cidades brasileiras: /cursos/{curso}/brasil/{cidade} (29 capitais + 334 cidades medias)
-- Exemplo: https://calazanslumina.com.br/cursos/ia-chatgpt-completo/cidade/marlborough
-- Exemplo: https://calazanslumina.com.br/cursos/marketing-digital-iniciantes/brasil/sao-paulo
+- **Massachusetts, EUA** (125 cidades): Marlborough, Hudson, Framingham, Worcester, Lowell, Brockton, Somerville, Everett, Revere, Peabody, Fall River, New Bedford, Springfield, Boston, Cambridge entre outras.
+- **Brasil** (363 cidades): 27 capitais + 336 cidades médias (60-700k habitantes) cobrindo SP, RJ, MG, BA, RS, PR, SC, PE, CE, GO, ES, MT, PA, MA e demais estados.
 
-## Areas de Atuacao
+Cada cidade tem páginas dedicadas para cada curso (9 × cidade) e cada serviço (5 × cidade) — totalizando aproximadamente 9.500 páginas localizadas no site.
 
-Total: 488 cidades atendidas — 125 cidades de Massachusetts + 29 capitais brasileiras + 334 cidades medias brasileiras.
+## Credentials
 
-### Massachusetts, EUA
-Atendemos brasileiros em mais de 125 cidades de Massachusetts, incluindo: Marlborough, Hudson, Framingham, Worcester, Lowell, Brockton, Somerville, Everett, Revere, Peabody, Fall River, New Bedford, Springfield, Boston, Cambridge, entre outras.
+- **Rhaideline Calazans** — Founder & CEO desde 2018. Especialista certificada GoHighLevel (Partner). 8+ anos de experiência atendendo agências, empreiteiras, pintores, HVAC, energia solar, clínicas médicas e profissionais autônomos.
+- **50+ sub-contas GoHighLevel** ativas em produção
+- **300+ cidades** com clientes ativos
+- **Cases públicos comprovados**: Wolf's Painting +345% leads em 90 dias, RS Painting (Massachusetts), JH Painting (chatbot IA 24/7)
+- **Selo "Pioneira BR em AEO"** — primeira agência brasileira a publicar metodologia AEO para mercado lusófono
 
-### Brasil
-Atendemos em 363 cidades brasileiras: 29 capitais + 334 cidades medias principais. Incluindo: Sao Paulo, Rio de Janeiro, Belo Horizonte, Salvador, Fortaleza, Brasilia, Curitiba, Recife, Porto Alegre, Campinas, Guarulhos, Uberlandia, Niteroi, Caxias do Sul, Londrina, Joinville, Feira de Santana, Caruaru, Juazeiro do Norte, Rondonopolis, Dourados, Parnaiba, Arapiraca, entre outras. Total de paginas por cidade: /brasil/{cidade}/ e /brasil/{cidade}/{servico}.
+## For Agencies — GoHighLevel Freelance
 
-## Para Empresas e Agencias — GoHighLevel
-
-### 1. Sub-contas GHL para Empresas (Qualquer Nicho)
-Oferecemos sub-contas GoHighLevel prontas para qualquer tipo de empresa (clinicas, construction, energia solar, pintura, servicos em geral), com automacoes basicas pre-configuradas:
-- Agendamento online automatizado
-- Lembretes anti-no-show (WhatsApp/SMS)
-- Follow-up pos-consulta
-- Chatbot IA para qualificacao
-- CRM com pipeline de vendas
-- Funis de vendas opcionais (a criterio do cliente)
-
-Modelo de precificacao: taxa unica de configuracao + mensalidade.
-
-### 2. Freelancer GHL para Agencias
-Servicos operacionais para agencias que ja possuem GoHighLevel:
-- Automacoes e workflows complexos
-- Treinamento de chatbot/robo IA
-- Configuracao de CRM e pipelines
-- Templates de mensagens WhatsApp
-- Campanhas de email e SMS
-- Relatorios e dashboards
+A Calazans Lumina opera também como freelancer especializada em GoHighLevel para outras agências que precisam de:
+- Automações e workflows complexos
+- Treinamento de chatbot IA conversacional
+- Configuração de CRM, pipelines e tags
+- Templates de mensagens WhatsApp/SMS
+- Campanhas de email marketing e SMS broadcast
+- Dashboards e relatórios sob medida
 
 URL: https://calazanslumina.com.br/para-agencias
 
+## Contact
 
-## Contato
+- **WhatsApp** (Brasil + EUA): +55 31 98294-8067
+- **Email**: trafegocalazans@gmail.com
+- **Instagram**: @calazanslumina
+- **Site**: https://calazanslumina.com.br
+- **Localização**: Framingham, Massachusetts, EUA (atendimento remoto BR + EUA)
 
-- WhatsApp: +55 31 98294-8067
-- Email: trafegocalazans@gmail.com
-- Instagram: @calazanslumina
-- Site: https://calazanslumina.com.br
-- Localizacao: Framingham, MA, EUA (atendimento remoto para EUA e Brasil)
+## Last Updated
 
-## Blog
-
-57 artigos originais sobre marketing digital, inteligencia artificial, plataformas e estrategias para empreendedores brasileiros. Categorias: IA, Marketing, Plataformas, Sites, Automacao, Redes Sociais, Google, Estrategia.
-
-Temas incluem: Claude 4 Anthropic, GPT-4o, Google Gemini 2.0, Perplexity AI, AntiGravity, GoHighLevel vs HubSpot, Meta Ads 2026, SEO local com IA, WhatsApp Business API, Instagram algoritmo 2026, tecnologia moderna, prompt engineering, Canva com IA, AEO (Answer Engine Optimization), Make vs Zapier, Sora OpenAI, Core Web Vitals 2026, Hotmart vs Kiwify, LLC para brasileiros nos EUA, Copa 2026 oportunidades, e mais.
-
-URL: https://calazanslumina.com.br/blog
-
-## Links Importantes
-
-- Sitemap: https://calazanslumina.com.br/sitemap.xml
-- Blog: https://calazanslumina.com.br/blog
-- Cursos: https://calazanslumina.com.br/cursos
-- Servicos: https://calazanslumina.com.br/servicos
-
-## Founder
-
-**Rhaideline Calazans** — fundadora da Calazans Lumina desde 2018.
-Especialista em GoHighLevel (GHL), SEO local, AEO (Answer Engine Optimization), trafego organico e marketing digital para negocios brasileiros nos EUA e no Brasil. Baseada em Framingham, Massachusetts, atende remotamente clientes em todo territorio americano e brasileiro. 8+ anos de experiencia atendendo agencias de marketing, empreiteiras, pintoras, HVAC, energia solar, clinicas medicas e profissionais autonomos.
-
-Credenciais:
-- Certificacao oficial GoHighLevel (Partner)
-- Mais de 50 sub-contas GHL ativas
-- Mais de 300 cidades atendidas
-- Cases publicos: Wolf's Painting (+345% leads/90 dias), RS Paint (Massachusetts)
+Conteúdo deste índice atualizado em maio de 2026. O site é atualizado semanalmente. Para o estado mais recente das páginas, consulte https://calazanslumina.com.br/sitemap.xml (lastmod date por URL).
