@@ -1,0 +1,903 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>Calazans Lumina · Curso IA Completo — Storyboard</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0a0a;--ink-2:#1A1A1A;--paper:#F5F1EA;--paper-2:#EAE2CC;
+    --red:#FF0005;--red-soft:#FF3B3B;--red-deep:#A00306;
+    --green:#16a34a;--gold:#D4A24B;--blue:#2563eb;
+    --rule:rgba(255,255,255,.08);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:#0a0a0a;color:#fff;font-family:'DM Sans',system-ui,sans-serif;line-height:1.5}
+  .page-head{max-width:1500px;margin:0 auto;padding:40px 32px 12px}
+  .page-head .meta{font-size:11px;letter-spacing:.32em;text-transform:uppercase;opacity:.55;font-weight:500}
+  .page-head h1{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;letter-spacing:-.02em;font-size:42px;margin:12px 0;line-height:1}
+  .page-head h1 em{color:var(--red)}
+  .chapter{max-width:1500px;margin:40px auto 0;padding:0 32px 12px;display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid var(--rule)}
+  .chapter h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:26px;margin:0 0 10px}
+  .chapter h2 em{color:var(--red)}
+  .chapter .meta{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--red-soft);font-weight:600}
+  .storyboard{max-width:1500px;margin:20px auto 0;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+  .scene{background:var(--ink-2);border:1px solid var(--rule);border-radius:14px;overflow:hidden}
+  .scene-meta{padding:14px 18px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;gap:8px}
+  .scene-num{font-family:'DM Serif Display',serif;font-style:italic;font-size:22px;line-height:1}
+  .scene-num small{display:block;font-size:8px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:4px;font-weight:600;font-family:'DM Sans',sans-serif;font-style:normal}
+  .scene-time{font-size:8px;letter-spacing:.32em;text-transform:uppercase;color:var(--red-soft);font-weight:700;text-align:right}
+  .frame{background:#222;aspect-ratio:9/16;overflow:hidden;position:relative}
+  .reel{position:absolute;top:0;left:0;width:1080px;height:1920px;transform-origin:top left;transform:scale(.225);font-family:'DM Sans',sans-serif;color:#fff}
+
+  /* Backgrounds */
+  .bg{position:absolute;inset:0;z-index:0}
+  .bg.paper{background:var(--paper);color:var(--ink)}
+  .bg.ink{background:#0a0a0a}
+  .bg.grad-r{background:radial-gradient(60% 50% at 80% 20%,rgba(255,0,5,.5),transparent 60%),linear-gradient(160deg,#1a0405 0%,#0a0a0a 60%,#000 100%)}
+  .bg.grad-g{background:radial-gradient(60% 50% at 20% 80%,rgba(22,163,74,.4),transparent 60%),linear-gradient(160deg,#0a1f0d 0%,#0a0a0a 60%,#000 100%)}
+  .bg.grad-b{background:radial-gradient(60% 50% at 50% 50%,rgba(37,99,235,.35),transparent 65%),linear-gradient(160deg,#081021 0%,#0a0a0a 60%,#000 100%)}
+  .bg.grad-gold{background:radial-gradient(60% 50% at 50% 50%,rgba(212,162,75,.35),transparent 65%),linear-gradient(160deg,#1a1408 0%,#0a0a0a 60%,#000 100%)}
+
+  /* Header logo + pill */
+  .head{position:absolute;top:64px;left:60px;right:60px;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:20px}
+  .logo{display:inline-flex;align-items:center;gap:14px;line-height:1}
+  .logo img{width:50px;height:50px;object-fit:contain}
+  .logo .name{font-family:'DM Serif Display',serif;font-style:italic;font-size:24px;color:#fff;line-height:1}
+  .reel.tone-light .logo .name{color:var(--ink)}
+  .logo .sub{font-size:9px;letter-spacing:.5em;text-transform:uppercase;font-weight:500;color:var(--red);display:block;margin-top:4px}
+  .pill{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:999px;font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;height:30px;border:1px solid rgba(255,255,255,.4);color:#fff}
+  .reel.tone-light .pill{border-color:rgba(17,17,17,.5);color:var(--ink)}
+  .pill::before{content:"";width:6px;height:6px;background:currentColor;border-radius:50%;opacity:.85}
+  .pill.red{background:var(--red);color:#fff;border-color:var(--red)}
+
+  .foot{position:absolute;bottom:88px;left:60px;right:60px;z-index:5;display:flex;justify-content:space-between;font-size:13px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.55)}
+  .reel.tone-light .foot{color:rgba(17,17,17,.55)}
+
+  /* ─── LAYOUTS ─── */
+  /* L-title */
+  .L-title .stack{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 60px;gap:32px;text-align:center}
+  .L-title .kicker{font-size:22px;letter-spacing:.4em;text-transform:uppercase;font-weight:800;color:var(--red-soft);margin:0}
+  .L-title h1{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:158px;line-height:.94;letter-spacing:-.035em;margin:0;max-width:920px}
+  .L-title h1 em{color:var(--red)}
+  .L-title h1 mark{background:var(--red);color:#fff;padding:0 14px;font-style:italic;transform:rotate(-1.5deg);display:inline-block}
+  .L-title .lead{font-family:'DM Serif Display',serif;font-style:italic;font-size:36px;line-height:1.3;color:rgba(255,255,255,.85);max-width:820px;margin:0}
+  .L-title.tone-light h1{color:var(--ink)}
+  .L-title.tone-light h1 em{color:var(--red)}
+  .L-title.tone-light .lead{color:rgba(17,17,17,.78)}
+  .L-title.tone-light .kicker{color:var(--red)}
+
+  /* L-mod (módulo intro com número grande) */
+  .L-mod .stack{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 60px;text-align:center;gap:28px}
+  .L-mod .mod-label{font-size:24px;letter-spacing:.4em;text-transform:uppercase;font-weight:800;color:var(--red-soft);margin:0}
+  .L-mod .mod-num{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:520px;line-height:.85;letter-spacing:-.05em;color:#fff;margin:0}
+  .L-mod h1{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:84px;line-height:.98;letter-spacing:-.025em;color:#fff;margin:0;max-width:920px}
+  .L-mod h1 em{color:var(--red-soft)}
+  .L-mod .desc{font-size:22px;line-height:1.4;color:rgba(255,255,255,.7);max-width:780px;margin:0;font-weight:500}
+
+  /* L-list */
+  .L-list .stack{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:200px 70px 280px;gap:28px}
+  .L-list .ltitle{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:78px;line-height:1;color:#fff;margin:0;letter-spacing:-.025em;max-width:920px}
+  .L-list .ltitle em{color:var(--red-soft)}
+  .L-list .items{display:flex;flex-direction:column;gap:22px;margin-top:8px;width:100%}
+  .L-list .item{display:flex;gap:24px;align-items:flex-start;color:#fff}
+  .L-list .item .n{font-family:'DM Serif Display',serif;font-style:italic;font-size:64px;line-height:.92;color:var(--red);min-width:80px}
+  .L-list .item .txt{font-size:32px;line-height:1.32;font-weight:500;color:rgba(255,255,255,.88)}
+  .L-list .item .txt b{font-weight:800;color:#fff}
+  .L-list .item .txt em{font-style:normal;color:var(--gold);font-weight:700}
+  .L-list.tone-light .ltitle{color:var(--ink)}
+  .L-list.tone-light .item .txt{color:rgba(17,17,17,.85)}
+
+  /* L-cria (5 cards CRIA framework) */
+  .L-cria .stack{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:160px 50px 240px;gap:18px}
+  .L-cria .ltitle{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:64px;line-height:1;color:#fff;margin:0 0 10px;text-align:center;letter-spacing:-.02em}
+  .L-cria .ltitle em{color:var(--red-soft)}
+  .L-cria .cards{display:flex;flex-direction:column;gap:14px;width:100%}
+  .L-cria .card{display:flex;gap:22px;align-items:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);border-left:6px solid var(--red);border-radius:14px;padding:20px 24px}
+  .L-cria .card .letter{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:84px;line-height:.85;color:var(--red);min-width:80px;text-align:center}
+  .L-cria .card .info{display:flex;flex-direction:column;gap:3px}
+  .L-cria .card .name{font-family:'DM Serif Display',serif;font-style:italic;font-size:38px;line-height:1;color:#fff;margin:0}
+  .L-cria .card .desc{font-size:20px;line-height:1.3;color:rgba(255,255,255,.7);margin:0;font-weight:500}
+
+  /* L-prompt */
+  .L-prompt .stack{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:200px 60px 280px;gap:24px}
+  .L-prompt .ltitle{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:56px;line-height:1.05;color:#fff;margin:0;text-align:center;letter-spacing:-.02em}
+  .L-prompt .ltitle em{color:var(--red-soft)}
+  .L-prompt .promptbox{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-left:6px solid var(--red);border-radius:14px;padding:32px 36px;width:100%;max-width:960px;font-family:'JetBrains Mono',monospace;font-size:26px;line-height:1.45;color:#fff}
+  .L-prompt .promptbox.good{border-left-color:var(--green);background:rgba(22,163,74,.06)}
+  .L-prompt .promptbox b{color:var(--gold);font-weight:700}
+  .L-prompt .promptbox .tag{display:inline-block;font-family:'DM Sans',sans-serif;font-size:14px;letter-spacing:.32em;text-transform:uppercase;font-weight:800;padding:4px 12px;border-radius:6px;margin-bottom:12px}
+  .L-prompt .promptbox.bad .tag{background:var(--red);color:#fff}
+  .L-prompt .promptbox.good .tag{background:var(--green);color:#fff}
+
+  /* L-tools (cards de ferramentas) */
+  .L-tools .stack{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:180px 50px 240px;gap:24px}
+  .L-tools .ltitle{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:72px;line-height:1;color:#fff;margin:0 0 12px;text-align:center;letter-spacing:-.02em}
+  .L-tools .ltitle em{color:var(--red-soft)}
+  .L-tools .tools-grid{display:flex;flex-direction:column;gap:18px;width:100%}
+  .L-tools .tool{display:flex;gap:22px;align-items:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:22px 26px}
+  .L-tools .tool .logo-bubble{width:100px;height:100px;border-radius:22px;background:#fff;display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-style:italic;font-size:54px;color:var(--ink);flex-shrink:0}
+  .L-tools .tool.gpt .logo-bubble{background:linear-gradient(135deg,#74AA9C,#10A37F);color:#fff}
+  .L-tools .tool.claude .logo-bubble{background:linear-gradient(135deg,#DA7757,#C15F3C);color:#fff}
+  .L-tools .tool.gemini .logo-bubble{background:linear-gradient(135deg,#4285F4,#9B72CB,#F4B400);color:#fff}
+  .L-tools .tool.canva .logo-bubble{background:linear-gradient(135deg,#00C4CC,#7D2AE8);color:#fff}
+  .L-tools .tool.mid .logo-bubble{background:#000;color:#fff}
+  .L-tools .tool.eleven .logo-bubble{background:linear-gradient(135deg,#FFFFFF,#999);color:#000}
+  .L-tools .tool .info{display:flex;flex-direction:column;gap:4px;flex:1}
+  .L-tools .tool .name{font-family:'DM Serif Display',serif;font-style:italic;font-size:38px;line-height:1;color:#fff;margin:0}
+  .L-tools .tool .desc{font-size:20px;line-height:1.3;color:rgba(255,255,255,.7);margin:0;font-weight:500}
+  .L-tools .tool .desc b{color:#fff;font-weight:700}
+
+  /* L-stat (número grande + caption) */
+  .L-stat .stack{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 60px;text-align:center;gap:32px}
+  .L-stat .label{font-size:22px;letter-spacing:.36em;text-transform:uppercase;font-weight:700;color:var(--red-soft);margin:0}
+  .L-stat .big{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:480px;line-height:.85;letter-spacing:-.05em;color:#fff;margin:0;white-space:nowrap}
+  .L-stat .big em{color:var(--red-soft)}
+  .L-stat .cap{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:42px;line-height:1.22;color:rgba(255,255,255,.85);max-width:860px;margin:0}
+  .L-stat .cap em{color:var(--red-soft)}
+
+  /* L-cta */
+  .L-cta .stack{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 60px;gap:36px;text-align:center}
+  .L-cta .kicker{font-size:22px;letter-spacing:.4em;text-transform:uppercase;font-weight:800;color:var(--red-soft);margin:0}
+  .L-cta h1{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:148px;line-height:.94;letter-spacing:-.035em;color:#fff;margin:0;max-width:920px}
+  .L-cta h1 em{color:var(--red)}
+  .L-cta .btn{display:inline-flex;align-items:center;gap:16px;padding:28px 46px;border-radius:999px;background:#25D366;color:#000;font-size:22px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;line-height:1}
+  .L-cta .btn::before{content:"";width:20px;height:20px;border-radius:999px;background:#000}
+  .L-cta .handle{font-family:'DM Serif Display',serif;font-style:italic;font-size:38px;color:rgba(255,255,255,.78);margin:0}
+
+  .scene-content{padding:14px 18px;flex:1;display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--rule)}
+  .scene-content h3{font-family:'DM Serif Display',serif;font-style:italic;font-size:16px;margin:0;color:#fff}
+  .voice{font-size:11px;line-height:1.5;color:rgba(255,255,255,.75);border-left:2px solid var(--red);padding:5px 0 5px 9px;margin:0}
+  .broll-tag{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-top:4px}
+</style>
+</head>
+<body>
+
+<header class="page-head">
+  <div class="meta">Calazans Lumina · Curso IA & ChatGPT Completo · 8 módulos · 45 aulas</div>
+  <h1>Do <em>zero</em> ao <em>avançado</em> — domine IA pro seu negócio.</h1>
+</header>
+
+<!-- ABERTURA -->
+<div class="chapter"><h2>Abertura</h2><span class="meta">0:00 – 0:40</span></div>
+<div class="storyboard">
+
+<article class="scene" data-broll="01-ai-animation">
+  <div class="scene-meta"><span class="scene-num">01<small>HOOK</small></span><span class="scene-time">0:00–0:15</span></div>
+  <div class="frame"><div class="reel L-title tone-dark">
+    <div class="bg grad-r"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div></header>
+    <div class="stack">
+      <p class="kicker">Curso completo · 8 módulos</p>
+      <h1>IA &<br><em>ChatGPT</em>.</h1>
+      <p class="lead">Do zero ao avançado. Sem código. Sem jargão. Em ~15 minutos, tudo que você precisa saber.</p>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Hook · com B-roll IA</h3><p class="voice">Bem-vindo. Esse é o curso completo de Inteligência Artificial e ChatGPT da Calazans Lumina. Em quinze minutos, do zero ao avançado, sem código, sem jargão.</p><p class="broll-tag">🎬 B-ROLL · 01-ai-animation</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">02<small>PROMESSA</small></span><span class="scene-time">0:15–0:30</span></div>
+  <div class="frame"><div class="reel L-list tone-dark">
+    <div class="bg ink"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Você aprende</span></header>
+    <div class="stack">
+      <h2 class="ltitle">8 <em>módulos</em>. 45 <em>aulas</em>.</h2>
+      <div class="items">
+        <div class="item"><span class="n">·</span><span class="txt">Fundamentos da IA · ChatGPT na prática · Prompt Engineering</span></div>
+        <div class="item"><span class="n">·</span><span class="txt">Conteúdo · Atendimento · Ferramentas · Marketing · Projeto</span></div>
+        <div class="item"><span class="n">·</span><span class="txt"><b>Aplique HOJE</b> no seu negócio. Resultado em 30 dias.</span></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Promessa</h3><p class="voice">São oito módulos, quarenta e cinco aulas. Fundamentos, ChatGPT, Prompt Engineering, Conteúdo, Atendimento, Ferramentas, Marketing e Projeto Final. Tudo pra você aplicar hoje no seu negócio.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">03<small>FRASE</small></span><span class="scene-time">0:30–0:40</span></div>
+  <div class="frame"><div class="reel L-title tone-dark">
+    <div class="bg grad-r"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div></header>
+    <div class="stack">
+      <h1>IA não <em>substitui</em><br>você.</h1>
+      <p class="lead">Substitui quem <em>não usa</em> IA. Bora começar?</p>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Frase âncora</h3><p class="voice">Uma frase pra você levar: IA não substitui você. Substitui quem não usa IA. Bora começar.</p></div>
+</article>
+
+</div>
+
+<!-- MÓDULO 1 -->
+<div class="chapter"><h2>Módulo <em>1</em> — Fundamentos da IA</h2><span class="meta">0:40 – 2:10 · 5 aulas</span></div>
+<div class="storyboard">
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">04<small>M1 INTRO</small></span><span class="scene-time">0:40–0:55</span></div>
+  <div class="frame"><div class="reel L-mod tone-dark">
+    <div class="bg grad-b"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Módulo 1 · 12%</span></header>
+    <div class="stack">
+      <p class="mod-label">Módulo · 01</p>
+      <p class="mod-num">01</p>
+      <h1>Fundamentos<br>da <em>IA</em>.</h1>
+      <p class="desc">O que é, tipos, IA generativa vs preditiva, mitos e verdades.</p>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Módulo 1 intro</h3><p class="voice">Módulo 1: Fundamentos da Inteligência Artificial. Vamos entender o que é IA, os tipos que existem, a diferença entre generativa e preditiva, e desmistificar tudo.</p></div>
+</article>
+
+<article class="scene" data-broll="02-ai-prediction">
+  <div class="scene-meta"><span class="scene-num">05<small>O QUE É</small></span><span class="scene-time">0:55–1:15</span></div>
+  <div class="frame"><div class="reel L-title tone-light">
+    <div class="bg paper"></div>
+    <header class="head"><div class="logo on-light"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Aula 01</span></header>
+    <div class="stack">
+      <p class="kicker">O que é IA?</p>
+      <h1>Máquina que <em>aprende</em><br>com dados.</h1>
+      <p class="lead">Não segue regras fixas. Identifica padrões em milhões de exemplos. Como você reconhece um rosto.</p>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>O que é IA</h3><p class="voice">IA é a capacidade de máquinas realizarem tarefas que normalmente exigiriam inteligência humana. Diferente de programas tradicionais, ela aprende com dados. Como você aprendeu a reconhecer rostos: ninguém te deu regras, você viu milhares e seu cérebro aprendeu sozinho.</p><p class="broll-tag">🎬 B-ROLL · 02-ai-prediction</p></div>
+</article>
+
+<article class="scene" data-broll="03-robot">
+  <div class="scene-meta"><span class="scene-num">06<small>3 TIPOS</small></span><span class="scene-time">1:15–1:40</span></div>
+  <div class="frame"><div class="reel L-list tone-dark">
+    <div class="bg grad-b"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Aula 02</span></header>
+    <div class="stack">
+      <h2 class="ltitle">3 <em>tipos</em> de IA</h2>
+      <div class="items">
+        <div class="item"><span class="n">01</span><span class="txt"><b>Estreita.</b> Uma tarefa. ChatGPT, DALL-E, Alexa. <em>É o que existe hoje.</em></span></div>
+        <div class="item"><span class="n">02</span><span class="txt"><b>Geral (AGI).</b> Faz qualquer tarefa intelectual. Ainda <em>não existe</em>.</span></div>
+        <div class="item"><span class="n">03</span><span class="txt"><b>Super IA.</b> Supera humanos em tudo. Teoria <em>futura</em>.</span></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>3 tipos de IA</h3><p class="voice">Existem três tipos. IA Estreita: faz uma tarefa específica muito bem, como ChatGPT e DALL-E. É o que existe hoje. IA Geral: faria qualquer tarefa intelectual humana, ainda não existe. Super IA: superaria humanos em tudo, é teoria futura.</p><p class="broll-tag">🎬 B-ROLL · 03-robot</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">07<small>GEN x PRED</small></span><span class="scene-time">1:40–1:55</span></div>
+  <div class="frame"><div class="reel L-list tone-dark">
+    <div class="bg grad-g"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Aula 03</span></header>
+    <div class="stack">
+      <h2 class="ltitle">Generativa <em>vs</em> Preditiva</h2>
+      <div class="items">
+        <div class="item"><span class="n">G</span><span class="txt"><b>Generativa:</b> cria conteúdo novo. ChatGPT, DALL-E, Suno.</span></div>
+        <div class="item"><span class="n">P</span><span class="txt"><b>Preditiva:</b> prevê o futuro com dados do passado. Netflix, previsão tempo.</span></div>
+        <div class="item"><span class="n">→</span><span class="txt">Nosso foco: <em>Generativa</em>. Mais útil pra negócio.</span></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Generativa vs Preditiva</h3><p class="voice">Existem duas grandes famílias: IA Preditiva analisa o passado pra prever o futuro, como Netflix e previsão do tempo. IA Generativa cria conteúdo novo, como ChatGPT, DALL-E e Suno. Nosso foco é a generativa, porque é a mais útil pra negócio.</p></div>
+</article>
+
+<article class="scene" data-broll="04-humanoid">
+  <div class="scene-meta"><span class="scene-num">08<small>MITOS</small></span><span class="scene-time">1:55–2:10</span></div>
+  <div class="frame"><div class="reel L-list tone-dark">
+    <div class="bg grad-r"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Aula 04</span></header>
+    <div class="stack">
+      <h2 class="ltitle">3 <em>mitos</em> e verdades</h2>
+      <div class="items">
+        <div class="item"><span class="n">1</span><span class="txt"><em>Mito:</em> IA vai roubar todos empregos. <b>Verdade:</b> muda tarefas, não profissões.</span></div>
+        <div class="item"><span class="n">2</span><span class="txt"><em>Mito:</em> IA é perfeita. <b>Verdade:</b> erra bastante. Sempre confere.</span></div>
+        <div class="item"><span class="n">3</span><span class="txt"><em>Mito:</em> Precisa programar. <b>Verdade:</b> se digita, sabe usar.</span></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>3 mitos</h3><p class="voice">Três mitos pra desmontar. Mito um: IA vai roubar todos os empregos. Verdade: ela muda tarefas, não elimina profissões. Mito dois: IA é perfeita. Verdade: erra bastante, sempre confere. Mito três: precisa ser programador. Verdade: se você digita, você sabe usar.</p><p class="broll-tag">🎬 B-ROLL · 04-humanoid</p></div>
+</article>
+
+</div>
+
+<!-- MÓDULO 2 -->
+<div class="chapter"><h2>Módulo <em>2</em> — ChatGPT na Prática</h2><span class="meta">2:10 – 3:40 · 5 aulas</span></div>
+<div class="storyboard">
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">09<small>M2 INTRO</small></span><span class="scene-time">2:10–2:22</span></div>
+  <div class="frame"><div class="reel L-mod tone-dark">
+    <div class="bg grad-b"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Módulo 2 · 25%</span></header>
+    <div class="stack">
+      <p class="mod-label">Módulo · 02</p>
+      <p class="mod-num">02</p>
+      <h1>ChatGPT<br>na <em>Prática</em>.</h1>
+      <p class="desc">Interface, versões, configurações, GPTs personalizados, atalhos.</p>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Módulo 2 intro</h3><p class="voice">Módulo 2: ChatGPT na Prática. Vamos dominar a interface, conhecer as versões, configurar pra máxima produtividade.</p></div>
+</article>
+
+<article class="scene" data-broll="05-texting">
+  <div class="scene-meta"><span class="scene-num">10<small>INTERFACE</small></span><span class="scene-time">2:22–2:42</span></div>
+  <div class="frame"><div class="reel L-list tone-dark">
+    <div class="bg ink"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Aula 06</span></header>
+    <div class="stack">
+      <h2 class="ltitle">A <em>interface</em></h2>
+      <div class="items">
+        <div class="item"><span class="n">1</span><span class="txt"><b>Barra lateral:</b> histórico de conversas. <em>Renomeia</em> as importantes.</span></div>
+        <div class="item"><span class="n">2</span><span class="txt"><b>Área central:</b> conversa. Lembra de tudo dentro <em>da mesma conversa</em>.</span></div>
+        <div class="item"><span class="n">3</span><span class="txt"><b>Nova conversa:</b> use ao <em>mudar de assunto</em>.</span></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Interface ChatGPT</h3><p class="voice">A interface tem três áreas principais. Barra lateral com o histórico, onde você renomeia as conversas importantes. Área central onde a conversa acontece, e ele lembra de tudo dentro dela. E o botão de nova conversa, que você usa quando muda de assunto.</p><p class="broll-tag">🎬 B-ROLL · 05-texting</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">11<small>FREE x PLUS</small></span><span class="scene-time">2:42–3:00</span></div>
+  <div class="frame"><div class="reel L-list tone-dark">
+    <div class="bg grad-gold"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Aula 07</span></header>
+    <div class="stack">
+      <h2 class="ltitle">Free <em>vs</em> Plus</h2>
+      <div class="items">
+        <div class="item"><span class="n">F</span><span class="txt"><b>Free:</b> GPT básico. Limite por hora. Sem imagem. Sem GPTs.</span></div>
+        <div class="item"><span class="n">+</span><span class="txt"><b>Plus US$20/mês:</b> GPT-4o. Sem limite. <em>Cria imagens</em>. Loja de GPTs.</span></div>
+        <div class="item"><span class="n">→</span><span class="txt">Começa <em>free</em>. Sobe pra Plus quando travar.</span></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Free vs Plus</h3><p class="voice">Free vs Plus: a versão free tem GPT básico com limite por hora, sem imagem e sem GPTs personalizados. Plus, vinte dólares por mês, tem GPT-4o sem limites, cria imagens com DALL-E e dá acesso à loja de GPTs. Recomendo: começa free, sobe pra Plus quando travar.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">12<small>CUSTOM</small></span><span class="scene-time">3:00–3:18</span></div>
+  <div class="frame"><div class="reel L-prompt tone-dark">
+    <div class="bg grad-b"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Aula 08</span></header>
+    <div class="stack">
+      <h2 class="ltitle"><em>Instruções</em> personalizadas</h2>
+      <div class="promptbox good">
+        <span class="tag">Cole no ChatGPT</span>
+<b>[Sobre mim]</b>
+Sou dono de loja de roupas em BH. Público: mulheres 25-45. Vendo via Instagram e WhatsApp.
+
+<b>[Como responder]</b>
+Em português BR. Tom informal mas profissional. Exemplos práticos. Tópicos.
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Custom Instructions</h3><p class="voice">O segredo dos profissionais: Instruções Personalizadas. No menu de configurações, conta quem você é e como quer que ele responda. A partir disso, TODAS as suas conversas já vão considerar seu contexto automaticamente.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">13<small>6 TRUQUES</small></span><span class="scene-time">3:18–3:40</span></div>
+  <div class="frame"><div class="reel L-list tone-dark">
+    <div class="bg ink"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Aula 09</span></header>
+    <div class="stack">
+      <h2 class="ltitle">6 <em>truques</em> de produtividade</h2>
+      <div class="items">
+        <div class="item"><span class="n">1</span><span class="txt"><b>Pede formato:</b> tabela, lista, post, e-mail.</span></div>
+        <div class="item"><span class="n">2</span><span class="txt"><b>Mostra exemplo:</b> "parecido com isso: ...".</span></div>
+        <div class="item"><span class="n">3</span><span class="txt"><b>Pede 5 versões:</b> compara e escolhe.</span></div>
+        <div class="item"><span class="n">4</span><span class="txt"><b>Refina:</b> mais curto, mais formal, mais criativo.</span></div>
+        <div class="item"><span class="n">5</span><span class="txt"><b>Cola contexto:</b> documento, e-mail. Trabalha com aquilo.</span></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>6 truques</h3><p class="voice">Cinco truques de produtividade. Um: pede formato específico, tabela, lista, e-mail. Dois: mostra exemplo do que quer. Três: pede cinco versões e compara. Quatro: refina, peça mais curto, mais formal, mais criativo. Cinco: cola contexto, documento ou e-mail, e pede pra trabalhar com aquilo.</p></div>
+</article>
+
+</div>
+
+<!-- MÓDULO 3 — Prompt Engineering -->
+<div class="chapter"><h2>Módulo <em>3</em> — Prompt Engineering · framework CRIA</h2><span class="meta">3:40 – 5:30 · 5 aulas</span></div>
+<div class="storyboard">
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">14<small>M3 INTRO</small></span><span class="scene-time">3:40–3:55</span></div>
+  <div class="frame"><div class="reel L-mod tone-dark">
+    <div class="bg grad-r"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Módulo 3 · 37%</span></header>
+    <div class="stack">
+      <p class="mod-label">Módulo · 03</p>
+      <p class="mod-num">03</p>
+      <h1>Prompt<br><em>Engineering</em>.</h1>
+      <p class="desc">A habilidade mais importante. Framework CRIA, técnicas avançadas, templates prontos.</p>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Módulo 3 intro</h3><p class="voice">Módulo 3: Prompt Engineering. A habilidade mais importante do uso de IA. Vamos dominar o framework CRIA e técnicas avançadas.</p></div>
+</article>
+
+<article class="scene" data-broll="06-phone-close">
+  <div class="scene-meta"><span class="scene-num">15<small>RUIM x BOM</small></span><span class="scene-time">3:55–4:18</span></div>
+  <div class="frame"><div class="reel L-prompt tone-dark">
+    <div class="bg grad-r"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill red">Compare</span></header>
+    <div class="stack">
+      <h2 class="ltitle">Prompt <em>ruim</em></h2>
+      <div class="promptbox bad">
+        <span class="tag">Vago</span>
+"Escreva um post"
+      </div>
+      <div class="promptbox good">
+        <span class="tag">Cria</span>
+"Você é especialista em marketing pra pequeno negócio. Escreva post de <b>Instagram</b> pra loja de roupas em BH. Público: mulheres 25-45. Tema: lançamento coleção inverno. Tom: descontraído e sofisticado. <b>200 palavras + 5 hashtags + pergunta no final</b>."
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Ruim vs bom</h3><p class="voice">Compara: prompt ruim, "escreva um post". Resultado genérico. Prompt bom: "você é especialista em marketing pra pequeno negócio, escreva post de Instagram pra loja de roupas em BH, público mulheres vinte e cinco a quarenta e cinco, tema lançamento coleção inverno, tom descontraído e sofisticado, duzentas palavras, cinco hashtags, pergunta no final". Resultado profissional, pronto.</p><p class="broll-tag">🎬 B-ROLL · 06-phone-close</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">16<small>CRIA</small></span><span class="scene-time">4:18–4:50</span></div>
+  <div class="frame"><div class="reel L-cria tone-dark">
+    <div class="bg ink"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Framework</span></header>
+    <div class="stack">
+      <h2 class="ltitle">Framework <em>CRIA</em></h2>
+      <div class="cards">
+        <div class="card"><span class="letter">C</span><div class="info"><p class="name">Contexto</p><p class="desc">Quem você é, seu negócio, situação</p></div></div>
+        <div class="card"><span class="letter">R</span><div class="info"><p class="name">Rol (Papel)</p><p class="desc">Profissional que a IA deve simular</p></div></div>
+        <div class="card"><span class="letter">I</span><div class="info"><p class="name">Instrução</p><p class="desc">O que fazer · entregável esperado</p></div></div>
+        <div class="card"><span class="letter">A</span><div class="info"><p class="name">Ajustes</p><p class="desc">Tom, formato, tamanho, restrições</p></div></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Framework CRIA</h3><p class="voice">Memoriza: CRIA. C de Contexto, quem você é e seu negócio. R de Rol ou Papel, que profissional a IA deve simular. I de Instrução, o que exatamente fazer. A de Ajustes, tom, formato, tamanho. Esse é o framework profissional.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">17<small>AVANÇADAS</small></span><span class="scene-time">4:50–5:15</span></div>
+  <div class="frame"><div class="reel L-list tone-dark">
+    <div class="bg grad-gold"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Aula 13</span></header>
+    <div class="stack">
+      <h2 class="ltitle">5 técnicas <em>avançadas</em></h2>
+      <div class="items">
+        <div class="item"><span class="n">1</span><span class="txt"><b>Few-shot:</b> mostra 3 exemplos. Peça 5 novos no mesmo estilo.</span></div>
+        <div class="item"><span class="n">2</span><span class="txt"><b>Chain-of-thought:</b> "raciocine passo a passo antes".</span></div>
+        <div class="item"><span class="n">3</span><span class="txt"><b>Persona+Cenário:</b> "diretor de empresa de R$500k que precisa dobrar em 6 meses".</span></div>
+        <div class="item"><span class="n">4</span><span class="txt"><b>Restrição:</b> "máximo 8 palavras", "só analogias de futebol".</span></div>
+        <div class="item"><span class="n">5</span><span class="txt"><b>Auto-avaliação:</b> "agora releia, dê nota e melhore".</span></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>5 técnicas avançadas</h3><p class="voice">Cinco técnicas avançadas. Um: Few-shot, mostra três exemplos e pede cinco novos no mesmo estilo. Dois: Chain-of-thought, peça pra raciocinar passo a passo antes. Três: Persona com cenário detalhado. Quatro: Restrição criativa, limita pra estimular criatividade. Cinco: Auto-avaliação, peça pra IA reler, dar nota e melhorar.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">18<small>ERROS</small></span><span class="scene-time">5:15–5:30</span></div>
+  <div class="frame"><div class="reel L-list tone-dark">
+    <div class="bg grad-r"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Aula 14</span></header>
+    <div class="stack">
+      <h2 class="ltitle">3 <em>erros</em> a evitar</h2>
+      <div class="items">
+        <div class="item"><span class="n">1</span><span class="txt"><b>Prompt vago:</b> "escreva sobre marketing". Use <em>CRIA</em>.</span></div>
+        <div class="item"><span class="n">2</span><span class="txt"><b>Sem formato:</b> "me dê dicas". Especifica número, formato.</span></div>
+        <div class="item"><span class="n">3</span><span class="txt"><b>Aceitar 1ª resposta:</b> SEMPRE peça ajustes. 2ª/3ª versão é melhor.</span></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>3 erros comuns</h3><p class="voice">Três erros comuns. Um: prompt vago, tipo "escreva sobre marketing". Use CRIA. Dois: sem formato específico. Especifica número e tipo. Três: aceitar a primeira resposta. Sempre peça ajustes, a segunda ou terceira versão é quase sempre melhor.</p></div>
+</article>
+
+</div>
+
+<!-- MÓDULO 4 -->
+<div class="chapter"><h2>Módulo <em>4</em> — IA para Conteúdo</h2><span class="meta">5:30 – 7:00 · 5 aulas</span></div>
+<div class="storyboard">
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">19<small>M4 INTRO</small></span><span class="scene-time">5:30–5:45</span></div>
+  <div class="frame"><div class="reel L-mod tone-dark">
+    <div class="bg grad-g"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Módulo 4 · 50%</span></header>
+    <div class="stack">
+      <p class="mod-label">Módulo · 04</p>
+      <p class="mod-num">04</p>
+      <h1>IA para<br><em>Conteúdo</em>.</h1>
+      <p class="desc">Posts, blog, ideias infinitas, adaptação por plataforma.</p>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Módulo 4 intro</h3><p class="voice">Módulo 4: IA para Conteúdo. Posts profissionais pra redes sociais, artigos de blog otimizados, ideias infinitas e adaptação pra cada plataforma.</p></div>
+</article>
+
+<article class="scene" data-broll="07-typing-phone">
+  <div class="scene-meta"><span class="scene-num">20<small>INSTAGRAM</small></span><span class="scene-time">5:45–6:08</span></div>
+  <div class="frame"><div class="reel L-list tone-dark">
+    <div class="bg ink"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Aula 15</span></header>
+    <div class="stack">
+      <h2 class="ltitle">Posts de <em>Instagram</em></h2>
+      <div class="items">
+        <div class="item"><span class="n">F</span><span class="txt"><b>Feed:</b> carrossel 8 slides, gancho slide 1, CTA slide 8.</span></div>
+        <div class="item"><span class="n">L</span><span class="txt"><b>Legenda:</b> gancho na 1ª linha, 3 parágrafos curtos, CTA, 7 hashtags.</span></div>
+        <div class="item"><span class="n">S</span><span class="txt"><b>Stories:</b> 6 stories, frase impactante, interação (enquete, quiz).</span></div>
+        <div class="item"><span class="n">R</span><span class="txt"><b>Reels:</b> 30s, <em>gancho 3s</em>, problema, solução, CTA.</span></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Instagram com IA</h3><p class="voice">Pra Instagram, quatro formatos. Feed: carrossel de oito slides, gancho no primeiro, CTA no oitavo. Legenda: gancho na primeira linha, três parágrafos curtos, CTA, sete hashtags. Stories: seis com frase impactante e interação. Reels: trinta segundos, gancho nos três primeiros, problema, solução, CTA.</p><p class="broll-tag">🎬 B-ROLL · 07-typing-phone</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">21<small>BLOG</small></span><span class="scene-time">6:08–6:30</span></div>
+  <div class="frame"><div class="reel L-list tone-dark">
+    <div class="bg grad-b"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Aula 16</span></header>
+    <div class="stack">
+      <h2 class="ltitle">Artigo de <em>blog</em></h2>
+      <div class="items">
+        <div class="item"><span class="n">1</span><span class="txt"><b>Pesquisa:</b> "10 temas mais buscados no Google sobre [nicho]".</span></div>
+        <div class="item"><span class="n">2</span><span class="txt"><b>Estrutura:</b> outline 1000 palavras, título SEO, meta, H2.</span></div>
+        <div class="item"><span class="n">3</span><span class="txt"><b>Redação:</b> peça <em>seção por seção</em>. Maior qualidade.</span></div>
+        <div class="item"><span class="n">4</span><span class="txt"><b>SEO:</b> otimize com keyword. Inclua em título, meta, 3-5x texto.</span></div>
+        <div class="item"><span class="n">5</span><span class="txt"><b>Revisão:</b> OBRIGATÓRIA. Sua voz, exemplo real, ajuste.</span></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Artigo de blog</h3><p class="voice">Pra blog, cinco passos. Pesquisa, peça os dez temas mais buscados no Google sobre seu nicho. Estrutura, outline de mil palavras com título SEO. Redação, peça seção por seção. SEO, otimize com keyword. Revisão, ETAPA OBRIGATÓRIA, sua voz, exemplo real do seu negócio.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">22<small>30 DIAS</small></span><span class="scene-time">6:30–6:45</span></div>
+  <div class="frame"><div class="reel L-prompt tone-dark">
+    <div class="bg grad-g"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Aula 17</span></header>
+    <div class="stack">
+      <h2 class="ltitle">30 dias de <em>conteúdo</em></h2>
+      <div class="promptbox good">
+        <span class="tag">Calendário</span>
+"Crie calendário de <b>30 dias</b> pro Instagram. Regra:
+• <b>40%</b> educativo
+• <b>20%</b> bastidores
+• <b>15%</b> prova social
+• <b>15%</b> venda direta
+• <b>10%</b> entretenimento
+
+Cada dia: tipo, tema, formato, gancho."
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>30 dias de conteúdo</h3><p class="voice">Nunca mais fica sem ideia. Use esse prompt: crie um calendário de trinta dias pro Instagram. Quarenta por cento educativo, vinte bastidores, quinze prova social, quinze venda, dez entretenimento. Pra cada dia, tipo, tema, formato e gancho da legenda.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">23<small>ADAPTAR</small></span><span class="scene-time">6:45–7:00</span></div>
+  <div class="frame"><div class="reel L-list tone-dark">
+    <div class="bg ink"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Aula 18</span></header>
+    <div class="stack">
+      <h2 class="ltitle"><em>Adapte</em> por plataforma</h2>
+      <div class="items">
+        <div class="item"><span class="n">·</span><span class="txt"><b>LinkedIn:</b> profissional, 300 palavras, storytelling sobre negócio.</span></div>
+        <div class="item"><span class="n">·</span><span class="txt"><b>TikTok:</b> autêntico, gancho 3s, trends, jovem.</span></div>
+        <div class="item"><span class="n">·</span><span class="txt"><b>WhatsApp:</b> 3 frases impactantes, CTA claro.</span></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Adaptar plataforma</h3><p class="voice">Cada plataforma tem linguagem própria. Mesmo conteúdo: LinkedIn profissional com trezentas palavras, TikTok autêntico com gancho de três segundos, WhatsApp três frases impactantes. A IA adapta pra cada um.</p></div>
+</article>
+
+</div>
+
+<!-- MÓDULO 5 -->
+<div class="chapter"><h2>Módulo <em>5</em> — IA para Atendimento</h2><span class="meta">7:00 – 8:20 · 4 aulas</span></div>
+<div class="storyboard">
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">24<small>M5 INTRO</small></span><span class="scene-time">7:00–7:15</span></div>
+  <div class="frame"><div class="reel L-mod tone-dark">
+    <div class="bg grad-b"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Módulo 5 · 62%</span></header>
+    <div class="stack">
+      <p class="mod-label">Módulo · 05</p>
+      <p class="mod-num">05</p>
+      <h1>IA pra<br><em>Atendimento</em>.</h1>
+      <p class="desc">Automação WhatsApp, scripts, qualificação BANT, redução de tempo.</p>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Módulo 5 intro</h3><p class="voice">Módulo 5: IA pra Atendimento. WhatsApp é o canal número um de vendas no Brasil. Vamos automatizar.</p></div>
+</article>
+
+<article class="scene" data-broll="08-text-message">
+  <div class="scene-meta"><span class="scene-num">25<small>FLUXO WPP</small></span><span class="scene-time">7:15–7:40</span></div>
+  <div class="frame"><div class="reel L-list tone-dark">
+    <div class="bg grad-g"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Aula 19</span></header>
+    <div class="stack">
+      <h2 class="ltitle">Fluxo <em>automação WhatsApp</em></h2>
+      <div class="items">
+        <div class="item"><span class="n">1</span><span class="txt">Cliente manda mensagem</span></div>
+        <div class="item"><span class="n">2</span><span class="txt"><b>Bot identifica intenção</b> (orçamento, dúvida, agenda)</span></div>
+        <div class="item"><span class="n">3</span><span class="txt">Responde com info personalizada</span></div>
+        <div class="item"><span class="n">4</span><span class="txt"><b>Qualifica:</b> orçamento, prazo, decisor</span></div>
+        <div class="item"><span class="n">5</span><span class="txt">Transfere pra humano com <em>contexto pronto</em></span></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Fluxo de automação</h3><p class="voice">O fluxo: cliente manda mensagem, bot identifica intenção, responde personalizado, qualifica com perguntas, e transfere pra humano com contexto pronto. Tudo em segundos.</p><p class="broll-tag">🎬 B-ROLL · 08-text-message</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">26<small>FERRAMENTAS</small></span><span class="scene-time">7:40–8:00</span></div>
+  <div class="frame"><div class="reel L-tools tone-dark">
+    <div class="bg ink"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Aula 20</span></header>
+    <div class="stack">
+      <h2 class="ltitle">Ferramentas</h2>
+      <div class="tools-grid">
+        <div class="tool"><div class="logo-bubble">G</div><div class="info"><p class="name">GoHighLevel</p><p class="desc"><b>$97/mês.</b> CRM + automação + WhatsApp. Calazans Lumina usa.</p></div></div>
+        <div class="tool"><div class="logo-bubble">M</div><div class="info"><p class="name">ManyChat</p><p class="desc"><b>Free até 1k contatos.</b> Bom pra começar.</p></div></div>
+        <div class="tool"><div class="logo-bubble">W</div><div class="info"><p class="name">WhatsApp Business</p><p class="desc"><b>Free.</b> Respostas rápidas + mensagem ausência.</p></div></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Ferramentas WhatsApp</h3><p class="voice">Três ferramentas. GoHighLevel: noventa e sete dólares por mês, CRM completo, é o que usamos na Calazans Lumina. ManyChat: grátis até mil contatos. WhatsApp Business: grátis, com respostas rápidas configuráveis.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">27<small>BANT</small></span><span class="scene-time">8:00–8:20</span></div>
+  <div class="frame"><div class="reel L-cria tone-dark">
+    <div class="bg grad-gold"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Método · BANT</span></header>
+    <div class="stack">
+      <h2 class="ltitle">Qualifica leads · <em>BANT</em></h2>
+      <div class="cards">
+        <div class="card"><span class="letter">B</span><div class="info"><p class="name">Budget</p><p class="desc">"Qual investimento em mente?"</p></div></div>
+        <div class="card"><span class="letter">A</span><div class="info"><p class="name">Authority</p><p class="desc">"Você toma a decisão?"</p></div></div>
+        <div class="card"><span class="letter">N</span><div class="info"><p class="name">Need</p><p class="desc">"Conta sobre o problema."</p></div></div>
+        <div class="card"><span class="letter">T</span><div class="info"><p class="name">Timeline</p><p class="desc">"Pra quando precisa?"</p></div></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Método BANT</h3><p class="voice">Pra qualificar leads, use BANT. B de Budget, qual investimento. A de Authority, quem decide. N de Need, qual o problema. T de Timeline, qual o prazo. Configure o bot pra fazer essas quatro perguntas naturalmente. Lead quente: atende imediato. Lead morno: nutrição.</p></div>
+</article>
+
+</div>
+
+<!-- MÓDULO 6 -->
+<div class="chapter"><h2>Módulo <em>6</em> — Ferramentas de IA</h2><span class="meta">8:20 – 10:00 · 4 aulas</span></div>
+<div class="storyboard">
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">28<small>M6 INTRO</small></span><span class="scene-time">8:20–8:35</span></div>
+  <div class="frame"><div class="reel L-mod tone-dark">
+    <div class="bg grad-b"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Módulo 6 · 75%</span></header>
+    <div class="stack">
+      <p class="mod-label">Módulo · 06</p>
+      <p class="mod-num">06</p>
+      <h1>Ferramentas<br>de <em>IA</em>.</h1>
+      <p class="desc">Texto, imagem, vídeo, voz, design, produtividade.</p>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Módulo 6 intro</h3><p class="voice">Módulo 6: Ferramentas de IA. Panorama atualizado das principais, organizadas por categoria, com preços e quando usar cada.</p></div>
+</article>
+
+<article class="scene" data-broll="09-laptop-table">
+  <div class="scene-meta"><span class="scene-num">29<small>TEXTO</small></span><span class="scene-time">8:35–9:00</span></div>
+  <div class="frame"><div class="reel L-tools tone-dark">
+    <div class="bg ink"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Aula 23</span></header>
+    <div class="stack">
+      <h2 class="ltitle"><em>Texto</em> e conversa</h2>
+      <div class="tools-grid">
+        <div class="tool gpt"><div class="logo-bubble">G</div><div class="info"><p class="name">ChatGPT</p><p class="desc"><b>OpenAI.</b> Mais versátil. Free / $20/mês.</p></div></div>
+        <div class="tool claude"><div class="logo-bubble">C</div><div class="info"><p class="name">Claude</p><p class="desc"><b>Anthropic.</b> Texto longo, análise. Free / $20/mês.</p></div></div>
+        <div class="tool gemini"><div class="logo-bubble">★</div><div class="info"><p class="name">Gemini</p><p class="desc"><b>Google.</b> Integra Workspace. Free / $20/mês.</p></div></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Ferramentas de texto</h3><p class="voice">Pra texto e conversa, três principais. ChatGPT da OpenAI, mais versátil e conhecida. Claude da Anthropic, melhor pra texto longo e análise. Gemini do Google, integra com Google Workspace.</p><p class="broll-tag">🎬 B-ROLL · 09-laptop-table</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">30<small>VISUAL</small></span><span class="scene-time">9:00–9:25</span></div>
+  <div class="frame"><div class="reel L-tools tone-dark">
+    <div class="bg grad-b"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Aula 24</span></header>
+    <div class="stack">
+      <h2 class="ltitle"><em>Imagem</em>, vídeo e voz</h2>
+      <div class="tools-grid">
+        <div class="tool canva"><div class="logo-bubble">C</div><div class="info"><p class="name">Canva AI</p><p class="desc"><b>Free / R$35/mês.</b> Mais prático pra não-designer.</p></div></div>
+        <div class="tool mid"><div class="logo-bubble">M</div><div class="info"><p class="name">Midjourney</p><p class="desc"><b>$10/mês.</b> Qualidade artística top.</p></div></div>
+        <div class="tool eleven"><div class="logo-bubble">11</div><div class="info"><p class="name">ElevenLabs</p><p class="desc"><b>Free / $5/mês.</b> Clonagem de voz profissional.</p></div></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Imagem, vídeo, voz</h3><p class="voice">Pra visual: Canva AI, grátis ou trinta e cinco reais por mês, o mais prático. Midjourney, dez dólares, qualidade artística top. Pra voz: ElevenLabs, grátis ou cinco dólares, clonagem profissional. Pra vídeo: Runway, CapCut com legendas automáticas.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">31<small>STACK</small></span><span class="scene-time">9:25–9:50</span></div>
+  <div class="frame"><div class="reel L-list tone-light">
+    <div class="bg paper"></div>
+    <header class="head"><div class="logo on-light"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Stack ideal</span></header>
+    <div class="stack">
+      <h2 class="ltitle">Stack <em>recomendada</em></h2>
+      <div class="items">
+        <div class="item"><span class="n">·</span><span class="txt"><b>ChatGPT</b> (free) — textos e ideias</span></div>
+        <div class="item"><span class="n">·</span><span class="txt"><b>Canva</b> (free) — designs</span></div>
+        <div class="item"><span class="n">·</span><span class="txt"><b>CapCut</b> (free) — vídeos curtos</span></div>
+        <div class="item"><span class="n">·</span><span class="txt"><b>WhatsApp Business</b> (free) — atendimento</span></div>
+        <div class="item"><span class="n">→</span><span class="txt">Resolve <em>80%</em> sem gastar nada.</span></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Stack Calazans</h3><p class="voice">Pra maioria dos empreendedores brasileiros, a stack ideal: ChatGPT free, Canva free, CapCut free, WhatsApp Business free. Esses quatro juntos resolvem oitenta por cento das necessidades sem gastar um real. Domina cada um antes de adicionar pago.</p></div>
+</article>
+
+</div>
+
+<!-- MÓDULO 7 -->
+<div class="chapter"><h2>Módulo <em>7</em> — IA para Marketing Digital</h2><span class="meta">10:00 – 11:30 · 4 aulas</span></div>
+<div class="storyboard">
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">32<small>M7 INTRO</small></span><span class="scene-time">10:00–10:15</span></div>
+  <div class="frame"><div class="reel L-mod tone-dark">
+    <div class="bg grad-r"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Módulo 7 · 87%</span></header>
+    <div class="stack">
+      <p class="mod-label">Módulo · 07</p>
+      <p class="mod-num">07</p>
+      <h1>IA pra<br><em>Marketing</em>.</h1>
+      <p class="desc">Campanhas completas, ads, análise de dados, estratégia 90 dias.</p>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Módulo 7 intro</h3><p class="voice">Módulo 7: IA pra Marketing Digital. Vamos criar campanhas completas, otimizar ads e analisar dados.</p></div>
+</article>
+
+<article class="scene" data-broll="10-woman-expressive">
+  <div class="scene-meta"><span class="scene-num">33<small>CAMPANHA</small></span><span class="scene-time">10:15–10:45</span></div>
+  <div class="frame"><div class="reel L-list tone-dark">
+    <div class="bg grad-b"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Aula 27</span></header>
+    <div class="stack">
+      <h2 class="ltitle">Campanha em <em>5 passos</em></h2>
+      <div class="items">
+        <div class="item"><span class="n">1</span><span class="txt"><b>Pesquisa de mercado:</b> tendências, oportunidades, concorrentes.</span></div>
+        <div class="item"><span class="n">2</span><span class="txt"><b>3 personas:</b> nome, idade, dores, desejos, objeções.</span></div>
+        <div class="item"><span class="n">3</span><span class="txt"><b>5 anúncios:</b> headline, texto, CTA, imagem sugerida.</span></div>
+        <div class="item"><span class="n">4</span><span class="txt"><b>Landing page:</b> headline + 5 benefícios + 3 depoimentos + FAQ.</span></div>
+        <div class="item"><span class="n">5</span><span class="txt"><b>5 emails:</b> sequência D+0, D+1, D+3, D+5, D+7.</span></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Campanha em 5 passos</h3><p class="voice">Pra criar campanha completa, cinco passos com IA. Um: pesquisa de mercado, tendências e concorrentes. Dois: três personas detalhadas. Três: cinco versões de anúncio. Quatro: landing page completa. Cinco: sequência de cinco emails. Em uma hora, campanha que levaria dias.</p><p class="broll-tag">🎬 B-ROLL · 10-woman-expressive</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">34<small>OTIMIZA</small></span><span class="scene-time">10:45–11:05</span></div>
+  <div class="frame"><div class="reel L-prompt tone-dark">
+    <div class="bg grad-gold"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Aula 28</span></header>
+    <div class="stack">
+      <h2 class="ltitle"><em>Otimizar</em> anúncios</h2>
+      <div class="promptbox good">
+        <span class="tag">Analise</span>
+"Minha campanha:
+<b>Impressões 50k · Cliques 1.500 · CTR 3%</b>
+<b>Leads 45 · CPL R$22 · Vendas 5 · Ticket R$200</b>
+
+Analise. Onde está o gargalo? O que melhorar primeiro?"
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Otimizar com IA</h3><p class="voice">Pra otimizar, cola seus números no ChatGPT. Impressões, cliques, CTR, leads, custo por lead, vendas, ticket médio. Pergunte onde está o gargalo. IA vira seu consultor de marketing disponível vinte e quatro horas.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">35<small>DADOS</small></span><span class="scene-time">11:05–11:30</span></div>
+  <div class="frame"><div class="reel L-list tone-dark">
+    <div class="bg ink"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Aula 29</span></header>
+    <div class="stack">
+      <h2 class="ltitle">IA como <em>analista</em></h2>
+      <div class="items">
+        <div class="item"><span class="n">·</span><span class="txt"><b>Cole dados</b> do Google Analytics, Search Console, redes</span></div>
+        <div class="item"><span class="n">·</span><span class="txt"><b>Peça:</b> tendências, problemas, ações concretas, prioridades</span></div>
+        <div class="item"><span class="n">·</span><span class="txt">⚠ <b>NUNCA</b> dados confidenciais de cliente. Só agregados.</span></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>IA como analista</h3><p class="voice">A IA também é seu analista de dados. Cola números do Analytics, Search Console, redes sociais. Pede tendências, problemas, ações concretas e prioridades. NUNCA cola dados confidenciais de clientes. Só agregados, anonimizados.</p></div>
+</article>
+
+</div>
+
+<!-- MÓDULO 8 -->
+<div class="chapter"><h2>Módulo <em>8</em> — Projeto Final</h2><span class="meta">11:30 – 12:50 · 4 aulas</span></div>
+<div class="storyboard">
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">36<small>M8 INTRO</small></span><span class="scene-time">11:30–11:45</span></div>
+  <div class="frame"><div class="reel L-mod tone-dark">
+    <div class="bg grad-g"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Módulo 8 · 100%</span></header>
+    <div class="stack">
+      <p class="mod-label">Módulo · 08</p>
+      <p class="mod-num">08</p>
+      <h1>Projeto<br><em>Final</em>.</h1>
+      <p class="desc">Aplique tudo no seu negócio. Plano em 5 passos.</p>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Módulo 8 intro</h3><p class="voice">Módulo 8: Projeto Final. Vamos aplicar tudo o que aprendeu em um plano pra seu negócio.</p></div>
+</article>
+
+<article class="scene" data-broll="11-entrepreneur">
+  <div class="scene-meta"><span class="scene-num">37<small>5 PASSOS</small></span><span class="scene-time">11:45–12:15</span></div>
+  <div class="frame"><div class="reel L-list tone-dark">
+    <div class="bg ink"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Aula 30</span></header>
+    <div class="stack">
+      <h2 class="ltitle">Plano em <em>5 passos</em></h2>
+      <div class="items">
+        <div class="item"><span class="n">1</span><span class="txt"><b>Auditoria:</b> lista 5 tarefas repetitivas que faz/semana</span></div>
+        <div class="item"><span class="n">2</span><span class="txt"><b>Associe ferramentas:</b> qual IA acelera cada uma</span></div>
+        <div class="item"><span class="n">3</span><span class="txt"><b>Crie prompts:</b> usando CRIA, salve em documento</span></div>
+        <div class="item"><span class="n">4</span><span class="txt"><b>Rotina semanal:</b> seg conteúdo, qua dados, sex planejar</span></div>
+        <div class="item"><span class="n">5</span><span class="txt"><b>Meça em 30d:</b> tempo, qualidade, resultados</span></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>5 passos práticos</h3><p class="voice">Cinco passos pra começar. Um: auditoria, lista cinco tarefas repetitivas que faz por semana. Dois: associa cada uma a uma IA. Três: cria prompts com CRIA e salva. Quatro: define rotina semanal de uso. Cinco: mede em trinta dias. Tempo economizado, qualidade, resultados.</p><p class="broll-tag">🎬 B-ROLL · 11-entrepreneur</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">38<small>GANHOS</small></span><span class="scene-time">12:15–12:35</span></div>
+  <div class="frame"><div class="reel L-list tone-dark">
+    <div class="bg grad-g"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Resultado</span></header>
+    <div class="stack">
+      <h2 class="ltitle">Ganhos com <em>IA</em></h2>
+      <div class="items">
+        <div class="item"><span class="n">3×</span><span class="txt"><b>+200%</b> mais conteúdo criado</span></div>
+        <div class="item"><span class="n">70%</span><span class="txt"><b>-70%</b> tempo em tarefas repetitivas</span></div>
+        <div class="item"><span class="n">5×</span><span class="txt"><b>+400%</b> leads qualificados</span></div>
+        <div class="item"><span class="n">24/7</span><span class="txt"><em>Atendimento</em> automático sempre on</span></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Ganhos esperados</h3><p class="voice">Os ganhos típicos com IA. Três vezes mais conteúdo criado. Setenta por cento menos tempo em tarefas repetitivas. Cinco vezes mais leads qualificados. Atendimento automático vinte e quatro horas por dia. Esses são resultados validados em clientes reais.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">39<small>FRASE</small></span><span class="scene-time">12:35–12:50</span></div>
+  <div class="frame"><div class="reel L-title tone-dark">
+    <div class="bg grad-r"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div></header>
+    <div class="stack">
+      <h1>Quem usa IA<br><em>substitui</em><br>quem não usa.</h1>
+      <p class="lead">Começa hoje. A barreira nunca foi tão baixa.</p>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Frase final</h3><p class="voice">A frase que abriu o curso ainda vale. IA não substitui você. Mas uma pessoa que usa IA substitui quem não usa. Começa hoje. A barreira nunca foi tão baixa.</p></div>
+</article>
+
+</div>
+
+<!-- CTA FINAL -->
+<div class="chapter"><h2>Encerramento + CTA</h2><span class="meta">12:50 – 13:10</span></div>
+<div class="storyboard">
+
+<article class="scene" data-broll="12-confident-woman">
+  <div class="scene-meta"><span class="scene-num">40<small>CTA</small></span><span class="scene-time">12:50–13:10</span></div>
+  <div class="frame"><div class="reel L-cta tone-dark">
+    <div class="bg grad-r"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill red">Curso · R$10</span></header>
+    <div class="stack">
+      <p class="kicker">Curso completo com certificado</p>
+      <h1>R$<em>10</em>.<br>Pra <em>sempre</em>.</h1>
+      <span class="btn">WhatsApp · comprar</span>
+      <p class="handle">@calazanslumina · link na bio</p>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>CTA · compra do curso</h3><p class="voice">Quer o curso completo, com material em PDF, certificado e suporte? Apenas dez reais, pra sempre. Link na bio, WhatsApp direto. Bora dominar IA pra valer.</p><p class="broll-tag">🎬 B-ROLL · 12-confident-woman</p></div>
+</article>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+# Vercel deploy ignore — excluir arquivos pesados da raiz que não fazem parte do site
+
+# Vídeos / mídia de trabalho na raiz
+*.mp4
+*.mov
+*.avi
+*.webm
+
+# Pastas de assets de trabalho (não deploya)
+pexels-broll/
+posts-12modelos/
+posts-v3-editorial/
+ebook-imgs/
+templates-assets/
+curso-ia-mega/
+posts-completos/
+"REKATORIO WOLFS/"
+"RELATORIO RS SITE/"
+public/REKATORIO\ WOLFS/
+
+# PDFs auxiliares fora de public/pdfs (esses não rodam no site)
+demo_visual_pdf.pdf
+ebook-ia-marketing-sites-completo.pdf
+ebook-ia-marketing-sites.md
+
+# Templates HTML de trabalho (criados aqui mas não servem o site)
+templates-*.html
+guia-pdf-visual-fpdf2.py
+
+# Imagens soltas de trabalho na raiz
+*.png
+seo_*.md
+EMAIL-AUTOMATION.md
+FUNIS-DE-VENDA.md

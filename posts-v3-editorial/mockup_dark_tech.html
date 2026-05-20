@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Mockup Dark Tech</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
+html,body{width:1080px;height:1350px;overflow:hidden;background:#000}
+body{font-family:'Geist',sans-serif;color:#fff}
+
+.canvas{
+  width:1080px;height:1350px;
+  position:relative;overflow:hidden;
+  background:#0a0a0c;
+}
+/* radial light from logo position */
+.canvas::before{
+  content:'';position:absolute;
+  top:-200px;left:-100px;
+  width:600px;height:600px;
+  background:radial-gradient(circle,rgba(229,28,35,.22) 0%,rgba(229,28,35,.05) 35%,transparent 60%);
+  pointer-events:none;z-index:1;
+}
+/* second light bottom right */
+.canvas::after{
+  content:'';position:absolute;
+  bottom:-150px;right:-150px;
+  width:500px;height:500px;
+  background:radial-gradient(circle,rgba(229,28,35,.18) 0%,rgba(229,28,35,.04) 40%,transparent 65%);
+  pointer-events:none;z-index:1;
+}
+.canvas > *{position:relative;z-index:2}
+
+/* ============ HEADER ============ */
+.header{
+  position:absolute;top:54px;left:64px;right:64px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.logo-img{
+  height:120px;width:auto;display:block;
+  filter:drop-shadow(0 0 24px rgba(229,28,35,.45));
+  margin-left:-20px;
+}
+.meta-tag{
+  font-family:'Geist Mono',monospace;
+  font-size:11px;letter-spacing:2.5px;
+  color:rgba(255,255,255,.55);
+  text-transform:uppercase;font-weight:500;
+  display:flex;align-items:center;gap:10px;
+  align-self:flex-start;margin-top:24px;
+}
+.meta-tag::before{
+  content:'';width:8px;height:8px;
+  background:#E51C23;border-radius:50%;
+  box-shadow:0 0 12px rgba(229,28,35,.8);
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+/* ============ KICKER ============ */
+.kicker{
+  position:absolute;top:248px;left:64px;
+  font-family:'Geist',sans-serif;
+  font-size:12px;letter-spacing:4px;
+  color:#E51C23;font-weight:700;
+  text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:12px;
+}
+.kicker::before{
+  content:'';display:inline-block;
+  width:28px;height:1px;background:#E51C23;
+  box-shadow:0 0 4px rgba(229,28,35,.5);
+}
+
+/* ============ HEADLINE ============ */
+.headline{
+  position:absolute;top:300px;left:64px;right:64px;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:96px;font-weight:500;
+  line-height:1;letter-spacing:-3px;
+  color:#fff;
+}
+.headline em{
+  font-style:normal;
+  font-weight:300;
+  color:#E51C23;
+  position:relative;
+  background:linear-gradient(90deg,#FF3D45 0%,#E51C23 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 0 14px rgba(229,28,35,.35));
+}
+
+/* ============ DECK ============ */
+.deck{
+  position:absolute;top:660px;left:64px;right:64px;
+  font-family:'Geist',sans-serif;
+  font-size:24px;font-weight:400;
+  line-height:1.45;color:rgba(255,255,255,.7);
+  letter-spacing:-.2px;max-width:780px;
+}
+
+/* ============ STAT BLOCK (terminal style) ============ */
+.stat-block{
+  position:absolute;top:820px;left:64px;
+  width:520px;
+  padding:28px 30px;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.08);
+  backdrop-filter:blur(8px);
+  border-radius:4px;
+  display:flex;align-items:center;gap:24px;
+}
+.stat-block::before{
+  content:'';position:absolute;
+  top:0;left:-1px;width:3px;height:100%;
+  background:linear-gradient(180deg,transparent 0%,#E51C23 50%,transparent 100%);
+}
+.stat-number{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:72px;font-weight:300;line-height:.9;
+  color:#fff;letter-spacing:-3px;flex-shrink:0;
+}
+.stat-number .pct{color:#E51C23;font-weight:400}
+.stat-detail{
+  flex:1;font-family:'Geist',sans-serif;
+  font-size:14px;line-height:1.5;
+  color:rgba(255,255,255,.7);
+}
+.stat-detail .src{
+  display:block;margin-top:8px;
+  font-family:'Geist Mono',monospace;
+  font-size:10px;letter-spacing:2px;
+  text-transform:uppercase;
+  color:rgba(229,28,35,.7);
+  font-weight:600;
+}
+
+/* ============ BODY TEXT ============ */
+.body-text{
+  position:absolute;top:820px;right:64px;
+  width:400px;
+  font-family:'Geist',sans-serif;
+  font-size:16px;line-height:1.65;
+  color:rgba(255,255,255,.6);
+  font-weight:400;
+}
+.body-text p+p{margin-top:14px}
+.body-text b{color:rgba(255,255,255,.95);font-weight:600}
+
+/* ============ FOOTER ============ */
+.foot-line{
+  position:absolute;bottom:108px;left:64px;right:64px;
+  height:1px;
+  background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,.15) 50%,transparent 100%);
+}
+.footer{
+  position:absolute;bottom:54px;left:64px;right:64px;
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:'Geist Mono',monospace;
+  font-size:11px;letter-spacing:2px;
+  text-transform:uppercase;font-weight:500;
+}
+.footer .handle{color:#E51C23;font-weight:700;letter-spacing:3px}
+.footer .meta{color:rgba(255,255,255,.5);display:flex;gap:18px;align-items:center}
+.footer .meta::before{
+  content:'';width:4px;height:4px;
+  background:rgba(255,255,255,.3);border-radius:50%;display:inline-block;
+}
+.footer .site{color:rgba(255,255,255,.4)}
+
+/* ============ CORNER FRAMES (tech detail) ============ */
+.corner-tl,.corner-br{
+  position:absolute;width:24px;height:24px;
+  border:1px solid rgba(229,28,35,.5);
+  pointer-events:none;
+}
+.corner-tl{top:48px;left:36px;border-right:none;border-bottom:none}
+.corner-br{bottom:48px;right:36px;border-left:none;border-top:none}
+
+/* ============ GRAIN OVERLAY (sutil tech) ============ */
+.grain{
+  position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity:.6;mix-blend-mode:overlay;
+  pointer-events:none;z-index:3;
+}
+</style>
+</head>
+<body>
+
+<div class="canvas">
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+
+  <div class="header">
+    <img src="logo_oficial.png" alt="Calazans Lumina" class="logo-img">
+    <div class="meta-tag">31 · 98294-8067</div>
+  </div>
+
+  <div class="kicker">Verdade dura</div>
+  <h1 class="headline">O cliente já <em>te googlou</em> antes de te ligar.</h1>
+  <div class="deck">E o que ele achou no seu Instagram decidiu se você ia ganhar ou perder esse orçamento. Você nem soube.</div>
+
+  <div class="stat-block">
+    <div class="stat-number">96<span class="pct">%</span></div>
+    <div class="stat-detail">
+      dos consumidores brasileiros leem avaliações no Google antes de contratar um serviço.
+      <span class="src">Reclame Aqui · 2025</span>
+    </div>
+  </div>
+
+  <div class="body-text">
+    <p>Cliente novo chega por indicação. <b>A primeira coisa que faz</b> é pegar o celular e te procurar.</p>
+    <p>Em 5 segundos, decide se vale a pena ligar.</p>
+  </div>
+
+  <div class="foot-line"></div>
+  <div class="footer">
+    <span class="handle">@calazanslumina</span>
+    <span class="meta">marketing digital · 2026</span>
+    <span class="site">calazanslumina.com.br</span>
+  </div>
+
+  <div class="grain"></div>
+</div>
+
+</body>
+</html>

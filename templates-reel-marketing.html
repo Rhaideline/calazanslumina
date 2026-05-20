@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Calazans Lumina — Reel · Aparecer no Google em 30 segundos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#111111;--ink-2:#1A1A1A;--paper:#F5F1EA;
+    --red:#FF0005;--red-soft:#FF3B3B;--red-deep:#A00306;
+    --rule:rgba(255,255,255,.08);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:#0a0a0a;color:#fff;font-family:'DM Sans',system-ui,sans-serif;font-weight:400;line-height:1.55;-webkit-font-smoothing:antialiased}
+
+  /* PAGE CHROME */
+  .page-head{max-width:1500px;margin:0 auto;padding:56px 32px 16px}
+  .page-head .meta{font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:.32em;text-transform:uppercase;opacity:.55;margin-bottom:14px;font-weight:500}
+  .page-head h1{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;letter-spacing:-.02em;font-size:clamp(34px,4.5vw,56px);margin:0 0 14px;line-height:1}
+  .page-head h1 em{font-style:italic;color:var(--red);font-weight:400}
+  .page-head .lede{opacity:.65;max-width:74ch;margin:0 0 8px;line-height:1.6;font-weight:300;font-size:16px}
+
+  .specs-bar{max-width:1500px;margin:24px auto 0;padding:0 32px;display:flex;gap:32px;flex-wrap:wrap;font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;opacity:.7}
+  .specs-bar span b{color:var(--red-soft);font-weight:700}
+
+  /* STORYBOARD GRID */
+  .storyboard{max-width:1500px;margin:48px auto 0;padding:0 32px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}
+
+  /* SCENE CARD */
+  .scene{background:var(--ink-2);border:1px solid var(--rule);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s ease,border-color .25s ease}
+  .scene:hover{transform:translateY(-3px);border-color:rgba(255,0,5,.3)}
+  .scene-meta{padding:18px 22px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+  .scene-num{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:30px;line-height:1;color:#fff}
+  .scene-num small{display:block;font-family:'DM Sans',sans-serif;font-style:normal;font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:5px;font-weight:600}
+  .scene-time{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+  .scene-time .tm{font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:var(--red-soft);font-weight:700}
+  .scene-time .lbl{font-family:'DM Serif Display',serif;font-style:italic;font-size:13px;color:rgba(255,255,255,.78);text-align:right;line-height:1.15}
+
+  /* FRAME (preview 9:16) */
+  .frame{background:#222;aspect-ratio:9/16;overflow:hidden;position:relative}
+  .reel{position:absolute;top:0;left:0;width:1080px;height:1920px;transform-origin:top left;transform:scale(.255);font-family:'DM Sans',sans-serif;display:flex;flex-direction:column}
+
+  /* shared reel atoms */
+  .reel-bg{position:absolute;inset:0;z-index:0}
+  .reel-bg.paper{background:var(--paper)}
+  .reel-bg.ink{background:var(--ink)}
+  .reel-bg.gradient{background:linear-gradient(160deg,#1a0d0d 0%,var(--ink) 60%,#000 100%)}
+  .reel-bg.gradient::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 50% at 80% 20%,rgba(255,0,5,.42),transparent 60%)}
+  .reel-photo{position:absolute;inset:0;z-index:1;background-position:center;background-size:cover;background-repeat:no-repeat;filter:saturate(.6) contrast(1.05) brightness(.55)}
+  .reel-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.4) 50%,rgba(0,0,0,.85) 100%)}
+
+  .reel-head{position:absolute;top:88px;left:80px;right:80px;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:24px}
+  .reel-logo{display:inline-flex;align-items:center;gap:18px;line-height:1}
+  .reel-logo img{width:64px;height:64px;display:block;flex-shrink:0;object-fit:contain}
+  .reel-logo .wm{display:flex;flex-direction:column;gap:6px;line-height:1}
+  .reel-logo .wm .name{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:32px;letter-spacing:-.005em;line-height:1;color:#fff}
+  .reel-logo.on-light .wm .name{color:var(--ink)}
+  .reel-logo .wm .sub{font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:.5em;text-transform:uppercase;font-weight:500;color:var(--red)}
+  .reel-pill{display:inline-flex;align-items:center;gap:10px;padding:11px 18px;border-radius:999px;font-family:'DM Sans',sans-serif;font-size:14px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;height:38px;white-space:nowrap}
+  .reel-pill.outline-light{border:1px solid rgba(255,255,255,.4);color:#fff;background:transparent}
+  .reel-pill.dark{border:1px solid rgba(17,17,17,.4);color:var(--ink);background:transparent}
+  .reel-pill::before{content:"";width:7px;height:7px;background:currentColor;border-radius:50%;opacity:.85}
+
+  .reel-foot{position:absolute;bottom:108px;left:80px;right:80px;z-index:5;display:flex;justify-content:space-between;align-items:center;font-family:'DM Sans',sans-serif;font-size:18px;letter-spacing:.28em;text-transform:uppercase;font-weight:600}
+  .reel.tone-dark .reel-foot{color:rgba(255,255,255,.65)} .reel.tone-dark .reel-foot .accent{color:#fff}
+  .reel.tone-light .reel-foot{color:rgba(17,17,17,.55)} .reel.tone-light .reel-foot .accent{color:var(--ink)}
+
+  /* SCENE 01 — HOOK */
+  .s01 .h1{position:relative;z-index:5;margin:0;padding:0 80px;font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;color:#fff;font-size:170px;line-height:.94;letter-spacing:-.035em;text-align:center;align-self:center;margin-top:auto;margin-bottom:auto}
+  .s01 .h1 em{font-style:italic;color:var(--red-soft);font-weight:400;text-decoration:underline;text-decoration-color:var(--red);text-decoration-thickness:6px;text-underline-offset:18px}
+  .s01 .h1 mark{background:var(--red);color:#fff;padding:0 18px;font-style:italic;display:inline-block;transform:rotate(-1.5deg);line-height:1.05}
+
+  /* SCENE 02 — PROBLEMA stat */
+  .s02 .stack{position:relative;z-index:5;align-self:center;margin:auto;text-align:center;padding:0 80px;display:flex;flex-direction:column;align-items:center;gap:36px}
+  .s02 .stat-num{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:520px;line-height:.85;letter-spacing:-.05em;color:var(--red);margin:0;white-space:nowrap}
+  .s02 .stat-num .pct{font-size:300px;vertical-align:super}
+  .s02 .stat-text{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:54px;line-height:1.18;letter-spacing:-.015em;color:var(--ink);max-width:840px;margin:0}
+  .s02 .stat-text em{font-style:italic;color:var(--red);font-weight:400}
+
+  /* SCENE 03/04/05 — SOLUÇÃO cards numerados */
+  .s-solucao .stack{position:relative;z-index:5;align-self:center;margin:auto;padding:0 80px;display:flex;flex-direction:column;gap:32px;color:#fff}
+  .s-solucao .erro-num{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:220px;line-height:.85;color:var(--red);letter-spacing:-.04em;margin:0}
+  .s-solucao .erro-num small{display:block;font-family:'DM Sans',sans-serif;font-style:normal;font-size:18px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:14px;font-weight:700}
+  .s-solucao h2{margin:0;font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:104px;line-height:.98;letter-spacing:-.025em;color:#fff;max-width:880px}
+  .s-solucao h2 em{font-style:italic;color:var(--red-soft);font-weight:400}
+  .s-solucao p{margin:0;font-family:'DM Sans',sans-serif;font-weight:500;font-size:40px;line-height:1.45;color:rgba(255,255,255,.85);max-width:880px}
+  .s-solucao p b{color:#fff;font-weight:800}
+
+  /* SCENE 06 — PROVA case */
+  .s06 .stack{position:relative;z-index:5;align-self:center;margin:auto;padding:0 80px;text-align:center;display:flex;flex-direction:column;gap:40px;align-items:center}
+  .s06 .case-label{font-family:'DM Sans',sans-serif;font-size:22px;letter-spacing:.32em;text-transform:uppercase;font-weight:700;color:var(--red);margin:0}
+  .s06 .case-num{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:440px;line-height:.85;letter-spacing:-.05em;color:#fff;margin:0;white-space:nowrap}
+  .s06 .case-num .plus{font-size:280px;color:var(--red-soft)}
+  .s06 .case-num .pct{font-size:200px;vertical-align:super}
+  .s06 .case-cap{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:54px;line-height:1.22;color:rgba(255,255,255,.85);max-width:840px;margin:0}
+  .s06 .case-cap em{font-style:italic;color:var(--red-soft);font-weight:400}
+  .s06 .case-meta{font-family:'DM Sans',sans-serif;font-size:18px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.55);margin:0}
+
+  /* SCENE 07 — CTA */
+  .s07 .stack{position:relative;z-index:5;align-self:center;margin:auto;padding:0 80px;text-align:center;display:flex;flex-direction:column;gap:48px;align-items:center}
+  .s07 .cta-kicker{font-family:'DM Sans',sans-serif;font-size:22px;letter-spacing:.34em;text-transform:uppercase;font-weight:700;color:var(--red-soft);margin:0}
+  .s07 h1{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:148px;line-height:.96;letter-spacing:-.03em;color:#fff;margin:0;max-width:880px}
+  .s07 h1 em{font-style:italic;color:var(--red);font-weight:400}
+  .s07 .cta-btn{display:inline-flex;align-items:center;gap:20px;padding:36px 56px;border-radius:999px;background:#25D366;color:#000;font-family:'DM Sans',sans-serif;font-size:26px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;line-height:1}
+  .s07 .cta-btn::before{content:"";width:24px;height:24px;border-radius:999px;background:#000}
+  .s07 .cta-handle{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:44px;color:rgba(255,255,255,.78);margin:0}
+
+  /* CARD CONTENT BELOW FRAME */
+  .scene-content{padding:18px 22px;flex:1;display:flex;flex-direction:column;gap:14px;border-top:1px solid var(--rule)}
+  .scene-content h3{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:20px;line-height:1.15;margin:0;color:#fff}
+  .voice{font-family:'DM Sans',sans-serif;font-weight:400;font-size:13px;line-height:1.55;margin:0;color:rgba(255,255,255,.78);border-left:2px solid var(--red);padding:8px 0 8px 12px}
+  .voice b{color:var(--red-soft);text-transform:uppercase;font-size:9px;letter-spacing:.28em;font-weight:700;display:block;margin-bottom:4px}
+  .broll{display:flex;flex-direction:column;gap:6px;font-family:'DM Sans',sans-serif;font-size:11px;line-height:1.5;color:rgba(255,255,255,.6)}
+  .broll b{color:var(--red-soft);text-transform:uppercase;font-size:9px;letter-spacing:.28em;font-weight:700}
+  .broll a{color:#fff;text-decoration:underline;text-decoration-color:rgba(255,0,5,.5);text-underline-offset:3px}
+  .broll a:hover{text-decoration-color:var(--red)}
+
+  /* PRODUCTION PANEL */
+  .prod-panel{max-width:1500px;margin:64px auto 0;padding:0 32px}
+  .prod-panel h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:32px;margin:0 0 24px;letter-spacing:-.01em}
+  .prod-panel h2 em{font-style:italic;color:var(--red);font-weight:400}
+  .prod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:28px}
+  .prod-card{background:var(--ink-2);border:1px solid var(--rule);border-radius:18px;padding:28px}
+  .prod-card .lbl{font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--red-soft);font-weight:700;margin-bottom:10px}
+  .prod-card h3{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:24px;margin:0 0 16px;letter-spacing:-.01em}
+  .prod-card p{font-family:'DM Sans',sans-serif;font-weight:400;font-size:14px;line-height:1.6;margin:0 0 12px;color:rgba(255,255,255,.78)}
+  .prod-card p b{color:#fff;font-weight:600}
+  .prod-card ul{margin:0;padding-left:18px;font-family:'DM Sans',sans-serif;font-size:13px;line-height:1.7;color:rgba(255,255,255,.78)}
+  .prod-card ul li{margin-bottom:6px}
+  .prod-card code{font-family:'DM Sans',sans-serif;background:rgba(255,255,255,.08);padding:2px 6px;border-radius:4px;font-size:12px;color:var(--red-soft)}
+  .caption-block{background:var(--paper);color:var(--ink);padding:32px;border-radius:18px}
+  .caption-block .lbl{color:var(--red);font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:.32em;text-transform:uppercase;font-weight:700;margin-bottom:12px}
+  .caption-block pre{font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-wrap:break-word;margin:0}
+
+  footer.page-foot{max-width:1500px;margin:64px auto 0;padding:32px;border-top:1px solid var(--rule);opacity:.55}
+  footer.page-foot .meta{font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:.32em;text-transform:uppercase;font-weight:500}
+
+  @media (max-width:768px){
+    .storyboard{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header class="page-head">
+  <div class="meta">Calazans Lumina · Reel Roteiro · Marketing Digital Explicativo</div>
+  <h1>3 ações pra aparecer no <em>Google</em> essa semana.</h1>
+  <p class="lede">Reel vertical 9:16 (1080×1920), 30 segundos, narração feminina (Rhaideline ou voz IA), B-rolls do Pexels (gratuitos), música lo-fi acelerada. 7 cenas. Roteiro abaixo, com voiceover, texto on-screen e link direto pra cada B-roll.</p>
+  <div class="specs-bar">
+    <span>Formato · <b>1080×1920</b></span>
+    <span>Duração · <b>30s</b></span>
+    <span>Cenas · <b>7</b></span>
+    <span>Áudio · <b>narração + música</b></span>
+    <span>B-rolls · <b>Pexels (free)</b></span>
+  </div>
+</header>
+
+<!-- ═══════════════ STORYBOARD ═══════════════ -->
+<div class="storyboard">
+
+<!-- ────── SCENE 01 — HOOK ────── -->
+<article class="scene">
+  <div class="scene-meta">
+    <span class="scene-num">01<small>HOOK</small></span>
+    <span class="scene-time"><span class="tm">0:00 – 0:03</span><span class="lbl">3 segundos<br>· abertura</span></span>
+  </div>
+  <div class="frame">
+    <div class="reel s01 tone-dark">
+      <div class="reel-bg gradient"></div>
+      <header class="reel-head">
+        <span class="reel-pill outline-light">Calazans · Lumina</span>
+      </header>
+      <h1 class="h1">Seu cliente<br><em>te procura</em><br>no <mark>Google</mark>.</h1>
+      <footer class="reel-foot"><span class="accent">@calazanslumina</span><span>00:03</span></footer>
+    </div>
+  </div>
+  <div class="scene-content">
+    <h3>Hook visceral</h3>
+    <p class="voice"><b>Voz</b>Seu cliente já está te procurando no Google. A pergunta é: ele te encontra?</p>
+    <p class="voice"><b>Texto on-screen</b>"Seu cliente te procura no Google."</p>
+    <div class="broll"><b>B-roll sugerido</b><span>Close de mão segurando celular, dedo deslizando no Google Maps. Vertical. ~2-3s.</span><a href="https://www.pexels.com/search/videos/google%20maps%20phone/" target="_blank">Pexels · google maps phone</a></div>
+  </div>
+</article>
+
+<!-- ────── SCENE 02 — STAT problema ────── -->
+<article class="scene">
+  <div class="scene-meta">
+    <span class="scene-num">02<small>PROBLEMA</small></span>
+    <span class="scene-time"><span class="tm">0:03 – 0:08</span><span class="lbl">5 segundos<br>· dado choque</span></span>
+  </div>
+  <div class="frame">
+    <div class="reel s02 tone-light">
+      <div class="reel-bg paper"></div>
+      <header class="reel-head">
+        <div class="reel-logo on-light"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div>
+        <span class="reel-pill dark">Dado · 01</span>
+      </header>
+      <div class="stack">
+        <p class="stat-num">87<span class="pct">%</span></p>
+        <p class="stat-text">dos americanos pesquisam um serviço no Google <em>antes de ligar</em>.</p>
+      </div>
+      <footer class="reel-foot"><span class="accent">@calazanslumina</span><span>00:08</span></footer>
+    </div>
+  </div>
+  <div class="scene-content">
+    <h3>Dado que choca</h3>
+    <p class="voice"><b>Voz</b>87% dos americanos pesquisam um serviço no Google antes de ligar. Se você não aparece nos três primeiros, você não existe.</p>
+    <p class="voice"><b>Texto on-screen</b>"87% pesquisam ANTES de ligar"</p>
+    <div class="broll"><b>B-roll alternativo</b><span>Stats abstratas, gráfico de barras subindo, ou número 87% animando do zero. Pode ser feito direto no CapCut/InShot com texto.</span><a href="https://www.pexels.com/search/videos/data%20growth/" target="_blank">Pexels · data growth</a></div>
+  </div>
+</article>
+
+<!-- ────── SCENE 03 — AÇÃO 01 ────── -->
+<article class="scene">
+  <div class="scene-meta">
+    <span class="scene-num">03<small>AÇÃO 01</small></span>
+    <span class="scene-time"><span class="tm">0:08 – 0:14</span><span class="lbl">6 segundos<br>· categoria certa</span></span>
+  </div>
+  <div class="frame">
+    <div class="reel s-solucao tone-dark">
+      <div class="reel-bg ink"></div>
+      <div class="reel-photo" style="background-image:url('https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=1200&h=2000&fit=crop&q=80')"></div>
+      <header class="reel-head">
+        <div class="reel-logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div>
+        <span class="reel-pill outline-light">Ação · 01</span>
+      </header>
+      <div class="stack">
+        <div class="erro-num">01<small>das três</small></div>
+        <h2>Categoria <em>certa</em>.</h2>
+        <p>Pintor escolhe <b>"Painting Contractor"</b>. Não "General Contractor". 5 minutos pra mudar, 180% a mais de impressões.</p>
+      </div>
+      <footer class="reel-foot"><span class="accent">@calazanslumina</span><span>00:14</span></footer>
+    </div>
+  </div>
+  <div class="scene-content">
+    <h3>Ação 1 — Categoria</h3>
+    <p class="voice"><b>Voz</b>Primeira ação: categoria certa. Pintor escolhe "Painting Contractor", não "General Contractor". Cinco minutos, e o ranking sobe 180%.</p>
+    <p class="voice"><b>Texto on-screen</b>"01. Categoria certa · +180% em 30 dias"</p>
+    <div class="broll"><b>B-roll sugerido</b><span>Screen capture (sua tela) abrindo o GMB e alterando a categoria. OU pintor trabalhando em parede branca, plano americano.</span><a href="https://www.pexels.com/search/videos/painter%20wall/" target="_blank">Pexels · painter wall</a></div>
+  </div>
+</article>
+
+<!-- ────── SCENE 04 — AÇÃO 02 ────── -->
+<article class="scene">
+  <div class="scene-meta">
+    <span class="scene-num">04<small>AÇÃO 02</small></span>
+    <span class="scene-time"><span class="tm">0:14 – 0:20</span><span class="lbl">6 segundos<br>· foto real</span></span>
+  </div>
+  <div class="frame">
+    <div class="reel s-solucao tone-dark">
+      <div class="reel-bg ink"></div>
+      <div class="reel-photo" style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&h=2000&fit=crop&q=80')"></div>
+      <header class="reel-head">
+        <div class="reel-logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div>
+        <span class="reel-pill outline-light">Ação · 02</span>
+      </header>
+      <div class="stack">
+        <div class="erro-num">02<small>das três</small></div>
+        <h2>Foto <em>real</em>.</h2>
+        <p>10 fotos de obra acabada por mês. Antes e depois. Equipe na obra. <b>Stock photo o Google detecta</b> e o cliente também sente.</p>
+      </div>
+      <footer class="reel-foot"><span class="accent">@calazanslumina</span><span>00:20</span></footer>
+    </div>
+  </div>
+  <div class="scene-content">
+    <h3>Ação 2 — Foto real</h3>
+    <p class="voice"><b>Voz</b>Segunda: foto real. Dez fotos da sua obra esse mês. Nunca foto de banco. Cliente americano sente e Google detecta.</p>
+    <p class="voice"><b>Texto on-screen</b>"02. Foto real · obra acabada"</p>
+    <div class="broll"><b>B-roll sugerido</b><span>Painter pintando casa real, equipe trabalhando, vista externa de casa pintada. Vertical.</span><a href="https://www.pexels.com/search/videos/house%20painting%20exterior/" target="_blank">Pexels · house painting exterior</a></div>
+  </div>
+</article>
+
+<!-- ────── SCENE 05 — AÇÃO 03 ────── -->
+<article class="scene">
+  <div class="scene-meta">
+    <span class="scene-num">05<small>AÇÃO 03</small></span>
+    <span class="scene-time"><span class="tm">0:20 – 0:25</span><span class="lbl">5 segundos<br>· responda review</span></span>
+  </div>
+  <div class="frame">
+    <div class="reel s-solucao tone-dark">
+      <div class="reel-bg ink"></div>
+      <div class="reel-photo" style="background-image:url('https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&h=2000&fit=crop&q=80')"></div>
+      <header class="reel-head">
+        <div class="reel-logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div>
+        <span class="reel-pill outline-light">Ação · 03</span>
+      </header>
+      <div class="stack">
+        <div class="erro-num">03<small>das três</small></div>
+        <h2>Responda <em>review</em>.</h2>
+        <p>Toda review em até <b>24 horas, em inglês, personalizada</b>. Silêncio empurra o cliente pro concorrente.</p>
+      </div>
+      <footer class="reel-foot"><span class="accent">@calazanslumina</span><span>00:25</span></footer>
+    </div>
+  </div>
+  <div class="scene-content">
+    <h3>Ação 3 — Review</h3>
+    <p class="voice"><b>Voz</b>Terceira: responda toda review em vinte e quatro horas, em inglês, personalizada. Silêncio empurra o cliente pro concorrente.</p>
+    <p class="voice"><b>Texto on-screen</b>"03. Review em 24h · em inglês"</p>
+    <div class="broll"><b>B-roll sugerido</b><span>Close de tela mostrando review do Google sendo respondida no celular. OU pessoa digitando no smartphone.</span><a href="https://www.pexels.com/search/videos/typing%20phone/" target="_blank">Pexels · typing phone</a></div>
+  </div>
+</article>
+
+<!-- ────── SCENE 06 — PROVA case ────── -->
+<article class="scene">
+  <div class="scene-meta">
+    <span class="scene-num">06<small>PROVA</small></span>
+    <span class="scene-time"><span class="tm">0:25 – 0:28</span><span class="lbl">3 segundos<br>· case real</span></span>
+  </div>
+  <div class="frame">
+    <div class="reel s06 tone-dark">
+      <div class="reel-bg gradient"></div>
+      <header class="reel-head">
+        <div class="reel-logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div>
+        <span class="reel-pill outline-light">Case · validado</span>
+      </header>
+      <div class="stack">
+        <p class="case-label">Wolf's Painting · Boston</p>
+        <p class="case-num"><span class="plus">+</span>345<span class="pct">%</span></p>
+        <p class="case-cap">em <em>leads qualificados</em>, em 90 dias. Sem gastar a mais em anúncio.</p>
+        <p class="case-meta">Validado · Search Console</p>
+      </div>
+      <footer class="reel-foot"><span class="accent">@calazanslumina</span><span>00:28</span></footer>
+    </div>
+  </div>
+  <div class="scene-content">
+    <h3>Prova social</h3>
+    <p class="voice"><b>Voz</b>Wolf's Painting fez exatamente isso. Em 90 dias: trezentos e quarenta e cinco por cento a mais de leads. Mesma cidade, mesma equipe.</p>
+    <p class="voice"><b>Texto on-screen</b>"+345% leads · 90 dias · Wolf's Painting"</p>
+    <div class="broll"><b>B-roll sugerido</b><span>Print do Search Console real (use o gráfico). Ou animação de número subindo no after effects/CapCut. Texto no fundo escuro com gradient.</span><a href="https://www.pexels.com/search/videos/business%20growth%20chart/" target="_blank">Pexels · business growth chart</a></div>
+  </div>
+</article>
+
+<!-- ────── SCENE 07 — CTA ────── -->
+<article class="scene">
+  <div class="scene-meta">
+    <span class="scene-num">07<small>CTA</small></span>
+    <span class="scene-time"><span class="tm">0:28 – 0:30</span><span class="lbl">2 segundos<br>· chamada final</span></span>
+  </div>
+  <div class="frame">
+    <div class="reel s07 tone-dark">
+      <div class="reel-bg gradient"></div>
+      <header class="reel-head">
+        <div class="reel-logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div>
+        <span class="reel-pill outline-light">Convite</span>
+      </header>
+      <div class="stack">
+        <p class="cta-kicker">Auditoria gratuita</p>
+        <h1>Bora ver <em>seu</em><br>caso?</h1>
+        <span class="cta-btn">WhatsApp direto</span>
+        <p class="cta-handle">@calazanslumina · link na bio</p>
+      </div>
+      <footer class="reel-foot"><span class="accent">@calazanslumina</span><span>00:30</span></footer>
+    </div>
+  </div>
+  <div class="scene-content">
+    <h3>CTA</h3>
+    <p class="voice"><b>Voz</b>Auditoria gratuita do seu Google Meu Negócio no link da bio. Trinta minutos, resposta em vinte e quatro horas.</p>
+    <p class="voice"><b>Texto on-screen</b>"Auditoria GRÁTIS · link na bio"</p>
+    <div class="broll"><b>B-roll sugerido</b><span>Não precisa de B-roll. Tela fechada com logo + animação de WhatsApp pulsando. Termina com "@calazanslumina" piscando.</span></div>
+  </div>
+</article>
+
+</div>
+
+<!-- ═══════════════ PRODUCTION PANEL ═══════════════ -->
+<section class="prod-panel">
+  <h2>Produção em <em>3 caminhos</em></h2>
+  <div class="prod-grid">
+
+    <article class="prod-card">
+      <div class="lbl">Caminho A · Rápido</div>
+      <h3>Banco de vídeos + CapCut</h3>
+      <p><b>Tempo:</b> 1-2 horas. <b>Custo:</b> R$ 0.</p>
+      <p>Use os B-rolls do Pexels listados em cada cena. Baixe verticais 9:16. Grave a narração no celular (Voice Memos) ou use Eleven Labs (voz IA feminina em PT-BR).</p>
+      <ul>
+        <li>Abre CapCut, importa B-rolls + narração</li>
+        <li>Cola textos on-screen com fonte DM Serif (free no CapCut)</li>
+        <li>Música: busca "lo-fi upbeat" no <code>capcut.com</code> ou usa "Sunny" do Bensound</li>
+        <li>Exporta 1080×1920, 30fps</li>
+      </ul>
+    </article>
+
+    <article class="prod-card">
+      <div class="lbl">Caminho B · IA</div>
+      <h3>Sora · Veo 3 · Runway · Kling</h3>
+      <p><b>Tempo:</b> 30 min. <b>Custo:</b> R$ 50-200 (créditos da plataforma).</p>
+      <p>Gere as 7 cenas com IA, prompt específico por cena. Vantagem: controle visual total, ambiente americano realístico (painter pintando casa em estilo Boston colonial, etc.).</p>
+      <ul>
+        <li>Sora (OpenAI · melhor pra cenas realistas)</li>
+        <li>Veo 3 (Google · ótimo realismo + áudio)</li>
+        <li>Runway Gen-4 (mais barato, qualidade média)</li>
+        <li>Kling 2.0 (chinês · realismo top, sem barreira de idioma)</li>
+      </ul>
+    </article>
+
+    <article class="prod-card">
+      <div class="lbl">Caminho C · Misto</div>
+      <h3>HTML + tela gravada</h3>
+      <p><b>Tempo:</b> 30 min. <b>Custo:</b> R$ 0.</p>
+      <p>O storyboard ao lado JÁ É um reel pronto — cada frame é um post 1080×1920 escalado. Posso te entregar versão "play" do storyboard em loop, gravar a tela com OBS/Loom em vertical, e exportar.</p>
+      <ul>
+        <li>Frames já desenhados (estética da marca, consistente com o feed)</li>
+        <li>Adiciona narração over o vídeo gravado da tela</li>
+        <li>Sem precisar baixar B-rolls externos</li>
+        <li>Bom pra "rascunho v1" antes de produzir versão final</li>
+      </ul>
+    </article>
+
+  </div>
+</section>
+
+<!-- ═══════════════ CAPTION DO POST ═══════════════ -->
+<section class="prod-panel">
+  <h2>Caption do post <em>Instagram</em></h2>
+  <div class="caption-block">
+    <div class="lbl">Texto pronto · copia e cola</div>
+    <pre>Três ações simples, em ordem de impacto. Pra aparecer no Google Maps essa semana.
+
+Toda semana, eu audito Google Meu Negócio de empresas brasileiras nos Estados Unidos. Pintor, siding installer, empreiteiro, HVAC, solar. E vejo sempre os mesmos três buracos. Cada um custa cliente perdido pro concorrente.
+
+Ação um. Categoria certa.
+Não é "General Contractor". É "Painting Contractor" (para pintor), "Siding Contractor" (para siding), "HVAC Contractor". Mais nove secundárias específicas. Cinco minutos pra alterar no GMB. Cento e oitenta por cento a mais de impressões em trinta dias.
+
+Ação dois. Foto real.
+Dez fotos por mês de obra acabada, com endereço aproximado na descrição. Cinco fotos de antes e depois. Três fotos da equipe na obra, com uniforme. Foto de banco de imagem o Google detecta, e o cliente americano sente.
+
+Ação três. Responda toda review.
+Em até vinte e quatro horas. Em inglês. Personalizada, nominal. "Thanks John, we loved doing the deck restoration. Hit us up anytime — we're in Framingham." Silêncio empurra o cliente pro concorrente.
+
+Caso real. Wolf's Painting, em Boston. Em noventa dias: trezentos e quarenta e cinco por cento a mais de leads. Mesma cidade, mesma equipe, sem aumento de verba.
+
+Salve este reel. Aplique nesta semana.
+
+Auditoria gratuita do seu GMN no link da bio. Trinta minutos, cinco ações práticas, resposta em vinte e quatro horas.
+
+#googlemeunegocio #seolocal #marketingdigital #brasileirosnoseua #painter #contractor #siding #hvac #framingham #boston #empreendedorbrasileiro #reels #marketingdigitalexplicado #calazanslumina</pre>
+  </div>
+</section>
+
+<footer class="page-foot">
+  <div class="meta">REEL · 30 SEGUNDOS · 7 CENAS · 1080×1920 · CALAZANS LUMINA · ROTEIRO COMPLETO</div>
+</footer>
+
+</body>
+</html>

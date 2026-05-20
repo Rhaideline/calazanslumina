@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><title>Calazans Lumina</title><style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,500;1,9..144,600&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
+html,body{width:1080px;height:1350px;overflow:hidden;background:#1a1815}
+body{font-family:'Geist',sans-serif;color:#1a1815}
+.canvas{width:1080px;height:1350px;position:relative;overflow:hidden;background:#F5F1E8}
+.canvas::before{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.10 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");opacity:.5;mix-blend-mode:multiply;pointer-events:none;z-index:1}
+.canvas > *{position:relative;z-index:2}
+.canvas.dark::before{filter:invert(1);opacity:.3}
+.canvas.dark{background:#1A1815;color:#F5F1E8}
+
+/* ============ HEADER ============ */
+.header{position:absolute;top:0;left:0;right:0;padding:36px 56px 0;display:flex;justify-content:space-between;align-items:center;z-index:10}
+.brand{display:flex;align-items:center;gap:14px}
+.brand-mark{width:46px;height:46px;background:#E63946;color:#F5F1E8;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:28px;font-weight:700;line-height:1;letter-spacing:-1px;border-radius:2px}
+.brand-text{display:flex;flex-direction:column;line-height:1.1}
+.brand-name{font-family:'Fraunces',serif;font-size:19px;font-weight:600;color:#1a1815;letter-spacing:-.2px}
+.brand-name.light{color:#F5F1E8}
+.brand-sub{font-family:'Geist',sans-serif;font-size:10px;letter-spacing:2.5px;color:#8B7355;text-transform:uppercase;font-weight:600;margin-top:3px}
+.brand-sub.light{color:#c4b89e}
+.issue-tag{font-family:'Geist',sans-serif;font-size:11px;letter-spacing:2.5px;color:#8B7355;text-transform:uppercase;font-weight:500;display:flex;align-items:center;gap:10px}
+.issue-tag.light{color:#c4b89e}
+.issue-tag::before{content:'';display:inline-block;width:6px;height:6px;background:#E63946;border-radius:50%}
+
+/* ============ RULES ============ */
+.top-rule{position:absolute;top:108px;left:56px;right:56px;height:1px;background:#1a1815;z-index:5}
+.top-rule.light{background:#F5F1E8;opacity:.25}
+.foot-rule{position:absolute;bottom:90px;left:56px;right:56px;height:1px;background:#1a1815}
+.foot-rule.light{background:#F5F1E8;opacity:.25}
+
+/* ============ ASTERISK ORNAMENT ============ */
+.ornament{position:absolute;top:170px;right:56px;font-family:'Fraunces',serif;font-size:60px;color:#E63946;line-height:1;font-weight:400}
+
+/* ============ KICKER ============ */
+.kicker{position:absolute;top:144px;left:56px;font-family:'Geist',sans-serif;font-size:13px;letter-spacing:4px;text-transform:uppercase;font-weight:700;color:#E63946;display:flex;align-items:center;gap:14px}
+.kicker::before{content:'·';font-size:34px;line-height:0.5;color:#E63946}
+
+/* ============ FOOTER ============ */
+.footer{position:absolute;bottom:34px;left:56px;right:56px;display:flex;justify-content:space-between;align-items:center;font-family:'Geist',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:600}
+.footer .handle{color:#E63946;font-weight:700;letter-spacing:3px}
+.footer .meta{color:#8B7355;font-weight:500;display:flex;gap:18px;align-items:center}
+.footer .meta::before{content:'';width:4px;height:4px;background:#8B7355;border-radius:50%;display:inline-block}
+.footer.light .meta{color:#c4b89e}
+.footer.light .meta::before{background:#c4b89e}
+.swipe{display:flex;align-items:center;gap:8px;color:#1a1815;font-weight:700;letter-spacing:3px}
+.swipe.light{color:#F5F1E8}
+.swipe svg{width:22px;height:22px}
+
+/* ============ STAT CARD ============ */
+.stat-card{padding:26px 28px;background:#1a1815;color:#F5F1E8;border-radius:2px}
+.stat-card.inverted{background:#F5F1E8;color:#1a1815}
+.stat-num{font-family:'Fraunces',serif;font-size:68px;font-weight:700;line-height:1;letter-spacing:-2px;color:#E63946;margin-bottom:10px}
+.stat-text{font-family:'Geist',sans-serif;font-size:16px;line-height:1.5;color:#F5F1E8;font-weight:400}
+.stat-card.inverted .stat-text{color:#1a1815}
+.stat-source{font-family:'Geist',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#8B7355;margin-top:16px;padding-top:12px;border-top:1px solid #3a3530;font-weight:600}
+.stat-card.inverted .stat-source{border-top-color:#d9d2c0}
+
+
+    .m2e-num{
+      position:absolute;top:170px;left:56px;
+      font-family:'Fraunces',serif;font-size:280px;
+      font-weight:600;line-height:.85;
+      color:#E63946;letter-spacing:-10px;font-style:italic;
+    }
+    .m2e-tag{
+      position:absolute;top:182px;left:380px;
+      font-family:'Geist',sans-serif;font-size:13px;
+      letter-spacing:4px;text-transform:uppercase;
+      font-weight:700;color:#8B7355;
+    }
+    .m2e-title{
+      position:absolute;top:230px;left:380px;right:56px;
+      font-family:'Fraunces',serif;font-size:72px;
+      font-weight:600;line-height:1;letter-spacing:-1.5px;
+      color:#1a1815;
+    }
+    .m2e-title em{font-style:italic;color:#E63946;font-weight:500}
+    .m2e-rule{
+      position:absolute;top:520px;left:56px;right:56px;
+      height:1px;background:#1a1815;opacity:.15;
+    }
+    .m2e-explain{
+      position:absolute;top:570px;left:56px;right:56px;
+      font-family:'Fraunces',serif;font-size:34px;font-weight:400;
+      line-height:1.3;color:#3a3530;letter-spacing:-.4px;font-style:italic;
+    }
+    .m2e-body{
+      position:absolute;top:830px;left:56px;right:56px;
+      font-family:'Geist',sans-serif;font-size:22px;line-height:1.6;
+      color:#3a3530;font-weight:400;
+    }
+    .m2e-body p+p{margin-top:18px}
+    .m2e-body b{color:#1a1815;font-weight:600}
+    
+</style></head><body><div class="canvas">
+  
+  <div class="header">
+    <div class="brand">
+      <div class="brand-mark">C</div>
+      <div class="brand-text">
+        <span class="brand-name">Calazans Lumina</span>
+        <span class="brand-sub">Agência · MG</span>
+      </div>
+    </div>
+    <div class="issue-tag">Erros · 3 de 3</div>
+  </div>
+  <div class="top-rule"></div>
+  <div class="ornament">*</div>
+  <div class="m2e-num">03</div>
+  <div class="m2e-tag">Erro 03</div>
+  <h2 class="m2e-title">Sumir por <em>semanas</em> seguidas.</h2>
+  <div class="m2e-rule"></div>
+  <div class="m2e-explain">O algoritmo entende que você parou de trabalhar.</div>
+  <div class="m2e-body">
+    <p>Quem te via antes deixa de ver. O perfil esfria. E o pior · o cliente que entrou no seu feed esses dias acha que você fechou. Constância importa mais que perfeição.</p>
+    <p><b>Solução: 3 posts simples por semana ganham de um post genial por mês. Foto da obra no fim do dia + legenda curta resolve.</b></p>
+  </div>
+  
+  <div class="foot-rule"></div>
+  <div class="footer">
+    <span class="handle">@calazanslumina</span>
+    <span class="meta">31 98294-8067</span>
+    <span class="swipe">Arrasta <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div></div></body></html>

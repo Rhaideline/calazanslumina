@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.timeanddate.com)",
+      "WebFetch(domain:jhpaintingservices.com)"
+    ]
+  }
+}

@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>Calazans Lumina · 5 Posts Lançamento Curso IA</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#0a0a0a;--paper:#F5F1EA;--red:#FF0005;--red-soft:#FF3B3B;--gold:#D4A24B;--rule:rgba(255,255,255,.08)}
+  *{box-sizing:border-box}
+  html,body{margin:0;background:#0a0a0a;color:#fff;font-family:'DM Sans',sans-serif;line-height:1.5}
+  .page-head{max-width:1500px;margin:0 auto;padding:48px 32px 12px}
+  .page-head .meta{font-size:11px;letter-spacing:.32em;text-transform:uppercase;opacity:.55;font-weight:500}
+  .page-head h1{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:42px;margin:12px 0;line-height:1}
+  .storyboard{max-width:1500px;margin:32px auto 0;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+  .scene{background:#1A1A1A;border:1px solid var(--rule);border-radius:14px;overflow:hidden}
+  .scene-meta{padding:14px 18px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between}
+  .scene-num{font-family:'DM Serif Display',serif;font-style:italic;font-size:22px}
+  .scene-num small{display:block;font-size:8px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:4px;font-weight:600;font-family:'DM Sans',sans-serif;font-style:normal}
+  .frame{background:#222;aspect-ratio:4/5;overflow:hidden;position:relative}
+  .post{position:absolute;top:0;left:0;width:1080px;height:1350px;transform-origin:top left;transform:scale(.255);font-family:'DM Sans',sans-serif;color:#fff;display:flex;flex-direction:column}
+
+  .bg{position:absolute;inset:0;z-index:0}
+  .bg.paper{background:var(--paper);color:var(--ink)}
+  .bg.ink{background:#0a0a0a}
+  .bg.grad-r{background:radial-gradient(60% 50% at 80% 20%,rgba(255,0,5,.5),transparent 60%),linear-gradient(160deg,#1a0405 0%,#0a0a0a 60%,#000 100%)}
+  .bg.grad-gold{background:radial-gradient(60% 50% at 50% 50%,rgba(212,162,75,.45),transparent 65%),linear-gradient(160deg,#1a1408 0%,#0a0a0a 60%,#000 100%)}
+
+  .head{position:absolute;top:88px;left:80px;right:80px;z-index:5;display:flex;justify-content:space-between;align-items:center}
+  .logo{display:inline-flex;align-items:center;gap:18px}
+  .logo img{width:64px;height:64px;object-fit:contain}
+  .logo .name{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:32px;line-height:1;color:#fff;display:block}
+  .post.tone-light .logo .name{color:var(--ink)}
+  .logo .sub{font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:.5em;text-transform:uppercase;font-weight:500;color:var(--red);display:block;margin-top:4px}
+  .pill{display:inline-flex;align-items:center;gap:10px;padding:11px 18px;border-radius:999px;font-size:13px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;height:36px;border:1px solid rgba(255,255,255,.4);color:#fff;background:transparent;white-space:nowrap}
+  .pill.red{background:var(--red);color:#fff;border-color:var(--red)}
+  .post.tone-light .pill{border-color:rgba(17,17,17,.4);color:var(--ink)}
+  .pill::before{content:"";width:7px;height:7px;background:currentColor;border-radius:50%}
+
+  .foot{position:absolute;bottom:108px;left:80px;right:80px;z-index:5;display:flex;justify-content:space-between;font-size:16px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.6)}
+  .post.tone-light .foot{color:rgba(17,17,17,.55)}
+
+  .stack{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 80px;gap:30px;text-align:center}
+
+  /* P1 · HOOK launch */
+  .p1 h1{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:160px;line-height:.95;letter-spacing:-.035em;margin:0;color:#fff}
+  .p1 h1 em{color:var(--red);font-style:italic}
+  .p1 .kicker{font-size:22px;letter-spacing:.4em;text-transform:uppercase;font-weight:800;color:var(--red-soft);margin:0}
+  .p1 .lead{font-family:'DM Serif Display',serif;font-style:italic;font-size:36px;line-height:1.32;color:rgba(255,255,255,.85);max-width:860px;margin:0}
+  .p1 .lead em{color:var(--red-soft)}
+
+  /* P2 · PRECO */
+  .p2 .price-wrap{display:flex;flex-direction:column;align-items:center;gap:36px}
+  .p2 .price-strike{font-family:'DM Serif Display',serif;font-style:italic;font-size:96px;color:rgba(255,255,255,.35);text-decoration:line-through;text-decoration-color:var(--red);text-decoration-thickness:6px;line-height:1;margin:0}
+  .p2 .arrow{font-family:'DM Serif Display',serif;font-size:80px;color:var(--gold);line-height:1}
+  .p2 .price-now{font-family:'DM Serif Display',serif;font-style:italic;font-size:380px;color:#fff;line-height:.88;letter-spacing:-.05em;margin:0}
+  .p2 .price-now em{color:var(--red-soft);font-style:italic}
+  .p2 .caption{font-family:'DM Serif Display',serif;font-style:italic;font-size:34px;color:rgba(255,255,255,.78);max-width:780px;margin:0}
+
+  /* P3 · CONTEUDO breakdown */
+  .p3 h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:96px;line-height:1;color:#fff;margin:0 0 14px}
+  .p3 h2 em{color:var(--red-soft)}
+  .p3 .grid-4{display:grid;grid-template-columns:1fr 1fr;gap:24px;width:100%;margin-top:10px}
+  .p3 .cell{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:36px;text-align:left}
+  .p3 .cell .n{font-family:'DM Serif Display',serif;font-style:italic;font-size:90px;line-height:.9;color:var(--red);margin:0 0 6px;letter-spacing:-.04em}
+  .p3 .cell .l{font-family:'DM Sans',sans-serif;font-size:22px;color:rgba(255,255,255,.78);line-height:1.3;margin:0;font-weight:500}
+
+  /* P4 · CTA WHATSAPP */
+  .p4 .stack{gap:42px}
+  .p4 .kicker{font-size:22px;letter-spacing:.4em;text-transform:uppercase;font-weight:800;color:var(--red-soft);margin:0}
+  .p4 h1{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:140px;line-height:.96;color:#fff;margin:0}
+  .p4 h1 em{color:var(--red)}
+  .p4 .btn-wpp{display:inline-flex;align-items:center;gap:22px;padding:36px 60px;border-radius:999px;background:#25D366;color:#000;font-family:'DM Sans',sans-serif;font-size:32px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;line-height:1}
+  .p4 .btn-wpp::before{content:"";width:30px;height:30px;border-radius:999px;background:#000}
+  .p4 .lead{font-family:'DM Serif Display',serif;font-style:italic;font-size:38px;color:rgba(255,255,255,.78);max-width:820px}
+
+  /* P5 · URGENCIA */
+  .p5 h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:128px;line-height:.96;color:#fff;margin:0}
+  .p5 h2 em{color:var(--red-soft);font-style:italic;text-decoration:underline;text-decoration-color:var(--red);text-decoration-thickness:7px;text-underline-offset:14px}
+  .p5 .stack-list{display:flex;flex-direction:column;gap:16px;width:100%;max-width:820px;margin-top:18px}
+  .p5 .row{display:flex;align-items:center;gap:18px;font-family:'DM Sans',sans-serif;font-size:30px;color:rgba(255,255,255,.85);text-align:left;background:rgba(255,255,255,.04);border-left:5px solid var(--red);padding:18px 26px;border-radius:14px;font-weight:500}
+  .p5 .row b{font-weight:800;color:#fff}
+  .p5 .stamp{font-family:'DM Sans',sans-serif;font-size:18px;letter-spacing:.36em;text-transform:uppercase;font-weight:800;color:var(--gold);background:rgba(212,162,75,.12);border:1px solid rgba(212,162,75,.4);padding:12px 26px;border-radius:999px;margin-top:14px}
+
+  .scene-content{padding:14px 18px;border-top:1px solid var(--rule)}
+  .scene-content h3{font-family:'DM Serif Display',serif;font-style:italic;font-size:16px;margin:0;color:#fff}
+  .voice{font-size:11px;line-height:1.5;color:rgba(255,255,255,.75);border-left:2px solid var(--red);padding:5px 9px;margin:6px 0 0}
+  .cap-box{padding:16px 18px;font-size:11px;line-height:1.55;color:rgba(255,255,255,.75);border-top:1px dashed var(--rule);white-space:pre-wrap}
+  .cap-box b{color:var(--red-soft);font-weight:700}
+</style>
+</head>
+<body>
+
+<header class="page-head">
+  <div class="meta">Calazans Lumina · 5 posts lançamento curso IA</div>
+  <h1>Lançamento <em style="color:var(--red);font-style:italic">IA do Zero ao Avançado</em> · 5 posts pra semana</h1>
+</header>
+
+<div class="storyboard">
+
+<!-- POST 01 — HOOK -->
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">01<small>HOOK · seg</small></span><span style="font-size:10px;color:var(--red-soft);letter-spacing:.32em;text-transform:uppercase">09h · anúncio</span></div>
+  <div class="frame"><div class="post p1 tone-dark">
+    <div class="bg grad-r"></div>
+    <header class="head">
+      <div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div>
+      <span class="pill red">Lançamento</span>
+    </header>
+    <div class="stack">
+      <p class="kicker">É hoje · maio 2026</p>
+      <h1>A <em>bíblia</em><br>da IA pra<br>brasileiro.</h1>
+      <p class="lead">95 páginas. 10 IAs. 50 templates. Tudo num PDF. <em>R$ 10.</em></p>
+    </div>
+    <footer class="foot"><span>@calazanslumina</span><span>arrasta →</span></footer>
+  </div></div>
+  <div class="scene-content"><h3>Post 1 · HOOK lançamento</h3></div>
+  <div class="cap-box"><b>Caption:</b>
+Cheguei à minha conclusão depois de 8 anos atendendo brasileiro em marketing digital, do Brasil aos Estados Unidos: ninguém escreveu um livro de IA pra NÓS.
+
+Falo do brasileiro empreendedor. Pintor em Boston. Dentista em BH. Dona de casa que vende doce no Insta. Aposentado que quer começar do zero. Vendedor de loja. Atendente. Criador de conteúdo.
+
+A maioria dos cursos é importado, traduzido, com exemplo americano. O conteúdo é bom mas falta a nossa língua, nossa realidade, nosso mercado.
+
+Por isso escrevi essa bíblia.
+
+· 95 páginas
+· 10 IAs detalhadas (ChatGPT, Claude, Gemini, Midjourney, Canva, ElevenLabs, Suno, Runway, Cursor e mais)
+· 50 templates de prompt copiáveis por nicho
+· 9 planos de implementação por profissão
+· Plano de 30 dias com rotina semanal
+
+De R$ 297 por R$ 10. Preço de lançamento.
+
+Link na bio.
+
+#ia #chatgpt #marketingdigital #empreendedorbrasileiro #calazanslumina</div>
+</article>
+
+<!-- POST 02 — PREÇO ÂNCORA -->
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">02<small>PREÇO · ter</small></span><span style="font-size:10px;color:var(--red-soft);letter-spacing:.32em;text-transform:uppercase">11h · oferta</span></div>
+  <div class="frame"><div class="post p2 tone-dark">
+    <div class="bg grad-r"></div>
+    <header class="head">
+      <div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div>
+      <span class="pill">Preço · lançamento</span>
+    </header>
+    <div class="stack">
+      <div class="price-wrap">
+        <p class="price-strike">R$ 297</p>
+        <span class="arrow">↓</span>
+        <p class="price-now">R$ <em>10</em></p>
+        <p class="caption">acesso vitalício · sem mensalidade</p>
+      </div>
+    </div>
+    <footer class="foot"><span>@calazanslumina</span><span>link na bio</span></footer>
+  </div></div>
+  <div class="scene-content"><h3>Post 2 · preço com ancoragem</h3></div>
+  <div class="cap-box"><b>Caption:</b>
+Por que R$ 10?
+
+Porque o cara que vende curso de IA por R$ 1.997 me deixa com vergonha alheia.
+
+Não preciso parecer caro pra ser bom. Eu preciso é que esse conteúdo chegue na maior quantidade de brasileiros possível, na maior velocidade.
+
+Por isso preço de lançamento R$ 10. Sobe pra R$ 27 dia 1º de junho. Sobe pra R$ 47 em julho.
+
+Quem comprar agora trava o preço pra sempre. PDF imediato. Acesso vitalício. Sem mensalidade. Sem letrinha miúda.
+
+(Os 5 bônus inclusos valem R$ 265 sozinhos. Mas vou parar de te tentar e deixar você decidir.)
+
+Link na bio.
+
+#ia #chatgpt #empreendedorbrasileiro #marketingdigital #calazanslumina</div>
+</article>
+
+<!-- POST 03 — CONTEÚDO BREAKDOWN -->
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">03<small>CONTEÚDO · qua</small></span><span style="font-size:10px;color:var(--red-soft);letter-spacing:.32em;text-transform:uppercase">13h · prova</span></div>
+  <div class="frame"><div class="post p3 tone-dark">
+    <div class="bg grad-gold"></div>
+    <header class="head">
+      <div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div>
+      <span class="pill">O que tem dentro</span>
+    </header>
+    <div class="stack" style="padding:240px 80px 200px;justify-content:center">
+      <h2>O que tem<br>no <em>livro</em>.</h2>
+      <div class="grid-4">
+        <div class="cell"><p class="n">95</p><p class="l">páginas A4<br>design editorial</p></div>
+        <div class="cell"><p class="n">10</p><p class="l">IAs detalhadas<br>3-4 pgs cada</p></div>
+        <div class="cell"><p class="n">50</p><p class="l">templates de prompt<br>copiáveis</p></div>
+        <div class="cell"><p class="n">9</p><p class="l">planos por<br>profissão</p></div>
+      </div>
+    </div>
+    <footer class="foot"><span>@calazanslumina</span><span>R$ 10 · link na bio</span></footer>
+  </div></div>
+  <div class="scene-content"><h3>Post 3 · breakdown numérico</h3></div>
+  <div class="cap-box"><b>Caption:</b>
+Vou te mostrar o que tem dentro. Sem rodeio.
+
+PARTE 1 · Fundamentos da IA (8 pgs) — O que é IA, os 3 tipos, generativa vs preditiva, 6 mitos desmontados.
+
+PARTE 2 · Setup pra leigos (8 pgs) — Como criar conta nas 3 IAs principais, glossário, 5 prompts pra testar HOJE.
+
+PARTE 3 · As 10 IAs essenciais (40 pgs) — Capítulo dedicado a cada uma: ChatGPT, Claude, Gemini, DALL-E, Midjourney, Canva AI, ElevenLabs, Suno, Runway, Cursor.
+
+PARTE 4 · Prompt Engineering CRIA (10 pgs) — Framework profissional + 50 templates copiáveis.
+
+PARTE 5 · Aplicações por profissão (10 pgs) — 9 planos: autônomo, vendedor, professor, dona de casa, profissional liberal, criador, atendente, gestor, aposentado 60+.
+
+PARTE 6 · Plano de 30 dias (5 pgs) — Auditoria, rotina semanal, métricas.
+
+Cabe num PDF. Custa R$ 10. Acesso vitalício.
+
+Quer ver antes de comprar? Tem preview de 8 páginas grátis. Link na bio.
+
+#ia #curso #empreendedor #calazanslumina</div>
+</article>
+
+<!-- POST 04 — CTA WHATSAPP -->
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">04<small>CTA · qui</small></span><span style="font-size:10px;color:var(--red-soft);letter-spacing:.32em;text-transform:uppercase">14h · ação</span></div>
+  <div class="frame"><div class="post p4 tone-dark">
+    <div class="bg grad-r"></div>
+    <header class="head">
+      <div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div>
+      <span class="pill red">DM aberto</span>
+    </header>
+    <div class="stack">
+      <p class="kicker">Quer ver antes?</p>
+      <h1>Te mando<br>8 páginas<br><em>de graça</em>.</h1>
+      <span class="btn-wpp">WhatsApp direto</span>
+      <p class="lead">Manda "PREVIEW" no DM. Te envio agora mesmo o sumário, capítulo 1 completo e a carta da autora.</p>
+    </div>
+    <footer class="foot"><span>@calazanslumina</span><span>resposta em 1h</span></footer>
+  </div></div>
+  <div class="scene-content"><h3>Post 4 · captura lead</h3></div>
+  <div class="cap-box"><b>Caption:</b>
+Vou facilitar pra você.
+
+Manda "PREVIEW" no meu direct AGORA. Te envio em até 1 hora:
+
+· 8 páginas do livro IA do Zero ao Avançado
+· Sumário completo (você vê tudo que tem dentro)
+· Carta da autora
+· Capítulo 1 completo (Fundamentos da IA)
+· CTA final do livro
+· Link com 50% de desconto se quiser comprar depois
+
+Não tem pegadinha. Não tem cadastro. Não tem chamada de vendas chata.
+
+É preview real. Você lê. Decide. Compra ou não compra.
+
+Manda "PREVIEW" no DM.
+
+(Quem manda nas primeiras 24h ainda ganha um bônus extra: meu "Prompt Master Kit" com 20 prompts secretos que uso pros clientes da agência.)
+
+#ia #preview #curso #calazanslumina</div>
+</article>
+
+<!-- POST 05 — URGÊNCIA / ÚLTIMA CHAMADA -->
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">05<small>URGÊNCIA · sex</small></span><span style="font-size:10px;color:var(--red-soft);letter-spacing:.32em;text-transform:uppercase">10h · fechamento</span></div>
+  <div class="frame"><div class="post p5 tone-dark">
+    <div class="bg grad-r"></div>
+    <header class="head">
+      <div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png"><span><span class="name">Calazans</span><span class="sub">Lumina</span></span></div>
+      <span class="pill red">Última semana · R$ 10</span>
+    </header>
+    <div class="stack" style="padding:200px 70px 200px;justify-content:center;align-items:flex-start;text-align:left">
+      <span class="stamp">⚠ atenção</span>
+      <h2>Preço sobe<br><em>1º de junho</em>.</h2>
+      <div class="stack-list">
+        <p class="row"><b>R$ 10</b> · só até 31 de maio</p>
+        <p class="row"><b>R$ 27</b> · a partir de 1 de junho</p>
+        <p class="row"><b>R$ 47</b> · a partir de julho</p>
+      </div>
+    </div>
+    <footer class="foot"><span>@calazanslumina</span><span>link na bio</span></footer>
+  </div></div>
+  <div class="scene-content"><h3>Post 5 · escassez real</h3></div>
+  <div class="cap-box"><b>Caption:</b>
+Última semana de preço de lançamento.
+
+Dia 1º de junho o preço sobe pra R$ 27. Dia 1º de julho vai pra R$ 47.
+
+Quem comprar até sexta, paga R$ 10. PRA SEMPRE. Acesso vitalício, sem mensalidade, futuras edições já inclusas (a edição 2.0 que vai sair em janeiro 2027 vem de graça pra quem comprou agora).
+
+Não estou aumentando preço pra "criar urgência fake". Estou aumentando porque:
+
+1. O conteúdo realmente vale R$ 47 (concorrente vende similar por R$ 297)
+2. Preciso filtrar quem é sério de quem é curioso
+3. Quem paga R$ 10 hoje me ajuda a viralizar o livro — depois disso, o preço sobe naturalmente
+
+Se você está em cima do muro, esse é seu sinal.
+
+Link na bio. R$ 10. PDF imediato.
+
+#ia #curso #ultimaschancas #calazanslumina</div>
+</article>
+
+</div>
+
+</body>
+</html>

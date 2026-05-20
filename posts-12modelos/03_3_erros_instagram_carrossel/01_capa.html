@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
+html,body{width:1080px;height:1350px;overflow:hidden;background:#000}
+body{font-family:'Inter',sans-serif;color:#1c1c1c}
+.canvas{width:1080px;height:1350px;position:relative;overflow:hidden}
+
+/* LOGO */
+.logo{display:inline-flex;align-items:center;gap:14px}
+.logo-c{width:62px;height:62px;background:#FF0005;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque',sans-serif;font-size:46px;font-weight:700;line-height:1;border-radius:3px;flex-shrink:0}
+.logo-text{display:flex;flex-direction:column;line-height:1.05}
+.logo-name{font-family:'Bricolage Grotesque',sans-serif;font-size:24px;font-weight:700;letter-spacing:.5px;line-height:1}
+.logo-sub{font-size:10px;letter-spacing:3px;color:#FF0005;font-weight:700;text-transform:uppercase;margin-top:5px}
+.logo.dark .logo-name{color:#fff}
+.logo.dark .logo-sub{color:#ffb3b5}
+
+/* PAGINACAO */
+.pagn{font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:2px;color:#FF0005}
+.pagn .total{color:#999;font-size:27px}
+.pagn.dark{color:#fff}.pagn.dark .total{color:#888}
+
+/* EYEBROW */
+.eyebrow{font-size:13px;letter-spacing:5px;color:#FF0005;font-weight:800;text-transform:uppercase}
+.eyebrow.dark{color:#FF6B6F}
+
+/* SWIPE */
+.swipe{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#FF0005}
+.swipe.dark{color:#FF6B6F}
+
+/* SOURCE BADGE */
+.source{font-size:11px;letter-spacing:1.5px;color:#888;font-weight:500;font-style:italic}
+.source.dark{color:#888}
+.source b{font-style:normal;color:#aaa;font-weight:700;letter-spacing:2px}
+.source.dark b{color:#bbb}
+
+/* =================== LAYOUTS COMUNS =================== */
+
+/* FULLBLEED: foto cobre 100%, conteudo sobreposto */
+.fb{position:absolute;inset:0;width:100%;height:100%}
+.fb-img{position:absolute;inset:0;background-size:cover;background-position:center}
+.fb-overlay{position:absolute;inset:0}
+.fb-top{position:absolute;top:54px;left:64px;right:64px;display:flex;justify-content:space-between;align-items:flex-start;z-index:5}
+.fb-bottom{position:absolute;bottom:0;left:0;right:0;padding:0 64px 56px;z-index:5;color:#fff}
+.fb-footline{margin-top:32px;padding-top:22px;border-top:1px solid rgba(255,255,255,.2);display:flex;justify-content:space-between;align-items:center;font-size:13px;letter-spacing:2px;font-weight:600;color:rgba(255,255,255,.75)}
+.fb-footline .handle{color:#fff;font-weight:800;letter-spacing:3px}
+
+/* SPLIT: 50% foto top + 50% texto bottom */
+.sp{display:grid;grid-template-rows:560px 1fr;width:1080px;height:1350px}
+.sp-img{background-size:cover;background-position:center;position:relative}
+.sp-img-tag{position:absolute;top:32px;left:32px;background:#FF0005;color:#fff;padding:10px 18px;font-size:11px;letter-spacing:4px;font-weight:800;text-transform:uppercase;border-radius:3px}
+.sp-text{padding:48px 64px 56px;display:flex;flex-direction:column;justify-content:space-between;background:#fafaf7;position:relative}
+.sp-text.dark{background:#1a1a1a;color:#fff}
+
+/* TIPO: conteudo tipografico padrao */
+.tipo{width:1080px;height:1350px;display:grid;grid-template-rows:auto minmax(0,1fr) auto;padding:68px;background:#fafaf7}
+.tipo.dark{background:#1a1a1a;color:#fff}
+.tipo .head{display:flex;justify-content:space-between;align-items:flex-start}
+.tipo .body{align-self:center;width:100%;overflow:hidden}
+.tipo .foot{display:flex;justify-content:space-between;align-items:flex-end;padding-top:28px;border-top:1px solid #d4d2c8;font-size:13px;letter-spacing:2px;font-weight:600}
+.tipo.dark .foot{border-top-color:rgba(255,255,255,.15)}
+.tipo .handle{color:#FF0005;font-weight:800;letter-spacing:3px}
+.tipo.dark .handle{color:#fff}
+.tipo .foot-r{color:#555}
+.tipo.dark .foot-r{color:#aaa}
+
+
+    .m3-num{font-family:'Bebas Neue',sans-serif;font-size:260px;line-height:.85;color:#FF0005;letter-spacing:0}
+    .m3-num em{color:#1c1c1c;font-style:normal}
+    .m3-sub{font-family:'Bricolage Grotesque',sans-serif;font-size:42px;font-weight:700;line-height:1.15;letter-spacing:-.3px;color:#1c1c1c;max-width:920px;margin-top:18px}
+    .m3-stat{margin-top:24px;padding:16px 22px;background:#fff;border-left:4px solid #FF0005;display:inline-block;font-size:16px;color:#1c1c1c;line-height:1.5;max-width:880px}
+    .m3-stat b{color:#FF0005;font-weight:800}
+    
+</style></head><body><div class="canvas"><div class="tipo">
+      <div class="head"><div class="logo"><div class="logo-c">C</div><div class="logo-text"><span class="logo-name">Calazans Lumina</span><span class="logo-sub">Agencia · MG</span></div></div><div class="pagn">01<span class="total">/05</span></div></div>
+      <div class="body">
+        <div class="eyebrow" style="margin-bottom:14px">Erros no Instagram</div>
+        <div class="m3-num"><em>03</em> ERROS</div>
+        <div class="m3-sub">que estao fazendo seu Instagram perder cliente todo dia.</div>
+        <div class="m3-stat"><b>73% dos brasileiros</b> ja contrataram servico que descobriram no Instagram. <span class="source"><b>Fonte:</b> Opinion Box, 2025</span></div>
+      </div>
+      <div class="foot"><span class="handle">@calazanslumina</span><span class="swipe">Arrasta › </span></div>
+    </div></div></body></html>

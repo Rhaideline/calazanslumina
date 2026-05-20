@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,400;1,9..144,600&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700;800&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
+html,body{width:1080px;height:1350px;overflow:hidden;background:#1a1815}
+body{font-family:'Inter',sans-serif;color:#1a1815}
+.canvas{width:1080px;height:1350px;position:relative;background:#F5F1E8;overflow:hidden}
+
+/* ============ HEADER ============ */
+.header{
+  position:absolute;
+  top:0;left:0;right:0;
+  padding:36px 56px 0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:10;
+}
+.brand{display:flex;align-items:center;gap:14px}
+.brand-mark{
+  width:46px;height:46px;
+  background:#E63946;color:#F5F1E8;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Fraunces',serif;
+  font-size:28px;font-weight:700;
+  line-height:1;letter-spacing:-1px;
+  border-radius:2px;
+}
+.brand-text{display:flex;flex-direction:column;line-height:1.1}
+.brand-name{
+  font-family:'Fraunces',serif;
+  font-size:19px;font-weight:600;
+  color:#1a1815;
+  letter-spacing:-.2px;
+}
+.brand-sub{
+  font-family:'Inter',sans-serif;
+  font-size:10px;letter-spacing:2.5px;
+  color:#8B7355;text-transform:uppercase;
+  font-weight:600;margin-top:3px;
+}
+.issue-tag{
+  font-family:'Inter',sans-serif;
+  font-size:11px;letter-spacing:2.5px;
+  color:#8B7355;text-transform:uppercase;
+  font-weight:500;
+  display:flex;align-items:center;gap:10px;
+}
+.issue-tag::before{
+  content:'';
+  display:inline-block;
+  width:6px;height:6px;
+  background:#E63946;
+  border-radius:50%;
+}
+
+/* ============ TOP RULE ============ */
+.top-rule{
+  position:absolute;
+  top:108px;
+  left:56px;right:56px;
+  height:1px;
+  background:#1a1815;
+  z-index:5;
+}
+
+/* ============ KICKER (small label above title) ============ */
+.kicker{
+  position:absolute;
+  top:140px;
+  left:56px;
+  font-family:'Inter',sans-serif;
+  font-size:13px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  font-weight:700;
+  color:#E63946;
+  display:flex;align-items:center;gap:14px;
+}
+.kicker::before{
+  content:'·';
+  font-size:34px;
+  line-height:0.5;
+  color:#E63946;
+}
+
+/* ============ HEADLINE ============ */
+.headline{
+  position:absolute;
+  top:208px;
+  left:56px;right:56px;
+  font-family:'Fraunces',serif;
+  font-size:96px;
+  font-weight:600;
+  line-height:.97;
+  letter-spacing:-2px;
+  color:#1a1815;
+  font-variation-settings:'opsz' 96, 'SOFT' 0;
+}
+.headline em{
+  font-style:italic;
+  color:#E63946;
+  font-weight:500;
+}
+
+/* ============ DECK (subtitle) ============ */
+.deck{
+  position:absolute;
+  top:720px;
+  left:56px;
+  right:56px;
+  font-family:'Fraunces',serif;
+  font-size:30px;
+  font-weight:400;
+  line-height:1.35;
+  color:#3a3530;
+  letter-spacing:-.3px;
+  font-style:italic;
+}
+
+/* ============ STAT CARD ============ */
+.stat{
+  position:absolute;
+  top:880px;
+  right:56px;
+  width:330px;
+  padding:26px 28px;
+  background:#1a1815;
+  color:#F5F1E8;
+  border-radius:2px;
+}
+.stat-number{
+  font-family:'Fraunces',serif;
+  font-size:68px;
+  font-weight:700;
+  line-height:1;
+  letter-spacing:-2px;
+  color:#E63946;
+  margin-bottom:10px;
+}
+.stat-text{
+  font-family:'Inter',sans-serif;
+  font-size:16px;
+  line-height:1.5;
+  color:#F5F1E8;
+  font-weight:400;
+}
+.stat-source{
+  font-family:'Inter',sans-serif;
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#8B7355;
+  margin-top:16px;
+  padding-top:12px;
+  border-top:1px solid #3a3530;
+  font-weight:600;
+}
+
+/* ============ BODY TEXT ============ */
+.body-text{
+  position:absolute;
+  top:880px;
+  left:56px;
+  right:430px;
+  font-family:'Inter',sans-serif;
+  font-size:21px;
+  line-height:1.55;
+  color:#3a3530;
+  font-weight:400;
+}
+.body-text p + p{margin-top:14px}
+.body-text b{color:#1a1815;font-weight:600}
+
+/* ============ DECORATIVE DOTS REMOVED ============ */
+
+/* ============ FOOTER ============ */
+.foot-rule{
+  position:absolute;
+  bottom:90px;
+  left:56px;right:56px;
+  height:1px;
+  background:#1a1815;
+}
+.footer{
+  position:absolute;
+  bottom:34px;
+  left:56px;right:56px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-family:'Inter',sans-serif;
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-weight:600;
+}
+.footer .handle{color:#E63946;font-weight:700;letter-spacing:3px}
+.footer .meta{color:#8B7355;font-weight:500;display:flex;gap:18px;align-items:center}
+.footer .meta::before{content:'';width:4px;height:4px;background:#8B7355;border-radius:50%;display:inline-block}
+.swipe{
+  display:flex;align-items:center;gap:8px;
+  color:#1a1815;font-weight:700;letter-spacing:3px;
+}
+.swipe svg{width:22px;height:22px}
+
+/* ============ ASTERISK ORNAMENT ============ */
+.ornament{
+  position:absolute;
+  top:175px;
+  right:56px;
+  font-family:'Fraunces',serif;
+  font-size:60px;
+  color:#E63946;
+  line-height:1;
+  font-weight:400;
+}
+</style>
+</head>
+<body>
+
+<div class="canvas">
+  <!-- HEADER -->
+  <div class="header">
+    <div class="brand">
+      <div class="brand-mark">C</div>
+      <div class="brand-text">
+        <span class="brand-name">Calazans Lumina</span>
+        <span class="brand-sub">Agência · MG</span>
+      </div>
+    </div>
+    <div class="issue-tag">Edição 01 · Maio 2026</div>
+  </div>
+
+  <div class="top-rule"></div>
+  <div class="ornament">*</div>
+
+  <!-- KICKER -->
+  <div class="kicker">Erros que custam caro</div>
+
+  <!-- HEADLINE -->
+  <h1 class="headline">
+    Por que pintor com a melhor mão de obra <em>perde cliente</em> pro concorrente pior?
+  </h1>
+
+  <!-- DECK -->
+  <div class="deck">
+    A resposta não está na sua qualidade. Está em três coisas que você não está fazendo no celular.
+  </div>
+
+  <!-- STAT CARD -->
+  <div class="stat">
+    <div class="stat-number">73%</div>
+    <div class="stat-text">dos brasileiros já contrataram serviço descoberto no Instagram.</div>
+    <div class="stat-source">Fonte · Opinion Box 2025</div>
+  </div>
+
+  <!-- BODY TEXT -->
+  <div class="body-text">
+    <p>Cliente novo chega por indicação. <b>Primeira coisa que faz:</b> pega o celular e procura você no Instagram. Em 5 segundos, decide.</p>
+    <p>Se o que ele achou foi um perfil parado, sem foto recente, sem cidade na bio, sem WhatsApp clicável — você perdeu. E nem ficou sabendo.</p>
+  </div>
+
+  <!-- FOOT -->
+  <div class="foot-rule"></div>
+  <div class="footer">
+    <span class="handle">@calazanslumina</span>
+    <span class="meta">31 98294-8067</span>
+    <span class="swipe">Arrasta <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+</div>
+
+</body>
+</html>

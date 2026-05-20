@@ -13,33 +13,33 @@ export const cidadesMA: CidadeMA[] = [
     nome: 'Marlborough',
     estado: 'MA',
     comunidade:
-      'Marlborough abriga uma das maiores comunidades brasileiras de Massachusetts, com dezenas de negócios ao longo da Main Street e uma presença cultural vibrante que inclui restaurantes, padarias e salões de beleza brasileiros.',
+      'Marlborough tem cerca de 7.500 brasileiros (US Census 2020), e a Main Street do downtown virou eixo brasileiro com mais de 25 negócios: Padaria Marlboro, Boston Beauty Supply, restaurantes (Sabor Mineiro, Brazilica) e o Brazilian Market. A cidade sedia o Boston Scientific e a Raytheon (Apex Plaza), gerando empregos engineering de US$ 90-140 mil/ano para profissionais americanos — o que aquece o mercado de remodelers brasileiros.',
     doresEspecificas:
-      'Empreendedores brasileiros em Marlborough enfrentam uma concorrência acirrada entre si e com negócios americanos estabelecidos. Sem um site profissional bilíngue e presença digital forte, muitos ficam dependentes apenas do boca a boca dentro da comunidade.',
+      'Em Marlborough, painters e roofers brasileiros competem com 180+ contractors no MetroWest, e o inverno (dez-mar) reduz contratos em até 60% — quem não diversifica para interior work morre janeiro/fevereiro. O Solomon Pond Mall puxou comércio para fora do downtown desde os anos 90, deixando os pequenos negócios brasileiros da Main Street com fluxo dependente de happy hour e brazilian church (Igreja Batista, Assembleia de Deus aos domingos).',
     referencia:
-      'Cidade industrial no coração do MetroWest, conhecida pelo corredor tecnológico da I-495 e pela forte presença brasileira no centro da cidade.',
+      'Cidade industrial no coração do MetroWest na I-495, sede da Boston Scientific e Raytheon, Solomon Pond Mall e Lake Williams.',
   },
   {
     slug: 'hudson',
     nome: 'Hudson',
     estado: 'MA',
     comunidade:
-      'Hudson possui uma comunidade brasileira expressiva e em crescimento, com diversos estabelecimentos brasileiros na Main Street que atendem tanto brasileiros quanto americanos curiosos pela culinária e serviços brasileiros.',
+      'Hudson tem cerca de 2.300 brasileiros (Census 2020), e o downtown revitalizado virou polo gastronômico com restaurantes brasileiros (Rail Trail Flatbread, Brasileirinho) lado a lado com cervejarias americanas premiadas como Medusa Brewing e Start Line Brewing. A cidade reverteu o declínio industrial transformando armazéns da Main Street em business incubators desde 2015 — referência nacional de small town revival reportada pelo Boston Globe.',
     doresEspecificas:
-      'Negócios brasileiros em Hudson competem diretamente com lojas e restaurantes na vizinha Marlborough. Sem diferenciação digital e um Google Business Profile otimizado, perdem clientes para concorrentes que aparecem primeiro nas buscas locais.',
+      'Em Hudson, brasileiros que abrem food truck ou pequeno restaurante na Main competem com a "Hudson hipster scene" (Medusa, New City Microcreamery) que atrai público millennial americano de Marlborough e Northborough. Health inspectors locais são rigorosos com cozinhas residenciais — fim de "comida vendida pelo Facebook" forçou centenas de empreendedoras brasileiras a migrar para commercial kitchens com aluguel de US$ 25-40/hora.',
     referencia:
-      'Pequena cidade do MetroWest com charme de New England, centro revitalizado e proximidade com o corredor tecnológico da I-495.',
+      'Town do MetroWest revitalizada na Main Street, conhecida pelo Assabet River Rail Trail, Medusa Brewing e renaissance comercial pós-2015.',
   },
   {
     slug: 'framingham',
     nome: 'Framingham',
     estado: 'MA',
     comunidade:
-      'Framingham é considerada a capital brasileira da Nova Inglaterra, com a maior concentração de brasileiros fora do Brasil. O bairro ao redor da Concord Street é repleto de negócios brasileiros — de supermercados a escritórios de advocacia.',
+      'Framingham concentra mais de 18 mil brasileiros segundo dados do Census 2020 — cerca de 24% da população —, formando a maior comunidade brasileira fora do Brasil. A Concord Street tem mais de 60 negócios de bandeira brasileira em um raio de 1 milha: padarias (Padaria Brasil, Sabor da Terra), supermercados (Brasil Mart), restaurantes (Tropical Cafe, Cantinho Brasileiro), salões e escritórios de imigração que atendem 200+ atendimentos/semana.',
     doresEspecificas:
-      'Com tantos negócios brasileiros concentrados, a competição em Framingham é brutal. Empreendedores que não investem em marketing digital e SEO local ficam invisíveis mesmo numa comunidade gigante, perdendo espaço para concorrentes mais modernos.',
+      'Em Framingham, cleaning ladies (housekeepers) brasileiras competem com 250+ companies estabelecidas no MetroWest, e o ticket dropou para US$ 110-130 por house cleaning padrão por excesso de oferta. House painters/contractors lutam com seguro de liability obrigatório (US$ 8-15 mil/ano) e licença HIC que muitos não têm — perdem para americanos que mostram "fully licensed" no Google Business. O Big Y e Stop&Shop tomam clientela do Brasil Mart com promoções agressivas semanais.',
     referencia:
-      'Maior cidade do MetroWest, recentemente convertida de town para city, e lar da maior comunidade brasileira dos Estados Unidos.',
+      'Maior cidade do MetroWest e maior comunidade brasileira dos EUA, convertida de town para city em 2018, sede do estudo Framingham Heart Study desde 1948.',
   },
   {
     slug: 'westborough',
@@ -750,33 +750,33 @@ export const cidadesMA: CidadeMA[] = [
     nome: 'Waltham',
     estado: 'MA',
     comunidade:
-      'Waltham tem uma comunidade brasileira significativa e diversificada, com negócios que vão de restaurantes a serviços profissionais, aproveitando a localização estratégica na Route 128.',
+      'Waltham é "Watch City" — sede histórica da Waltham Watch Company (primeiro relógio em massa do mundo, 1854) — e abriga Brandeis University, Bentley University e Brigham and Women\'s/Massachusetts General Hospital. A Route 128 (America\'s Technology Highway) tem 200+ HQs corporativas locais, incluindo Raytheon, Thermo Fisher, ParkerVision. Cerca de 4.000 brasileiros vivem em Waltham segundo Census 2020.',
     doresEspecificas:
-      'Em Waltham, a diversidade de negócios cria competição intensa. Brasileiros que investem em diferenciação digital — nicho específico, branding forte e SEO local — conseguem se destacar no mercado saturado.',
+      'Em Waltham, a Moody Street é a referência gastronômica do MetroWest com 30+ restaurantes premiados (Solea, In a Pickle), e brasileiros precisam competir em uma rua onde tapa-tapa autêntica espanhola e ramen japonês definem o "go-to" do jantar. Cleaning crews disputam contratos comerciais com escritórios da 128 — exigência de Certificate of Insurance de US$ 1-2 milhões e workers comp barra 80% dos brasileiros sem LLC formada.',
     referencia:
-      'City conhecida como Watch City, com a Brandeis University, Bentley University, corredor tecnológico da Route 128 e forte diversidade cultural.',
+      'City Watch City, sede histórica da Waltham Watch Company, Brandeis University, Bentley University e corredor tecnológico Route 128.',
   },
   {
     slug: 'newton',
     nome: 'Newton',
     estado: 'MA',
     comunidade:
-      'Newton possui brasileiros que oferecem serviços premium para uma das cidades mais ricas e educadas de Massachusetts, desde reformas de luxo até paisagismo arquitetônico.',
+      'Newton é composta por 13 villages e tem renda média familiar de US$ 170 mil (Census 2022) — uma das maiores de Massachusetts. A cidade abriga Boston College e Newton-Wellesley Hospital, e Auburndale, West Newton e Newton Centre concentram propriedades de US$ 1,5-4 milhões. Brasileiros (cerca de 1.200) atuam principalmente em landscaping, snow plowing e house cleaning para famílias judaicas e WASP estabelecidas.',
     doresEspecificas:
-      'O mercado de Newton demanda excelência absoluta. Brasileiros sem website profissional, presença em múltiplas plataformas e reviews consistentes não conseguem competir com empresas americanas que investem pesado em marketing.',
+      'Em Newton, o mercado de landscaping é dominado por 4-5 grandes empresas (Mahoney\'s, Charles River Landscape) com fleets de 20+ caminhões e contratos anuais de US$ 8-15 mil por casa. Brasileiros solos com equipamento próprio competem por contratos de US$ 60-90 por mowing, mas a town exige license + insurance + bond ($10K mínimo) para pesticide application, barreira que afasta 70% dos prestadores informais. Houses de US$ 3M no Chestnut Hill exigem references de 3+ vizinhos.',
     referencia:
-      'City afluente composta por 13 villages, lar do Boston College, com excelentes escolas e uma das maiores rendas familiares do estado.',
+      'City afluente composta por 13 villages, lar do Boston College, Newton-Wellesley Hospital e Chestnut Hill Mall como ponto comercial.',
   },
   {
     slug: 'brookline',
     nome: 'Brookline',
     estado: 'MA',
     comunidade:
-      'Brookline abriga brasileiros que atendem uma comunidade urbana e sofisticada, oferecendo serviços de limpeza, reforma e manutenção de apartamentos e casas históricas.',
+      'Brookline está encravada dentro de Boston e tem a maior comunidade judaica de Massachusetts (cerca de 25 mil, 40% da população), com sinagogas como Temple Emeth e Kehillath Israel. Birthplace de JFK (83 Beals Street, museum nacional) e do Coolidge Corner Theatre (1933). Renda média familiar de US$ 145 mil. Brasileiros (cerca de 800 segundo Census 2020) trabalham em Beacon Street, Washington Square e Brookline Village.',
     doresEspecificas:
-      'Em Brookline, a proximidade com Boston significa concorrência com empresas da capital. Brasileiros precisam de SEO local focado em Brookline e diferenciação por atendimento personalizado para competir.',
+      'Em Brookline, brasileiros atendem o "shomer Shabbat" judaico ortodoxo — clientes que não usam telefone/email das 6pm sexta às 6pm sábado, exigindo agendamento em horários específicos. Cleaning ladies disputam contratos de buildings históricos do Coolidge Corner (constructões de 1900-1925) com restrições de produtos químicos. O Town Meeting de Brookline impõe noise ordinance estrito (7am-8pm), limitando paisagismo a horários comerciais — leaf blowers gasoline são banidos desde 2024.',
     referencia:
-      'Town encravada dentro de Boston, lar de JFK birthplace, com Coolidge Corner, forte identidade cultural e moradores altamente educados.',
+      'Town encravada dentro de Boston, JFK birthplace, maior comunidade judaica de MA, Coolidge Corner Theatre e Beacon Street.',
   },
   {
     slug: 'dedham',
@@ -827,44 +827,44 @@ export const cidadesMA: CidadeMA[] = [
     nome: 'Cambridge',
     estado: 'MA',
     comunidade:
-      'Cambridge possui uma comunidade brasileira diversificada — de profissionais de tecnologia a prestadores de serviço — que convive com a elite acadêmica de Harvard e MIT em uma das cidades mais inovadoras do mundo.',
+      'Cambridge abriga Harvard (com endowment de US$ 53 bilhões em 2024) e MIT, e Kendall Square é considerada "the most innovative square mile on the planet" pela Boston Magazine — com 250+ biotechs como Moderna, Biogen e Pfizer. Cerca de 1.500 brasileiros vivem em Cambridge segundo Census 2020, divididos entre PhDs/postdocs nos labs e prestadores em Central Square e East Cambridge.',
     doresEspecificas:
-      'Em Cambridge, a competição é global. Brasileiros empreendedores precisam de presença digital de classe mundial para competir em um mercado onde startups e empresas de tecnologia definem o padrão de profissionalismo.',
+      'Em Cambridge, prestadores brasileiros lidam com o "PhD client": o pesquisador de Harvard que pede orçamento por e-mail com 8 perguntas técnicas, exige W-9 form, fatura net-30 e desconfia de cleaning lady sem company name + LLC. Aluguel comercial em Kendall Square saltou para US$ 95/sqft em 2024 (segundo Cushman & Wakefield) — fora do alcance de pequeno negócio. Resta a estratégia de bairro: focar em Cambridgeport e North Cambridge onde moram famílias americanas com casas próprias.',
     referencia:
-      'City lar de Harvard e MIT, epicentro de inovação tecnológica e biotecnologia, com Kendall Square como o quilômetro quadrado mais inovador do mundo.',
+      'City lar de Harvard e MIT, Kendall Square como o quilômetro quadrado mais inovador do planeta, hub global de biotecnologia com Moderna e Biogen.',
   },
   {
     slug: 'somerville',
     nome: 'Somerville',
     estado: 'MA',
     comunidade:
-      'Somerville abriga brasileiros que fazem parte da vibrante cena cultural e gastronômica da cidade, com negócios que atendem tanto a comunidade imigrante quanto o público jovem e criativo.',
+      'Somerville é a 16ª cidade mais densa dos EUA (mais de 19 mil hab/mi²) e abriga 2.500+ brasileiros segundo Census 2020, concentrados em East Somerville e Union Square. A inauguração da Green Line Extension em 2022 conectou Union Square direto ao downtown de Boston, gerando boom imobiliário — aluguel médio de 1-bed saltou de US$ 1.900 para US$ 2.800 entre 2019 e 2024. A Assembly Row da Federal Realty atrai Trader Joe\'s, AMC e LEGOLAND.',
     doresEspecificas:
-      'Em Somerville, o público é jovem, digital-first e valoriza autenticidade. Brasileiros que combinam presença digital moderna com a autenticidade cultural brasileira podem criar marcas memoráveis neste mercado.',
+      'Em Somerville, brasileiros que abrem food truck competem com a cena hipster premiada (Bow Market, Aeronaut Brewing) onde o público millennial paga US$ 18 por uma feijoada gourmet mas exige "story autêntica" no Instagram. Cleaning ladies enfrentam a contradição: apartamentos novos (250-450 sqft) precisam de menos limpeza, então valor médio caiu para US$ 70-90 por session — abaixo do MetroWest, forçando route optimization no Google Maps API para sobreviver.',
     referencia:
-      'City densamente povoada adjacente a Boston e Cambridge, com a Assembly Row, Davis Square e uma das cenas gastronômicas mais vibrantes da região.',
+      'City densamente povoada adjacente a Cambridge e Boston, Davis Square, Assembly Row, Union Square e Green Line Extension de 2022.',
   },
   {
     slug: 'medford',
     nome: 'Medford',
     estado: 'MA',
     comunidade:
-      'Medford tem uma comunidade brasileira que contribui para a diversidade da cidade, com negócios em serviços, alimentação e comércio que se beneficiam da proximidade com Boston.',
+      'Medford abriga a Tufts University (11 mil alunos), o Lawrence Memorial Hospital e cerca de 1.300 brasileiros segundo Census 2020 — concentrados em South Medford e Wellington. A Green Line Extension chegou em 2022, encurtando o trajeto até Park Street para 22 minutos e disparando preço de imóveis: house média subiu 38% em 4 anos para US$ 880 mil. Berço da Fannie Farmer e da Mary "Mother" Jones.',
     doresEspecificas:
-      'Brasileiros em Medford competem com prestadores de Somerville e Cambridge por clientes. Diferenciação por preço-qualidade e presença digital otimizada para Medford são essenciais para capturar o mercado local.',
+      'Em Medford, o público acadêmico da Tufts gera demanda de moving service em maio (graduação) e agosto (volta às aulas) — pico de 4 semanas que vale 35% do faturamento anual de movers brasileiros. Fora dessas janelas, brasileiros disputam apartamento-cleaning com somervilenses por US$ 80-100. A Hillside e West Medford (zonas mais nobres) preferem american contractors com referências da Tufts Faculty Club, fechando portas para "side hustle" digital.',
     referencia:
-      'City ao norte de Boston com a Tufts University, Mystic River e mistura de bairros residenciais e áreas comerciais em crescimento.',
+      'City ao norte de Boston com Tufts University, Mystic River, Green Line Extension de 2022 e bairros históricos Wellington e Hillside.',
   },
   {
     slug: 'malden',
     nome: 'Malden',
     estado: 'MA',
     comunidade:
-      'Malden abriga uma comunidade brasileira expressiva que se integra à diversidade cultural da cidade, com negócios ao longo da Main Street e no centro comercial da Pleasant Street.',
+      'Malden é uma das cidades mais diversas dos EUA — 40% da população nasceu fora do país, segundo Census 2020. A cidade tem comunidades chinesa, vietnamita, haitiana e brasileira coexistindo: cerca de 3.000 brasileiros se concentram em Linden, Edgeworth e Maplewood Square. Sede da Boston Magazine e da NECCO (até 2018), Malden agora é polo de pequenos negócios étnicos no downtown da Pleasant Street.',
     doresEspecificas:
-      'Em Malden, brasileiros competem em um dos mercados mais diversos da Grande Boston. Uma presença digital bilíngue que fale tanto com brasileiros quanto com o público multicultural local é um diferencial poderoso.',
+      'Em Malden, brasileiros têm que competir em SEO multilíngue com restaurantes chineses do Highland Ave que dominam "best dim sum" e taquerias salvadorenhas no Linden Square. O Pleasant Street downtown sofre vacância comercial de 18% após pandemia, mas Section 8 housing (subsidized) trouxe público de baixo ticket — o brasileiro empreendedor precisa decidir entre "comunidade brasileira em casa via WhatsApp" ou "público multicultural na loja física".',
     referencia:
-      'City multicultural ao norte de Boston com centro comercial ativo, estação de Orange Line e uma das populações mais diversas do estado.',
+      'City multicultural ao norte de Boston, uma das mais diversas dos EUA, Orange Line MBTA, Malden Center e Fellsway Plaza.',
   },
   {
     slug: 'melrose',
@@ -937,11 +937,11 @@ export const cidadesMA: CidadeMA[] = [
     nome: 'Arlington',
     estado: 'MA',
     comunidade:
-      'Arlington abriga brasileiros que fazem parte da comunidade diversificada e progressista da cidade, com negócios que atendem famílias ao longo do Minuteman Bikeway e nas vilas da town.',
+      'Arlington foi cenário da Battle of Lexington and Concord (19 de abril de 1775) e tem a Old Schwamb Mill, fábrica de molduras em operação contínua mais antiga dos EUA (1864). A town tem renda média familiar de US$ 130 mil (Census 2022) e abriga o Capitol Theatre (1925) e o Minuteman Bikeway (10 milhas até Cambridge). Cerca de 700 brasileiros vivem em East Arlington e Heights.',
     doresEspecificas:
-      'Em Arlington, o público é informado e valoriza negócios locais. Brasileiros que se posicionam como parte da comunidade local — com presença digital, envolvimento comunitário e reviews — conquistam clientes leais.',
+      'Em Arlington, o público é progressivo, "buy local" e pesquisa proveniência: cleaning ladies brasileiras precisam usar produtos green-certified (EPA Safer Choice) ou perdem para crews boutique de Lexington como Maid Brigade que vende eco-cleaning como diferencial. House painters disputam contratos de casas históricas (40% do estoque foi construído antes de 1940) que exigem lead-safe certification EPA RRP — exame e renovação custam US$ 600 que muitos solos não pagam.',
     referencia:
-      'Town progressista adjacente a Cambridge e Boston com o Minuteman Bikeway, Capitol Theatre e forte movimento de apoio ao comércio local.',
+      'Town progressista adjacente a Cambridge, cenário da Battle of Lexington and Concord, Minuteman Bikeway, Capitol Theatre e Old Schwamb Mill.',
   },
   {
     slug: 'belmont',
@@ -959,22 +959,22 @@ export const cidadesMA: CidadeMA[] = [
     nome: 'Watertown',
     estado: 'MA',
     comunidade:
-      'Watertown conta com brasileiros que se integram à comunidade diversificada da cidade, oferecendo serviços de construção, reforma e manutenção para moradores e empresas locais.',
+      'Watertown abriga a maior comunidade armênia da Costa Leste dos EUA (cerca de 8 mil pessoas) e a sede histórica do Armenian Museum of America. A Arsenal Yards, complexo de US$ 200 milhões aberto em 2020 no antigo Watertown Arsenal, trouxe Roche Bros, Showplace ICON e 300+ apartamentos novos. Cerca de 1.500 brasileiros se concentram em East Watertown e Coolidge Square segundo Census 2020.',
     doresEspecificas:
-      'Em Watertown, a economia está em transformação com novos desenvolvimentos. Brasileiros que se posicionam digitalmente agora podem capturar os novos moradores e empresas que chegam com a revitalização da Arsenal Yards.',
+      'Em Watertown, brasileiros em food business competem com a famosa cena armênia da Mt. Auburn Street (Sevan Bakery, Eastern Lamejun) que tem 50+ anos de tradição e clientela leal multigeracional. Caterers brasileiros tentam fechar contrato com empresas da Arsenal Yards (Athenahealth, Bright Horizons HQ) mas precisam de food handler license + commercial insurance + ServSafe certification — barreira regulatória que freia 60% das empreendedoras informais.',
     referencia:
-      'City compacta adjacente a Boston com a Arsenal Yards, forte economia gastronômica e comunidade armênia histórica.',
+      'City compacta adjacente a Cambridge e Boston, maior comunidade armênia da Costa Leste, Arsenal Yards e antigo Watertown Arsenal histórico.',
   },
   {
     slug: 'quincy',
     nome: 'Quincy',
     estado: 'MA',
     comunidade:
-      'Quincy abriga uma comunidade brasileira ativa que se beneficia da diversidade cultural e da economia vibrante desta city, a oitava mais populosa de Massachusetts.',
+      'Quincy tem a maior comunidade asiática de Massachusetts (32% da população, com fortes núcleos chinês e vietnamita), e cerca de 2.000 brasileiros vivem no Wollaston e North Quincy segundo Census 2020. Berço de John Adams e John Quincy Adams (2º e 6º presidentes dos EUA), a cidade tem PIB de mais de US$ 6 bi e abriga a State Street Bank (US$ 4 trilhões em ativos sob custódia) e Stop & Shop headquarters.',
     doresEspecificas:
-      'Em Quincy, a competição é intensa em todos os setores de serviço. Brasileiros precisam de estratégia digital completa — site, SEO, Google Business Profile e redes sociais — para se destacar neste mercado grande e diverso.',
+      'Em Quincy, restaurantes brasileiros disputam o Yelp com a maior concentração de restaurantes asiáticos fora de Boston Chinatown — público local prefere dim sum e pho a feijoada. House cleaners brasileiras competem com agências asiáticas que oferecem preço 20% menor (US$ 90 vs US$ 110 padrão). A Red Line do MBTA permite o quincyense pegar trem em 12 min para Park Street e gastar em Boston, drenando o downtown da Hancock Street nos fins de semana.',
     referencia:
-      'City conhecida como "City of Presidents" (berço de John Adams e John Quincy Adams), com forte diversidade asiática, Red Line e economia portuária.',
+      'City conhecida como City of Presidents (berço de John Adams e John Quincy Adams), maior comunidade asiática de MA, Red Line e Quincy Center.',
   },
   {
     slug: 'braintree',
@@ -1102,11 +1102,11 @@ export const cidadesMA: CidadeMA[] = [
     nome: 'Peabody',
     estado: 'MA',
     comunidade:
-      'Peabody abriga brasileiros que fazem parte da comunidade diversificada da cidade, com negócios em serviços, alimentação e comércio que atendem o North Shore.',
+      'Peabody foi historicamente conhecida como "Leather City" — capital americana do couro com 100+ curtumes operando até 1970, e ainda abriga a sede da J. Baker (calçados femininos). A cidade tem o Northshore Mall (segundo maior shopping da Nova Inglaterra com 167 lojas) e o Brooksby Village (maior comunidade de aposentados de MA, com 2 mil residentes). Cerca de 1.800 brasileiros vivem em Peabody segundo Census 2020.',
     doresEspecificas:
-      'Em Peabody, brasileiros competem com empresas estabelecidas no mercado do North Shore. Marketing digital que enfatiza qualidade brasileira e atendimento bilíngue pode atrair tanto a comunidade latina quanto clientes americanos.',
+      'Em Peabody, prestadores brasileiros atendem majoritariamente o público 55+ do Brooksby Village (renda média US$ 80 mil/ano de pensão) que paga bem por handyman, in-home care e medical transport, mas exige CORI background check e seguro de auto comercial. Restaurantes brasileiros disputam com o Northshore Mall food court (Cheesecake Factory, P.F. Chang\'s) que tira o cliente jovem, e a Route 1 oferece grandes franchises (Kowloon, Hilltop Steak House) que dominam "Saturday night" no North Shore.',
     referencia:
-      'City no North Shore com o Northshore Mall, forte herança industrial do couro, centro comercial ativo e a West Peabody residencial.',
+      'City no North Shore "Leather City" (capital americana do couro), Northshore Mall, Brooksby Village e West Peabody residencial.',
   },
   {
     slug: 'salem',
@@ -1146,44 +1146,44 @@ export const cidadesMA: CidadeMA[] = [
     nome: 'Worcester',
     estado: 'MA',
     comunidade:
-      'Worcester abriga uma das maiores e mais diversificadas comunidades brasileiras de Massachusetts, com presença marcante no Main South, restaurantes, igrejas, mercados e serviços profissionais que atendem milhares de brasileiros na segunda maior cidade do estado.',
+      'Worcester tem cerca de 12 mil brasileiros (Census 2020), concentrados no Main South e em Vernon Hill. A "Heart of the Commonwealth" abriga 8 colleges (UMass Medical, WPI, Holy Cross, Clark, Assumption) que somam 35 mil estudantes, e o Polar Park (estádio do Worcester Red Sox, Triple-A do Boston Red Sox) puxou US$ 250 milhões em investimentos para o Canal District desde 2021, gerando empregos para brasileiros em construção.',
     doresEspecificas:
-      'Em Worcester, brasileiros enfrentam competição tanto entre si quanto com empresas americanas em um mercado metropolitano grande. Sem investimento em marketing digital profissional — SEO, Google Ads, redes sociais e site bilíngue — ficam limitados ao boca a boca em uma cidade com quase 200 mil habitantes.',
+      'Em Worcester, prestadores brasileiros sofrem com o "stigma de Main South" — público classe média de Holden e Shrewsbury hesita em contratar prestadores com endereço naquela área. House cleaners competem com empresas hispânicas estabelecidas (porto-riquenhas, dominicanas), que precificam 15-20% mais baixo. A crise habitacional pós-Polar Park dobrou aluguéis comerciais no Canal District (de US$ 22 para US$ 45/sqft), expulsando pequenos negócios brasileiros do downtown.',
     referencia:
-      'Segunda maior cidade de Massachusetts e da Nova Inglaterra, centro de saúde e educação com UMass Medical, WPI, Holy Cross e Clark University, em plena revitalização urbana.',
+      'Segunda maior cidade de Massachusetts e da Nova Inglaterra, sede da UMass Medical, WPI, Holy Cross, Polar Park no Canal District em plena revitalização.',
   },
   {
     slug: 'everett',
     nome: 'Everett',
     estado: 'MA',
     comunidade:
-      'Everett possui uma das maiores comunidades brasileiras da Grande Boston, com forte presença ao longo da Broadway e em bairros residenciais. Restaurantes, padarias, salões e igrejas brasileiras fazem parte do cotidiano da cidade.',
+      'Everett tem cerca de 6.500 brasileiros (Census 2020), uma das maiores concentrações per capita de MA (mais de 14% da população). A Broadway tem mais de 40 estabelecimentos brasileiros — Brasilia Restaurant, Brasil Doce Doce, salões, churches like Igreja Universal e Assembleia de Deus que reúnem 3 mil fiéis nos finais de semana. O Encore Boston Harbor (cassino de US$ 2,6 bilhões da Wynn Resorts) abriu em 2019 e contratou 4.500 funcionários, muitos brasileiros.',
     doresEspecificas:
-      'Empreendedores brasileiros em Everett enfrentam competição intensa com negócios em cidades vizinhas como Malden e Chelsea. Sem um site profissional bilíngue e presença digital otimizada, perdem clientes para concorrentes que dominam as buscas locais no Google.',
+      'Em Everett, a Lower Broadway sofreu gentrification pós-Encore: aluguel comercial dobrou (de US$ 18 para US$ 38/sqft entre 2018 e 2024), expulsando padarias e pequenos negócios brasileiros para Glendale Square. Cleaning crews disputam contratos do Encore Casino e do Amazon Distribution Center (na vizinha Boston) mas precisam de background check + drug test + LLC — barreira para 70% dos prestadores undocumented.',
     referencia:
-      'Cidade densamente povoada ao norte de Boston, vizinha de Chelsea e Malden, conhecida pelo Encore Boston Harbor Casino e pela proximidade com o centro de Boston.',
+      'Cidade densamente povoada ao norte de Boston, Encore Boston Harbor Casino da Wynn Resorts (US$ 2,6 bilhões), Broadway como coração brasileiro.',
   },
   {
     slug: 'lowell',
     nome: 'Lowell',
     estado: 'MA',
     comunidade:
-      'Lowell abriga uma comunidade brasileira crescente que se soma à rica diversidade cultural da cidade. Brasileiros empreendem em construção, limpeza, restaurantes e serviços profissionais, atendendo tanto a comunidade latina quanto o público americano.',
+      'Lowell tem a maior comunidade cambojana per capita dos EUA (cerca de 25 mil cambojanos, 20% da população), e cerca de 4 mil brasileiros segundo o Census 2020. Brasileiros se concentram em Belvidere e South Lowell, trabalhando nas fábricas reconvertidas (Mill District) que viraram lofts e small offices. A UMass Lowell tem 18 mil alunos e o Lowell General Hospital é o principal empregador da cidade.',
     doresEspecificas:
-      'Em Lowell, brasileiros competem em um mercado multicultural onde diversas comunidades imigrantes oferecem serviços similares. Sem diferenciação digital — site profissional, SEO local e Google Business Profile otimizado — ficam invisíveis no quarto maior município de Massachusetts.',
+      'Em Lowell, brasileiros disputam o mesmo nicho de cleaning/landscaping com a comunidade cambojana e hispânica que já dominou os contratos de prefeitura via small business set-aside programs. O setor de gastronomia brasileira é apertado: 4-5 restaurantes brasileiros competem entre si, enquanto pho cambojano e taquerías mexicanas dominam o "ethnic food" search local no Yelp. Inverno reduz outdoor jobs em 65% segundo Bureau of Labor Statistics.',
     referencia:
-      'Quarta maior cidade de Massachusetts, com rica herança industrial, o Lowell National Historical Park, UMass Lowell e uma população altamente diversificada.',
+      'Quarta maior cidade de Massachusetts, Lowell National Historical Park (berço da Revolução Industrial americana), UMass Lowell e maior comunidade cambojana dos EUA.',
   },
   {
     slug: 'brockton',
     nome: 'Brockton',
     estado: 'MA',
     comunidade:
-      'Brockton possui uma comunidade brasileira significativa que contribui para a diversidade cultural da cidade. Brasileiros atuam em construção civil, serviços de limpeza, gastronomia e comércio, com presença visível no centro e bairros adjacentes.',
+      'Brockton tem a segunda maior comunidade cabo-verdiana dos EUA (cerca de 11 mil pessoas) e crescente presença brasileira no Campello e Montello — cerca de 3.500 brasileiros segundo Census 2020. Berço dos boxeadores Rocky Marciano e Marvelous Marvin Hagler, a cidade ostenta o título "City of Champions" e abriga o Brockton High, maior high school pública de Massachusetts (3.700 alunos).',
     doresEspecificas:
-      'Negócios brasileiros em Brockton enfrentam o desafio de se destacar em uma cidade grande e diversificada. Sem investimento em marketing digital e presença online profissional, perdem espaço para concorrentes mais bem posicionados nas buscas do Google.',
+      'Em Brockton, brasileiros enfrentam taxa de criminalidade 80% acima da média estadual (FBI UCR 2023), o que afasta clientes premium de Easton e Bridgewater na contratação de serviços domiciliares. House cleaners brasileiras competem com cabo-verdianas (que falam crioulo + português, vantagem cultural). O Westgate Mall fechou âncoras (JCPenney, Sears), e o downtown sofre com 23% de vacância comercial — derrubando aluguel mas também o fluxo.',
     referencia:
-      'Sétima maior cidade de Massachusetts, conhecida como "City of Champions", localizada no South Shore com fácil acesso a Boston e ao Cape Cod via Route 24.',
+      'Sétima maior cidade de Massachusetts, "City of Champions" berço de Rocky Marciano e Marvelous Marvin Hagler, segunda maior comunidade cabo-verdiana dos EUA.',
   },
   {
     slug: 'hyannis',
@@ -1360,6 +1360,28 @@ export const cidadesMA: CidadeMA[] = [
       'O mercado de Amherst é educado e pesquisa online antes de contratar. Brasileiros sem presença digital profissional perdem para concorrentes que aparecem nas buscas. O público universitário espera sites modernos e comunicação profissional em inglês.',
     referencia:
       'Cidade universitária no Pioneer Valley, lar da UMass Amherst — maior universidade pública da Nova Inglaterra —, Amherst College e Hampshire College.',
+  },
+  {
+    slug: 'boston',
+    nome: 'Boston',
+    estado: 'MA',
+    comunidade:
+      'Boston tem cerca de 18 mil brasileiros segundo Census 2020, concentrados em Allston-Brighton (chamado de "Little Brazil") e East Boston ao lado da Bolívia/Honduras community. A capital de Massachusetts tem PIB metropolitano de US$ 540 bilhões — maior que o do Chile — e abriga 35+ universidades (Harvard, MIT, BU, Northeastern, Tufts) que somam 250 mil estudantes. O Logan Airport movimenta 40 milhões de passageiros/ano (Massport).',
+    doresEspecificas:
+      'Em Boston, brasileiros em food delivery competem com 18 mil restaurantes (Boston Restaurant Group) e exércitos de DoorDash drivers que exigem comissão de 25-30%. Cleaning ladies de Allston disputam mercado com agências polonesas e brasileiras estabelecidas há 30 anos (Boston Cleaning Lady, Brazilian Maids). Aluguel de 1-bed em Back Bay supera US$ 3.500 e o T (metrô) tem fechado seções inteiras em 2024 para reparos, dobrando tempo de deslocamento entre Brighton e South Boston.',
+    referencia:
+      'Capital de Massachusetts e da Nova Inglaterra, Fenway Park (Red Sox), Freedom Trail, Boston Marathon, Logan Airport e maior cluster universitário dos EUA.',
+  },
+  {
+    slug: 'revere',
+    nome: 'Revere',
+    estado: 'MA',
+    comunidade:
+      'Revere abriga a primeira praia pública dos EUA — Revere Beach (1896) — e tem uma das maiores concentrações latinas de Massachusetts (44% da população segundo Census 2020, principalmente salvadorenhos e marroquinos). Cerca de 2.500 brasileiros vivem em Beachmont e Shirley Ave. A cidade tem o Wonderland Greyhound Park (fechado, em redevelopment) e o Suffolk Downs (antigo hipódromo, agora sede do Encore Park).',
+    doresEspecificas:
+      'Em Revere, brasileiros em hospitality e cleaning competem com a comunidade salvadorenha que domina o Beachmont desde os anos 90 e oferece preço 25% mais baixo via word-of-mouth na igreja católica local. O Suffolk Downs redevelopment de US$ 1,2 bilhão (HYM Investment) está atraindo torres residenciais que ainda não estabilizaram preço — empreendedores não sabem se cobram MetroBoston ou periferia. Verão na Revere Beach traz fluxo enorme mas barracas e food trucks precisam de Common Victualler license + 6 inspeções.',
+    referencia:
+      'City costeira ao norte de Boston, Revere Beach (primeira praia pública dos EUA, 1896), Suffolk Downs em redevelopment e Wonderland Station da Blue Line.',
   },
 ]
 

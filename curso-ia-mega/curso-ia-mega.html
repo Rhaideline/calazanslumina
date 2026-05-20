@@ -1,0 +1,3276 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>IA do Zero ao Avançado · Curso Mega Completo · Calazans Lumina</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  /* ════════════════════════════════════════════════
+     CALAZANS LUMINA — CURSO IA MEGA · DESIGN SYSTEM
+     ════════════════════════════════════════════════ */
+  @page { size: A4; margin: 0; }
+
+  :root{
+    --ink:#0F0F0F;
+    --ink-2:#1A1A1A;
+    --paper:#F7F2E8;
+    --paper-2:#EFE8D6;
+    --paper-3:#E5DBC4;
+    --cream-dark:#3D3527;
+    --red:#E53935;
+    --red-deep:#A02622;
+    --red-soft:#FF4B4B;
+    --green:#2A7F3E;
+    --gold:#C29144;
+    --blue:#1E40AF;
+    --rule:rgba(15,15,15,.12);
+    --rule-light:rgba(247,242,232,.18);
+  }
+  *{box-sizing:border-box; -webkit-print-color-adjust:exact; print-color-adjust:exact}
+  html,body{margin:0;padding:0;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:400;line-height:1.55;-webkit-font-smoothing:antialiased}
+
+  /* ── PAGE BASE ── A4 = 210×297 mm (8.27×11.69 in) ── */
+  .page{
+    width:210mm;
+    height:297mm;
+    page-break-after:always;
+    position:relative;
+    overflow:hidden;
+    background:var(--paper);
+    color:var(--ink);
+  }
+  .page:last-child{page-break-after:auto}
+  .page.dark{background:var(--ink);color:#fff}
+  .page.cream-2{background:var(--paper-2)}
+  .page.cream-3{background:var(--paper-3)}
+
+  /* page edge */
+  .edge{position:absolute;inset:0;pointer-events:none;z-index:1}
+
+  /* ── PAGE HEADER (running) ── */
+  .pg-head{position:absolute;top:11mm;left:18mm;right:18mm;display:flex;justify-content:space-between;align-items:center;z-index:5;font-family:'DM Sans',sans-serif;font-size:7.5pt;letter-spacing:.32em;text-transform:uppercase;font-weight:600;color:rgba(15,15,15,.5)}
+  .page.dark .pg-head{color:rgba(255,255,255,.5)}
+  .pg-head .brand{display:flex;align-items:center;gap:8px}
+  .pg-head .brand::before{content:"";width:7px;height:7px;background:var(--red);border-radius:50%}
+
+  /* ── PAGE FOOTER (running) ── */
+  .pg-foot{position:absolute;bottom:11mm;left:18mm;right:18mm;display:flex;justify-content:space-between;align-items:center;z-index:5;font-family:'DM Sans',sans-serif;font-size:7.5pt;letter-spacing:.32em;text-transform:uppercase;font-weight:600;color:rgba(15,15,15,.5);border-top:1px solid var(--rule);padding-top:5mm}
+  .page.dark .pg-foot{color:rgba(255,255,255,.55);border-top-color:var(--rule-light)}
+  .pg-foot .num{font-family:'DM Serif Display',serif;font-style:italic;font-size:10pt;color:var(--red);letter-spacing:0}
+
+  /* ── PAGE CONTENT AREA ── */
+  .pg-body{position:absolute;left:18mm;right:18mm;top:24mm;bottom:24mm;display:flex;flex-direction:column}
+
+  /* ════════════════════════════════════════════════
+     TYPOGRAPHY · fontes aumentadas pra legibilidade
+     ════════════════════════════════════════════════ */
+  .h-1, h1{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:68pt;line-height:.94;letter-spacing:-.025em;margin:0}
+  .h-2, h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:42pt;line-height:1;letter-spacing:-.02em;margin:0}
+  .h-3, h3{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:30pt;line-height:1.1;letter-spacing:-.015em;margin:0}
+  .h-4, h4{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:22pt;line-height:1.18;letter-spacing:-.01em;margin:0}
+  .h-5, h5{font-family:'DM Sans',sans-serif;font-weight:700;font-size:13pt;line-height:1.3;letter-spacing:.06em;text-transform:uppercase;margin:0}
+
+  h1 em, h2 em, h3 em, h4 em{color:var(--red);font-style:italic;font-weight:400}
+  .page.dark h1 em, .page.dark h2 em, .page.dark h3 em, .page.dark h4 em{color:var(--red-soft)}
+
+  .kicker{font-family:'DM Sans',sans-serif;font-size:10pt;letter-spacing:.32em;text-transform:uppercase;font-weight:700;color:var(--red);margin:0 0 6mm 0}
+  .page.dark .kicker{color:var(--red-soft)}
+
+  p{font-family:'DM Sans',sans-serif;font-size:13pt;line-height:1.6;color:var(--cream-dark);margin:0 0 4mm 0;font-weight:400}
+  .page.dark p{color:rgba(255,255,255,.85)}
+  p b, p strong{color:var(--ink);font-weight:700}
+  .page.dark p b, .page.dark p strong{color:#fff}
+  p em{font-style:italic}
+
+  .lead{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:18pt;line-height:1.38;color:var(--ink);max-width:140mm;letter-spacing:-.005em}
+  .page.dark .lead{color:rgba(255,255,255,.92)}
+  .lead em{color:var(--red)}
+  .page.dark .lead em{color:var(--red-soft)}
+
+  /* ════════════════════════════════════════════════
+     CAPA / COVER
+     ════════════════════════════════════════════════ */
+  .cover{background:var(--ink);color:#fff;position:relative}
+  .cover::before{
+    content:"";position:absolute;inset:0;z-index:1;
+    background:
+      radial-gradient(40% 35% at 78% 22%, rgba(229,57,53,.45) 0%, transparent 60%),
+      radial-gradient(35% 30% at 20% 80%, rgba(194,145,68,.25) 0%, transparent 65%);
+  }
+  .cover .cv-content{position:relative;z-index:5;padding:24mm 22mm;height:100%;display:flex;flex-direction:column}
+  .cover .cv-head{display:flex;justify-content:space-between;align-items:flex-start;font-family:'DM Sans',sans-serif;font-size:8pt;letter-spacing:.36em;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.55)}
+  .cover .cv-brand{display:flex;align-items:center;gap:10px;color:#fff;letter-spacing:.4em}
+  .cover .cv-brand::before{content:"";width:9px;height:9px;background:var(--red);border-radius:50%}
+  .cover .cv-mid{margin-top:auto;margin-bottom:auto}
+  .cover .cv-mid .label{font-size:9pt;letter-spacing:.4em;text-transform:uppercase;font-weight:700;color:var(--red-soft);margin-bottom:6mm}
+  .cover .cv-mid h1{font-size:88pt;line-height:.88;letter-spacing:-.04em;font-style:italic}
+  .cover .cv-mid h1 em{color:var(--red);font-style:italic;text-decoration:underline;text-decoration-color:var(--red-soft);text-decoration-thickness:5pt;text-underline-offset:8pt}
+  .cover .cv-mid .lead{margin-top:8mm;font-size:16pt;color:rgba(255,255,255,.78);max-width:140mm}
+  .cover .cv-stats{display:flex;gap:14mm;margin-top:12mm;align-items:flex-start}
+  .cover .cv-stat{display:flex;flex-direction:column;gap:2mm}
+  .cover .cv-stat .n{font-family:'DM Serif Display',serif;font-style:italic;font-size:42pt;line-height:1;color:#fff;letter-spacing:-.02em}
+  .cover .cv-stat .l{font-family:'DM Sans',sans-serif;font-size:8pt;letter-spacing:.34em;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.55)}
+  .cover .cv-foot{display:flex;justify-content:space-between;align-items:flex-end;font-family:'DM Sans',sans-serif;font-size:8.5pt;letter-spacing:.34em;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.6)}
+  .cover .cv-price{display:inline-flex;align-items:baseline;gap:4px;padding:5mm 8mm;background:var(--red);color:#fff;border-radius:999px;font-family:'DM Serif Display',serif;font-style:italic;font-size:22pt;line-height:1;letter-spacing:-.01em}
+  .cover .cv-price small{font-family:'DM Sans',sans-serif;font-style:normal;font-size:7pt;letter-spacing:.32em;text-transform:uppercase;font-weight:600;margin-left:3mm;align-self:center}
+
+  /* ════════════════════════════════════════════════
+     PART OPENER (página de abertura de cada Parte)
+     ════════════════════════════════════════════════ */
+  .part-opener{background:var(--ink);color:#fff;position:relative}
+  .part-opener::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 50% at 78% 25%,rgba(229,57,53,.36),transparent 60%);z-index:1}
+  .part-opener .po-content{position:absolute;inset:0;z-index:5;padding:24mm 22mm;display:flex;flex-direction:column;justify-content:center;gap:8mm}
+  .part-opener .po-num{font-family:'DM Serif Display',serif;font-style:italic;font-size:280pt;line-height:.85;color:var(--red);letter-spacing:-.05em;margin:0}
+  .part-opener .po-label{font-size:9pt;letter-spacing:.4em;text-transform:uppercase;font-weight:700;color:var(--red-soft);margin:0}
+  .part-opener .po-title{font-size:54pt;line-height:.96;letter-spacing:-.03em;color:#fff;font-style:italic;margin:0}
+  .part-opener .po-title em{color:var(--red-soft)}
+  .part-opener .po-lead{font-size:14pt;line-height:1.35;color:rgba(255,255,255,.78);max-width:135mm;font-family:'DM Serif Display',serif;font-style:italic;margin:0}
+  .part-opener .po-chapters{display:flex;flex-direction:column;gap:3mm;margin-top:6mm;font-family:'DM Sans',sans-serif;font-size:11pt;color:rgba(255,255,255,.78);font-weight:500;line-height:1.5}
+  .part-opener .po-chapters .ch{display:flex;gap:6mm;align-items:baseline}
+  .part-opener .po-chapters .ch-num{font-family:'DM Serif Display',serif;font-style:italic;color:var(--red-soft);font-size:14pt;min-width:14mm}
+  .part-opener .po-foot{position:absolute;bottom:18mm;left:22mm;right:22mm;display:flex;justify-content:space-between;font-size:8pt;letter-spacing:.34em;text-transform:uppercase;color:rgba(255,255,255,.45);font-weight:600}
+
+  /* ════════════════════════════════════════════════
+     COMPONENTES VISUAIS
+     ════════════════════════════════════════════════ */
+
+  /* BOXES — destaque, exemplo, exercício, dica, prompt */
+  .box{
+    margin:6mm 0;
+    padding:9mm 10mm;
+    border-radius:3mm;
+    background:var(--paper-2);
+    border-left:5px solid var(--red);
+    page-break-inside:avoid;
+  }
+  .box .box-label{
+    font-family:'DM Sans',sans-serif;
+    font-size:9.5pt;letter-spacing:.32em;text-transform:uppercase;
+    font-weight:800;color:var(--red);margin-bottom:4mm;display:flex;align-items:center;gap:8px
+  }
+  .box .box-label::before{content:"";width:7px;height:7px;background:currentColor;border-radius:50%}
+  .box.exemplo{background:var(--paper-2);border-left-color:var(--blue)}
+  .box.exemplo .box-label{color:var(--blue)}
+  .box.exercicio{background:var(--paper-3);border-left-color:var(--green)}
+  .box.exercicio .box-label{color:var(--green)}
+  .box.dica{background:rgba(194,145,68,.12);border-left-color:var(--gold)}
+  .box.dica .box-label{color:var(--gold)}
+  .box.prompt{background:var(--ink);color:rgba(255,255,255,.92);border-left-color:var(--green);font-family:'JetBrains Mono',monospace;font-size:11.5pt;line-height:1.55}
+  .box.prompt .box-label{color:var(--green);font-family:'DM Sans',sans-serif;font-size:9.5pt}
+  .box.prompt b{color:var(--gold);font-weight:700}
+  .box.alerta{background:rgba(229,57,53,.08);border-left-color:var(--red)}
+  .box.alerta .box-label{color:var(--red)}
+  .box p{margin:0 0 3mm 0;font-size:12pt;line-height:1.6}
+  .box p:last-child{margin-bottom:0}
+
+  /* TAG inline */
+  .tag{display:inline-block;padding:2px 8px;border-radius:4px;font-family:'DM Sans',sans-serif;font-size:7.5pt;letter-spacing:.18em;text-transform:uppercase;font-weight:700;line-height:1.4}
+  .tag.red{background:var(--red);color:#fff}
+  .tag.green{background:var(--green);color:#fff}
+  .tag.blue{background:var(--blue);color:#fff}
+  .tag.gold{background:var(--gold);color:#fff}
+  .tag.ghost{background:transparent;border:1px solid var(--ink);color:var(--ink)}
+  .page.dark .tag.ghost{border-color:#fff;color:#fff}
+
+  /* TABELA */
+  table.tbl{width:100%;border-collapse:collapse;margin:6mm 0;font-family:'DM Sans',sans-serif;font-size:12pt}
+  table.tbl th{background:var(--ink);color:#fff;text-align:left;padding:4mm 5mm;font-size:10pt;letter-spacing:.18em;text-transform:uppercase;font-weight:700}
+  table.tbl td{padding:4mm 5mm;border-bottom:1px solid var(--rule);vertical-align:top;color:var(--cream-dark);line-height:1.55}
+  table.tbl td b{color:var(--ink)}
+  table.tbl tr:nth-child(even) td{background:rgba(15,15,15,.025)}
+
+  /* LISTA NUMERADA grande */
+  ol.big-list{list-style:none;padding:0;margin:6mm 0;counter-reset:item}
+  ol.big-list li{counter-increment:item;padding:6mm 0 6mm 22mm;position:relative;border-top:1px solid var(--rule);font-family:'DM Sans',sans-serif;font-size:13pt;line-height:1.6;color:var(--cream-dark)}
+  ol.big-list li:first-child{border-top:none}
+  ol.big-list li::before{content:counter(item,decimal-leading-zero);position:absolute;left:0;top:6mm;font-family:'DM Serif Display',serif;font-style:italic;font-size:28pt;color:var(--red);line-height:1;letter-spacing:-.02em}
+  ol.big-list li b{display:block;color:var(--ink);font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:18pt;margin-bottom:3mm;letter-spacing:-.01em}
+
+  /* LISTA simples bullet */
+  ul.bullets{list-style:none;padding:0;margin:4mm 0;font-family:'DM Sans',sans-serif;font-size:13pt;line-height:1.75;color:var(--cream-dark)}
+  ul.bullets li{padding-left:7mm;position:relative;margin-bottom:1mm}
+  ul.bullets li::before{content:"·";position:absolute;left:0;top:0;color:var(--red);font-weight:800;font-size:18pt;line-height:1.4}
+  ul.bullets li b{color:var(--ink);font-weight:700}
+
+  /* CHECKLIST */
+  ul.checklist{list-style:none;padding:0;margin:4mm 0;font-family:'DM Sans',sans-serif;font-size:13pt;line-height:1.75;color:var(--cream-dark)}
+  ul.checklist li{padding-left:10mm;position:relative;margin-bottom:2mm}
+  ul.checklist li::before{content:"";position:absolute;left:0;top:1.5mm;width:5mm;height:5mm;border:1.5px solid var(--ink);border-radius:1mm}
+
+  /* CALLOUT NUMERIC (números gigantes) */
+  .stat-row{display:flex;gap:8mm;margin:5mm 0;flex-wrap:wrap}
+  .stat-row .stat{flex:1;min-width:42mm;background:var(--paper-2);padding:6mm;border-radius:3mm;border-left:3px solid var(--red)}
+  .stat .n{font-family:'DM Serif Display',serif;font-style:italic;font-size:38pt;line-height:.9;color:var(--red);letter-spacing:-.02em;margin:0}
+  .stat .n.green{color:var(--green)}
+  .stat .l{font-family:'DM Sans',sans-serif;font-size:8pt;letter-spacing:.28em;text-transform:uppercase;font-weight:600;color:var(--cream-dark);margin-top:2mm;line-height:1.3}
+
+  /* DIVIDER */
+  .divider{width:30mm;height:2px;background:var(--red);margin:5mm 0}
+  .divider.center{margin:8mm auto}
+  .divider.gold{background:var(--gold)}
+  .divider.full{width:100%}
+
+  /* HERO STAT (uma página inteira em um stat grande) */
+  .hero-stat{text-align:center;padding:20mm 0}
+  .hero-stat .label{font-family:'DM Sans',sans-serif;font-size:9pt;letter-spacing:.4em;text-transform:uppercase;font-weight:700;color:var(--red);margin-bottom:6mm}
+  .hero-stat .num{font-family:'DM Serif Display',serif;font-style:italic;font-size:180pt;line-height:.88;color:var(--ink);letter-spacing:-.05em;margin:0}
+  .hero-stat .num em{color:var(--red)}
+  .hero-stat .cap{font-family:'DM Serif Display',serif;font-style:italic;font-size:16pt;line-height:1.35;color:var(--cream-dark);max-width:130mm;margin:8mm auto 0}
+
+  /* TWO COLS layout (lado a lado) */
+  .two-cols{display:grid;grid-template-columns:1fr 1fr;gap:8mm;margin:5mm 0}
+  .two-cols.tight{gap:5mm}
+  .two-cols .col{}
+
+  /* COMPARISON (ruim vs bom) */
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin:5mm 0}
+  .compare .side{padding:7mm;border-radius:3mm;border:1px solid var(--rule)}
+  .compare .side.bad{background:rgba(229,57,53,.08);border-left:4px solid var(--red)}
+  .compare .side.good{background:rgba(42,127,62,.08);border-left:4px solid var(--green)}
+  .compare .side .tag{margin-bottom:3mm}
+  .compare .side h5{margin-bottom:3mm}
+
+  /* MOCK INTERFACE (mockup tela ChatGPT etc) */
+  .mock{background:var(--ink);border-radius:4mm;padding:5mm;margin:5mm 0;font-family:'DM Sans',sans-serif;color:#fff;page-break-inside:avoid}
+  .mock-bar{display:flex;gap:3px;margin-bottom:4mm}
+  .mock-bar .dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.25)}
+  .mock-bar .dot.r{background:#FF5F57}
+  .mock-bar .dot.y{background:#FEBC2E}
+  .mock-bar .dot.g{background:#28C840}
+  .mock-msg{margin:3mm 0;padding:4mm 5mm;border-radius:3mm;font-family:'DM Sans',sans-serif;font-size:9pt;line-height:1.5}
+  .mock-msg.user{background:rgba(255,255,255,.08);border-left:3px solid #fff;color:#fff}
+  .mock-msg.ai{background:rgba(229,57,53,.18);border-left:3px solid var(--red);color:#fff}
+  .mock-msg .role{font-family:'DM Sans',sans-serif;font-size:7pt;letter-spacing:.28em;text-transform:uppercase;font-weight:800;color:var(--red-soft);margin-bottom:2mm;display:block}
+  .mock-msg.user .role{color:rgba(255,255,255,.7)}
+  .mock-msg b{color:var(--gold);font-weight:700}
+
+  /* IA LOGO BUBBLE */
+  .ia-logo{width:24mm;height:24mm;border-radius:6mm;display:inline-flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-style:italic;font-size:42pt;color:#fff;font-weight:400;line-height:1;flex-shrink:0;box-shadow:0 4mm 8mm rgba(0,0,0,.15)}
+  .ia-logo.gpt{background:linear-gradient(135deg,#74AA9C,#10A37F)}
+  .ia-logo.claude{background:linear-gradient(135deg,#DA7757,#C15F3C)}
+  .ia-logo.gemini{background:linear-gradient(135deg,#4285F4 0%,#9B72CB 50%,#F4B400 100%)}
+  .ia-logo.dalle{background:linear-gradient(135deg,#000,#444)}
+  .ia-logo.midjourney{background:#000}
+  .ia-logo.canva{background:linear-gradient(135deg,#00C4CC,#7D2AE8)}
+  .ia-logo.eleven{background:linear-gradient(135deg,#000,#666);color:#fff}
+  .ia-logo.suno{background:linear-gradient(135deg,#FF6B35,#F7931E)}
+  .ia-logo.runway{background:linear-gradient(135deg,#000,#222);color:#fff}
+  .ia-logo.cursor{background:linear-gradient(135deg,#000,#222);color:#fff}
+
+  /* IA HERO (header de capítulo de IA) */
+  .ia-hero{display:flex;align-items:center;gap:8mm;margin-bottom:6mm}
+  .ia-hero .info h2{font-size:38pt}
+  .ia-hero .info .ia-tag{font-family:'DM Sans',sans-serif;font-size:8pt;letter-spacing:.32em;text-transform:uppercase;font-weight:700;color:var(--red);margin:0 0 2mm}
+  .ia-hero .info .ia-desc{font-family:'DM Sans',sans-serif;font-size:11pt;color:var(--cream-dark);margin:3mm 0 0}
+
+  /* META BAR (preço, tier, ideal pra...) */
+  .meta-bar{display:flex;gap:5mm;flex-wrap:wrap;margin:5mm 0;font-family:'DM Sans',sans-serif;font-size:11pt}
+  .meta-bar .mb{display:flex;flex-direction:column;gap:2mm;padding:4mm 6mm;background:var(--paper-2);border-radius:2mm;border-left:3px solid var(--red);min-width:38mm}
+  .meta-bar .mb .ml{font-size:9pt;letter-spacing:.28em;text-transform:uppercase;font-weight:700;color:var(--red);opacity:.85}
+  .meta-bar .mb .mv{font-family:'DM Serif Display',serif;font-style:italic;font-size:15pt;color:var(--ink);letter-spacing:-.01em}
+
+  /* TOC (Sumário) */
+  .toc{font-family:'DM Sans',sans-serif;font-size:12.5pt;line-height:1.55}
+  .toc .toc-part{margin-top:9mm;border-top:2px solid var(--ink);padding-top:6mm;page-break-inside:avoid}
+  .toc .toc-part:first-child{margin-top:0;border-top:none}
+  .toc .toc-part-num{font-family:'DM Serif Display',serif;font-style:italic;font-size:11pt;color:var(--red);letter-spacing:.18em;text-transform:uppercase;font-weight:400;margin-bottom:3mm}
+  .toc .toc-part-name{font-family:'DM Serif Display',serif;font-style:italic;font-size:24pt;line-height:1.1;color:var(--ink);margin:0 0 5mm}
+  .toc .toc-part-name em{color:var(--red)}
+  .toc .toc-item{display:flex;justify-content:space-between;gap:6mm;padding:3mm 0;color:var(--cream-dark);align-items:baseline;border-bottom:1px dotted var(--rule)}
+  .toc .toc-item .name{font-weight:500}
+  .toc .toc-item .name b{color:var(--ink);font-weight:700}
+  .toc .toc-item .pg{font-family:'DM Serif Display',serif;font-style:italic;color:var(--red);font-size:14pt;letter-spacing:-.01em}
+
+  /* CALL OUT BIG TEXT */
+  .pull-quote{margin:8mm 0;padding-left:8mm;border-left:5px solid var(--red);font-family:'DM Serif Display',serif;font-style:italic;font-size:22pt;line-height:1.32;color:var(--ink);letter-spacing:-.01em}
+  .pull-quote em{color:var(--red)}
+  .pull-quote .author{display:block;font-family:'DM Sans',sans-serif;font-style:normal;font-size:10pt;letter-spacing:.28em;text-transform:uppercase;font-weight:600;color:var(--cream-dark);margin-top:5mm}
+
+  /* PROGRESS BAR */
+  .progress{display:flex;align-items:center;gap:4mm;margin:3mm 0}
+  .progress-bar{flex:1;height:3mm;background:rgba(15,15,15,.08);border-radius:2mm;overflow:hidden}
+  .progress-bar .fill{height:100%;background:var(--red);border-radius:2mm}
+  .progress-num{font-family:'DM Serif Display',serif;font-style:italic;font-size:14pt;color:var(--red);min-width:14mm;text-align:right}
+
+  /* ────────────── HOJE A LISTA NOTORIA ────────────── */
+  .feat-list{margin:5mm 0;display:grid;grid-template-columns:1fr;gap:3mm}
+  .feat-item{display:flex;gap:5mm;align-items:flex-start;padding:4mm 5mm;background:var(--paper-2);border-radius:2mm;border-left:3px solid var(--red)}
+  .feat-item .fi-icon{font-family:'DM Serif Display',serif;font-style:italic;font-size:22pt;color:var(--red);line-height:1;min-width:12mm}
+  .feat-item .fi-text{flex:1;font-family:'DM Sans',sans-serif;font-size:10pt;line-height:1.5;color:var(--cream-dark)}
+  .feat-item .fi-text b{color:var(--ink);display:block;font-family:'DM Serif Display',serif;font-style:italic;font-size:13pt;font-weight:400;margin-bottom:1mm;letter-spacing:-.005em}
+
+  /* COVER STATS */
+  .cover-stats{display:flex;justify-content:space-between;margin-top:8mm}
+
+  /* ════════════════════════════════════════════════
+     SVG INLINE STYLING
+     ════════════════════════════════════════════════ */
+  svg.diagram{width:100%;max-width:170mm;display:block;margin:5mm auto;page-break-inside:avoid}
+
+  /* GLOSSARIO box */
+  .gloss{display:grid;grid-template-columns:45mm 1fr;gap:5mm;padding:5mm 0;border-bottom:1px solid var(--rule);font-family:'DM Sans',sans-serif;font-size:12pt;line-height:1.55;color:var(--cream-dark)}
+  .gloss .term{font-family:'DM Serif Display',serif;font-style:italic;font-size:16pt;color:var(--red);letter-spacing:-.005em}
+
+  /* TEMPLATE NUMBER badge */
+  .tpl-num{display:inline-block;padding:1mm 4mm;background:var(--red);color:#fff;font-family:'DM Sans',sans-serif;font-size:7.5pt;letter-spacing:.28em;text-transform:uppercase;font-weight:800;border-radius:2mm;margin-bottom:2mm}
+
+  /* PERSONA CARD */
+  .persona-card{padding:6mm;background:var(--paper-2);border-radius:3mm;margin:3mm 0;page-break-inside:avoid;border-left:4px solid var(--red)}
+  .persona-card .persona-name{font-family:'DM Serif Display',serif;font-style:italic;font-size:20pt;color:var(--ink);margin:0 0 3mm;line-height:1}
+  .persona-card .persona-name em{color:var(--red)}
+  .persona-card .persona-who{font-family:'DM Sans',sans-serif;font-size:9pt;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--red);margin-bottom:3mm}
+
+  /* IMAGE PLACEHOLDERS — usar Unsplash */
+  .img-block{width:100%;height:60mm;object-fit:cover;border-radius:3mm;display:block;margin:5mm 0;filter:saturate(.7) contrast(1.05)}
+  .img-wide{width:100%;height:75mm;object-fit:cover;border-radius:3mm;display:block;margin:5mm 0;filter:saturate(.7) contrast(1.05)}
+  .img-small{width:100%;height:42mm;object-fit:cover;border-radius:3mm;display:block;margin:4mm 0;filter:saturate(.7) contrast(1.05)}
+  .img-caption{font-family:'DM Sans',sans-serif;font-size:9pt;color:var(--cream-dark);font-style:italic;text-align:center;margin:-2mm 0 5mm;letter-spacing:.02em;opacity:.7}
+
+  /* FEAT-LIST · bigger font */
+  .feat-item .fi-text{font-size:12pt}
+  .feat-item .fi-text b{font-size:15pt;margin-bottom:2mm}
+
+  /* IA HERO · bigger desc */
+  .ia-hero .info .ia-desc{font-size:13pt}
+
+  /* PRINT-SPECIFIC */
+  @media print {
+    body{margin:0}
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PÁGINA 1 — CAPA                                              -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="page cover">
+  <div class="cv-content">
+    <div class="cv-head">
+      <div class="cv-brand">Calazans · Lumina</div>
+      <div>Curso · Edição 2026</div>
+    </div>
+
+    <div class="cv-mid">
+      <div class="label">Curso mega completo · 8 partes · 90 páginas</div>
+      <h1>IA do <em>zero</em><br>ao avançado.</h1>
+      <p class="lead">O único guia que você precisa pra parar de assistir e começar a usar. ChatGPT, Claude, Gemini, Midjourney, Canva, ElevenLabs e mais 4 — todas as principais IAs em um manual prático pra brasileiros.</p>
+
+      <div class="cv-stats">
+        <div class="cv-stat"><span class="n">10</span><span class="l">IAs cobertas</span></div>
+        <div class="cv-stat"><span class="n">50</span><span class="l">templates de prompt</span></div>
+        <div class="cv-stat"><span class="n">10</span><span class="l">profissões</span></div>
+        <div class="cv-stat"><span class="n">90</span><span class="l">páginas</span></div>
+      </div>
+    </div>
+
+    <div class="cv-foot">
+      <div>
+        <div style="margin-bottom:4mm;font-size:7pt;letter-spacing:.32em">por</div>
+        <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:18pt;color:#fff;letter-spacing:-.01em;line-height:1">Rhaideline Calazans</div>
+        <div style="font-size:7pt;letter-spacing:.32em;margin-top:2mm">fundadora · Calazans Lumina</div>
+      </div>
+      <div class="cv-price">R$ 10<small>edição completa</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PÁGINA 2 — VERSO da capa / Créditos                          -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Calazans · Lumina</div><div>IA do zero ao avançado</div></div>
+  <div class="pg-body" style="justify-content:flex-end">
+    <div style="margin-bottom:auto;margin-top:30mm">
+      <p class="kicker">Calazans Lumina · 2026</p>
+      <h2 style="font-size:26pt;line-height:1.05">IA do Zero ao <em>Avançado</em><br><span style="font-size:14pt;color:var(--cream-dark)">Curso mega completo em 8 partes</span></h2>
+    </div>
+
+    <div style="border-top:1px solid var(--rule);padding-top:6mm;font-size:9pt;color:var(--cream-dark);line-height:1.7">
+      <p><b>Edição:</b> 1ª · Maio de 2026</p>
+      <p><b>Autoria:</b> Rhaideline Calazans (fundadora da Calazans Lumina)</p>
+      <p><b>Idioma:</b> Português brasileiro</p>
+      <p><b>Páginas:</b> 90 · <b>Capítulos:</b> 28 · <b>Templates:</b> 50</p>
+      <p><b>Site:</b> calazanslumina.com.br · <b>Insta:</b> @calazanslumina · <b>WhatsApp:</b> +55 31 98294-8067</p>
+      <p style="margin-top:6mm">© 2026 Calazans Lumina. Reprodução não autorizada. Compartilhe a indicação, não o arquivo.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">02</div></div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PÁGINA 3 — CARTA DA AUTORA                                   -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Calazans · Lumina</div><div>Carta da autora</div></div>
+  <div class="pg-body">
+    <p class="kicker">Carta · pra quem está começando</p>
+    <h2 style="font-size:32pt;margin-bottom:6mm">Se você nunca <em>usou</em> IA, esse livro foi <em>feito</em> pra você.</h2>
+
+    <p>Quem está começando agora, leia primeiro essa carta. Quem já usa, pula direto pra Parte 1.</p>
+
+    <p>Eu sou a Rhaideline. Em 2018 cheguei nos Estados Unidos com uma mala, um laptop e nenhum cliente. Em 8 anos atendi mais de 488 cidades entre Brasil e EUA. Fiz isso usando IA — e quero te ensinar como.</p>
+
+    <p>Esse livro não é teoria. É manual prático. Cada IA aqui tem: o que é, pra que serve, como criar conta (passo a passo, mesmo se nunca usou computador), como dar o primeiro comando, exemplos reais, e prompts prontos pra você copiar e usar hoje.</p>
+
+    <p>Especialmente importante: <b>esse livro foi feito pra brasileiro</b>. Pra quem trabalha de Uber e quer começar negócio próprio. Pra dona de casa que quer vender pelo Instagram. Pra autônomo que precisa fazer post sozinho. Pra quem nunca teve acesso ao computador mas tem celular e WhatsApp.</p>
+
+    <div class="pull-quote">
+      A IA não vai substituir você. Mas uma pessoa que usa IA vai <em>substituir</em> quem não usa.<br>
+      <span class="author">— Rhaideline Calazans</span>
+    </div>
+
+    <p>Esse livro custou R$10 pra você. Tirei 3 meses pra escrever. Pesquisei cada IA, testei cada prompt, criei cada exemplo. Tudo aqui dentro foi feito com cuidado de quem sabe que o seu dinheiro é importante.</p>
+
+    <p>Se uma pessoa só ler até o fim e começar a usar uma IA, eu já considero o trabalho valeu. Se você quiser ir mais fundo, no final tem o caminho pros próximos cursos. Bora?</p>
+
+    <div class="divider"></div>
+
+    <p style="font-family:'DM Serif Display',serif;font-style:italic;font-size:13pt;color:var(--ink)">Boa leitura.</p>
+    <p style="font-family:'DM Sans',sans-serif;font-size:9pt;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--red);margin-top:1mm">Rhaideline Calazans · Framingham, MA · 2026</p>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">03</div></div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PÁGINA 4 — SUMÁRIO 1/2                                       -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Calazans · Lumina</div><div>Sumário</div></div>
+  <div class="pg-body">
+    <p class="kicker">Mapa do livro</p>
+    <h2 style="font-size:40pt">Sumário<br><em>completo</em>.</h2>
+
+    <div class="toc" style="margin-top:8mm">
+      <div class="toc-part">
+        <div class="toc-part-num">Parte · 01</div>
+        <h3 class="toc-part-name">Fundamentos da <em>IA</em></h3>
+        <div class="toc-item"><span class="name"><b>1.</b> O que é Inteligência Artificial</span><span class="pg">08</span></div>
+        <div class="toc-item"><span class="name"><b>2.</b> Os 3 tipos de IA (Estreita, Geral, Super)</span><span class="pg">10</span></div>
+        <div class="toc-item"><span class="name"><b>3.</b> IA Generativa vs IA Preditiva</span><span class="pg">12</span></div>
+        <div class="toc-item"><span class="name"><b>4.</b> 6 mitos e verdades sobre IA</span><span class="pg">14</span></div>
+      </div>
+
+      <div class="toc-part">
+        <div class="toc-part-num">Parte · 02</div>
+        <h3 class="toc-part-name">Setup pra <em>leigos</em></h3>
+        <div class="toc-item"><span class="name"><b>5.</b> Antes de tudo · o básico do computador</span><span class="pg">17</span></div>
+        <div class="toc-item"><span class="name"><b>6.</b> Como criar conta · ChatGPT, Claude, Gemini</span><span class="pg">19</span></div>
+        <div class="toc-item"><span class="name"><b>7.</b> Celular ou computador? · qual usar</span><span class="pg">21</span></div>
+        <div class="toc-item"><span class="name"><b>8.</b> Glossário pra quem nunca usou IA</span><span class="pg">23</span></div>
+      </div>
+
+      <div class="toc-part">
+        <div class="toc-part-num">Parte · 03</div>
+        <h3 class="toc-part-name">As <em>10</em> IAs essenciais</h3>
+        <div class="toc-item"><span class="name"><b>9.</b> ChatGPT · OpenAI</span><span class="pg">27</span></div>
+        <div class="toc-item"><span class="name"><b>10.</b> Claude · Anthropic</span><span class="pg">31</span></div>
+        <div class="toc-item"><span class="name"><b>11.</b> Gemini · Google</span><span class="pg">35</span></div>
+        <div class="toc-item"><span class="name"><b>12.</b> DALL-E · imagens via texto</span><span class="pg">39</span></div>
+        <div class="toc-item"><span class="name"><b>13.</b> Midjourney · imagens cinematográficas</span><span class="pg">43</span></div>
+        <div class="toc-item"><span class="name"><b>14.</b> Canva AI · design pra não-designer</span><span class="pg">47</span></div>
+        <div class="toc-item"><span class="name"><b>15.</b> ElevenLabs · voz humana sintética</span><span class="pg">51</span></div>
+        <div class="toc-item"><span class="name"><b>16.</b> Suno · música original em 1 minuto</span><span class="pg">55</span></div>
+        <div class="toc-item"><span class="name"><b>17.</b> Runway · vídeos com IA</span><span class="pg">59</span></div>
+        <div class="toc-item"><span class="name"><b>18.</b> Cursor & Copilot · IA pra programar</span><span class="pg">63</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">04</div></div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PÁGINA 5 — SUMÁRIO 2/2                                       -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Calazans · Lumina</div><div>Sumário (continuação)</div></div>
+  <div class="pg-body">
+    <p class="kicker">Mapa do livro · 2/2</p>
+    <h2 style="font-size:40pt">As partes <em>4</em> a <em>6</em>.</h2>
+
+    <div class="toc" style="margin-top:8mm">
+      <div class="toc-part">
+        <div class="toc-part-num">Parte · 04</div>
+        <h3 class="toc-part-name">Prompt Engineering · framework <em>CRIA</em></h3>
+        <div class="toc-item"><span class="name"><b>19.</b> A receita do prompt perfeito</span><span class="pg">68</span></div>
+        <div class="toc-item"><span class="name"><b>20.</b> 5 técnicas avançadas</span><span class="pg">70</span></div>
+        <div class="toc-item"><span class="name"><b>21.</b> 50 templates copiáveis por nicho</span><span class="pg">72</span></div>
+      </div>
+
+      <div class="toc-part">
+        <div class="toc-part-num">Parte · 05</div>
+        <h3 class="toc-part-name">Aplicações por <em>profissão</em></h3>
+        <div class="toc-item"><span class="name"><b>22.</b> Autônomo (motorista, entregador, freelancer)</span><span class="pg">79</span></div>
+        <div class="toc-item"><span class="name"><b>23.</b> Vendedor</span><span class="pg">80</span></div>
+        <div class="toc-item"><span class="name"><b>24.</b> Professor / educador</span><span class="pg">81</span></div>
+        <div class="toc-item"><span class="name"><b>25.</b> Dona de casa empreendedora</span><span class="pg">82</span></div>
+        <div class="toc-item"><span class="name"><b>26.</b> Profissional liberal (advogado, médico, dentista)</span><span class="pg">83</span></div>
+        <div class="toc-item"><span class="name"><b>27.</b> Criador de conteúdo</span><span class="pg">84</span></div>
+        <div class="toc-item"><span class="name"><b>28.</b> Atendente / vendedora de loja</span><span class="pg">85</span></div>
+        <div class="toc-item"><span class="name"><b>29.</b> Gestor / dono de negócio</span><span class="pg">86</span></div>
+        <div class="toc-item"><span class="name"><b>30.</b> Aposentado / 60+</span><span class="pg">87</span></div>
+      </div>
+
+      <div class="toc-part">
+        <div class="toc-part-num">Parte · 06</div>
+        <h3 class="toc-part-name">Plano de <em>30 dias</em> + Encerramento</h3>
+        <div class="toc-item"><span class="name"><b>31.</b> Auditoria das suas tarefas</span><span class="pg">88</span></div>
+        <div class="toc-item"><span class="name"><b>32.</b> Sua rotina semanal com IA</span><span class="pg">89</span></div>
+        <div class="toc-item"><span class="name"><b>33.</b> Próximos passos · cursos avançados</span><span class="pg">90</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">05</div></div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PARTE 1 — ABERTURA                                            -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="page part-opener">
+  <div class="po-content">
+    <p class="po-label">Parte · 01</p>
+    <p class="po-num">01</p>
+    <h2 class="po-title">Fundamentos<br>da <em>IA</em>.</h2>
+    <p class="po-lead">O que é Inteligência Artificial, quais são os tipos, como ela funciona e por que esse momento da história é importante pra você.</p>
+    <div class="po-chapters">
+      <div class="ch"><span class="ch-num">01</span>O que é Inteligência Artificial</div>
+      <div class="ch"><span class="ch-num">02</span>Os 3 tipos · Estreita, Geral, Super</div>
+      <div class="ch"><span class="ch-num">03</span>Generativa vs Preditiva</div>
+      <div class="ch"><span class="ch-num">04</span>6 mitos e verdades</div>
+    </div>
+  </div>
+  <div class="po-foot"><div>4 capítulos · 8 páginas</div><div>Calazans Lumina · Pg 06</div></div>
+</section>
+
+<!-- Página em branco antes do conteúdo da parte (estética de livro) -->
+<section class="page cream-2">
+  <div class="pg-head"><div class="brand">Parte 01 · Fundamentos</div><div>Capítulo · 01</div></div>
+  <div class="pg-body" style="justify-content:center;text-align:center">
+    <p class="kicker">Capítulo · 01</p>
+    <h1 style="font-size:72pt;margin:8mm 0">O que é<br><em>Inteligência</em><br>Artificial?</h1>
+    <p class="lead" style="margin:8mm auto 0;text-align:center">Esquece o termo técnico. Por aqui, IA é só um <em>computador que fala português</em>.</p>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">07</div></div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- CAP 1 — O QUE É IA · página 8                                 -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 01 · Fundamentos</div><div>Cap. 01 · O que é IA</div></div>
+  <div class="pg-body">
+    <p class="kicker">1.1 · A definição que importa</p>
+    <h3>Máquina que <em>aprende</em><br>com dados.</h3>
+
+    <p style="margin-top:5mm">Inteligência Artificial é a capacidade de uma máquina realizar tarefas que normalmente exigiriam inteligência humana. Mas tem um detalhe importante: ela é diferente de um programa tradicional.</p>
+
+    <p>Um programa tradicional segue regras fixas escritas por programadores. Tipo: "se o cliente digitar 1, mostre o menu. Se digitar 2, ligue pra atendente." Funciona, mas é limitado.</p>
+
+    <p>A IA é diferente. <b>Ela aprende com milhões de exemplos.</b> Ninguém ensinou regra. Ela observou padrões e aprendeu sozinha.</p>
+
+    <img class="img-wide" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1400&h=700&fit=crop&q=80" alt="IA · linhas de código" />
+    <p class="img-caption">Em 2026, a IA aprendeu a "ler" e "escrever" — em qualquer idioma.</p>
+
+    <div class="box exemplo">
+      <div class="box-label">Exemplo · como você aprendeu</div>
+      <p>Pensa em como você aprendeu a reconhecer um rosto. Ninguém te deu uma lista de regras tipo "se tem dois olhos, um nariz e uma boca, é rosto". Você simplesmente viu milhares de rostos ao longo da vida, e seu cérebro aprendeu sozinho a identificar o padrão.</p>
+      <p>É exatamente assim que a IA funciona: ela analisa milhões de exemplos e aprende a identificar padrões.</p>
+    </div>
+
+    <p class="kicker" style="margin-top:8mm">1.2 · Por que isso importa pra você</p>
+    <h4>A barreira <em>nunca foi tão baixa</em>.</h4>
+
+    <p style="margin-top:3mm">Há 10 anos, usar IA era coisa de cientista. Hoje, qualquer um com um celular usa. Não precisa programar. Não precisa entender matemática. Não precisa pagar caro.</p>
+
+    <p>Se você sabe digitar uma mensagem no WhatsApp, você sabe usar ChatGPT. Sério.</p>
+
+    <div class="stat-row">
+      <div class="stat"><p class="n">90<small style="font-size:18pt">%</small></p><p class="l">do mercado ainda não usa IA</p></div>
+      <div class="stat"><p class="n green">2<small style="font-size:18pt">m</small></p><p class="l">pra criar conta no ChatGPT</p></div>
+      <div class="stat"><p class="n">R$0</p><p class="l">na versão grátis</p></div>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">08</div></div>
+</section>
+
+<!-- CAP 1 cont — pg 9 -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 01 · Fundamentos</div><div>Cap. 01 · continuação</div></div>
+  <div class="pg-body">
+    <p class="kicker">1.3 · Como a IA realmente funciona (sem matemática)</p>
+    <h3>Ela calcula <em>palavra por palavra</em>.</h3>
+
+    <p style="margin-top:5mm">Quando você pergunta algo ao ChatGPT, ele não "pensa" como nós. Ele faz uma conta. Pra cada palavra que ele vai escrever na resposta, ele calcula: <b>qual é a próxima palavra mais provável?</b></p>
+
+    <p>É como ter um amigo que leu a internet inteira. Quando você fala "Quero ir pra...", ele já sabe estatisticamente que a próxima palavra mais provável é "praia", "casa", "trabalho", etc. Ele escolhe a mais provável dado o contexto.</p>
+
+    <div class="box dica">
+      <div class="box-label">Dica pro entendimento</div>
+      <p><b>IA não tem opinião própria.</b> Mas ela é tão boa em prever a próxima palavra, que parece que tem. Quanto mais clara sua pergunta, melhor a resposta — porque o contexto fica mais nítido.</p>
+    </div>
+
+    <h4 style="margin-top:8mm">A "biblioteca" da IA</h4>
+    <p style="margin-top:3mm">Imagine uma biblioteca com 50 milhões de livros, todos os artigos da Wikipedia, todos os sites famosos da internet, e todos os livros já escritos. A IA "leu" tudo isso. Quando você pergunta algo, ela responde com base nesse acervo gigantesco.</p>
+
+    <p>Mas atenção: <b>essa "leitura" tem um corte de data</b>. O ChatGPT, por exemplo, tem informações até certo ano. Não sabe o que aconteceu ontem. Pra dados atualizados, você precisa de uma IA com acesso à internet (como Gemini ou ChatGPT Plus).</p>
+
+    <p class="kicker" style="margin-top:8mm">1.4 · IA NÃO é (cuidado com confusão)</p>
+    <ul class="bullets">
+      <li><b>IA não é um robô.</b> Robô tem corpo. IA é só software.</li>
+      <li><b>IA não pensa.</b> Ela calcula probabilidades de palavras.</li>
+      <li><b>IA não tem sentimentos.</b> Quando ela diz "fico feliz em ajudar", é texto previsível, não sentimento.</li>
+      <li><b>IA não é mágica.</b> É matemática complexa rodando em servidores grandes.</li>
+      <li><b>IA não substitui você.</b> Substitui quem não usa IA.</li>
+    </ul>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">09</div></div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- CAP 2 — OS 3 TIPOS · página 10                                -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 01 · Fundamentos</div><div>Cap. 02 · Os 3 tipos de IA</div></div>
+  <div class="pg-body">
+    <p class="kicker">Capítulo · 02</p>
+    <h3>Os <em>3</em> tipos de IA</h3>
+
+    <p style="margin-top:5mm">Não é tudo a mesma coisa. Existem três grandes categorias. Saber a diferença evita confusão com manchete sensacionalista.</p>
+
+    <img class="img-block" src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1400&h=600&fit=crop&q=80" alt="Robô · representação visual da IA" />
+
+    <ol class="big-list" style="margin-top:6mm">
+      <li>
+        <b>IA Estreita (Narrow AI)</b>
+        Faz <em>uma</em> tarefa específica muito bem. É o único tipo que existe hoje, em 2026.<br>
+        <b style="display:inline;font-family:inherit;font-style:normal;font-size:inherit;color:var(--red)">Exemplos:</b> ChatGPT (conversa por texto), DALL-E (cria imagens), Alexa (responde comandos de voz), recomendações da Netflix, filtro de spam do Gmail.
+      </li>
+      <li>
+        <b>IA Geral (AGI · Artificial General Intelligence)</b>
+        Seria capaz de fazer <em>qualquer</em> tarefa intelectual que um humano faz. <em>Ainda NÃO existe.</em> Muitas empresas (OpenAI, Google, Anthropic) estão tentando criar, mas ninguém chegou lá.
+      </li>
+      <li>
+        <b>Super IA (ASI · Artificial Super Intelligence)</b>
+        Superaria a inteligência humana em absolutamente tudo. É uma <em>teoria futura</em>. Pode acontecer em 20 anos. Pode nunca acontecer. Ninguém sabe.
+      </li>
+    </ol>
+
+    <div class="box alerta">
+      <div class="box-label">Cuidado com manchete</div>
+      <p>Quando você vê manchete dizendo "IA vai conquistar o mundo", "robô consciente", "AGI chegando", saiba: <b>ninguém pode garantir nada disso</b>. Tudo isso é especulação. O que existe hoje, e é o foco desse livro, é a IA Estreita. E ela já é poderosa o suficiente pra transformar seu negócio.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">10</div></div>
+</section>
+
+<!-- CAP 2 cont — pg 11 -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 01 · Fundamentos</div><div>Cap. 02 · continuação</div></div>
+  <div class="pg-body">
+    <p class="kicker">2.2 · Mapa das principais IAs Estreitas</p>
+    <h4>Por categoria, por capacidade.</h4>
+
+    <table class="tbl" style="margin-top:5mm">
+      <thead>
+        <tr><th>Tipo</th><th>Exemplos</th><th>Status (2026)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><b>IA de Texto</b></td><td>ChatGPT, Claude, Gemini, Llama</td><td>✓ Disponível e acessível</td></tr>
+        <tr><td><b>IA de Imagem</b></td><td>DALL-E, Midjourney, Stable Diffusion, Flux</td><td>✓ Disponível e acessível</td></tr>
+        <tr><td><b>IA de Vídeo</b></td><td>Runway, Sora, Pika, Veo</td><td>✓ Em rápida evolução</td></tr>
+        <tr><td><b>IA de Voz</b></td><td>ElevenLabs, Play.ht, Murf</td><td>✓ Disponível e acessível</td></tr>
+        <tr><td><b>IA de Música</b></td><td>Suno, Udio</td><td>✓ Em evolução</td></tr>
+        <tr><td><b>IA de Código</b></td><td>GitHub Copilot, Cursor, Codeium</td><td>✓ Disponível pra devs</td></tr>
+        <tr><td><b>IA de Tradução</b></td><td>DeepL, Google Translate (com IA)</td><td>✓ Disponível e acessível</td></tr>
+        <tr><td><b>IA de Vídeo-avatar</b></td><td>HeyGen, Synthesia, D-ID</td><td>✓ Disponível, pago</td></tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:6mm">Esse livro foca nas IAs <b>mais úteis pra empreendedor brasileiro</b>: ChatGPT, Claude, Gemini (texto), DALL-E, Midjourney, Canva AI (imagem), ElevenLabs (voz), Suno (música), Runway (vídeo), e Cursor/Copilot (código). 10 IAs no total, cobertas em detalhes na Parte 3.</p>
+
+    <div class="box dica">
+      <div class="box-label">Dica</div>
+      <p>Não tente usar todas ao mesmo tempo. Domina UMA primeiro. Depois adiciona outra. Quem tenta dominar tudo de uma vez não aprende nenhuma.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">11</div></div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- CAP 3 — GENERATIVA vs PREDITIVA · página 12                   -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 01 · Fundamentos</div><div>Cap. 03 · Generativa vs Preditiva</div></div>
+  <div class="pg-body">
+    <p class="kicker">Capítulo · 03</p>
+    <h3>Generativa <em>vs</em> Preditiva</h3>
+
+    <p style="margin-top:5mm">Dentro da IA Estreita, tem duas grandes famílias. Saber a diferença muda como você decide qual IA usar pra cada problema.</p>
+
+    <div class="compare">
+      <div class="side bad">
+        <span class="tag red">Preditiva</span>
+        <h5 style="margin:3mm 0">Prevê o futuro com base no passado</h5>
+        <p style="font-size:10pt;color:var(--cream-dark);line-height:1.5">Analisa dados históricos e tenta adivinhar o que vai acontecer.</p>
+        <ul class="bullets" style="font-size:9.5pt">
+          <li>Previsão do tempo</li>
+          <li>"Você pode gostar de..." na Netflix</li>
+          <li>Detecção de fraude bancária</li>
+          <li>Previsão de vendas</li>
+        </ul>
+        <p style="font-size:9pt;color:var(--cream-dark);margin-top:3mm;font-style:italic">Não cria nada novo. Só analisa.</p>
+      </div>
+      <div class="side good">
+        <span class="tag green">Generativa</span>
+        <h5 style="margin:3mm 0">Cria conteúdo novo do zero</h5>
+        <p style="font-size:10pt;color:var(--cream-dark);line-height:1.5">Gera texto, imagem, vídeo, música que não existia antes.</p>
+        <ul class="bullets" style="font-size:9.5pt">
+          <li>ChatGPT (textos)</li>
+          <li>DALL-E, Midjourney (imagens)</li>
+          <li>Suno (música)</li>
+          <li>Runway (vídeo)</li>
+        </ul>
+        <p style="font-size:9pt;color:var(--cream-dark);margin-top:3mm;font-style:italic">É o foco principal deste livro.</p>
+      </div>
+    </div>
+
+    <p style="margin-top:6mm">A IA Generativa é a que mais explodiu nos últimos 3 anos. É a que tem aplicação prática imediata pra empreendedor: gerar legendas, criar imagens, escrever emails, montar apresentações, analisar dados.</p>
+
+    <div class="pull-quote">
+      A pergunta hoje não é mais "<em>devo</em> usar IA?". A pergunta é "em <em>que</em> vou usar IA primeiro?".
+      <span class="author">Princípio · IA pra negócio</span>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">12</div></div>
+</section>
+
+<!-- CAP 3 cont — pg 13 -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 01 · Fundamentos</div><div>Cap. 03 · continuação</div></div>
+  <div class="pg-body">
+    <p class="kicker">3.2 · O que IA Generativa faz pra você (hoje)</p>
+    <h4>10 coisas que ela faz <em>melhor</em> que assistente humano.</h4>
+
+    <div class="feat-list" style="margin-top:5mm">
+      <div class="feat-item"><span class="fi-icon">01</span><span class="fi-text"><b>Escrever textos profissionais</b>Email comercial, contrato simples, post de Instagram, artigo de blog, descrição de produto — tudo em segundos.</span></div>
+      <div class="feat-item"><span class="fi-icon">02</span><span class="fi-text"><b>Resumir documentos longos</b>Contrato de 40 páginas em 5 bullet points em 1 minuto. Manual técnico, transcrição de reunião, livro.</span></div>
+      <div class="feat-item"><span class="fi-icon">03</span><span class="fi-text"><b>Traduzir com nuance</b>Não é Google Translate. Ela entende contexto. Pode traduzir mantendo tom formal, informal, técnico.</span></div>
+      <div class="feat-item"><span class="fi-icon">04</span><span class="fi-text"><b>Criar imagens originais</b>Logo, banner, ilustração, mockup. Sem precisar de designer.</span></div>
+      <div class="feat-item"><span class="fi-icon">05</span><span class="fi-text"><b>Atender cliente automaticamente</b>Chatbot 24h responde dúvida, qualifica lead, transfere pra humano quando necessário.</span></div>
+      <div class="feat-item"><span class="fi-icon">06</span><span class="fi-text"><b>Analisar dados e gerar relatório</b>Cola números do Google Analytics, ela explica tendências, sugere ações.</span></div>
+      <div class="feat-item"><span class="fi-icon">07</span><span class="fi-text"><b>Criar plano de marketing</b>Estratégia completa pra 30, 60, 90 dias com calendário, prompts, ações.</span></div>
+      <div class="feat-item"><span class="fi-icon">08</span><span class="fi-text"><b>Gravar voz humana sintética</b>ElevenLabs faz narração de Reels e vídeos em qualquer voz, idioma, emoção.</span></div>
+      <div class="feat-item"><span class="fi-icon">09</span><span class="fi-text"><b>Compor música original</b>Suno cria trilha sonora pra seu vídeo em 1 minuto, sem copyright.</span></div>
+      <div class="feat-item"><span class="fi-icon">10</span><span class="fi-text"><b>Programar e debug código</b>Cursor e GitHub Copilot escrevem app, site, automação. Sem ser programador.</span></div>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">13</div></div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- CAP 4 — MITOS E VERDADES · página 14                          -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 01 · Fundamentos</div><div>Cap. 04 · Mitos vs Verdades</div></div>
+  <div class="pg-body">
+    <p class="kicker">Capítulo · 04</p>
+    <h3>6 <em>mitos</em> que travam você</h3>
+
+    <p style="margin-top:5mm">Antes de você começar, vamos desmontar as crenças que impedem 90% das pessoas de aproveitar IA.</p>
+
+    <div class="box alerta">
+      <div class="box-label">Mito 1</div>
+      <p><b>"A IA vai roubar todos os empregos."</b></p>
+      <p style="margin-top:3mm"><b>Verdade:</b> A IA vai mudar muitos empregos, mas não eliminar profissões inteiras. Ela substitui <em>tarefas repetitivas</em>, não trabalho humano integral. Um designer que usa IA faz em 1 hora o que fazia em 8. Ele não perdeu o emprego — ficou mais produtivo. Mais lucrativo.</p>
+    </div>
+
+    <div class="box alerta">
+      <div class="box-label">Mito 2</div>
+      <p><b>"A IA é perfeita, nunca erra."</b></p>
+      <p style="margin-top:3mm"><b>Verdade:</b> A IA erra bastante. Pode inventar dados, dar informação desatualizada, ter "alucinações" — respostas que parecem corretas mas são completamente inventadas. <em>Sempre revise.</em> Especialmente datas, números, citações e links.</p>
+    </div>
+
+    <div class="box alerta">
+      <div class="box-label">Mito 3</div>
+      <p><b>"Preciso ser programador pra usar IA."</b></p>
+      <p style="margin-top:3mm"><b>Verdade:</b> Ferramentas como ChatGPT, Claude e Gemini foram feitas pra qualquer pessoa. Se você sabe digitar uma mensagem no WhatsApp, você sabe usar. A interface é como qualquer chat.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">14</div></div>
+</section>
+
+<!-- CAP 4 cont — pg 15 -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 01 · Fundamentos</div><div>Cap. 04 · continuação</div></div>
+  <div class="pg-body">
+    <div class="box alerta">
+      <div class="box-label">Mito 4</div>
+      <p><b>"A IA vai se tornar consciente e dominar o mundo."</b></p>
+      <p style="margin-top:3mm"><b>Verdade:</b> A IA atual <em>não tem consciência</em>, não tem sentimentos, não tem vontade própria. É uma ferramenta muito avançada, mas continua sendo só uma ferramenta. Tem riscos reais (uso ético, deepfake, automação que tira empregos) — mas filmes de robô assassino são ficção.</p>
+    </div>
+
+    <div class="box alerta">
+      <div class="box-label">Mito 5</div>
+      <p><b>"Conteúdo feito por IA é sempre ruim e detectável."</b></p>
+      <p style="margin-top:3mm"><b>Verdade:</b> A qualidade depende inteiramente do <em>prompt</em> (a forma como você pede). Prompt ruim, conteúdo ruim. Prompt profissional, conteúdo excelente. O Módulo 4 deste livro ensina o framework CRIA pra você fazer prompts profissionais. Conteúdo com IA + sua revisão pessoal é indistinguível de conteúdo 100% humano.</p>
+    </div>
+
+    <div class="box alerta">
+      <div class="box-label">Mito 6</div>
+      <p><b>"É tarde demais pra aprender."</b></p>
+      <p style="margin-top:3mm"><b>Verdade:</b> A IA está apenas começando. Quem aprende agora vai ter vantagem enorme nos próximos 5-10 anos. A barreira de entrada nunca foi tão baixa. Com 1 hora de prática você já percebe diferença na sua produtividade.</p>
+    </div>
+
+    <div class="pull-quote">
+      A IA não vai substituir você. <em>Uma pessoa que usa IA</em> vai substituir quem não usa. Aprender agora coloca você na frente de <em>90%</em> do mercado.
+      <span class="author">Princípio · janela de oportunidade</span>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">15</div></div>
+</section>
+
+<!-- Quiz fim de parte -->
+<section class="page cream-3">
+  <div class="pg-head"><div class="brand">Parte 01 · Fundamentos</div><div>Quiz · revisão</div></div>
+  <div class="pg-body">
+    <p class="kicker">Revisão · fim da Parte 01</p>
+    <h3>Quiz de <em>5 perguntas</em></h3>
+
+    <p style="margin-top:5mm">Responde mentalmente. Pula pra próxima parte só depois.</p>
+
+    <div class="box exercicio" style="margin-top:5mm">
+      <div class="box-label">Pergunta 1</div>
+      <p>Qual tipo de IA usamos hoje no dia a dia?</p>
+      <p>(a) IA Geral (AGI) · (b) Super IA · (c) IA Estreita · (d) Nenhuma, IA não existe ainda</p>
+    </div>
+
+    <div class="box exercicio">
+      <div class="box-label">Pergunta 2</div>
+      <p>O que a IA Generativa faz?</p>
+      <p>(a) Prevê o futuro · (b) Cria conteúdo novo · (c) Conserta computadores · (d) Substitui a internet</p>
+    </div>
+
+    <div class="box exercicio">
+      <div class="box-label">Pergunta 3</div>
+      <p>Verdadeiro ou Falso: a IA atual tem consciência própria.</p>
+    </div>
+
+    <div class="box exercicio">
+      <div class="box-label">Pergunta 4</div>
+      <p>O que significa "alucinação" da IA?</p>
+      <p>(a) Tela travada · (b) Inventar resposta que parece correta · (c) Erro de conexão · (d) Versão paga</p>
+    </div>
+
+    <div class="box exercicio">
+      <div class="box-label">Pergunta 5</div>
+      <p>Pra que serve um <em>prompt</em>?</p>
+      <p>(a) Pagar a IA · (b) Instalar o programa · (c) Dar a instrução clara pra IA · (d) Apagar o histórico</p>
+    </div>
+
+    <div class="divider center"></div>
+
+    <p style="text-align:center;color:var(--cream-dark)"><b>Respostas:</b> 1c · 2b · 3 Falso · 4b · 5c</p>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">16</div></div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PARTE 2 — ABERTURA                                            -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="page part-opener">
+  <div class="po-content">
+    <p class="po-label">Parte · 02</p>
+    <p class="po-num">02</p>
+    <h2 class="po-title">Setup<br>pra <em>leigos</em>.</h2>
+    <p class="po-lead">Se você nunca usou IA, computador, ou só usa celular pra WhatsApp — essa parte é pra você. Passo a passo do absoluto zero.</p>
+    <div class="po-chapters">
+      <div class="ch"><span class="ch-num">05</span>O básico do computador / celular</div>
+      <div class="ch"><span class="ch-num">06</span>Como criar conta (ChatGPT, Claude, Gemini)</div>
+      <div class="ch"><span class="ch-num">07</span>Celular ou computador? Qual usar</div>
+      <div class="ch"><span class="ch-num">08</span>Glossário de termos</div>
+    </div>
+  </div>
+  <div class="po-foot"><div>4 capítulos · 8 páginas</div><div>Calazans Lumina · Pg 17</div></div>
+</section>
+
+<!-- CAP 5 — O básico (pg 18) -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 02 · Setup</div><div>Cap. 05 · O básico</div></div>
+  <div class="pg-body">
+    <p class="kicker">Capítulo · 05</p>
+    <h3>O <em>básico</em> antes de tudo</h3>
+
+    <p style="margin-top:5mm">Esse capítulo é pra quem nunca usou computador, ou só usa o celular pra WhatsApp e Instagram. Se você já é avançado, pula pro Cap. 6.</p>
+
+    <img class="img-block" src="https://images.unsplash.com/photo-1592434134753-a70baf7979d5?w=1400&h=600&fit=crop&q=80" alt="Mãos digitando no laptop" />
+    <p class="img-caption">Computador, celular ou tablet — qualquer um serve pra começar.</p>
+
+    <h4 style="margin-top:8mm">5.1 · O que é um <em>navegador</em></h4>
+    <p>Navegador é o aplicativo que abre sites. No celular, vem instalado de fábrica. No iPhone se chama <b>Safari</b>. No Android, <b>Chrome</b>. No computador, é o <b>Chrome</b>, <b>Edge</b> ou <b>Firefox</b>.</p>
+    <p>Pra usar qualquer IA online, você abre o navegador e digita o endereço do site dela. Por exemplo, <code style="background:rgba(15,15,15,.08);padding:1mm 2mm;border-radius:1mm;font-family:'JetBrains Mono',monospace;font-size:9.5pt">chat.openai.com</code> abre o ChatGPT.</p>
+
+    <h4 style="margin-top:6mm">5.2 · O que é um <em>aplicativo</em></h4>
+    <p>App (de "application") é um programa que você baixa pra usar IA no celular. ChatGPT, Claude e Gemini têm app na App Store (iPhone) e Play Store (Android). Pra baixar:</p>
+    <ol class="big-list" style="margin-top:3mm">
+      <li><b>Abra a loja de apps</b>App Store no iPhone, Play Store no Android.</li>
+      <li><b>Pesquise o nome</b>Digite "ChatGPT", "Claude" ou "Gemini".</li>
+      <li><b>Toque em "Instalar"</b>Espera baixar (1-2 minutos com Wi-Fi).</li>
+      <li><b>Abra o app e crie conta</b>Próximo capítulo explica.</li>
+    </ol>
+
+    <div class="box dica">
+      <div class="box-label">Dica</div>
+      <p>Pra começar, prefere usar pelo <b>navegador no computador</b>. Tela maior, mais fácil de digitar prompt longo, mais fácil de copiar a resposta. Quando dominar, pode usar no celular pra perguntas rápidas.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">18</div></div>
+</section>
+
+<!-- CAP 6 — Como criar conta (pg 19) -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 02 · Setup</div><div>Cap. 06 · Criar conta</div></div>
+  <div class="pg-body">
+    <p class="kicker">Capítulo · 06</p>
+    <h3>Como criar <em>conta</em><br>nas 3 IAs principais</h3>
+
+    <p style="margin-top:5mm">Todas as 3 são <b>grátis</b> pra começar. Não precisa cartão de crédito. Não precisa pagar nada.</p>
+
+    <img class="img-small" src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=1400&h=420&fit=crop&q=80" alt="Aplicativos no celular" />
+
+    <div class="meta-bar">
+      <div class="mb"><span class="ml">ChatGPT</span><span class="mv">chat.openai.com</span></div>
+      <div class="mb"><span class="ml">Claude</span><span class="mv">claude.ai</span></div>
+      <div class="mb"><span class="ml">Gemini</span><span class="mv">gemini.google.com</span></div>
+    </div>
+
+    <h4 style="margin-top:6mm">Passo a passo (igual nas 3)</h4>
+    <ol class="big-list">
+      <li><b>Abre o site no navegador</b>Digita o endereço (chat.openai.com, claude.ai, gemini.google.com) e dá Enter.</li>
+      <li><b>Clica em "Sign up" ou "Cadastrar"</b>Geralmente fica no canto superior direito ou centro da tela.</li>
+      <li><b>Use seu e-mail ou conta Google</b>Mais fácil: clica em "Continuar com Google" (se você já tem Gmail). Pula a parte de senha.</li>
+      <li><b>Confirma seu e-mail</b>Eles te mandam um link. Você clica e tá pronto.</li>
+      <li><b>Faz a primeira pergunta</b>Digita algo simples tipo "Oi, me explica o que você faz."</li>
+    </ol>
+
+    <div class="box alerta">
+      <div class="box-label">Atenção · privacidade</div>
+      <p>Não compartilha dados pessoais sensíveis com IA: CPF, senha de banco, número de cartão, dados de cliente, contratos sigilosos. As empresas usam suas conversas pra treinar a IA. Sempre que possível, anonimize informações antes de colar.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">19</div></div>
+</section>
+
+<!-- CAP 6 cont — pg 20 — Primeiras configurações -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 02 · Setup</div><div>Cap. 06 · primeiras configurações</div></div>
+  <div class="pg-body">
+    <p class="kicker">6.2 · Primeiras configurações importantes</p>
+    <h4>Faz isso <em>agora</em>, vai usar pra sempre.</h4>
+
+    <h5 style="margin-top:5mm">No ChatGPT</h5>
+    <p>Clica na sua foto/iniciais (canto inferior esquerdo) → <b>Settings</b> → <b>Personalization</b> → <b>Custom Instructions</b>. Preenche:</p>
+
+    <div class="box prompt">
+      <div class="box-label">Cole isso (adapte ao seu negócio)</div>
+      <p><b>[Sobre mim]</b><br>Sou dono(a) de [seu negócio] em [cidade]. Atendo [tipo de cliente]. Vendo via [Instagram / WhatsApp / loja física].</p>
+      <p><b>[Como responder]</b><br>Português brasileiro. Tom amigável e profissional. Sempre dá exemplo prático. Lista quando possível. Curto e direto.</p>
+    </div>
+
+    <p style="margin-top:6mm">A partir daí, <b>toda</b> conversa já vai considerar isso. Você não precisa repetir.</p>
+
+    <h5 style="margin-top:6mm">No Claude</h5>
+    <p>Mesma lógica. Clica em <b>Settings</b> → <b>Profile</b> → <b>What should Claude call you?</b> e preenche similar.</p>
+
+    <h5 style="margin-top:6mm">No Gemini</h5>
+    <p>Gemini tem <b>Gems</b> — assistentes personalizados. Cria um Gem com tuas informações. Mais avançado, ensino na Parte 3.</p>
+
+    <div class="box dica">
+      <div class="box-label">Dica de quem ensina há 8 anos</div>
+      <p>Reserve 5 minutos pra fazer essas configurações. Vai economizar 5 minutos em cada conversa pelo resto da vida.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">20</div></div>
+</section>
+
+<!-- CAP 7 — Celular ou computador (pg 21) -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 02 · Setup</div><div>Cap. 07 · Celular ou computador</div></div>
+  <div class="pg-body">
+    <p class="kicker">Capítulo · 07</p>
+    <h3><em>Celular</em> ou <em>computador</em>?</h3>
+
+    <p style="margin-top:5mm">Spoiler: ambos. Mas cada um pra uma situação.</p>
+
+    <div class="compare">
+      <div class="side">
+        <span class="tag blue">Computador</span>
+        <h5 style="margin:3mm 0">Ideal pra trabalho focado</h5>
+        <ul class="bullets" style="font-size:9.5pt">
+          <li>Textos longos (mais fácil de digitar)</li>
+          <li>Copiar e colar entre programas</li>
+          <li>Tela maior pra ler respostas longas</li>
+          <li>Múltiplas conversas abertas em abas</li>
+          <li>Cria conteúdo profissional</li>
+        </ul>
+      </div>
+      <div class="side">
+        <span class="tag gold">Celular</span>
+        <h5 style="margin:3mm 0">Ideal pra uso rápido</h5>
+        <ul class="bullets" style="font-size:9.5pt">
+          <li>Pergunta rápida, qualquer hora</li>
+          <li>Função de voz (fala em vez de digitar)</li>
+          <li>Foto + pergunta (ChatGPT Plus)</li>
+          <li>Tira dúvida no meio da rua</li>
+          <li>Anotação de ideia que surgiu</li>
+        </ul>
+      </div>
+    </div>
+
+    <p style="margin-top:6mm"><b>Minha recomendação:</b> use <em>computador</em> pra trabalho sério (criar conteúdo, escrever email importante, analisar dado, planejar campanha). Use <em>celular</em> pra uso rápido (dúvida, ideia, tradução).</p>
+
+    <div class="box dica">
+      <div class="box-label">Sincronização</div>
+      <p>Suas conversas sincronizam entre dispositivos. Se você começa uma conversa no computador, pode continuar no celular. Mesma conta, mesmas conversas.</p>
+    </div>
+
+    <h4 style="margin-top:8mm">7.2 · Função de voz no celular (revolucionária)</h4>
+    <p>Tanto ChatGPT quanto Claude e Gemini têm modo de voz no celular. Você <b>fala</b> em vez de digitar. A IA responde também em voz.</p>
+    <p>Pra ativar no ChatGPT: abre o app, na caixa de mensagem tem um ícone de fone. Toca, fala, ele transcreve e responde. Ótimo pra quem digita devagar ou tem dificuldade com teclado.</p>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">21</div></div>
+</section>
+
+<!-- CAP 7 cont — pg 22 -->
+<section class="page cream-2">
+  <div class="pg-head"><div class="brand">Parte 02 · Setup</div><div>Cap. 07 · continuação</div></div>
+  <div class="pg-body">
+    <p class="kicker">7.3 · Primeiros 5 prompts pra testar</p>
+    <h4>Cola e vê a <em>magia</em>.</h4>
+
+    <p style="margin-top:5mm">Abre uma IA (ChatGPT, Claude ou Gemini) e testa esses 5 prompts. Vai sentir o tamanho da ferramenta.</p>
+
+    <div class="box prompt">
+      <div class="box-label">Prompt 1 · apresentação</div>
+      <p>Oi! Eu sou [seu nome]. Sou [profissão] em [cidade]. Estou começando a usar você agora. Me dá uma <b>visão geral</b> do que você consegue fazer, em até 5 bullets curtos. Tom amigável.</p>
+    </div>
+
+    <div class="box prompt">
+      <div class="box-label">Prompt 2 · email difícil</div>
+      <p>Escreve um <b>email respondendo</b> um cliente que reclamou que demorou 5 dias pra receber meu orçamento. Tom: humano, empático, mas sem ser servil. Reconhece o atraso. Oferece resolver hoje. Máximo 4 frases.</p>
+    </div>
+
+    <div class="box prompt">
+      <div class="box-label">Prompt 3 · post de Instagram</div>
+      <p>Cria <b>caption</b> de Instagram pra [seu negócio]. Tema: [tema livre]. Público: [seu cliente]. Tom: amigável. 120 palavras. 1 emoji só. Termina com pergunta. Sem hashtag.</p>
+    </div>
+
+    <div class="box prompt">
+      <div class="box-label">Prompt 4 · explicar pra leigo</div>
+      <p>Me explica <b>SEO local</b> como se eu tivesse 12 anos. 3 parágrafos. Sem termo técnico. Usa analogia da vida real.</p>
+    </div>
+
+    <div class="box prompt">
+      <div class="box-label">Prompt 5 · ideia de conteúdo</div>
+      <p>Me dá <b>10 ideias de Reels</b> de 30 segundos pra [seu negócio]. Cada ideia: gancho de 5 palavras + descrição em 1 frase do que mostra. Foco: educar e converter cliente novo.</p>
+    </div>
+
+    <div class="divider center"></div>
+
+    <p style="text-align:center;font-family:'DM Serif Display',serif;font-style:italic;font-size:14pt;color:var(--ink)">Fez os 5? Já está oficialmente <em>usando IA</em>.</p>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">22</div></div>
+</section>
+
+<!-- CAP 8 — Glossário (pg 23-24) -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 02 · Setup</div><div>Cap. 08 · Glossário</div></div>
+  <div class="pg-body">
+    <p class="kicker">Capítulo · 08</p>
+    <h3>Glossário · termos<br>que vão <em>aparecer</em></h3>
+
+    <p style="margin-top:5mm">Os 18 termos mais comuns. Quando ver de novo, vai entender na hora.</p>
+
+    <div style="margin-top:5mm">
+      <div class="gloss"><span class="term">Prompt</span><span>A instrução que você dá pra IA. "Cria um post" é um prompt. Quanto mais detalhado, melhor a resposta.</span></div>
+      <div class="gloss"><span class="term">Token</span><span>Pedaço de palavra. A IA conta em tokens, não em palavras. 100 palavras ≈ 130 tokens.</span></div>
+      <div class="gloss"><span class="term">Modelo</span><span>A "versão" da IA. ChatGPT tem GPT-4o, Claude tem Opus, Sonnet, Haiku. Cada modelo é melhor numa coisa.</span></div>
+      <div class="gloss"><span class="term">Contexto</span><span>Tudo que foi dito numa conversa. A IA "lembra" do contexto dentro da mesma conversa.</span></div>
+      <div class="gloss"><span class="term">Alucinação</span><span>Quando a IA inventa fato. Acontece. Sempre confere dados, datas, citações.</span></div>
+      <div class="gloss"><span class="term">LLM</span><span>"Large Language Model" — modelo grande de linguagem. ChatGPT, Claude, Gemini são LLMs.</span></div>
+      <div class="gloss"><span class="term">API</span><span>Forma de conectar IA a outro programa. Mais técnico. Pra dev/automação.</span></div>
+      <div class="gloss"><span class="term">Plugin</span><span>Extensão que adiciona capacidade. Ex: plugin que conecta ChatGPT ao seu Gmail.</span></div>
+      <div class="gloss"><span class="term">GPT</span><span>"Generative Pre-trained Transformer". Nome técnico do modelo da OpenAI. Você ouve "GPT-4", "GPT-4o", "GPT-5".</span></div>
+      <div class="gloss"><span class="term">Embedding</span><span>Forma da IA "entender" texto matematicamente. Você não precisa entender isso pra usar.</span></div>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">23</div></div>
+</section>
+
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 02 · Setup</div><div>Cap. 08 · glossário (continuação)</div></div>
+  <div class="pg-body">
+    <p class="kicker">Glossário · 2/2</p>
+
+    <div style="margin-top:5mm">
+      <div class="gloss"><span class="term">Fine-tuning</span><span>Treinar uma IA com SEUS dados específicos. Pra criar versão personalizada (avançado, pago).</span></div>
+      <div class="gloss"><span class="term">RAG</span><span>"Retrieval Augmented Generation". IA que consulta documentos seus antes de responder. Ex: GPT que sabe seu catálogo.</span></div>
+      <div class="gloss"><span class="term">Custom GPT</span><span>GPT personalizado por você no ChatGPT Plus. Sem código. Você ensina o que ele sabe.</span></div>
+      <div class="gloss"><span class="term">Multimodal</span><span>IA que entende texto + imagem + voz + vídeo. ChatGPT 4o, Claude Opus, Gemini são multimodais.</span></div>
+      <div class="gloss"><span class="term">Few-shot</span><span>Técnica de prompt onde você dá 2-3 exemplos antes do pedido. Resultado fica MUITO melhor.</span></div>
+      <div class="gloss"><span class="term">Chain-of-thought</span><span>Você pede pra IA "pensar passo a passo". Melhora respostas analíticas.</span></div>
+      <div class="gloss"><span class="term">Hallucination</span><span>Mesma coisa que "alucinação". Termo em inglês que você vai ler em artigo.</span></div>
+      <div class="gloss"><span class="term">Sandbox</span><span>Ambiente de teste. Onde você testa antes de usar de verdade.</span></div>
+    </div>
+
+    <div class="box dica" style="margin-top:8mm">
+      <div class="box-label">Não decora · usa</div>
+      <p>Não precisa decorar essa lista. Volta aqui quando ver um termo desconhecido. Em 30 dias usando IA todo dia, você naturalmente sabe os 18 sem decorar.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">24</div></div>
+</section>
+
+<!-- Checklist fim de parte 2 -->
+<section class="page cream-3">
+  <div class="pg-head"><div class="brand">Parte 02 · Setup</div><div>Checklist · revisão</div></div>
+  <div class="pg-body">
+    <p class="kicker">Checklist · fim da Parte 02</p>
+    <h3>Você está <em>pronto</em> se...</h3>
+
+    <ul class="checklist" style="margin-top:8mm;font-size:12pt">
+      <li>Tenho conta criada em <b>pelo menos 1 das 3</b> IAs principais (ChatGPT, Claude ou Gemini)</li>
+      <li>Configurei <b>Custom Instructions</b> contando quem eu sou e como quero respostas</li>
+      <li>Sei <b>onde encontrar</b> a IA (no navegador ou no app)</li>
+      <li>Testei <b>os 5 prompts</b> do Cap. 7 (pelo menos 1)</li>
+      <li>Entendo o que é <b>prompt</b>, <b>contexto</b>, <b>modelo</b> e <b>alucinação</b></li>
+      <li>Sei a diferença entre usar IA <b>no celular vs no computador</b></li>
+      <li>Sei que <b>não devo</b> compartilhar dados sensíveis</li>
+    </ul>
+
+    <div class="divider center"></div>
+
+    <p style="text-align:center;margin-top:8mm">Marcou todos? Bora pra Parte 3 — vamos conhecer <b>cada IA individualmente</b>.</p>
+    <p style="text-align:center;margin-top:3mm;font-family:'DM Serif Display',serif;font-style:italic;font-size:18pt;color:var(--red)">Não marcou? Volta nos capítulos.</p>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">25</div></div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PARTE 3 — ABERTURA · 10 IAs                                   -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="page part-opener">
+  <div class="po-content">
+    <p class="po-label">Parte · 03</p>
+    <p class="po-num">03</p>
+    <h2 class="po-title">As <em>10</em> IAs<br>essenciais.</h2>
+    <p class="po-lead">Capítulo dedicado pra cada uma. O que é, como criar conta, como usar passo a passo, exemplos reais, prompts prontos, dicas avançadas.</p>
+    <div class="po-chapters">
+      <div class="ch"><span class="ch-num">09</span>ChatGPT · OpenAI</div>
+      <div class="ch"><span class="ch-num">10</span>Claude · Anthropic</div>
+      <div class="ch"><span class="ch-num">11</span>Gemini · Google</div>
+      <div class="ch"><span class="ch-num">12</span>DALL-E · imagens via texto</div>
+      <div class="ch"><span class="ch-num">13</span>Midjourney · cinema digital</div>
+      <div class="ch"><span class="ch-num">14</span>Canva AI · design rápido</div>
+      <div class="ch"><span class="ch-num">15</span>ElevenLabs · voz humana</div>
+      <div class="ch"><span class="ch-num">16</span>Suno · música original</div>
+      <div class="ch"><span class="ch-num">17</span>Runway · vídeo com IA</div>
+      <div class="ch"><span class="ch-num">18</span>Cursor & Copilot · código</div>
+    </div>
+  </div>
+  <div class="po-foot"><div>10 capítulos · 40 páginas</div><div>Calazans Lumina · Pg 26</div></div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!-- CAP 9 · CHATGPT · 4 páginas (27-30)                -->
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 01/10</div><div>Cap. 09 · ChatGPT</div></div>
+  <div class="pg-body">
+    <p class="kicker">IA · 01 de 10</p>
+    <div class="ia-hero">
+      <div class="ia-logo gpt">G</div>
+      <div class="info">
+        <p class="ia-tag">OpenAI · 2022</p>
+        <h2>Chat<em>GPT</em></h2>
+        <p class="ia-desc">A mais popular. A mais versátil. Por onde quase todo mundo começa.</p>
+      </div>
+    </div>
+
+    <div class="meta-bar">
+      <div class="mb"><span class="ml">Site</span><span class="mv">chat.openai.com</span></div>
+      <div class="mb"><span class="ml">Free?</span><span class="mv">Sim</span></div>
+      <div class="mb"><span class="ml">Pro</span><span class="mv">$20/mês</span></div>
+      <div class="mb"><span class="ml">Forte em</span><span class="mv">Tudo</span></div>
+    </div>
+
+    <img class="img-small" src="https://images.unsplash.com/photo-1693305162540-95b1a85e0b71?w=1400&h=420&fit=crop&q=80" alt="ChatGPT na tela do celular" />
+
+    <h4 style="margin-top:6mm">O que é</h4>
+    <p>ChatGPT é a IA da OpenAI lançada em novembro de 2022. Em 2 meses chegou a 100 milhões de usuários — o app mais rápido a chegar nesse número na história. Hoje em 2026, é a IA mais conhecida do planeta.</p>
+
+    <p>É uma IA de <b>texto e conversa</b> — você digita, ela responde. Mas também faz imagem (com DALL-E embutido), entende foto, fala por voz, e tem acesso à internet (na versão paga).</p>
+
+    <h4 style="margin-top:6mm">Forte pra...</h4>
+    <ul class="bullets">
+      <li><b>Escrita criativa</b> — post, email, artigo, roteiro</li>
+      <li><b>Brainstorm de ideias</b> — 20 títulos, 10 angulações, 5 conceitos</li>
+      <li><b>Gerar imagem com DALL-E</b> embutido (versão paga)</li>
+      <li><b>Analisar dado e gráfico</b> (Plus)</li>
+      <li><b>Code interpreter</b> — roda Python pra você (Plus)</li>
+      <li><b>Loja de GPTs personalizados</b> — milhares já prontos</li>
+    </ul>
+
+    <h4 style="margin-top:6mm">Fraco pra...</h4>
+    <ul class="bullets">
+      <li><b>Texto MUITO longo</b> (Claude é melhor)</li>
+      <li><b>Análise jurídica/médica precisa</b> (alucina mais que Claude)</li>
+      <li><b>Dado atualizado em tempo real</b> sem versão paga</li>
+    </ul>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">27</div></div>
+</section>
+
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 01/10</div><div>Cap. 09 · ChatGPT (cont.)</div></div>
+  <div class="pg-body">
+    <p class="kicker">9.2 · Free vs Plus vs Pro</p>
+    <h4>Qual escolher?</h4>
+
+    <table class="tbl" style="margin-top:4mm">
+      <thead><tr><th>Recurso</th><th>Free</th><th>Plus $20</th><th>Pro $200</th></tr></thead>
+      <tbody>
+        <tr><td>Modelo GPT-4o</td><td>Limitado</td><td>✓ Sem limite</td><td>✓ Ilimitado</td></tr>
+        <tr><td>Geração de imagem (DALL-E)</td><td>2-3/dia</td><td>✓ Sem limite</td><td>✓ Ilimitado</td></tr>
+        <tr><td>Navegação na web</td><td>Limitada</td><td>✓ Sim</td><td>✓ Sim</td></tr>
+        <tr><td>Loja de GPTs personalizados</td><td>Não</td><td>✓ Sim</td><td>✓ Sim</td></tr>
+        <tr><td>Modo de voz avançado</td><td>Limitado</td><td>✓ Sim</td><td>✓ Sim</td></tr>
+        <tr><td>Análise de planilhas/PDFs</td><td>Limitada</td><td>✓ Sim</td><td>✓ Sim</td></tr>
+        <tr><td>Code Interpreter</td><td>Não</td><td>✓ Sim</td><td>✓ Sim</td></tr>
+        <tr><td>Modelo o1 (raciocínio profundo)</td><td>Não</td><td>Limitado</td><td>✓ Ilimitado</td></tr>
+      </tbody>
+    </table>
+
+    <div class="box dica" style="margin-top:5mm">
+      <div class="box-label">Minha recomendação (depois de 4 anos usando)</div>
+      <p><b>Começa Free.</b> Testa 1-2 semanas, usa todo dia. Quando travar (limite atingido, precisar de imagem mais vezes, precisar analisar PDF), sobe pra <b>Plus $20/mês</b>. Pro só faz sentido pra quem usa profissionalmente 8h/dia.</p>
+    </div>
+
+    <h4 style="margin-top:6mm">9.3 · Interface (5 áreas)</h4>
+    <ol class="big-list">
+      <li><b>Barra lateral esquerda</b>Histórico de conversas. Renomeia as importantes.</li>
+      <li><b>Área central</b>Onde a conversa acontece. Ele lembra de tudo na mesma conversa.</li>
+      <li><b>Caixa de mensagem (rodapé)</b>Onde você digita. Shift+Enter pra pular linha sem enviar.</li>
+      <li><b>Botão "+" (nova conversa)</b>Use ao mudar de assunto totalmente.</li>
+      <li><b>Seletor de modelo</b>Plus: escolhe entre GPT-4o, o1, GPT-4. Free: só padrão.</li>
+    </ol>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">28</div></div>
+</section>
+
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 01/10</div><div>Cap. 09 · ChatGPT (cont.)</div></div>
+  <div class="pg-body">
+    <p class="kicker">9.4 · 5 usos práticos pra hoje</p>
+    <h4>Cola e adapta.</h4>
+
+    <div class="box prompt">
+      <div class="box-label">Uso 01 · responder reclamação</div>
+      <p>Você é atendente sênior empático. Cliente reclamou que demorei 5 dias pra mandar orçamento. Escreva resposta em <b>4 frases máximo</b>, em português brasileiro coloquial. Reconhece, não dá desculpa elaborada, oferece desconto de 10%, pergunta se ainda interessa.</p>
+    </div>
+
+    <div class="box prompt">
+      <div class="box-label">Uso 02 · 30 ideias de post</div>
+      <p>Você é estrategista de redes sociais. Cria <b>30 ideias de post</b> de Instagram pra [meu negócio]. Mistura: 40% educativo, 20% bastidores, 15% prova social, 15% venda, 10% entretenimento. Cada ideia: tipo (carrossel/reels/foto) + tema em 1 linha.</p>
+    </div>
+
+    <div class="box prompt">
+      <div class="box-label">Uso 03 · resumir contrato</div>
+      <p>Resume esse contrato em <b>5 bullets</b> em português, linguagem de 8ª série. Foca em: prazo, valor, multa, garantia, responsabilidade. Sinaliza com ⚠️ qualquer cláusula que pareça abusiva. [cola o PDF aqui]</p>
+    </div>
+
+    <div class="box prompt">
+      <div class="box-label">Uso 04 · email de cobrança</div>
+      <p>Escreve <b>email de cobrança</b> pra cliente que tá atrasado 30 dias. Tom: firme mas amigável. Não ameaça. Dá 3 opções de pagamento (à vista, parcelar, prorrogar). Máximo 150 palavras. Português BR.</p>
+    </div>
+
+    <div class="box prompt">
+      <div class="box-label">Uso 05 · descrição de produto</div>
+      <p>Escreve <b>descrição de produto</b> pra [nome do produto]. Destaque: [3 benefícios]. Público: [perfil]. Tom: amigável. Inclui: 1 parágrafo de "por que comprar", 5 bullets de característica/benefício, e CTA de 1 frase.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">29</div></div>
+</section>
+
+<section class="page cream-2">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 01/10</div><div>Cap. 09 · ChatGPT (cont.)</div></div>
+  <div class="pg-body">
+    <p class="kicker">9.5 · Dicas avançadas</p>
+    <h4>O que os profissionais fazem.</h4>
+
+    <ul class="bullets" style="font-size:11pt;line-height:1.8;margin-top:5mm">
+      <li><b>Custom GPTs</b> — Crie seu próprio assistente. Plus: <b>"Explore GPTs" → "Create"</b>. Sobe os documentos do seu negócio, e ele responde como especialista.</li>
+      <li><b>Memory</b> — Diz "Lembre que [info]" e ele guarda entre conversas. Use pra coisas estáveis (nome do negócio, público-alvo).</li>
+      <li><b>Voice mode</b> — Na versão mobile, modo voz avançado é incrível pra brainstormar dirigindo. Conversa fluida.</li>
+      <li><b>Code Interpreter</b> — Cola planilha CSV/Excel, pede análise. Ele roda código e devolve gráfico.</li>
+      <li><b>Refinamento</b> — Nunca aceita 1ª resposta. Pede 3 variações. Escolhe melhor. Pede ajuste.</li>
+      <li><b>Few-shot</b> — Cola 2-3 exemplos do que quer ANTES do pedido. Qualidade dobra.</li>
+    </ul>
+
+    <h4 style="margin-top:8mm">9.6 · 3 erros que TODO leigo comete</h4>
+    <ul class="bullets" style="font-size:11pt;line-height:1.8">
+      <li><b>1.</b> Aceitar primeira resposta. Sempre pede ajuste, 3 variações, refinamento.</li>
+      <li><b>2.</b> Não dar contexto. "Cria um post" vs "Sou pintor em Boston, cria post pra dono de casa 40-55 sobre serviço de pintura externa, tom amigável, 150 palavras". Vê a diferença.</li>
+      <li><b>3.</b> Não conferir dados. ChatGPT inventa data, nome, citação. Sempre confere antes de publicar.</li>
+    </ul>
+
+    <div class="box exercicio">
+      <div class="box-label">Exercício</div>
+      <p>Pega <b>1 tarefa</b> que você fez essa semana (responder cliente, fazer post, escrever email). Refaz no ChatGPT com prompt detalhado. Compara tempo gasto antes vs depois. Anota a diferença.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">30</div></div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!-- CAP 10 · CLAUDE · 4 páginas (31-34)                -->
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 02/10</div><div>Cap. 10 · Claude</div></div>
+  <div class="pg-body">
+    <p class="kicker">IA · 02 de 10</p>
+    <div class="ia-hero">
+      <div class="ia-logo claude">C</div>
+      <div class="info">
+        <p class="ia-tag">Anthropic · 2023</p>
+        <h2><em>Claude</em></h2>
+        <p class="ia-desc">A IA mais cuidadosa com fato. A preferida de quem escreve texto longo, contrato, código.</p>
+      </div>
+    </div>
+
+    <div class="meta-bar">
+      <div class="mb"><span class="ml">Site</span><span class="mv">claude.ai</span></div>
+      <div class="mb"><span class="ml">Free?</span><span class="mv">Sim</span></div>
+      <div class="mb"><span class="ml">Pro</span><span class="mv">$20/mês</span></div>
+      <div class="mb"><span class="ml">Forte em</span><span class="mv">Texto longo</span></div>
+    </div>
+
+    <img class="img-small" src="https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=1400&h=420&fit=crop&q=80" alt="Caderno aberto · análise" />
+
+    <h4 style="margin-top:6mm">O que é</h4>
+    <p>Claude é a IA da Anthropic, empresa fundada por ex-funcionários da OpenAI em 2021. O foco da Anthropic é fazer IA <b>segura, honesta e cuidadosa</b>. Por isso, Claude é considerada a IA que menos "alucina" (inventa fato).</p>
+
+    <p>É a queridinha dos que trabalham com texto longo: contrato, artigo, livro, ebook, transcrição de reunião, manual técnico. Aguenta documento gigante (até 200 mil tokens = livro de 500 páginas) sem perder contexto.</p>
+
+    <h4 style="margin-top:6mm">Forte pra...</h4>
+    <ul class="bullets">
+      <li><b>Texto longo e analítico</b> — analisa contrato, manual, livro</li>
+      <li><b>Programação</b> — Claude Sonnet é a melhor IA pra código em 2026</li>
+      <li><b>Raciocínio profundo</b> — pensa antes de responder, erra menos</li>
+      <li><b>Tom honesto</b> — admite quando não sabe, em vez de inventar</li>
+      <li><b>Artistic Style Writing</b> — adaptar tom de voz pessoal</li>
+      <li><b>Artifacts</b> — gera HTML/SVG/diagrama em janela à parte</li>
+    </ul>
+
+    <h4 style="margin-top:6mm">Fraco pra...</h4>
+    <ul class="bullets">
+      <li><b>Geração de imagem</b> (não tem, foco é texto)</li>
+      <li><b>Loja de GPTs</b> (não tem o equivalente da OpenAI)</li>
+      <li><b>Brainstorming criativo solto</b> (ChatGPT é mais "criativo")</li>
+    </ul>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">31</div></div>
+</section>
+
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 02/10</div><div>Cap. 10 · Claude (cont.)</div></div>
+  <div class="pg-body">
+    <p class="kicker">10.2 · Os 3 modelos do Claude</p>
+    <h4>Cada um pra uma situação.</h4>
+
+    <table class="tbl" style="margin-top:4mm">
+      <thead><tr><th>Modelo</th><th>Quando usar</th><th>Velocidade</th></tr></thead>
+      <tbody>
+        <tr><td><b>Haiku</b></td><td>Resposta rápida, tarefa simples, alto volume</td><td>Muito rápido</td></tr>
+        <tr><td><b>Sonnet</b></td><td>Equilíbrio · uso diário · padrão</td><td>Médio</td></tr>
+        <tr><td><b>Opus</b></td><td>Tarefa complexa, análise profunda, código difícil</td><td>Mais lento</td></tr>
+      </tbody>
+    </table>
+
+    <div class="box dica" style="margin-top:5mm">
+      <div class="box-label">Padrão</div>
+      <p>Usa <b>Sonnet</b> pra tudo. Só muda pra Opus se for tarefa MUITO complexa (planejar estratégia inteira, analisar contrato de 200 pgs).</p>
+    </div>
+
+    <h4 style="margin-top:6mm">10.3 · Recurso EXCLUSIVO · Projects</h4>
+    <p>Claude tem <b>Projects</b> (no Free e Pro). É uma pasta onde você sobe documentos, e Claude responde TUDO com base neles.</p>
+
+    <p style="margin-top:3mm"><b>Caso real:</b> sobe seu catálogo de produtos, sua política de troca, e seu FAQ. Cria um Project chamado "Atendimento". Toda vez que cliente pergunta algo no WhatsApp, você cola a pergunta no Project, Claude responde com a info correta da sua empresa.</p>
+
+    <h4 style="margin-top:6mm">10.4 · Recurso EXCLUSIVO · Artifacts</h4>
+    <p>Quando você pede algo "visual" (HTML, código, diagrama SVG, JSON estruturado), Claude abre uma janela ao lado mostrando o resultado já formatado. Você pode editar em tempo real.</p>
+
+    <p style="margin-top:3mm"><b>Útil pra:</b> criar landing page simples sem saber programar, gerar fluxograma do seu funil de vendas, criar tabela comparativa visual, mockup de email.</p>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">32</div></div>
+</section>
+
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 02/10</div><div>Cap. 10 · Claude (cont.)</div></div>
+  <div class="pg-body">
+    <p class="kicker">10.5 · 5 usos práticos pra hoje</p>
+    <h4>Cola e adapta.</h4>
+
+    <div class="box prompt">
+      <div class="box-label">Uso 01 · análise de contrato</div>
+      <p>Você é advogado(a) de pequena empresa. Analisa esse contrato em <b>linguagem de 8ª série</b>. Lista: prazo, valor, multa, garantia. Sinaliza cláusula abusiva com ⚠️. Sugere 3 mudanças que devo pedir antes de assinar. [cola PDF]</p>
+    </div>
+
+    <div class="box prompt">
+      <div class="box-label">Uso 02 · ghostwrite artigo</div>
+      <p>Você é jornalista de negócios. Escreve <b>artigo de 1500 palavras</b> sobre [tema]. Tom: educativo, parece humano. Inclui: lead com gancho, 4 subtítulos H2, 2 exemplos reais (pode inventar), conclusão com CTA. SEO pra keyword [keyword]. Português BR.</p>
+    </div>
+
+    <div class="box prompt">
+      <div class="box-label">Uso 03 · transcrição → ata</div>
+      <p>Transcrevi a reunião abaixo. Cria <b>ata profissional</b> com: data, participantes, 5 decisões principais, 5 ações pendentes (quem faz, prazo), próximos passos. Tom: corporativo brasileiro. [cola transcrição]</p>
+    </div>
+
+    <div class="box prompt">
+      <div class="box-label">Uso 04 · plano de negócio</div>
+      <p>Você é consultor sênior de pequeno negócio. Cria <b>plano de negócio de 3 páginas</b> pra [ideia]. Inclui: resumo executivo (1 pg), análise SWOT (1 pg), projeção financeira simples 12 meses (1 pg). Linguagem clara, sem jargão MBA.</p>
+    </div>
+
+    <div class="box prompt">
+      <div class="box-label">Uso 05 · código simples</div>
+      <p>Cria uma <b>página HTML simples</b> de "Em breve" pra meu site. Cores: vermelho #FF0005 e creme #F5F1EA. Logo no centro, texto "Calazans Lumina · em breve", contador regressivo até [data], formulário pra capturar email. Mobile-friendly. Use Artifacts.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">33</div></div>
+</section>
+
+<section class="page cream-2">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 02/10</div><div>Cap. 10 · Claude (cont.)</div></div>
+  <div class="pg-body">
+    <p class="kicker">10.6 · Quando preferir Claude no lugar do ChatGPT</p>
+    <h4>3 sinais.</h4>
+
+    <ol class="big-list" style="margin-top:5mm">
+      <li><b>Você tem documento longo pra analisar</b>Contrato de 30+ páginas, livro inteiro, transcrição de reunião de 1h. Claude aguenta 500 páginas numa conversa só.</li>
+      <li><b>Precisão importa mais que criatividade</b>Análise jurídica, contrato, dado factual. Claude inventa menos.</li>
+      <li><b>Você está programando</b>Claude Sonnet 4 é a IA mais usada por dev em 2026. Cursor, GitHub Copilot, todos usam Claude por baixo.</li>
+    </ol>
+
+    <h4 style="margin-top:8mm">10.7 · Workflow combinado · ChatGPT + Claude</h4>
+    <p>Profissionais avançados usam os dois. Por exemplo:</p>
+    <ol class="big-list">
+      <li><b>ChatGPT</b>Pra brainstorm inicial. "Me dá 10 ângulos pra esse artigo." Pega o melhor.</li>
+      <li><b>Claude</b>Pra escrever o artigo final, longo, bem fundamentado.</li>
+      <li><b>ChatGPT</b>Pra criar a imagem de capa com DALL-E.</li>
+    </ol>
+
+    <div class="box exercicio">
+      <div class="box-label">Exercício · compara as 2</div>
+      <p>Faz a mesma pergunta no ChatGPT e no Claude: "Me explica o framework SWOT em 200 palavras pra dono de pequena empresa." Compara as 2 respostas. Anota qual prefere e por quê.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">34</div></div>
+</section>
+
+<!-- ━━━━━━ CAP 11 · GEMINI · 3 páginas (35-37) ━━━━━━ -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 03/10</div><div>Cap. 11 · Gemini</div></div>
+  <div class="pg-body">
+    <p class="kicker">IA · 03 de 10</p>
+    <div class="ia-hero">
+      <div class="ia-logo gemini">★</div>
+      <div class="info">
+        <p class="ia-tag">Google · 2023</p>
+        <h2><em>Gemini</em></h2>
+        <p class="ia-desc">A IA do Google. Integrada ao Gmail, Docs, Drive, Sheets. Onde já estão seus arquivos.</p>
+      </div>
+    </div>
+
+    <div class="meta-bar">
+      <div class="mb"><span class="ml">Site</span><span class="mv">gemini.google.com</span></div>
+      <div class="mb"><span class="ml">Free?</span><span class="mv">Sim</span></div>
+      <div class="mb"><span class="ml">Pro</span><span class="mv">$20/mês</span></div>
+      <div class="mb"><span class="ml">Forte em</span><span class="mv">Pesquisa</span></div>
+    </div>
+
+    <img class="img-small" src="https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=1400&h=420&fit=crop&q=80" alt="Google · ecossistema" />
+
+    <h4 style="margin-top:6mm">O que é</h4>
+    <p>Gemini é a IA do Google, lançada em 2023 e em 2024 unificou todas as IAs do Google (Bard, Duet AI) sob um nome só. O grande diferencial: <b>integra com Google Workspace</b> (Gmail, Docs, Drive, Sheets, Calendar). Se você já vive no ecossistema Google, Gemini "vê" tudo que você tem lá.</p>
+
+    <h4 style="margin-top:6mm">Forte pra...</h4>
+    <ul class="bullets">
+      <li><b>Pesquisa com fato atualizado</b> — acesso direto à busca do Google em tempo real</li>
+      <li><b>Resumir e-mail no Gmail</b> — "resume essa thread de 20 mensagens"</li>
+      <li><b>Trabalhar com seus Docs e Sheets</b> — analisa planilha, gera texto direto no Docs</li>
+      <li><b>Verificar fato</b> — bota botão "verifique no Google" embaixo da resposta</li>
+      <li><b>Multilíngue</b> — entende e responde em 40+ idiomas</li>
+      <li><b>Modelo Pro 1.5 com 1M tokens</b> — contexto enorme (livro inteiro + planilhas)</li>
+    </ul>
+
+    <h4 style="margin-top:6mm">Fraco pra...</h4>
+    <ul class="bullets">
+      <li><b>Criatividade pura</b> — ChatGPT é mais "imaginativo"</li>
+      <li><b>Análise profunda</b> — Claude é melhor</li>
+      <li><b>Tom de voz pessoal</b> — Gemini soa mais corporativo</li>
+    </ul>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">35</div></div>
+</section>
+
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 03/10</div><div>Cap. 11 · Gemini (cont.)</div></div>
+  <div class="pg-body">
+    <p class="kicker">11.2 · A integração que muda tudo</p>
+    <h4>Gemini dentro do <em>Gmail, Docs, Drive</em>.</h4>
+
+    <p style="margin-top:5mm">Se você usa Gmail e Google Docs, o Gemini aparece como botão lateral em cada um. Isso muda completamente o fluxo de trabalho.</p>
+
+    <h5 style="margin-top:6mm">No Gmail</h5>
+    <p>Botão "Help me write" — você seleciona um email recebido, ele resume em 1 frase. Ou pede pra escrever resposta com tom específico. Economiza 20 min/dia em quem responde muito email.</p>
+
+    <h5 style="margin-top:5mm">No Google Docs</h5>
+    <p>Você está escrevendo, trava. Botão lateral: "Continue writing", "Make it shorter", "Make it formal", "Bullet points". Continua de onde você parou no tom certo.</p>
+
+    <h5 style="margin-top:5mm">No Google Sheets</h5>
+    <p>Tem dados, não sabe analisar. Pede ao Gemini: "Crie gráfico das vendas por mês" ou "Aplica fórmula que conta clientes ativos". Ele entende a planilha e responde.</p>
+
+    <h5 style="margin-top:5mm">No Drive</h5>
+    <p>"Resume todos os documentos da pasta X" — Gemini lê os PDFs/docs e devolve resumo executivo. Pra quem tem caixa de entrada de relatórios mensais.</p>
+
+    <div class="box dica" style="margin-top:6mm">
+      <div class="box-label">Custo da integração</div>
+      <p>A integração com Workspace requer plano <b>Google One AI Premium ($20/mês)</b> ou <b>Workspace Business AI ($30/mês por usuário)</b>. A versão Free do Gemini não tem isso.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">36</div></div>
+</section>
+
+<section class="page cream-2">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 03/10</div><div>Cap. 11 · Gemini (cont.)</div></div>
+  <div class="pg-body">
+    <p class="kicker">11.3 · 5 prompts úteis</p>
+
+    <div class="box prompt">
+      <div class="box-label">Pesquisa rápida com fonte</div>
+      <p>Quais são as <b>5 ferramentas de marketing</b> que mais cresceram em uso no Brasil em 2025-2026? Inclui dados de adoção. Cita fonte com link.</p>
+    </div>
+
+    <div class="box prompt">
+      <div class="box-label">Análise de planilha</div>
+      <p>[Cola dados] Analisa essa planilha de vendas. Me diz: tendência mensal, top 3 produtos, mês de pior performance, e <b>3 ações concretas</b> pra próximo mês.</p>
+    </div>
+
+    <div class="box prompt">
+      <div class="box-label">Resumir caixa de email</div>
+      <p>Resume as <b>10 últimas threads</b> da minha caixa em 1 frase cada. Sinaliza quais exigem resposta urgente (⚠️) hoje.</p>
+    </div>
+
+    <div class="box prompt">
+      <div class="box-label">Documento longo</div>
+      <p>Esse relatório tem 80 páginas. Cria um <b>executive summary</b> de 1 página com: 3 principais achados, 5 ações recomendadas, 1 risco principal.</p>
+    </div>
+
+    <div class="box prompt">
+      <div class="box-label">Comparativo de concorrente</div>
+      <p>Pesquisa no Google os <b>5 maiores concorrentes</b> de [meu negócio] na minha região [cidade]. Compara: preço médio, diferencial, avaliação Google. Apresenta em tabela.</p>
+    </div>
+
+    <h4 style="margin-top:6mm">11.4 · Quando usar Gemini em vez de ChatGPT</h4>
+    <ul class="bullets">
+      <li>Precisa de <b>dado atualizado</b> (notícia, preço, estatística recente)</li>
+      <li>Precisa <b>verificar fato</b> com fonte clicável</li>
+      <li>Já usa <b>Google Workspace</b> (Gmail, Docs, Drive)</li>
+      <li>Precisa analisar <b>documento gigante</b> (livro inteiro, planilha enorme)</li>
+    </ul>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">37</div></div>
+</section>
+
+<!-- ━━━━━━ CAP 12 · DALL-E · 3 páginas (38-40) ━━━━━━ -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 04/10</div><div>Cap. 12 · DALL-E</div></div>
+  <div class="pg-body">
+    <p class="kicker">IA · 04 de 10</p>
+    <div class="ia-hero">
+      <div class="ia-logo dalle">D</div>
+      <div class="info">
+        <p class="ia-tag">OpenAI · 2021</p>
+        <h2><em>DALL-E</em></h2>
+        <p class="ia-desc">Geração de imagem dentro do ChatGPT Plus. A IA de imagem mais fácil pra começar.</p>
+      </div>
+    </div>
+
+    <div class="meta-bar">
+      <div class="mb"><span class="ml">Onde</span><span class="mv">Dentro do ChatGPT Plus</span></div>
+      <div class="mb"><span class="ml">Acesso</span><span class="mv">$20/mês via ChatGPT</span></div>
+      <div class="mb"><span class="ml">Forte em</span><span class="mv">Início rápido</span></div>
+    </div>
+
+    <img class="img-small" src="https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=1400&h=420&fit=crop&q=80" alt="Imagem gerada por IA · arte digital" />
+
+    <h4 style="margin-top:6mm">O que é</h4>
+    <p>DALL-E 3 é a IA de imagem da OpenAI. Você descreve em palavras, ela cria a imagem. Não tem app próprio — você usa <b>dentro do ChatGPT Plus</b>. Basta pedir "cria uma imagem de..." e ele gera.</p>
+
+    <h4 style="margin-top:6mm">Forte pra...</h4>
+    <ul class="bullets">
+      <li><b>Ilustração rápida</b> pra post de Instagram, blog, apresentação</li>
+      <li><b>Mockup de produto</b> antes de comprar foto profissional</li>
+      <li><b>Composição editorial</b> (cena com pessoas, objeto, ambiente)</li>
+      <li><b>Estilo cartoon, ilustração, flat design</b></li>
+      <li><b>Texto dentro da imagem</b> (legenda, palavra) — DALL-E faz melhor que Midjourney</li>
+    </ul>
+
+    <h4 style="margin-top:6mm">Fraco pra...</h4>
+    <ul class="bullets">
+      <li><b>Foto realística de pessoa</b> (Midjourney é muito melhor)</li>
+      <li><b>Arte fotográfica cinematográfica</b> (Midjourney)</li>
+      <li><b>Estilo artístico muito específico</b> (Stable Diffusion ou Midjourney)</li>
+    </ul>
+
+    <div class="box dica" style="margin-top:5mm">
+      <div class="box-label">Vantagem do DALL-E</div>
+      <p>Se você JÁ tem ChatGPT Plus pra texto, DALL-E vem junto. Não paga separado. Pra quem está começando e quer fazer post visual, é o caminho mais simples.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">38</div></div>
+</section>
+
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 04/10</div><div>Cap. 12 · DALL-E (cont.)</div></div>
+  <div class="pg-body">
+    <p class="kicker">12.2 · A receita do prompt de imagem</p>
+    <h4>5 elementos · igual prompt de texto.</h4>
+
+    <p style="margin-top:5mm">Prompt de imagem tem estrutura parecida. Quanto mais detalhe, melhor o resultado.</p>
+
+    <ol class="big-list" style="margin-top:5mm">
+      <li><b>Sujeito</b>O quê / quem aparece. "Mulher brasileira sorrindo segurando café".</li>
+      <li><b>Estilo</b>Fotografia? Ilustração? Cartoon? Vetor flat? Aquarela? "Foto profissional".</li>
+      <li><b>Ambiente</b>Onde acontece. "Cafeteria aconchegante, luz natural pela janela".</li>
+      <li><b>Composição</b>Câmera, ângulo. "Plano médio, foco na pessoa, fundo desfocado".</li>
+      <li><b>Detalhe técnico</b>Iluminação, cor, vibe. "Hora dourada, paleta quente, mood otimista".</li>
+    </ol>
+
+    <h4 style="margin-top:6mm">Exemplo prático · comparação</h4>
+
+    <div class="compare">
+      <div class="side bad">
+        <span class="tag red">Ruim</span>
+        <p style="margin-top:3mm;font-style:italic;font-family:'JetBrains Mono',monospace;font-size:9pt">"Mulher tomando café"</p>
+        <p style="font-size:9pt;color:var(--cream-dark);margin-top:3mm">Imagem genérica, parece banco de imagem ruim.</p>
+      </div>
+      <div class="side good">
+        <span class="tag green">Bom</span>
+        <p style="margin-top:3mm;font-style:italic;font-family:'JetBrains Mono',monospace;font-size:9pt">"Mulher brasileira 30 anos, sorriso natural, segurando xícara de café, em cafeteria de Belo Horizonte, luz natural pela janela, plano médio, foco na pessoa, fundo desfocado, paleta quente, fotografia editorial"</p>
+        <p style="font-size:9pt;color:var(--cream-dark);margin-top:3mm">Imagem profissional, pronta pra usar.</p>
+      </div>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">39</div></div>
+</section>
+
+<section class="page cream-2">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 04/10</div><div>Cap. 12 · DALL-E (cont.)</div></div>
+  <div class="pg-body">
+    <p class="kicker">12.3 · 5 prompts prontos pra negócio</p>
+
+    <div class="box prompt">
+      <div class="box-label">Capa de blog</div>
+      <p>Ilustração editorial flat design, paleta vermelha e creme, mostrando <b>conceito de inteligência artificial</b>, linhas geométricas, abstrato, profissional, sem texto, para capa de artigo.</p>
+    </div>
+
+    <div class="box prompt">
+      <div class="box-label">Foto de produto fake</div>
+      <p>Foto profissional de <b>tênis esportivo branco</b>, em fundo cinza claro, iluminação suave de estúdio, ângulo 45 graus, sombra suave, estilo Apple, alta resolução.</p>
+    </div>
+
+    <div class="box prompt">
+      <div class="box-label">Ilustração de Reels</div>
+      <p>Ilustração colorida estilo cartoon, mostrando <b>empreendedor brasileiro</b> usando laptop, expressão concentrada, escritório minimalista, cores vibrantes (vermelho, amarelo, azul), 9:16 portrait.</p>
+    </div>
+
+    <div class="box prompt">
+      <div class="box-label">Mockup de logo</div>
+      <p>Logo minimalista pra <b>cafeteria chamada "Bom Dia"</b>, fonte serif elegante, ícone de xícara estilizada, paleta marrom e creme, fundo branco, vetorial, profissional.</p>
+    </div>
+
+    <div class="box prompt">
+      <div class="box-label">Banner Instagram</div>
+      <p>Banner horizontal 1080x566 pra Instagram Highlight, fundo gradiente do <b>vermelho ao creme</b>, ícone minimalista de "atendimento", estilo Apple, sem texto.</p>
+    </div>
+
+    <h4 style="margin-top:6mm">12.4 · Dica de profissional</h4>
+    <p>Sempre peça <b>4 variações</b> com mesmo prompt. ChatGPT gera só 1 imagem, então peça: <em>"Gera essa imagem em 4 estilos diferentes — fotografia, ilustração, cartoon, e flat design"</em>. Compara e escolhe.</p>
+
+    <div class="box alerta">
+      <div class="box-label">Atenção · direito de imagem</div>
+      <p>Não use DALL-E pra criar imagem de pessoa famosa, logo de marca real, ou personagem de filme. Pode dar problema de direito autoral. Use pra ilustração genérica, mockup, conceito abstrato.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">40</div></div>
+</section>
+
+<!-- ━━━━━━ CAP 13 · MIDJOURNEY · 3 páginas (41-43) ━━━━━━ -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 05/10</div><div>Cap. 13 · Midjourney</div></div>
+  <div class="pg-body">
+    <p class="kicker">IA · 05 de 10</p>
+    <div class="ia-hero">
+      <div class="ia-logo midjourney">M</div>
+      <div class="info">
+        <p class="ia-tag">Midjourney · 2022</p>
+        <h2><em>Midjourney</em></h2>
+        <p class="ia-desc">A IA de imagem mais artisticamente potente. Pra marketing visual top.</p>
+      </div>
+    </div>
+
+    <div class="meta-bar">
+      <div class="mb"><span class="ml">Site</span><span class="mv">midjourney.com</span></div>
+      <div class="mb"><span class="ml">Free?</span><span class="mv">Não (teste limitado)</span></div>
+      <div class="mb"><span class="ml">Plano</span><span class="mv">$10–60/mês</span></div>
+      <div class="mb"><span class="ml">Forte em</span><span class="mv">Foto realista</span></div>
+    </div>
+
+    <img class="img-small" src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1400&h=420&fit=crop&q=80" alt="Arte conceitual gerada por IA" />
+
+    <h4 style="margin-top:6mm">O que é</h4>
+    <p>Midjourney é a IA de imagem mais utilizada por designer e profissional de marketing visual. Foi lançada em 2022 e até hoje é referência em <b>qualidade artística</b>. Foto realista, cinematográfica, editorial — Midjourney é onde a barra está mais alta.</p>
+
+    <p>Por muito tempo só funcionava no Discord (uma plataforma de chat). Em 2024 ganhou interface web própria, bem mais fácil pra leigo usar.</p>
+
+    <h4 style="margin-top:6mm">Forte pra...</h4>
+    <ul class="bullets">
+      <li><b>Foto realística profissional</b> — pessoa, produto, ambiente</li>
+      <li><b>Estética cinematográfica</b> — luz, sombra, composição de cinema</li>
+      <li><b>Arte conceitual</b> — capa de livro, álbum, banner</li>
+      <li><b>Estilos artísticos específicos</b> — aquarela, óleo, anime, vintage</li>
+      <li><b>Mockup de campanha</b> — pra agência, freelancer</li>
+    </ul>
+
+    <h4 style="margin-top:6mm">Fraco pra...</h4>
+    <ul class="bullets">
+      <li><b>Texto dentro da imagem</b> (DALL-E é melhor)</li>
+      <li><b>Quem quer 100% grátis</b> (não tem versão free real)</li>
+      <li><b>Quem quer simplicidade absoluta</b> (curva de aprendizado existe)</li>
+    </ul>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">41</div></div>
+</section>
+
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 05/10</div><div>Cap. 13 · Midjourney (cont.)</div></div>
+  <div class="pg-body">
+    <p class="kicker">13.2 · Como começar</p>
+    <h4>Passo a passo.</h4>
+
+    <ol class="big-list" style="margin-top:5mm">
+      <li><b>Cria conta</b>Vai em midjourney.com. Cadastra com Google ou e-mail.</li>
+      <li><b>Escolhe plano</b>Plano Básico $10/mês dá ~200 imagens/mês. Suficiente pra começar.</li>
+      <li><b>Vai em "Create"</b>Clica em Create na sidebar. Caixa de texto pra digitar prompt.</li>
+      <li><b>Escreve o prompt</b>Igual DALL-E mas pode adicionar comandos especiais (ex: --ar 9:16 pra vertical).</li>
+      <li><b>Aguarda 30s-1min</b>Recebe 4 variações. Escolhe a melhor, pode pedir variações.</li>
+    </ol>
+
+    <h4 style="margin-top:6mm">13.3 · Comandos especiais (parâmetros)</h4>
+    <p>No final do prompt, você pode adicionar parâmetros pra controlar resultado:</p>
+
+    <table class="tbl">
+      <tbody>
+        <tr><td><code style="background:rgba(15,15,15,.08);padding:1mm 2mm;border-radius:1mm;font-family:monospace">--ar 9:16</code></td><td>Aspecto vertical (pra Reels, Stories)</td></tr>
+        <tr><td><code style="background:rgba(15,15,15,.08);padding:1mm 2mm;border-radius:1mm;font-family:monospace">--ar 16:9</code></td><td>Aspecto horizontal (banner, YouTube)</td></tr>
+        <tr><td><code style="background:rgba(15,15,15,.08);padding:1mm 2mm;border-radius:1mm;font-family:monospace">--ar 1:1</code></td><td>Quadrado (post de Insta)</td></tr>
+        <tr><td><code style="background:rgba(15,15,15,.08);padding:1mm 2mm;border-radius:1mm;font-family:monospace">--style raw</code></td><td>Mais realista, menos artístico</td></tr>
+        <tr><td><code style="background:rgba(15,15,15,.08);padding:1mm 2mm;border-radius:1mm;font-family:monospace">--no [coisa]</code></td><td>Exclui algo. "--no text" tira texto da imagem</td></tr>
+        <tr><td><code style="background:rgba(15,15,15,.08);padding:1mm 2mm;border-radius:1mm;font-family:monospace">--s 750</code></td><td>Stylize · força artística (0-1000)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="box prompt" style="margin-top:5mm">
+      <div class="box-label">Prompt completo de exemplo</div>
+      <p>Brazilian woman in her 30s, natural smile, holding coffee cup, cozy cafe interior, soft window light, editorial photography, golden hour, shallow depth of field, warm color palette <b>--ar 9:16 --style raw --s 250</b></p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">42</div></div>
+</section>
+
+<section class="page cream-2">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 05/10</div><div>Cap. 13 · Midjourney (cont.)</div></div>
+  <div class="pg-body">
+    <p class="kicker">13.4 · 5 estilos comprovados pra marketing</p>
+
+    <div class="box prompt">
+      <div class="box-label">Editorial · revista</div>
+      <p>[seu sujeito], editorial magazine photography, soft natural light, candid moment, shallow depth of field, fashion film aesthetic, slight grain, muted color palette --ar 9:16 --style raw</p>
+    </div>
+
+    <div class="box prompt">
+      <div class="box-label">Lifestyle · Instagram</div>
+      <p>[seu sujeito], bright morning light, lifestyle photography, vibrant warm colors, candid pose, sense of joy, modern minimalist setting --ar 1:1 --style raw --s 250</p>
+    </div>
+
+    <div class="box prompt">
+      <div class="box-label">Produto · catálogo</div>
+      <p>[seu produto], product photography, clean white background with soft shadow, studio lighting, 45 degree angle, hyperrealistic, Apple ad aesthetic --ar 1:1 --style raw --s 100</p>
+    </div>
+
+    <div class="box prompt">
+      <div class="box-label">Cinematic · capa</div>
+      <p>[sua cena], cinematic still, anamorphic lens, teal and orange color grade, dramatic lighting, film grain, Roger Deakins style, IMAX aesthetic --ar 21:9 --s 500</p>
+    </div>
+
+    <div class="box prompt">
+      <div class="box-label">Ilustração · capa de ebook</div>
+      <p>[sua cena], flat design illustration, geometric shapes, bold colors (red, cream, dark), minimalist composition, editorial book cover, sans-serif typography placeholder --ar 3:4 --s 750</p>
+    </div>
+
+    <h4 style="margin-top:6mm">13.5 · Quando usar Midjourney em vez de DALL-E</h4>
+    <ul class="bullets">
+      <li>Precisa de <b>foto realística</b> de pessoa, produto ou ambiente</li>
+      <li>Está fazendo <b>marketing visual</b> profissional (campanha, ad, capa)</li>
+      <li>Quer <b>estilo artístico específico</b> (aquarela, óleo, anime)</li>
+      <li>Já investiu em <b>plano pago</b>, vale a pena maximizar uso</li>
+    </ul>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">43</div></div>
+</section>
+
+<!-- ━━━━━━ CAP 14 · CANVA AI · 3 páginas (44-46) ━━━━━━ -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 06/10</div><div>Cap. 14 · Canva AI</div></div>
+  <div class="pg-body">
+    <p class="kicker">IA · 06 de 10</p>
+    <div class="ia-hero">
+      <div class="ia-logo canva">C</div>
+      <div class="info">
+        <p class="ia-tag">Canva · 2023 (recurso AI)</p>
+        <h2>Canva <em>AI</em></h2>
+        <p class="ia-desc">Design pra quem nunca abriu Photoshop. A ferramenta mais democrática de design.</p>
+      </div>
+    </div>
+
+    <div class="meta-bar">
+      <div class="mb"><span class="ml">Site</span><span class="mv">canva.com</span></div>
+      <div class="mb"><span class="ml">Free?</span><span class="mv">Sim</span></div>
+      <div class="mb"><span class="ml">Pro</span><span class="mv">R$35/mês</span></div>
+      <div class="mb"><span class="ml">Forte em</span><span class="mv">Praticidade</span></div>
+    </div>
+
+    <img class="img-small" src="https://images.unsplash.com/photo-1559028012-481c04fa702d?w=1400&h=420&fit=crop&q=80" alt="Design colorido · templates" />
+
+    <h4 style="margin-top:6mm">O que é</h4>
+    <p>Canva é uma plataforma de design pra <b>quem não é designer</b>. Tem milhares de templates prontos: post de Insta, banner, apresentação, currículo, capa de ebook. Você pega um pronto, troca foto e texto, e tá pronto.</p>
+
+    <p>O <b>Canva AI</b> é a parte de inteligência artificial deles. Inclui: <b>Magic Design</b> (cria template a partir de descrição), <b>Magic Write</b> (texto com IA), <b>Magic Resize</b> (adapta pra outras plataformas), <b>Magic Eraser</b> (remove objeto da foto), <b>BG remover</b> (remove fundo).</p>
+
+    <h4 style="margin-top:6mm">Forte pra...</h4>
+    <ul class="bullets">
+      <li><b>Post de Instagram, carrossel, story</b> — milhares de templates BR</li>
+      <li><b>Apresentação profissional</b> — substitui PowerPoint</li>
+      <li><b>Capa de ebook, e-book lead magnet</b></li>
+      <li><b>Logo simples</b> com Magic Design</li>
+      <li><b>Banner pra anúncio</b> Facebook/Instagram Ads</li>
+      <li><b>Currículo, contrato simples, certificado</b></li>
+    </ul>
+
+    <h4 style="margin-top:6mm">Fraco pra...</h4>
+    <ul class="bullets">
+      <li><b>Design de alta complexidade</b> (Photoshop/Illustrator é melhor)</li>
+      <li><b>Foto editada profissionalmente</b> (Lightroom é melhor)</li>
+      <li><b>Identidade visual completa de marca</b> (precisa designer humano)</li>
+    </ul>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">44</div></div>
+</section>
+
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 06/10</div><div>Cap. 14 · Canva (cont.)</div></div>
+  <div class="pg-body">
+    <p class="kicker">14.2 · 7 recursos de IA dentro do Canva</p>
+
+    <ol class="big-list" style="margin-top:4mm">
+      <li><b>Magic Design</b>Descreve em palavras, ele cria template completo. "Post de Insta sobre lançamento de coleção de roupa feminina, cores rosa e dourado, tom elegante."</li>
+      <li><b>Magic Write</b>Gera texto direto no design. Tipo ChatGPT mas dentro do Canva.</li>
+      <li><b>Magic Resize</b>Você fez um post 1080x1080. Magic Resize adapta pra story 9:16, banner 16:9, Pinterest 2:3 — tudo em 1 clique.</li>
+      <li><b>BG Remover</b>Remove fundo da foto em 1 clique. Resultado profissional.</li>
+      <li><b>Magic Eraser</b>Apaga objeto indesejado da foto. Pessoa atrás, lixo no chão, marca de logo concorrente.</li>
+      <li><b>Magic Edit</b>Substitui parte da imagem. "Troca a camiseta azul por vermelha."</li>
+      <li><b>Translate</b>Traduz texto do design pra outro idioma mantendo formatação.</li>
+    </ol>
+
+    <div class="box dica" style="margin-top:6mm">
+      <div class="box-label">Recurso mais subutilizado</div>
+      <p><b>Magic Resize</b>. Faz um post, exporta também pra story, Reels capa, Pinterest, LinkedIn — tudo automático. Economiza 30 min por post.</p>
+    </div>
+
+    <h4 style="margin-top:6mm">14.3 · Free vs Pro</h4>
+    <p><b>Free</b> já é generosíssimo. Maioria dos templates é grátis. Canva Pro (R$35/mês) adiciona: BG Remover ilimitado, Magic Resize, Brand Kit (com cores e logo da marca salvos), acesso a mais templates premium, e mais espaço de armazenamento.</p>
+
+    <p>Pra empreendedor brasileiro: <b>começa free</b>. Sobe pra Pro quando estiver postando 10+ artes por semana e precisar do Brand Kit pra manter consistência.</p>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">45</div></div>
+</section>
+
+<section class="page cream-2">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 06/10</div><div>Cap. 14 · Canva (cont.)</div></div>
+  <div class="pg-body">
+    <p class="kicker">14.4 · Workflow ChatGPT + Canva</p>
+    <h4>A combinação que <em>multiplica</em>.</h4>
+
+    <p style="margin-top:5mm">A maneira mais produtiva de criar conteúdo de redes sociais é combinar as duas. Veja o fluxo:</p>
+
+    <ol class="big-list" style="margin-top:5mm">
+      <li><b>ChatGPT cria texto</b>Pede 10 ideias de carrossel pra seu nicho. Escolhe 3. Pede texto de cada slide.</li>
+      <li><b>Vai pro Canva</b>Procura template "carrossel Instagram educativo". Escolhe um que se encaixa.</li>
+      <li><b>Cola os textos</b>Substitui o texto do template pelos textos do ChatGPT.</li>
+      <li><b>Ajusta cores</b>Aplica seu Brand Kit (logo, cores, fonte).</li>
+      <li><b>Magic Resize</b>Adapta pra story.</li>
+      <li><b>Publica</b>Direto do Canva pro Insta (tem integração).</li>
+    </ol>
+
+    <p style="margin-top:6mm"><b>Tempo total:</b> 25 minutos pra um carrossel profissional. Antes da IA, mesmo conteúdo levava 2-3 horas com designer.</p>
+
+    <div class="box exercicio">
+      <div class="box-label">Exercício</div>
+      <p>Hoje: faz 1 carrossel pro seu negócio. ChatGPT pra texto, Canva pra design. Compara tempo gasto vs como você fazia antes. Anota.</p>
+    </div>
+
+    <h4 style="margin-top:6mm">14.5 · Templates BR mais usados</h4>
+    <ul class="bullets">
+      <li><b>Carrossel educativo</b> — 8 slides, fundo limpo, texto grande</li>
+      <li><b>Quote/citação</b> — 1 slide com frase forte, fundo colorido</li>
+      <li><b>Bastidores</b> — foto + texto sobreposto</li>
+      <li><b>Antes/depois</b> — split horizontal ou vertical</li>
+      <li><b>FAQ</b> — pergunta-resposta visual</li>
+    </ul>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">46</div></div>
+</section>
+
+<!-- ━━━━━━ CAP 15 · ELEVENLABS · 3 páginas (47-49) ━━━━━━ -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 07/10</div><div>Cap. 15 · ElevenLabs</div></div>
+  <div class="pg-body">
+    <p class="kicker">IA · 07 de 10</p>
+    <div class="ia-hero">
+      <div class="ia-logo eleven">11</div>
+      <div class="info">
+        <p class="ia-tag">ElevenLabs · 2022</p>
+        <h2>Eleven<em>Labs</em></h2>
+        <p class="ia-desc">Voz humana sintética. Indistinguível de pessoa real. Narração de vídeo, audiolivro, podcast.</p>
+      </div>
+    </div>
+
+    <div class="meta-bar">
+      <div class="mb"><span class="ml">Site</span><span class="mv">elevenlabs.io</span></div>
+      <div class="mb"><span class="ml">Free?</span><span class="mv">Sim · 10 min/mês</span></div>
+      <div class="mb"><span class="ml">Pro</span><span class="mv">$5–22/mês</span></div>
+      <div class="mb"><span class="ml">Forte em</span><span class="mv">Voz natural</span></div>
+    </div>
+
+    <img class="img-small" src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=1400&h=420&fit=crop&q=80" alt="Microfone · narração de voz" />
+
+    <h4 style="margin-top:6mm">O que é</h4>
+    <p>ElevenLabs é a melhor IA de <b>texto-pra-voz</b> de 2026. Você digita texto, ela transforma em áudio de voz humana — tão realista que muitas pessoas não conseguem distinguir de pessoa real. Funciona em 30+ idiomas, incluindo português brasileiro com sotaque natural.</p>
+
+    <p>Tem 2 modos: <b>vozes prontas</b> (mais de 1.000 vozes profissionais já disponíveis) e <b>clonagem de voz</b> (você grava 1 minuto da sua voz, ela aprende e fala qualquer texto na SUA voz).</p>
+
+    <h4 style="margin-top:6mm">Forte pra...</h4>
+    <ul class="bullets">
+      <li><b>Narração de Reels e TikTok</b> — voz feminina ou masculina brasileira natural</li>
+      <li><b>Áudio pra YouTube</b> — narração de vídeo educativo, sem precisar gravar</li>
+      <li><b>Audiolivro</b> — transforma seu ebook em audiolivro</li>
+      <li><b>Podcast</b> — pode entrevistar você mesmo com 2 vozes diferentes</li>
+      <li><b>Clonagem da SUA voz</b> — você grava 1 vez, usa pra sempre</li>
+      <li><b>URA / atendimento por voz</b> pra negócio</li>
+    </ul>
+
+    <h4 style="margin-top:6mm">Fraco pra...</h4>
+    <ul class="bullets">
+      <li><b>Emoção MUITO específica</b> (sussurro, gritaria) — limitado</li>
+      <li><b>Conversa em tempo real</b> (delay de processamento)</li>
+      <li><b>Quem precisa de uso massivo grátis</b> (10 min/mês free é pouco)</li>
+    </ul>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">47</div></div>
+</section>
+
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 07/10</div><div>Cap. 15 · ElevenLabs (cont.)</div></div>
+  <div class="pg-body">
+    <p class="kicker">15.2 · Como usar (passo a passo)</p>
+
+    <ol class="big-list">
+      <li><b>Cria conta</b>Vai em elevenlabs.io. Cadastra grátis (10 min/mês).</li>
+      <li><b>Vai em "Speech Synthesis"</b>No menu principal. É onde gera áudio.</li>
+      <li><b>Escolhe voz</b>Vê o catálogo. Filtra por idioma "Portuguese (Brazil)". Tem várias.</li>
+      <li><b>Cola o texto</b>O texto que quer transformar em áudio. Português brasileiro.</li>
+      <li><b>Ajusta sliders</b>"Stability" 50% e "Similarity" 75% são padrão bom. "Style" baixo pra narração natural.</li>
+      <li><b>Generate</b>30 segundos. Baixa o MP3.</li>
+    </ol>
+
+    <h4 style="margin-top:6mm">15.3 · Vozes pt-BR recomendadas</h4>
+    <table class="tbl">
+      <thead><tr><th>Voz</th><th>Estilo</th><th>Quando usar</th></tr></thead>
+      <tbody>
+        <tr><td><b>Francisca</b></td><td>Feminina, calorosa, amigável</td><td>Reels educativo, narração de marca</td></tr>
+        <tr><td><b>Antonio</b></td><td>Masculino, profissional</td><td>Negócio sério, anúncio corporativo</td></tr>
+        <tr><td><b>Thalita Multilingual</b></td><td>Feminina, fala vários idiomas</td><td>Vídeo bilíngue PT/EN</td></tr>
+      </tbody>
+    </table>
+
+    <h4 style="margin-top:6mm">15.4 · Clonagem da sua voz</h4>
+    <p>Plano Starter ($5/mês) já permite clonar 10 vozes. Pra clonar a sua:</p>
+    <ol class="big-list">
+      <li><b>Grava 1 minuto</b>Em ambiente silencioso. Lê texto em tom natural.</li>
+      <li><b>Sobe na plataforma</b>Voice Lab → Add Voice → Instant Voice Clone.</li>
+      <li><b>Aguarda 2 minutos</b>Ela processa.</li>
+      <li><b>Usa pra sempre</b>Sua voz fica disponível pra qualquer texto.</li>
+    </ol>
+
+    <div class="box alerta">
+      <div class="box-label">Ética · consentimento</div>
+      <p>NUNCA clone voz de outra pessoa sem consentimento. Pode dar processo. Use só pra sua própria voz, ou pra cliente que assinou termo.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">48</div></div>
+</section>
+
+<section class="page cream-2">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 07/10</div><div>Cap. 15 · ElevenLabs (cont.)</div></div>
+  <div class="pg-body">
+    <p class="kicker">15.5 · 5 usos práticos pra negócio</p>
+
+    <ol class="big-list">
+      <li><b>Narração de Reels educativo</b>Você escreve roteiro, ElevenLabs narra com voz feminina BR natural. Resultado: Reels profissional sem você aparecer.</li>
+      <li><b>Audiolivro do seu ebook</b>Tem ebook? Gera audiolivro em 1 hora. Vende como produto extra.</li>
+      <li><b>URA pra negócio</b>Mensagem de atendimento na sua secretária digital com voz profissional, não voz robótica.</li>
+      <li><b>Anúncio de rádio simulado</b>Pra teste interno antes de gravar com locutor real. Ou anúncio em redes.</li>
+      <li><b>Podcast solo</b>Você grava 1 versão, ElevenLabs gera "convidado" com voz diferente. Conversa entre 2 "pessoas".</li>
+    </ol>
+
+    <h4 style="margin-top:6mm">15.6 · Combina com Suno e Runway</h4>
+    <p>Pipeline profissional pra criar vídeo educativo em 1 hora:</p>
+    <ol class="big-list">
+      <li><b>ChatGPT</b>Escreve roteiro de 60 segundos</li>
+      <li><b>ElevenLabs</b>Gera narração com sua voz clonada</li>
+      <li><b>Suno</b>Cria trilha musical de fundo (sem copyright)</li>
+      <li><b>Runway</b>Ou CapCut: junta narração + música + B-roll</li>
+      <li><b>Posta</b>Reels, TikTok, YouTube Shorts</li>
+    </ol>
+
+    <p style="margin-top:6mm">Sem IA, esse pipeline levava 1 dia inteiro com profissional. Com IA, 1 hora.</p>
+
+    <div class="box exercicio">
+      <div class="box-label">Exercício</div>
+      <p>Escreve 1 parágrafo (50-80 palavras) sobre seu negócio. Cola no ElevenLabs com voz Francisca pt-BR. Baixa o áudio. Ouve. Compara com sua voz natural.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">49</div></div>
+</section>
+
+<!-- ━━━━━━ CAP 16 · SUNO · 3 páginas (50-52) ━━━━━━ -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 08/10</div><div>Cap. 16 · Suno</div></div>
+  <div class="pg-body">
+    <p class="kicker">IA · 08 de 10</p>
+    <div class="ia-hero">
+      <div class="ia-logo suno">♪</div>
+      <div class="info">
+        <p class="ia-tag">Suno AI · 2023</p>
+        <h2><em>Suno</em></h2>
+        <p class="ia-desc">Música completa em 1 minuto. Letra, melodia, voz cantando. Sem copyright.</p>
+      </div>
+    </div>
+
+    <div class="meta-bar">
+      <div class="mb"><span class="ml">Site</span><span class="mv">suno.com</span></div>
+      <div class="mb"><span class="ml">Free?</span><span class="mv">Sim · 10 músicas/dia</span></div>
+      <div class="mb"><span class="ml">Pro</span><span class="mv">$8–24/mês</span></div>
+      <div class="mb"><span class="ml">Forte em</span><span class="mv">Música completa</span></div>
+    </div>
+
+    <img class="img-small" src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=1400&h=420&fit=crop&q=80" alt="Música · estúdio de gravação" />
+
+    <h4 style="margin-top:6mm">O que é</h4>
+    <p>Suno é a IA que cria <b>música original completa</b> em 1 minuto. Você descreve estilo + cola letra (ou pede pra ela escrever), e ela compõe melodia, harmonia, ritmo e canta. Resultado: música profissional, 30s a 4min, MP3 pronto pra usar.</p>
+
+    <p>Importante: música gerada por Suno é <b>livre de copyright comercial</b> no plano Pro. Você pode usar em vídeo monetizado, anúncio, podcast, sem medo de takedown.</p>
+
+    <h4 style="margin-top:6mm">Forte pra...</h4>
+    <ul class="bullets">
+      <li><b>Trilha sonora pra Reels/TikTok</b> sem copyright</li>
+      <li><b>Jingle de marca</b> personalizado pro seu negócio</li>
+      <li><b>Música de fundo pra YouTube</b> não monetizada por terceiro</li>
+      <li><b>Áudio pra anúncio</b> de rádio, podcast, vídeo</li>
+      <li><b>Música tema</b> pra evento, casamento, festa</li>
+      <li><b>Idioma português</b> — canta com sotaque BR natural</li>
+    </ul>
+
+    <h4 style="margin-top:6mm">Fraco pra...</h4>
+    <ul class="bullets">
+      <li><b>Reproduzir banda específica</b> (não imita Coldplay, Anitta)</li>
+      <li><b>Qualidade de produção de estúdio</b> (boa, mas não top tier)</li>
+      <li><b>Edição posterior precisa</b> (você baixa MP3 e não consegue mexer nas partes)</li>
+    </ul>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">50</div></div>
+</section>
+
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 08/10</div><div>Cap. 16 · Suno (cont.)</div></div>
+  <div class="pg-body">
+    <p class="kicker">16.2 · Como usar</p>
+
+    <ol class="big-list">
+      <li><b>Cria conta</b>suno.com. Login com Google. Free: 10 créditos/dia (2 músicas).</li>
+      <li><b>Clica em "Create"</b>2 modos: Simple (descreve, ele faz tudo) e Custom (você controla letra + estilo).</li>
+      <li><b>Modo Custom (mais profissional)</b><br>
+        - Style: descreve estilo (ex: "MPB acústica, voz feminina suave, violão")<br>
+        - Lyrics: cola letra ou pede pra Suno escrever<br>
+        - Title: nome da música
+      </li>
+      <li><b>Generate</b>Aguarda 30 segundos. Recebe 2 versões.</li>
+      <li><b>Baixa MP3</b>Download direto. Usa como quiser.</li>
+    </ol>
+
+    <h4 style="margin-top:6mm">16.3 · Estilos que funcionam bem em BR</h4>
+    <table class="tbl">
+      <thead><tr><th>Estilo</th><th>Bom pra...</th></tr></thead>
+      <tbody>
+        <tr><td><b>MPB acústica</b></td><td>Marcas elegantes, restaurante, café</td></tr>
+        <tr><td><b>Lo-fi instrumental</b></td><td>Reels educativo, fundo de vídeo</td></tr>
+        <tr><td><b>Sertanejo</b></td><td>Negócio do interior, festa BR</td></tr>
+        <tr><td><b>Funk pop</b></td><td>Marca jovem, energia, viral</td></tr>
+        <tr><td><b>Bossa nova</b></td><td>Marca premium, refinada</td></tr>
+        <tr><td><b>Eletrônica chill</b></td><td>Tech, startup, moderno</td></tr>
+      </tbody>
+    </table>
+
+    <h4 style="margin-top:6mm">16.4 · Prompt template pra Suno</h4>
+    <div class="box prompt">
+      <div class="box-label">Modo Custom</div>
+      <p><b>Style:</b> [gênero], [voz feminina/masculina], [instrumentos], [mood], português brasileiro</p>
+      <p><b>Lyrics:</b> [Verso 1] [Refrão] [Verso 2] [Refrão] (use [Verse], [Chorus] como marcadores)</p>
+      <p><b>Title:</b> [nome curto]</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">51</div></div>
+</section>
+
+<section class="page cream-2">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 08/10</div><div>Cap. 16 · Suno (cont.)</div></div>
+  <div class="pg-body">
+    <p class="kicker">16.5 · 5 casos de uso real pra negócio</p>
+
+    <div class="box prompt">
+      <div class="box-label">01 · Jingle de marca</div>
+      <p><b>Style:</b> jingle alegre 15 segundos, voz feminina amigável, violão pop, ritmo médio, português brasileiro<br>
+      <b>Lyrics:</b> [Verse] Calazans Lumina, sua marca brilhando<br>
+      [Chorus] Marketing que paga, IA que transforma<br>
+      <b>Title:</b> Jingle Calazans 15s</p>
+    </div>
+
+    <div class="box prompt">
+      <div class="box-label">02 · Música pra Reels educativo</div>
+      <p><b>Style:</b> lo-fi instrumental chill, piano sutil, ritmo médio, mood otimista educativo, 60 segundos<br>
+      <b>Lyrics:</b> (instrumental only)<br>
+      <b>Title:</b> Fundo Reels Marketing</p>
+    </div>
+
+    <div class="box prompt">
+      <div class="box-label">03 · Música tema do podcast</div>
+      <p><b>Style:</b> abertura cinematográfica, orquestral pop, crescendo, 20 segundos, energia inspiradora<br>
+      <b>Lyrics:</b> (instrumental)<br>
+      <b>Title:</b> Podcast Open</p>
+    </div>
+
+    <div class="box prompt">
+      <div class="box-label">04 · Música pra anúncio de Stories</div>
+      <p><b>Style:</b> funk pop brasileiro, voz feminina jovem, ritmo dançante, 15 segundos<br>
+      <b>Lyrics:</b> [Verse] Black Friday chegou, desconto bombou<br>
+      <b>Title:</b> Anúncio Stories BF</p>
+    </div>
+
+    <div class="box prompt">
+      <div class="box-label">05 · Música tema de evento</div>
+      <p><b>Style:</b> bossa nova clássica, violão, cuíca sutil, voz feminina suave, 2 minutos<br>
+      <b>Lyrics:</b> letra romântica sobre [tema do evento]<br>
+      <b>Title:</b> Evento Calazans</p>
+    </div>
+
+    <div class="box dica">
+      <div class="box-label">Plano Pro vale a pena?</div>
+      <p>Pra uso comercial (vídeo monetizado, anúncio pago), <b>sim</b>. $8/mês plano Pro libera direitos comerciais e 500 créditos/mês.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">52</div></div>
+</section>
+
+<!-- ━━━━━━ CAP 17 · RUNWAY · 3 páginas (53-55) ━━━━━━ -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 09/10</div><div>Cap. 17 · Runway</div></div>
+  <div class="pg-body">
+    <p class="kicker">IA · 09 de 10</p>
+    <div class="ia-hero">
+      <div class="ia-logo runway">R</div>
+      <div class="info">
+        <p class="ia-tag">Runway · 2018</p>
+        <h2><em>Runway</em></h2>
+        <p class="ia-desc">A IA de vídeo mais conhecida. Gera vídeo a partir de texto ou imagem.</p>
+      </div>
+    </div>
+
+    <div class="meta-bar">
+      <div class="mb"><span class="ml">Site</span><span class="mv">runwayml.com</span></div>
+      <div class="mb"><span class="ml">Free?</span><span class="mv">Sim · 125 créditos</span></div>
+      <div class="mb"><span class="ml">Pro</span><span class="mv">$12–95/mês</span></div>
+      <div class="mb"><span class="ml">Forte em</span><span class="mv">Vídeo curto</span></div>
+    </div>
+
+    <img class="img-small" src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1400&h=420&fit=crop&q=80" alt="Câmera de filme · produção" />
+
+    <h4 style="margin-top:6mm">O que é</h4>
+    <p>Runway é a empresa que abriu o caminho da IA de vídeo. Em 2024 lançou o Gen-3 Alpha, em 2025 o Gen-4 — modelos que geram clipes de até 10 segundos a partir de texto ou imagem. Qualidade próxima do cinema. Mas atenção: vídeo gerado por IA ainda tem limitações importantes.</p>
+
+    <h4 style="margin-top:6mm">O que ela faz</h4>
+    <ul class="bullets">
+      <li><b>Text-to-video</b> — descreve cena, ela gera 5-10s de vídeo</li>
+      <li><b>Image-to-video</b> — sobe foto, ela "anima" a foto</li>
+      <li><b>Lip-sync</b> — pega vídeo de pessoa parada, faz lábios falarem o que você quiser</li>
+      <li><b>Remove background</b> de vídeo com 1 clique</li>
+      <li><b>Generative B-roll</b> — preenche cenas que faltam no seu vídeo</li>
+      <li><b>Expand frame</b> — amplia cena pra outros formatos</li>
+    </ul>
+
+    <h4 style="margin-top:6mm">Forte pra...</h4>
+    <ul class="bullets">
+      <li><b>B-roll pra Reels e YouTube</b> (cenário cinematográfico)</li>
+      <li><b>Anúncio criativo curto</b> (5-10s impactante)</li>
+      <li><b>Apresentação de produto</b> (vídeo do produto rotacionando)</li>
+      <li><b>Conceito visual</b> antes de gravar com câmera real</li>
+    </ul>
+
+    <h4 style="margin-top:6mm">Fraco pra...</h4>
+    <ul class="bullets">
+      <li><b>Vídeo longo</b> (max 10s por geração)</li>
+      <li><b>Consistência de personagem</b> entre clipes diferentes</li>
+      <li><b>Sincronização perfeita lábio-fala</b> em rosto realista</li>
+    </ul>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">53</div></div>
+</section>
+
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 09/10</div><div>Cap. 17 · Runway (cont.)</div></div>
+  <div class="pg-body">
+    <p class="kicker">17.2 · Como usar Runway Gen-4</p>
+
+    <ol class="big-list">
+      <li><b>Cria conta</b>runwayml.com. Free dá 125 créditos (suficiente pra ~5-10 vídeos curtos).</li>
+      <li><b>Clica em Generate Video</b>No dashboard.</li>
+      <li><b>Escolhe modo</b>Text → Video (a partir de descrição) OU Image → Video (anima uma foto).</li>
+      <li><b>Escreve prompt</b>Descreve cena: sujeito, ação, ambiente, luz, câmera.</li>
+      <li><b>Define duração</b>5s ou 10s. Mais longo gasta mais créditos.</li>
+      <li><b>Generate</b>2-4 minutos. Baixa MP4.</li>
+    </ol>
+
+    <h4 style="margin-top:6mm">17.3 · Prompt template pra vídeo</h4>
+    <p>Estrutura: <b>[Sujeito] + [Ação] + [Ambiente] + [Câmera] + [Estilo]</b></p>
+
+    <div class="box prompt">
+      <div class="box-label">Exemplo · café da manhã</div>
+      <p>Close-up shot of <b>steaming coffee being poured</b> into a white ceramic cup, slow motion, <b>cafe interior with warm window light</b>, <b>shallow depth of field</b>, golden hour, cinematic, hyperrealistic, 4K</p>
+    </div>
+
+    <h4 style="margin-top:6mm">17.4 · Casos de uso pra negócio brasileiro</h4>
+    <ul class="bullets">
+      <li><b>Reels promocional</b> — abertura de 5s com vídeo IA, resto com sua foto/vídeo</li>
+      <li><b>Anúncio Facebook Ads</b> — cena de produto rotacionando, sem precisar de estúdio</li>
+      <li><b>Capa de YouTube</b> — vídeo curto que vira thumbnail animado</li>
+      <li><b>Storytelling visual</b> — cenas que ilustram seu pitch</li>
+      <li><b>Background pra apresentação</b> — slide de fundo dinâmico</li>
+    </ul>
+
+    <div class="box dica" style="margin-top:5mm">
+      <div class="box-label">Realidade de 2026</div>
+      <p>Vídeo IA ainda é melhor pra <b>cenas conceituais</b> (paisagem, abstrato, produto inanimado) que pra <b>pessoa específica falando</b>. Pra rosto que precisa convencer, ainda use câmera real ou avatar AI (HeyGen).</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">54</div></div>
+</section>
+
+<section class="page cream-2">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 09/10</div><div>Cap. 17 · Runway (cont.)</div></div>
+  <div class="pg-body">
+    <p class="kicker">17.5 · Outras IAs de vídeo</p>
+    <h4>Alternativas em 2026.</h4>
+
+    <table class="tbl" style="margin-top:5mm">
+      <thead><tr><th>IA</th><th>Empresa</th><th>Diferencial</th></tr></thead>
+      <tbody>
+        <tr><td><b>Sora</b></td><td>OpenAI</td><td>Qualidade top, integrado ao ChatGPT Plus</td></tr>
+        <tr><td><b>Veo 3</b></td><td>Google</td><td>Realismo + áudio nativo. Top em 2026.</td></tr>
+        <tr><td><b>Kling 3.0</b></td><td>Kuaishou (China)</td><td>Realismo top, sem barreira idioma</td></tr>
+        <tr><td><b>Hailuo 2-3</b></td><td>MiniMax</td><td>Movimento fluido, rápido</td></tr>
+        <tr><td><b>Pika</b></td><td>Pika Labs</td><td>Estilo cartoon e animação 2D</td></tr>
+        <tr><td><b>HeyGen</b></td><td>HeyGen</td><td>Avatar AI falando — pra apresentador virtual</td></tr>
+      </tbody>
+    </table>
+
+    <h4 style="margin-top:6mm">17.6 · CapCut · alternativa pra brasileiro</h4>
+    <p>Pra editar vídeo final (cortar, juntar, adicionar legenda, música), <b>CapCut</b> é insuperável. É da ByteDance (mesma da TikTok). <b>Grátis</b>. Tem desktop e mobile.</p>
+
+    <p>Recursos de IA do CapCut:</p>
+    <ul class="bullets">
+      <li><b>Legendas automáticas</b> em pt-BR — gera em 1 clique</li>
+      <li><b>Remove background</b> do vídeo</li>
+      <li><b>Estabilização</b> de vídeo tremido</li>
+      <li><b>Templates virais</b> prontos do TikTok</li>
+      <li><b>Vozes IA</b> pra narração</li>
+      <li><b>Auto-cut</b> baseado em fala (corte automático nos cortes da narrativa)</li>
+    </ul>
+
+    <div class="box dica">
+      <div class="box-label">Workflow profissional</div>
+      <p><b>Runway/Sora</b> pra gerar B-roll cinematográfico (5-10s cenas). <b>CapCut</b> pra montar tudo + legenda + música. Resultado: Reels viral pronto em 30 minutos.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">55</div></div>
+</section>
+
+<!-- ━━━━━━ CAP 18 · CURSOR & COPILOT · 3 páginas (56-58) ━━━━━━ -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 10/10</div><div>Cap. 18 · Cursor & Copilot</div></div>
+  <div class="pg-body">
+    <p class="kicker">IA · 10 de 10</p>
+    <div class="ia-hero">
+      <div class="ia-logo cursor">{}</div>
+      <div class="info">
+        <p class="ia-tag">Cursor & GitHub · 2022-2024</p>
+        <h2>Cursor &<br><em>Copilot</em></h2>
+        <p class="ia-desc">IAs que programam por você. Mesmo sem saber programar, você consegue criar app, automação, site.</p>
+      </div>
+    </div>
+
+    <div class="meta-bar">
+      <div class="mb"><span class="ml">Cursor</span><span class="mv">cursor.com · $20/mês</span></div>
+      <div class="mb"><span class="ml">Copilot</span><span class="mv">github.com · $10/mês</span></div>
+      <div class="mb"><span class="ml">Forte em</span><span class="mv">Código</span></div>
+    </div>
+
+    <img class="img-small" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1400&h=420&fit=crop&q=80" alt="Código · programação com IA" />
+
+    <h4 style="margin-top:6mm">"Mas eu não sou programador..."</h4>
+    <p>Justamente. Em 2026, programar virou conversa em português. Você descreve o que quer, a IA escreve o código. <b>Quem nunca programou consegue criar:</b></p>
+    <ul class="bullets">
+      <li><b>Landing page simples</b> pra capturar lead</li>
+      <li><b>Automação</b> que copia dados de uma planilha pra outra</li>
+      <li><b>Bot de WhatsApp</b> básico</li>
+      <li><b>Script</b> que renomeia 500 arquivos automaticamente</li>
+      <li><b>Calculadora customizada</b> pro seu negócio</li>
+    </ul>
+
+    <h4 style="margin-top:6mm">Cursor</h4>
+    <p>Cursor é um <b>editor de código com IA embutida</b>. É um programa de computador (desktop). Você abre, digita em português o que quer, e ele escreve o código. Pra leigo absoluto, é mais visual que Copilot.</p>
+
+    <h4 style="margin-top:6mm">GitHub Copilot</h4>
+    <p>Copilot é um <b>plugin de IA</b> que vai dentro de outros editores (VS Code, JetBrains). Mais pra quem já programa um pouco. Sugere código enquanto você digita.</p>
+
+    <div class="box dica" style="margin-top:5mm">
+      <div class="box-label">Pra começar do zero</div>
+      <p>Use <b>Cursor</b>. Interface mais limpa, modo "chat com IA" mais intuitivo. Funciona com Claude Sonnet por baixo.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">56</div></div>
+</section>
+
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 10/10</div><div>Cap. 18 · Cursor (cont.)</div></div>
+  <div class="pg-body">
+    <p class="kicker">18.2 · Seu 1º projeto sem saber programar</p>
+    <h4>Landing page pra capturar lead.</h4>
+
+    <ol class="big-list">
+      <li><b>Baixa o Cursor</b>cursor.com → Download. Instala.</li>
+      <li><b>Abre o Cursor</b>Crie uma pasta nova (no Desktop: "minha-landing"). Abre essa pasta no Cursor.</li>
+      <li><b>Aperta Cmd+L (Mac) ou Ctrl+L (Windows)</b>Abre o chat lateral.</li>
+      <li><b>Cola este pedido:</b><br>
+        <em>"Cria uma landing page simples em HTML+CSS pra capturar email. Título 'Em breve · Calazans Lumina'. Subtítulo curto. Formulário com 1 campo email + botão 'Avise-me'. Design moderno, cores creme e vermelho, responsive mobile. Salva como index.html"</em>
+      </li>
+      <li><b>Aceita as mudanças</b>Cursor cria o arquivo. Click no Accept.</li>
+      <li><b>Abre o index.html</b>Click direito → Open in Browser. Sua landing page tá no ar (local).</li>
+    </ol>
+
+    <p style="margin-top:6mm">Em 5 minutos, sem escrever uma linha de código, você criou uma landing page funcional. Pode subir pro Vercel/Netlify (grátis) e tá online.</p>
+
+    <div class="box prompt">
+      <div class="box-label">Prompt template pra Cursor (qualquer projeto)</div>
+      <p>Cria um <b>[tipo de coisa]</b> em <b>[linguagem]</b>. Função: <b>[o que faz]</b>. Inputs: <b>[o que recebe]</b>. Output: <b>[o que retorna]</b>. Estilo: <b>[clean/comentado/comercial]</b>. Inclui: <b>[detalhes]</b>.</p>
+    </div>
+
+    <h4 style="margin-top:6mm">18.3 · Cursor como assistente pessoal técnico</h4>
+    <p>Você não precisa virar programador. Use Cursor pra <b>tarefas técnicas pontuais</b>:</p>
+    <ul class="bullets">
+      <li>"Cria script que renomeia todos arquivos da pasta com data + nome original"</li>
+      <li>"Cria planilha Excel que recebe dados de clientes e calcula faturamento por mês"</li>
+      <li>"Cria automação que abre site, login, faz screenshot, fecha"</li>
+      <li>"Converte essa lista de PDFs em 1 só arquivo"</li>
+    </ul>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">57</div></div>
+</section>
+
+<section class="page cream-2">
+  <div class="pg-head"><div class="brand">Parte 03 · IA 10/10</div><div>Cap. 18 · Cursor (cont.)</div></div>
+  <div class="pg-body">
+    <p class="kicker">18.4 · Quando vale a pena aprender Cursor</p>
+    <h4>Sinais.</h4>
+
+    <ul class="bullets" style="margin-top:5mm">
+      <li>Você tem tarefa <b>repetitiva</b> que faz toda semana (renomear arquivo, copiar dado, processar planilha)</li>
+      <li>Você quer <b>site simples</b> mas não tem orçamento de R$ 3-10k pra agência</li>
+      <li>Você quer <b>automação</b> pequena (zap, copy file, etc.)</li>
+      <li>Você quer entender melhor o que seu desenvolvedor faz</li>
+    </ul>
+
+    <h4 style="margin-top:6mm">18.5 · Alternativas no-code (sem precisar de Cursor)</h4>
+
+    <table class="tbl">
+      <thead><tr><th>Ferramenta</th><th>Pra que serve</th><th>Preço</th></tr></thead>
+      <tbody>
+        <tr><td><b>Lovable</b></td><td>Cria app inteiro descrevendo em português</td><td>$20/mês</td></tr>
+        <tr><td><b>v0 (Vercel)</b></td><td>Cria landing page e componente React</td><td>Free / $20/mês</td></tr>
+        <tr><td><b>Replit Agent</b></td><td>App inteiro online, sem instalar nada</td><td>Free / $20/mês</td></tr>
+        <tr><td><b>Bolt.new</b></td><td>App full-stack em chat. Bom pra MVP rápido</td><td>Free / $20/mês</td></tr>
+      </tbody>
+    </table>
+
+    <div class="box dica">
+      <div class="box-label">Pra leigo absoluto</div>
+      <p>Comece com <b>Lovable</b> ou <b>Bolt.new</b>. Interface 100% web, sem instalar nada. Você descreve em português brasileiro, ele monta o app. Gera link público que você compartilha com cliente.</p>
+    </div>
+
+    <div class="pull-quote">
+      O leigo de hoje, com IA, cria em 1 hora o que programador júnior fazia em 1 semana.
+      <span class="author">Princípio · barreira técnica caiu</span>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">58</div></div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PARTE 4 — PROMPT ENGINEERING                                  -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="page part-opener">
+  <div class="po-content">
+    <p class="po-label">Parte · 04</p>
+    <p class="po-num">04</p>
+    <h2 class="po-title">Prompt<br><em>Engineering</em>.</h2>
+    <p class="po-lead">A habilidade que separa quem usa IA bem de quem usa mal. Framework CRIA, técnicas profissionais, 50 templates copiáveis por nicho.</p>
+    <div class="po-chapters">
+      <div class="ch"><span class="ch-num">19</span>A receita do prompt perfeito · CRIA</div>
+      <div class="ch"><span class="ch-num">20</span>5 técnicas avançadas</div>
+      <div class="ch"><span class="ch-num">21</span>50 templates copiáveis</div>
+    </div>
+  </div>
+  <div class="po-foot"><div>3 capítulos · 10 páginas</div><div>Calazans Lumina · Pg 59</div></div>
+</section>
+
+<!-- Cap 19 — Framework CRIA -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 04 · Prompt Engineering</div><div>Cap. 19 · CRIA</div></div>
+  <div class="pg-body">
+    <p class="kicker">Capítulo · 19</p>
+    <h3>A receita do <em>prompt perfeito</em></h3>
+
+    <p style="margin-top:5mm">90% das pessoas que reclamam que IA "não serve" estão fazendo prompt ruim. A diferença entre prompt ruim e prompt bom muda completamente o resultado, mesmo na mesma IA, mesmo dia.</p>
+
+    <img class="img-small" src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1400&h=420&fit=crop&q=80" alt="Caderno e caneta · escrever prompt" />
+
+    <div class="compare">
+      <div class="side bad">
+        <span class="tag red">Ruim · vago</span>
+        <p style="margin-top:3mm;font-family:'JetBrains Mono',monospace;font-size:9pt">"Escreva um post."</p>
+        <p style="font-size:9pt;margin-top:3mm">Resultado: texto genérico, sem personalidade, inútil.</p>
+      </div>
+      <div class="side good">
+        <span class="tag green">Bom · CRIA</span>
+        <p style="margin-top:3mm;font-family:'JetBrains Mono',monospace;font-size:8.5pt">"Você é especialista em marketing pra pequeno negócio. Escreva post de Instagram pra loja de roupas em BH. Público: mulheres 25-45. Tema: lançamento coleção inverno. Tom: descontraído. 200 palavras + 5 hashtags + pergunta no final."</p>
+        <p style="font-size:9pt;margin-top:3mm">Resultado: texto profissional, personalizado, pronto.</p>
+      </div>
+    </div>
+
+    <h4 style="margin-top:8mm">19.1 · O framework CRIA</h4>
+    <p>4 elementos. Inclui os 4 sempre que possível. Resultado salta de qualidade.</p>
+
+    <ol class="big-list" style="margin-top:5mm">
+      <li><b>C · Contexto</b>Quem você é, seu negócio, situação atual. "Sou dono de uma pizzaria delivery em BH com 500 seguidores no Insta."</li>
+      <li><b>R · Rol (Papel)</b>Que profissional a IA deve simular. "Aja como especialista em marketing de restaurante com 10 anos de experiência."</li>
+      <li><b>I · Instrução</b>O que exatamente fazer. "Cria 5 ideias de post pra aumentar pedidos no delivery durante a semana."</li>
+      <li><b>A · Ajustes</b>Tom, formato, tamanho, restrições. "Tom informal e divertido. Cada post: legenda até 100 palavras + 3 hashtags + foto sugerida."</li>
+    </ol>
+
+    <p style="margin-top:6mm">Quando você junta tudo, o resultado entrega exatamente o que o ChatGPT precisa pra gerar algo útil.</p>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">60</div></div>
+</section>
+
+<!-- Cap 20 — 5 técnicas avançadas -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 04 · Prompt Engineering</div><div>Cap. 20 · Técnicas avançadas</div></div>
+  <div class="pg-body">
+    <p class="kicker">Capítulo · 20</p>
+    <h3>5 <em>técnicas</em> avançadas</h3>
+
+    <p style="margin-top:5mm">Além do CRIA, profissionais usam estas 5 técnicas diariamente.</p>
+
+    <ol class="big-list" style="margin-top:5mm">
+      <li><b>1 · Few-Shot Prompting</b>Mostre 2-3 exemplos do que quer ANTES de pedir. <em>"Aqui estão 3 posts que funcionaram bem na minha loja: [ex1] [ex2] [ex3]. Agora cria 5 novos no mesmo estilo."</em> Qualidade dobra.</li>
+      <li><b>2 · Chain-of-Thought</b>Peça pra IA pensar passo a passo antes. <em>"Analisa minha situação passo a passo antes de dar recomendações. Primeiro identifique os problemas, depois sugira soluções, e por fim priorize por impacto."</em></li>
+      <li><b>3 · Persona + Cenário</b>Crie cenário rico. <em>"Você é diretor de marketing de uma empresa de R$ 500 mil/ano que precisa dobrar o faturamento em 6 meses com R$ 2.000/mês de orçamento. O que faria?"</em></li>
+      <li><b>4 · Restrições criativas</b>Limites estimulam criatividade. <em>"Escreva headline em no máximo 8 palavras", "Responda usando apenas analogias de futebol", "Explique como se eu tivesse 5 anos."</em></li>
+      <li><b>5 · Auto-avaliação</b>Peça pra IA reler e melhorar. <em>"Agora releia sua resposta, dê uma nota de 1 a 10, e reescreva melhorando os pontos fracos."</em></li>
+    </ol>
+
+    <div class="box dica" style="margin-top:6mm">
+      <div class="box-label">Iteração</div>
+      <p>Nunca tente fazer tudo num único prompt. Comece amplo: "Me dê 10 ideias". Escolha a melhor. Refine: "Desenvolve a ideia 3". Adapte: "Agora pro Instagram". Melhore: "Reescreve o gancho". <b>Cada iteração melhora dramaticamente.</b></p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">61</div></div>
+</section>
+
+<!-- Cap 21 — 50 Templates · página 1 de 5 -->
+<section class="page cream-2">
+  <div class="pg-head"><div class="brand">Parte 04 · Prompt Engineering</div><div>Cap. 21 · Templates 01-10</div></div>
+  <div class="pg-body">
+    <p class="kicker">Capítulo · 21 · Templates</p>
+    <h3>50 templates <em>copiáveis</em></h3>
+    <p style="margin-top:3mm">Adapta as partes entre colchetes ao seu negócio. Cola na IA. Pronto.</p>
+
+    <div class="box prompt">
+      <span class="tpl-num">01 · Conteúdo</span>
+      <p>Cria post de Instagram pra <b>[negócio]</b>. Público: <b>[perfil]</b>. Tema: <b>[assunto]</b>. Inclui: legenda envolvente até 200 palavras, 5 hashtags, pergunta pra engajar. Tom: <b>[descontraído/profissional]</b>.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">02 · Vendas</span>
+      <p>Escreve email de vendas pra <b>[produto/serviço]</b>. Cliente já demonstrou interesse mas não comprou. Objetivo: convencer sem pressionar. Inclui: assunto chamativo, 3 benefícios claros, depoimento fictício, CTA pra WhatsApp. Máximo 200 palavras.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">03 · Produto</span>
+      <p>Escreve descrição de <b>[produto]</b> pra <b>[onde será publicado]</b>. Destaque: <b>[benefícios principais]</b>. Público: <b>[quem vai ler]</b>. Tom: <b>[informal/formal/técnico]</b>. Inclui: características, benefícios, frase de CTA.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">04 · Atendimento</span>
+      <p>Cria script de atendimento por WhatsApp pra <b>[negócio]</b>. Cliente pergunta sobre <b>[assunto]</b>. Inclui: saudação, perguntas de qualificação, apresentação da solução, resposta pra objeção de preço, fechamento.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">05 · Blog SEO</span>
+      <p>Escreve artigo de blog de 800 palavras sobre <b>[tema]</b>. Otimizado pra SEO com keyword <b>[keyword]</b>. Estrutura: introdução com gancho, 3-5 subtítulos H2, conclusão com CTA. Tom: educativo e acessível.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">06 · Reels viral</span>
+      <p>Cria roteiro de Reels de 30 segundos sobre <b>[tema]</b>. Estrutura: gancho nos primeiros 3s (frase que para de rolar), problema, solução, CTA. Inclui sugestão de música trending e texto na tela pra cada cena.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">07 · Carrossel</span>
+      <p>Cria carrossel de 8 slides pra Instagram de <b>[negócio]</b>. Tema: <b>[assunto]</b>. Cada slide: título em negrito (max 5 palavras), texto até 25 palavras, emoji relevante. Slide 1 = gancho. Slide 8 = CTA pra salvar e seguir.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">08 · Stories</span>
+      <p>Cria sequência de 6 stories educativos sobre <b>[tema]</b> pra <b>[negócio]</b>. Cada story: 1 frase impactante (max 12 palavras), cor sugerida, tipo de interação (enquete/pergunta/quiz).</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">09 · LinkedIn</span>
+      <p>Escreve post de LinkedIn sobre <b>[insight do seu negócio]</b>. Tom: profissional mas humano. 300 palavras. Estrutura: gancho com dado/pergunta, 3 parágrafos com história e lição, CTA pra comentário.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">10 · Resposta review</span>
+      <p>Escreve resposta pra review de <b>[X estrelas]</b> sobre <b>[situação]</b>. Tom: agradecido se positivo, empático se negativo. Em inglês se for cliente americano. Até 5 frases. Personalize com nome do cliente.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">62</div></div>
+</section>
+
+<!-- Templates 11-20 -->
+<section class="page cream-2">
+  <div class="pg-head"><div class="brand">Parte 04 · Prompt Engineering</div><div>Cap. 21 · Templates 11-20</div></div>
+  <div class="pg-body">
+    <div class="box prompt">
+      <span class="tpl-num">11 · Cobrança</span>
+      <p>Escreve email de cobrança pra cliente atrasado <b>[X dias]</b>. Tom: firme mas amigável. Sem ameaça. Oferece 3 opções: à vista (com 10% desc), parcelar, prorrogar. Máx 150 palavras.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">12 · Email de boas-vindas</span>
+      <p>Cria email de boas-vindas pra novo cliente de <b>[negócio]</b>. Inclui: agradecimento, o que esperar, próximo passo, contato direto. Tom: caloroso. 120 palavras.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">13 · Pós-venda</span>
+      <p>Escreve mensagem pós-venda pra cliente que comprou <b>[produto]</b> há 7 dias. Pergunta como foi, oferece suporte, pede indicação se feliz. Tom: amigável, sem pressão. WhatsApp.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">14 · Reativação cliente</span>
+      <p>Cliente comprou há 6 meses e sumiu. Cria mensagem de reativação com benefício novo. Tom: pessoal, "lembrei de você". Oferta especial pra retorno. 4 frases. WhatsApp.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">15 · Anúncio Facebook Ads</span>
+      <p>Cria 3 versões de anúncio pra Facebook/Instagram Ads pra <b>[produto]</b>. Público: <b>[persona]</b>. Objetivo: <b>[gerar lead/venda]</b>. Cada versão: headline, texto até 125 palavras, CTA, imagem sugerida.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">16 · Landing page</span>
+      <p>Escreve texto completo de landing page pra <b>[oferta]</b>. Inclui: headline impactante, subheadline, 5 benefícios em bullets, 3 depoimentos fictícios, FAQ com 5 perguntas, CTA. Use técnica PAS.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">17 · Email funil</span>
+      <p>Cria sequência de 5 emails de follow-up pra lead que baixou <b>[material grátis]</b>. Objetivo final: vender <b>[produto]</b>. Dias: 0, 1, 3, 5, 7. Cada email: assunto, corpo até 200 palavras, CTA.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">18 · Calendário de conteúdo</span>
+      <p>Cria calendário de 30 dias pro Instagram de <b>[negócio]</b>. Regra: 40% educativo, 20% bastidores, 15% prova social, 15% venda, 10% entretenimento. Pra cada dia: tipo de post, tema, formato, gancho.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">19 · Apresentação executiva</span>
+      <p>Cria estrutura de apresentação de 10 slides pra reunião com cliente. Tópico: <b>[serviço/proposta]</b>. Cada slide: título + 3 bullets + sugestão visual. Tom: persuasivo, profissional, dado-driven.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">20 · Pitch elevator</span>
+      <p>Cria pitch de 30 segundos (60 palavras) sobre <b>[meu negócio]</b>. Estrutura: problema que resolve, solução, diferencial, prova social, CTA. Tom: conversacional, não decorado.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">63</div></div>
+</section>
+
+<!-- Templates 21-30 -->
+<section class="page cream-2">
+  <div class="pg-head"><div class="brand">Parte 04 · Prompt Engineering</div><div>Cap. 21 · Templates 21-30</div></div>
+  <div class="pg-body">
+    <div class="box prompt">
+      <span class="tpl-num">21 · Análise concorrência</span>
+      <p>Analise os 5 maiores concorrentes de <b>[meu negócio]</b> em <b>[região]</b>. Compara: preço médio, posicionamento, diferencial, força e fraqueza. Apresenta em tabela. Sugere 3 ações pra eu me destacar.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">22 · Pesquisa de mercado</span>
+      <p>Analisa o mercado de <b>[nicho]</b> em <b>[cidade/região]</b> em 2026. Quais são as tendências, oportunidades e ameaças? Quem são os principais players?</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">23 · Personas</span>
+      <p>Crie 3 personas detalhadas pra <b>[negócio]</b>. Cada persona: nome fictício, idade, profissão, renda, dores, desejos, objeções de compra, onde busca informação, o que motivaria a comprar.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">24 · SWOT</span>
+      <p>Faça análise SWOT do meu negócio. Forças, Fraquezas, Oportunidades, Ameaças. Inclui ações concretas pra cada quadrante. Tom: consultor honesto. Contexto: <b>[descreve negócio]</b>.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">25 · Plano 90 dias</span>
+      <p>Crie plano de marketing de 90 dias pra <b>[negócio]</b>. Faturamento atual: <b>[valor]</b>. Meta: <b>[objetivo]</b>. Orçamento: <b>[valor]</b>. Inclui: ferramentas, calendário semanal, KPIs, quick wins, projeto principal.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">26 · Análise de dados</span>
+      <p>Aqui estão os dados do meu negócio nos últimos 3 meses: <b>[cola dados]</b>. Analise: tendências (+/-), maiores problemas, ações concretas pra melhorar, métricas pra priorizar nos próximos 30 dias.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">27 · Pitch deck investidor</span>
+      <p>Crie estrutura de pitch deck de 12 slides pra investidor. Negócio: <b>[descrição]</b>. Inclui: problema, solução, mercado, modelo, tração, time, financeiro, ask. Tom: convincente, dado-driven.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">28 · Análise de funil</span>
+      <p>Meu funil: <b>[X visitas → Y leads → Z vendas]</b>. Analise gargalo. Onde estou perdendo mais cliente? Sugira 3 ações concretas pra cada etapa do funil.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">29 · Briefing de campanha</span>
+      <p>Cria briefing de campanha pra <b>[produto/lançamento]</b>. Inclui: objetivo, público-alvo, mensagem central, tom, canais, KPIs, timeline 30 dias, budget sugerido.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">30 · Otimização anúncio</span>
+      <p>Minha campanha de Facebook Ads teve: impressões <b>[X]</b>, cliques <b>[Y]</b>, CTR <b>[Z%]</b>, leads <b>[N]</b>, CPL <b>[R$X]</b>, vendas <b>[V]</b>. Analise. Onde tá o gargalo? O que melhorar primeiro? 3 ações concretas.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">64</div></div>
+</section>
+
+<!-- Templates 31-40 -->
+<section class="page cream-2">
+  <div class="pg-head"><div class="brand">Parte 04 · Prompt Engineering</div><div>Cap. 21 · Templates 31-40</div></div>
+  <div class="pg-body">
+    <div class="box prompt">
+      <span class="tpl-num">31 · Resumo de reunião</span>
+      <p>Transcrevi reunião abaixo. Cria ata profissional com: data, participantes, 5 decisões principais, 5 ações pendentes (quem faz, prazo), próximos passos. Tom: corporativo. <b>[cola transcrição]</b></p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">32 · Resumo de PDF</span>
+      <p>Resume esse PDF em 5 bullets em português, linguagem de 8ª série. Foque: prazo, valor, multa, garantia, responsabilidade. Sinaliza com ⚠️ qualquer cláusula abusiva. <b>[cola PDF]</b></p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">33 · Tradução com tom</span>
+      <p>Traduz pra <b>[inglês/espanhol]</b> mantendo: tom <b>[formal/informal/técnico]</b>, sotaque cultural (american/british), e fluência natural. Não traduz palavra por palavra — traduz a ideia. <b>[cola texto]</b></p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">34 · Resumir artigo longo</span>
+      <p>Resume esse artigo em 200 palavras. Estrutura: 1 frase de contexto, 3 pontos principais com explicação, 1 frase de implicação pra mim. <b>[cola artigo]</b></p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">35 · Revisão de texto</span>
+      <p>Revise esse texto. Melhore: clareza, gramática, tom profissional. Mantém minha voz pessoal. Aponta o que mudou e por quê em uma frase no final. <b>[cola texto]</b></p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">36 · Reescrever email</span>
+      <p>Reescreve esse email tornando mais <b>[curto/profissional/amigável/persuasivo]</b>. Mantém todos os pontos importantes. Não inventa fato novo. <b>[cola email original]</b></p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">37 · Currículo</span>
+      <p>Aqui estão minhas informações profissionais: <b>[cola]</b>. Cria currículo de 1 página no estilo <b>[ATS/criativo]</b>. Foco em resultados quantificáveis. Tom: confiante, não exagerado. Português BR.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">38 · Carta de apresentação</span>
+      <p>Cria carta de apresentação pra vaga de <b>[cargo]</b> na empresa <b>[nome]</b>. Meu fit: <b>[experiência]</b>. 250 palavras. Tom: pessoal, sem clichê. Termine com pedido de reunião.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">39 · Roteiro de YouTube</span>
+      <p>Cria roteiro de vídeo YouTube de 5 minutos sobre <b>[tema]</b>. Estrutura: gancho 15s, intro 30s, 3 pontos com exemplos, conclusão + CTA. Tom: educativo amigável. Inclui sugestões visuais.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">40 · Resposta pra reclamação</span>
+      <p>Cliente reclamou: <b>[cola reclamação]</b>. Escreve resposta em 4 frases. Reconhece, não dá desculpa, oferece solução, encerra com convite ao DM. Tom: humano, não corporativo. Sem servilismo.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">65</div></div>
+</section>
+
+<!-- Templates 41-50 -->
+<section class="page cream-2">
+  <div class="pg-head"><div class="brand">Parte 04 · Prompt Engineering</div><div>Cap. 21 · Templates 41-50</div></div>
+  <div class="pg-body">
+    <div class="box prompt">
+      <span class="tpl-num">41 · Brainstorm 50 ideias</span>
+      <p>Me dá 50 ideias de <b>[título de post/produto/nome]</b> pra <b>[negócio]</b>. Mistura tipos: pergunta, dado, controverso, lista, antes-depois. Coloca em tabela com tipo + texto + estimativa de gancho (1-10).</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">42 · Reescrever pra 5 anos</span>
+      <p>Explique <b>[conceito complexo]</b> como se eu tivesse 5 anos. Use analogia da vida real. 3 parágrafos. Sem termo técnico.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">43 · Storytelling de venda</span>
+      <p>Cria história curta (200 palavras) usando técnica StoryBrand. Personagem: <b>[meu cliente ideal]</b>. Problema: <b>[dor]</b>. Guia: <b>[meu negócio]</b>. Plano: <b>[solução]</b>. CTA + transformação.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">44 · Calendário evento</span>
+      <p>Crie cronograma de 30 dias antes de <b>[evento/lançamento]</b>. Pra cada semana: foco, tipo de conteúdo, ações de divulgação, métrica.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">45 · FAQ profissional</span>
+      <p>Cria FAQ com 10 perguntas-resposta sobre <b>[meu produto/serviço]</b>. Antecipa objeções reais. Resposta direta, sem rodeio. Cada resposta máximo 3 frases.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">46 · Pesquisa cliente</span>
+      <p>Cria questionário de 10 perguntas pra entender meu cliente ideal. Pergunta sobre: dor, desejo, objeção, comportamento de compra, fonte de informação. Tom: amigável, não invasivo.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">47 · Política comercial</span>
+      <p>Escreve política de troca/devolução/garantia pra <b>[negócio]</b>. Linguagem clara, sem juridiquês. Inclui: prazo, condição, exceção, contato. Máximo 1 página A4.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">48 · Contrato simples</span>
+      <p>Cria modelo de contrato de prestação de serviço pra <b>[meu serviço]</b>. Inclui: partes, objeto, prazo, valor, multa, foro. Linguagem acessível mas juridicamente válida BR. ⚠ Revise com advogado antes de usar.</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">49 · Onboarding cliente</span>
+      <p>Cria fluxo de onboarding pra novo cliente de <b>[negócio]</b>. 5 etapas com: ação, prazo, comunicação, ferramenta, métrica. Objetivo: 1ª semana o cliente já ter "wow moment".</p>
+    </div>
+
+    <div class="box prompt">
+      <span class="tpl-num">50 · Plano semanal pessoal</span>
+      <p>Sou <b>[profissão]</b>. Meta semanal: <b>[X]</b>. Distribui em 5 dias úteis com: 3 tarefas prioritárias/dia, 1 quick win, 1 atividade de descanso. Tom: realista, não otimista demais.</p>
+    </div>
+
+    <div class="divider center"></div>
+    <p style="text-align:center;color:var(--cream-dark);margin-top:5mm"><b>50 templates copiados.</b> Salva esse PDF e usa toda semana.</p>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">66</div></div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PARTE 5 — APLICAÇÕES POR PROFISSÃO                            -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="page part-opener">
+  <div class="po-content">
+    <p class="po-label">Parte · 05</p>
+    <p class="po-num">05</p>
+    <h2 class="po-title">Aplicações<br>por <em>profissão</em>.</h2>
+    <p class="po-lead">Onde aplicar IA hoje, dependendo do que você faz. 9 perfis profissionais com casos de uso reais, prompts específicos e plano de implementação.</p>
+    <div class="po-chapters">
+      <div class="ch"><span class="ch-num">22</span>Autônomo · Vendedor · Professor</div>
+      <div class="ch"><span class="ch-num">25</span>Dona de casa · Profissional liberal</div>
+      <div class="ch"><span class="ch-num">27</span>Criador · Atendente · Gestor</div>
+      <div class="ch"><span class="ch-num">30</span>Aposentado / 60+</div>
+    </div>
+  </div>
+  <div class="po-foot"><div>9 personas · 10 páginas</div><div>Calazans Lumina · Pg 67</div></div>
+</section>
+
+<!-- Persona 1 · AUTÔNOMO -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 05 · Por profissão</div><div>22 · Autônomo</div></div>
+  <div class="pg-body">
+    <p class="kicker">Persona · 01 de 09</p>
+    <h3>Autônomo · <em>motorista, entregador, freelancer</em></h3>
+
+    <img class="img-small" src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1400&h=420&fit=crop&q=80" alt="Empreendedor autônomo no celular" />
+
+    <p style="margin-top:5mm"><b>Quem é você:</b> Trabalha por conta, fatura por hora ou entrega, não tem departamento de marketing. Vive entre app de motorista, WhatsApp e Instagram pessoal pra divulgar serviço.</p>
+
+    <h4 style="margin-top:6mm">5 usos imediatos</h4>
+    <ol class="big-list" style="margin-top:3mm">
+      <li><b>Post automático no Insta</b>ChatGPT cria 10 posts/semana sobre seu serviço. Você só revisa e publica.</li>
+      <li><b>Resposta automática WhatsApp</b>Cria scripts pra perguntas comuns (preço, horário, área de atendimento). Cola em Respostas Rápidas no WhatsApp Business.</li>
+      <li><b>Currículo / portfólio simples</b>Cursor cria página web em 5 min mostrando seus serviços, com formulário de orçamento.</li>
+      <li><b>Cobrança e nota fiscal</b>ChatGPT escreve email de cobrança educado e cria texto de nota.</li>
+      <li><b>Plano financeiro mensal</b>Cola seus ganhos da semana, ele organiza, projeta mês, sugere economia.</li>
+    </ol>
+
+    <div class="box prompt">
+      <div class="box-label">Prompt pronto · 10 posts pro Insta</div>
+      <p>Sou <b>[profissão]</b> em <b>[cidade]</b>. Atendo <b>[tipo de cliente]</b>. Cria 10 ideias de post pra Instagram, mistura: 4 educativos (dicas), 3 bastidores (dia a dia), 2 prova social (depoimento fictício), 1 promocional. Cada post: gancho + 3 frases + 3 hashtags.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">68</div></div>
+</section>
+
+<!-- Persona 2 · VENDEDOR -->
+<section class="page cream-2">
+  <div class="pg-head"><div class="brand">Parte 05 · Por profissão</div><div>23 · Vendedor</div></div>
+  <div class="pg-body">
+    <p class="kicker">Persona · 02 de 09</p>
+    <h3>Vendedor / <em>comercial</em></h3>
+
+    <p style="margin-top:5mm"><b>Quem é você:</b> Vende produto ou serviço de outras empresas, ou na sua própria loja. Foco: conversão, fechamento, retenção de cliente.</p>
+
+    <h4 style="margin-top:6mm">5 usos imediatos</h4>
+    <ol class="big-list">
+      <li><b>Qualificação automática de lead</b>ChatGPT analisa conversa do cliente e classifica em quente/morno/frio com base no método BANT.</li>
+      <li><b>Resposta a objeção</b>Cliente diz "tá caro"? Cola a frase, IA devolve 3 respostas que reposicionam valor.</li>
+      <li><b>Sequência de follow-up</b>Cria 5 mensagens pra mandar em D+1, D+3, D+7, D+14, D+30. Automatiza no GoHighLevel.</li>
+      <li><b>Análise de pipeline</b>Cola lista de leads, IA prioriza por probabilidade de fechar, sugere próxima ação.</li>
+      <li><b>Script de ligação</b>Cria roteiro de cold call que não soa robótico.</li>
+    </ol>
+
+    <div class="box prompt">
+      <div class="box-label">Prompt · resposta pra objeção de preço</div>
+      <p>Sou vendedor de <b>[produto]</b>. Preço: <b>[R$ X]</b>. Cliente disse: "Tá muito caro, vou pensar." Cria 3 respostas reposicionando valor: 1) custo-benefício, 2) custo de NÃO comprar, 3) parcelamento criativo. Tom: empático, sem pressão.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">69</div></div>
+</section>
+
+<!-- Persona 3 · PROFESSOR -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 05 · Por profissão</div><div>24 · Professor</div></div>
+  <div class="pg-body">
+    <p class="kicker">Persona · 03 de 09</p>
+    <h3>Professor · <em>educador</em></h3>
+
+    <p style="margin-top:5mm"><b>Quem é você:</b> Dá aula em escola, faculdade, curso online ou particular. Tempo escasso, muitas tarefas administrativas, busca formas de melhorar didática.</p>
+
+    <h4 style="margin-top:6mm">5 usos imediatos</h4>
+    <ol class="big-list">
+      <li><b>Plano de aula em 1 minuto</b>Tópico → ChatGPT cria objetivos, atividades, prova, sugestão de visual.</li>
+      <li><b>Correção de redação</b>Cola redação do aluno, IA aponta erros gramaticais, sugere melhorias mantendo voz do aluno.</li>
+      <li><b>Adaptação por nível</b>Mesmo conteúdo, explicado pra 8ª série, 5ª série e adulto. Em 1 prompt.</li>
+      <li><b>Material complementar</b>Cria exercício, jogo, atividade gamificada, prova com gabarito.</li>
+      <li><b>Comunicação com pais</b>Email/mensagem comunicando rotina, evento, evolução do aluno.</li>
+    </ol>
+
+    <div class="box prompt">
+      <div class="box-label">Prompt · plano de aula completo</div>
+      <p>Cria plano de aula de <b>[matéria]</b> sobre <b>[tópico]</b> pra turma de <b>[ano/idade]</b>. 50 minutos. Inclui: 3 objetivos, gancho de abertura (5 min), exposição (20 min), atividade prática (15 min), fechamento + tarefa (10 min). Linguagem acessível, com analogias da vida real.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">70</div></div>
+</section>
+
+<!-- Persona 4 · DONA DE CASA EMPREENDEDORA -->
+<section class="page cream-2">
+  <div class="pg-head"><div class="brand">Parte 05 · Por profissão</div><div>25 · Dona de casa</div></div>
+  <div class="pg-body">
+    <p class="kicker">Persona · 04 de 09</p>
+    <h3>Dona de casa <em>empreendedora</em></h3>
+
+    <img class="img-small" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1400&h=420&fit=crop&q=80" alt="Mulher empreendedora no celular" />
+
+    <p style="margin-top:5mm"><b>Quem é você:</b> Cuida da casa, dos filhos, e ainda vende algo (bolo, doce, artesanato, salgado, roupa) pelo Instagram ou WhatsApp pra complementar renda.</p>
+
+    <h4 style="margin-top:6mm">5 usos imediatos</h4>
+    <ol class="big-list">
+      <li><b>Catálogo de produto profissional</b>Tira foto simples no celular, IA cria descrição vendedora pra cada item.</li>
+      <li><b>Tabela de preço bonita</b>Canva AI cria PDF de cardápio em 5 min.</li>
+      <li><b>Resposta de cliente padronizada</b>"Quanto custa?", "Tem entrega?", "Aceita pix?" — respostas prontas no WhatsApp Business.</li>
+      <li><b>Calendário de divulgação</b>Datas comemorativas (Páscoa, Dia das Mães, Festa Junina) com sugestão de oferta e post.</li>
+      <li><b>Receita em rendimento</b>ChatGPT calcula quanto cobrar por unidade pra ter lucro de X%, baseado nos custos.</li>
+    </ol>
+
+    <div class="box prompt">
+      <div class="box-label">Prompt · catálogo do meu negócio</div>
+      <p>Faço <b>[produto]</b>. Cria descrição de venda pra Instagram (3 versões: curta 30 palavras, média 60, longa 100). Tom amigável, brasileira. Destaque: <b>[benefício 1]</b>, <b>[benefício 2]</b>. Termina com CTA "Pedido no DM".</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">71</div></div>
+</section>
+
+<!-- Persona 5 · PROFISSIONAL LIBERAL -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 05 · Por profissão</div><div>26 · Profissional liberal</div></div>
+  <div class="pg-body">
+    <p class="kicker">Persona · 05 de 09</p>
+    <h3>Profissional <em>liberal</em></h3>
+
+    <p style="margin-top:5mm"><b>Quem é você:</b> Médico, dentista, advogado, psicólogo, fisioterapeuta, nutricionista, arquiteto. Tem consultório/escritório próprio. Cliente é paciente/cliente local.</p>
+
+    <h4 style="margin-top:6mm">5 usos imediatos</h4>
+    <ol class="big-list">
+      <li><b>Conteúdo educativo no Insta</b>3 posts/semana ensinando algo do seu campo. Posiciona você como autoridade.</li>
+      <li><b>Agendamento automático</b>Bot no WhatsApp pré-qualifica (motivo, urgência) e marca direto no Google Calendar.</li>
+      <li><b>Material de paciente/cliente</b>PDFs explicativos personalizados pós-consulta (cuidados, exercícios, próximos passos).</li>
+      <li><b>Relatório técnico</b>Cola dados do exame/caso, IA estrutura relatório em linguagem leiga + linguagem técnica.</li>
+      <li><b>Marketing local SEO</b>Otimiza GMB pra aparecer na busca "dentista perto de mim", "advogado [cidade]".</li>
+    </ol>
+
+    <div class="box prompt">
+      <div class="box-label">Prompt · 12 posts educativos por mês</div>
+      <p>Sou <b>[profissão]</b> em <b>[cidade]</b>. Especialidade: <b>[área]</b>. Público: <b>[idade/perfil]</b>. Cria 12 ideias de post educativo pra Instagram, mistura: 6 explicando termo técnico em linguagem leiga, 3 desmistificando mito comum, 3 dicas práticas de saúde/cuidado. Cada um: gancho + 3 frases.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">72</div></div>
+</section>
+
+<!-- Persona 6 · CRIADOR DE CONTEÚDO -->
+<section class="page cream-2">
+  <div class="pg-head"><div class="brand">Parte 05 · Por profissão</div><div>27 · Criador</div></div>
+  <div class="pg-body">
+    <p class="kicker">Persona · 06 de 09</p>
+    <h3>Criador de <em>conteúdo</em></h3>
+
+    <p style="margin-top:5mm"><b>Quem é você:</b> Posta em Reels, TikTok, YouTube. Vive de publicidade, parceria, infoproduto. Foco: viralizar, manter consistência, monetizar.</p>
+
+    <h4 style="margin-top:6mm">5 usos imediatos</h4>
+    <ol class="big-list">
+      <li><b>Roteiro de Reels viral</b>ChatGPT cria roteiro de 30s com gancho viral nos primeiros 3 segundos. Posso fazer 5/dia.</li>
+      <li><b>Análise de concorrente</b>"Esses 10 Reels do meu nicho viralizaram. Identifica o padrão que eles usam."</li>
+      <li><b>Calendário editorial</b>30 dias de conteúdo com mix educativo/viral/storytelling/promocional.</li>
+      <li><b>Voz IA pra narração</b>ElevenLabs clona sua voz. Posta vídeo sem precisar gravar áudio toda vez.</li>
+      <li><b>Music + B-roll IA</b>Suno cria trilha. Runway cria B-roll. CapCut monta. Reels pronto em 1h.</li>
+    </ol>
+
+    <div class="box prompt">
+      <div class="box-label">Prompt · 20 roteiros virais</div>
+      <p>Nicho: <b>[seu nicho]</b>. Público: <b>[perfil]</b>. Cria 20 roteiros de Reels de 30s. Cada um: gancho viral em 3s (frase que para de rolar), problema, solução em 3 passos, CTA. Inclui sugestão de música trending e texto na tela. Tom: brasileiro, autêntico.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">73</div></div>
+</section>
+
+<!-- Persona 7 · ATENDENTE -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 05 · Por profissão</div><div>28 · Atendente</div></div>
+  <div class="pg-body">
+    <p class="kicker">Persona · 07 de 09</p>
+    <h3>Atendente · <em>vendedora de loja</em></h3>
+
+    <p style="margin-top:5mm"><b>Quem é você:</b> Trabalha em loja física ou virtual. Atende cliente direto. Vende. Resolve problema. Comunicação é seu maior valor.</p>
+
+    <h4 style="margin-top:6mm">5 usos imediatos</h4>
+    <ol class="big-list">
+      <li><b>Roteiro de venda</b>ChatGPT cria abertura, exploração de necessidade, apresentação, fechamento — adaptado pro seu produto.</li>
+      <li><b>Mensagem de retorno pra cliente</b>"Oi João, tudo bem? Lembrei de você porque chegou nova coleção que combina com você..." — personalizado em escala.</li>
+      <li><b>Resposta automática WhatsApp</b>10 perguntas mais comuns com resposta pronta. Tempo de resposta cai pra segundos.</li>
+      <li><b>Resposta a reclamação online</b>Cliente reclamou no Google Review. IA escreve resposta empática, profissional, em português perfeito.</li>
+      <li><b>Treinamento de novato</b>Cola roteiro de venda real, IA cria scripts de treinamento e dramatização.</li>
+    </ol>
+
+    <div class="box prompt">
+      <div class="box-label">Prompt · script de venda</div>
+      <p>Vendo <b>[produto]</b> na loja física <b>[ramo]</b>. Cria script completo de atendimento: abertura amigável (3 frases), 5 perguntas de exploração de necessidade, apresentação do produto destacando benefício (não característica), fechamento pra 2 cenários (cliente pronto pra comprar / cliente "vou pensar"). Tom: humano, não decorado.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">74</div></div>
+</section>
+
+<!-- Persona 8 · GESTOR -->
+<section class="page cream-2">
+  <div class="pg-head"><div class="brand">Parte 05 · Por profissão</div><div>29 · Gestor</div></div>
+  <div class="pg-body">
+    <p class="kicker">Persona · 08 de 09</p>
+    <h3>Gestor / <em>dono de negócio</em></h3>
+
+    <p style="margin-top:5mm"><b>Quem é você:</b> Tem equipe de 3-30 pessoas. Toma decisão financeira. Lida com gestão, RH, marketing, vendas, financeiro. Tempo é o maior recurso escasso.</p>
+
+    <h4 style="margin-top:6mm">5 usos imediatos</h4>
+    <ol class="big-list">
+      <li><b>Resumo executivo de relatório</b>Cola relatório de 50 páginas, IA devolve 1 página de executive summary com 3 ações.</li>
+      <li><b>Email de comunicação interna</b>Anúncio de mudança, novo benefício, comunicação difícil — IA cuida do tom.</li>
+      <li><b>Análise de dado de vendas</b>Cola planilha de faturamento mensal, IA identifica tendência, gargalo, oportunidade.</li>
+      <li><b>Pauta de reunião</b>Cria pauta com tempo por tópico, decisões a tomar, perguntas-chave.</li>
+      <li><b>Job description / avaliação 360</b>Cria descrição de vaga, perguntas de entrevista, formulário de avaliação de funcionário.</li>
+    </ol>
+
+    <div class="box prompt">
+      <div class="box-label">Prompt · análise mensal</div>
+      <p>Aqui estão os números do meu negócio em <b>[mês]</b>: <b>[cola dados]</b>. Compara com <b>[mês anterior]</b>. Identifica: 3 tendências positivas, 3 problemas, 3 ações concretas pro próximo mês. Apresenta em formato executive summary de 1 página com KPIs em destaque.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">75</div></div>
+</section>
+
+<!-- Persona 9 · APOSENTADO -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 05 · Por profissão</div><div>30 · Aposentado / 60+</div></div>
+  <div class="pg-body">
+    <p class="kicker">Persona · 09 de 09</p>
+    <h3>Aposentado · <em>60+ anos</em></h3>
+
+    <img class="img-small" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1400&h=420&fit=crop&q=80" alt="Aposentada usando celular" />
+
+    <p style="margin-top:5mm"><b>Quem é você:</b> Tem tempo agora. Curioso pra entender essa "IA". Talvez quer começar um negócio pequeno, ou só facilitar a vida. Talvez ajuda netos com a escola.</p>
+
+    <h4 style="margin-top:6mm">5 usos imediatos</h4>
+    <ol class="big-list">
+      <li><b>Companhia pra conversar</b>ChatGPT é paciente. Você pode "conversar" sobre qualquer tema sem julgamento.</li>
+      <li><b>Ajuda com tecnologia</b>"Como fazer X no celular?" — explicação passo a passo paciente.</li>
+      <li><b>Pesquisa de saúde</b>(⚠ confira com médico depois) — entender termo do exame, remédio, sintoma.</li>
+      <li><b>Lembrança e escrita</b>Você conta história, IA transforma em texto pra família, livro de memórias, post.</li>
+      <li><b>Tarefa do neto</b>Ajuda a entender matéria escolar pra explicar pro neto. Sem julgamento.</li>
+    </ol>
+
+    <div class="box prompt">
+      <div class="box-label">Prompt · começar conversando</div>
+      <p>Tenho <b>[X anos]</b>. Nunca usei IA. Quero entender o que você consegue fazer. Me explica em palavras simples, sem termo técnico, com 5 exemplos de coisas que você faria pra mim no dia a dia. Tom: paciente, amigável, com a voz do meu neto que tem 20 anos.</p>
+    </div>
+
+    <div class="pull-quote">
+      Pra quem nasceu antes da internet, IA <em>é a chance</em> de fazer mais com menos esforço. Não é tarde.
+      <span class="author">Princípio · idade não trava</span>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">76</div></div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PARTE 6 — PLANO 30 DIAS + ENCERRAMENTO                        -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="page part-opener">
+  <div class="po-content">
+    <p class="po-label">Parte · 06</p>
+    <p class="po-num">06</p>
+    <h2 class="po-title">Plano de<br><em>30 dias</em>.</h2>
+    <p class="po-lead">Sai do papel. Como começar de verdade nessa semana, e como medir resultado em 30 dias. Mais o caminho dos próximos cursos.</p>
+    <div class="po-chapters">
+      <div class="ch"><span class="ch-num">31</span>Auditoria das suas tarefas</div>
+      <div class="ch"><span class="ch-num">32</span>Sua rotina semanal com IA</div>
+      <div class="ch"><span class="ch-num">33</span>Próximos passos · catálogo</div>
+    </div>
+  </div>
+  <div class="po-foot"><div>3 capítulos · 5 páginas</div><div>Calazans Lumina · Pg 77</div></div>
+</section>
+
+<!-- Cap 31 — Auditoria -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 06 · Plano</div><div>Cap. 31 · Auditoria</div></div>
+  <div class="pg-body">
+    <p class="kicker">Capítulo · 31</p>
+    <h3>Sua <em>auditoria</em><br>de 5 minutos</h3>
+
+    <p style="margin-top:5mm">Antes de sair usando IA pra tudo, faz essa auditoria. Vai te poupar tempo.</p>
+
+    <img class="img-small" src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=1400&h=420&fit=crop&q=80" alt="Planner · calendário e organização" />
+
+    <h4 style="margin-top:6mm">Passo 1 · Lista todas as tarefas</h4>
+    <p>Pega papel e caneta (ou planilha). Lista todas as tarefas que você faz numa semana média de trabalho. <b>Todas.</b> Não filtra. Inclui:</p>
+    <ul class="bullets">
+      <li>Responder email</li>
+      <li>Criar post pras redes sociais</li>
+      <li>Atender cliente no WhatsApp</li>
+      <li>Fazer relatório/análise</li>
+      <li>Escrever proposta comercial</li>
+      <li>Conferir conta bancária</li>
+      <li>Estudar/pesquisar algo</li>
+      <li>Etc.</li>
+    </ul>
+
+    <h4 style="margin-top:6mm">Passo 2 · Marca o que é REPETITIVO</h4>
+    <p>De todas as tarefas, marca aquelas que você faz <em>com frequência</em> (toda semana, todo mês) e que seguem <em>padrão</em>. Tarefa repetitiva é o ponto cego onde IA tem mais impacto.</p>
+
+    <h4 style="margin-top:6mm">Passo 3 · Associa uma IA pra cada</h4>
+    <p>Pra cada tarefa repetitiva, qual IA faz isso? Use a tabela abaixo como guia.</p>
+
+    <table class="tbl" style="margin-top:4mm">
+      <thead><tr><th>Tipo de tarefa</th><th>IA recomendada</th></tr></thead>
+      <tbody>
+        <tr><td>Escrever texto, email, post, artigo</td><td>ChatGPT ou Claude</td></tr>
+        <tr><td>Pesquisar dado, comparar, decidir</td><td>Gemini ou ChatGPT</td></tr>
+        <tr><td>Criar imagem, logo, banner</td><td>DALL-E ou Midjourney</td></tr>
+        <tr><td>Editar foto, criar post visual</td><td>Canva AI</td></tr>
+        <tr><td>Narração de vídeo</td><td>ElevenLabs</td></tr>
+        <tr><td>Música de fundo</td><td>Suno</td></tr>
+        <tr><td>Edição de vídeo</td><td>CapCut</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">78</div></div>
+</section>
+
+<!-- Cap 32 — Rotina semanal -->
+<section class="page cream-2">
+  <div class="pg-head"><div class="brand">Parte 06 · Plano</div><div>Cap. 32 · Rotina semanal</div></div>
+  <div class="pg-body">
+    <p class="kicker">Capítulo · 32</p>
+    <h3>Sua <em>rotina</em><br>semanal com IA</h3>
+
+    <p style="margin-top:5mm">Quem usa IA só de vez em quando não tira proveito. Cria <b>rotina semanal</b> — pelo menos 1 sessão de 30 min cada dia útil. Sugestão de calendário:</p>
+
+    <h4 style="margin-top:6mm">Semana modelo</h4>
+    <table class="tbl">
+      <thead><tr><th>Dia</th><th>Tarefa</th><th>Tempo</th></tr></thead>
+      <tbody>
+        <tr><td><b>Segunda</b></td><td>Criar 10 posts da semana com ChatGPT + Canva</td><td>60 min</td></tr>
+        <tr><td><b>Terça</b></td><td>Email pendente + responder review com ChatGPT</td><td>30 min</td></tr>
+        <tr><td><b>Quarta</b></td><td>Análise de dados semana anterior com Gemini</td><td>30 min</td></tr>
+        <tr><td><b>Quinta</b></td><td>Criar Reels com narração ElevenLabs + Suno + CapCut</td><td>60 min</td></tr>
+        <tr><td><b>Sexta</b></td><td>Planejar próxima semana, salvar prompts úteis</td><td>30 min</td></tr>
+      </tbody>
+    </table>
+
+    <h4 style="margin-top:6mm">32.2 · Em 30 dias, meça</h4>
+    <p>Depois de 30 dias de rotina, compara antes/depois:</p>
+
+    <div class="stat-row">
+      <div class="stat"><p class="n">+3×</p><p class="l">conteúdo criado</p></div>
+      <div class="stat"><p class="n green">-70%</p><p class="l">tempo gasto</p></div>
+      <div class="stat"><p class="n">+5×</p><p class="l">leads qualificados</p></div>
+    </div>
+
+    <p style="margin-top:5mm">Esses são os ganhos médios validados em clientes reais Calazans Lumina. <b>Pode ser melhor</b> se você se dedicar. Pode ser menor se usar só esporadicamente.</p>
+
+    <div class="box dica" style="margin-top:5mm">
+      <div class="box-label">Disciplina vs ferramenta</div>
+      <p>A IA é só ferramenta. A diferença entre quem decola e quem fica no mesmo lugar é DISCIPLINA. Quem usa todo dia, mesmo 15 min, dobra produtividade em 30 dias. Quem usa só na sexta-feira pra "ver como funciona", não vai a lugar nenhum.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">79</div></div>
+</section>
+
+<!-- Cap 33 — Próximos cursos -->
+<section class="page">
+  <div class="pg-head"><div class="brand">Parte 06 · Plano</div><div>Cap. 33 · Próximos cursos</div></div>
+  <div class="pg-body">
+    <p class="kicker">Capítulo · 33</p>
+    <h3>Quer ir <em>mais fundo</em>?</h3>
+
+    <p style="margin-top:5mm">Chegou até aqui. Já é mais que 90% das pessoas. Se quiser continuar evoluindo, esses são os próximos passos na trilha Calazans Lumina:</p>
+
+    <div class="feat-list">
+      <div class="feat-item"><span class="fi-icon">●</span><span class="fi-text"><b>ChatGPT pra Idosos (gratuito)</b>Pra você compartilhar com pai, mãe, tio. Curso simples, didático, sem custo.</span></div>
+      <div class="feat-item"><span class="fi-icon">●</span><span class="fi-text"><b>Marketing Digital pra Iniciantes (R$ 10)</b>Como vender pelo Instagram, criar funil, atrair cliente.</span></div>
+      <div class="feat-item"><span class="fi-icon">●</span><span class="fi-text"><b>Google Meu Negócio do Zero (R$ 10)</b>Aparecer no Google Maps. Essencial pra negócio local.</span></div>
+      <div class="feat-item"><span class="fi-icon">●</span><span class="fi-text"><b>Redes Sociais que Vendem (R$ 10)</b>Conteúdo que converte. Calendário editorial profissional.</span></div>
+      <div class="feat-item"><span class="fi-icon">●</span><span class="fi-text"><b>Funis de Vendas Simplificado (R$ 10)</b>Email marketing, WhatsApp automatizado, GoHighLevel passo a passo.</span></div>
+      <div class="feat-item"><span class="fi-icon">●</span><span class="fi-text"><b>Ferramentas Digitais pra Secretárias (R$ 10)</b>Pra quem trabalha em assistência administrativa, secretariado, atendimento.</span></div>
+    </div>
+
+    <p style="margin-top:6mm">Cada um custa R$ 10. Pode pegar todos por R$ 60 (preço de uma pizza). Acessa em <b>calazanslumina.com.br/cursos</b>.</p>
+
+    <div class="box dica">
+      <div class="box-label">Mentoria 1-a-1</div>
+      <p>Se você é dono de negócio e quer aplicar isso TUDO no seu caso específico, eu faço mentoria 1-a-1 personalizada. Auditoria do seu negócio + plano de 90 dias + execução com IA. WhatsApp na bio do Instagram.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><div>Calazans Lumina</div><div class="num">80</div></div>
+</section>
+
+<!-- ÚLTIMA PÁGINA — CTA FINAL -->
+<section class="page cover">
+  <div class="cv-content">
+    <div class="cv-head">
+      <div class="cv-brand">Calazans · Lumina</div>
+      <div>Fim · pg 81</div>
+    </div>
+
+    <div class="cv-mid">
+      <div class="label">Você terminou. Agora começa o trabalho.</div>
+      <h1 style="font-size:72pt">Bora <em>aplicar</em>?</h1>
+      <p class="lead">Salva esse PDF. Compartilha a INDICAÇÃO com quem precisa (não o arquivo). E me chama no WhatsApp se travar — atendo pessoalmente.</p>
+
+      <div class="cv-stats">
+        <div class="cv-stat"><span class="n">81</span><span class="l">páginas lidas</span></div>
+        <div class="cv-stat"><span class="n">50</span><span class="l">templates copiáveis</span></div>
+        <div class="cv-stat"><span class="n">10</span><span class="l">IAs dominadas</span></div>
+        <div class="cv-stat"><span class="n">∞</span><span class="l">possibilidades</span></div>
+      </div>
+    </div>
+
+    <div class="cv-foot">
+      <div>
+        <div style="margin-bottom:4mm;font-size:7pt;letter-spacing:.32em">Contato direto</div>
+        <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:14pt;color:#fff;line-height:1.4">
+          calazanslumina.com.br<br>
+          @calazanslumina<br>
+          +55 31 98294-8067
+        </div>
+      </div>
+      <div style="text-align:right">
+        <div style="margin-bottom:4mm;font-size:7pt;letter-spacing:.32em;color:rgba(255,255,255,.6)">Próxima edição</div>
+        <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:18pt;color:#fff;line-height:1">IA Avançado · 2026</div>
+        <div style="font-size:7pt;letter-spacing:.32em;margin-top:2mm;color:rgba(255,255,255,.6)">em breve</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
