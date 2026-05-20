@@ -279,7 +279,7 @@ export const cursos: Curso[] = [
     totalAulas: 33,
     pdfDisponivel: true,
     linkPagamento: 'https://link.fastpaydirect.com/payment-link/6a08f6ef1d5a394a682e4ee1',
-    imagem: '/cursos/capa-ia-chatgpt-completo.svg',
+    imagem: '/cursos/capa-ia-do-zero-ao-avancado.svg',
     bonus: [
       'BÔNUS 1 · 50 templates de prompt copiáveis por nicho (R$ 97)',
       'BÔNUS 2 · 9 planos de implementação por profissão (R$ 47)',
