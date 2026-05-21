@@ -370,7 +370,7 @@ export const cursos: Curso[] = [
     numeroPaginas: 146,
     totalAulas: 78,
     pdfDisponivel: true,
-    linkPagamento: '',
+    linkPagamento: 'https://link.fastpaydirect.com/payment-link/6a0f4ed9ee2395af2c17f99d',
     imagem: '/cursos/capa-marketing-digital-definitivo.svg',
     bonus: [
       'BONUS 1 · 13 frameworks proprios nomeados (R$ 97)',
