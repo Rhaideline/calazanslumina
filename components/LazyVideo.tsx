@@ -58,7 +58,7 @@ export default function LazyVideo({ src, className, label }: LazyVideoProps) {
             <button
               onClick={handlePlay}
               className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-t from-black/60 via-black/20 to-transparent rounded-t-2xl cursor-pointer group"
-              aria-label={`Play video${label ? `: ${label}` : ''}`}
+              aria-label={`Play vídeo${label ? `: ${label}` : ''}`}
             >
               <div className="w-16 h-16 md:w-20 md:h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors mb-3">
                 <svg className="w-8 h-8 md:w-10 md:h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">

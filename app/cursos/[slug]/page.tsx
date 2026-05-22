@@ -132,7 +132,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
               <div className="inline-flex items-center gap-2 bg-brand-mint/20 border border-brand-mint/30 rounded-full px-4 py-1.5 mb-6">
                 <span className="w-2 h-2 bg-brand-mint rounded-full animate-pulse" />
                 <span className="text-brand-mint text-sm font-medium">
-                  {curso.gratuito ? 'Curso 100% Gratuito' : `Apenas R$ ${formatPreco(curso.preco)} — Pagamento Unico`}
+                  {curso.gratuito ? 'Curso 100% Gratuito' : `Apenas R$ ${formatPreco(curso.preco)} — Pagamento Único`}
                 </span>
               </div>
 
@@ -218,7 +218,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                     'Acesso online vitalicio',
                     'PDF para download e estudo offline',
                     'Funciona no celular, tablet e computador',
-                    curso.gratuito ? 'Sem cadastro, sem pegadinha' : 'Pagamento unico — sem mensalidade',
+                    curso.gratuito ? 'Sem cadastro, sem pegadinha' : 'Pagamento único — sem mensalidade',
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-sm text-white/70">
                       <svg className="w-5 h-5 text-brand-mint flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -396,7 +396,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                 Fundadora da Calazans Lumina, especialista em marketing digital, automacao com GoHighLevel e inteligencia artificial aplicada a negocios. Atua nos EUA e Brasil ajudando empresas e profissionais a crescerem com tecnologia e estrategia digital.
               </p>
               <div className="flex flex-wrap gap-3">
-                {['Marketing Digital', 'GoHighLevel Expert', 'IA & ChatGPT', 'Automacao', 'Web Development'].map((tag) => (
+                {['Marketing Digital', 'GoHighLevel Expert', 'IA & ChatGPT', 'Automação', 'Web Development'].map((tag) => (
                   <span key={tag} className="bg-white/10 border border-white/10 rounded-full px-3 py-1 text-xs text-white/60">{tag}</span>
                 ))}
               </div>
@@ -480,15 +480,15 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
         } else if (curso.tipo === 'video') {
           bonusList = [
             { titulo: 'Vídeo-aulas em HD', desc: 'Mais de 12 horas de aulas em vídeo. Assista no celular, tablet ou computador, no seu ritmo.', valor: 'R$ 297' },
-            { titulo: 'Acesso Vitalicio', desc: 'Comprou uma vez, acessa para sempre. Todas as atualizacoes futuras inclusas.', valor: 'R$ 97' },
+            { titulo: 'Acesso Vitalicio', desc: 'Comprou uma vez, acessa para sempre. Todas as atualizações futuras inclusas.', valor: 'R$ 97' },
             { titulo: 'Material de Apoio em PDF', desc: 'Resumos, 20 prompts prontos e checklist em PDF para baixar e consultar offline.', valor: 'R$ 47' },
           ]
         } else {
           // Curso PDF sem bonus customizado — extras reais, sem chamar o proprio PDF de "bonus"
           bonusList = [
-            { titulo: 'Acesso Vitalicio', desc: 'Pagou uma vez, e seu pra sempre. Todas as atualizacoes futuras inclusas sem custo adicional.', valor: 'R$ 97' },
+            { titulo: 'Acesso Vitalicio', desc: 'Pagou uma vez, e seu pra sempre. Todas as atualizações futuras inclusas sem custo adicional.', valor: 'R$ 97' },
             { titulo: 'Leitura em Qualquer Dispositivo', desc: 'PDF otimizado para celular, tablet, computador e Kindle. Abre offline, sem precisar de app.', valor: 'R$ 27' },
-            { titulo: 'Atualizacoes Gratuitas', desc: 'Quando o conteudo for atualizado, voce recebe a nova versao automaticamente, sem custo.', valor: 'R$ 47' },
+            { titulo: 'Atualizações Gratuitas', desc: 'Quando o conteudo for atualizado, você recebe a nova versão automaticamente, sem custo.', valor: 'R$ 47' },
           ]
         }
         const totalBonus = bonusList
@@ -499,8 +499,8 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
       <section className="section-padding bg-white">
         <div className="container-main max-w-3xl">
           <ScrollReveal className="text-center mb-12">
-            <p className="text-brand-mint text-sm font-bold uppercase tracking-wider mb-3">{curso.bonus ? 'Bonus exclusivos' : 'O que esta incluso'}</p>
-            <h2 className="heading-2 text-brand-dark mb-4">{curso.bonus ? 'Voce ainda leva de bonus' : 'Comprando hoje voce recebe'}</h2>
+            <p className="text-brand-mint text-sm font-bold uppercase tracking-wider mb-3">{curso.bonus ? 'Bonus exclusivos' : 'O que está incluso'}</p>
+            <h2 className="heading-2 text-brand-dark mb-4">{curso.bonus ? 'Você ainda leva de bonus' : 'Comprando hoje você recebe'}</h2>
           </ScrollReveal>
           <div className="space-y-4">
             {bonusList.map((bonus, i) => (
@@ -631,8 +631,8 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
           <ScrollReveal>
             <h2 className="heading-2 mb-4">
               {curso.gratuito
-                ? 'Nao custa nada. Nao perde nada. So ganha conhecimento.'
-                : `Por menos que um cafe com bolo, voce transforma sua carreira.`}
+                ? 'Não custa nada. Não perde nada. So ganha conhecimento.'
+                : `Por menos que um cafe com bolo, você transforma sua carreira.`}
             </h2>
             <p className="text-white/40 mb-8 text-lg">{curso.vsl.urgencia}</p>
             <div className="flex flex-wrap gap-4 justify-center">

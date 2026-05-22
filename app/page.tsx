@@ -153,7 +153,7 @@ const speakableSchema = {
   name: 'Calazans Lumina — Marketing Digital para Brasileiros nos EUA e Brasil',
   speakable: {
     '@type': 'SpeakableSpecification',
-    cssSelector: ['#sobre-a-agencia h2', '#sobre-a-agencia p'],
+    cssSelector: ['#sobre-a-agência h2', '#sobre-a-agência p'],
   },
   mainEntity: { '@id': 'https://calazanslumina.com.br/#organization' },
 }
@@ -539,7 +539,7 @@ export default function HomePage() {
                   { valor: '8+', desc: 'anos de mercado' },
                   { valor: '100+', desc: 'projetos entregues' },
                   { valor: '50+', desc: 'sub-contas GHL' },
-                  { valor: '9k+', desc: 'paginas SEO' },
+                  { valor: '9k+', desc: 'páginas SEO' },
                   { valor: '2', desc: 'paises (BR + EUA)' },
                   { valor: 'GHL', desc: 'certified partner' },
                 ].map((s) => (
@@ -675,7 +675,7 @@ export default function HomePage() {
               <ScrollReveal key={i} delay={i * 150}>
                 <Link href={`/blog/${post.slug}`} className="group block">
                   <div className="card-premium overflow-hidden p-0">
-                    <div className="relative aspect-video overflow-hidden">
+                    <div className="relative aspect-vídeo overflow-hidden">
                       <Image src={post.img} alt={post.titulo} fill className="object-cover transition-transform duration-500 group-hover:scale-110" sizes="33vw" />
                       <div className="absolute top-4 left-4">
                         <span className="bg-brand-mint/90 text-white text-xs font-bold px-3 py-1 rounded-full">{post.categoria}</span>

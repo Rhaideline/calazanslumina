@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ capital: 
   if (!capital || !servico) return {}
   return {
     title: `${servico.nome} em ${capital.nome}, ${capital.siglaEstado}`,
-    description: `${servico.descricaoCurta} Para negocios em ${capital.nome}. velocidade otimizada, ROI comprovado, 100+ projetos entregues. Orcamento gratis em 24h →`,
+    description: `${servico.descricaoCurta} Para negocios em ${capital.nome}. velocidade otimizada, ROI comprovado, 100+ projetos entregues. Orçamento gratis em 24h →`,
     alternates: { canonical: `https://calazanslumina.com.br/brasil/${capitalSlug}/${servicoSlug}` },
     openGraph: {
       title: `${servico.nome} em ${capital.nome}, ${capital.siglaEstado} | Calazans Lumina`,
@@ -63,8 +63,8 @@ export default async function CapitalServicoPage({ params }: { params: Promise<{
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
-      { '@type': 'Question', name: `Quanto custa ${servico.nome.toLowerCase()} em ${capital.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `Os precos de ${servico.nome.toLowerCase()} em ${capital.nome}, ${capital.siglaEstado} variam conforme o escopo. A Calazans Lumina oferece orcamento gratuito e personalizado. ${capital.descricao ? capital.descricao.slice(0, 150) : ''}` } },
-      { '@type': 'Question', name: `Qual a melhor agencia de ${servico.nome.toLowerCase()} em ${capital.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `A Calazans Lumina e especialista em ${servico.nome.toLowerCase()} em ${capital.nome}, ${capital.siglaEstado}. Com 8+ anos de experiencia e 100+ projetos, oferecemos ${servico.descricaoCurta.toLowerCase()}` } },
+      { '@type': 'Question', name: `Quanto custa ${servico.nome.toLowerCase()} em ${capital.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `Os preços de ${servico.nome.toLowerCase()} em ${capital.nome}, ${capital.siglaEstado} variam conforme o escopo. A Calazans Lumina oferece orçamento gratuito e personalizado. ${capital.descricao ? capital.descricao.slice(0, 150) : ''}` } },
+      { '@type': 'Question', name: `Qual a melhor agência de ${servico.nome.toLowerCase()} em ${capital.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `A Calazans Lumina e especialista em ${servico.nome.toLowerCase()} em ${capital.nome}, ${capital.siglaEstado}. Com 8+ anos de experiência e 100+ projetos, oferecemos ${servico.descricaoCurta.toLowerCase()}` } },
       { '@type': 'Question', name: `A Calazans Lumina atende em ${capital.nome}, ${capital.siglaEstado}?`, acceptedAnswer: { '@type': 'Answer', text: `Sim! Atendemos empresas em ${capital.nome} e em mais de 260 cidades do Brasil. Nosso atendimento e 100% remoto com resultados comprovados.` } },
       ...servico.faqs.slice(0, 2).map((f) => ({
         '@type': 'Question' as const,

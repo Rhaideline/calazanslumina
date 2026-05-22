@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ cidade: s
   if (!cidade || !servico) return {}
   return {
     title: `${servico.nome} em ${cidade.nome}, MA`,
-    description: `${servico.descricaoCurta} Para brasileiros em ${cidade.nome}, MA. 100+ projetos entregues, atendimento em portugues. Resultados em 30 dias ou menos. Orcamento gratis →`,
+    description: `${servico.descricaoCurta} Para brasileiros em ${cidade.nome}, MA. 100+ projetos entregues, atendimento em portugues. Resultados em 30 dias ou menos. Orçamento gratis →`,
     alternates: { canonical: `https://calazanslumina.com.br/cidades/${cidadeSlug}/${servicoSlug}` },
     openGraph: {
       title: `${servico.nome} em ${cidade.nome}, MA | Calazans Lumina`,
@@ -61,8 +61,8 @@ export default async function CidadeServicoPage({ params }: { params: Promise<{ 
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
-      { '@type': 'Question', name: `Quanto custa ${servico.nome.toLowerCase()} em ${cidade.nome}, MA?`, acceptedAnswer: { '@type': 'Answer', text: `Os precos de ${servico.nome.toLowerCase()} em ${cidade.nome} variam conforme o escopo do projeto. A Calazans Lumina oferece orcamento gratuito e personalizado para empresas brasileiras em ${cidade.nome}, MA. Atendimento 100% em portugues com resultados comprovados.` } },
-      { '@type': 'Question', name: `Qual a melhor agencia de ${servico.nome.toLowerCase()} para brasileiros em ${cidade.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `A Calazans Lumina e especialista em ${servico.nome.toLowerCase()} para empreendedores brasileiros em ${cidade.nome}, Massachusetts. Com 8+ anos de experiencia, 100+ projetos entregues e atendimento em portugues, oferecemos ${servico.descricaoCurta.toLowerCase()}` } },
+      { '@type': 'Question', name: `Quanto custa ${servico.nome.toLowerCase()} em ${cidade.nome}, MA?`, acceptedAnswer: { '@type': 'Answer', text: `Os preços de ${servico.nome.toLowerCase()} em ${cidade.nome} variam conforme o escopo do projeto. A Calazans Lumina oferece orçamento gratuito e personalizado para empresas brasileiras em ${cidade.nome}, MA. Atendimento 100% em portugues com resultados comprovados.` } },
+      { '@type': 'Question', name: `Qual a melhor agência de ${servico.nome.toLowerCase()} para brasileiros em ${cidade.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `A Calazans Lumina e especialista em ${servico.nome.toLowerCase()} para empreendedores brasileiros em ${cidade.nome}, Massachusetts. Com 8+ anos de experiência, 100+ projetos entregues e atendimento em portugues, oferecemos ${servico.descricaoCurta.toLowerCase()}` } },
       { '@type': 'Question', name: `A Calazans Lumina atende em ${cidade.nome}, MA?`, acceptedAnswer: { '@type': 'Answer', text: `Sim! Atendemos empresas brasileiras em ${cidade.nome} e em mais de 120 cidades de Massachusetts. ${cidade.referencia}. Nosso atendimento e 100% remoto e em portugues.` } },
       ...servico.faqs.slice(0, 2).map((f) => ({
         '@type': 'Question' as const,

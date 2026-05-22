@@ -7,12 +7,12 @@ import CTAForm from '@/components/CTAForm'
 import PortfolioSites from '@/components/PortfolioSites'
 
 export const metadata: Metadata = {
-  title: 'GoHighLevel para Empresas & Agencias | Sub-contas Prontas + Freelancer GHL — Calazans Lumina',
-  description: 'Sub-contas GoHighLevel prontas para qualquer tipo de empresa (clinicas, construction, energia solar, pintura e mais) com automacoes, chatbot IA e CRM. Tambem ofereço servicos de freelancer GHL para agencias.',
+  title: 'GoHighLevel para Empresas & Agências | Sub-contas Prontas + Freelancer GHL — Calazans Lumina',
+  description: 'Sub-contas GoHighLevel prontas para qualquer tipo de empresa (clínicas, construction, energia solar, pintura e mais) com automações, chatbot IA e CRM. Também ofereço serviços de freelancer GHL para agências.',
   alternates: { canonical: 'https://calazanslumina.com.br/para-agencias' },
   openGraph: {
-    title: 'GoHighLevel para Empresas & Agencias | Calazans Lumina',
-    description: 'Sub-contas GHL prontas para qualquer empresa + freelancer operacional para agencias.',
+    title: 'GoHighLevel para Empresas & Agências | Calazans Lumina',
+    description: 'Sub-contas GHL prontas para qualquer empresa + freelancer operacional para agências.',
     url: 'https://calazanslumina.com.br/para-agencias',
     type: 'website',
   },
@@ -22,72 +22,72 @@ const subAccountFeatures = [
   {
     icone: 'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z',
     titulo: 'Chatbot IA no WhatsApp',
-    desc: 'Robo de atendimento com IA que responde clientes 24h, agenda servicos e tira duvidas automaticamente — funciona para qualquer nicho.',
+    desc: 'Robô de atendimento com IA que responde clientes 24h, agenda serviços e tira dúvidas automaticamente — funciona para qualquer nicho.',
   },
   {
     icone: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15',
-    titulo: 'Follow-up Automatico',
-    desc: 'Sequencias de mensagens automaticas pos-servico, lembretes de retorno e reativacao de clientes inativos.',
+    titulo: 'Follow-up Automático',
+    desc: 'Sequências de mensagens automáticas pós-serviço, lembretes de retorno e reativação de clientes inativos.',
   },
   {
     icone: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
     titulo: 'CRM & Pipeline de Vendas',
-    desc: 'Pipeline completo: novo lead > orcamento > fechou > em execucao > finalizado. Tags automaticas por tipo de servico.',
+    desc: 'Pipeline completo: novo lead > orçamento > fechou > em execução > finalizado. Tags automáticas por tipo de serviço.',
   },
   {
     icone: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
-    titulo: 'Calendario & Agendamento',
-    desc: 'Sistema de agendamento online com lembretes automaticos por WhatsApp (24h e 1h antes) e anti-no-show.',
+    titulo: 'Calendário & Agendamento',
+    desc: 'Sistema de agendamento online com lembretes automáticos por WhatsApp (24h e 1h antes) e anti-no-show.',
   },
   {
     icone: 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
     titulo: 'Campanhas de Email & SMS',
-    desc: 'Sequencias automatizadas de email e SMS para promocoes, datas comemorativas e lembretes de retorno.',
+    desc: 'Sequências automatizadas de email e SMS para promoções, datas comemorativas e lembretes de retorno.',
   },
   {
     icone: 'M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z',
-    titulo: 'Dashboard & Relatorios',
-    desc: 'Painel visual com metricas de leads, agendamentos, taxa de no-show, conversao e faturamento.',
+    titulo: 'Dashboard & Relatórios',
+    desc: 'Painel visual com métricas de leads, agendamentos, taxa de no-show, conversão e faturamento.',
   },
 ]
 
 const freelancerServices = [
   {
-    titulo: 'Configuracao de Automacoes',
-    desc: 'Crio workflows completos dentro do GHL: follow-up, nurturing, onboarding, anti-no-show, reativacao de leads e qualquer fluxo customizado.',
-    items: ['Workflows com triggers, condicoes e acoes', 'Sequencias multi-canal (WhatsApp, email, SMS)', 'Delays inteligentes e condicoes if/else', 'Integracao com pipeline e tags automaticas'],
+    titulo: 'Configuração de Automações',
+    desc: 'Crio workflows completos dentro do GHL: follow-up, nurturing, onboarding, anti-no-show, reativação de leads e qualquer fluxo customizado.',
+    items: ['Workflows com triggers, condições e ações', 'Sequências multi-canal (WhatsApp, email, SMS)', 'Delays inteligentes e condições if/else', 'Integração com pipeline e tags automáticas'],
   },
   {
     titulo: 'Treinamento de Chatbot IA',
     desc: 'Configuro e treino o agente IA do GHL com a base de conhecimento do seu cliente para atendimento automatizado inteligente.',
-    items: ['Setup do bot de conversacao com IA', 'Treinamento com FAQ e info do negocio', 'Qualificacao automatica de leads', 'Transferencia para humano com contexto'],
+    items: ['Setup do bot de conversação com IA', 'Treinamento com FAQ e info do negocio', 'Qualificação automática de leads', 'Transferência para humano com contexto'],
   },
   {
     titulo: 'Setup de Sub-accounts',
-    desc: 'Configuro sub-accounts do zero para novos clientes da sua agencia: CRM, pipeline, automacoes, chatbot, calendario.',
-    items: ['Sub-account completo pronto para uso', 'Pipeline e campos customizados', 'Templates de mensagem WhatsApp', 'Video-walkthrough de entrega'],
+    desc: 'Configuro sub-accounts do zero para novos clientes da sua agência: CRM, pipeline, automações, chatbot, calendário.',
+    items: ['Sub-account completo pronto para uso', 'Pipeline e campos customizados', 'Templates de mensagem WhatsApp', 'Vídeo-walkthrough de entrega'],
   },
   {
     titulo: 'Funis & Landing Pages',
-    desc: 'Construo funis completos dentro do GHL: landing pages, paginas de obrigado, formularios multi-step e integracao com pagamento.',
-    items: ['Landing pages otimizadas para conversao', 'Formularios multi-step de qualificacao', 'Integracao com Stripe/PayPal', 'A/B testing de headlines e CTAs'],
+    desc: 'Construo funis completos dentro do GHL: landing pages, páginas de obrigado, formularios multi-step e integração com pagamento.',
+    items: ['Landing pages otimizadas para conversão', 'Formularios multi-step de qualificação', 'Integração com Stripe/PayPal', 'A/B testing de headlines e CTAs'],
   },
   {
-    titulo: 'CRM, Pipeline & Relatorios',
-    desc: 'Estruturo o CRM completo: pipelines por servico, etapas de venda, automacao de movimentacao e dashboards.',
-    items: ['Pipelines customizados por nicho', 'Movimentacao automatica entre etapas', 'Dashboard com metricas de conversao', 'Relatorios automatizados semanais/mensais'],
+    titulo: 'CRM, Pipeline & Relatórios',
+    desc: 'Estruturo o CRM completo: pipelines por serviço, etapas de venda, automação de movimentação e dashboards.',
+    items: ['Pipelines customizados por nicho', 'Movimentação automática entre etapas', 'Dashboard com métricas de conversão', 'Relatórios automatizados semanais/mensais'],
   },
   {
-    titulo: 'Calendario & Integrações',
-    desc: 'Configuro agendamento, lembretes anti-no-show, round-robin, webhooks e integracoes com ferramentas externas.',
-    items: ['Calendario com disponibilidade configurada', 'Lembretes automaticos (24h, 1h antes)', 'Integracoes via API/Webhook/Zapier/Make', 'Round-robin para equipes'],
+    titulo: 'Calendário & Integrações',
+    desc: 'Configuro agendamento, lembretes anti-no-show, round-robin, webhooks e integrações com ferramentas externas.',
+    items: ['Calendário com disponibilidade configurada', 'Lembretes automáticos (24h, 1h antes)', 'Integrações via API/Webhook/Zapier/Make', 'Round-robin para equipes'],
   },
 ]
 
 const diferenciais = [
   { num: '50+', label: 'Sub-accounts configurados' },
   { num: '200+', label: 'Workflows criados' },
-  { num: '100%', label: 'Remoto e assincrono' },
+  { num: '100%', label: 'Remoto e assíncrono' },
   { num: '24h', label: 'Tempo medio de resposta' },
 ]
 
@@ -95,8 +95,8 @@ export default function ParaAgenciasPage() {
   const pageSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'GoHighLevel para Empresas e Agencias',
-    description: 'Sub-contas GoHighLevel prontas para qualquer tipo de empresa com automacoes e chatbot IA. Freelancer GHL para agencias.',
+    name: 'GoHighLevel para Empresas e Agências',
+    description: 'Sub-contas GoHighLevel prontas para qualquer tipo de empresa com automações e chatbot IA. Freelancer GHL para agências.',
     provider: {
       '@type': 'Organization',
       name: 'Calazans Lumina',
@@ -106,22 +106,22 @@ export default function ParaAgenciasPage() {
     serviceType: 'GoHighLevel Implementation',
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'Servicos GoHighLevel',
+      name: 'Serviços GoHighLevel',
       itemListElement: [
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
             name: 'Sub-conta GHL para Empresas',
-            description: 'Sub-conta GoHighLevel pronta com automacoes, chatbot IA, CRM e agendamento para qualquer tipo de empresa.',
+            description: 'Sub-conta GoHighLevel pronta com automações, chatbot IA, CRM e agendamento para qualquer tipo de empresa.',
           },
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Freelancer GHL para Agencias',
-            description: 'Servicos operacionais de GoHighLevel para agencias: automacoes, treinamento de chatbot, setup de sub-accounts.',
+            name: 'Freelancer GHL para Agências',
+            description: 'Serviços operacionais de GoHighLevel para agências: automações, treinamento de chatbot, setup de sub-accounts.',
           },
         },
       ],
@@ -132,12 +132,12 @@ export default function ParaAgenciasPage() {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
-      { '@type': 'Question', name: 'O que esta incluso na sub-conta GHL?', acceptedAnswer: { '@type': 'Answer', text: 'A sub-conta vem pronta com: chatbot IA no WhatsApp, follow-up automatico, CRM com pipeline de vendas, calendario de agendamento com lembretes, campanhas de email/SMS e dashboard de metricas. Funciona para qualquer nicho: clinicas, construction, energia solar, pintura, servicos em geral. Funis e landing pages podem ser adicionados a criterio do cliente.' } },
-      { '@type': 'Question', name: 'Como funciona o pagamento da sub-conta?', acceptedAnswer: { '@type': 'Answer', text: 'O pagamento e dividido em duas partes: uma taxa unica de configuracao (setup inicial com todas as automacoes) e uma mensalidade para manutencao, suporte e atualizacoes continuas.' } },
-      { '@type': 'Question', name: 'Posso adicionar funis de vendas a minha sub-conta?', acceptedAnswer: { '@type': 'Answer', text: 'Sim! Os funis e landing pages sao opcionais e podem ser adicionados a qualquer momento conforme sua necessidade. Construo funis otimizados para conversao com formularios multi-step e integracao com pagamento.' } },
-      { '@type': 'Question', name: 'Voce trabalha como freelancer para agencias que ja tem GHL?', acceptedAnswer: { '@type': 'Answer', text: 'Sim! Ofereço servicos operacionais para agencias que ja possuem GoHighLevel: configuracao de automacoes, treinamento de chatbot IA, setup de sub-accounts, funis, CRM e integracoes. Trabalho como white-label da sua agencia.' } },
-      { '@type': 'Question', name: 'Qual versao do GHL voce trabalha?', acceptedAnswer: { '@type': 'Answer', text: 'Trabalho com todas as versoes: Agency Pro, Agency Starter e SaaS Mode. Tambem configuro sub-accounts em white-label de outras agencias.' } },
-      { '@type': 'Question', name: 'Quanto tempo leva o setup de uma sub-conta?', acceptedAnswer: { '@type': 'Answer', text: 'Um sub-account completo (CRM + automacoes + chatbot + agendamento) leva em media 5-7 dias uteis. Tarefas pontuais como criar um workflow ou template, 1-2 dias.' } },
+      { '@type': 'Question', name: 'O que está incluso na sub-conta GHL?', acceptedAnswer: { '@type': 'Answer', text: 'A sub-conta vem pronta com: chatbot IA no WhatsApp, follow-up automático, CRM com pipeline de vendas, calendário de agendamento com lembretes, campanhas de email/SMS e dashboard de métricas. Funciona para qualquer nicho: clínicas, construction, energia solar, pintura, serviços em geral. Funis e landing pages podem ser adicionados a critério do cliente.' } },
+      { '@type': 'Question', name: 'Como funciona o pagamento da sub-conta?', acceptedAnswer: { '@type': 'Answer', text: 'O pagamento e dividido em duas partes: uma taxa única de configuração (setup inicial com todas as automações) e uma mensalidade para manutenção, suporte e atualizações continuas.' } },
+      { '@type': 'Question', name: 'Posso adicionar funis de vendas a minha sub-conta?', acceptedAnswer: { '@type': 'Answer', text: 'Sim! Os funis e landing pages são opcionais e podem ser adicionados a qualquer momento conforme sua necessidade. Construo funis otimizados para conversão com formularios multi-step e integração com pagamento.' } },
+      { '@type': 'Question', name: 'Você trabalha como freelancer para agências que já tem GHL?', acceptedAnswer: { '@type': 'Answer', text: 'Sim! Ofereço serviços operacionais para agências que já possuem GoHighLevel: configuração de automações, treinamento de chatbot IA, setup de sub-accounts, funis, CRM e integrações. Trabalho como white-label da sua agência.' } },
+      { '@type': 'Question', name: 'Qual versão do GHL você trabalha?', acceptedAnswer: { '@type': 'Answer', text: 'Trabalho com todas as versões: Agency Pro, Agency Starter e SaaS Mode. Também configuro sub-accounts em white-label de outras agências.' } },
+      { '@type': 'Question', name: 'Quanto tempo leva o setup de uma sub-conta?', acceptedAnswer: { '@type': 'Answer', text: 'Um sub-account completo (CRM + automações + chatbot + agendamento) leva em média 5-7 dias úteis. Tarefas pontuais como criar um workflow ou template, 1-2 dias.' } },
     ],
   }
 
@@ -152,7 +152,7 @@ export default function ParaAgenciasPage() {
       <section className="relative py-20 md:py-28 bg-brand-dark text-white overflow-hidden">
         <Image
           src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d859c95106d5e512376e8e.jpeg"
-          alt="GoHighLevel para Empresas e Agencias — Calazans Lumina"
+          alt="GoHighLevel para Empresas e Agências — Calazans Lumina"
           fill
           className="object-cover"
           priority
@@ -185,7 +185,7 @@ export default function ParaAgenciasPage() {
                   Para Empresas
                 </a>
                 <a
-                  href="#agencias"
+                  href="#agências"
                   className="border border-white/20 text-white hover:bg-white/10 px-6 py-4 rounded-full text-base font-medium transition-colors inline-flex items-center gap-2"
                 >
                   Para Agencias com GHL
@@ -255,12 +255,12 @@ export default function ParaAgenciasPage() {
               <p className="text-red-500 text-sm font-bold uppercase tracking-wider mb-4 text-center">Isso parece familiar?</p>
               <div className="grid md:grid-cols-2 gap-3">
                 {[
-                  'Clientes marcam e nao aparecem (no-show)',
+                  'Clientes marcam e não aparecem (no-show)',
                   'Respondendo WhatsApp manualmente o dia inteiro',
-                  'Clientes somem depois do primeiro servico',
-                  'Nao sabe quantos leads viraram clientes este mes',
+                  'Clientes somem depois do primeiro serviço',
+                  'Não sabe quantos leads viraram clientes este mes',
                   'Perde tempo com agendamento por telefone',
-                  'Nao faz follow-up pos-servico',
+                  'Não faz follow-up pós-serviço',
                 ].map((dor, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <svg className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -311,7 +311,7 @@ export default function ParaAgenciasPage() {
                     Paginas otimizadas para conversao com formularios, integracao com pagamento e automacoes de follow-up.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {['Landing page de captacao', 'Formulario multi-step', 'Pagina de obrigado', 'Integracao Stripe/PayPal', 'A/B testing'].map((item) => (
+                    {['Landing page de captação', 'Formulario multi-step', 'Página de obrigado', 'Integração Stripe/PayPal', 'A/B testing'].map((item) => (
                       <span key={item} className="bg-white/10 border border-white/10 rounded-full px-3 py-1 text-xs text-white/70">{item}</span>
                     ))}
                   </div>
@@ -402,11 +402,11 @@ export default function ParaAgenciasPage() {
 
                 <div className="space-y-4">
                   {[
-                    { step: '1', titulo: 'Cliente manda mensagem no WhatsApp', desc: 'Chatbot IA responde instantaneamente, tira duvidas sobre servicos e precos.', cor: 'bg-blue-500' },
-                    { step: '2', titulo: 'Chatbot qualifica e agenda', desc: 'Identifica o servico desejado, verifica horarios disponiveis e agenda automaticamente.', cor: 'bg-purple-500' },
-                    { step: '3', titulo: 'Lembretes automaticos', desc: '24h e 1h antes do servico, o cliente recebe lembrete no WhatsApp. Anti-no-show.', cor: 'bg-orange-500' },
-                    { step: '4', titulo: 'Pos-servico', desc: 'Follow-up automatico: como foi a experiencia? Solicita avaliacao no Google.', cor: 'bg-pink-500' },
-                    { step: '5', titulo: 'Reativacao', desc: 'Cliente nao volta ha 60 dias? Mensagem automatica com oferta especial de retorno.', cor: 'bg-brand-mint' },
+                    { step: '1', titulo: 'Cliente manda mensagem no WhatsApp', desc: 'Chatbot IA responde instantaneamente, tira dúvidas sobre serviços e preços.', cor: 'bg-blue-500' },
+                    { step: '2', titulo: 'Chatbot qualifica e agenda', desc: 'Identifica o serviço desejado, verifica horários disponiveis e agenda automaticamente.', cor: 'bg-purple-500' },
+                    { step: '3', titulo: 'Lembretes automáticos', desc: '24h e 1h antes do serviço, o cliente recebe lembrete no WhatsApp. Anti-no-show.', cor: 'bg-orange-500' },
+                    { step: '4', titulo: 'Pos-serviço', desc: 'Follow-up automático: como foi a experiência? Solicita avaliação no Google.', cor: 'bg-pink-500' },
+                    { step: '5', titulo: 'Reativação', desc: 'Cliente não volta ha 60 dias? Mensagem automática com oferta especial de retorno.', cor: 'bg-brand-mint' },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-4 bg-brand-bg rounded-xl p-4">
                       <div className={`w-8 h-8 ${item.cor} rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0`}>
@@ -464,13 +464,13 @@ export default function ParaAgenciasPage() {
               <p className="text-red-400 text-sm font-bold uppercase tracking-wider mb-4 text-center">Isso parece familiar?</p>
               <div className="grid md:grid-cols-2 gap-3">
                 {[
-                  'Comprou o white-label mas nao tem tempo de configurar',
-                  'Perde horas assistindo tutoriais em ingles',
+                  'Comprou o white-label mas não tem tempo de configurar',
+                  'Perde horas assistindo tutoriais em inglês',
                   'Clientes reclamam que o sistema ta mal configurado',
-                  'Nao tem equipe tecnica para automacoes complexas',
+                  'Não tem equipe técnica para automações complexas',
                   'Workflows quebrados que ninguem sabe consertar',
-                  'Chatbot respondendo errado ou nao respondendo',
-                  'Funis que nao convertem porque faltam automacoes',
+                  'Chatbot respondendo errado ou não respondendo',
+                  'Funis que não convertem porque faltam automações',
                   'Paga o GHL todo mes mas usa 10% das funcionalidades',
                 ].map((dor, i) => (
                   <div key={i} className="flex items-start gap-3">
@@ -519,22 +519,22 @@ export default function ParaAgenciasPage() {
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 {
-                  titulo: 'Setup Unico',
-                  desc: 'Configuracao completa de um sub-account do zero. Ideal para onboarding de novo cliente.',
-                  items: ['Sub-account completo', 'Automacoes + CRM + Chatbot', 'Video-walkthrough', 'Entrega em 5-7 dias'],
+                  titulo: 'Setup Único',
+                  desc: 'Configuração completa de um sub-account do zero. Ideal para onboarding de novo cliente.',
+                  items: ['Sub-account completo', 'Automações + CRM + Chatbot', 'Vídeo-walkthrough', 'Entrega em 5-7 dias'],
                   cta: 'Solicitar Setup',
                 },
                 {
                   titulo: 'Pacote Mensal',
-                  desc: 'Manutencao e implementacoes continuas. Para agencias com volume constante.',
-                  items: ['X sub-accounts/mes', 'Ajustes e otimizacoes', 'Suporte prioritario', 'Reuniao de alinhamento'],
+                  desc: 'Manutenção e implementacoes continuas. Para agências com volume constante.',
+                  items: ['X sub-accounts/mes', 'Ajustes e otimizações', 'Suporte prioritário', 'Reunião de alinhamento'],
                   cta: 'Ver Pacotes',
                   destaque: true,
                 },
                 {
                   titulo: 'Sob Demanda',
-                  desc: 'Tarefas pontuais: consertar workflow, criar automacao, treinar chatbot.',
-                  items: ['Tarefas avulsas', 'Preco por hora/tarefa', 'Sem compromisso mensal', 'Entrega rapida'],
+                  desc: 'Tarefas pontuais: consertar workflow, criar automação, treinar chatbot.',
+                  items: ['Tarefas avulsas', 'Preço por hora/tarefa', 'Sem compromisso mensal', 'Entrega rápida'],
                   cta: 'Enviar Tarefa',
                 },
               ].map((modelo, i) => (
@@ -572,10 +572,10 @@ export default function ParaAgenciasPage() {
               <h3 className="font-serif text-xl font-bold text-center mb-6">Como funciona</h3>
               <div className="space-y-6">
                 {[
-                  { step: '1', title: 'Voce me envia o briefing', desc: 'O que o cliente precisa: nicho, servicos, fluxos de atendimento.' },
-                  { step: '2', title: 'Eu configuro tudo no GHL', desc: 'Sub-account, automacoes, funis, chatbot, CRM — tudo pronto.' },
-                  { step: '3', title: 'Entrego documentado', desc: 'Video-walkthrough + documento com tudo que foi feito.' },
-                  { step: '4', title: 'Seu cliente usa e voce escala', desc: 'O cliente ve resultado, voce fatura mais, sem equipe fixa.' },
+                  { step: '1', title: 'Você me envia o briefing', desc: 'O que o cliente precisa: nicho, serviços, fluxos de atendimento.' },
+                  { step: '2', title: 'Eu configuro tudo no GHL', desc: 'Sub-account, automações, funis, chatbot, CRM — tudo pronto.' },
+                  { step: '3', title: 'Entrego documentado', desc: 'Vídeo-walkthrough + documento com tudo que foi feito.' },
+                  { step: '4', title: 'Seu cliente usa e você escala', desc: 'O cliente ve resultado, você fatura mais, sem equipe fixa.' },
                 ].map((item) => (
                   <div key={item.step} className="flex items-start gap-4">
                     <div className="w-8 h-8 bg-brand-mint rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
@@ -634,11 +634,11 @@ export default function ParaAgenciasPage() {
                     <div className="grid md:grid-cols-2 gap-4">
                       {[
                         { titulo: 'Chatbot IA WhatsApp', desc: 'Atende, qualifica e agenda automaticamente' },
-                        { titulo: 'Pipeline CRM', desc: '6 etapas com movimentacao automatica' },
+                        { titulo: 'Pipeline CRM', desc: '6 etapas com movimentação automática' },
                         { titulo: 'Follow-up sequencial', desc: 'Dia 1, 3, 7, 14 e 30 apos contato' },
                         { titulo: 'Anti no-show', desc: 'Lembretes 24h e 1h antes + reengajamento' },
-                        { titulo: 'Reativacao', desc: 'Workflow para clientes inativos ha 60+ dias' },
-                        { titulo: 'Relatorios', desc: 'Dashboard com metricas de conversao e agendamento' },
+                        { titulo: 'Reativação', desc: 'Workflow para clientes inativos ha 60+ dias' },
+                        { titulo: 'Relatórios', desc: 'Dashboard com métricas de conversão e agendamento' },
                       ].map((item, i) => (
                         <div key={i} className="flex items-start gap-3">
                           <svg className="w-4 h-4 text-brand-mint flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -758,7 +758,7 @@ export default function ParaAgenciasPage() {
                 triggers: ['Form Submitted', 'Survey Submitted', 'Quiz Submitted', 'Facebook Lead Form Submitted', 'TikTok Form Submitted', 'LinkedIn Lead Form Submitted', 'Google Lead Form Submitted', 'Click to WhatsApp Ads'],
               },
               {
-                cat: 'Agendamento & Calendario',
+                cat: 'Agendamento & Calendário',
                 triggers: ['Customer Booked Appointment', 'Appointment Status', 'Service Booking', 'Rental Booking', 'Scheduler'],
               },
               {
@@ -775,7 +775,7 @@ export default function ParaAgenciasPage() {
               },
               {
                 cat: 'Redes Sociais',
-                triggers: ['Facebook - Comments on a Post', 'Instagram - Comments on a Post', 'TikTok - Comments on a Video', 'External Tracking Event', 'Video Tracking'],
+                triggers: ['Facebook - Comments on a Post', 'Instagram - Comments on a Post', 'TikTok - Comments on a Vídeo', 'External Tracking Event', 'Vídeo Tracking'],
               },
               {
                 cat: 'Afiliados & Comunidade',
@@ -854,7 +854,7 @@ export default function ParaAgenciasPage() {
                 que vao alem do basico — integrando sites de alta performance, chatbots inteligentes e estrategias de conversao reais.
               </p>
               <div className="flex flex-wrap gap-3">
-                {['GoHighLevel', 'Automacoes', 'Chatbot IA', 'WhatsApp API', 'CRM', 'Funis', 'Web Development'].map((tag) => (
+                {['GoHighLevel', 'Automações', 'Chatbot IA', 'WhatsApp API', 'CRM', 'Funis', 'Web Development'].map((tag) => (
                   <span key={tag} className="bg-white/10 border border-white/10 rounded-full px-3 py-1 text-xs text-white/60">{tag}</span>
                 ))}
               </div>
@@ -871,14 +871,14 @@ export default function ParaAgenciasPage() {
           </ScrollReveal>
           <div className="space-y-4">
             {[
-              { p: 'O que esta incluso na sub-conta GHL?', r: 'A sub-conta vem pronta com: chatbot IA no WhatsApp, follow-up automatico, CRM com pipeline de vendas, calendario de agendamento com lembretes, campanhas de email/SMS e dashboard de metricas. Funciona para qualquer nicho — clinicas, construction, energia solar, pintura etc. Funis e landing pages podem ser adicionados a criterio do cliente.' },
-              { p: 'Como funciona o pagamento da sub-conta?', r: 'O pagamento e dividido em duas partes: uma taxa unica de configuracao (setup inicial com todas as automacoes) e uma mensalidade para manutencao, suporte e atualizacoes continuas.' },
-              { p: 'Posso adicionar funis de vendas a minha sub-conta?', r: 'Sim! Os funis e landing pages sao opcionais e podem ser adicionados a qualquer momento conforme sua necessidade. Construo funis otimizados para conversao com formularios multi-step e integracao com pagamento.' },
-              { p: 'Voce trabalha como freelancer para agencias que ja tem GHL?', r: 'Sim! Ofereço servicos operacionais para agencias que ja possuem GoHighLevel: configuracao de automacoes, treinamento de chatbot IA, setup de sub-accounts, funis, CRM e integracoes. Trabalho como white-label da sua agencia.' },
-              { p: 'Voce trabalha com qual versao do GHL?', r: 'Trabalho com todas as versoes: Agency Pro, Agency Starter e SaaS Mode. Tambem configuro sub-accounts em white-label de outras agencias.' },
-              { p: 'Quanto tempo leva um setup completo?', r: 'Um sub-account completo (CRM + automacoes + chatbot + agendamento) leva em media 5-7 dias uteis. Tarefas pontuais como criar um workflow ou template, 1-2 dias.' },
-              { p: 'Preciso dar acesso admin ao meu GHL?', r: 'Nao. Trabalho diretamente no sub-account do cliente. Voce cria um acesso de usuario para mim com as permissoes necessarias e eu configuro tudo la dentro.' },
-              { p: 'E se o workflow quebrar depois?', r: 'Ofereco 7 dias de suporte gratuito apos a entrega de cada setup. Para manutencao continua, temos o modelo de pacote mensal com suporte prioritario.' },
+              { p: 'O que está incluso na sub-conta GHL?', r: 'A sub-conta vem pronta com: chatbot IA no WhatsApp, follow-up automático, CRM com pipeline de vendas, calendário de agendamento com lembretes, campanhas de email/SMS e dashboard de métricas. Funciona para qualquer nicho — clínicas, construction, energia solar, pintura etc. Funis e landing pages podem ser adicionados a critério do cliente.' },
+              { p: 'Como funciona o pagamento da sub-conta?', r: 'O pagamento e dividido em duas partes: uma taxa única de configuração (setup inicial com todas as automações) e uma mensalidade para manutenção, suporte e atualizações continuas.' },
+              { p: 'Posso adicionar funis de vendas a minha sub-conta?', r: 'Sim! Os funis e landing pages são opcionais e podem ser adicionados a qualquer momento conforme sua necessidade. Construo funis otimizados para conversão com formularios multi-step e integração com pagamento.' },
+              { p: 'Você trabalha como freelancer para agências que já tem GHL?', r: 'Sim! Ofereço serviços operacionais para agências que já possuem GoHighLevel: configuração de automações, treinamento de chatbot IA, setup de sub-accounts, funis, CRM e integrações. Trabalho como white-label da sua agência.' },
+              { p: 'Você trabalha com qual versão do GHL?', r: 'Trabalho com todas as versões: Agency Pro, Agency Starter e SaaS Mode. Também configuro sub-accounts em white-label de outras agências.' },
+              { p: 'Quanto tempo leva um setup completo?', r: 'Um sub-account completo (CRM + automações + chatbot + agendamento) leva em média 5-7 dias úteis. Tarefas pontuais como criar um workflow ou template, 1-2 dias.' },
+              { p: 'Preciso dar acesso admin ao meu GHL?', r: 'Não. Trabalho diretamente no sub-account do cliente. Você cria um acesso de usuario para mim com as permissoes necessarias e eu configuro tudo la dentro.' },
+              { p: 'E se o workflow quebrar depois?', r: 'Ofereço 7 dias de suporte gratuito apos a entrega de cada setup. Para manutenção continua, temos o modelo de pacote mensal com suporte prioritário.' },
             ].map((faq, i) => (
               <ScrollReveal key={i} delay={i * 60}>
                 <div className="bg-white rounded-2xl p-6 border border-gray-100">

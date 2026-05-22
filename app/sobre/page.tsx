@@ -59,9 +59,9 @@ export default function SobrePage() {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
-      { '@type': 'Question', name: 'Quem e Rhaideline Calazans?', acceptedAnswer: { '@type': 'Answer', text: 'Rhaideline Calazans e especialista em marketing digital com 8+ anos de experiencia e 100+ projetos entregues. Fundadora da Calazans Lumina, agencia que atende brasileiros nos EUA (Massachusetts) e em todo o Brasil. Trabalha com sites profissionais, funis GoHighLevel, CRM com IA no WhatsApp e Google Business Profile.' } },
+      { '@type': 'Question', name: 'Quem e Rhaideline Calazans?', acceptedAnswer: { '@type': 'Answer', text: 'Rhaideline Calazans e especialista em marketing digital com 8+ anos de experiência e 100+ projetos entregues. Fundadora da Calazans Lumina, agência que atende brasileiros nos EUA (Massachusetts) e em todo o Brasil. Trabalha com sites profissionais, funis GoHighLevel, CRM com IA no WhatsApp e Google Business Profile.' } },
       { '@type': 'Question', name: 'A Calazans Lumina atende nos EUA e no Brasil?', acceptedAnswer: { '@type': 'Answer', text: 'Sim! A Calazans Lumina atende brasileiros em mais de 100 cidades de Massachusetts (EUA) e 227 cidades do Brasil. O atendimento e 100% remoto e em portugues. Oferecemos sites, funis, CRM, redes sociais e Google Maps.' } },
-      { '@type': 'Question', name: 'Quais servicos a Calazans Lumina oferece?', acceptedAnswer: { '@type': 'Answer', text: 'Oferecemos: sites profissionais otimizados para velocidade e conversao, funis de vendas no GoHighLevel, CRM com IA conversacional no WhatsApp, gestao de redes sociais, trafego pago (Google Ads e Meta Ads), Google Business Profile, SEO local e nacional, e sub-contas GoHighLevel prontas para empresas.' } },
+      { '@type': 'Question', name: 'Quais serviços a Calazans Lumina oferece?', acceptedAnswer: { '@type': 'Answer', text: 'Oferecemos: sites profissionais otimizados para velocidade e conversão, funis de vendas no GoHighLevel, CRM com IA conversacional no WhatsApp, gestao de redes sociais, trafego pago (Google Ads e Meta Ads), Google Business Profile, SEO local e nacional, e sub-contas GoHighLevel prontas para empresas.' } },
     ],
   }
 

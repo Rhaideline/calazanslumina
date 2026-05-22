@@ -197,7 +197,7 @@ export default async function BlogPostPage({
               <ScrollReveal key={p.slug} delay={i * 100}>
                 <Link href={`/blog/${p.slug}`} className="group block">
                   <div className="card-premium overflow-hidden p-0">
-                    <div className="relative aspect-video overflow-hidden">
+                    <div className="relative aspect-vídeo overflow-hidden">
                       <Image
                         src={p.imagem}
                         alt={p.titulo}
