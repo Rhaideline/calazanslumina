@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="ink-ml" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1A0E0B"/>
+      <stop offset="100%" stop-color="#0d0706"/>
+    </linearGradient>
+    <linearGradient id="yellow-ml" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE600"/>
+      <stop offset="100%" stop-color="#FFD000"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#ink-ml)"/>
+  <rect width="20" height="600" fill="url(#yellow-ml)"/>
+  <text x="120" y="100" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#3483FA" opacity="0.6">✦</text>
+  <text x="700" y="135" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#3483FA" opacity="0.5">✦</text>
+  <text x="660" y="490" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#3483FA" opacity="0.6">✦</text>
+  <g transform="translate(400 360)">
+    <text x="0" y="0" font-family="Georgia, 'DM Serif Display', serif" font-size="240" font-weight="700" fill="#FFE600" text-anchor="middle" opacity="0.95">15</text>
+    <rect x="-170" y="25" width="340" height="6" fill="url(#yellow-ml)"/>
+    <text x="0" y="60" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#FFE600" text-anchor="middle" letter-spacing="5" opacity="0.85">MODULOS · DO ZERO AO TOP</text>
+  </g>
+  <rect x="60" y="32" width="180" height="40" rx="3" fill="url(#yellow-ml)"/>
+  <text x="150" y="58" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#0d0706" text-anchor="middle" letter-spacing="3">20 ANOS DE OPERACAO</text>
+  <text x="60" y="155" font-family="Georgia, 'DM Serif Display', serif" font-size="52" font-weight="700" fill="#F1EAE0">Mercado Livre</text>
+  <text x="60" y="210" font-family="Georgia, 'DM Serif Display', serif" font-size="52" font-style="italic" font-weight="400" fill="#FFE600">O Curso Definitivo.</text>
+  <text x="60" y="258" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#F1EAE0" opacity="0.65">Do primeiro Nescau no condominio a Mercado Lider.</text>
+  <text x="60" y="283" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#F1EAE0" opacity="0.65">Os macetes de 20 anos no maior marketplace do BR.</text>
+  <text x="400" y="540" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#FFE600" letter-spacing="3" opacity="0.9" text-anchor="middle">DE R$ 297 · POR R$ 9,90 · ACESSO VITALICIO</text>
+  <text x="400" y="572" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#F1EAE0" text-anchor="middle" letter-spacing="4" opacity="0.4">CALAZANS LUMINA</text>
+</svg>
