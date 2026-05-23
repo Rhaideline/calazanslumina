@@ -462,7 +462,7 @@ export const cursos: Curso[] = [
   },
   {
     slug: 'mercado-livre-definitivo',
-    nome: 'Mercado Livre — O Curso Definitivo',
+    nome: 'Mercado Livre: Do Zero ao Mercado Líder Gold',
     descricaoCurta: '96 páginas. 15 módulos. Do primeiro Nescau no condomínio a Mercado Líder. Os macetes de 20 anos no maior marketplace do BR — algoritmo, Mercado Ads, reputação, escala.',
     descricaoLonga: 'Curso completo de Mercado Livre escrito na voz de quem vende desde 2005 — começou com 14 caixas de Nescau no condomínio em São Paulo, hoje opera múltiplos nichos com Mercado Líder Gold. 96 páginas, 15 módulos, cobertura do absoluto iniciante (M0 — setup, fundamentos, mentalidade) até o vendedor profissional escalável (M14 — escala, marca própria, equipe). Cada módulo com framework próprio, exemplos numéricos reais, histórias do dia a dia da operação, e exercício obrigatório com entregável. Frameworks proprietários: PVPC (Produto · Vitrine · Posição · Confiança), MARG (Margem · Alcance · Regulação · Giro), os 7 fatores do algoritmo ML 2026, as 5 métricas de reputação, e a estrutura de 4 alavancas de escala. Conteúdo prático: como achar produto vencedor (6 fontes), como validar demanda (3 níveis), precificação que não dá prejuízo, título e foto que vendem, descrição que converte, Mercado Ads sem queimar grana, logística Full vs Flex vs Coletas, atendimento com 20 templates, e os 10 erros que quebram vendedor ML. De R$ 297 por R$ 9,90 (preço de lançamento).',
     preco: 9.9,
