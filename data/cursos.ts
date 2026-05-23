@@ -472,7 +472,7 @@ export const cursos: Curso[] = [
     numeroPaginas: 96,
     totalAulas: 70,
     pdfDisponivel: true,
-    linkPagamento: '',
+    linkPagamento: 'https://link.fastpaydirect.com/payment-link/6a120f09ee2395af2c17fec7',
     imagem: '/cursos/capa-mercado-livre-definitivo.svg',
     bonus: [
       'BONUS 1 · Framework PVPC (Produto/Vitrine/Posição/Confiança) (R$ 47)',
