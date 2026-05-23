@@ -9,6 +9,10 @@ import type { Metadata } from 'next'
 import Breadcrumb from '@/components/Breadcrumb'
 import CoursesSection from '@/components/CoursesSection'
 import CourseViewTracker from '@/components/CourseViewTracker'
+import ReelEmbed from '@/components/ReelEmbed'
+
+const REEL_ML_SRC = 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/f66145ca-639e-4a64-8fcf-d65a7f44f461.mp4'
+const REEL_ML_POSTER = '/reel-mercado-livre-poster.jpg'
 
 export function generateStaticParams() {
   return cursos.map((c) => ({ slug: c.slug }))
@@ -192,9 +196,19 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
 
             <ScrollReveal delay={200}>
               <div className="relative bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm">
-                <div className="relative w-full aspect-[8/5] rounded-xl overflow-hidden mb-6">
-                  <Image src={curso.imagem} alt={curso.nome} fill sizes="(max-width:768px) 100vw, 400px" className="object-cover" />
-                </div>
+                {slug === 'mercado-livre-definitivo' ? (
+                  <div className="mb-6">
+                    <ReelEmbed
+                      src={REEL_ML_SRC}
+                      poster={REEL_ML_POSTER}
+                      label="Como transformei R$ 9,90 em R$ 10 mil/mês"
+                    />
+                  </div>
+                ) : (
+                  <div className="relative w-full aspect-[8/5] rounded-xl overflow-hidden mb-6">
+                    <Image src={curso.imagem} alt={curso.nome} fill sizes="(max-width:768px) 100vw, 400px" className="object-cover" />
+                  </div>
+                )}
                 <div className="text-center mb-6">
                   {curso.gratuito ? (
                     <p className="font-serif text-5xl font-bold text-brand-mint">GRATUITO</p>
