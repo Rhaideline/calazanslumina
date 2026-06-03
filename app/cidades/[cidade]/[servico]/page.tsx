@@ -45,6 +45,8 @@ export default async function CidadeServicoPage({ params }: { params: Promise<{ 
   if (!cidade || !servico) notFound()
 
   const outrosServicos = servicos.filter((s) => s.slug !== servicoSlug)
+  // Cross-link Local SEO: outras cidades MA no MESMO servico (cidades vizinhas)
+  const outrasCidades = cidadesMA.filter((c) => c.slug !== cidadeSlug).slice(0, 10)
 
   const localBusinessSchema = {
     '@context': 'https://schema.org',
@@ -204,6 +206,32 @@ export default async function CidadeServicoPage({ params }: { params: Promise<{ 
                 </Link>
               </ScrollReveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Cidades vizinhas — mesmo servico (cross-link Local SEO) */}
+      <section className="section-padding bg-white border-t border-brand-dark/10">
+        <div className="container-main">
+          <ScrollReveal className="text-center mb-10">
+            <h2 className="heading-2 text-brand-dark mb-3">{servico.nome} em outras cidades de Massachusetts</h2>
+            <p className="text-brand-dark/60 max-w-2xl mx-auto text-sm">
+              Atendemos brasileiros em todo o MetroWest, North Shore e South Shore. Veja a cidade mais próxima:
+            </p>
+          </ScrollReveal>
+          <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-4 gap-y-2 text-sm">
+            {outrasCidades.map((c) => (
+              <li key={c.slug}>
+                <Link href={`/cidades/${c.slug}/${servico.slug}`} className="text-brand-dark/70 hover:text-brand-mint transition-colors">
+                  {servico.nome} em {c.nome} →
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div className="text-center mt-6">
+            <Link href="/servicos" className="text-brand-mint hover:text-brand-dark text-sm font-medium transition-colors">
+              Ver todos os serviços e cidades →
+            </Link>
           </div>
         </div>
       </section>
