@@ -3,7 +3,7 @@ export interface BlogPost {
   titulo: string
   resumo: string
   conteudo: string
-  categoria: 'Sites' | 'Automação' | 'Redes Sociais' | 'Google' | 'Estratégia' | 'IA' | 'Marketing' | 'Plataformas' | 'Maternidade'
+  categoria: 'Sites' | 'Automação' | 'Redes Sociais' | 'Google' | 'Estratégia' | 'IA' | 'Marketing' | 'Plataformas'
   imagem: string
   dataPublicacao: string
   tempoLeitura: string
