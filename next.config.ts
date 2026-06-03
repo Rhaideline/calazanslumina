@@ -53,65 +53,12 @@ const nextConfig: NextConfig = {
         destination: '/cursos',
         permanent: true,
       },
-      // Conteudo de bebe/maternidade removido — redirect tudo pra home/blog
-      {
-        source: '/enxoval-de-bebe',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/enxoval-de-bebe/:path*',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/itens-para-casa',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/itens-para-casa/:path*',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/maternidade/:path*',
-        destination: '/',
-        permanent: true,
-      },
-      // Blog posts antigos de bebe — redirect pro blog ativo
-      // path-to-regexp v6 nao aceita :param* direto apos texto literal,
-      // entao usamos regex pattern: :slug(prefix.*) captura tudo que comeca com prefix.
-      {
-        source: '/blog/:slug(recem-nascido-.*)',
-        destination: '/blog',
-        permanent: true,
-      },
-      {
-        source: '/blog/:slug(amamentacao-.*)',
-        destination: '/blog',
-        permanent: true,
-      },
-      {
-        source: '/blog/:slug(rotina-de-sono-.*)',
-        destination: '/blog',
-        permanent: true,
-      },
-      {
-        source: '/blog/:slug(colica-.*)',
-        destination: '/blog',
-        permanent: true,
-      },
-      {
-        source: '/blog/:slug(bebe-.*)',
-        destination: '/blog',
-        permanent: true,
-      },
-      {
-        source: '/blog/:slug(gravidez-.*)',
-        destination: '/blog',
-        permanent: true,
-      },
+      // Conteudo off-topic (enxoval/bebe/maternidade) agora retorna 410 Gone
+      // via middleware.ts — sinal explicito pro Google desindexar permanente.
+      // 410 desindexa mais rapido que 308 e nao passa autoridade off-topic
+      // pra home. Padroes capturados: /enxoval-de-bebe, /itens-para-casa,
+      // /maternidade, /blog/(bebe|gravidez|colica|amamentacao|rotina-de-sono|recem-nascido)-*
+      // + PDF orfao /checklist-enxoval-bebe-*.pdf.
     ]
   },
   async headers() {
