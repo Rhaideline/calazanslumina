@@ -47,6 +47,8 @@ export default async function CapitalServicoPage({ params }: { params: Promise<{
   if (!capital || !servico) notFound()
 
   const outrosServicos = servicos.filter((s) => s.slug !== servicoSlug)
+  // Cross-link Local SEO: outras capitais BR no MESMO servico
+  const outrasCapitais = capitaisBR.filter((c) => c.slug !== capitalSlug).slice(0, 10)
 
   const localBusinessSchema = {
     '@context': 'https://schema.org',
@@ -202,6 +204,32 @@ export default async function CapitalServicoPage({ params }: { params: Promise<{
                 </Link>
               </ScrollReveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Capitais vizinhas — mesmo servico (cross-link Local SEO BR) */}
+      <section className="section-padding bg-white border-t border-brand-dark/10">
+        <div className="container-main">
+          <ScrollReveal className="text-center mb-10">
+            <h2 className="heading-2 text-brand-dark mb-3">{servico.nome} em outras capitais brasileiras</h2>
+            <p className="text-brand-dark/60 max-w-2xl mx-auto text-sm">
+              Atendemos negócios em todas as capitais do Brasil. Veja outras cidades onde já entregamos:
+            </p>
+          </ScrollReveal>
+          <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-4 gap-y-2 text-sm">
+            {outrasCapitais.map((c) => (
+              <li key={c.slug}>
+                <Link href={`/brasil/${c.slug}/${servico.slug}`} className="text-brand-dark/70 hover:text-brand-mint transition-colors">
+                  {servico.nome} em {c.nome}, {c.siglaEstado} →
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div className="text-center mt-6">
+            <Link href="/servicos" className="text-brand-mint hover:text-brand-dark text-sm font-medium transition-colors">
+              Ver todos os serviços e cidades →
+            </Link>
           </div>
         </div>
       </section>
