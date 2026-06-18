@@ -111,6 +111,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   )
 
+  // Enxoval de Bebe — silo affiliate (sem link interno, indexavel via sitemap)
+  const enxovalHub: MetadataRoute.Sitemap = [
+    { url: `${BASE}/enxoval-de-bebe`, lastModified: now, changeFrequency: 'weekly' as const, priority: 0.7 },
+  ]
+  const enxovalCidades: MetadataRoute.Sitemap = allCidadesBR.map((c) => ({
+    url: `${BASE}/enxoval-de-bebe/${c.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.55,
+  }))
+
   return [
     ...staticPages,
     ...cursosPages,
@@ -122,5 +133,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...capitaisServicosPages,
     ...cursosCidadesPages,
     ...cursosCapitaisPages,
+    ...enxovalHub,
+    ...enxovalCidades,
   ]
 }

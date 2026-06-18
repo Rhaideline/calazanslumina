@@ -45,11 +45,6 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/enxoval-de-bebe',
-        destination: '/',
-        permanent: true,
-      },
-      {
         source: '/itens-para-casa',
         destination: '/',
         permanent: true,
