@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><title>Calazans Lumina</title><style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,500;1,9..144,600&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
+html,body{width:1080px;height:1350px;overflow:hidden;background:#1a1815}
+body{font-family:'Geist',sans-serif;color:#1a1815}
+.canvas{width:1080px;height:1350px;position:relative;overflow:hidden;background:#F5F1E8}
+.canvas::before{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.10 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");opacity:.5;mix-blend-mode:multiply;pointer-events:none;z-index:1}
+.canvas > *{position:relative;z-index:2}
+.canvas.dark::before{filter:invert(1);opacity:.3}
+.canvas.dark{background:#1A1815;color:#F5F1E8}
+
+/* ============ HEADER ============ */
+.header{position:absolute;top:0;left:0;right:0;padding:36px 56px 0;display:flex;justify-content:space-between;align-items:center;z-index:10}
+.brand{display:flex;align-items:center;gap:14px}
+.brand-mark{width:46px;height:46px;background:#E63946;color:#F5F1E8;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:28px;font-weight:700;line-height:1;letter-spacing:-1px;border-radius:2px}
+.brand-text{display:flex;flex-direction:column;line-height:1.1}
+.brand-name{font-family:'Fraunces',serif;font-size:19px;font-weight:600;color:#1a1815;letter-spacing:-.2px}
+.brand-name.light{color:#F5F1E8}
+.brand-sub{font-family:'Geist',sans-serif;font-size:10px;letter-spacing:2.5px;color:#8B7355;text-transform:uppercase;font-weight:600;margin-top:3px}
+.brand-sub.light{color:#c4b89e}
+.issue-tag{font-family:'Geist',sans-serif;font-size:11px;letter-spacing:2.5px;color:#8B7355;text-transform:uppercase;font-weight:500;display:flex;align-items:center;gap:10px}
+.issue-tag.light{color:#c4b89e}
+.issue-tag::before{content:'';display:inline-block;width:6px;height:6px;background:#E63946;border-radius:50%}
+
+/* ============ RULES ============ */
+.top-rule{position:absolute;top:108px;left:56px;right:56px;height:1px;background:#1a1815;z-index:5}
+.top-rule.light{background:#F5F1E8;opacity:.25}
+.foot-rule{position:absolute;bottom:90px;left:56px;right:56px;height:1px;background:#1a1815}
+.foot-rule.light{background:#F5F1E8;opacity:.25}
+
+/* ============ ASTERISK ORNAMENT ============ */
+.ornament{position:absolute;top:170px;right:56px;font-family:'Fraunces',serif;font-size:60px;color:#E63946;line-height:1;font-weight:400}
+
+/* ============ KICKER ============ */
+.kicker{position:absolute;top:144px;left:56px;font-family:'Geist',sans-serif;font-size:13px;letter-spacing:4px;text-transform:uppercase;font-weight:700;color:#E63946;display:flex;align-items:center;gap:14px}
+.kicker::before{content:'·';font-size:34px;line-height:0.5;color:#E63946}
+
+/* ============ FOOTER ============ */
+.footer{position:absolute;bottom:34px;left:56px;right:56px;display:flex;justify-content:space-between;align-items:center;font-family:'Geist',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:600}
+.footer .handle{color:#E63946;font-weight:700;letter-spacing:3px}
+.footer .meta{color:#8B7355;font-weight:500;display:flex;gap:18px;align-items:center}
+.footer .meta::before{content:'';width:4px;height:4px;background:#8B7355;border-radius:50%;display:inline-block}
+.footer.light .meta{color:#c4b89e}
+.footer.light .meta::before{background:#c4b89e}
+.swipe{display:flex;align-items:center;gap:8px;color:#1a1815;font-weight:700;letter-spacing:3px}
+.swipe.light{color:#F5F1E8}
+.swipe svg{width:22px;height:22px}
+
+/* ============ STAT CARD ============ */
+.stat-card{padding:26px 28px;background:#1a1815;color:#F5F1E8;border-radius:2px}
+.stat-card.inverted{background:#F5F1E8;color:#1a1815}
+.stat-num{font-family:'Fraunces',serif;font-size:68px;font-weight:700;line-height:1;letter-spacing:-2px;color:#E63946;margin-bottom:10px}
+.stat-text{font-family:'Geist',sans-serif;font-size:16px;line-height:1.5;color:#F5F1E8;font-weight:400}
+.stat-card.inverted .stat-text{color:#1a1815}
+.stat-source{font-family:'Geist',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#8B7355;margin-top:16px;padding-top:12px;border-top:1px solid #3a3530;font-weight:600}
+.stat-card.inverted .stat-source{border-top-color:#d9d2c0}
+
+
+    .m4-headline{
+      position:absolute;top:198px;left:56px;right:360px;
+      font-family:'Fraunces',serif;font-size:82px;font-weight:600;
+      line-height:.96;letter-spacing:-2px;color:#1a1815;
+      font-variation-settings:'opsz' 96;
+    }
+    .m4-headline em{font-style:italic;color:#E63946;font-weight:500}
+    .m4-photo-mini{
+      position:absolute;top:198px;right:56px;
+      width:280px;height:280px;
+      background-size:cover;background-position:center;
+      border-radius:2px;
+    }
+    .m4-photo-mini.work{background-image:url('https://images.unsplash.com/photo-1567954970774-58d6aa6c50dc?w=1080&q=80&auto=format&fit=crop')}
+    .m4-stat-banner{
+      position:absolute;top:560px;left:56px;right:56px;
+      padding:18px 24px;background:#1a1815;color:#F5F1E8;
+      border-radius:2px;display:flex;align-items:center;gap:14px;
+      font-family:'Geist',sans-serif;font-size:16px;line-height:1.4;
+    }
+    .m4-stat-banner b{color:#E63946;font-weight:700}
+    .m4-stat-banner .source{margin-left:auto;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#c4b89e;font-weight:600;flex-shrink:0}
+
+    /* Asymmetric grid: card grande (Instagram) + 2 pequenos empilhados */
+    .m4-grid{
+      position:absolute;top:670px;left:56px;right:56px;
+      display:grid;
+      grid-template-columns:1.4fr 1fr;
+      grid-template-rows:1fr 1fr;
+      gap:14px;
+      height:300px;
+    }
+    .m4-card-big{
+      grid-row:1 / span 2;
+      padding:28px 30px 30px;background:#1a1815;color:#F5F1E8;
+      border-radius:2px;display:flex;flex-direction:column;
+      position:relative;overflow:hidden;
+    }
+    .m4-card-big::after{
+      content:'';position:absolute;top:-80px;right:-80px;
+      width:240px;height:240px;
+      background:radial-gradient(circle,rgba(230,57,70,.35) 0%,transparent 65%);
+      border-radius:50%;
+    }
+    .m4-card-big-tag{font-family:'Geist',sans-serif;font-size:11px;letter-spacing:3px;font-weight:700;color:#E63946;text-transform:uppercase;margin-bottom:14px;position:relative;z-index:2}
+    .m4-card-big-t{font-family:'Fraunces',serif;font-size:38px;font-weight:600;line-height:1.05;color:#F5F1E8;letter-spacing:-.8px;margin-bottom:14px;position:relative;z-index:2}
+    .m4-card-big-t em{font-style:italic;color:#E63946;font-weight:500}
+    .m4-card-big-d{font-family:'Geist',sans-serif;font-size:15px;line-height:1.55;color:#c4b89e;margin-bottom:auto;position:relative;z-index:2}
+    .m4-card-big-foot{display:flex;justify-content:space-between;align-items:flex-end;padding-top:18px;border-top:1px solid #3a3530;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:2px;color:#8B7355;text-transform:uppercase;font-weight:500;position:relative;z-index:2}
+    .m4-card-big-foot b{color:#E63946;font-weight:700;font-family:'Fraunces',serif;font-size:24px;letter-spacing:-.5px;text-transform:none;font-style:italic}
+
+    .m4-card-sm{
+      padding:18px 20px 20px;background:#F5F1E8;
+      border:1px solid #d9d2c0;border-radius:2px;
+      display:flex;flex-direction:column;
+    }
+    .m4-card-sm-tag{font-family:'Geist',sans-serif;font-size:10px;letter-spacing:2.5px;font-weight:700;color:#E63946;text-transform:uppercase;margin-bottom:8px}
+    .m4-card-sm-t{font-family:'Fraunces',serif;font-size:20px;font-weight:600;line-height:1.1;color:#1a1815;letter-spacing:-.3px;margin-bottom:6px}
+    .m4-card-sm-d{font-family:'Geist',sans-serif;font-size:12px;line-height:1.45;color:#3a3530}
+
+    .m4-cta-box{
+      position:absolute;top:1010px;left:56px;right:56px;
+      padding:28px 32px;background:#1a1815;color:#F5F1E8;
+      display:flex;justify-content:space-between;align-items:center;
+      border-radius:2px;
+    }
+    .m4-cta-l{font-family:'Fraunces',serif;font-size:26px;font-weight:600;letter-spacing:-.5px;line-height:1.15}
+    .m4-cta-l em{font-style:italic;color:#E63946;font-weight:500}
+    .m4-cta-r{text-align:right}
+    .m4-cta-r .wp{display:inline-block;background:#E63946;color:#F5F1E8;padding:14px 22px;font-size:13px;letter-spacing:2.5px;font-weight:800;text-transform:uppercase;border-radius:2px}
+    .m4-cta-r .num{display:block;font-size:13px;letter-spacing:2px;margin-top:10px;font-weight:600;color:#F5F1E8;font-family:'Geist Mono',monospace}
+    
+</style></head><body><div class="canvas">
+  
+  <div class="header">
+    <div class="brand">
+      <div class="brand-mark">C</div>
+      <div class="brand-text">
+        <span class="brand-name">Calazans Lumina</span>
+        <span class="brand-sub">Agência · MG</span>
+      </div>
+    </div>
+    <div class="issue-tag">Nossos serviços</div>
+  </div>
+  <div class="top-rule"></div>
+  <div class="ornament">*</div>
+  <div class="kicker">Pacote completo</div>
+  <h1 class="m4-headline">Marketing digital sob medida pra quem <em>vive da obra.</em></h1>
+  <div class="m4-photo-mini work"></div>
+  <div class="m4-stat-banner">
+    <span><b>Construção civil cresceu 4,3% no Brasil em 2024.</b> Quem aparece agora colhe nos próximos meses.</span>
+    <span class="source">CBIC 2025</span>
+  </div>
+  <div class="m4-grid">
+    <div class="m4-card-big">
+      <div class="m4-card-big-tag">Serviço principal · 01</div>
+      <div class="m4-card-big-t">Instagram <em>profissional</em></div>
+      <div class="m4-card-big-d">12 a 16 publicações por mês · carrosséis editoriais, reels e posts únicos. Identidade visual, legendas com fonte verificável e agendamento pelo GHL.</div>
+      <div class="m4-card-big-foot"><span>A partir de</span><b>R$ 1.500/mês</b></div>
+    </div>
+    <div class="m4-card-sm">
+      <div class="m4-card-sm-tag">02 · Automação</div>
+      <div class="m4-card-sm-t">WhatsApp automático</div>
+      <div class="m4-card-sm-d">Resposta 24h. Você volta da obra com os orçamentos prontos.</div>
+    </div>
+    <div class="m4-card-sm">
+      <div class="m4-card-sm-tag">03 · Busca local</div>
+      <div class="m4-card-sm-t">No Google da cidade</div>
+      <div class="m4-card-sm-d">Site rápido + ficha Google Empresa. Quem busca, te acha.</div>
+    </div>
+  </div>
+  <div class="m4-cta-box">
+    <div class="m4-cta-l">Sua obra mostra qualidade.<br>Seu <em>marketing</em> também deveria.</div>
+    <div class="m4-cta-r"><span class="wp">Chama no WhatsApp</span><span class="num">31 98294-8067</span></div>
+  </div>
+  
+  <div class="foot-rule"></div>
+  <div class="footer">
+    <span class="handle">@calazanslumina</span>
+    <span class="meta">calazanslumina.com.br</span>
+    <span style="color:#8B7355;font-weight:500;letter-spacing:2px">calazanslumina.com.br</span>
+  </div></div></body></html>

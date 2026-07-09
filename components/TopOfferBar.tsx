@@ -1,9 +1,14 @@
 'use client'
 
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import CountdownBar from './CountdownBar'
+import { trackInitiateCheckout } from '@/lib/analytics'
+import { buildUtm } from '@/lib/utm-builder'
 
-const STORAGE_KEY = 'topbar-dismissed-v1'
+const PAYMENT_URL = 'https://link.fastpaydirect.com/payment-link/6a08f6ef1d5a394a682e4ee1'
+const CHECKOUT_URL = buildUtm(PAYMENT_URL, { source: 'site', medium: 'topbar', campaign: 'ia-zero-avancado' })
+
+const STORAGE_KEY = 'topbar-dismissed-v2'
 
 export default function TopOfferBar() {
   const [dismissed, setDismissed] = useState(true) // start hidden, render only after mount
@@ -21,17 +26,21 @@ export default function TopOfferBar() {
           🔥 Lançamento
         </span>
         <span className="font-medium">
-          <strong>IA do Zero ao Avançado</strong> — Edição Completa · 95 págs ·{' '}
+          <strong>IA do Zero ao Avançado</strong> · 95 págs ·{' '}
           <span className="line-through opacity-60">R$ 297</span>{' '}
-          por <strong className="text-base">R$ 9,90</strong>
+          por <strong className="text-base">R$ 9,90</strong> · <CountdownBar />
         </span>
-        <Link
-          href="/cursos/ia-chatgpt-completo"
+        <a
+          href={CHECKOUT_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => trackInitiateCheckout({ courseSlug: 'ia-chatgpt-completo', courseName: 'IA do Zero ao Avançado', preco: 9.9 })}
           className="bg-white text-red-600 font-bold text-xs px-4 py-1.5 rounded-full hover:bg-amber-50 transition-colors uppercase tracking-wider flex-shrink-0"
         >
           Garantir agora →
-        </Link>
+        </a>
         <button
+          type="button"
           onClick={() => {
             localStorage.setItem(STORAGE_KEY, '1')
             setDismissed(true)

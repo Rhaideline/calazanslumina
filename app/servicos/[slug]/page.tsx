@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import { servicos, getServicoBySlug } from '@/data/servicos'
+import { cidadesMA } from '@/data/cidades-ma'
+import { capitaisBR } from '@/data/capitais-br'
 import ScrollReveal from '@/components/ScrollReveal'
 import CTAForm from '@/components/CTAForm'
 import ReviewsWidget from '@/components/ReviewsWidget'
@@ -414,8 +416,51 @@ export default async function ServicoPage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
 
+      {/* ===== 15. ÁREAS QUE ATENDEMOS — Local SEO hub-and-spoke ===== */}
+      <section className="section-padding bg-white">
+        <div className="container-main">
+          <ScrollReveal className="text-center mb-12">
+            <h2 className="heading-2 text-brand-dark mb-4">{servico.nome} — Cidades atendidas</h2>
+            <p className="text-brand-dark/60 max-w-2xl mx-auto">
+              Atendemos brasileiros em todo Massachusetts (Boston, MetroWest, North/South Shore) e nas principais capitais do Brasil. Veja a cidade mais próxima e fale conosco.
+            </p>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-2 gap-10">
+            <div>
+              <h3 className="text-lg font-bold text-brand-dark mb-4 flex items-center gap-2">
+                <span aria-hidden>🇺🇸</span> Massachusetts <span className="text-brand-dark/40 text-sm font-normal">({cidadesMA.length} cidades)</span>
+              </h3>
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                {cidadesMA.map((c) => (
+                  <li key={c.slug}>
+                    <Link href={`/cidades/${c.slug}/${servico.slug}`} className="text-brand-dark/70 hover:text-brand-mint transition-colors">
+                      {servico.nome} em {c.nome}, MA →
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-brand-dark mb-4 flex items-center gap-2">
+                <span aria-hidden>🇧🇷</span> Brasil <span className="text-brand-dark/40 text-sm font-normal">({capitaisBR.length} capitais)</span>
+              </h3>
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                {capitaisBR.map((c) => (
+                  <li key={c.slug}>
+                    <Link href={`/brasil/${c.slug}/${servico.slug}`} className="text-brand-dark/70 hover:text-brand-mint transition-colors">
+                      {servico.nome} em {c.nome}, {c.siglaEstado} →
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <PortfolioSites compact />
-      {/* ===== 15. CTA FORM ===== */}
+      {/* ===== 16. CTA FORM ===== */}
       <CTAForm servico={servico.nome} />
     </>
   )

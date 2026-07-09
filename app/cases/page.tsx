@@ -82,7 +82,7 @@ export default function CasesPage() {
                 <h2 className="font-serif text-3xl md:text-5xl font-bold text-brand-dark">Wolf&apos;s Siding Inc.</h2>
                 <p className="text-brand-dark/40 mt-1">Northborough, MA — wolfs-siding.com</p>
               </div>
-              <a href="https://wolfs-siding.com" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm px-6 py-3">Visitar site →</a>
+              <a href="https://wolfs-siding.com" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm px-6 py-3" aria-label="Visitar Wolfs Siding — case +706% cliques SEO">Veja Wolfs Siding · +706% cliques →</a>
             </div>
           </ScrollReveal>
 
@@ -205,7 +205,7 @@ export default function CasesPage() {
                 <h2 className="font-serif text-3xl md:text-5xl font-bold text-brand-dark">RS Development Group</h2>
                 <p className="text-brand-dark/40 mt-1">Massachusetts — rs-developmentgroup.com</p>
               </div>
-              <a href="https://rs-developmentgroup.com" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm px-6 py-3">Visitar site →</a>
+              <a href="https://rs-developmentgroup.com" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm px-6 py-3" aria-label="Visitar RS Development — case +24.500% impressões">Veja RS Development · +24.500% impressões →</a>
             </div>
           </ScrollReveal>
 
@@ -315,7 +315,7 @@ export default function CasesPage() {
                 <h2 className="font-serif text-3xl md:text-5xl font-bold text-brand-dark">JH Painting Services</h2>
                 <p className="text-brand-dark/40 mt-1">Marlborough, MA — jhpaintingservices.com</p>
               </div>
-              <a href="https://jhpaintingservices.com" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm px-6 py-3">Visitar site →</a>
+              <a href="https://jhpaintingservices.com" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm px-6 py-3" aria-label="Visitar JH Painting — chatbot IA 24/7">Veja JH Painting · chatbot IA 24/7 →</a>
             </div>
           </ScrollReveal>
 

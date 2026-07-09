@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Calazans Lumina · Pop</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
+html,body{width:1080px;height:1350px;overflow:hidden;background:#000}
+body{font-family:'Archivo',sans-serif;color:#fff}
+
+.canvas{
+  width:1080px;height:1350px;
+  position:relative;overflow:hidden;
+  background:#E51C23;
+}
+/* sun rays decorativos (raios brancos saindo do centro - estilo gov) */
+.canvas::before{
+  content:'';position:absolute;
+  top:50%;left:50%;
+  width:1800px;height:1800px;
+  margin:-900px 0 0 -900px;
+  background:
+    repeating-conic-gradient(
+      from 0deg,
+      rgba(255,255,255,.04) 0deg 15deg,
+      transparent 15deg 30deg
+    );
+  pointer-events:none;z-index:1;
+}
+.canvas > *{position:relative;z-index:2}
+
+/* ============ HEADER ============ */
+.header{
+  position:absolute;top:34px;left:48px;right:48px;
+  display:flex;justify-content:space-between;align-items:center;
+  z-index:10;
+}
+.logo-img{
+  height:80px;width:auto;display:block;
+  margin-left:-12px;
+}
+.live-tag{
+  font-family:'Archivo',sans-serif;
+  font-size:13px;font-weight:800;
+  color:#1a1a1a;letter-spacing:1px;
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 18px 10px 14px;
+  background:#FFE34D;
+  border-radius:100px;
+  border:2px solid #1a1a1a;
+}
+.live-dot{
+  width:10px;height:10px;background:#1a1a1a;
+  border-radius:50%;
+}
+
+/* ============ BADGE QUESTION (estilo "CPF SUJO?") ============ */
+.badge-q{
+  position:absolute;top:170px;left:48px;
+  font-family:'Anton','Archivo Black',sans-serif;
+  font-size:70px;font-weight:900;
+  color:#fff;letter-spacing:-1px;
+  line-height:1;text-transform:uppercase;
+  -webkit-text-stroke:3px #1a1a1a;
+  text-shadow:6px 6px 0 #1a1a1a;
+}
+
+/* ============ HEADLINE STACK (tipo "O BRASIL TODINHO") ============ */
+.headline{
+  position:absolute;top:300px;left:48px;right:48px;
+  font-family:'Anton','Archivo Black',sans-serif;
+  font-weight:900;line-height:.88;
+  text-transform:uppercase;
+}
+.h-line1{
+  display:block;font-size:60px;
+  color:#fff;font-style:italic;
+  font-family:'Archivo',sans-serif;
+  font-weight:900;letter-spacing:-1px;
+  text-transform:none;
+  margin-bottom:8px;
+  text-shadow:4px 4px 0 rgba(0,0,0,.15);
+}
+.h-line2{
+  display:block;font-size:188px;
+  color:#fff;letter-spacing:-4px;
+  line-height:.85;
+  text-shadow:8px 8px 0 #1a1a1a;
+  -webkit-text-stroke:2px #1a1a1a;
+}
+.h-line3{
+  display:block;font-size:158px;
+  color:#FFE34D;letter-spacing:-4px;
+  line-height:.85;
+  text-shadow:8px 8px 0 #1a1a1a;
+  -webkit-text-stroke:2px #1a1a1a;
+  margin-top:8px;
+}
+
+/* ============ SUB BADGE (tipo "E de um jeito que você entende") ============ */
+.sub-badge{
+  position:absolute;top:868px;left:48px;
+  padding:14px 28px 16px;
+  background:#1a1a1a;color:#fff;
+  border-radius:100px;
+  font-family:'Archivo',sans-serif;
+  font-size:22px;font-weight:700;
+  letter-spacing:-.3px;
+  display:inline-flex;align-items:center;gap:12px;
+}
+.sub-badge::after{
+  content:'';width:0;height:0;
+  border-left:8px solid transparent;
+  border-right:8px solid transparent;
+  border-top:8px solid #1a1a1a;
+  position:absolute;bottom:-10px;left:60px;
+}
+
+/* ============ FLOATING ELEMENTS (foto, ícone, balão) ============ */
+.float-phone{
+  position:absolute;top:188px;right:60px;
+  width:240px;
+  transform:rotate(8deg);
+  z-index:5;
+}
+.float-phone-img{
+  width:100%;display:block;
+  border-radius:18px;
+  box-shadow:0 18px 40px rgba(0,0,0,.4),0 0 0 6px #FFE34D;
+}
+.float-phone-label{
+  position:absolute;top:-22px;left:-20px;
+  background:#1a1a1a;color:#FFE34D;
+  padding:8px 16px;
+  font-family:'Archivo',sans-serif;
+  font-size:12px;font-weight:900;letter-spacing:2px;
+  text-transform:uppercase;
+  border-radius:100px;
+  transform:rotate(-12deg);
+  white-space:nowrap;
+}
+
+/* balão de fala do cliente */
+.speech{
+  position:absolute;top:720px;right:60px;
+  width:340px;
+  background:#fff;color:#1a1a1a;
+  padding:20px 24px 22px;
+  border-radius:20px 20px 4px 20px;
+  font-family:'Archivo',sans-serif;
+  transform:rotate(-2deg);
+}
+.speech-who{
+  font-size:10px;letter-spacing:2px;
+  color:#E51C23;font-weight:800;
+  text-transform:uppercase;margin-bottom:8px;
+  display:flex;align-items:center;gap:8px;
+}
+.speech-who::before{
+  content:'';width:18px;height:18px;
+  background:#1a1a1a;border-radius:50%;flex-shrink:0;
+}
+.speech-msg{
+  font-size:22px;font-weight:600;line-height:1.22;
+  letter-spacing:-.3px;font-style:italic;
+}
+
+/* ============ STAT FLOATING (mini) ============ */
+.stat-mini{
+  position:absolute;bottom:330px;left:48px;
+  display:inline-flex;align-items:center;gap:14px;
+  background:#1a1a1a;color:#fff;
+  padding:14px 22px;
+  border-radius:14px;
+}
+.stat-mini .num{
+  font-family:'Anton',sans-serif;
+  font-size:46px;color:#FFE34D;
+  line-height:1;letter-spacing:-1px;
+}
+.stat-mini .txt{
+  font-family:'Archivo',sans-serif;
+  font-size:12px;font-weight:600;
+  line-height:1.3;color:rgba(255,255,255,.85);
+  max-width:230px;
+}
+.stat-mini .txt b{color:#FFE34D;font-weight:800}
+
+/* ============ CTA BOTTOM (estilo "PODE!" + botão) ============ */
+.cta-zone{
+  position:absolute;bottom:140px;left:48px;right:48px;
+  display:flex;justify-content:space-between;align-items:flex-end;
+}
+.cta-text{
+  font-family:'Archivo',sans-serif;
+  font-size:34px;font-weight:900;
+  color:#fff;line-height:.95;
+  letter-spacing:-1px;
+  max-width:480px;
+}
+.cta-text em{
+  font-style:italic;font-weight:800;
+  background:#FFE34D;color:#1a1a1a;
+  padding:2px 10px;
+  display:inline-block;
+  transform:rotate(-1deg);
+}
+.cta-button{
+  background:#FFE34D;color:#1a1a1a;
+  padding:20px 28px 22px;
+  border-radius:60px;
+  font-family:'Archivo',sans-serif;
+  font-size:17px;font-weight:900;
+  letter-spacing:.5px;text-transform:uppercase;
+  white-space:nowrap;
+  border:3px solid #1a1a1a;
+  box-shadow:6px 6px 0 #1a1a1a;
+  display:inline-block;
+}
+
+/* ============ FOOTER ============ */
+.foot{
+  position:absolute;bottom:36px;left:48px;right:48px;
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:'Archivo',sans-serif;
+  font-size:13px;font-weight:700;
+  color:#fff;
+}
+.foot .left{display:flex;gap:18px;align-items:center}
+.foot .br-flag{
+  display:inline-flex;align-items:center;gap:6px;
+  background:#1a1a1a;padding:6px 12px;border-radius:100px;
+  font-size:11px;letter-spacing:1.5px;
+}
+.foot .br-flag::before{content:'·';color:#FFE34D;font-size:24px;line-height:0}
+
+/* ============ STAR BURSTS DECORATIVOS ============ */
+.star{
+  position:absolute;
+  font-family:'Anton',sans-serif;
+  font-size:48px;color:#FFE34D;
+  font-style:italic;font-weight:900;
+  line-height:1;-webkit-text-stroke:2px #1a1a1a;
+  z-index:3;
+}
+.star-1{top:240px;right:340px;transform:rotate(-15deg)}
+.star-2{bottom:560px;right:430px;transform:rotate(20deg);font-size:36px}
+</style>
+</head>
+<body>
+
+<div class="canvas">
+
+  <div class="header">
+    <img src="logo_oficial.png" alt="Calazans Lumina" class="logo-img">
+    <div class="live-tag"><span class="live-dot"></span>FALA, PINTOR!</div>
+  </div>
+
+  <div class="badge-q">CLIENTE SUMIU?</div>
+
+  <h1 class="headline">
+    <span class="h-line1">Olha o que tá rolando:</span>
+    <span class="h-line2">TEU INSTA</span>
+    <span class="h-line3">TÁ TE FAZENDO</span>
+    <span class="h-line2" style="font-size:158px">PERDER!</span>
+  </h1>
+
+  <div class="float-phone">
+    <div class="float-phone-label">VAI ALI</div>
+    <img class="float-phone-img" src="https://images.unsplash.com/photo-1610548822783-33fb5cb0e3a8?w=720&q=80&auto=format&fit=crop" alt="celular">
+  </div>
+
+  <div class="star star-1">*</div>
+  <div class="star star-2">*</div>
+
+  <div class="speech">
+    <div class="speech-who">Cliente · agora há pouco</div>
+    <div class="speech-msg">"Achei o perfil dele meio parado. Vou ver outro pintor..."</div>
+  </div>
+
+  <div class="sub-badge">É SÉRIO! 96% conferem o Google antes</div>
+
+  <div class="stat-mini">
+    <div class="num">73%</div>
+    <div class="txt"><b>Brasileiros</b> já contrataram serviço descoberto no Instagram. <b>Opinion Box 2025.</b></div>
+  </div>
+
+  <div class="cta-zone">
+    <div class="cta-text">
+      A gente <em>ajeita</em> teu Insta<br>em 7 dias.
+    </div>
+    <a class="cta-button">CHAMA NO ZAP →</a>
+  </div>
+
+  <div class="foot">
+    <span class="left">
+      <span>@CALAZANSLUMINA</span>
+      <span class="br-flag">CORONEL FABRICIANO · MG</span>
+    </span>
+    <span>31 · 98294-8067</span>
+  </div>
+
+</div>
+
+</body>
+</html>

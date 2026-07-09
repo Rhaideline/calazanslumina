@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Calazans Lumina · Reel 3× — Storyboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0a0a;--ink-2:#1A1A1A;--paper:#F5F1EA;--paper-2:#EAE2CC;
+    --red:#FF0005;--red-soft:#FF3B3B;--red-deep:#A00306;
+    --green:#16a34a;--gold:#D4A24B;
+    --rule:rgba(255,255,255,.08);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:#0a0a0a;color:#fff;font-family:'DM Sans',system-ui,sans-serif;font-weight:400;line-height:1.55;-webkit-font-smoothing:antialiased}
+
+  .page-head{max-width:1500px;margin:0 auto;padding:56px 32px 16px}
+  .page-head .meta{font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:.32em;text-transform:uppercase;opacity:.55;margin-bottom:14px;font-weight:500}
+  .page-head h1{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;letter-spacing:-.02em;font-size:clamp(34px,4.5vw,56px);margin:0 0 14px;line-height:1}
+  .page-head h1 em{font-style:italic;color:var(--red);font-weight:400}
+  .page-head .lede{opacity:.65;max-width:74ch;margin:0 0 8px;line-height:1.6;font-weight:300;font-size:16px}
+
+  .specs-bar{max-width:1500px;margin:24px auto 0;padding:0 32px;display:flex;gap:32px;flex-wrap:wrap;font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;opacity:.7}
+  .specs-bar span b{color:var(--red-soft);font-weight:700}
+
+  .storyboard{max-width:1600px;margin:48px auto 0;padding:0 32px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+
+  .scene{background:var(--ink-2);border:1px solid var(--rule);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+  .scene-meta{padding:16px 20px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+  .scene-num{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:26px;line-height:1;color:#fff}
+  .scene-num small{display:block;font-family:'DM Sans',sans-serif;font-style:normal;font-size:8px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:5px;font-weight:600}
+  .scene-time{display:flex;flex-direction:column;align-items:flex-end;gap:3px}
+  .scene-time .tm{font-family:'DM Sans',sans-serif;font-size:8px;letter-spacing:.32em;text-transform:uppercase;color:var(--red-soft);font-weight:700}
+  .scene-time .lbl{font-family:'DM Serif Display',serif;font-style:italic;font-size:11px;color:rgba(255,255,255,.78);text-align:right;line-height:1.15}
+
+  .frame{background:#222;aspect-ratio:9/16;overflow:hidden;position:relative}
+  .reel{position:absolute;top:0;left:0;width:1080px;height:1920px;transform-origin:top left;transform:scale(.255);font-family:'DM Sans',sans-serif;display:flex;flex-direction:column}
+
+  .reel-bg{position:absolute;inset:0;z-index:0}
+  .reel-bg.paper{background:var(--paper)}
+  .reel-bg.paper-2{background:var(--paper-2)}
+  .reel-bg.ink{background:#0a0a0a}
+  .reel-bg.gradient-red{background:radial-gradient(60% 50% at 80% 20%,rgba(255,0,5,.5),transparent 60%),linear-gradient(160deg,#1a0405 0%,#0a0a0a 60%,#000 100%)}
+  .reel-bg.gradient-green{background:radial-gradient(60% 50% at 20% 80%,rgba(22,163,74,.4),transparent 60%),linear-gradient(160deg,#0a1f0d 0%,#0a0a0a 60%,#000 100%)}
+  .reel-bg.gradient-gold{background:radial-gradient(60% 50% at 50% 50%,rgba(212,162,75,.35),transparent 65%),linear-gradient(160deg,#1a1408 0%,#0a0a0a 60%,#000 100%)}
+
+  .reel-photo{position:absolute;inset:0;z-index:1;background-position:center;background-size:cover;background-repeat:no-repeat;filter:saturate(.55) contrast(1.08) brightness(.5)}
+  .reel-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,.3) 50%,rgba(0,0,0,.9) 100%)}
+
+  /* ── HEADER (logo + pill) ── */
+  .reel-head{position:absolute;top:72px;left:64px;right:64px;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:24px}
+  .reel-logo{display:inline-flex;align-items:center;gap:14px;line-height:1}
+  .reel-logo img{width:54px;height:54px;display:block;flex-shrink:0;object-fit:contain}
+  .reel-logo .wm .name{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:26px;letter-spacing:-.005em;line-height:1;color:#fff;display:block}
+  .reel-logo.on-light .wm .name{color:var(--ink)}
+  .reel-logo .wm .sub{font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.5em;text-transform:uppercase;font-weight:500;color:var(--red);display:block;margin-top:4px}
+  .reel-pill{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;font-family:'DM Sans',sans-serif;font-size:12px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;height:32px;white-space:nowrap}
+  .reel-pill.outline-light{border:1px solid rgba(255,255,255,.4);color:#fff;background:transparent}
+  .reel-pill.dark{border:1px solid rgba(17,17,17,.5);color:var(--ink);background:transparent}
+  .reel-pill.red-fill{background:var(--red);color:#fff;border:1px solid var(--red)}
+  .reel-pill::before{content:"";width:6px;height:6px;background:currentColor;border-radius:50%;opacity:.85}
+
+  .reel-foot{position:absolute;bottom:96px;left:64px;right:64px;z-index:5;display:flex;justify-content:space-between;align-items:center;font-family:'DM Sans',sans-serif;font-size:14px;letter-spacing:.28em;text-transform:uppercase;font-weight:600}
+  .reel.tone-dark .reel-foot{color:rgba(255,255,255,.55)} .reel.tone-dark .reel-foot .accent{color:#fff}
+  .reel.tone-light .reel-foot{color:rgba(17,17,17,.55)} .reel.tone-light .reel-foot .accent{color:var(--ink)}
+
+  /* ─────────────── SCENE 01 — HOOK split-screen ─────────────── */
+  .s01 .split{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column}
+  .s01 .half{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:80px 60px;position:relative;text-align:center}
+  .s01 .half.top{background:var(--paper);color:var(--ink)}
+  .s01 .half.bot{background:#0a0a0a;color:#fff}
+  .s01 .half .flag{position:absolute;top:30px;font-family:'DM Sans',sans-serif;font-size:24px;letter-spacing:.4em;font-weight:800;text-transform:uppercase;opacity:.4}
+  .s01 .half.top .flag{top:auto;bottom:30px;color:var(--ink)}
+  .s01 .half.bot .flag{top:30px;color:#fff}
+  .s01 .price{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:280px;line-height:1;letter-spacing:-.04em;margin:0}
+  .s01 .price-top{color:var(--ink)}
+  .s01 .price-bot{color:var(--red-soft)}
+  .s01 .label{font-family:'DM Sans',sans-serif;font-size:24px;letter-spacing:.36em;text-transform:uppercase;font-weight:700;margin-top:14px}
+  .s01 .half.top .label{color:rgba(17,17,17,.7)}
+  .s01 .half.bot .label{color:rgba(255,255,255,.7)}
+  .s01 .vs-badge{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-6deg);z-index:6;width:200px;height:200px;border-radius:999px;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:90px;line-height:1;box-shadow:0 30px 80px -10px rgba(0,0,0,.7)}
+
+  /* ─────────────── SCENE 02 — INTRIGUE big stat ─────────────── */
+  .s02 .stack{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 60px;text-align:center;gap:40px}
+  .s02 .big{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:560px;line-height:.85;letter-spacing:-.05em;color:#fff;margin:0}
+  .s02 .big em{color:var(--red-soft);font-style:italic}
+  .s02 .caption{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:54px;line-height:1.18;color:rgba(255,255,255,.85);max-width:840px;margin:0}
+  .s02 .caption em{font-style:italic;color:var(--red-soft);font-weight:400}
+
+  /* ─────────────── SCENE 03 — PROBLEM cinematic ─────────────── */
+  .s03 .stack{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;padding:0 64px 320px;gap:24px}
+  .s03 h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:108px;line-height:1;letter-spacing:-.03em;color:#fff;margin:0;max-width:920px}
+  .s03 h2 em{font-style:italic;color:var(--red-soft)}
+  .s03 h2 mark{background:var(--red);color:#fff;padding:0 14px;display:inline-block;transform:rotate(-1.5deg);font-style:italic}
+
+  /* ─────────────── SCENE 04 — REVEAL ─────────────── */
+  .s04 .stack{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 60px;text-align:center;gap:48px}
+  .s04 .top-text{font-family:'DM Sans',sans-serif;font-size:30px;letter-spacing:.36em;text-transform:uppercase;font-weight:700;color:var(--red-soft);margin:0}
+  .s04 h1{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:178px;line-height:.92;letter-spacing:-.035em;color:#fff;margin:0;max-width:920px}
+  .s04 h1 em{font-style:italic;color:var(--red);text-decoration:underline;text-decoration-color:var(--red-soft);text-decoration-thickness:8px;text-underline-offset:18px}
+  .s04 .bottom-line{font-family:'DM Sans',sans-serif;font-size:32px;letter-spacing:.04em;line-height:1.25;color:rgba(255,255,255,.7);margin:0;max-width:780px}
+
+  /* ─────────────── SCENE 05/06/07/08/09 — 5 SELOS ─────────────── */
+  .s-seal{}
+  .s-seal .stack{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 60px;text-align:center;gap:36px}
+  .s-seal .seal-num{font-family:'DM Sans',sans-serif;font-size:20px;letter-spacing:.4em;text-transform:uppercase;font-weight:700;color:var(--red-soft);margin:0}
+  .s-seal .seal-icon{width:280px;height:280px;border-radius:999px;background:#fff;display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-style:italic;font-size:80px;color:var(--ink);font-weight:400;box-shadow:0 30px 80px -10px rgba(255,0,5,.4);position:relative}
+  .s-seal .seal-icon::before, .s-seal .seal-icon::after{content:"";position:absolute;border:2px solid rgba(255,255,255,.3);border-radius:999px}
+  .s-seal .seal-icon::before{inset:-20px}
+  .s-seal .seal-icon::after{inset:-40px;opacity:.5}
+  .s-seal h1{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:148px;line-height:.96;letter-spacing:-.03em;color:#fff;margin:0;max-width:920px}
+  .s-seal h1 em{color:var(--red-soft);font-style:italic}
+  .s-seal .seal-desc{font-family:'DM Sans',sans-serif;font-size:32px;line-height:1.35;color:rgba(255,255,255,.75);margin:0;max-width:820px;font-weight:500}
+  .s-seal .seal-desc b{color:#fff;font-weight:800}
+  .s-seal .seal-value{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:40px;color:var(--gold);margin:0;letter-spacing:-.01em}
+  .s-seal .seal-value em{color:#fff;font-style:italic}
+
+  /* ─────────────── SCENE 10 — INSIGHT (math reveal) ─────────────── */
+  .s10 .stack{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 60px;text-align:center;gap:32px}
+  .s10 .math{display:flex;align-items:baseline;gap:24px;font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;color:#fff;line-height:.9}
+  .s10 .math .n{font-size:200px;letter-spacing:-.04em}
+  .s10 .math .op{font-size:80px;color:var(--red-soft);font-weight:400}
+  .s10 .math .total{color:var(--green);font-size:300px}
+  .s10 .math-cap{font-family:'DM Sans',sans-serif;font-size:30px;letter-spacing:.04em;line-height:1.4;color:rgba(255,255,255,.78);margin:0;max-width:820px;font-weight:500}
+  .s10 .math-cap b{color:#fff;font-weight:800}
+  .s10 .math-cap em{color:var(--gold);font-style:normal;font-weight:700}
+
+  /* ─────────────── SCENE 11 — PROOF case ─────────────── */
+  .s11 .stack{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 60px;text-align:center;gap:40px}
+  .s11 .case-kicker{font-family:'DM Sans',sans-serif;font-size:24px;letter-spacing:.4em;text-transform:uppercase;font-weight:800;color:var(--gold);margin:0}
+  .s11 .case-name{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:84px;line-height:1;color:#fff;margin:0;letter-spacing:-.02em}
+  .s11 .case-flow{display:flex;align-items:center;gap:32px;font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;color:#fff}
+  .s11 .case-from{font-size:140px;color:rgba(255,255,255,.45);line-height:1;letter-spacing:-.03em;text-decoration:line-through;text-decoration-color:var(--red);text-decoration-thickness:6px}
+  .s11 .case-arrow{font-size:80px;color:var(--gold);line-height:1}
+  .s11 .case-to{font-size:200px;color:var(--green);line-height:1;letter-spacing:-.04em}
+  .s11 .case-meta{font-family:'DM Sans',sans-serif;font-size:24px;letter-spacing:.28em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,.7);margin:0}
+  .s11 .case-meta em{color:var(--gold);font-style:normal;font-weight:800}
+
+  /* ─────────────── SCENE 12 — CTA loop ─────────────── */
+  .s12 .stack{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 60px;text-align:center;gap:44px}
+  .s12 .cta-kicker{font-family:'DM Sans',sans-serif;font-size:22px;letter-spacing:.4em;text-transform:uppercase;font-weight:800;color:var(--red-soft);margin:0}
+  .s12 h1{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:172px;line-height:.94;letter-spacing:-.035em;color:#fff;margin:0;max-width:920px}
+  .s12 h1 em{font-style:italic;color:var(--red);font-weight:400}
+  .s12 .cta-btn{display:inline-flex;align-items:center;gap:18px;padding:32px 52px;border-radius:999px;background:#25D366;color:#000;font-family:'DM Sans',sans-serif;font-size:24px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;line-height:1}
+  .s12 .cta-btn::before{content:"";width:22px;height:22px;border-radius:999px;background:#000}
+  .s12 .cta-handle{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:42px;color:rgba(255,255,255,.78);margin:0;letter-spacing:-.01em}
+
+  /* CARD CONTENT */
+  .scene-content{padding:16px 20px;flex:1;display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--rule)}
+  .scene-content h3{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:18px;line-height:1.15;margin:0;color:#fff}
+  .voice{font-family:'DM Sans',sans-serif;font-weight:400;font-size:12px;line-height:1.55;margin:0;color:rgba(255,255,255,.78);border-left:2px solid var(--red);padding:6px 0 6px 10px}
+  .voice b{color:var(--red-soft);text-transform:uppercase;font-size:8px;letter-spacing:.28em;font-weight:700;display:block;margin-bottom:3px}
+
+  footer.page-foot{max-width:1500px;margin:64px auto 0;padding:32px;border-top:1px solid var(--rule);opacity:.55}
+  footer.page-foot .meta{font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:.32em;text-transform:uppercase;font-weight:500}
+</style>
+</head>
+<body>
+
+<header class="page-head">
+  <div class="meta">Calazans Lumina · Reel viral · Mai 2026</div>
+  <h1>Cliente americano paga <em>3× mais</em>. Mas só pra quem fala A LÍNGUA dele.</h1>
+  <p class="lede">Reel vertical 9:16 (1080×1920), 50 segundos, 12 cenas, narração feminina PT-BR, cortes acelerados, loop perfeito (cena 12 conecta visualmente com cena 01). Hook em 2s, payoff em 25s, prova em 45s.</p>
+  <div class="specs-bar">
+    <span>Formato · <b>1080×1920</b></span>
+    <span>Duração · <b>~50s</b></span>
+    <span>Cenas · <b>12</b></span>
+    <span>Cortes · <b>2-5s cada</b></span>
+    <span>Loop · <b>SIM</b></span>
+  </div>
+</header>
+
+<div class="storyboard">
+
+<!-- ─────── 01 HOOK ─────── -->
+<article class="scene">
+  <div class="scene-meta">
+    <span class="scene-num">01<small>HOOK</small></span>
+    <span class="scene-time"><span class="tm">0:00 – 0:02</span><span class="lbl">2s · split</span></span>
+  </div>
+  <div class="frame">
+    <div class="reel s01 tone-dark">
+      <div class="split">
+        <div class="half top">
+          <span class="flag">BR · BR</span>
+          <p class="price price-top">$5k</p>
+          <span class="label">mesma obra</span>
+        </div>
+        <div class="half bot">
+          <span class="flag">BR → US</span>
+          <p class="price price-bot">$15k</p>
+          <span class="label">mesma obra</span>
+        </div>
+      </div>
+      <div class="vs-badge">3×</div>
+    </div>
+  </div>
+  <div class="scene-content">
+    <h3>Split-screen comparativo</h3>
+    <p class="voice"><b>Voz</b>Mesma obra. Três vezes o preço.</p>
+  </div>
+</article>
+
+<!-- ─────── 02 INTRIGUE ─────── -->
+<article class="scene">
+  <div class="scene-meta">
+    <span class="scene-num">02<small>INTRIGUE</small></span>
+    <span class="scene-time"><span class="tm">0:02 – 0:06</span><span class="lbl">4s · big stat</span></span>
+  </div>
+  <div class="frame">
+    <div class="reel s02 tone-dark">
+      <div class="reel-bg gradient-red"></div>
+      <header class="reel-head">
+        <div class="reel-logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div>
+      </header>
+      <div class="stack">
+        <p class="big"><em>3×</em></p>
+        <p class="caption">o cliente americano paga <em>três vezes mais</em>. Pra mesma obra. Pelo mesmo pintor.</p>
+      </div>
+    </div>
+  </div>
+  <div class="scene-content">
+    <h3>Confirmação grande</h3>
+    <p class="voice"><b>Voz</b>Cliente americano paga três vezes mais que brasileiro. Pra mesma obra. Pelo mesmo pintor.</p>
+  </div>
+</article>
+
+<!-- ─────── 03 PROBLEM ─────── -->
+<article class="scene">
+  <div class="scene-meta">
+    <span class="scene-num">03<small>PROBLEM</small></span>
+    <span class="scene-time"><span class="tm">0:06 – 0:11</span><span class="lbl">5s · tensão</span></span>
+  </div>
+  <div class="frame">
+    <div class="reel s03 tone-dark">
+      <div class="reel-bg ink"></div>
+      <div class="reel-photo" style="background-image:url('https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=1200&h=2000&fit=crop&q=80')"></div>
+      <header class="reel-head">
+        <div class="reel-logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div>
+        <span class="reel-pill outline-light">Realidade</span>
+      </header>
+      <div class="stack">
+        <h2>Você faz <em>preço melhor</em>.<br>E ainda <mark>não fecha</mark>.</h2>
+      </div>
+    </div>
+  </div>
+  <div class="scene-content">
+    <h3>Tensão emocional</h3>
+    <p class="voice"><b>Voz</b>Você reclama da concorrência. Faz preço melhor. E ainda assim o americano não fecha contigo.</p>
+  </div>
+</article>
+
+<!-- ─────── 04 REVEAL ─────── -->
+<article class="scene">
+  <div class="scene-meta">
+    <span class="scene-num">04<small>REVEAL</small></span>
+    <span class="scene-time"><span class="tm">0:11 – 0:15</span><span class="lbl">4s · revelação</span></span>
+  </div>
+  <div class="frame">
+    <div class="reel s04 tone-dark">
+      <div class="reel-bg gradient-red"></div>
+      <header class="reel-head">
+        <div class="reel-logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div>
+        <span class="reel-pill red-fill">Verdade</span>
+      </header>
+      <div class="stack">
+        <p class="top-text">O problema não é o preço.</p>
+        <h1>É a <em>língua</em>.</h1>
+        <p class="bottom-line">E não é o inglês.</p>
+      </div>
+    </div>
+  </div>
+  <div class="scene-content">
+    <h3>Plot twist</h3>
+    <p class="voice"><b>Voz</b>O problema não é o preço. É a língua que você fala. E não é o inglês.</p>
+  </div>
+</article>
+
+<!-- ─────── 05-09: 5 SELOS ─────── -->
+
+<article class="scene">
+  <div class="scene-meta">
+    <span class="scene-num">05<small>SELO 01</small></span>
+    <span class="scene-time"><span class="tm">0:15 – 0:19</span><span class="lbl">4s · warranty</span></span>
+  </div>
+  <div class="frame">
+    <div class="reel s-seal tone-dark">
+      <div class="reel-bg gradient-gold"></div>
+      <header class="reel-head">
+        <div class="reel-logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div>
+        <span class="reel-pill outline-light">Selo · 01 de 05</span>
+      </header>
+      <div class="stack">
+        <p class="seal-num">A LÍNGUA · 01</p>
+        <div class="seal-icon">W</div>
+        <h1><em>Warranty.</em></h1>
+        <p class="seal-desc">Garantia escrita de <b>1 ano</b>, com sua assinatura no orçamento.</p>
+        <p class="seal-value">+ <em>$1.200</em> no ticket médio.</p>
+      </div>
+    </div>
+  </div>
+  <div class="scene-content">
+    <h3>Selo 1: Warranty</h3>
+    <p class="voice"><b>Voz</b>Warranty. Garantia escrita de um ano. Mais mil e duzentos dólares no ticket médio.</p>
+  </div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta">
+    <span class="scene-num">06<small>SELO 02</small></span>
+    <span class="scene-time"><span class="tm">0:19 – 0:23</span><span class="lbl">4s · licensed</span></span>
+  </div>
+  <div class="frame">
+    <div class="reel s-seal tone-dark">
+      <div class="reel-bg gradient-gold"></div>
+      <header class="reel-head">
+        <div class="reel-logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div>
+        <span class="reel-pill outline-light">Selo · 02 de 05</span>
+      </header>
+      <div class="stack">
+        <p class="seal-num">A LÍNGUA · 02</p>
+        <div class="seal-icon">L</div>
+        <h1><em>Licensed.</em></h1>
+        <p class="seal-desc">Número da <b>license do estado</b>, visível no orçamento e no site.</p>
+        <p class="seal-value">+ <em>$1.500</em> no ticket médio.</p>
+      </div>
+    </div>
+  </div>
+  <div class="scene-content">
+    <h3>Selo 2: Licensed</h3>
+    <p class="voice"><b>Voz</b>Licensed. Número da licença do estado, visível no orçamento. Mais mil e quinhentos dólares.</p>
+  </div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta">
+    <span class="scene-num">07<small>SELO 03</small></span>
+    <span class="scene-time"><span class="tm">0:23 – 0:27</span><span class="lbl">4s · insured</span></span>
+  </div>
+  <div class="frame">
+    <div class="reel s-seal tone-dark">
+      <div class="reel-bg gradient-gold"></div>
+      <header class="reel-head">
+        <div class="reel-logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div>
+        <span class="reel-pill outline-light">Selo · 03 de 05</span>
+      </header>
+      <div class="stack">
+        <p class="seal-num">A LÍNGUA · 03</p>
+        <div class="seal-icon">I</div>
+        <h1><em>Insured.</em></h1>
+        <p class="seal-desc">Seguro de responsabilidade civil de <b>1 milhão de dólares</b>.</p>
+        <p class="seal-value">+ <em>$2.000</em> no ticket médio.</p>
+      </div>
+    </div>
+  </div>
+  <div class="scene-content">
+    <h3>Selo 3: Insured</h3>
+    <p class="voice"><b>Voz</b>Insured. Seguro de um milhão de dólares. Mais dois mil dólares.</p>
+  </div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta">
+    <span class="scene-num">08<small>SELO 04</small></span>
+    <span class="scene-time"><span class="tm">0:27 – 0:31</span><span class="lbl">4s · BBB</span></span>
+  </div>
+  <div class="frame">
+    <div class="reel s-seal tone-dark">
+      <div class="reel-bg gradient-gold"></div>
+      <header class="reel-head">
+        <div class="reel-logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div>
+        <span class="reel-pill outline-light">Selo · 04 de 05</span>
+      </header>
+      <div class="stack">
+        <p class="seal-num">A LÍNGUA · 04</p>
+        <div class="seal-icon">★</div>
+        <h1><em>BBB.</em></h1>
+        <p class="seal-desc"><b>Better Business Bureau</b> · 5 estrelas, perfil ativo.</p>
+        <p class="seal-value">+ <em>$1.500</em> no ticket médio.</p>
+      </div>
+    </div>
+  </div>
+  <div class="scene-content">
+    <h3>Selo 4: BBB</h3>
+    <p class="voice"><b>Voz</b>BBB. Better Business Bureau, cinco estrelas. Mais mil e quinhentos.</p>
+  </div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta">
+    <span class="scene-num">09<small>SELO 05</small></span>
+    <span class="scene-time"><span class="tm">0:31 – 0:35</span><span class="lbl">4s · references</span></span>
+  </div>
+  <div class="frame">
+    <div class="reel s-seal tone-dark">
+      <div class="reel-bg gradient-gold"></div>
+      <header class="reel-head">
+        <div class="reel-logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div>
+        <span class="reel-pill outline-light">Selo · 05 de 05</span>
+      </header>
+      <div class="stack">
+        <p class="seal-num">A LÍNGUA · 05</p>
+        <div class="seal-icon">R</div>
+        <h1><em>References.</em></h1>
+        <p class="seal-desc"><b>3 clientes anteriores</b> que ele pode ligar pra confirmar.</p>
+        <p class="seal-value">+ <em>$800</em> no ticket médio.</p>
+      </div>
+    </div>
+  </div>
+  <div class="scene-content">
+    <h3>Selo 5: References</h3>
+    <p class="voice"><b>Voz</b>References. Três clientes anteriores que ele pode ligar. Mais oitocentos dólares.</p>
+  </div>
+</article>
+
+<!-- ─────── 10 INSIGHT MATH ─────── -->
+<article class="scene">
+  <div class="scene-meta">
+    <span class="scene-num">10<small>MATH</small></span>
+    <span class="scene-time"><span class="tm">0:35 – 0:41</span><span class="lbl">6s · soma</span></span>
+  </div>
+  <div class="frame">
+    <div class="reel s10 tone-dark">
+      <div class="reel-bg gradient-green"></div>
+      <header class="reel-head">
+        <div class="reel-logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div>
+        <span class="reel-pill outline-light">A soma</span>
+      </header>
+      <div class="stack">
+        <div class="math">
+          <span class="total">+$7k</span>
+        </div>
+        <p class="math-cap"><b>Cinco selos no orçamento.</b><br>+ <em>$7.000</em> de ticket médio.<br>Sem trocar mão de obra. Sem mudar material.</p>
+      </div>
+    </div>
+  </div>
+  <div class="scene-content">
+    <h3>Soma simples</h3>
+    <p class="voice"><b>Voz</b>Cinco selos no seu orçamento. Mais sete mil dólares de ticket médio. Sem trocar mão de obra. Sem mudar material.</p>
+  </div>
+</article>
+
+<!-- ─────── 11 PROOF case ─────── -->
+<article class="scene">
+  <div class="scene-meta">
+    <span class="scene-num">11<small>PROOF</small></span>
+    <span class="scene-time"><span class="tm">0:41 – 0:46</span><span class="lbl">5s · case real</span></span>
+  </div>
+  <div class="frame">
+    <div class="reel s11 tone-dark">
+      <div class="reel-bg gradient-green"></div>
+      <header class="reel-head">
+        <div class="reel-logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div>
+        <span class="reel-pill outline-light">Case real</span>
+      </header>
+      <div class="stack">
+        <p class="case-kicker">Caso público · 60 dias</p>
+        <p class="case-name">Wolf's Painting · Boston</p>
+        <div class="case-flow">
+          <span class="case-from">$4k</span>
+          <span class="case-arrow">→</span>
+          <span class="case-to">$11k</span>
+        </div>
+        <p class="case-meta">ticket médio · validado · <em>+175%</em></p>
+      </div>
+    </div>
+  </div>
+  <div class="scene-content">
+    <h3>Prova social</h3>
+    <p class="voice"><b>Voz</b>Wolf's Painting fez exatamente isso. Em sessenta dias, ticket médio passou de quatro mil pra onze mil dólares.</p>
+  </div>
+</article>
+
+<!-- ─────── 12 CTA / LOOP ─────── -->
+<article class="scene">
+  <div class="scene-meta">
+    <span class="scene-num">12<small>CTA · loop</small></span>
+    <span class="scene-time"><span class="tm">0:46 – 0:50</span><span class="lbl">4s · CTA</span></span>
+  </div>
+  <div class="frame">
+    <div class="reel s12 tone-dark">
+      <div class="reel-bg gradient-red"></div>
+      <header class="reel-head">
+        <div class="reel-logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div>
+        <span class="reel-pill red-fill">Convite</span>
+      </header>
+      <div class="stack">
+        <p class="cta-kicker">Auditoria gratuita</p>
+        <h1>Bora ver <em>seu</em><br>orçamento?</h1>
+        <span class="cta-btn">WhatsApp direto</span>
+        <p class="cta-handle">@calazanslumina · link na bio</p>
+      </div>
+    </div>
+  </div>
+  <div class="scene-content">
+    <h3>CTA · loop visual</h3>
+    <p class="voice"><b>Voz</b>Auditoria gratuita no link da bio. Vou olhar seu orçamento atual e te mostrar qual selo dá o maior salto.</p>
+  </div>
+</article>
+
+</div>
+
+<footer class="page-foot">
+  <div class="meta">REEL VIRAL · 12 CENAS · ~50 SEGUNDOS · 1080×1920 · CALAZANS LUMINA</div>
+</footer>
+
+</body>
+</html>

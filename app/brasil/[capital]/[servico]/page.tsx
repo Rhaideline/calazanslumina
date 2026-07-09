@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ capital: 
   if (!capital || !servico) return {}
   return {
     title: `${servico.nome} em ${capital.nome}, ${capital.siglaEstado}`,
-    description: `${servico.descricaoCurta} Para negocios em ${capital.nome}. velocidade otimizada, ROI comprovado, 100+ projetos entregues. Orcamento gratis em 24h →`,
+    description: `${servico.descricaoCurta} Para negocios em ${capital.nome}. velocidade otimizada, ROI comprovado, 100+ projetos entregues. Orçamento gratis em 24h →`,
     alternates: { canonical: `https://calazanslumina.com.br/brasil/${capitalSlug}/${servicoSlug}` },
     openGraph: {
       title: `${servico.nome} em ${capital.nome}, ${capital.siglaEstado} | Calazans Lumina`,
@@ -47,6 +47,8 @@ export default async function CapitalServicoPage({ params }: { params: Promise<{
   if (!capital || !servico) notFound()
 
   const outrosServicos = servicos.filter((s) => s.slug !== servicoSlug)
+  // Cross-link Local SEO: outras capitais BR no MESMO servico
+  const outrasCapitais = capitaisBR.filter((c) => c.slug !== capitalSlug).slice(0, 10)
 
   const localBusinessSchema = {
     '@context': 'https://schema.org',
@@ -63,8 +65,8 @@ export default async function CapitalServicoPage({ params }: { params: Promise<{
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
-      { '@type': 'Question', name: `Quanto custa ${servico.nome.toLowerCase()} em ${capital.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `Os precos de ${servico.nome.toLowerCase()} em ${capital.nome}, ${capital.siglaEstado} variam conforme o escopo. A Calazans Lumina oferece orcamento gratuito e personalizado. ${capital.descricao ? capital.descricao.slice(0, 150) : ''}` } },
-      { '@type': 'Question', name: `Qual a melhor agencia de ${servico.nome.toLowerCase()} em ${capital.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `A Calazans Lumina e especialista em ${servico.nome.toLowerCase()} em ${capital.nome}, ${capital.siglaEstado}. Com 8+ anos de experiencia e 100+ projetos, oferecemos ${servico.descricaoCurta.toLowerCase()}` } },
+      { '@type': 'Question', name: `Quanto custa ${servico.nome.toLowerCase()} em ${capital.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `Os preços de ${servico.nome.toLowerCase()} em ${capital.nome}, ${capital.siglaEstado} variam conforme o escopo. A Calazans Lumina oferece orçamento gratuito e personalizado. ${capital.descricao ? capital.descricao.slice(0, 150) : ''}` } },
+      { '@type': 'Question', name: `Qual a melhor agência de ${servico.nome.toLowerCase()} em ${capital.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `A Calazans Lumina e especialista em ${servico.nome.toLowerCase()} em ${capital.nome}, ${capital.siglaEstado}. Com 8+ anos de experiência e 100+ projetos, oferecemos ${servico.descricaoCurta.toLowerCase()}` } },
       { '@type': 'Question', name: `A Calazans Lumina atende em ${capital.nome}, ${capital.siglaEstado}?`, acceptedAnswer: { '@type': 'Answer', text: `Sim! Atendemos empresas em ${capital.nome} e em mais de 260 cidades do Brasil. Nosso atendimento e 100% remoto com resultados comprovados.` } },
       ...servico.faqs.slice(0, 2).map((f) => ({
         '@type': 'Question' as const,
@@ -202,6 +204,32 @@ export default async function CapitalServicoPage({ params }: { params: Promise<{
                 </Link>
               </ScrollReveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Capitais vizinhas — mesmo servico (cross-link Local SEO BR) */}
+      <section className="section-padding bg-white border-t border-brand-dark/10">
+        <div className="container-main">
+          <ScrollReveal className="text-center mb-10">
+            <h2 className="heading-2 text-brand-dark mb-3">{servico.nome} em outras capitais brasileiras</h2>
+            <p className="text-brand-dark/60 max-w-2xl mx-auto text-sm">
+              Atendemos negócios em todas as capitais do Brasil. Veja outras cidades onde já entregamos:
+            </p>
+          </ScrollReveal>
+          <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-4 gap-y-2 text-sm">
+            {outrasCapitais.map((c) => (
+              <li key={c.slug}>
+                <Link href={`/brasil/${c.slug}/${servico.slug}`} className="text-brand-dark/70 hover:text-brand-mint transition-colors">
+                  {servico.nome} em {c.nome}, {c.siglaEstado} →
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div className="text-center mt-6">
+            <Link href="/servicos" className="text-brand-mint hover:text-brand-dark text-sm font-medium transition-colors">
+              Ver todos os serviços e cidades →
+            </Link>
           </div>
         </div>
       </section>

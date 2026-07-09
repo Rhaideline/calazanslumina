@@ -1,0 +1,883 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Calazans Lumina — Instagram Kit · Edição 001</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#111111;
+    --ink-2:#1A1A1A;
+    --paper:#F5F1EA;
+    --paper-2:#EDE6D6;
+    --red:#FF0005;
+    --red-soft:#FF3B3B;
+    --rule:rgba(17,17,17,.18);
+    --rule-light:rgba(245,241,234,.18);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:#0a0a0a;color:#fff;font-family:'DM Sans',system-ui,sans-serif;font-weight:400}
+
+  /* PAGE CHROME */
+  .page-head{max-width:1300px;margin:0 auto;padding:80px 32px 16px}
+  .page-head h1{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;letter-spacing:-.02em;font-size:clamp(34px,4.5vw,52px);margin:0 0 14px;line-height:1}
+  .page-head h1 em{font-style:italic;color:var(--red);font-weight:400}
+  .page-head p{opacity:.62;max-width:64ch;margin:0;line-height:1.6;font-size:16px;font-weight:300;font-family:'DM Sans',sans-serif}
+  .page-head .meta{font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:.32em;text-transform:uppercase;opacity:.5;margin-bottom:14px;font-weight:500}
+
+  .section-title{
+    max-width:1300px;margin:80px auto 0;padding:0 32px 24px;
+    display:flex;align-items:flex-end;justify-content:space-between;gap:32px;
+    border-bottom:1px solid rgba(255,255,255,.06);
+  }
+  .section-title h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:30px;margin:0;letter-spacing:-.01em;color:#fff}
+  .section-title .meta{font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:.32em;text-transform:uppercase;opacity:.5;font-weight:500;color:var(--red-soft)}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(440px,1fr));gap:28px;max-width:1300px;margin:0 auto;padding:24px 32px 40px}
+
+  .post-wrap{
+    width:100%;aspect-ratio:4/5;background:var(--ink);border-radius:14px;overflow:hidden;position:relative;
+    box-shadow:0 24px 60px -24px rgba(0,0,0,.5), 0 0 0 1px rgba(255,255,255,.04);
+  }
+  .post-wrap .label{
+    position:absolute;left:14px;top:14px;z-index:9;
+    font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;
+    color:#fff;background:rgba(0,0,0,.6);padding:6px 12px;border-radius:999px;
+    -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  }
+  .post{
+    width:1080px;height:1350px;
+    transform-origin:top left;transform:scale(.408);
+    position:relative;overflow:hidden;
+    font-family:'DM Sans',sans-serif;
+    display:flex;flex-direction:column;
+  }
+  @media(max-width:600px){.grid{grid-template-columns:1fr;padding:16px;gap:18px}}
+
+  /* PHOTO BACKDROPS — atmospheric heavy overlay */
+  .photo{position:absolute;inset:0;z-index:0;background-position:center;background-size:cover;background-repeat:no-repeat;filter:saturate(.7) contrast(1.06) brightness(.7)}
+  .photo::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg, rgba(17,17,17,.4) 0%, rgba(17,17,17,.7) 55%, rgba(17,17,17,.92) 100%)}
+  .photo.center::after{background:radial-gradient(80% 70% at 50% 60%, rgba(17,17,17,.45) 0%, rgba(17,17,17,.85) 80%, rgba(0,0,0,.96) 100%)}
+
+  /* LOGO LOCKUP — stacked Calazans + LUMINA */
+  .logo{display:inline-flex;align-items:center;gap:14px;line-height:1}
+  .logo .mark{width:38px;height:38px;display:block;flex-shrink:0}
+  .logo .wm{display:flex;flex-direction:column;gap:5px;line-height:1}
+  .logo .wm .name{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:24px;letter-spacing:-.005em;line-height:1}
+  .logo .wm .sub{font-family:'DM Sans',sans-serif;font-size:9.5px;letter-spacing:.5em;text-transform:uppercase;font-weight:500;color:var(--red)}
+  .logo.on-dark .name{color:#fff}
+  .logo.on-light .name{color:var(--ink)}
+  .logo.lg .mark{width:44px;height:44px}
+  .logo.lg .name{font-size:28px}
+
+  /* PILLS */
+  .pill{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:999px;font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;line-height:1}
+  .pill.dark{background:var(--ink);color:#fff}
+  .pill.outline-dark{border:1px solid rgba(17,17,17,.4);color:var(--ink)}
+  .pill.outline-light{border:1px solid rgba(255,255,255,.4);color:#fff}
+  .pill.red{background:var(--red);color:#fff}
+
+  /* REGIONS */
+  .ph{flex:0 0 auto;padding:64px 80px 0;display:flex;justify-content:space-between;align-items:center;gap:24px;position:relative;z-index:5}
+  .pm{flex:1 1 auto;padding:50px 80px;display:flex;flex-direction:column;justify-content:center;gap:32px;position:relative;z-index:5;min-height:0}
+  .pf{flex:0 0 auto;padding:0 80px 56px;display:flex;justify-content:space-between;align-items:center;gap:24px;position:relative;z-index:5;font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:500}
+  .post[data-tone="dark"] .pf{color:rgba(255,255,255,.62)}
+  .post[data-tone="dark"] .pf .accent{color:#fff}
+  .post[data-tone="light"] .pf{color:rgba(17,17,17,.55)}
+  .post[data-tone="light"] .pf .accent{color:var(--ink)}
+
+  /* ════════════════════ 01 HERO PHOTO ════════════════════ */
+  .p01{background:var(--ink);color:#fff;overflow:hidden}
+  .p01 .photo{background-image:url("https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&h=1500&fit=crop&q=80")}
+  .p01 h1{margin:0;font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:160px;line-height:.92;letter-spacing:-.025em}
+  .p01 h1 em{font-style:italic;color:var(--red);font-weight:400}
+  .p01 .lead{margin:0;font-family:'DM Sans',sans-serif;font-weight:300;font-size:21px;line-height:1.55;color:rgba(255,255,255,.78);max-width:680px}
+
+  /* ════════════════════ 02 CASE CREAM ════════════════════ */
+  .p02{background:var(--paper);color:var(--ink)}
+  .p02 .pm{justify-content:center;align-items:center;text-align:center;gap:24px}
+  .p02 .num{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;color:var(--red);font-size:540px;line-height:.78;letter-spacing:-.05em;margin:0}
+  .p02 .num .plus{font-size:340px;color:var(--ink)}
+  .p02 .num .pct{font-size:240px;vertical-align:super}
+  .p02 .lead{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:42px;line-height:1.18;color:var(--ink);max-width:640px;margin:0;letter-spacing:-.015em}
+  .p02 .lead em{font-style:italic;color:var(--red)}
+  .p02 .clientline{font-family:'DM Sans',sans-serif;font-size:13px;letter-spacing:.24em;text-transform:uppercase;font-weight:500}
+
+  /* ════════════════════ 03 CARROSSEL CAPA ════════════════════ */
+  .p03{background:var(--ink);color:#fff;overflow:hidden}
+  .p03 .photo{background-image:url("https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=1200&h=1500&fit=crop&q=80")}
+  .p03 .photo::after{background:linear-gradient(180deg, rgba(17,17,17,.4) 0%, rgba(255,0,5,.4) 60%, rgba(17,17,17,.92) 100%) !important}
+  .p03 h1{margin:0;font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:138px;line-height:.94;letter-spacing:-.025em}
+  .p03 h1 em{font-style:italic;color:var(--red-soft);font-weight:400;text-decoration:underline;text-decoration-thickness:5px;text-underline-offset:14px}
+  .p03 .lead{margin:0;font-family:'DM Sans',sans-serif;font-weight:300;font-size:21px;line-height:1.55;color:rgba(255,255,255,.8);max-width:660px}
+
+  /* ════════════════════ 04 DICA CREAM (the look you liked) ════════════════════ */
+  .p04{background:var(--paper);color:var(--ink)}
+  .p04 .top-rule{position:absolute;left:80px;right:80px;top:42px;height:1px;background:var(--ink);z-index:2}
+  .p04 .ph{padding-top:54px}
+  .p04 .col-num{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:130px;line-height:.9;color:var(--red)}
+  .p04 .col-num small{display:block;font-family:'DM Sans',sans-serif;font-style:normal;font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink);opacity:.55;margin-top:10px;font-weight:500}
+  .p04 h1{margin:0;font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:104px;line-height:1;letter-spacing:-.022em}
+  .p04 h1 em{font-style:italic;color:var(--red);font-weight:400}
+  .p04 .body{font-family:'DM Sans',sans-serif;font-weight:400;font-size:22px;line-height:1.55;max-width:780px;color:rgba(17,17,17,.78);margin:0}
+  .p04 .body b{color:var(--ink);font-weight:600}
+  .p04 .pf{border-top:1px solid var(--ink);margin:0 80px;padding:18px 0 56px}
+
+  /* ════════════════════ 05 LISTA ════════════════════ */
+  .p05{background:var(--ink);color:#fff;overflow:hidden}
+  .p05 .photo{background-image:url("https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&h=1500&fit=crop&q=80")}
+  .p05 h1{margin:0;font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:80px;line-height:1;letter-spacing:-.022em;max-width:840px}
+  .p05 h1 em{font-style:italic;color:var(--red-soft);font-weight:400}
+  .p05 ol{margin:0;padding:0;list-style:none;border-top:1px solid var(--rule-light)}
+  .p05 ol li{display:grid;grid-template-columns:120px 1fr 60px;align-items:center;gap:24px;padding:26px 0;border-bottom:1px solid var(--rule-light)}
+  .p05 ol li .n{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:84px;line-height:.9;color:var(--red-soft)}
+  .p05 ol li .name{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:48px;letter-spacing:-.015em;line-height:1;color:#fff}
+  .p05 ol li .name small{display:block;font-family:'DM Sans',sans-serif;font-style:normal;font-size:16px;letter-spacing:.04em;color:rgba(255,255,255,.55);margin-top:6px;font-weight:400}
+  .p05 ol li .arr{justify-self:end;color:var(--red-soft);font-size:42px;font-family:'DM Serif Display',serif;font-style:italic}
+
+  /* ════════════════════ 06 ANTES / DEPOIS SPLIT (charts + 90 dias seal) ════════════════════ */
+  .p06{flex-direction:row;background:var(--paper);position:relative}
+  .p06 .left,.p06 .right{flex:1;padding:70px 60px;display:flex;flex-direction:column;justify-content:center;gap:24px;position:relative;z-index:2}
+  .p06 .left{background:var(--ink);color:#fff}
+  .p06 .right{background:var(--paper);color:var(--ink)}
+  .p06 .lab{font-family:'DM Sans',sans-serif;font-size:13px;letter-spacing:.32em;text-transform:uppercase;font-weight:500}
+  .p06 .left .lab{color:rgba(255,255,255,.85)}
+  .p06 .right .lab{color:var(--red);font-weight:500}
+  .p06 .big{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:160px;line-height:.85;letter-spacing:-.04em;margin:0}
+  .p06 .left .big{color:#fff}
+  .p06 .right .big{color:var(--red)}
+  .p06 .unit{font-family:'DM Sans',sans-serif;font-size:13px;letter-spacing:.28em;text-transform:uppercase;margin-top:-10px;font-weight:500}
+  .p06 .left .unit{color:rgba(255,255,255,.62)}
+  .p06 .right .unit{color:rgba(17,17,17,.55)}
+  .p06 .chart{width:100%;height:120px}
+  .p06 ul{list-style:none;padding:0;margin:6px 0 0;font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.85;font-weight:400}
+  .p06 ul li{display:flex;justify-content:space-between;border-bottom:1px solid currentColor;padding:5px 0;letter-spacing:.04em;text-transform:uppercase}
+  .p06 .left ul{color:rgba(255,255,255,.78)}
+  .p06 .right ul{color:rgba(17,17,17,.7)}
+  .p06 .seal{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-8deg);z-index:6;
+    width:230px;height:230px;border-radius:999px;background:var(--red);color:#fff;
+    display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column;
+    font-family:'DM Serif Display',serif;font-style:italic;font-size:34px;line-height:1;font-weight:400;
+    box-shadow:0 30px 80px -10px rgba(0,0,0,.5);
+  }
+  .p06 .seal small{display:block;font-family:'DM Sans',sans-serif;font-style:normal;font-size:12px;letter-spacing:.22em;margin-top:10px;font-weight:500;text-transform:uppercase}
+  .p06 .ribbon{position:absolute;left:0;right:0;bottom:0;padding:22px 80px;display:flex;justify-content:space-between;align-items:center;font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;background:rgba(0,0,0,.06);z-index:7;color:rgba(17,17,17,.62)}
+
+  /* ════════════════════ 07 PERGUNTA PHOTO (A/B/C answers) ════════════════════ */
+  .p07{background:var(--ink);color:#fff;overflow:hidden}
+  .p07 .photo{background-image:url("https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&h=1500&fit=crop&q=80")}
+  .p07 h1{margin:0;font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:96px;line-height:1.04;letter-spacing:-.02em;max-width:840px}
+  .p07 h1 em{font-style:italic;color:var(--red);font-weight:400}
+  .p07 h1 u{text-decoration:underline;text-decoration-color:var(--red);text-decoration-thickness:5px;text-underline-offset:14px}
+  .p07 .answers{display:flex;gap:14px;flex-wrap:wrap}
+  .p07 .answers div{
+    flex:1;min-width:140px;border:1.5px solid rgba(255,255,255,.4);padding:18px 22px;border-radius:999px;
+    font-family:'DM Sans',sans-serif;font-size:14px;letter-spacing:.06em;font-weight:500;
+    display:flex;align-items:center;gap:12px;color:#fff;
+    background:rgba(0,0,0,.35);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);
+  }
+  .p07 .answers div span{width:26px;height:26px;border-radius:6px;background:rgba(255,255,255,.18);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;font-weight:600}
+  .p07 .answers div:first-child{background:var(--red);border-color:var(--red)}
+  .p07 .answers div:first-child span{background:#fff;color:var(--red)}
+
+  /* ════════════════════ 08 OFERTA DARK ════════════════════ */
+  .p08{background:linear-gradient(160deg,#1a0d0d 0%,var(--ink) 60%,#000 100%);color:#fff;overflow:hidden}
+  .p08::before{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(60% 50% at 90% 10%, rgba(255,0,5,.4), transparent 60%)}
+  .p08 h1{margin:0;font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:118px;line-height:.96;letter-spacing:-.025em}
+  .p08 h1 em{font-style:italic;color:var(--red);font-weight:400}
+  .p08 .stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--rule-light);border-bottom:1px solid var(--rule-light)}
+  .p08 .stats div{padding:28px 0;border-right:1px solid var(--rule-light)}
+  .p08 .stats div:last-child{border-right:0}
+  .p08 .stats .big{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:80px;line-height:1;letter-spacing:-.03em;color:#fff}
+  .p08 .stats .lbl{font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;color:rgba(255,255,255,.62);margin-top:8px}
+  .p08 .row{display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
+  .p08 .price{display:flex;align-items:baseline;gap:18px}
+  .p08 .price s{color:rgba(255,255,255,.4);font-size:26px;font-family:'DM Sans',sans-serif;font-weight:400}
+  .p08 .price b{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:88px;color:var(--red-soft);line-height:1}
+  .p08 .price small{font-family:'DM Sans',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;opacity:.7}
+  .p08 .cta{background:#fff;color:var(--ink);padding:20px 30px;border-radius:999px;font-family:'DM Sans',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;display:inline-flex;align-items:center;gap:12px;white-space:nowrap}
+  .p08 .cta::after{content:"→";font-family:'DM Serif Display',serif;font-size:22px;font-style:italic}
+
+  /* ════════════════════ 09 BIO PHOTO ════════════════════ */
+  .p09{background:var(--ink);color:#fff;overflow:hidden}
+  .p09 .photo{background-image:url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=1500&fit=crop&q=80");background-position:center 30%}
+  .p09 .photo::after{background:linear-gradient(105deg, rgba(17,17,17,0) 0%, rgba(17,17,17,.1) 35%, rgba(17,17,17,.85) 70%, rgba(0,0,0,.96) 100%) !important}
+  .p09 .pm{justify-content:flex-end}
+  .p09 h1{margin:0;font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:108px;line-height:.96;letter-spacing:-.025em;max-width:680px}
+  .p09 h1 em{font-style:italic;color:var(--red);font-weight:400}
+  .p09 .role{margin:0;font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:30px;color:rgba(255,255,255,.78);line-height:1.25;max-width:560px}
+  .p09 .bio{margin:0;font-family:'DM Sans',sans-serif;font-weight:300;font-size:18px;line-height:1.6;color:rgba(255,255,255,.7);max-width:520px}
+
+  /* ════════════════════ 10 MITO / VERDADE CREAM (the look you liked) ════════════════════ */
+  .p10{background:var(--paper);color:var(--ink)}
+  .p10 .row{display:grid;grid-template-columns:200px 1fr;gap:30px;align-items:flex-start}
+  .p10 .row.r1{padding-bottom:40px}
+  .p10 .row.r2{border-top:1px solid var(--ink);padding-top:48px}
+  .p10 .tag{font-family:'DM Sans',sans-serif;font-size:14px;letter-spacing:.3em;text-transform:uppercase;font-weight:500;padding:10px 0;display:inline-flex;align-items:center;gap:14px;line-height:1}
+  .p10 .tag.mito{color:rgba(17,17,17,.4);text-decoration:line-through;text-decoration-thickness:2px}
+  .p10 .tag.verd{color:var(--red)}
+  .p10 .tag.verd::before{content:"";width:12px;height:12px;background:var(--red)}
+  .p10 h2{margin:0;font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:72px;line-height:.98;letter-spacing:-.022em}
+  .p10 .r1 h2{color:rgba(17,17,17,.4);text-decoration:line-through;text-decoration-thickness:4px;text-decoration-color:var(--red)}
+  .p10 .r2 h2 em{font-style:italic;color:var(--red);font-weight:400}
+  .p10 .source{margin-top:16px;font-family:'DM Sans',sans-serif;font-size:13px;letter-spacing:.04em;color:rgba(17,17,17,.55);text-transform:none;font-weight:400}
+
+  /* ════════════════════ 11 QUOTE PHOTO ════════════════════ */
+  .p11{background:var(--ink);color:#fff;overflow:hidden}
+  .p11 .photo{background-image:url("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1200&h=1500&fit=crop&q=80")}
+  .p11 .photo::after{background:radial-gradient(75% 65% at 50% 55%, rgba(60,15,15,.35) 0%, rgba(17,17,17,.85) 75%, rgba(0,0,0,.96) 100%) !important}
+  .p11 .qmark{position:absolute;left:50px;top:130px;font-family:'DM Serif Display',serif;font-style:italic;font-size:380px;line-height:.7;color:rgba(255,255,255,.1);z-index:3;pointer-events:none}
+  .p11 .quote{position:relative;z-index:4;margin:0;font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:78px;line-height:1.1;letter-spacing:-.022em;max-width:880px}
+  .p11 .quote em{font-style:italic;color:var(--red-soft);font-weight:400}
+  .p11 .credit{position:relative;z-index:4;display:flex;align-items:center;gap:20px}
+  .p11 .credit .ava{width:80px;height:80px;border-radius:999px;background:#fff;color:var(--red);display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-style:italic;font-size:42px;flex-shrink:0;font-weight:400}
+  .p11 .credit .who{font-family:'DM Sans',sans-serif;font-size:14px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;line-height:1.4}
+  .p11 .credit .who small{display:block;font-size:11px;opacity:.75;margin-top:4px;letter-spacing:.22em}
+
+  /* ════════════════════ 12 CONVITE CREAM ════════════════════ */
+  .p12{background:var(--paper);color:var(--ink)}
+  .p12::before{content:"";position:absolute;inset:48px;border:1px solid rgba(17,17,17,.12);pointer-events:none;z-index:1}
+  .p12 h1{margin:0;font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:144px;line-height:.96;letter-spacing:-.03em}
+  .p12 h1 em{font-style:italic;color:var(--red);font-weight:400}
+  .p12 h1 mark{background:var(--ink);color:var(--paper);padding:0 16px;line-height:1.05;display:inline-block;transform:rotate(-1deg);font-style:italic}
+  .p12 .cta-row{display:grid;grid-template-columns:200px 1fr;gap:36px;align-items:end}
+  .p12 .qr{width:200px;height:200px;border-radius:14px;background:var(--ink);padding:16px;display:grid;grid-template-columns:repeat(8,1fr);grid-template-rows:repeat(8,1fr);gap:3px}
+  .p12 .qr i{display:block;background:var(--paper);border-radius:1px}
+  .p12 .qr i.off{background:var(--ink)}
+  .p12 .invite-side .lbl{font-family:'DM Sans',sans-serif;font-size:13px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;color:var(--red);margin-bottom:14px}
+  .p12 .invite-side .url{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:54px;letter-spacing:-.02em;line-height:1;color:var(--ink)}
+  .p12 .invite-side .wpp{margin-top:18px;display:inline-flex;align-items:center;gap:14px;background:var(--ink);color:#fff;padding:16px 24px;border-radius:999px;font-family:'DM Sans',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
+  .p12 .invite-side .wpp::before{content:"";width:12px;height:12px;border-radius:999px;background:#25D366;box-shadow:0 0 0 4px rgba(37,211,102,.25)}
+
+  /* ════════════════════ CARROSSEL ════════════════════ */
+  .car{position:relative;display:flex;flex-direction:column}
+  .car .pm{flex:1;display:flex;flex-direction:column;justify-content:center;gap:30px;min-height:0;padding:50px 80px;position:relative;z-index:5}
+  .car .pf{padding:0 80px 56px;display:flex;justify-content:space-between;align-items:center;font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;position:relative;z-index:5}
+
+  .car-cover{background:var(--ink);color:#fff;overflow:hidden}
+  .car-cover .photo{background-image:url("https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=1200&h=1500&fit=crop&q=80")}
+  .car-cover .photo::after{background:linear-gradient(180deg, rgba(17,17,17,.4), rgba(255,0,5,.45) 60%, rgba(0,0,0,.95) 100%) !important}
+  .car-cover h1{margin:0;font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:130px;line-height:.94;letter-spacing:-.025em}
+  .car-cover h1 em{font-style:italic;color:var(--red-soft);font-weight:400;text-decoration:underline;text-decoration-thickness:5px;text-underline-offset:14px}
+  .car-cover h1 .num{display:inline-block;background:#fff;color:var(--red);padding:0 28px;border-radius:14px;line-height:1;transform:translateY(-8px);box-shadow:6px 6px 0 rgba(0,0,0,.3);font-style:italic}
+  .car-cover .pf{color:rgba(255,255,255,.62)}
+
+  .car-erro{background:var(--paper);color:var(--ink)}
+  .car-erro .erro-num{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:200px;line-height:.85;color:var(--red);letter-spacing:-.04em}
+  .car-erro .erro-num small{display:block;font-family:'DM Sans',sans-serif;font-style:normal;font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:rgba(17,17,17,.55);margin-top:10px;font-weight:500}
+  .car-erro h2{margin:0;font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:78px;line-height:.98;letter-spacing:-.022em}
+  .car-erro h2 em{font-style:italic;color:var(--red);font-weight:400}
+  .car-erro p{margin:0;font-family:'DM Sans',sans-serif;font-weight:400;font-size:21px;line-height:1.55;color:rgba(17,17,17,.78);max-width:760px}
+  .car-erro p b{color:var(--ink);font-weight:600}
+  .car-erro .takeaway{
+    border-left:3px solid var(--red);padding:14px 0 14px 22px;
+    font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:24px;line-height:1.3;letter-spacing:-.005em;
+    background:rgba(255,0,5,.04);
+  }
+  .car-erro .takeaway b{color:var(--red);font-style:normal;font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;display:block;margin-bottom:6px;font-weight:500}
+
+  .car-cta{background:linear-gradient(160deg,#1a0d0d 0%,var(--ink) 60%,#000 100%);color:#fff;overflow:hidden}
+  .car-cta::before{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(60% 50% at 100% 0%, rgba(255,0,5,.42), transparent 60%)}
+  .car-cta h2{margin:0;font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:124px;line-height:.94;letter-spacing:-.025em}
+  .car-cta h2 em{font-style:italic;color:var(--red-soft);font-weight:400}
+  .car-cta .sub{margin:0;font-family:'DM Sans',sans-serif;font-weight:300;font-size:21px;line-height:1.55;color:rgba(255,255,255,.78);max-width:740px}
+  .car-cta .actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:8px}
+  .car-cta .btn{padding:18px 28px;border-radius:999px;font-family:'DM Sans',sans-serif;font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;display:inline-flex;align-items:center;gap:12px}
+  .car-cta .btn.primary{background:#fff;color:var(--ink)}
+  .car-cta .btn.primary::after{content:"→";font-family:'DM Serif Display',serif;font-size:18px;font-style:italic}
+  .car-cta .btn.ghost{border:1px solid rgba(255,255,255,.45);color:#fff}
+  .car-cta .pf{color:rgba(255,255,255,.62)}
+
+  /* feed grid preview */
+  .feedgrid{
+    max-width:780px;margin:24px auto;padding:0 32px 80px;
+    display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,.04);
+  }
+  .feedgrid .ig{aspect-ratio:1/1;position:relative;overflow:hidden;background:var(--ink)}
+  .feedgrid .ig .post{transform:scale(.231) translateY(-13.5%);transform-origin:top left}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="redgrad" x1="20%" y1="10%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B3B"/>
+      <stop offset="100%" stop-color="#A00306"/>
+    </linearGradient>
+    <symbol id="cl-mark" viewBox="0 0 100 100">
+      <path d="M 50 8 A 42 42 0 1 0 92 50 L 78 50 A 28 28 0 1 1 50 22 Z" fill="url(#redgrad)"/>
+      <circle cx="78" cy="22" r="9" fill="url(#redgrad)"/>
+      <circle cx="78" cy="78" r="9" fill="url(#redgrad)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="page-head">
+  <div class="meta">CALAZANS LUMINA · INSTAGRAM · v11 · BOLD AGENCY</div>
+  <h1>Edição <em>001</em>, maio de 2026.</h1>
+  <p>Restaurando a estética da v3-v4 que você gostou: DM Serif Display Italic + DM Sans, vermelho brilhante <code style="color:var(--red);background:#fff;padding:2px 6px;border-radius:3px">#FF0005</code> em palavras-chave dentro do título, pílulas com edition info, charts no antes/depois com selo "90 dias", pílulas A/B/C de resposta, "N.º 14" gigante em itálico vermelho, strikethrough no mito.</p>
+</header>
+
+<div class="section-title"><h2>Feed em grade</h2><span class="meta">3 colunas · crop 1:1</span></div>
+<div class="feedgrid" id="feedgrid"></div>
+
+<div class="section-title"><h2>12 posts · 1080×1350</h2><span class="meta">edição 001</span></div>
+
+<div class="grid">
+
+<!-- 01 HERO PHOTO -->
+<div class="post-wrap">
+  <span class="label">01 · Hero · photo</span>
+  <div class="post p01" id="post01" data-tone="dark">
+    <div class="photo"></div>
+    <header class="ph">
+      <div class="logo on-dark">
+        <svg class="mark"><use href="#cl-mark"/></svg>
+        <span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span>
+      </div>
+      <span class="pill outline-light">EST. 2018 · MA · USA</span>
+    </header>
+    <main class="pm">
+      <h1>Marketing<br><em>que paga</em><br>a conta.</h1>
+      <p class="lead">Não o que enche relatório. GoHighLevel, SEO local e tráfego orgânico — resultado em receita, não em curtida.</p>
+    </main>
+    <footer class="pf">
+      <span class="accent">@calazanslumina</span>
+      <span>Resultado · Sempre</span>
+    </footer>
+  </div>
+</div>
+
+<!-- 02 CASE CREAM -->
+<div class="post-wrap">
+  <span class="label">02 · Case · cream</span>
+  <div class="post p02" id="post02" data-tone="light">
+    <header class="ph">
+      <div class="logo on-light">
+        <svg class="mark"><use href="#cl-mark"/></svg>
+        <span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span>
+      </div>
+      <span class="pill dark">CASE · 2026</span>
+    </header>
+    <main class="pm">
+      <p class="num"><span class="plus">+</span>345<span class="pct">%</span></p>
+      <p class="lead">leads qualificados em <em>noventa</em> dias. Wolf's Painting, Boston.</p>
+    </main>
+    <footer class="pf">
+      <span class="accent clientline">@calazanslumina</span>
+      <span class="clientline">→ /cases</span>
+    </footer>
+  </div>
+</div>
+
+<!-- 03 CARROSSEL CAPA -->
+<div class="post-wrap">
+  <span class="label">03 · Carrossel · capa</span>
+  <div class="post p03" id="post03" data-tone="dark">
+    <div class="photo"></div>
+    <header class="ph">
+      <div class="logo on-dark">
+        <svg class="mark"><use href="#cl-mark"/></svg>
+        <span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span>
+      </div>
+      <span class="pill outline-light">CARROSSEL · 7 SLIDES</span>
+    </header>
+    <main class="pm">
+      <h1>Cinco erros<br>que matam<br>o <em>Google</em><br>do seu negócio<br>local.</h1>
+      <p class="lead">Sete páginas, cada uma resolvida por uma ação que cabe no celular.</p>
+    </main>
+    <footer class="pf">
+      <span class="accent">@calazanslumina</span>
+      <span>arrasta →</span>
+    </footer>
+  </div>
+</div>
+
+<!-- 04 DICA CREAM (the editorial style you liked) -->
+<div class="post-wrap">
+  <span class="label">04 · Dica · cream</span>
+  <div class="post p04" id="post04" data-tone="light">
+    <div class="top-rule"></div>
+    <header class="ph">
+      <span style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;color:rgba(17,17,17,.6)">Coluna · Calazans Lumina</span>
+      <span style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;color:rgba(17,17,17,.6)">Edição #14 · SEO local</span>
+    </header>
+    <main class="pm">
+      <div class="col-num">N.º 14<small>Dica do dia</small></div>
+      <h1>Responda <em>toda</em><br>avaliação em até<br><em>24 horas.</em></h1>
+      <p class="body">O Google ranqueia perfis que conversam. Silêncio em review é o mesmo que telefone tocando sem ninguém atender — só que público. Cliente novo lê, concorrente lê, o algoritmo lê. <b>Resposta curta, educada, em até um dia.</b> Esse é o jogo.</p>
+    </main>
+    <footer class="pf">
+      <div class="logo on-light" style="font-size:11px">
+        <svg class="mark" style="width:30px;height:30px"><use href="#cl-mark"/></svg>
+        <span class="wm"><span class="name" style="font-size:18px">Calazans</span><span class="sub">Lumina</span></span>
+      </div>
+      <span>Salve · Compartilhe</span>
+    </footer>
+  </div>
+</div>
+
+<!-- 05 LISTA -->
+<div class="post-wrap">
+  <span class="label">05 · Stack · photo</span>
+  <div class="post p05" id="post05" data-tone="dark">
+    <div class="photo"></div>
+    <header class="ph">
+      <div class="logo on-dark">
+        <svg class="mark"><use href="#cl-mark"/></svg>
+        <span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span>
+      </div>
+      <span class="pill outline-light">STACK · 2026</span>
+    </header>
+    <main class="pm">
+      <h1>3 ferramentas que <em>rodam</em><br>minha agência <em>inteira.</em></h1>
+      <ol>
+        <li><span class="n">01</span><span class="name">GoHighLevel<small>CRM, automação e funil — tudo em um.</small></span><span class="arr">→</span></li>
+        <li><span class="n">02</span><span class="name">Google Search Console<small>O mapa da mina pra qualquer SEO.</small></span><span class="arr">→</span></li>
+        <li><span class="n">03</span><span class="name">Notion<small>Documentação, SOP e briefing.</small></span><span class="arr">→</span></li>
+      </ol>
+    </main>
+    <footer class="pf">
+      <span class="accent">@calazanslumina</span>
+      <span>comenta sua nº 4</span>
+    </footer>
+  </div>
+</div>
+
+<!-- 06 ANTES / DEPOIS SPLIT (the look you liked) -->
+<div class="post-wrap">
+  <span class="label">06 · Antes / Depois · split</span>
+  <div class="post p06" id="post06">
+    <div class="left">
+      <div class="logo on-dark" style="margin-bottom:6px">
+        <svg class="mark" style="width:30px;height:30px"><use href="#cl-mark"/></svg>
+      </div>
+      <span class="lab">Antes</span>
+      <p class="big">12</p>
+      <span class="unit">visitas/mês</span>
+      <svg class="chart" viewBox="0 0 380 120" fill="none" preserveAspectRatio="none">
+        <line x1="0" y1="115" x2="380" y2="115" stroke="rgba(255,255,255,.3)"/>
+        <path d="M0 30 L60 50 L120 40 L180 70 L240 90 L300 105 L380 113" stroke="#FF3B3B" stroke-width="3"/>
+      </svg>
+      <ul>
+        <li><span>Posição</span><span>74</span></li>
+        <li><span>Leads/mês</span><span>2</span></li>
+        <li><span>CPL</span><span>R$ 480</span></li>
+      </ul>
+    </div>
+    <div class="seal">90 DIAS<small>com a Lumina</small></div>
+    <div class="right">
+      <span class="lab">→ Depois</span>
+      <p class="big">2.140</p>
+      <span class="unit">visitas/mês</span>
+      <svg class="chart" viewBox="0 0 380 120" fill="none" preserveAspectRatio="none">
+        <line x1="0" y1="115" x2="380" y2="115" stroke="rgba(0,0,0,.25)"/>
+        <path d="M0 105 L60 90 L120 70 L180 48 L240 30 L300 14 L380 4 L380 120 L0 120 Z" fill="rgba(255,0,5,.1)"/>
+        <path d="M0 105 L60 90 L120 70 L180 48 L240 30 L300 14 L380 4" stroke="#FF0005" stroke-width="3"/>
+      </svg>
+      <ul>
+        <li><span>Posição</span><span>3</span></li>
+        <li><span>Leads/mês</span><span>34</span></li>
+        <li><span>CPL</span><span>R$ 38</span></li>
+      </ul>
+    </div>
+    <div class="ribbon">
+      <span>Wolf's Painting · Boston, MA</span>
+      <span>@calazanslumina</span>
+    </div>
+  </div>
+</div>
+
+<!-- 07 PERGUNTA PHOTO (the A/B/C answers you liked) -->
+<div class="post-wrap">
+  <span class="label">07 · Pergunta · photo</span>
+  <div class="post p07" id="post07" data-tone="dark">
+    <div class="photo center"></div>
+    <header class="ph">
+      <div class="logo on-dark">
+        <svg class="mark"><use href="#cl-mark"/></svg>
+        <span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span>
+      </div>
+      <span class="pill outline-light">PERGUNTA · Nº 07</span>
+    </header>
+    <main class="pm">
+      <h1>Seu site <em>aparece</em><br>no Google quando<br>alguém te <u>procura</u>?</h1>
+      <div class="answers">
+        <div><span>A</span> Sim, primeiro lugar</div>
+        <div><span>B</span> Página 2 ou 3</div>
+        <div><span>C</span> Nem sei</div>
+      </div>
+    </main>
+    <footer class="pf">
+      <span class="accent">comenta a letra ↓</span>
+      <span>@calazanslumina</span>
+    </footer>
+  </div>
+</div>
+
+<!-- 08 OFERTA DARK -->
+<div class="post-wrap">
+  <span class="label">08 · Curso · dark</span>
+  <div class="post p08" id="post08" data-tone="dark">
+    <header class="ph">
+      <div class="logo on-dark">
+        <svg class="mark"><use href="#cl-mark"/></svg>
+        <span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span>
+      </div>
+      <span class="pill red">TURMA · MAI / 2026</span>
+    </header>
+    <main class="pm">
+      <h1>GHL na <em>prática</em>:<br>do zero ao primeiro <em>cliente.</em></h1>
+      <div class="stats">
+        <div><div class="big">8</div><div class="lbl">Semanas</div></div>
+        <div><div class="big">4</div><div class="lbl">Sub-contas</div></div>
+        <div><div class="big">1:1</div><div class="lbl">Mentoria</div></div>
+      </div>
+      <div class="row">
+        <div class="price"><s>R$ 2.490</s><b>R$ 1.490</b><small>até 12×</small></div>
+        <span class="cta">Garantir vaga</span>
+      </div>
+    </main>
+    <footer class="pf">
+      <span class="accent">@calazanslumina</span>
+      <span>12 vagas restantes</span>
+    </footer>
+  </div>
+</div>
+
+<!-- 09 BIO PHOTO -->
+<div class="post-wrap">
+  <span class="label">09 · Bio · photo</span>
+  <div class="post p09" id="post09" data-tone="dark">
+    <div class="photo"></div>
+    <header class="ph">
+      <div class="logo on-dark">
+        <svg class="mark"><use href="#cl-mark"/></svg>
+        <span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span>
+      </div>
+      <span class="pill outline-light">BIO · 2026</span>
+    </header>
+    <main class="pm">
+      <h1>Rhaideline<br><em>Calazans.</em></h1>
+      <p class="role">fundadora — especialista em GHL, SEO e tráfego orgânico.</p>
+      <p class="bio">8 anos atendendo agências e negócios locais nos EUA e no Brasil — construção, pintura, HVAC, clínicas.</p>
+    </main>
+    <footer class="pf">
+      <span class="accent">@calazanslumina</span>
+      <span>calazanslumina.com.br</span>
+    </footer>
+  </div>
+</div>
+
+<!-- 10 MITO / VERDADE CREAM (the look you liked) -->
+<div class="post-wrap">
+  <span class="label">10 · Mito vs Verdade · cream</span>
+  <div class="post p10" id="post10" data-tone="light">
+    <header class="ph">
+      <div class="logo on-light">
+        <svg class="mark"><use href="#cl-mark"/></svg>
+        <span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span>
+      </div>
+      <span class="pill dark">MITO VS VERDADE · #03</span>
+    </header>
+    <main class="pm">
+      <div class="row r1">
+        <div class="tag mito">Mito</div>
+        <h2>"<em>SEO</em> morreu<br>com a IA."</h2>
+      </div>
+      <div class="row r2">
+        <div class="tag verd">Verdade</div>
+        <div>
+          <h2>70% das compras locais<br>ainda <em>começam</em> com<br>uma busca no Google.</h2>
+          <div class="source">Fonte: Google / Think with Google · 2025</div>
+        </div>
+      </div>
+    </main>
+    <footer class="pf">
+      <span class="accent">@calazanslumina</span>
+      <span>salva · compartilha</span>
+    </footer>
+  </div>
+</div>
+
+<!-- 11 QUOTE PHOTO -->
+<div class="post-wrap">
+  <span class="label">11 · Quote · photo</span>
+  <div class="post p11" id="post11" data-tone="dark">
+    <div class="photo"></div>
+    <span class="qmark">"</span>
+    <header class="ph">
+      <div class="logo on-dark">
+        <svg class="mark"><use href="#cl-mark"/></svg>
+        <span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span>
+      </div>
+      <span class="pill outline-light">VOL. 11</span>
+    </header>
+    <main class="pm">
+      <p class="quote">"O melhor cliente é o que <em>te procura.</em><br>SEO faz isso por você todo dia —<br>de manhã, de noite, no feriado."</p>
+      <div class="credit">
+        <div class="ava">R</div>
+        <div class="who">Rhaideline Calazans<small>founder · Calazans Lumina</small></div>
+      </div>
+    </main>
+    <footer class="pf">
+      <span class="accent">@calazanslumina</span>
+      <span>save · share</span>
+    </footer>
+  </div>
+</div>
+
+<!-- 12 CONVITE CREAM -->
+<div class="post-wrap">
+  <span class="label">12 · Convite · cream</span>
+  <div class="post p12" id="post12" data-tone="light">
+    <header class="ph">
+      <div class="logo on-light">
+        <svg class="mark"><use href="#cl-mark"/></svg>
+        <span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span>
+      </div>
+      <span class="pill dark">vamos conversar →</span>
+    </header>
+    <main class="pm">
+      <h1>Bora colocar<br>seu negócio<br><mark>onde o cliente</mark><br><em>procura?</em></h1>
+      <div class="cta-row">
+        <div class="qr" id="qr"></div>
+        <div class="invite-side">
+          <div class="lbl">Aponta a câmera ou clica no link da bio</div>
+          <div class="url">calazanslumina.com.br</div>
+          <div class="wpp">Whatsapp direto</div>
+        </div>
+      </div>
+    </main>
+    <footer class="pf">
+      <span class="accent">@calazanslumina</span>
+      <span>resposta em até 24h</span>
+    </footer>
+  </div>
+</div>
+
+</div>
+
+<!-- ═════════════ CARROSSEL ═════════════ -->
+<div class="section-title"><h2>Carrossel · 5 erros que matam o Google</h2><span class="meta">7 slides</span></div>
+
+<div class="grid">
+
+<!-- C1 Capa -->
+<div class="post-wrap">
+  <span class="label">C1 · Capa</span>
+  <div class="post car car-cover" data-tone="dark">
+    <div class="photo"></div>
+    <header class="ph">
+      <div class="logo on-dark">
+        <svg class="mark"><use href="#cl-mark"/></svg>
+        <span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span>
+      </div>
+      <span class="pill outline-light">01 / 07</span>
+    </header>
+    <main class="pm">
+      <h1><span class="num">5</span> erros<br>que matam<br>o <em>Google</em><br>do seu negócio<br>local.</h1>
+    </main>
+    <footer class="pf">
+      <span class="accent">@calazanslumina</span>
+      <span>arrasta →</span>
+    </footer>
+  </div>
+</div>
+
+<!-- C2 Erro 1 -->
+<div class="post-wrap">
+  <span class="label">C2 · Erro 1</span>
+  <div class="post car car-erro" data-tone="light">
+    <header class="ph">
+      <div class="logo on-light">
+        <svg class="mark"><use href="#cl-mark"/></svg>
+        <span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span>
+      </div>
+      <span class="pill dark">ERRO · 01 / 05</span>
+    </header>
+    <main class="pm">
+      <div class="erro-num">01<small>dos cinco erros</small></div>
+      <h2>Não <em>responder</em> avaliações.</h2>
+      <p>Cada review sem resposta é uma porta fechada. O Google entende que você abandonou o perfil — e prioriza concorrente que conversa. <b>Resposta em até 24h, sempre, em todo review.</b></p>
+      <div class="takeaway"><b>Faça já</b>Notificação por e-mail + responde do celular. Modelo de 3 frases resolve.</div>
+    </main>
+    <footer class="pf">
+      <span class="accent">@calazanslumina</span>
+      <span>02 / 07 →</span>
+    </footer>
+  </div>
+</div>
+
+<!-- C3 Erro 2 -->
+<div class="post-wrap">
+  <span class="label">C3 · Erro 2</span>
+  <div class="post car car-erro" data-tone="light">
+    <header class="ph">
+      <div class="logo on-light">
+        <svg class="mark"><use href="#cl-mark"/></svg>
+        <span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span>
+      </div>
+      <span class="pill dark">ERRO · 02 / 05</span>
+    </header>
+    <main class="pm">
+      <div class="erro-num">02<small>dos cinco erros</small></div>
+      <h2>Categoria <em>genérica</em> ou errada.</h2>
+      <p>"Empresa local" não te ranqueia em nada. Categoria principal certa + secundárias estratégicas é o que te coloca no mapa. <b>Categoria errada = invisível.</b></p>
+      <div class="takeaway"><b>Faça já</b>Categoria principal específica ("Empreiteira de pintura", não "Pintor"). Adiciona até 9 secundárias.</div>
+    </main>
+    <footer class="pf">
+      <span class="accent">@calazanslumina</span>
+      <span>03 / 07 →</span>
+    </footer>
+  </div>
+</div>
+
+<!-- C4 Erro 3 -->
+<div class="post-wrap">
+  <span class="label">C4 · Erro 3</span>
+  <div class="post car car-erro" data-tone="light">
+    <header class="ph">
+      <div class="logo on-light">
+        <svg class="mark"><use href="#cl-mark"/></svg>
+        <span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span>
+      </div>
+      <span class="pill dark">ERRO · 03 / 05</span>
+    </header>
+    <main class="pm">
+      <div class="erro-num">03<small>dos cinco erros</small></div>
+      <h2>Foto de <em>banco de imagem.</em></h2>
+      <p>O Google sabe quando a foto é genérica — e o cliente também. <b>Obra real, equipe real, antes/depois real</b> ranqueia mais e converte mais. Sem maquiagem. Celular mesmo.</p>
+      <div class="takeaway"><b>Faça já</b>10 fotos por mês de obra acabada + 5 antes/depois + 3 da equipe.</div>
+    </main>
+    <footer class="pf">
+      <span class="accent">@calazanslumina</span>
+      <span>04 / 07 →</span>
+    </footer>
+  </div>
+</div>
+
+<!-- C5 Erro 4 -->
+<div class="post-wrap">
+  <span class="label">C5 · Erro 4</span>
+  <div class="post car car-erro" data-tone="light">
+    <header class="ph">
+      <div class="logo on-light">
+        <svg class="mark"><use href="#cl-mark"/></svg>
+        <span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span>
+      </div>
+      <span class="pill dark">ERRO · 04 / 05</span>
+    </header>
+    <main class="pm">
+      <div class="erro-num">04<small>dos cinco erros</small></div>
+      <h2>NAP <em>inconsistente</em> pela internet.</h2>
+      <p>NAP = Nome, Endereço, Telefone. Se aparece um endereço no Google, outro no Facebook, outro no site, o Google desconfia. <b>Padroniza tudo idêntico, vírgula por vírgula.</b></p>
+      <div class="takeaway"><b>Faça já</b>Lista todos os locais com seu negócio. Padroniza nome, endereço e fone idênticos.</div>
+    </main>
+    <footer class="pf">
+      <span class="accent">@calazanslumina</span>
+      <span>05 / 07 →</span>
+    </footer>
+  </div>
+</div>
+
+<!-- C6 Erro 5 -->
+<div class="post-wrap">
+  <span class="label">C6 · Erro 5</span>
+  <div class="post car car-erro" data-tone="light">
+    <header class="ph">
+      <div class="logo on-light">
+        <svg class="mark"><use href="#cl-mark"/></svg>
+        <span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span>
+      </div>
+      <span class="pill dark">ERRO · 05 / 05</span>
+    </header>
+    <main class="pm">
+      <div class="erro-num">05<small>dos cinco erros</small></div>
+      <h2>Perfil <em>parado.</em> Sem post. Sem update.</h2>
+      <p>GMN tem feed igual rede social. Quem posta toda semana ranqueia. Quem some por 2 meses, some do mapa. <b>Atualização semanal não é detalhe — é sinal de vida.</b></p>
+      <div class="takeaway"><b>Faça já</b>1 post por semana com foto de obra + descrição + CTA. Pode ser repost.</div>
+    </main>
+    <footer class="pf">
+      <span class="accent">@calazanslumina</span>
+      <span>último →</span>
+    </footer>
+  </div>
+</div>
+
+<!-- C7 CTA -->
+<div class="post-wrap">
+  <span class="label">C7 · Convite</span>
+  <div class="post car car-cta" data-tone="dark">
+    <header class="ph">
+      <div class="logo on-dark">
+        <svg class="mark"><use href="#cl-mark"/></svg>
+        <span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span>
+      </div>
+      <span class="pill red">CONVITE · 07 / 07</span>
+    </header>
+    <main class="pm">
+      <h2>Quer corrigir<br>os cinco <em>de uma vez?</em></h2>
+      <p class="sub">Auditoria gratuita do seu Google Meu Negócio + três ações de impacto pra fazer ainda essa semana. Sem letrinha miúda.</p>
+      <div class="actions">
+        <span class="btn primary">WhatsApp direto</span>
+        <span class="btn ghost">calazanslumina.com.br</span>
+      </div>
+    </main>
+    <footer class="pf">
+      <span class="accent">@calazanslumina</span>
+      <span>resposta em 24h</span>
+    </footer>
+  </div>
+</div>
+
+</div>
+
+<footer class="page-head" style="padding-top:8px;padding-bottom:96px;opacity:.5">
+  <div class="meta">12 + 7 · 1080×1350 · DM Serif Display + DM Sans · Brand red #FF0005</div>
+</footer>
+
+<script>
+  // QR mosaic
+  (function(){
+    const qr = document.getElementById('qr');
+    if(!qr) return;
+    const seed = "calazans-lumina-2026";
+    let h = 0; for (let i=0;i<seed.length;i++){ h = (h*31 + seed.charCodeAt(i)) >>> 0 }
+    function rand(){ h = (h*1664525 + 1013904223) >>> 0; return h / 0xffffffff }
+    const corners = new Set(['0,0','0,1','1,0','1,1','0,7','1,7','0,6','1,6','7,0','7,1','6,0','6,1']);
+    for(let y=0;y<8;y++) for(let x=0;x<8;x++){
+      const i = document.createElement('i');
+      const isCorner = corners.has(x+','+y);
+      const on = isCorner ? false : rand() > 0.55;
+      if(on) i.classList.add('off');
+      qr.appendChild(i);
+    }
+  })();
+
+  // Feed grid preview
+  (function(){
+    const feed = document.getElementById('feedgrid');
+    if(!feed) return;
+    const order = [12,11,10,9,8,7,6,5,4,3,2,1];
+    order.forEach(n=>{
+      const cell = document.createElement('div'); cell.className='ig';
+      const id = 'post' + String(n).padStart(2,'0');
+      const src = document.getElementById(id);
+      if(src){
+        const clone = src.cloneNode(true);
+        clone.removeAttribute('id');
+        cell.appendChild(clone);
+      }
+      feed.appendChild(cell);
+    });
+  })();
+</script>
+
+</body>
+</html>

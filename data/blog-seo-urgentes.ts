@@ -6,7 +6,9 @@ export const blogSeoUrgentes: BlogPost[] = [
     titulo: 'Como Aparecer no Google Maps em 2026: Guia Definitivo',
     resumo:
       'Aprenda passo a passo como otimizar seu Google Business Profile para aparecer no topo do Google Maps em 2026. Reviews, fotos, posts e estrategias que funcionam para negocios locais brasileiros.',
-    conteudo: `## Por Que Aparecer no Google Maps e Essencial em 2026
+    conteudo: `> Esse é um post do **cluster A — SEO Local para Brasileiros nos EUA**. Pillar: [SEO Local para Brasileiros nos EUA: o Guia Definitivo (2026)](/blog/seo-local-brasileiros-eua-guia-completo-pillar)
+
+## Por Que Aparecer no Google Maps e Essencial em 2026
 
 Se voce tem um negocio local — restaurante, salao de beleza, empresa de limpeza, oficina mecanica, clinica, loja — e nao aparece no Google Maps, voce esta literalmente invisivel para a maioria dos seus potenciais clientes. Em 2026, mais de 87% das pessoas usam o Google Maps para encontrar negocios proximos. Quando alguem pesquisa "restaurante brasileiro perto de mim" ou "house cleaning near me", o Google mostra primeiro o chamado **Local Pack** — aqueles tres resultados com mapa que aparecem no topo da pagina. Se voce nao esta ali, perde a maioria dos cliques.
 
@@ -199,7 +201,13 @@ A chave e consistencia. Nao e uma acao unica — e um trabalho continuo que gera
 
 Aparecer no Google Maps em 2026 nao exige investimento financeiro — exige investimento de tempo e estrategia. Com um Google Business Profile completo, reviews consistentes, fotos de qualidade e posts semanais, qualquer negocio local pode competir e dominar sua regiao. O algoritmo do Google Maps nao favorece grandes empresas — favorece negocios ativos e bem otimizados. E exatamente isso que este guia te ensina a fazer.
 
-> Na Calazans Lumina, configuramos e otimizamos Google Business Profile para negocios locais com resultados comprovados. Se voce quer aparecer no topo do Google Maps, fale conosco.`,
+> Na Calazans Lumina, configuramos e otimizamos Google Business Profile para negocios locais com resultados comprovados. Se voce quer aparecer no topo do Google Maps, fale conosco.
+
+## Continue lendo neste cluster
+
+- [Pillar — SEO Local para Brasileiros nos EUA: o Guia Definitivo (2026)](/blog/seo-local-brasileiros-eua-guia-completo-pillar)
+- [Por que seu Google Meu Negócio incompleto está te custando clientes todos os dias](/blog/por-que-seu-google-meu-negocio-incompleto-esta-te-custando-clientes-todos-os-dias)
+- [SEO local para brasileiros nos EUA: como aparecer no Google da sua cidade](/blog/seo-local-para-brasileiros-nos-eua-como-aparecer-no-google-da-sua-cidade)`,
     categoria: 'Google',
     imagem: '',
     dataPublicacao: '26 de Marco de 2026',
@@ -212,7 +220,9 @@ Aparecer no Google Maps em 2026 nao exige investimento financeiro — exige inve
     titulo: 'Chatbot WhatsApp com IA: Como Automatizar Atendimento em 2026',
     resumo:
       'Descubra como criar um chatbot com inteligencia artificial para WhatsApp que atende clientes 24h, agenda servicos e fecha vendas automaticamente usando GoHighLevel e outras ferramentas.',
-    conteudo: `## Por Que Automatizar o Atendimento por WhatsApp
+    conteudo: `> Esse é um post do **cluster C — Marketing Digital do Zero para Empreendedores Brasileiros**. Pillar: [Marketing Digital do Zero para Empreendedores Brasileiros (2026)](/blog/marketing-digital-zero-empreendedores-brasileiros-pillar)
+
+## Por Que Automatizar o Atendimento por WhatsApp
 
 O WhatsApp e o aplicativo de mensagens mais usado no Brasil e entre brasileiros nos Estados Unidos. Se voce tem um negocio e atende clientes por WhatsApp, sabe como e: mensagens chegam a qualquer hora, as mesmas perguntas se repetem dezenas de vezes, e quando voce demora para responder, o cliente vai para o concorrente. Em 2026, a expectativa do consumidor e resposta imediata — 78% dos clientes compram de quem responde primeiro.
 
@@ -405,7 +415,13 @@ Apos a primeira semana, ajuste com base no feedback e expanda gradualmente.
 
 Automatizar o atendimento por WhatsApp com IA nao e mais coisa do futuro — e uma necessidade competitiva em 2026. Negocios que respondem instantaneamente, 24 horas por dia, convertem significativamente mais do que aqueles que dependem exclusivamente de atendimento manual. Com ferramentas como GoHighLevel e modelos de IA como GPT-4o, qualquer pequeno negocio pode ter um chatbot profissional funcionando em menos de uma semana.
 
-> Na Calazans Lumina, implementamos chatbots WhatsApp com IA para negocios locais. Se voce quer automatizar seu atendimento e parar de perder clientes por demora na resposta, entre em contato.`,
+> Na Calazans Lumina, implementamos chatbots WhatsApp com IA para negocios locais. Se voce quer automatizar seu atendimento e parar de perder clientes por demora na resposta, entre em contato.
+
+## Continue lendo neste cluster
+
+- [Pillar — Marketing Digital do Zero para Empreendedores Brasileiros (2026)](/blog/marketing-digital-zero-empreendedores-brasileiros-pillar)
+- [Robô de WhatsApp: como automatizar seu atendimento sem perder o lado humano](/blog/robo-de-whatsapp-como-automatizar-seu-atendimento-sem-perder-o-lado-humano)
+- [GHL vs outros CRMs: por que escolhi o GoHighLevel para meus clientes](/blog/ghl-vs-outros-crms-por-que-escolhi-o-gohighlevel-para-meus-clientes)`,
     categoria: 'Automação',
     imagem: '',
     dataPublicacao: '26 de Marco de 2026',
@@ -418,7 +434,9 @@ Automatizar o atendimento por WhatsApp com IA nao e mais coisa do futuro — e u
     titulo: 'ChatGPT para Marketing Digital: 20 Formas de Usar',
     resumo:
       'Descubra 20 formas praticas de usar o ChatGPT no marketing digital do seu negocio. Desde criacao de conteudo ate analise de concorrencia, com exemplos de prompts prontos para copiar e usar.',
-    conteudo: `## Por Que o ChatGPT Mudou o Marketing Digital
+    conteudo: `> Esse é um post do **cluster B — IA Aplicada ao Marketing Digital pra Pequeno Negócio Brasileiro**. Pillar: [IA no Marketing Digital para Pequeno Negócio Brasileiro (2026)](/blog/ia-marketing-digital-pequeno-negocio-brasileiro-pillar)
+
+## Por Que o ChatGPT Mudou o Marketing Digital
 
 O ChatGPT revolucionou a forma como profissionais de marketing trabalham. Em 2026, nao se trata mais de "se" voce deve usar IA no marketing — e de "como" usar da forma mais eficiente. Profissionais que dominam o ChatGPT produzem em 2 horas o que antes levava 2 dias. Mas a maioria das pessoas ainda subutiliza a ferramenta, usando apenas para "escrever um textinho". O ChatGPT pode fazer muito mais do que isso.
 
@@ -597,7 +615,13 @@ A IA e uma assistente, nao uma substituta. Sempre revise, ajuste detalhes e adic
 
 O ChatGPT e a ferramenta mais versatil que um profissional de marketing pode ter em 2026. Essas 20 formas de uso cobrem desde a criacao de conteudo ate analise estrategica, passando por vendas, e-mail marketing e automacao. O segredo nao e usar a IA para substituir seu trabalho — e usa-la para multiplicar sua capacidade e dedicar mais tempo ao que realmente importa: estrategia e relacionamento com clientes.
 
-> Na Calazans Lumina, usamos ChatGPT e outras IAs em todos os nossos projetos. Nosso curso de IA & ChatGPT ensina na pratica como dominar essas ferramentas para seu negocio.`,
+> Na Calazans Lumina, usamos ChatGPT e outras IAs em todos os nossos projetos. Nosso curso de IA & ChatGPT ensina na pratica como dominar essas ferramentas para seu negocio.
+
+## Continue lendo neste cluster
+
+- [Pillar — IA no Marketing Digital para Pequeno Negócio Brasileiro (2026)](/blog/ia-marketing-digital-pequeno-negocio-brasileiro-pillar)
+- [ChatGPT para criar conteúdo: guia prático para empreendedores](/blog/chatgpt-para-criar-conteudo-guia-pratico-empreendedores)
+- [Prompt Engineering: 10 técnicas para resultados profissionais com IA](/blog/prompt-engineering-10-tecnicas-para-resultados-profissionais)`,
     categoria: 'IA',
     imagem: '',
     dataPublicacao: '26 de Marco de 2026',
@@ -610,7 +634,9 @@ O ChatGPT e a ferramenta mais versatil que um profissional de marketing pode ter
     titulo: 'Quanto Custa um Site Profissional em 2026? Precos Atualizados',
     resumo:
       'Guia completo e atualizado com precos reais de sites profissionais em 2026. Tabela comparativa, o que influencia o preco, como economizar e quando vale a pena investir mais.',
-    conteudo: `## A Pergunta Que Todo Empreendedor Faz
+    conteudo: `> Esse é um post do **cluster C — Marketing Digital do Zero para Empreendedores Brasileiros**. Pillar: [Marketing Digital do Zero para Empreendedores Brasileiros (2026)](/blog/marketing-digital-zero-empreendedores-brasileiros-pillar)
+
+## A Pergunta Que Todo Empreendedor Faz
 
 "Quanto custa um site?" e provavelmente a pergunta mais feita por empreendedores que estao comecando a levar sua presenca digital a serio. E a resposta honesta e: depende. Mas "depende" nao ajuda ninguem a tomar uma decisao, entao neste guia vou te dar numeros reais, baseados no mercado atual de 2026, para que voce saiba exatamente o que esperar.
 
@@ -799,7 +825,13 @@ Se voce esta faturando acima de $10.000/mes e depende do digital para gerar clie
 
 O mais importante e nao ficar parado. Um site bom no ar hoje vale mais que um site perfeito que nunca fica pronto.
 
-> Na Calazans Lumina, criamos sites profissionais com tecnologia moderna (Next.js) e foco em conversao. Precos acessiveis para empreendedores brasileiros. Fale conosco para um orcamento personalizado.`,
+> Na Calazans Lumina, criamos sites profissionais com tecnologia moderna (Next.js) e foco em conversao. Precos acessiveis para empreendedores brasileiros. Fale conosco para um orcamento personalizado.
+
+## Continue lendo neste cluster
+
+- [Pillar — Marketing Digital do Zero para Empreendedores Brasileiros (2026)](/blog/marketing-digital-zero-empreendedores-brasileiros-pillar)
+- [Funil de vendas vs site comum: qual a diferença real para o seu bolso](/blog/funil-de-vendas-vs-site-comum-qual-a-diferenca-real-para-o-seu-bolso)
+- [Do zero ao primeiro cliente digital: minha história e o que aprendi](/blog/do-zero-ao-primeiro-cliente-digital-minha-historia-e-o-que-aprendi)`,
     categoria: 'Sites',
     imagem: '',
     dataPublicacao: '26 de Marco de 2026',
@@ -812,7 +844,9 @@ O mais importante e nao ficar parado. Um site bom no ar hoje vale mais que um si
     titulo: 'GoHighLevel: Review Completo 2026 — Vale a Pena?',
     resumo:
       'Review honesto e completo do GoHighLevel em 2026. Precos atualizados, todas as funcionalidades, pros e contras reais, comparacao com alternativas e para quem a plataforma realmente vale a pena.',
-    conteudo: `## O Que e o GoHighLevel
+    conteudo: `> Esse é um post do **cluster C — Marketing Digital do Zero para Empreendedores Brasileiros**. Pillar: [Marketing Digital do Zero para Empreendedores Brasileiros (2026)](/blog/marketing-digital-zero-empreendedores-brasileiros-pillar)
+
+## O Que e o GoHighLevel
 
 O GoHighLevel (GHL) e uma plataforma all-in-one de marketing e vendas criada em 2018 por Shaun Clark. A proposta e simples e poderosa: substituir dezenas de ferramentas separadas (CRM, e-mail marketing, SMS, construtor de funis, agendamento, automacoes, reputacao online) por uma unica plataforma integrada. Em 2026, o GHL se consolidou como a ferramenta preferida de agencias de marketing digital e pequenos negocios que precisam de automacao sem complexidade.
 
@@ -1056,7 +1090,13 @@ Sim, o GoHighLevel vale a pena em 2026 — **para o publico certo**. Se voce e u
 
 Mas entre de olhos abertos: existe curva de aprendizado, os custos de SMS somam, e voce vai precisar de outras ferramentas para complementar (site profissional, analytics avancado, design). O GHL e o centro do seu ecossistema de marketing, nao a unica ferramenta.
 
-> Na Calazans Lumina, somos especialistas em GoHighLevel e configuramos a plataforma completa para nossos clientes. Se voce quer explorar o GHL para seu negocio, fale conosco para uma demonstracao.`,
+> Na Calazans Lumina, somos especialistas em GoHighLevel e configuramos a plataforma completa para nossos clientes. Se voce quer explorar o GHL para seu negocio, fale conosco para uma demonstracao.
+
+## Continue lendo neste cluster
+
+- [Pillar — Marketing Digital do Zero para Empreendedores Brasileiros (2026)](/blog/marketing-digital-zero-empreendedores-brasileiros-pillar)
+- [GHL vs outros CRMs: por que escolhi o GoHighLevel para meus clientes](/blog/ghl-vs-outros-crms-por-que-escolhi-o-gohighlevel-para-meus-clientes)
+- [Funil de vendas vs site comum: qual a diferença real para o seu bolso](/blog/funil-de-vendas-vs-site-comum-qual-a-diferenca-real-para-o-seu-bolso)`,
     categoria: 'Plataformas',
     imagem: '',
     dataPublicacao: '26 de Marco de 2026',
@@ -1069,7 +1109,9 @@ Mas entre de olhos abertos: existe curva de aprendizado, os custos de SMS somam,
     titulo: 'Marketing Digital para Iniciantes: Guia Completo 2026',
     resumo:
       'O guia mais completo de marketing digital para iniciantes em 2026. Os 7 pilares essenciais, ferramentas gratuitas para comecar e um plano pratico semana a semana para sair do zero.',
-    conteudo: `## O Que e Marketing Digital (De Verdade)
+    conteudo: `> Esse é um post do **cluster C — Marketing Digital do Zero para Empreendedores Brasileiros**. Pillar: [Marketing Digital do Zero para Empreendedores Brasileiros (2026)](/blog/marketing-digital-zero-empreendedores-brasileiros-pillar)
+
+## O Que e Marketing Digital (De Verdade)
 
 Marketing digital e o conjunto de estrategias para promover produtos, servicos ou marcas usando canais online. Parece simples, mas em 2026 o marketing digital engloba dezenas de disciplinas: SEO, redes sociais, e-mail marketing, trafego pago, marketing de conteudo, automacao, IA e muito mais. Para um iniciante, isso pode ser paralisante. A boa noticia e que voce nao precisa dominar tudo — precisa entender os fundamentos e comecar com o que faz sentido para o seu momento.
 
@@ -1350,7 +1392,13 @@ Marketing digital em 2026 pode parecer complexo, mas os fundamentos sao simples:
 
 O mais importante: comece. Um plano imperfeito executado hoje vale infinitamente mais que um plano perfeito que nunca sai do papel.
 
-> Na Calazans Lumina, ajudamos empreendedores a sair do zero no marketing digital com sites profissionais, automacao e estrategia. Se voce quer comecar com o pe direito, fale conosco.`,
+> Na Calazans Lumina, ajudamos empreendedores a sair do zero no marketing digital com sites profissionais, automacao e estrategia. Se voce quer comecar com o pe direito, fale conosco.
+
+## Continue lendo neste cluster
+
+- [Pillar — Marketing Digital do Zero para Empreendedores Brasileiros (2026)](/blog/marketing-digital-zero-empreendedores-brasileiros-pillar)
+- [Do zero ao primeiro cliente digital: minha história e o que aprendi](/blog/do-zero-ao-primeiro-cliente-digital-minha-historia-e-o-que-aprendi)
+- [Robô de WhatsApp: como automatizar seu atendimento sem perder o lado humano](/blog/robo-de-whatsapp-como-automatizar-seu-atendimento-sem-perder-o-lado-humano)`,
     categoria: 'Marketing',
     imagem: '',
     dataPublicacao: '26 de Marco de 2026',

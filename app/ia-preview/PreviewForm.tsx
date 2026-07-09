@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { trackLead } from '@/lib/analytics'
 
 export default function PreviewForm() {
   const [nome, setNome] = useState('')
@@ -22,6 +23,7 @@ export default function PreviewForm() {
 
       if (!res.ok) throw new Error('Falha ao enviar')
 
+      trackLead({ source: 'ia-preview-page', content_name: 'IA Preview · 8 paginas gratis' })
       setStatus('success')
       // Trigger PDF download
       const link = document.createElement('a')

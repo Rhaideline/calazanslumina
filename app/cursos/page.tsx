@@ -1,18 +1,20 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { cursos } from '@/data/cursos'
+import { formatPreco } from '@/lib/formatters'
 import ScrollReveal from '@/components/ScrollReveal'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import PortfolioSites from '@/components/PortfolioSites'
+import ReelEmbed from '@/components/ReelEmbed'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Cursos de Marketing Digital — 4 Grátis',
   description:
-    'Aprenda marketing digital do zero: IA & ChatGPT, Google Meu Negocio, Redes Sociais, Funis de Vendas. 2 cursos gratuitos + 5 a partir de R$10. PDF + acesso online. Comece agora!',
+    'Aprenda marketing digital do zero: IA & ChatGPT, Google Meu Negocio, Redes Sociais, Funis de Vendas. 2 cursos gratuitos + 5 a partir de R$ 9,90. PDF + acesso online. Comece agora!',
   alternates: { canonical: 'https://calazanslumina.com.br/cursos' },
   openGraph: {
-    title: 'Cursos de Marketing Digital | 4 Gratuitos + 3 a partir de R$10',
+    title: 'Cursos de Marketing Digital | 4 Gratuitos + 3 a partir de R$ 9,90',
     description: 'Aprenda marketing digital do zero. 7 cursos disponiveis, 2 gratuitos. PDF + acesso online.',
     url: 'https://calazanslumina.com.br/cursos',
     type: 'website',
@@ -24,7 +26,7 @@ export default function CursosPage() {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: 'Cursos de Marketing Digital e IA — Calazans Lumina',
-    description: 'Cursos online de marketing digital, ChatGPT, Google Meu Negocio, funis de vendas e redes sociais. A partir de R$10.',
+    description: 'Cursos online de marketing digital, ChatGPT, Google Meu Negocio, funis de vendas e redes sociais. A partir de R$ 9,90.',
     url: 'https://calazanslumina.com.br/cursos',
     mainEntity: {
       '@type': 'ItemList',
@@ -70,7 +72,7 @@ export default function CursosPage() {
             </h1>
             <p className="text-white/60 text-lg md:text-xl max-w-3xl mx-auto mb-8">
               Conhecimento prático e direto ao ponto. Temos cursos <strong className="text-white">gratuitos</strong> e cursos a partir de{' '}
-              <strong className="text-white">R$ 10,00</strong> — menos que um café, mais que muitos cursos caros ensinam.
+              <strong className="text-white">R$ 9,90</strong> — menos que um café, mais que muitos cursos caros ensinam.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <div className="bg-white/5 border border-white/10 rounded-xl px-6 py-3 text-center">
@@ -113,7 +115,7 @@ export default function CursosPage() {
                   <p className="text-white/70 text-lg md:text-xl max-w-3xl mx-auto">
                     95 páginas. 10 IAs detalhadas. 50 templates de prompt. 9 planos por profissão.
                     <br className="hidden md:block" />
-                    De <span className="line-through text-white/40">R$ 297</span> por <strong className="text-white text-2xl">R$ 10</strong>. Edição de lançamento.
+                    De <span className="line-through text-white/40">R$ {formatPreco(premium.precoOriginal || 297)}</span> por <strong className="text-white text-2xl">R$ {formatPreco(premium.preco)}</strong>. Edição de lançamento.
                   </p>
                 </div>
 
@@ -159,8 +161,8 @@ export default function CursosPage() {
                       <div>
                         <p className="text-[10px] tracking-[0.32em] uppercase text-white/40 mb-1">Investimento</p>
                         <div className="flex items-baseline gap-3">
-                          <span className="font-serif italic text-5xl md:text-6xl text-white">R$ 10</span>
-                          <span className="font-serif italic text-2xl text-white/40 line-through">R$ 297</span>
+                          <span className="font-serif italic text-5xl md:text-6xl text-white">R$ {formatPreco(premium.preco)}</span>
+                          <span className="font-serif italic text-2xl text-white/40 line-through">R$ {formatPreco(premium.precoOriginal || 297)}</span>
                         </div>
                         <p className="text-amber-300 text-xs font-medium mt-1">Acesso vitalício · pagamento único</p>
                       </div>
@@ -173,7 +175,7 @@ export default function CursosPage() {
                         rel="noopener noreferrer"
                         className="bg-red-500 hover:bg-red-600 text-white font-bold text-base py-4 rounded-full text-center inline-flex items-center justify-center gap-2 transition-all hover:scale-105 shadow-lg shadow-red-500/30"
                       >
-                        Garantir agora por R$ 10
+                        Garantir agora por R$ {formatPreco(premium.preco)}
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                         </svg>
@@ -193,21 +195,71 @@ export default function CursosPage() {
         )
       })()}
 
+      {/* ═══════════════ REEL · MERCADO LIVRE DEFINITIVO ═══════════════ */}
+      {(() => {
+        const ml = cursos.find((c) => c.slug === 'mercado-livre-definitivo')
+        if (!ml) return null
+        return (
+          <section className="py-16 md:py-20 bg-gradient-to-br from-[#0d1f1c] via-brand-dark to-black text-white relative overflow-hidden">
+            <div className="absolute inset-0 opacity-25 pointer-events-none">
+              <div className="absolute -top-1/3 -left-1/4 w-[500px] h-[500px] bg-gradient-radial from-yellow-400/40 via-transparent to-transparent rounded-full blur-3xl" />
+              <div className="absolute -bottom-1/3 -right-1/4 w-[500px] h-[500px] bg-gradient-radial from-brand-mint/30 via-transparent to-transparent rounded-full blur-3xl" />
+            </div>
+            <div className="container-main relative z-10">
+              <ScrollReveal>
+                <div className="grid md:grid-cols-[1fr_auto] gap-10 md:gap-14 items-center max-w-6xl mx-auto">
+                  <div>
+                    <span className="inline-block bg-yellow-400 text-brand-dark text-[10px] font-bold tracking-[0.4em] uppercase px-4 py-2 rounded-full mb-4">
+                      Lançamento · R$ 9,90
+                    </span>
+                    <h2 className="font-serif italic font-normal text-3xl md:text-5xl leading-tight mb-4">
+                      Mercado Livre, <span className="text-yellow-400">do zero</span> ao Mercado Líder.
+                    </h2>
+                    <p className="text-white/70 text-base md:text-lg mb-5 leading-relaxed">
+                      A história real: em 2018, sem dinheiro e desempregada, transformei R$ 9,90 em R$ 10 mil/mês. Agora ensino o método em <strong className="text-white">126 páginas, 15 módulos</strong> — do produto de supermercado ao Mercado Líder Gold.
+                    </p>
+                    <ul className="text-white/75 text-sm md:text-base space-y-1.5 mb-6">
+                      <li>✦ ROAS-first (estratégia 2026)</li>
+                      <li>✦ Anti-bloqueio + custo variável real</li>
+                      <li>✦ Do iniciante ao Mercado Líder Gold</li>
+                    </ul>
+                    <Link
+                      href="/cursos/mercado-livre-definitivo"
+                      className="inline-flex items-center gap-2 bg-yellow-400 text-brand-dark font-bold px-7 py-3.5 rounded-xl hover:bg-yellow-300 transition-all shadow-2xl hover:-translate-y-0.5"
+                    >
+                      Quero por R$ {formatPreco(ml.preco)}
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                    </Link>
+                  </div>
+                  <div className="w-full md:w-[340px]">
+                    <ReelEmbed
+                      src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/f66145ca-639e-4a64-8fcf-d65a7f44f461.mp4"
+                      poster="/reel-mercado-livre-poster.jpg"
+                      label="A história real · 91s"
+                    />
+                  </div>
+                </div>
+              </ScrollReveal>
+            </div>
+          </section>
+        )
+      })()}
+
       {/* Cursos Grid */}
       <section className="section-padding bg-white">
         <div className="container-main">
           <div className="mb-10 text-center">
-            <p className="text-brand-mint font-medium text-sm uppercase tracking-wider mb-2">Outros cursos · individuais</p>
+            <p className="text-brand-mint font-medium text-sm uppercase tracking-wider mb-2">Todos os cursos</p>
             <h2 className="font-serif font-bold text-3xl md:text-4xl text-brand-dark">
-              Ou compre <span className="text-brand-mint">individualmente</span>
+              Cursos <span className="text-brand-mint">disponíveis</span>
             </h2>
             <p className="text-brand-dark/60 mt-3 max-w-2xl mx-auto">
-              Quer focar em apenas um tema? Cada curso isolado custa R$ 10 (ou é gratuito). Mas se quiser tudo, a Edição Completa acima entrega mais que 6 desses juntos.
+              Cursos focados em um tema só, do gratuito ao premium. Escolha o que se encaixa no seu objetivo.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {cursos.filter((c) => c.tier !== 'premium').map((curso, i) => (
+            {cursos.map((curso, i) => (
               <ScrollReveal key={curso.slug} delay={i * 100}>
                 <div className={`relative rounded-2xl overflow-hidden h-full flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
                   curso.destaque
@@ -248,7 +300,7 @@ export default function CursosPage() {
                           <p className="font-serif text-3xl font-bold text-green-600">GRÁTIS</p>
                         ) : (
                           <p className="font-serif text-3xl font-bold text-brand-dark">
-                            R$ {curso.preco}<span className="text-base text-brand-dark/40">,00</span>
+                            R$ {formatPreco(curso.preco)}
                           </p>
                         )}
                       </div>
@@ -294,7 +346,7 @@ export default function CursosPage() {
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
                             </svg>
-                            Comprar por R$ {curso.preco},00
+                            Comprar por R$ {formatPreco(curso.preco)}
                           </a>
                           <Link
                             href={`/cursos/${curso.slug}`}

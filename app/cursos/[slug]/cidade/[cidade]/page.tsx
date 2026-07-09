@@ -188,7 +188,7 @@ export default async function CursoCidadePage({ params }: { params: Promise<{ sl
                   </>
                 ) : (
                   <a href={curso.linkPagamento || '#'} target="_blank" rel="noopener noreferrer" className="btn-primary text-base">
-                    Garantir por R$ {curso.preco},00
+                    Garantir por R$ {formatPreco(curso.preco)}
                   </a>
                 )}
               </div>
@@ -409,7 +409,7 @@ export default async function CursoCidadePage({ params }: { params: Promise<{ sl
                 </>
               ) : (
                 <a href={curso.linkPagamento || '#'} target="_blank" rel="noopener noreferrer" className="btn-primary text-lg px-10 py-4">
-                  Garantir por R$ {curso.preco},00 — Acesso Imediato
+                  Garantir por R$ {formatPreco(curso.preco)} — Acesso Imediato
                 </a>
               )}
             </div>

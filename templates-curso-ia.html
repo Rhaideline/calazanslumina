@@ -1,0 +1,755 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Calazans Lumina · Curso IA — Storyboard</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0a0a;--ink-2:#1A1A1A;--paper:#F5F1EA;--paper-2:#EAE2CC;
+    --red:#FF0005;--red-soft:#FF3B3B;--red-deep:#A00306;
+    --green:#16a34a;--gold:#D4A24B;--blue:#2563eb;
+    --rule:rgba(255,255,255,.08);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:#0a0a0a;color:#fff;font-family:'DM Sans',system-ui,sans-serif;font-weight:400;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .page-head{max-width:1500px;margin:0 auto;padding:48px 32px 12px}
+  .page-head .meta{font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:.32em;text-transform:uppercase;opacity:.55;margin-bottom:12px;font-weight:500}
+  .page-head h1{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;letter-spacing:-.02em;font-size:clamp(30px,4vw,46px);margin:0 0 12px;line-height:1.02}
+  .page-head h1 em{font-style:italic;color:var(--red);font-weight:400}
+  .page-head .lede{opacity:.65;max-width:80ch;margin:0;line-height:1.55;font-weight:300;font-size:15px}
+  .specs-bar{max-width:1500px;margin:18px auto 0;padding:0 32px;display:flex;gap:28px;flex-wrap:wrap;font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;opacity:.7}
+  .specs-bar span b{color:var(--red-soft);font-weight:700}
+
+  .chapter{max-width:1500px;margin:48px auto 0;padding:0 32px 12px;display:flex;align-items:baseline;justify-content:space-between;gap:24px;border-bottom:1px solid var(--rule)}
+  .chapter h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:30px;margin:0 0 12px;letter-spacing:-.01em}
+  .chapter h2 em{font-style:italic;color:var(--red);font-weight:400}
+  .chapter .meta{font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:.32em;text-transform:uppercase;opacity:.55;font-weight:500;color:var(--red-soft)}
+
+  .storyboard{max-width:1500px;margin:24px auto 0;padding:0 32px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+
+  .scene{background:var(--ink-2);border:1px solid var(--rule);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+  .scene-meta{padding:14px 18px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+  .scene-num{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:22px;line-height:1;color:#fff}
+  .scene-num small{display:block;font-family:'DM Sans',sans-serif;font-style:normal;font-size:8px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:4px;font-weight:600}
+  .scene-time{font-family:'DM Sans',sans-serif;font-size:8px;letter-spacing:.32em;text-transform:uppercase;color:var(--red-soft);font-weight:700;text-align:right}
+
+  .frame{background:#222;aspect-ratio:9/16;overflow:hidden;position:relative}
+  .reel{position:absolute;top:0;left:0;width:1080px;height:1920px;transform-origin:top left;transform:scale(.225);font-family:'DM Sans',sans-serif;display:flex;flex-direction:column;color:#fff}
+
+  .bg{position:absolute;inset:0;z-index:0}
+  .bg.paper{background:var(--paper);color:var(--ink)}
+  .bg.paper-2{background:var(--paper-2);color:var(--ink)}
+  .bg.ink{background:#0a0a0a}
+  .bg.grad-r{background:radial-gradient(60% 50% at 80% 20%,rgba(255,0,5,.5),transparent 60%),linear-gradient(160deg,#1a0405 0%,#0a0a0a 60%,#000 100%)}
+  .bg.grad-g{background:radial-gradient(60% 50% at 20% 80%,rgba(22,163,74,.4),transparent 60%),linear-gradient(160deg,#0a1f0d 0%,#0a0a0a 60%,#000 100%)}
+  .bg.grad-b{background:radial-gradient(60% 50% at 50% 50%,rgba(37,99,235,.35),transparent 65%),linear-gradient(160deg,#081021 0%,#0a0a0a 60%,#000 100%)}
+  .bg.grad-gold{background:radial-gradient(60% 50% at 50% 50%,rgba(212,162,75,.35),transparent 65%),linear-gradient(160deg,#1a1408 0%,#0a0a0a 60%,#000 100%)}
+
+  /* HEAD */
+  .head{position:absolute;top:64px;left:60px;right:60px;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:20px}
+  .logo{display:inline-flex;align-items:center;gap:14px;line-height:1}
+  .logo img{width:50px;height:50px;object-fit:contain}
+  .logo .wm .name{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:24px;color:#fff;display:block;line-height:1}
+  .reel.tone-light .logo .wm .name{color:var(--ink)}
+  .logo .wm .sub{font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.5em;text-transform:uppercase;font-weight:500;color:var(--red);display:block;margin-top:4px}
+  .pill{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:999px;font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;height:30px;white-space:nowrap;border:1px solid rgba(255,255,255,.4);color:#fff;background:transparent}
+  .reel.tone-light .pill{border-color:rgba(17,17,17,.5);color:var(--ink)}
+  .pill::before{content:"";width:6px;height:6px;background:currentColor;border-radius:50%;opacity:.85}
+  .pill.red{background:var(--red);color:#fff;border-color:var(--red)}
+
+  .foot{position:absolute;bottom:88px;left:60px;right:60px;z-index:5;display:flex;justify-content:space-between;align-items:center;font-family:'DM Sans',sans-serif;font-size:13px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.55)}
+  .reel.tone-light .foot{color:rgba(17,17,17,.55)}
+  .foot .accent{color:#fff} .reel.tone-light .foot .accent{color:var(--ink)}
+
+  /* ━━━━━━━━ LAYOUTS ━━━━━━━━ */
+
+  /* L1 — TITLE big */
+  .L-title .stack{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 70px;gap:40px;text-align:center}
+  .L-title .kicker{font-family:'DM Sans',sans-serif;font-size:22px;letter-spacing:.4em;text-transform:uppercase;font-weight:800;color:var(--red-soft);margin:0}
+  .L-title h1{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:168px;line-height:.94;letter-spacing:-.035em;color:#fff;margin:0;max-width:920px}
+  .L-title h1 em{color:var(--red);font-style:italic}
+  .L-title h1 mark{background:var(--red);color:#fff;padding:0 14px;display:inline-block;font-style:italic;transform:rotate(-1.5deg)}
+  .L-title .lead{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:38px;line-height:1.3;color:rgba(255,255,255,.82);margin:0;max-width:820px}
+  .L-title.tone-light h1{color:var(--ink)}
+  .L-title.tone-light h1 em{color:var(--red)}
+  .L-title.tone-light .lead{color:rgba(17,17,17,.78)}
+  .L-title.tone-light .kicker{color:var(--red)}
+
+  /* L2 — BIG NUMBER */
+  .L-num .stack{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 60px;gap:36px;text-align:center}
+  .L-num .label{font-family:'DM Sans',sans-serif;font-size:24px;letter-spacing:.36em;text-transform:uppercase;font-weight:700;color:var(--red-soft);margin:0}
+  .L-num .big{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:520px;line-height:.85;letter-spacing:-.05em;color:#fff;margin:0;white-space:nowrap}
+  .L-num .big em{color:var(--red-soft);font-style:italic}
+  .L-num .cap{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:42px;line-height:1.22;color:rgba(255,255,255,.85);margin:0;max-width:840px}
+  .L-num .cap em{color:var(--red-soft);font-style:italic}
+  .L-num.tone-light .big{color:var(--ink)}
+  .L-num.tone-light .cap{color:rgba(17,17,17,.78)}
+
+  /* L3 — LIST 3 */
+  .L-list .stack{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:200px 70px 280px;gap:36px}
+  .L-list .ltitle{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:88px;line-height:1;color:#fff;margin:0;letter-spacing:-.025em;max-width:920px}
+  .L-list .ltitle em{color:var(--red-soft);font-style:italic}
+  .L-list .items{display:flex;flex-direction:column;gap:24px;margin-top:14px;width:100%}
+  .L-list .item{display:flex;gap:30px;align-items:flex-start;font-family:'DM Sans',sans-serif;color:#fff}
+  .L-list .item .n{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:72px;line-height:.95;color:var(--red);min-width:90px}
+  .L-list .item .txt{font-size:36px;line-height:1.32;font-weight:500;color:rgba(255,255,255,.88)}
+  .L-list .item .txt b{font-weight:800;color:#fff}
+  .L-list .item .txt em{font-style:normal;color:var(--gold);font-weight:700}
+  .L-list.tone-light .ltitle{color:var(--ink)}
+  .L-list.tone-light .item{color:var(--ink)}
+  .L-list.tone-light .item .txt{color:rgba(17,17,17,.85)}
+
+  /* L4 — PROMPT BLOCK */
+  .L-prompt .stack{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:200px 60px 280px;gap:28px}
+  .L-prompt .ltitle{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:64px;line-height:1.05;color:#fff;margin:0;letter-spacing:-.02em;text-align:center}
+  .L-prompt .ltitle em{color:var(--red-soft);font-style:italic}
+  .L-prompt .promptbox{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-left:6px solid var(--red);border-radius:14px;padding:36px 40px;width:100%;max-width:960px;font-family:'JetBrains Mono','DM Sans',monospace;font-size:30px;line-height:1.45;color:#fff;font-weight:400}
+  .L-prompt .promptbox.bad{border-left-color:var(--red);background:rgba(255,0,5,.06)}
+  .L-prompt .promptbox.good{border-left-color:var(--green);background:rgba(22,163,74,.06)}
+  .L-prompt .promptbox b{color:var(--gold);font-weight:700}
+  .L-prompt .promptbox .tag{display:inline-block;font-family:'DM Sans',sans-serif;font-size:14px;letter-spacing:.32em;text-transform:uppercase;font-weight:800;padding:4px 12px;border-radius:6px;margin-bottom:12px}
+  .L-prompt .promptbox.bad .tag{background:var(--red);color:#fff}
+  .L-prompt .promptbox.good .tag{background:var(--green);color:#fff}
+
+  /* L5 — COMPARISON split */
+  .L-cmp{position:absolute;inset:0;z-index:5}
+  .L-cmp .col{position:absolute;left:0;right:0;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:48px 60px;text-align:center}
+  .L-cmp .col.top{top:120px;bottom:50%;background:linear-gradient(180deg,rgba(255,0,5,.12),transparent)}
+  .L-cmp .col.bot{top:50%;bottom:120px;background:linear-gradient(0deg,rgba(22,163,74,.12),transparent)}
+  .L-cmp .col .tag{font-family:'DM Sans',sans-serif;font-size:18px;letter-spacing:.4em;text-transform:uppercase;font-weight:800;margin-bottom:18px}
+  .L-cmp .col.top .tag{color:var(--red-soft)}
+  .L-cmp .col.bot .tag{color:var(--green)}
+  .L-cmp .col p{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:46px;line-height:1.22;color:rgba(255,255,255,.92);margin:0;max-width:880px}
+  .L-cmp .col p em{font-style:italic;color:var(--gold)}
+  .L-cmp .vs{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:6;width:120px;height:120px;border-radius:999px;background:var(--ink-2);border:2px solid #fff;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-style:italic;font-size:48px;font-weight:400}
+
+  /* L6 — 3 TOOLS row */
+  .L-tools .stack{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:200px 60px 240px;gap:34px}
+  .L-tools .ltitle{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:80px;line-height:1;color:#fff;margin:0 0 18px;text-align:center;letter-spacing:-.02em}
+  .L-tools .ltitle em{color:var(--red-soft);font-style:italic}
+  .L-tools .tools-grid{display:flex;flex-direction:column;gap:24px;width:100%}
+  .L-tools .tool{display:flex;gap:28px;align-items:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);border-radius:18px;padding:28px 32px}
+  .L-tools .tool .logo-bubble{width:130px;height:130px;border-radius:28px;background:#fff;display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-style:italic;font-size:60px;color:var(--ink);font-weight:400;flex-shrink:0}
+  .L-tools .tool.gpt .logo-bubble{background:linear-gradient(135deg,#74AA9C,#10A37F);color:#fff}
+  .L-tools .tool.claude .logo-bubble{background:linear-gradient(135deg,#DA7757,#C15F3C);color:#fff}
+  .L-tools .tool.gemini .logo-bubble{background:linear-gradient(135deg,#4285F4,#9B72CB,#F4B400);color:#fff}
+  .L-tools .tool .info{display:flex;flex-direction:column;gap:6px;flex:1}
+  .L-tools .tool .name{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:46px;line-height:1;color:#fff;margin:0}
+  .L-tools .tool .desc{font-family:'DM Sans',sans-serif;font-size:22px;line-height:1.35;color:rgba(255,255,255,.7);margin:0;font-weight:500}
+  .L-tools .tool .desc b{color:#fff;font-weight:700}
+
+  /* L7 — Q&A demo (prompt + output) */
+  .L-qa{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;padding:160px 60px 200px;gap:24px;overflow:hidden}
+  .L-qa .role{font-family:'DM Sans',sans-serif;font-size:18px;letter-spacing:.32em;text-transform:uppercase;font-weight:800;padding:6px 14px;border-radius:8px;display:inline-block;margin-bottom:0;align-self:flex-start}
+  .L-qa .role.user{background:rgba(255,255,255,.12);color:#fff}
+  .L-qa .role.ai{background:var(--red);color:#fff}
+  .L-qa .bubble{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:18px;padding:26px 30px;font-family:'JetBrains Mono','DM Sans',monospace;font-size:24px;line-height:1.5;color:#fff;font-weight:400;white-space:pre-wrap;word-wrap:break-word}
+  .L-qa .bubble.user{align-self:flex-start;max-width:88%;border-left:5px solid #fff}
+  .L-qa .bubble.ai{align-self:flex-end;max-width:88%;border-left:5px solid var(--red);background:rgba(255,0,5,.06)}
+  .L-qa .bubble b{color:var(--gold);font-weight:700}
+
+  /* L8 — QUOTE */
+  .L-quote .stack{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 80px;gap:48px;text-align:center}
+  .L-quote .qmark{font-family:'DM Serif Display',serif;font-style:italic;font-size:340px;line-height:.7;color:rgba(255,0,5,.18);position:absolute;top:140px;left:60px;z-index:-1}
+  .L-quote h1{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:96px;line-height:1.08;letter-spacing:-.025em;color:#fff;margin:0;max-width:880px}
+  .L-quote h1 em{color:var(--red-soft);font-style:italic}
+  .L-quote .credit{font-family:'DM Sans',sans-serif;font-size:20px;letter-spacing:.32em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,.55);margin:0}
+
+  /* L9 — PCTEF cards */
+  .L-pctef .stack{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:180px 56px 240px;gap:24px}
+  .L-pctef .ltitle{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:70px;line-height:1;color:#fff;margin:0 0 12px;text-align:center;letter-spacing:-.02em}
+  .L-pctef .ltitle em{color:var(--red-soft);font-style:italic}
+  .L-pctef .cards{display:flex;flex-direction:column;gap:18px;width:100%}
+  .L-pctef .card{display:flex;gap:24px;align-items:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);border-left:6px solid var(--red);border-radius:14px;padding:22px 28px}
+  .L-pctef .card .letter{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:96px;line-height:.85;color:var(--red);min-width:90px;text-align:center}
+  .L-pctef .card .info{display:flex;flex-direction:column;gap:4px}
+  .L-pctef .card .name{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:42px;line-height:1;color:#fff;margin:0;letter-spacing:-.01em}
+  .L-pctef .card .desc{font-family:'DM Sans',sans-serif;font-size:22px;line-height:1.3;color:rgba(255,255,255,.7);margin:0;font-weight:500}
+
+  /* L10 — CTA final */
+  .L-cta .stack{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 60px;gap:40px;text-align:center}
+  .L-cta .kicker{font-family:'DM Sans',sans-serif;font-size:22px;letter-spacing:.4em;text-transform:uppercase;font-weight:800;color:var(--red-soft);margin:0}
+  .L-cta h1{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:160px;line-height:.94;letter-spacing:-.035em;color:#fff;margin:0;max-width:920px}
+  .L-cta h1 em{color:var(--red);font-style:italic}
+  .L-cta .btn{display:inline-flex;align-items:center;gap:18px;padding:30px 50px;border-radius:999px;background:#25D366;color:#000;font-family:'DM Sans',sans-serif;font-size:22px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;line-height:1}
+  .L-cta .btn::before{content:"";width:20px;height:20px;border-radius:999px;background:#000}
+  .L-cta .handle{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:40px;color:rgba(255,255,255,.78);margin:0;letter-spacing:-.01em}
+
+  .scene-content{padding:14px 18px;flex:1;display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--rule)}
+  .scene-content h3{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:16px;line-height:1.15;margin:0;color:#fff}
+  .voice{font-family:'DM Sans',sans-serif;font-weight:400;font-size:11px;line-height:1.5;margin:0;color:rgba(255,255,255,.75);border-left:2px solid var(--red);padding:5px 0 5px 9px}
+
+  footer.page-foot{max-width:1500px;margin:64px auto 0;padding:32px;border-top:1px solid var(--rule);opacity:.55}
+  footer.page-foot .meta{font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:.32em;text-transform:uppercase;font-weight:500}
+</style>
+</head>
+<body>
+
+<header class="page-head">
+  <div class="meta">Calazans Lumina · Curso IA pra Leigos · ~10 min</div>
+  <h1>Como usar <em>ChatGPT, Claude e Gemini</em> sem ser técnico</h1>
+  <p class="lede">Vídeo educativo, 10 minutos, 32 cenas. Tom de professora paciente. Voz feminina pt-BR (Francisca). Sem jargão. Tudo com exemplo prático. Pra leigos que querem usar IA em pequeno negócio: responder cliente, criar post, resumir documento.</p>
+  <div class="specs-bar">
+    <span>Formato · <b>1080×1920</b></span>
+    <span>Duração · <b>~10 min</b></span>
+    <span>Cenas · <b>32</b></span>
+    <span>Tipo · <b>vídeo de feed (não Reels)</b></span>
+  </div>
+</header>
+
+<!-- ━━━━━━━━ CAP 1 — ABERTURA ━━━━━━━━ -->
+<div class="chapter"><h2>Capítulo <em>1</em> — Abertura</h2><span class="meta">0:00 – 0:30</span></div>
+<div class="storyboard">
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">01<small>HOOK</small></span><span class="scene-time">0:00–0:08</span></div>
+  <div class="frame"><div class="reel L-title tone-dark">
+    <div class="bg grad-r"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div></header>
+    <div class="stack">
+      <p class="kicker">Curso · 10 minutos</p>
+      <h1>IA pra <em>leigos</em>.</h1>
+      <p class="lead">Sem código. Sem jargão. Em 10 minutos, você sai usando ChatGPT, Claude e Gemini de verdade.</p>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Hook</h3><p class="voice">Em 2026, quem aprende a usar IA hoje vai estar 10 anos à frente em 5. Esse vídeo te entrega tudo que você precisa pra começar, sem ser técnico. Em 10 minutos.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">02<small>PROMESSA</small></span><span class="scene-time">0:08–0:18</span></div>
+  <div class="frame"><div class="reel L-list tone-dark">
+    <div class="bg ink"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Você vai aprender</span></header>
+    <div class="stack">
+      <h2 class="ltitle">Em <em>10 minutos</em>:</h2>
+      <div class="items">
+        <div class="item"><span class="n">01</span><span class="txt">O que é IA tipo ChatGPT, sem termo técnico</span></div>
+        <div class="item"><span class="n">02</span><span class="txt">A <b>receita do prompt perfeito</b> (5 elementos)</span></div>
+        <div class="item"><span class="n">03</span><span class="txt">3 usos práticos no <em>seu</em> negócio hoje</span></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Promessa do curso</h3><p class="voice">Em 10 minutos você vai aprender três coisas: o que é IA tipo ChatGPT sem termo técnico, a receita do prompt perfeito com cinco elementos, e três usos práticos pra aplicar no seu negócio hoje.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">03<small>RAPPORT</small></span><span class="scene-time">0:18–0:30</span></div>
+  <div class="frame"><div class="reel L-quote tone-dark">
+    <div class="bg grad-r"></div>
+    <span class="qmark">"</span>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div></header>
+    <div class="stack">
+      <h1>"IA não <em>substitui</em> você.<br>Substitui quem <em>não usa</em> IA."</h1>
+      <p class="credit">Rhaideline Calazans · founder</p>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Frase âncora</h3><p class="voice">Antes de começar, uma frase pra você levar: IA não substitui você. Substitui quem não usa IA. Bora?</p></div>
+</article>
+
+</div>
+
+<!-- ━━━━━━━━ CAP 2 — O QUE É IA ━━━━━━━━ -->
+<div class="chapter"><h2>Capítulo <em>2</em> — O que é IA tipo ChatGPT</h2><span class="meta">0:30 – 1:30</span></div>
+<div class="storyboard">
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">04<small>DEFINIR</small></span><span class="scene-time">0:30–0:50</span></div>
+  <div class="frame"><div class="reel L-title tone-light">
+    <div class="bg paper"></div>
+    <header class="head"><div class="logo on-light"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Cap · 02</span></header>
+    <div class="stack">
+      <p class="kicker">Esquece os termos técnicos.</p>
+      <h1>É um <em>computador</em><br>que <em>fala português</em>.</h1>
+      <p class="lead">Você digita o que quer em palavras normais. Ele responde em palavras normais. Só isso.</p>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>O que é IA</h3><p class="voice">Esquece termo técnico. IA tipo ChatGPT é um computador que fala português. Você digita o que quer em palavras normais. Ele responde em palavras normais. Só isso.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">05<small>ANALOGIA</small></span><span class="scene-time">0:50–1:10</span></div>
+  <div class="frame"><div class="reel L-title tone-dark">
+    <div class="bg grad-b"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Analogia</span></header>
+    <div class="stack">
+      <p class="kicker">Pensa assim:</p>
+      <h1>É um <em>estagiário</em><br>que leu <em>tudo</em>.</h1>
+      <p class="lead">Sabe MUITO, mas precisa que você diga exatamente o que fazer. Quanto mais claro o pedido, melhor a entrega.</p>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Analogia do estagiário</h3><p class="voice">Pensa assim: a IA é um estagiário que leu tudo que existe na internet. Ele sabe MUITO. Mas precisa que você diga exatamente o que fazer. Quanto mais claro o pedido, melhor a entrega.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">06<small>O QUE FAZ</small></span><span class="scene-time">1:10–1:30</span></div>
+  <div class="frame"><div class="reel L-list tone-dark">
+    <div class="bg ink"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Faz isso</span></header>
+    <div class="stack">
+      <h2 class="ltitle">Ela <em>escreve</em>,<br><em>resume</em>, <em>explica</em>,<br><em>traduz</em>, <em>conversa</em>.</h2>
+      <div class="items">
+        <div class="item"><span class="n">·</span><span class="txt">Não acessa sua agenda ou e-mail (a não ser que você ligue)</span></div>
+        <div class="item"><span class="n">·</span><span class="txt">Não tem opinião própria, mas <b>finge muito bem</b></span></div>
+        <div class="item"><span class="n">·</span><span class="txt">Pode <em>errar fato</em> — você confere</span></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>O que faz · o que não faz</h3><p class="voice">Ela escreve, resume, explica, traduz, conversa. Não acessa sua agenda ou e-mail, a não ser que você ligue. Não tem opinião própria, mas finge muito bem. E pode errar fato — você sempre confere.</p></div>
+</article>
+
+</div>
+
+<!-- ━━━━━━━━ CAP 3 — AS 3 IAs ━━━━━━━━ -->
+<div class="chapter"><h2>Capítulo <em>3</em> — As 3 IAs principais</h2><span class="meta">1:30 – 2:30</span></div>
+<div class="storyboard">
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">07<small>INTRO</small></span><span class="scene-time">1:30–1:42</span></div>
+  <div class="frame"><div class="reel L-title tone-dark">
+    <div class="bg grad-b"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Cap · 03</span></header>
+    <div class="stack">
+      <p class="kicker">Existem dezenas.</p>
+      <h1>Mas só <em>3</em><br>importam.</h1>
+      <p class="lead">ChatGPT, Claude e Gemini. Cada uma é melhor em uma coisa.</p>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Intro às 3 IAs</h3><p class="voice">Existem dezenas de IAs. Mas só três importam pra leigo em 2026. ChatGPT, Claude e Gemini. Cada uma é melhor em uma coisa específica. Te mostro qual usar pra cada situação.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">08<small>AS 3</small></span><span class="scene-time">1:42–2:12</span></div>
+  <div class="frame"><div class="reel L-tools tone-dark">
+    <div class="bg ink"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Compare</span></header>
+    <div class="stack">
+      <h2 class="ltitle">As <em>3</em> que importam</h2>
+      <div class="tools-grid">
+        <div class="tool gpt"><div class="logo-bubble">G</div><div class="info"><p class="name">ChatGPT</p><p class="desc"><b>OpenAI.</b> Bom pra escrita criativa, brainstorm, imagem. Mais conhecida.</p></div></div>
+        <div class="tool claude"><div class="logo-bubble">C</div><div class="info"><p class="name">Claude</p><p class="desc"><b>Anthropic.</b> Bom pra texto longo, raciocínio, código. Mais cuidadosa.</p></div></div>
+        <div class="tool gemini"><div class="logo-bubble">★</div><div class="info"><p class="name">Gemini</p><p class="desc"><b>Google.</b> Integra Gmail, Docs, Drive. Boa pra pesquisa.</p></div></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Comparação rápida</h3><p class="voice">ChatGPT da OpenAI. Boa pra escrita criativa, brainstorm e imagem. A mais conhecida. Claude da Anthropic. Boa pra texto longo, raciocínio e código. Mais cuidadosa com fato. E Gemini do Google. Integra com Gmail, Docs e Drive. Boa pra pesquisa.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">09<small>QUAL USAR</small></span><span class="scene-time">2:12–2:30</span></div>
+  <div class="frame"><div class="reel L-list tone-light">
+    <div class="bg paper"></div>
+    <header class="head"><div class="logo on-light"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Regra prática</span></header>
+    <div class="stack">
+      <h2 class="ltitle">Qual <em>usar</em>?</h2>
+      <div class="items">
+        <div class="item"><span class="n">→</span><span class="txt"><b>Não sabe?</b> Use <em>ChatGPT</em>.</span></div>
+        <div class="item"><span class="n">→</span><span class="txt"><b>Texto longo, contrato, e-mail?</b> Use <em>Claude</em>.</span></div>
+        <div class="item"><span class="n">→</span><span class="txt"><b>Pesquisa com dado atual?</b> Use <em>Gemini</em>.</span></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Regra prática</h3><p class="voice">Regra simples: se você não sabe qual usar, use ChatGPT, é a mais conhecida e mais flexível. Pra texto longo, contrato, e-mail elaborado, use Claude. Pra pesquisa com dado atual, fato verificável, use Gemini que integra com Google.</p></div>
+</article>
+
+</div>
+
+<!-- ━━━━━━━━ CAP 4 — RECEITA DO PROMPT ━━━━━━━━ -->
+<div class="chapter"><h2>Capítulo <em>4</em> — A receita do prompt perfeito</h2><span class="meta">2:30 – 4:00</span></div>
+<div class="storyboard">
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">10<small>SEGREDO</small></span><span class="scene-time">2:30–2:48</span></div>
+  <div class="frame"><div class="reel L-title tone-dark">
+    <div class="bg grad-r"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Cap · 04</span></header>
+    <div class="stack">
+      <p class="kicker">O segredo de 90% das pessoas</p>
+      <h1>Está no <em>prompt</em>.</h1>
+      <p class="lead">A diferença entre IA "que não serve" e IA "que dobra seu trabalho" é UMA coisa: como você pede.</p>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Tudo está no prompt</h3><p class="voice">A diferença entre quem reclama que IA não serve, e quem dobra produtividade com IA, é uma coisa só: como pede. O prompt. Vou te dar a receita exata, em cinco elementos.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">11<small>RECEITA</small></span><span class="scene-time">2:48–3:30</span></div>
+  <div class="frame"><div class="reel L-pctef tone-dark">
+    <div class="bg ink"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">A receita</span></header>
+    <div class="stack">
+      <h2 class="ltitle">Os <em>5 elementos</em></h2>
+      <div class="cards">
+        <div class="card"><span class="letter">P</span><div class="info"><p class="name">Papel</p><p class="desc">Quem a IA deve ser ("você é copywriter sênior")</p></div></div>
+        <div class="card"><span class="letter">C</span><div class="info"><p class="name">Contexto</p><p class="desc">Sobre o quê (negócio, cliente, situação)</p></div></div>
+        <div class="card"><span class="letter">T</span><div class="info"><p class="name">Tarefa</p><p class="desc">O que fazer (escrever, resumir, comparar)</p></div></div>
+        <div class="card"><span class="letter">E</span><div class="info"><p class="name">Exemplo</p><p class="desc">Como deve ficar (1 referência)</p></div></div>
+        <div class="card"><span class="letter">F</span><div class="info"><p class="name">Formato</p><p class="desc">Tipo, tamanho, tom de voz</p></div></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Os 5 elementos (PCTEF)</h3><p class="voice">A receita tem cinco elementos. Papel: quem a IA deve ser. Contexto: sobre o quê. Tarefa: o que fazer. Exemplo: como deve ficar. E Formato: tipo, tamanho, tom de voz. Decora a sigla: PCTEF.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">12<small>MEMORIZAR</small></span><span class="scene-time">3:30–3:45</span></div>
+  <div class="frame"><div class="reel L-num tone-dark">
+    <div class="bg grad-gold"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Memoriza</span></header>
+    <div class="stack">
+      <p class="label">A sigla</p>
+      <p class="big">PCTEF</p>
+      <p class="cap">Papel · Contexto · Tarefa · <em>Exemplo</em> · Formato</p>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Memorize PCTEF</h3><p class="voice">PCTEF. Papel. Contexto. Tarefa. Exemplo. Formato. Esses são os cinco elementos. Memoriza. Vai mudar como você usa IA.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">13<small>POR QUE FUNCIONA</small></span><span class="scene-time">3:45–4:00</span></div>
+  <div class="frame"><div class="reel L-quote tone-dark">
+    <div class="bg grad-b"></div>
+    <span class="qmark">"</span>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div></header>
+    <div class="stack">
+      <h1>IA é como <em>estagiário</em>: quanto <em>mais claro</em> o briefing, <em>melhor</em> a entrega.</h1>
+      <p class="credit">princípio do prompt</p>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Por que funciona</h3><p class="voice">Por que funciona? Porque IA é estagiário. Quanto mais claro o briefing, melhor a entrega. Briefing vago, entrega vaga. Briefing detalhado, entrega cirúrgica.</p></div>
+</article>
+
+</div>
+
+<!-- ━━━━━━━━ CAP 5 — PROMPT RUIM VS BOM ━━━━━━━━ -->
+<div class="chapter"><h2>Capítulo <em>5</em> — Prompt ruim vs prompt bom</h2><span class="meta">4:00 – 5:30</span></div>
+<div class="storyboard">
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">14<small>COMPARAÇÃO</small></span><span class="scene-time">4:00–4:15</span></div>
+  <div class="frame"><div class="reel L-title tone-dark">
+    <div class="bg grad-r"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Cap · 05</span></header>
+    <div class="stack">
+      <p class="kicker">Mesmo objetivo. Dois prompts.</p>
+      <h1>O <em>resultado</em><br>muda <em>tudo</em>.</h1>
+      <p class="lead">Mesma IA, mesmo dia, mesma pergunta. Só muda como você pede.</p>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Intro comparação</h3><p class="voice">Vou te mostrar mesma IA, mesmo dia, mesmo objetivo. Só muda como pede. O resultado muda tudo.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">15<small>PROMPT RUIM</small></span><span class="scene-time">4:15–4:35</span></div>
+  <div class="frame"><div class="reel L-prompt tone-dark">
+    <div class="bg grad-r"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill red">Ruim</span></header>
+    <div class="stack">
+      <h2 class="ltitle">Prompt <em>ruim</em></h2>
+      <div class="promptbox bad">
+        <span class="tag">Você</span>
+"me ajuda a responder esse cliente que reclamou da demora"
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Exemplo de prompt vago</h3><p class="voice">Olha esse exemplo. Você pede: "me ajuda a responder esse cliente que reclamou da demora". Vago. Sem papel. Sem contexto. Sem formato.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">16<small>RESULTADO RUIM</small></span><span class="scene-time">4:35–4:50</span></div>
+  <div class="frame"><div class="reel L-prompt tone-dark">
+    <div class="bg grad-r"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill red">Resultado vago</span></header>
+    <div class="stack">
+      <h2 class="ltitle">A IA <em>devolve</em>:</h2>
+      <div class="promptbox bad">
+        <span class="tag">Resposta vaga</span>
+"Prezado cliente, lamentamos a demora e estamos comprometidos em melhorar nossos prazos. Atenciosamente, sua empresa."
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Resposta vaga</h3><p class="voice">A IA devolve algo genérico. "Prezado cliente, lamentamos a demora. Atenciosamente." Útil? Quase nada. Você não consegue mandar isso.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">17<small>PROMPT BOM</small></span><span class="scene-time">4:50–5:15</span></div>
+  <div class="frame"><div class="reel L-prompt tone-dark">
+    <div class="bg grad-g"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">PCTEF · bom</span></header>
+    <div class="stack">
+      <h2 class="ltitle">Prompt <em>bom</em></h2>
+      <div class="promptbox good">
+        <span class="tag">PCTEF</span>
+<b>[Papel]</b> Você é atendente empático.
+<b>[Contexto]</b> Cliente reclamou de 5 dias de demora no orçamento.
+<b>[Tarefa]</b> Escreva resposta de até 4 frases.
+<b>[Exemplo]</b> Tom humano, não corporativo.
+<b>[Formato]</b> Português coloquial. Termine perguntando se ainda há interesse.
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Prompt aplicando PCTEF</h3><p class="voice">Agora aplica os cinco elementos. Papel: você é atendente empático. Contexto: cliente reclamou de cinco dias de demora. Tarefa: escreve resposta de até quatro frases. Exemplo: tom humano, não corporativo. Formato: português coloquial, termina perguntando se ainda tem interesse.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">18<small>RESULTADO BOM</small></span><span class="scene-time">5:15–5:30</span></div>
+  <div class="frame"><div class="reel L-prompt tone-dark">
+    <div class="bg grad-g"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Resposta útil</span></header>
+    <div class="stack">
+      <h2 class="ltitle">A IA <em>devolve</em>:</h2>
+      <div class="promptbox good">
+        <span class="tag">Pronta pra enviar</span>
+"João, você tem razão. Cinco dias é tempo demais e eu te devo essa explicação. Tive uma sobrecarga, mas isso não justifica deixar você esperando sem retorno. Quer que eu envie o orçamento hoje ainda?"
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Resposta útil de verdade</h3><p class="voice">Agora olha: "João, você tem razão. Cinco dias é tempo demais e eu te devo essa explicação. Tive sobrecarga, mas isso não justifica. Quer que eu envie o orçamento hoje ainda?" Humano. Direto. Pronto pra enviar.</p></div>
+</article>
+
+</div>
+
+<!-- ━━━━━━━━ CAP 6 — USE CASE 1 ━━━━━━━━ -->
+<div class="chapter"><h2>Capítulo <em>6</em> — Use case 1: Cliente difícil</h2><span class="meta">5:30 – 6:30</span></div>
+<div class="storyboard">
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">19<small>UC1 SETUP</small></span><span class="scene-time">5:30–5:45</span></div>
+  <div class="frame"><div class="reel L-title tone-light">
+    <div class="bg paper-2"></div>
+    <header class="head"><div class="logo on-light"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Caso 01</span></header>
+    <div class="stack">
+      <p class="kicker">Use case · 01</p>
+      <h1>Cliente <em>difícil</em>.</h1>
+      <p class="lead">Reclamação no WhatsApp, no e-mail, no Google. IA resolve em 30 segundos.</p>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Use case 1 setup</h3><p class="voice">Primeiro caso prático: cliente difícil. Reclamação no WhatsApp, no e-mail, no Google review. A IA monta a resposta em trinta segundos. Bom pra atendente, pra dono de negócio, pra você que não quer perder o cliente nem responder mal.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">20<small>UC1 DEMO</small></span><span class="scene-time">5:45–6:15</span></div>
+  <div class="frame"><div class="reel L-qa">
+    <div class="bg grad-b"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">ChatGPT</span></header>
+    <span class="role user">Você</span>
+    <div class="bubble user">Atue como atendente sênior empático. Um cliente deixou review de 1 estrela reclamando que a pintura descascou após 3 meses. Escreva resposta pública em <b>inglês</b>, em até 5 frases. Não defenda, reconheça, ofereça inspeção gratuita esta semana, e termine convidando ele ao DM.</div>
+    <span class="role ai">ChatGPT</span>
+    <div class="bubble ai">Hi Mike — you're right to be upset. Paint that fails in 3 months means we made a call we shouldn't have made. I'd like to send our lead painter to inspect this week — free, no pressure. DM me your address and best window, and we'll make it right.</div>
+  </div></div>
+  <div class="scene-content"><h3>Use case 1 demo</h3><p class="voice">Olha esse exemplo real. Você pede: "atua como atendente sênior empático, cliente deixou review de uma estrela reclamando que pintura descascou, escreva resposta em inglês, reconhece sem defender, oferece inspeção gratuita". A IA devolve em 2 segundos. Pronta pra postar.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">21<small>UC1 INSIGHT</small></span><span class="scene-time">6:15–6:30</span></div>
+  <div class="frame"><div class="reel L-quote tone-dark">
+    <div class="bg grad-g"></div>
+    <span class="qmark">"</span>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div></header>
+    <div class="stack">
+      <h1>30 <em>segundos</em>.<br>Resposta <em>melhor</em><br>que 30 <em>minutos</em>.</h1>
+      <p class="credit">no calor da hora, você responde mal</p>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>O ganho</h3><p class="voice">Trinta segundos com IA. Resposta melhor do que se você passasse trinta minutos pensando no calor da hora.</p></div>
+</article>
+
+</div>
+
+<!-- ━━━━━━━━ CAP 7 — USE CASE 2 ━━━━━━━━ -->
+<div class="chapter"><h2>Capítulo <em>7</em> — Use case 2: Post Instagram</h2><span class="meta">6:30 – 7:30</span></div>
+<div class="storyboard">
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">22<small>UC2 SETUP</small></span><span class="scene-time">6:30–6:45</span></div>
+  <div class="frame"><div class="reel L-title tone-light">
+    <div class="bg paper-2"></div>
+    <header class="head"><div class="logo on-light"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Caso 02</span></header>
+    <div class="stack">
+      <p class="kicker">Use case · 02</p>
+      <h1>Post de <em>Instagram</em>.</h1>
+      <p class="lead">Caption, hashtags, ideia. Em 2 minutos sai conteúdo da semana inteira.</p>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Use case 2 setup</h3><p class="voice">Segundo caso: post de Instagram. Caption, hashtags, ideia, calendário editorial. Em dois minutos sai conteúdo da semana inteira.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">23<small>UC2 DEMO</small></span><span class="scene-time">6:45–7:15</span></div>
+  <div class="frame"><div class="reel L-qa">
+    <div class="bg grad-b"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Claude</span></header>
+    <span class="role user">Você</span>
+    <div class="bubble user">Atue como copywriter de pequeno negócio local. Crie caption pra Instagram de empresa de <b>pintura em Boston</b>, oferta de 15% até final de junho. Público: dono de casa 35-55. Tom amigável, profissional. <b>120 palavras</b>, 1 emoji só, termina com pergunta. Sem hashtags.</div>
+    <span class="role ai">Claude</span>
+    <div class="bubble ai">Você adia a pintura há quantos meses? Aquela parede do quarto, a fachada que descascou, o teto que precisa de demão. Junho é o melhor mês pra pintar em Boston (clima seco, secagem rápida). E até dia 30, estamos oferecendo 15% de desconto pra contratos novos. Atendemos toda região metro: Framingham, Newton, Worcester. Equipe própria, garantia escrita de 1 ano, seguro de 1 milhão. Sem subcontratada, sem surpresa. 🎨 Posso ir aí essa semana fazer a estimativa gratuita?</div>
+  </div></div>
+  <div class="scene-content"><h3>Use case 2 demo</h3><p class="voice">Olha o exemplo real. Você pede caption pra empresa de pintura em Boston com oferta de quinze por cento. Tom amigável, cento e vinte palavras, um emoji. A IA devolve uma caption pronta. Você lê, ajusta o que quiser, e publica.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">24<small>UC2 PRO TIP</small></span><span class="scene-time">7:15–7:30</span></div>
+  <div class="frame"><div class="reel L-list tone-dark">
+    <div class="bg ink"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Pro tip</span></header>
+    <div class="stack">
+      <h2 class="ltitle">O <em>truque</em></h2>
+      <div class="items">
+        <div class="item"><span class="n">→</span><span class="txt">Não aceita a 1ª versão</span></div>
+        <div class="item"><span class="n">→</span><span class="txt"><b>Pede 3 variações</b> com tons diferentes</span></div>
+        <div class="item"><span class="n">→</span><span class="txt">Escolhe a melhor, pede pra <em>refinar</em></span></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Pro tip: refinar</h3><p class="voice">Truque importante: não aceita a primeira versão. Pede três variações com tons diferentes. Escolhe a melhor, e pede pra refinar mais ainda. Boa IA é conversa, não comando único.</p></div>
+</article>
+
+</div>
+
+<!-- ━━━━━━━━ CAP 8 — USE CASE 3 ━━━━━━━━ -->
+<div class="chapter"><h2>Capítulo <em>8</em> — Use case 3: Resumir documento</h2><span class="meta">7:30 – 8:30</span></div>
+<div class="storyboard">
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">25<small>UC3 SETUP</small></span><span class="scene-time">7:30–7:48</span></div>
+  <div class="frame"><div class="reel L-title tone-light">
+    <div class="bg paper-2"></div>
+    <header class="head"><div class="logo on-light"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Caso 03</span></header>
+    <div class="stack">
+      <p class="kicker">Use case · 03</p>
+      <h1>Resumir <em>documento</em>.</h1>
+      <p class="lead">Contrato de 40 páginas. Em 1 minuto: 5 bullet points em português simples.</p>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Use case 3 setup</h3><p class="voice">Terceiro caso: resumir documento longo. Contrato de quarenta páginas, manual técnico, e-mail com cinco assuntos misturados, transcrição de reunião. Em um minuto, a IA devolve cinco bullet points em português simples.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">26<small>UC3 DEMO</small></span><span class="scene-time">7:48–8:18</span></div>
+  <div class="frame"><div class="reel L-qa">
+    <div class="bg grad-b"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Claude (texto longo)</span></header>
+    <span class="role user">Você</span>
+    <div class="bubble user">Resuma esse contrato em <b>5 bullet points</b> em português, linguagem de 8ª série. Foque: prazo, valor, multa por cancelamento, garantia, responsabilidade. <b>Sinaliza com ⚠️</b> qualquer cláusula que pareça abusiva. [cola o PDF aqui]</div>
+    <span class="role ai">Claude</span>
+    <div class="bubble ai">• <b>Prazo:</b> 12 meses, renovação automática (⚠️ você precisa cancelar 60 dias antes)
+• <b>Valor:</b> R$ 2.500/mês, reajuste anual pelo IPCA
+• <b>Multa de cancelamento:</b> ⚠️ 6 meses do contrato (R$ 15k) — abusivo
+• <b>Garantia:</b> 90 dias contados da entrega
+• <b>Responsabilidade:</b> limitada ao valor pago no último mês</div>
+  </div></div>
+  <div class="scene-content"><h3>Use case 3 demo</h3><p class="voice">Olha esse exemplo. Você cola o PDF do contrato. Pede: "resume em cinco bullet points, foca em prazo, valor, multa, garantia, responsabilidade. Sinaliza com emoji de alerta qualquer cláusula abusiva". A IA devolve. Você economiza duas horas e ainda descobre a cláusula abusiva que ia passar batido.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">27<small>UC3 INSIGHT</small></span><span class="scene-time">8:18–8:30</span></div>
+  <div class="frame"><div class="reel L-num tone-dark">
+    <div class="bg grad-gold"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">O ganho</span></header>
+    <div class="stack">
+      <p class="label">Por documento</p>
+      <p class="big">2h<em>→</em>1min</p>
+      <p class="cap">Tempo economizado. E você ainda <em>nota</em> o que ia passar batido.</p>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>O ganho</h3><p class="voice">Por documento, você economiza duas horas, vira um minuto. E ainda nota cláusulas que iam passar batido. Multiplica isso por mês.</p></div>
+</article>
+
+</div>
+
+<!-- ━━━━━━━━ CAP 9 — 3 ERROS ━━━━━━━━ -->
+<div class="chapter"><h2>Capítulo <em>9</em> — 3 erros que todo leigo comete</h2><span class="meta">8:30 – 9:15</span></div>
+<div class="storyboard">
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">28<small>ERROS</small></span><span class="scene-time">8:30–8:45</span></div>
+  <div class="frame"><div class="reel L-title tone-dark">
+    <div class="bg grad-r"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Cap · 09</span></header>
+    <div class="stack">
+      <p class="kicker">Antes de você sair usando</p>
+      <h1>3 <em>erros</em> que<br>vão te <em>queimar</em>.</h1>
+      <p class="lead">Todo leigo comete. Evita os três, e você já sai na frente.</p>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>3 erros intro</h3><p class="voice">Antes de você sair usando, três erros que todo leigo comete. Evita os três, e você já sai na frente da maioria.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">29<small>3 ERROS</small></span><span class="scene-time">8:45–9:15</span></div>
+  <div class="frame"><div class="reel L-list tone-dark">
+    <div class="bg ink"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Evite</span></header>
+    <div class="stack">
+      <h2 class="ltitle">Os <em>3</em> erros</h2>
+      <div class="items">
+        <div class="item"><span class="n">01</span><span class="txt"><b>Prompt vago.</b> "Me ajuda com marketing." Não funciona. Use <em>PCTEF</em>.</span></div>
+        <div class="item"><span class="n">02</span><span class="txt"><b>Confiar cego.</b> IA inventa fato. Sempre confere data, número, citação.</span></div>
+        <div class="item"><span class="n">03</span><span class="txt"><b>Não refinar.</b> Primeira versão raramente é a melhor. <em>Peça refinamento</em>.</span></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>3 erros</h3><p class="voice">Erro um: prompt vago, tipo "me ajuda com marketing". Não funciona. Use PCTEF. Erro dois: confiar cego. IA inventa fato. Sempre confere data, número e citação. Erro três: não refinar. Primeira versão raramente é a melhor. Pede refinamento. Conversa, não comando único.</p></div>
+</article>
+
+</div>
+
+<!-- ━━━━━━━━ CAP 10 — PLANO 30 DIAS + CTA ━━━━━━━━ -->
+<div class="chapter"><h2>Capítulo <em>10</em> — Plano de 30 dias + encerramento</h2><span class="meta">9:15 – 10:10</span></div>
+<div class="storyboard">
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">30<small>PLANO</small></span><span class="scene-time">9:15–9:45</span></div>
+  <div class="frame"><div class="reel L-list tone-light">
+    <div class="bg paper"></div>
+    <header class="head"><div class="logo on-light"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill">Plano · 30 dias</span></header>
+    <div class="stack">
+      <h2 class="ltitle"><em>Hoje</em>, <em>semana</em>, <em>mês</em>.</h2>
+      <div class="items">
+        <div class="item"><span class="n">HJ</span><span class="txt"><b>Cria conta gratuita</b> em ChatGPT, Claude ou Gemini. Hoje, em 2 min.</span></div>
+        <div class="item"><span class="n">7D</span><span class="txt"><b>Usa 1×/dia.</b> Mesmo pra coisa pequena. Só pra criar reflexo.</span></div>
+        <div class="item"><span class="n">30D</span><span class="txt"><b>Salva 3 prompts</b> seus que você reutiliza. Isso é sua biblioteca.</span></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Plano 30 dias</h3><p class="voice">Plano pra trinta dias. Hoje: cria conta gratuita em ChatGPT, Claude ou Gemini. Leva dois minutos. Semana: usa pelo menos uma vez por dia, mesmo pra coisa boba. Só pra criar reflexo de abrir. Mês: salva três prompts seus que você reutiliza. Essa é sua biblioteca pessoal.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">31<small>FRASE FINAL</small></span><span class="scene-time">9:45–9:55</span></div>
+  <div class="frame"><div class="reel L-quote tone-dark">
+    <div class="bg grad-r"></div>
+    <span class="qmark">"</span>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div></header>
+    <div class="stack">
+      <h1>Quem aprende <em>hoje</em>,<br>vai estar <em>na frente</em><br>em <em>5 anos</em>.</h1>
+      <p class="credit">princípio do imigrante digital</p>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>Frase final</h3><p class="voice">Quem aprende IA hoje vai estar dez anos à frente em cinco. Vale a pena dois minutos hoje pra criar conta. Vale a pena trinta dias pra criar reflexo.</p></div>
+</article>
+
+<article class="scene">
+  <div class="scene-meta"><span class="scene-num">32<small>CTA</small></span><span class="scene-time">9:55–10:10</span></div>
+  <div class="frame"><div class="reel L-cta tone-dark">
+    <div class="bg grad-r"></div>
+    <header class="head"><div class="logo"><img src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6dd0716bfce550710b.png" alt=""><span class="wm"><span class="name">Calazans</span><span class="sub">Lumina</span></span></div><span class="pill red">Quer mais?</span></header>
+    <div class="stack">
+      <p class="kicker">Quer aprender mais?</p>
+      <h1>Aulas <em>completas</em>.</h1>
+      <span class="btn">WhatsApp direto</span>
+      <p class="handle">@calazanslumina · link na bio</p>
+    </div>
+  </div></div>
+  <div class="scene-content"><h3>CTA · curso completo</h3><p class="voice">Quer aprender mais? Tenho aulas completas, em vídeo, com material em PDF, suporte por WhatsApp. Link na bio. Salva esse vídeo. Compartilha com quem precisa começar. Até a próxima.</p></div>
+</article>
+
+</div>
+
+<footer class="page-foot">
+  <div class="meta">CURSO IA · 10 MINUTOS · 32 CENAS · 1080×1920 · CALAZANS LUMINA</div>
+</footer>
+
+</body>
+</html>

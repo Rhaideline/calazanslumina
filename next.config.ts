@@ -19,6 +19,15 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // CANONICAL: forca www → non-www (301 permanente)
+      // Resolve duplicate-content do Google Search Console:
+      // antes Google indexava 50% das URLs como www.calazanslumina.com.br
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.calazanslumina.com.br' }],
+        destination: 'https://calazanslumina.com.br/:path*',
+        permanent: true,
+      },
       {
         source: '/blog/robo-whatsapp-automacao-atendimento',
         destination: '/blog/robo-de-whatsapp-como-automatizar-seu-atendimento-sem-perder-o-lado-humano',
@@ -44,11 +53,12 @@ const nextConfig: NextConfig = {
         destination: '/cursos',
         permanent: true,
       },
-      {
-        source: '/itens-para-casa',
-        destination: '/',
-        permanent: true,
-      },
+      // Conteudo off-topic (enxoval/bebe/maternidade) agora retorna 410 Gone
+      // via middleware.ts — sinal explicito pro Google desindexar permanente.
+      // 410 desindexa mais rapido que 308 e nao passa autoridade off-topic
+      // pra home. Padroes capturados: /enxoval-de-bebe, /itens-para-casa,
+      // /maternidade, /blog/(bebe|gravidez|colica|amamentacao|rotina-de-sono|recem-nascido)-*
+      // + PDF orfao /checklist-enxoval-bebe-*.pdf.
     ]
   },
   async headers() {

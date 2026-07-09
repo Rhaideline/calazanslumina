@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Calazans Lumina · Pop Amarelo</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
+html,body{width:1080px;height:1350px;overflow:hidden;background:#1a1a1a}
+body{font-family:'Archivo',sans-serif;color:#1a1a1a}
+
+.canvas{
+  width:1080px;height:1350px;
+  position:relative;overflow:hidden;
+  background:#FFD60A;
+}
+/* raios decorativos sutis */
+.canvas::before{
+  content:'';position:absolute;
+  top:50%;left:50%;
+  width:1800px;height:1800px;
+  margin:-900px 0 0 -900px;
+  background:repeating-conic-gradient(
+    from 0deg,
+    rgba(255,255,255,.18) 0deg 12deg,
+    transparent 12deg 24deg
+  );
+  pointer-events:none;z-index:1;
+}
+.canvas > *{position:relative;z-index:2}
+
+/* ============ HEADER ============ */
+.header{
+  position:absolute;top:34px;left:48px;right:48px;
+  display:flex;justify-content:space-between;align-items:center;
+  z-index:10;
+}
+.brand-mini{
+  display:flex;align-items:center;gap:14px;
+}
+.brand-mini-c{
+  width:60px;height:60px;
+  background:#E51C23;color:#fff;
+  font-family:'Archivo Black',sans-serif;
+  font-size:42px;font-weight:900;
+  line-height:1;
+  display:flex;align-items:center;justify-content:center;
+  border:3px solid #1a1a1a;
+  border-radius:50%;
+  box-shadow:4px 4px 0 #1a1a1a;
+}
+.brand-mini-name{
+  font-family:'Archivo Black',sans-serif;
+  font-size:24px;font-weight:900;
+  color:#1a1a1a;letter-spacing:-1px;
+  line-height:1;
+  display:flex;flex-direction:column;
+}
+.brand-mini-name b{color:#E51C23;font-size:11px;letter-spacing:3px;margin-top:4px;font-weight:900}
+
+.live-tag{
+  font-family:'Archivo Black',sans-serif;
+  font-size:13px;font-weight:900;
+  color:#FFD60A;letter-spacing:1px;
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 18px 11px 14px;
+  background:#1a1a1a;
+  border-radius:100px;
+}
+.live-dot{
+  width:10px;height:10px;background:#E51C23;
+  border-radius:50%;
+}
+
+/* ============ BADGE QUESTION (CPF SUJO style) ============ */
+.badge-q{
+  position:absolute;top:170px;left:48px;
+  font-family:'Anton','Archivo Black',sans-serif;
+  font-size:78px;font-weight:900;
+  color:#1a1a1a;letter-spacing:-2px;
+  line-height:1;text-transform:uppercase;
+}
+.badge-q em{
+  font-style:italic;
+  color:#E51C23;
+  font-family:'Archivo',sans-serif;
+  font-weight:900;font-size:64px;
+  display:block;
+  letter-spacing:-1px;
+  margin-bottom:8px;
+}
+
+/* ============ HEADLINE STACK ============ */
+.headline{
+  position:absolute;top:340px;left:48px;right:48px;
+  font-family:'Anton','Archivo Black',sans-serif;
+  font-weight:900;line-height:.86;
+  text-transform:uppercase;
+}
+.h-line{
+  display:block;
+  font-size:172px;
+  letter-spacing:-4px;
+  line-height:.84;
+}
+.h-line-1{color:#1a1a1a}
+.h-line-2{color:#E51C23;margin-top:10px}
+.h-line-3{color:#1a1a1a;margin-top:10px}
+.h-line-mini{
+  font-family:'Archivo',sans-serif;
+  font-style:italic;font-weight:900;
+  font-size:42px;color:#1a1a1a;
+  letter-spacing:-.5px;text-transform:none;
+  display:block;margin-bottom:14px;
+}
+
+/* ============ FLOAT PHONE (foto celular flutuando) ============ */
+.float-phone{
+  position:absolute;top:170px;right:48px;
+  width:230px;
+  transform:rotate(8deg);
+  z-index:5;
+}
+.float-phone-img{
+  width:100%;display:block;
+  border-radius:18px;
+  border:5px solid #1a1a1a;
+  box-shadow:8px 8px 0 #E51C23;
+}
+.float-phone-label{
+  position:absolute;top:-22px;left:-22px;
+  background:#E51C23;color:#fff;
+  padding:8px 16px;
+  font-family:'Archivo Black',sans-serif;
+  font-size:13px;font-weight:900;letter-spacing:2px;
+  text-transform:uppercase;
+  border-radius:100px;
+  border:3px solid #1a1a1a;
+  transform:rotate(-14deg);
+  white-space:nowrap;
+}
+
+/* ============ SPEECH BUBBLE ============ */
+.speech{
+  position:absolute;top:880px;right:48px;
+  width:340px;
+  background:#fff;color:#1a1a1a;
+  padding:20px 22px 22px;
+  border-radius:20px 20px 4px 20px;
+  border:3px solid #1a1a1a;
+  box-shadow:6px 6px 0 #1a1a1a;
+  transform:rotate(-2deg);
+  font-family:'Archivo',sans-serif;
+}
+.speech-who{
+  font-size:10px;letter-spacing:2px;
+  color:#E51C23;font-weight:900;
+  text-transform:uppercase;margin-bottom:8px;
+  display:flex;align-items:center;gap:8px;
+}
+.speech-who::before{
+  content:'';width:18px;height:18px;
+  background:#1a1a1a;border-radius:50%;flex-shrink:0;
+}
+.speech-msg{
+  font-size:21px;font-weight:600;line-height:1.22;
+  letter-spacing:-.3px;font-style:italic;
+}
+
+/* ============ FACT BADGE (estilo "E de um jeito") ============ */
+.fact{
+  position:absolute;top:880px;left:48px;
+  display:inline-flex;align-items:center;gap:16px;
+  background:#1a1a1a;color:#FFD60A;
+  padding:14px 22px 14px 16px;
+  border-radius:100px;
+  border:3px solid #1a1a1a;
+  box-shadow:5px 5px 0 #E51C23;
+}
+.fact-num{
+  font-family:'Archivo Black',sans-serif;
+  font-size:38px;color:#E51C23;
+  line-height:1;letter-spacing:-1px;
+  background:#FFD60A;
+  width:60px;height:60px;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  border:3px solid #FFD60A;
+}
+.fact-txt{
+  font-family:'Archivo',sans-serif;
+  font-size:14px;font-weight:700;
+  line-height:1.25;color:#FFD60A;
+  max-width:260px;
+}
+.fact-txt b{color:#fff;font-weight:900}
+
+/* ============ STAR BURSTS ============ */
+.star{
+  position:absolute;
+  font-family:'Archivo Black',sans-serif;
+  font-size:54px;color:#E51C23;
+  font-weight:900;line-height:1;
+  -webkit-text-stroke:3px #1a1a1a;
+  z-index:3;
+}
+.star-1{top:280px;right:340px;transform:rotate(-15deg)}
+.star-2{bottom:480px;right:430px;transform:rotate(20deg);font-size:38px;color:#1a1a1a;-webkit-text-stroke:0}
+
+/* ============ CTA BOTTOM ============ */
+.cta-zone{
+  position:absolute;bottom:140px;left:48px;right:48px;
+  display:flex;justify-content:space-between;align-items:flex-end;
+}
+.cta-text{
+  font-family:'Archivo Black',sans-serif;
+  font-size:36px;font-weight:900;
+  color:#1a1a1a;line-height:.95;
+  letter-spacing:-1px;
+  max-width:480px;
+}
+.cta-text em{
+  font-style:italic;font-weight:900;
+  background:#E51C23;color:#FFD60A;
+  padding:2px 12px;
+  display:inline-block;
+  transform:rotate(-1deg);
+  border:2px solid #1a1a1a;
+}
+.cta-button{
+  background:#E51C23;color:#FFD60A;
+  padding:22px 30px 24px;
+  border-radius:60px;
+  font-family:'Archivo Black',sans-serif;
+  font-size:18px;font-weight:900;
+  letter-spacing:.5px;text-transform:uppercase;
+  white-space:nowrap;
+  border:3px solid #1a1a1a;
+  box-shadow:6px 6px 0 #1a1a1a;
+  display:inline-block;
+}
+
+/* ============ FOOTER ============ */
+.foot{
+  position:absolute;bottom:36px;left:48px;right:48px;
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:'Archivo Black',sans-serif;
+  font-size:13px;font-weight:900;
+  color:#1a1a1a;
+}
+.foot .pin{
+  display:inline-flex;align-items:center;gap:6px;
+  background:#1a1a1a;color:#FFD60A;padding:6px 12px;border-radius:100px;
+  font-size:11px;letter-spacing:1.5px;
+}
+.foot .pin::before{content:'·';color:#E51C23;font-size:24px;line-height:0}
+.foot .right{font-size:14px}
+</style>
+</head>
+<body>
+
+<div class="canvas">
+
+  <div class="header">
+    <div class="brand-mini">
+      <div class="brand-mini-c">C</div>
+      <div class="brand-mini-name">CALAZANS<b>LUMINA · MG</b></div>
+    </div>
+    <div class="live-tag"><span class="live-dot"></span>FALA, PINTOR!</div>
+  </div>
+
+  <div class="badge-q">
+    <em>Tô te falando:</em>
+    CLIENTE SUMIU?
+  </div>
+
+  <h1 class="headline">
+    <span class="h-line-mini">É o teu Insta que tá te fazendo</span>
+    <span class="h-line h-line-1">PERDER</span>
+    <span class="h-line h-line-2">CLIENTE,</span>
+    <span class="h-line h-line-3">PINTOR!</span>
+  </h1>
+
+  <div class="float-phone">
+    <div class="float-phone-label">VAI ALI</div>
+    <img class="float-phone-img" src="https://images.unsplash.com/photo-1610548822783-33fb5cb0e3a8?w=720&q=80&auto=format&fit=crop" alt="celular">
+  </div>
+
+  <div class="star star-1">*</div>
+  <div class="star star-2">*</div>
+
+  <div class="fact">
+    <div class="fact-num">96%</div>
+    <div class="fact-txt"><b>Brasileiros</b> conferem o Google antes de contratar serviço. <b>É sério.</b></div>
+  </div>
+
+  <div class="speech">
+    <div class="speech-who">Cliente · agora há pouco</div>
+    <div class="speech-msg">"Achei o perfil dele meio parado. Vou ver outro pintor..."</div>
+  </div>
+
+  <div class="cta-zone">
+    <div class="cta-text">
+      A gente <em>AJEITA</em> teu<br>Insta em 7 dias.
+    </div>
+    <a class="cta-button">CHAMA NO ZAP →</a>
+  </div>
+
+  <div class="foot">
+    <span class="pin">@CALAZANSLUMINA · CORONEL FABRICIANO MG</span>
+    <span class="right">31 · 98294-8067</span>
+  </div>
+
+</div>
+
+</body>
+</html>

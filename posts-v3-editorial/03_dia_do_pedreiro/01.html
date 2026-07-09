@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><title>Calazans Lumina</title><style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,500;1,9..144,600&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
+html,body{width:1080px;height:1350px;overflow:hidden;background:#1a1815}
+body{font-family:'Geist',sans-serif;color:#1a1815}
+.canvas{width:1080px;height:1350px;position:relative;overflow:hidden;background:#F5F1E8}
+.canvas::before{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.10 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");opacity:.5;mix-blend-mode:multiply;pointer-events:none;z-index:1}
+.canvas > *{position:relative;z-index:2}
+.canvas.dark::before{filter:invert(1);opacity:.3}
+.canvas.dark{background:#1A1815;color:#F5F1E8}
+
+/* ============ HEADER ============ */
+.header{position:absolute;top:0;left:0;right:0;padding:36px 56px 0;display:flex;justify-content:space-between;align-items:center;z-index:10}
+.brand{display:flex;align-items:center;gap:14px}
+.brand-mark{width:46px;height:46px;background:#E63946;color:#F5F1E8;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:28px;font-weight:700;line-height:1;letter-spacing:-1px;border-radius:2px}
+.brand-text{display:flex;flex-direction:column;line-height:1.1}
+.brand-name{font-family:'Fraunces',serif;font-size:19px;font-weight:600;color:#1a1815;letter-spacing:-.2px}
+.brand-name.light{color:#F5F1E8}
+.brand-sub{font-family:'Geist',sans-serif;font-size:10px;letter-spacing:2.5px;color:#8B7355;text-transform:uppercase;font-weight:600;margin-top:3px}
+.brand-sub.light{color:#c4b89e}
+.issue-tag{font-family:'Geist',sans-serif;font-size:11px;letter-spacing:2.5px;color:#8B7355;text-transform:uppercase;font-weight:500;display:flex;align-items:center;gap:10px}
+.issue-tag.light{color:#c4b89e}
+.issue-tag::before{content:'';display:inline-block;width:6px;height:6px;background:#E63946;border-radius:50%}
+
+/* ============ RULES ============ */
+.top-rule{position:absolute;top:108px;left:56px;right:56px;height:1px;background:#1a1815;z-index:5}
+.top-rule.light{background:#F5F1E8;opacity:.25}
+.foot-rule{position:absolute;bottom:90px;left:56px;right:56px;height:1px;background:#1a1815}
+.foot-rule.light{background:#F5F1E8;opacity:.25}
+
+/* ============ ASTERISK ORNAMENT ============ */
+.ornament{position:absolute;top:170px;right:56px;font-family:'Fraunces',serif;font-size:60px;color:#E63946;line-height:1;font-weight:400}
+
+/* ============ KICKER ============ */
+.kicker{position:absolute;top:144px;left:56px;font-family:'Geist',sans-serif;font-size:13px;letter-spacing:4px;text-transform:uppercase;font-weight:700;color:#E63946;display:flex;align-items:center;gap:14px}
+.kicker::before{content:'·';font-size:34px;line-height:0.5;color:#E63946}
+
+/* ============ FOOTER ============ */
+.footer{position:absolute;bottom:34px;left:56px;right:56px;display:flex;justify-content:space-between;align-items:center;font-family:'Geist',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:600}
+.footer .handle{color:#E63946;font-weight:700;letter-spacing:3px}
+.footer .meta{color:#8B7355;font-weight:500;display:flex;gap:18px;align-items:center}
+.footer .meta::before{content:'';width:4px;height:4px;background:#8B7355;border-radius:50%;display:inline-block}
+.footer.light .meta{color:#c4b89e}
+.footer.light .meta::before{background:#c4b89e}
+.swipe{display:flex;align-items:center;gap:8px;color:#1a1815;font-weight:700;letter-spacing:3px}
+.swipe.light{color:#F5F1E8}
+.swipe svg{width:22px;height:22px}
+
+/* ============ STAT CARD ============ */
+.stat-card{padding:26px 28px;background:#1a1815;color:#F5F1E8;border-radius:2px}
+.stat-card.inverted{background:#F5F1E8;color:#1a1815}
+.stat-num{font-family:'Fraunces',serif;font-size:68px;font-weight:700;line-height:1;letter-spacing:-2px;color:#E63946;margin-bottom:10px}
+.stat-text{font-family:'Geist',sans-serif;font-size:16px;line-height:1.5;color:#F5F1E8;font-weight:400}
+.stat-card.inverted .stat-text{color:#1a1815}
+.stat-source{font-family:'Geist',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#8B7355;margin-top:16px;padding-top:12px;border-top:1px solid #3a3530;font-weight:600}
+.stat-card.inverted .stat-source{border-top-color:#d9d2c0}
+
+
+    .canvas{background:#1a1815}
+    .m3-photo{
+      position:absolute;inset:0;
+      background:url('https://images.unsplash.com/photo-1673865641469-34498379d8af?w=1080&q=80&auto=format&fit=crop') center 25% / cover no-repeat;
+    }
+    .m3-photo::after{
+      content:'';position:absolute;inset:0;
+      background:linear-gradient(180deg,
+        rgba(20,16,12,.3) 0%,
+        rgba(20,16,12,.55) 38%,
+        rgba(20,16,12,.85) 65%,
+        rgba(20,16,12,.97) 88%,
+        rgba(20,16,12,1) 100%
+      );
+    }
+    .m3-ornament{position:absolute;top:170px;right:56px;font-family:'Fraunces',serif;font-size:60px;color:#E63946;line-height:1;z-index:5}
+    .m3-kicker{position:absolute;top:144px;left:56px;font-family:'Geist',sans-serif;font-size:13px;letter-spacing:4px;text-transform:uppercase;font-weight:700;color:#E63946;z-index:5;display:flex;align-items:center;gap:14px}
+    .m3-kicker::before{content:'·';font-size:34px;line-height:.5;color:#E63946}
+    .m3-date{
+      position:absolute;bottom:480px;left:56px;
+      font-family:'Fraunces',serif;font-size:220px;
+      font-weight:700;color:#E63946;line-height:.85;
+      letter-spacing:-6px;font-style:italic;z-index:5;
+    }
+    .m3-month{
+      position:absolute;bottom:430px;left:380px;
+      font-family:'Fraunces',serif;font-size:34px;
+      font-weight:400;color:#F5F1E8;font-style:italic;
+      letter-spacing:-.3px;z-index:5;
+    }
+    .m3-title{
+      position:absolute;bottom:280px;left:56px;right:56px;
+      font-family:'Fraunces',serif;font-size:84px;
+      font-weight:600;color:#F5F1E8;line-height:.95;
+      letter-spacing:-2px;z-index:5;
+      font-variation-settings:'opsz' 96;
+    }
+    .m3-title em{font-style:italic;color:#E63946;font-weight:500}
+    .m3-body{
+      position:absolute;bottom:140px;left:56px;right:380px;
+      font-family:'Fraunces',serif;font-size:24px;
+      font-weight:400;color:#F5F1E8;opacity:.92;
+      line-height:1.4;font-style:italic;letter-spacing:-.2px;z-index:5;
+    }
+    .m3-body b{font-style:normal;font-weight:600;opacity:1}
+    .m3-stat{
+      position:absolute;bottom:140px;right:56px;
+      width:280px;padding:20px 24px;
+      background:rgba(245,241,232,.08);
+      border:1px solid rgba(245,241,232,.18);
+      border-radius:2px;z-index:5;
+    }
+    .m3-stat-num{font-family:'Fraunces',serif;font-size:52px;font-weight:700;color:#E63946;line-height:1;letter-spacing:-1.5px;font-style:italic;margin-bottom:8px}
+    .m3-stat-text{font-family:'Geist',sans-serif;font-size:13px;color:#F5F1E8;line-height:1.4}
+    .m3-stat-source{font-family:'Geist',sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#c4b89e;margin-top:10px;padding-top:8px;border-top:1px solid rgba(245,241,232,.18);font-weight:600}
+    .m3-foot{
+      position:absolute;bottom:34px;left:56px;right:56px;
+      display:flex;justify-content:space-between;align-items:center;
+      font-family:'Geist',sans-serif;font-size:12px;letter-spacing:2px;
+      text-transform:uppercase;font-weight:600;z-index:5;
+    }
+    .m3-foot .handle{color:#F5F1E8;font-weight:700;letter-spacing:3px}
+    .m3-foot .meta{color:#c4b89e;font-weight:500}
+    .m3-foot-rule{position:absolute;bottom:90px;left:56px;right:56px;height:1px;background:#F5F1E8;opacity:.2;z-index:5}
+    
+</style></head><body><div class="canvas">
+  <div class="m3-photo"></div>
+  
+  <div class="header">
+    <div class="brand">
+      <div class="brand-mark">C</div>
+      <div class="brand-text">
+        <span class="brand-name light">Calazans Lumina</span>
+        <span class="brand-sub light">Agência · MG</span>
+      </div>
+    </div>
+    <div class="issue-tag light">Edição Especial · Out 2026</div>
+  </div>
+  <div class="top-rule light"></div>
+  <div class="m3-ornament">*</div>
+  <div class="m3-date">25</div>
+  <div class="m3-month">de outubro</div>
+  <h1 class="m3-title">Dia do <em>Pedreiro.</em></h1>
+  <div class="m3-body">Pra quem ergue o Brasil tijolo por tijolo, com o sol na cabeça e a família em mente. <b>Respeito.</b></div>
+  <div class="m3-stat">
+    <div class="m3-stat-num">2,8M</div>
+    <div class="m3-stat-text">de trabalhadores formais na construção civil.</div>
+    <div class="m3-stat-source">Fonte · CBIC / CAGED 2024</div>
+  </div>
+  <div class="m3-foot-rule"></div>
+  <div class="m3-foot">
+    <span class="handle">@calazanslumina</span>
+    <span class="meta">25 · 10 · 2026</span>
+    <span style="color:#c4b89e">calazanslumina.com.br</span>
+  </div></div></body></html>

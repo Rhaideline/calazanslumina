@@ -12,6 +12,7 @@ import PricingTable from '@/components/PricingTable'
 import CoursesSection from '@/components/CoursesSection'
 import LazyVideo from '@/components/LazyVideo'
 import PortfolioSites from '@/components/PortfolioSites'
+import ReelEmbed from '@/components/ReelEmbed'
 
 export const metadata: Metadata = {
   title: {
@@ -153,7 +154,7 @@ const speakableSchema = {
   name: 'Calazans Lumina — Marketing Digital para Brasileiros nos EUA e Brasil',
   speakable: {
     '@type': 'SpeakableSpecification',
-    cssSelector: ['#sobre-a-agencia h2', '#sobre-a-agencia p'],
+    cssSelector: ['#sobre-a-agência h2', '#sobre-a-agência p'],
   },
   mainEntity: { '@id': 'https://calazanslumina.com.br/#organization' },
 }
@@ -448,6 +449,50 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ===== REEL DESTAQUE — Curso Mercado Livre R$ 9,90 ===== */}
+      <section className="section-padding bg-gradient-to-br from-brand-dark via-[#0d1f1c] to-brand-dark text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-30 pointer-events-none">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-brand-mint/20 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-yellow-400/15 rounded-full blur-3xl" />
+        </div>
+        <div className="container-main relative z-10">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <ScrollReveal>
+              <p className="text-brand-mint font-medium mb-3 text-sm uppercase tracking-[0.3em]">Lançamento · R$ 9,90</p>
+              <h2 className="heading-2 mb-5">
+                Mercado Livre,{' '}
+                <span className="text-brand-mint italic">do zero</span>{' '}
+                ao Mercado Líder.
+              </h2>
+              <p className="text-white/70 text-lg md:text-xl mb-6 leading-relaxed">
+                Em 2018, sem dinheiro e desempregada, transformei <strong className="text-white">R$ 9,90</strong> em{' '}
+                <strong className="text-white">R$ 10 mil por mês</strong>. Hoje eu ensino o método completo —{' '}
+                <strong className="text-brand-mint">126 páginas, 15 módulos</strong>.
+              </p>
+              <ul className="text-white/80 mb-8 space-y-2">
+                <li className="flex items-start gap-2"><span className="text-brand-mint">✦</span> O método do produto de supermercado (margem 4x a 5x)</li>
+                <li className="flex items-start gap-2"><span className="text-brand-mint">✦</span> Como subir do iniciante até Mercado Líder Gold</li>
+                <li className="flex items-start gap-2"><span className="text-brand-mint">✦</span> 2026: ROAS-first, anti-bloqueio, custo variável real</li>
+              </ul>
+              <Link
+                href="/cursos/mercado-livre-definitivo"
+                className="inline-flex items-center gap-2 bg-brand-mint text-brand-dark font-bold px-8 py-4 rounded-xl hover:bg-brand-mint/90 transition-all shadow-2xl hover:shadow-brand-mint/30 hover:-translate-y-0.5"
+              >
+                Quero acessar por R$ 9,90
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+              </Link>
+            </ScrollReveal>
+            <ScrollReveal delay={150}>
+              <ReelEmbed
+                src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/f66145ca-639e-4a64-8fcf-d65a7f44f461.mp4"
+                poster="/reel-mercado-livre-poster.jpg"
+                label="Como transformei R$ 9,90 em R$ 10 mil/mês"
+              />
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       {/* ===== CURSOS ===== */}
       <CoursesSection />
 
@@ -534,15 +579,18 @@ export default function HomePage() {
                   Ela não é só especialista em ferramentas — ela viveu o que é ser dona de negócio.
                 </p>
               </div>
-              <div className="grid grid-cols-3 gap-4 mt-8">
+              <div className="grid grid-cols-3 gap-3 mt-8">
                 {[
-                  { valor: '8+', desc: 'anos' },
-                  { valor: '100+', desc: 'projetos' },
-                  { valor: '2', desc: 'países' },
+                  { valor: '8+', desc: 'anos de mercado' },
+                  { valor: '100+', desc: 'projetos entregues' },
+                  { valor: '50+', desc: 'sub-contas GHL' },
+                  { valor: '9k+', desc: 'páginas SEO' },
+                  { valor: '2', desc: 'paises (BR + EUA)' },
+                  { valor: 'GHL', desc: 'certified partner' },
                 ].map((s) => (
-                  <div key={s.desc} className="text-center bg-white rounded-xl p-4 shadow-sm">
-                    <p className="font-serif text-2xl font-bold text-brand-dark">{s.valor}</p>
-                    <p className="text-brand-dark/50 text-xs">{s.desc}</p>
+                  <div key={s.desc} className="text-center bg-white rounded-xl p-3 shadow-sm">
+                    <p className="font-serif text-xl md:text-2xl font-bold text-brand-dark">{s.valor}</p>
+                    <p className="text-brand-dark/50 text-[10px] md:text-xs leading-tight">{s.desc}</p>
                   </div>
                 ))}
               </div>
@@ -672,7 +720,7 @@ export default function HomePage() {
               <ScrollReveal key={i} delay={i * 150}>
                 <Link href={`/blog/${post.slug}`} className="group block">
                   <div className="card-premium overflow-hidden p-0">
-                    <div className="relative aspect-video overflow-hidden">
+                    <div className="relative aspect-vídeo overflow-hidden">
                       <Image src={post.img} alt={post.titulo} fill className="object-cover transition-transform duration-500 group-hover:scale-110" sizes="33vw" />
                       <div className="absolute top-4 left-4">
                         <span className="bg-brand-mint/90 text-white text-xs font-bold px-3 py-1 rounded-full">{post.categoria}</span>

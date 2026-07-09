@@ -8,45 +8,52 @@ import { blogPosts } from '@/data/blog'
 
 const BASE = 'https://calazanslumina.com.br'
 
-// Data fixa do último update significativo do site.
-// Google só respeita lastmod quando é estável — usar new Date() faz com que
-// cada build mude todas as datas, o que sinaliza "ruído" e Google ignora.
-// Atualize esta string quando houver mudanças relevantes em conteúdo/dados.
-const SITE_LAST_UPDATE = '2026-05-14T00:00:00.000Z'
+// Data fixa do ultimo update significativo do site.
+// Google so respeita lastmod quando e estavel — usar new Date() faz com que
+// cada build mude todas as datas, o que sinaliza "ruido" e Google ignora.
+const SITE_LAST_UPDATE = '2026-05-28T00:00:00.000Z'
 
+// Sitemap focado em ~1.000+ URLs com conteudo realmente unico.
+// Paginas que NAO estao no sitemap continuam servindo 200 normalmente —
+// so saem do crawl prioritario do Google. As paginas program. nao listadas
+// (cidades BR alem das top 200) podem ser indexadas via links internos.
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = SITE_LAST_UPDATE
 
-  // Páginas estáticas
+  // TOP 200 cidades BR (das 439) — capitais regionais com maior populacao
+  // brasileira / clientes potenciais. As outras 239 ficam fora do sitemap
+  // mas continuam servindo 200 e podem ser indexadas via crawl natural.
+  const cidadesBrasilTop = cidadesBrasil.slice(0, 200)
+
   const staticPages: MetadataRoute.Sitemap = [
     { url: BASE, lastModified: now, changeFrequency: 'weekly', priority: 1 },
-    { url: `${BASE}/sobre`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/sobre`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/contato`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/cursos`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${BASE}/cursos`, lastModified: now, changeFrequency: 'weekly', priority: 0.95 },
     { url: `${BASE}/servicos`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
-
+    { url: `${BASE}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${BASE}/para-agencias`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/cases`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE}/videos`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
   ]
 
-  // Cursos
+  // Cursos individuais (9)
   const cursosPages: MetadataRoute.Sitemap = cursos.map((c) => ({
     url: `${BASE}/cursos/${c.slug}`,
     lastModified: now,
     changeFrequency: 'monthly' as const,
-    priority: 0.8,
+    priority: 0.85,
   }))
 
-  // Serviços
+  // Servicos individuais (5)
   const servicosPages: MetadataRoute.Sitemap = servicos.map((s) => ({
     url: `${BASE}/servicos/${s.slug}`,
     lastModified: now,
     changeFrequency: 'monthly' as const,
-    priority: 0.9,
+    priority: 0.85,
   }))
 
-  // Blog
+  // Blog posts editoriais
   const blogPages: MetadataRoute.Sitemap = blogPosts.map((p) => ({
     url: `${BASE}/blog/${p.slug}`,
     lastModified: now,
@@ -54,45 +61,52 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  // Cidades MA
-  const cidadesPages: MetadataRoute.Sitemap = cidadesMA.map((c) => ({
+  // 22 cidades MA (com conteudo unico: Boston Scientific, Raytheon, demografia)
+  const cidadesMAPages: MetadataRoute.Sitemap = cidadesMA.map((c) => ({
     url: `${BASE}/cidades/${c.slug}`,
     lastModified: now,
     changeFrequency: 'monthly' as const,
-    priority: 0.7,
+    priority: 0.8,
   }))
 
-  // Cidades MA + Serviços
-  const cidadesServicosPages: MetadataRoute.Sitemap = cidadesMA.flatMap((c) =>
+  // 22 cidades MA x 5 servicos = 110 URLs
+  const cidadesMAServicosPages: MetadataRoute.Sitemap = cidadesMA.flatMap((c) =>
     servicos.map((s) => ({
       url: `${BASE}/cidades/${c.slug}/${s.slug}`,
       lastModified: now,
       changeFrequency: 'monthly' as const,
-      priority: 0.6,
+      priority: 0.65,
     }))
   )
 
-  // Capitais BR + Cidades BR
-  const allCidadesBR = [...capitaisBR, ...cidadesBrasil]
-  const capitaisPages: MetadataRoute.Sitemap = allCidadesBR.map((c) => ({
+  // 27 capitais BR
+  const capitaisPages: MetadataRoute.Sitemap = capitaisBR.map((c) => ({
+    url: `${BASE}/brasil/${c.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }))
+
+  // 27 capitais BR x 5 servicos = 135 URLs
+  const capitaisServicosPages: MetadataRoute.Sitemap = capitaisBR.flatMap((c) =>
+    servicos.map((s) => ({
+      url: `${BASE}/brasil/${c.slug}/${s.slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.65,
+    }))
+  )
+
+  // TOP 200 cidades BR (sem combinacao com servicos pra nao explodir o sitemap)
+  const cidadesBRTopPages: MetadataRoute.Sitemap = cidadesBrasilTop.map((c) => ({
     url: `${BASE}/brasil/${c.slug}`,
     lastModified: now,
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }))
 
-  // Capitais BR + Cidades BR + Serviços
-  const capitaisServicosPages: MetadataRoute.Sitemap = allCidadesBR.flatMap((c) =>
-    servicos.map((s) => ({
-      url: `${BASE}/brasil/${c.slug}/${s.slug}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    }))
-  )
-
-  // Cursos × Cidades MA
-  const cursosCidadesPages: MetadataRoute.Sitemap = cursos.flatMap((curso) =>
+  // 9 cursos x 22 cidades MA = 198 URLs (Local SEO real)
+  const cursosCidadesMAPages: MetadataRoute.Sitemap = cursos.flatMap((curso) =>
     cidadesMA.map((c) => ({
       url: `${BASE}/cursos/${curso.slug}/cidade/${c.slug}`,
       lastModified: now,
@@ -101,9 +115,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   )
 
-  // Cursos × Capitais BR + Cidades BR
+  // 9 cursos x 27 capitais BR = 243 URLs (capitais merecem priority no sitemap)
   const cursosCapitaisPages: MetadataRoute.Sitemap = cursos.flatMap((curso) =>
-    allCidadesBR.map((c) => ({
+    capitaisBR.map((c) => ({
       url: `${BASE}/cursos/${curso.slug}/brasil/${c.slug}`,
       lastModified: now,
       changeFrequency: 'monthly' as const,
@@ -111,29 +125,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   )
 
-  // Enxoval de Bebe — silo affiliate (sem link interno, indexavel via sitemap)
-  const enxovalHub: MetadataRoute.Sitemap = [
-    { url: `${BASE}/enxoval-de-bebe`, lastModified: now, changeFrequency: 'weekly' as const, priority: 0.7 },
-  ]
-  const enxovalCidades: MetadataRoute.Sitemap = allCidadesBR.map((c) => ({
-    url: `${BASE}/enxoval-de-bebe/${c.slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly' as const,
-    priority: 0.55,
-  }))
-
   return [
-    ...staticPages,
-    ...cursosPages,
-    ...servicosPages,
-    ...blogPages,
-    ...cidadesPages,
-    ...cidadesServicosPages,
-    ...capitaisPages,
-    ...capitaisServicosPages,
-    ...cursosCidadesPages,
-    ...cursosCapitaisPages,
-    ...enxovalHub,
-    ...enxovalCidades,
+    ...staticPages,           // 9
+    ...cursosPages,           // 9
+    ...servicosPages,         // 5
+    ...blogPages,             // ~60
+    ...cidadesMAPages,        // 22
+    ...cidadesMAServicosPages,// 110
+    ...capitaisPages,         // 27
+    ...capitaisServicosPages, // 135
+    ...cidadesBRTopPages,     // 200
+    ...cursosCidadesMAPages,  // 198
+    ...cursosCapitaisPages,   // 243
+    // TOTAL: ~1.018 URLs
   ]
 }

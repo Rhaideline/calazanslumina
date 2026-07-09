@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { trackEngagement } from '@/lib/analytics'
 
 const STORAGE_KEY = 'exit-popup-shown-v1'
 
@@ -24,6 +25,7 @@ export default function ExitIntentPopup() {
         triggered = true
         setOpen(true)
         sessionStorage.setItem(STORAGE_KEY, '1')
+        trackEngagement('exit_intent_shown', { source: 'desktop' })
       }
     }
 
@@ -90,8 +92,11 @@ export default function ExitIntentPopup() {
 
           <div className="flex flex-col gap-3">
             <Link
-              href="/ia-preview"
-              onClick={() => setOpen(false)}
+              href="/ia-preview?utm_source=site&utm_medium=exit-intent&utm_campaign=ia-zero-avancado"
+              onClick={() => {
+                trackEngagement('exit_intent_click', { source: 'popup', action: 'accept' })
+                setOpen(false)
+              }}
               className="bg-red-500 hover:bg-red-600 text-white font-bold text-base py-4 rounded-full transition-all hover:scale-[1.02] shadow-lg shadow-red-500/30 inline-flex items-center justify-center gap-2"
             >
               Quero o preview grátis

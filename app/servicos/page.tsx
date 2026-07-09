@@ -14,8 +14,8 @@ export const metadata: Metadata = {
     'Sites de alta performance, funis automatizados no GoHighLevel, CRM com IA no WhatsApp, gestao de redes sociais e Google Maps. Para brasileiros nos EUA e Brasil.',
   alternates: { canonical: 'https://calazanslumina.com.br/servicos' },
   openGraph: {
-    title: 'Servicos de Marketing Digital | Calazans Lumina',
-    description: 'Sites, funis GHL, CRM com IA, redes sociais e Google Maps. Solucoes completas para brasileiros.',
+    title: 'Serviços de Marketing Digital | Calazans Lumina',
+    description: 'Sites, funis GHL, CRM com IA, redes sociais e Google Maps. Soluções completas para brasileiros.',
     url: 'https://calazanslumina.com.br/servicos',
     type: 'website',
   },
@@ -25,7 +25,7 @@ export default function ServicosPage() {
   const servicosSchema = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'Servicos de Marketing Digital — Calazans Lumina',
+    name: 'Serviços de Marketing Digital — Calazans Lumina',
     description: 'Sites profissionais, funis GoHighLevel, CRM com IA, gestao de redes sociais, Google Business Profile e trafego pago para brasileiros nos EUA e Brasil.',
     url: 'https://calazanslumina.com.br/servicos',
     mainEntity: {

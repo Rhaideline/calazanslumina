@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Calazans Lumina · Papo Reto</title>
+<style>
+@import url('https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,800,900,700,400&f[]=switzer@400,500,600,700,800&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
+html,body{width:1080px;height:1350px;overflow:hidden;background:#000}
+body{font-family:'Switzer','Inter',sans-serif;color:#fff}
+
+.canvas{
+  width:1080px;height:1350px;
+  position:relative;overflow:hidden;
+  background:#E51C23;
+}
+/* glow bottom-right (efeito "lumina" / luz) */
+.canvas::before{
+  content:'';position:absolute;
+  bottom:-200px;right:-200px;
+  width:700px;height:700px;
+  background:radial-gradient(circle,rgba(255,255,255,.25) 0%,rgba(255,255,255,.08) 30%,transparent 60%);
+  pointer-events:none;z-index:1;
+}
+/* luz top-left */
+.canvas::after{
+  content:'';position:absolute;
+  top:-300px;left:-100px;
+  width:600px;height:600px;
+  background:radial-gradient(circle,rgba(255,200,200,.4) 0%,rgba(255,255,255,.05) 40%,transparent 70%);
+  pointer-events:none;z-index:1;
+}
+.canvas > *{position:relative;z-index:3}
+
+/* ============ HEADER ============ */
+.header{
+  position:absolute;top:48px;left:64px;right:64px;
+  display:flex;justify-content:space-between;align-items:flex-start;
+}
+.logo-img{
+  height:90px;width:auto;display:block;
+  margin-left:-18px;
+}
+.live-tag{
+  font-family:'Switzer',sans-serif;
+  font-size:13px;font-weight:600;
+  color:#fff;letter-spacing:1px;
+  display:inline-flex;align-items:center;gap:10px;
+  padding:10px 18px 10px 14px;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:100px;
+  backdrop-filter:blur(10px);
+  margin-top:8px;
+}
+.live-dot{
+  width:8px;height:8px;background:#fff;
+  border-radius:50%;
+  box-shadow:0 0 12px rgba(255,255,255,.9),0 0 24px rgba(255,255,255,.4);
+}
+
+/* ============ SIGNATURE DOTS (motivo da logo) ============ */
+.dots-row{
+  position:absolute;top:200px;left:64px;
+  display:flex;gap:8px;
+}
+.dots-row .dot{
+  width:10px;height:10px;background:#fff;border-radius:50%;
+  box-shadow:0 0 8px rgba(255,255,255,.5);
+}
+.dots-row .dot:nth-child(3){background:#1a1a1a;box-shadow:none}
+
+/* ============ ADDRESS LABEL ============ */
+.address{
+  position:absolute;top:240px;left:64px;
+  font-family:'Switzer',sans-serif;
+  font-size:13px;font-weight:600;
+  color:#fff;letter-spacing:3px;
+  text-transform:uppercase;
+  opacity:.95;
+}
+.address b{font-weight:800}
+
+/* ============ HEADLINE GIGANTE ============ */
+.hero{
+  position:absolute;top:300px;left:64px;right:64px;
+  font-family:'Cabinet Grotesk','Switzer',sans-serif;
+  font-weight:800;
+  font-size:130px;
+  line-height:.92;
+  letter-spacing:-5px;
+  color:#fff;
+}
+.hero .line1{display:block}
+.hero .underline{
+  display:inline-block;position:relative;
+}
+.hero .underline::after{
+  content:'';position:absolute;
+  left:0;right:0;bottom:8px;
+  height:14px;
+  background:#1a1a1a;
+  z-index:-1;
+}
+
+/* ============ SUB QUOTE ============ */
+.sub-quote{
+  position:absolute;top:790px;left:64px;right:380px;
+  font-family:'Switzer',sans-serif;
+  font-size:32px;font-weight:500;
+  line-height:1.25;color:#fff;
+  letter-spacing:-.6px;
+}
+.sub-quote b{font-weight:800;background:#1a1a1a;padding:2px 8px;color:#fff;display:inline-block}
+
+/* ============ CARD COMPLEMENTAR (visual chat-like) ============ */
+.card-chat{
+  position:absolute;top:790px;right:64px;
+  width:300px;
+  background:#1a1a1a;
+  color:#fff;
+  padding:22px 22px 24px;
+  border-radius:22px 22px 22px 4px;
+  font-family:'Switzer',sans-serif;
+}
+.card-chat .who{
+  display:flex;align-items:center;gap:10px;
+  font-size:11px;letter-spacing:2px;
+  color:rgba(255,255,255,.55);
+  text-transform:uppercase;font-weight:600;margin-bottom:14px;
+}
+.card-chat .who::before{
+  content:'';width:24px;height:24px;
+  background:#E51C23;border-radius:50%;flex-shrink:0;
+}
+.card-chat .msg{
+  font-family:'Cabinet Grotesk','Switzer',sans-serif;
+  font-size:34px;font-weight:800;line-height:1.05;
+  letter-spacing:-1px;margin-bottom:14px;
+}
+.card-chat .src{
+  font-size:11px;letter-spacing:1.5px;
+  color:rgba(255,255,255,.5);
+  text-transform:uppercase;font-weight:600;
+  padding-top:14px;
+  border-top:1px solid rgba(255,255,255,.12);
+}
+.card-chat .src b{color:#FF5C61;font-weight:700}
+
+/* ============ CTA + FOOTER ============ */
+.cta-zone{
+  position:absolute;bottom:140px;left:64px;right:64px;
+  display:flex;justify-content:space-between;align-items:flex-end;
+}
+.cta-headline{
+  font-family:'Cabinet Grotesk','Switzer',sans-serif;
+  font-size:54px;font-weight:800;
+  color:#fff;line-height:.95;letter-spacing:-2px;
+  max-width:600px;
+}
+.cta-headline span.handle{
+  display:block;font-family:'Switzer',sans-serif;
+  font-size:13px;font-weight:600;letter-spacing:3px;
+  color:rgba(255,255,255,.7);
+  text-transform:uppercase;margin-top:14px;
+}
+.cta-button{
+  display:inline-block;
+  background:#fff;color:#E51C23;
+  padding:22px 34px;
+  font-family:'Cabinet Grotesk','Switzer',sans-serif;
+  font-size:18px;font-weight:800;
+  letter-spacing:-.5px;
+  border-radius:60px;
+  white-space:nowrap;
+  flex-shrink:0;
+}
+
+.foot{
+  position:absolute;bottom:48px;left:64px;right:64px;
+  display:flex;justify-content:space-between;
+  font-family:'Switzer',sans-serif;
+  font-size:11px;letter-spacing:2px;
+  text-transform:uppercase;font-weight:600;
+  color:rgba(255,255,255,.65);
+}
+
+.foot-rule{
+  position:absolute;bottom:96px;left:64px;right:64px;
+  height:1px;background:rgba(255,255,255,.22);
+}
+
+/* ============ NOISE TEXTURE ============ */
+.noise{
+  position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.10 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity:.45;mix-blend-mode:overlay;
+  pointer-events:none;z-index:2;
+}
+</style>
+</head>
+<body>
+
+<div class="canvas">
+  <div class="noise"></div>
+
+  <div class="header">
+    <img src="logo_oficial.png" alt="Calazans Lumina" class="logo-img">
+    <div class="live-tag"><span class="live-dot"></span>FALA, PINTOR</div>
+  </div>
+
+  <div class="dots-row">
+    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+  </div>
+
+  <div class="address">PRA QUEM <b>VIVE DA OBRA</b></div>
+
+  <h1 class="hero">
+    <span class="line1">O cliente</span>
+    <span class="line1">já te <span class="underline">googlou.</span></span>
+  </h1>
+
+  <div class="sub-quote">
+    E desistiu de te ligar.<br>
+    <b>Sem nem te chamar.</b>
+  </div>
+
+  <div class="card-chat">
+    <div class="who">cliente · pesquisou ontem</div>
+    <div class="msg">"Achei o perfil dele meio parado. Vou ver outro."</div>
+    <div class="src">96% dos consumidores <b>checam Google antes de contratar</b><br>Reclame Aqui · 2025</div>
+  </div>
+
+  <div class="cta-zone">
+    <div class="cta-headline">
+      Tua mão de obra<br>é boa. Teu marketing<br>tá fraco.
+      <span class="handle">@calazanslumina · Coronel Fabriciano · MG</span>
+    </div>
+    <a class="cta-button">CHAMA NO WHATSAPP →</a>
+  </div>
+
+  <div class="foot-rule"></div>
+  <div class="foot">
+    <span>31 · 98294-8067</span>
+    <span>CALAZANSLUMINA.COM.BR</span>
+  </div>
+
+</div>
+
+</body>
+</html>

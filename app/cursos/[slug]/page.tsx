@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { cursos } from '@/data/cursos'
+import { cursos, getRelatedCursos } from '@/data/cursos'
 import { formatPreco, formatPrecoCompacto } from '@/lib/formatters'
 import ScrollReveal from '@/components/ScrollReveal'
 import FloatingCTA from '@/components/FloatingCTA'
@@ -8,6 +8,11 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Breadcrumb from '@/components/Breadcrumb'
 import CoursesSection from '@/components/CoursesSection'
+import CourseViewTracker from '@/components/CourseViewTracker'
+import ReelEmbed from '@/components/ReelEmbed'
+
+const REEL_ML_SRC = 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/f66145ca-639e-4a64-8fcf-d65a7f44f461.mp4'
+const REEL_ML_POSTER = '/reel-mercado-livre-poster.jpg'
 
 export function generateStaticParams() {
   return cursos.map((c) => ({ slug: c.slug }))
@@ -38,7 +43,9 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
   if (!curso) notFound()
 
   const totalAulas = curso.modulos.reduce((acc, m) => acc + m.aulas.length, 0)
-  const outrosCursos = cursos.filter((c) => c.slug !== slug).slice(0, 3)
+  // Smart upsell: pega cursos COMPLEMENTARES baseado em regras de cross-sell
+  // (data/cursos.ts:RELATED_RULES), nao apenas 3 primeiros aleatorios.
+  const outrosCursos = getRelatedCursos(slug, 3)
 
   const courseSchema = {
     '@context': 'https://schema.org',
@@ -104,7 +111,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([courseSchema, faqSchema]) }} />
 
       {/* Floating CTA */}
-      <FloatingCTA gratuito={!!curso.gratuito} preco={curso.preco} slug={curso.slug} linkPagamento={curso.linkPagamento} />
+      <FloatingCTA gratuito={!!curso.gratuito} preco={curso.preco} precoOriginal={curso.precoOriginal} slug={curso.slug} linkPagamento={curso.linkPagamento} />
 
       {/* === HERO VSL — Hook + Preco + CTA === */}
       <section className="relative py-20 md:py-28 bg-brand-dark text-white overflow-hidden">
@@ -122,13 +129,14 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
             { label: 'Cursos', href: '/cursos' },
             { label: curso.nome },
           ]} />
+          <CourseViewTracker courseSlug={curso.slug} courseName={curso.nome} preco={curso.preco} />
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <ScrollReveal>
               <div className="inline-flex items-center gap-2 bg-brand-mint/20 border border-brand-mint/30 rounded-full px-4 py-1.5 mb-6">
                 <span className="w-2 h-2 bg-brand-mint rounded-full animate-pulse" />
                 <span className="text-brand-mint text-sm font-medium">
-                  {curso.gratuito ? 'Curso 100% Gratuito' : `Apenas R$ ${formatPreco(curso.preco)} — Pagamento Unico`}
+                  {curso.gratuito ? 'Curso 100% Gratuito' : `Apenas R$ ${formatPreco(curso.preco)} — Pagamento Único`}
                 </span>
               </div>
 
@@ -180,7 +188,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                     rel="noopener noreferrer"
                     className="btn-primary text-lg px-8 py-4"
                   >
-                    Garantir por R$ {curso.preco},00
+                    Garantir por R$ {formatPreco(curso.preco)}
                   </a>
                 )}
               </div>
@@ -188,19 +196,33 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
 
             <ScrollReveal delay={200}>
               <div className="relative bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm">
-                <div className="relative w-full aspect-[8/5] rounded-xl overflow-hidden mb-6">
-                  <Image src={curso.imagem} alt={curso.nome} fill sizes="(max-width:768px) 100vw, 400px" className="object-cover" />
-                </div>
+                {slug === 'mercado-livre-definitivo' ? (
+                  <div className="mb-6">
+                    <ReelEmbed
+                      src={REEL_ML_SRC}
+                      poster={REEL_ML_POSTER}
+                      label="Como transformei R$ 9,90 em R$ 10 mil/mês"
+                    />
+                  </div>
+                ) : (
+                  <div className="relative w-full aspect-[8/5] rounded-xl overflow-hidden mb-6">
+                    <Image src={curso.imagem} alt={curso.nome} fill sizes="(max-width:768px) 100vw, 400px" className="object-cover" />
+                  </div>
+                )}
                 <div className="text-center mb-6">
                   {curso.gratuito ? (
                     <p className="font-serif text-5xl font-bold text-brand-mint">GRATUITO</p>
                   ) : (
                     <div>
-                      <p className="text-white/30 text-sm line-through mb-1">De R$ 197,00</p>
+                      {curso.precoOriginal && (
+                        <p className="text-white/30 text-sm line-through mb-1">De R$ {formatPreco(curso.precoOriginal)}</p>
+                      )}
                       <p className="font-serif text-5xl font-bold text-white">
-                        R$ {curso.preco}<span className="text-2xl text-white/40">,00</span>
+                        R$ {formatPreco(curso.preco)}
                       </p>
-                      <p className="text-brand-mint text-sm mt-1">Economia de R$ {197 - curso.preco},00</p>
+                      {curso.precoOriginal && (
+                        <p className="text-brand-mint text-sm mt-1">Economia de R$ {formatPreco(curso.precoOriginal - curso.preco)}</p>
+                      )}
                     </div>
                   )}
                 </div>
@@ -210,7 +232,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                     'Acesso online vitalicio',
                     'PDF para download e estudo offline',
                     'Funciona no celular, tablet e computador',
-                    curso.gratuito ? 'Sem cadastro, sem pegadinha' : 'Pagamento unico — sem mensalidade',
+                    curso.gratuito ? 'Sem cadastro, sem pegadinha' : 'Pagamento único — sem mensalidade',
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-sm text-white/70">
                       <svg className="w-5 h-5 text-brand-mint flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -388,7 +410,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                 Fundadora da Calazans Lumina, especialista em marketing digital, automacao com GoHighLevel e inteligencia artificial aplicada a negocios. Atua nos EUA e Brasil ajudando empresas e profissionais a crescerem com tecnologia e estrategia digital.
               </p>
               <div className="flex flex-wrap gap-3">
-                {['Marketing Digital', 'GoHighLevel Expert', 'IA & ChatGPT', 'Automacao', 'Web Development'].map((tag) => (
+                {['Marketing Digital', 'GoHighLevel Expert', 'IA & ChatGPT', 'Automação', 'Web Development'].map((tag) => (
                   <span key={tag} className="bg-white/10 border border-white/10 rounded-full px-3 py-1 text-xs text-white/60">{tag}</span>
                 ))}
               </div>
@@ -472,15 +494,15 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
         } else if (curso.tipo === 'video') {
           bonusList = [
             { titulo: 'Vídeo-aulas em HD', desc: 'Mais de 12 horas de aulas em vídeo. Assista no celular, tablet ou computador, no seu ritmo.', valor: 'R$ 297' },
-            { titulo: 'Acesso Vitalicio', desc: 'Comprou uma vez, acessa para sempre. Todas as atualizacoes futuras inclusas.', valor: 'R$ 97' },
+            { titulo: 'Acesso Vitalicio', desc: 'Comprou uma vez, acessa para sempre. Todas as atualizações futuras inclusas.', valor: 'R$ 97' },
             { titulo: 'Material de Apoio em PDF', desc: 'Resumos, 20 prompts prontos e checklist em PDF para baixar e consultar offline.', valor: 'R$ 47' },
           ]
         } else {
           // Curso PDF sem bonus customizado — extras reais, sem chamar o proprio PDF de "bonus"
           bonusList = [
-            { titulo: 'Acesso Vitalicio', desc: 'Pagou uma vez, e seu pra sempre. Todas as atualizacoes futuras inclusas sem custo adicional.', valor: 'R$ 97' },
+            { titulo: 'Acesso Vitalicio', desc: 'Pagou uma vez, e seu pra sempre. Todas as atualizações futuras inclusas sem custo adicional.', valor: 'R$ 97' },
             { titulo: 'Leitura em Qualquer Dispositivo', desc: 'PDF otimizado para celular, tablet, computador e Kindle. Abre offline, sem precisar de app.', valor: 'R$ 27' },
-            { titulo: 'Garantia de 7 dias', desc: 'Nao gostou? Devolvemos 100% do seu dinheiro em ate 7 dias, sem perguntas.', valor: 'R$ 47' },
+            { titulo: 'Atualizações Gratuitas', desc: 'Quando o conteudo for atualizado, você recebe a nova versão automaticamente, sem custo.', valor: 'R$ 47' },
           ]
         }
         const totalBonus = bonusList
@@ -491,8 +513,8 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
       <section className="section-padding bg-white">
         <div className="container-main max-w-3xl">
           <ScrollReveal className="text-center mb-12">
-            <p className="text-brand-mint text-sm font-bold uppercase tracking-wider mb-3">{curso.bonus ? 'Bonus exclusivos' : 'O que esta incluso'}</p>
-            <h2 className="heading-2 text-brand-dark mb-4">{curso.bonus ? 'Voce ainda leva de bonus' : 'Comprando hoje voce recebe'}</h2>
+            <p className="text-brand-mint text-sm font-bold uppercase tracking-wider mb-3">{curso.bonus ? 'Bonus exclusivos' : 'O que está incluso'}</p>
+            <h2 className="heading-2 text-brand-dark mb-4">{curso.bonus ? 'Você ainda leva de bonus' : 'Comprando hoje você recebe'}</h2>
           </ScrollReveal>
           <div className="space-y-4">
             {bonusList.map((bonus, i) => (
@@ -540,7 +562,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                 ) : (
                   <>
                     <p className="font-serif text-6xl font-bold text-white">
-                      R$ {curso.preco}<span className="text-3xl text-white/40">,00</span>
+                      R$ {formatPreco(curso.preco)}
                     </p>
                     <p className="text-brand-mint text-sm mt-2">Pagamento unico · Conteudo em PDF · Acesso imediato</p>
                   </>
@@ -567,7 +589,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                     rel="noopener noreferrer"
                     className="btn-primary text-lg px-10 py-4"
                   >
-                    Garantir por R$ {curso.preco},00
+                    Garantir por R$ {formatPreco(curso.preco)}
                   </a>
                 )}
               </div>
@@ -623,8 +645,8 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
           <ScrollReveal>
             <h2 className="heading-2 mb-4">
               {curso.gratuito
-                ? 'Nao custa nada. Nao perde nada. So ganha conhecimento.'
-                : `Por menos que um cafe com bolo, voce transforma sua carreira.`}
+                ? 'Não custa nada. Não perde nada. So ganha conhecimento.'
+                : `Por menos que um cafe com bolo, você transforma sua carreira.`}
             </h2>
             <p className="text-white/40 mb-8 text-lg">{curso.vsl.urgencia}</p>
             <div className="flex flex-wrap gap-4 justify-center">
@@ -647,7 +669,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                   rel="noopener noreferrer"
                   className="btn-primary text-lg px-10 py-4"
                 >
-                  Garantir por R$ {curso.preco},00 — Acesso Imediato
+                  Garantir por R$ {formatPreco(curso.preco)} — Acesso Imediato
                 </a>
               )}
             </div>

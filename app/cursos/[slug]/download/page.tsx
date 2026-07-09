@@ -1,6 +1,7 @@
 'use client'
 
 import { cursos } from '@/data/cursos'
+import { formatPreco } from '@/lib/formatters'
 import { notFound, useParams, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { useEffect } from 'react'
@@ -41,7 +42,7 @@ export default function DownloadCursoPage() {
             O PDF do curso <strong className="text-brand-dark">{curso.nome}</strong> e enviado por e-mail e WhatsApp imediatamente apos o pagamento.
           </p>
           <p className="text-brand-dark/80 text-2xl font-serif font-bold mb-2 mt-6">
-            R$ {curso.preco},00
+            R$ {formatPreco(curso.preco)}
           </p>
           <p className="text-brand-dark/40 text-sm mb-8">pagamento unico · acesso vitalicio</p>
 
@@ -55,7 +56,7 @@ export default function DownloadCursoPage() {
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
               </svg>
-              Comprar por R$ {curso.preco},00
+              Comprar por R$ {formatPreco(curso.preco)}
             </a>
             <a
               href="https://wa.me/5531982948067?text=Oi%21%20Comprei%20o%20curso%20mas%20n%C3%A3o%20recebi%20o%20PDF"
