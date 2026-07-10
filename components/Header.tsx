@@ -29,7 +29,7 @@ const navLinks = [
   { href: '/sobre', label: 'Sobre a Rhaideline' },
   { href: '/para-agencias', label: 'Para Agências' },
 
-  { href: '/cases', label: 'Cases' },
+  { href: '/portfolio', label: 'Portfólio' },
   { href: '/blog', label: 'Blog' },
   { href: '/contato', label: 'Contato' },
 ]

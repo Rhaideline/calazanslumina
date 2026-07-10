@@ -5,6 +5,7 @@ import { cidadesBrasil } from '@/data/cidades-brasil'
 import { servicos } from '@/data/servicos'
 import { cursos } from '@/data/cursos'
 import { blogPosts } from '@/data/blog'
+import { projetos } from '@/data/portfolio'
 
 const BASE = 'https://calazanslumina.com.br'
 
@@ -33,8 +34,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/servicos`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${BASE}/para-agencias`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE}/cases`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE}/portfolio`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
   ]
+
+  // Projetos do portfolio
+  const portfolioPages: MetadataRoute.Sitemap = projetos.map((p) => ({
+    url: `${BASE}/portfolio/${p.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }))
 
   // Cursos individuais (9)
   const cursosPages: MetadataRoute.Sitemap = cursos.map((c) => ({
@@ -126,6 +135,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...staticPages,           // 9
+    ...portfolioPages,        // 5
     ...cursosPages,           // 9
     ...servicosPages,         // 5
     ...blogPages,             // ~60

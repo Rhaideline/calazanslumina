@@ -36,3 +36,8 @@ next-env.d.ts
 
 .vercel
 .env*.local
+
+# Skills reference packs (nao fazem parte do app/deploy)
+Skills-24-06/
+.sixth/
+seo-skills-pack/
