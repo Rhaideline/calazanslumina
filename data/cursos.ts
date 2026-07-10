@@ -347,7 +347,7 @@ export const cursos: Curso[] = [
       ],
       garantia: 'PDF de 95 páginas entregue por email imediatamente após pagamento. Sem letrinha miúda. Sem mensalidade. Acesso pra sempre.',
       valorReal: 'R$ 297,00 (equivalente a 6 cursos em 1)',
-      urgencia: 'Preço de lançamento R$ 9,90. Sobe pra R$ 27 dia 1º de junho. Trava o preço agora.',
+      urgencia: 'Preço de lançamento R$ 9,90. Vai subir gradualmente — trava o valor vitalício agora.',
     },
     modulos: [
       { titulo: 'Parte 1 — Fundamentos da IA (8 páginas)', aulas: ['O que é Inteligência Artificial — definição sem jargão', 'Os 3 tipos · Estreita, Geral, Super', 'IA Generativa vs IA Preditiva', '6 mitos e verdades sobre IA', 'Quiz de revisão'] },

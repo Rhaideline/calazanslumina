@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     absolute: 'Marketing Digital para Brasileiros | Calazans Lumina',
   },
   description:
-    'Sites de alta performance, funis automatizados, CRM com IA e Google Maps para brasileiros nos EUA e Brasil. 8+ anos, 100+ projetos. Resultado garantido.',
+    'Sites de alta performance, funis automatizados, CRM com IA e Google Maps para brasileiros nos EUA e Brasil. 8+ anos, 100+ projetos entregues, atendimento 100% em português.',
   alternates: { canonical: 'https://calazanslumina.com.br' },
   openGraph: {
     title: 'Marketing Digital para Brasileiros nos EUA e Brasil | Calazans Lumina',

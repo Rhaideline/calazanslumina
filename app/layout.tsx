@@ -5,7 +5,6 @@ import Footer from '@/components/Footer'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import ThirdPartyScripts from '@/components/ThirdPartyScripts'
 import TopOfferBar from '@/components/TopOfferBar'
-import ExitIntentPopup from '@/components/ExitIntentPopup'
 import SocialProofToaster from '@/components/SocialProofToaster'
 import './globals.css'
 
@@ -241,7 +240,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="flex-1">{children}</main>
         <Footer />
         <SocialProofToaster />
-        <ExitIntentPopup />
         {/* <WhatsAppButton /> */}
         <ThirdPartyScripts />
       </body>

@@ -64,18 +64,17 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
       inLanguage: 'pt-BR',
       courseWorkload: `${totalAulas} aulas`,
     },
+    author: {
+      '@type': 'Person',
+      name: 'Rhaideline Calazans',
+      url: 'https://calazanslumina.com.br/sobre',
+    },
     review: curso.vsl.depoimentos.map((d) => ({
       '@type': 'Review',
       author: { '@type': 'Person', name: d.nome },
       reviewBody: d.texto,
       reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
     })),
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: 4.9,
-      reviewCount: curso.vsl.depoimentos.length + 47,
-      bestRating: 5,
-    },
   }
 
   const faqSchema = {
