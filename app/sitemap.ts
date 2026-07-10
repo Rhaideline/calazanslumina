@@ -34,7 +34,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${BASE}/para-agencias`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/cases`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE}/videos`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
   ]
 
   // Cursos individuais (9)

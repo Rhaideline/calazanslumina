@@ -1,42 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" role="img">
   <defs>
-    <linearGradient id="ink-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#1A0E0B"/>
-      <stop offset="100%" stop-color="#0d0706"/>
-    </linearGradient>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#1a0507"/><stop offset="55%" stop-color="#120406"/><stop offset="100%" stop-color="#0a0203"/></linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF6B6E"/><stop offset="45%" stop-color="#FF0005"/><stop offset="100%" stop-color="#B00003"/></linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="55%"><stop offset="0%" stop-color="rgba(255,0,5,0.20)"/><stop offset="72%" stop-color="rgba(0,0,0,0)"/></radialGradient>
+    <radialGradient id="vig" cx="50%" cy="48%" r="72%"><stop offset="38%" stop-color="rgba(0,0,0,0)"/><stop offset="100%" stop-color="rgba(0,0,0,0.55)"/></radialGradient>
   </defs>
-  <!-- Background: ink gradient -->
-  <rect width="800" height="500" fill="url(#ink-grad)"/>
-  <!-- Right side: stylized 3D book (3 stacked rects with perspective) -->
-  <g transform="translate(640, 250)">
-    <!-- Back pages shadow -->
-    <rect x="-90" y="-145" width="180" height="280" fill="#9C0307" transform="skewY(-3)"/>
-    <!-- Middle book layer -->
-    <rect x="-95" y="-140" width="180" height="280" fill="#C9A96E"/>
-    <!-- Front cover -->
-    <rect x="-100" y="-150" width="180" height="280" fill="#F1EAE0"/>
-    <!-- Spine accent -->
-    <rect x="-100" y="-150" width="14" height="280" fill="#FF0005"/>
-    <!-- Title text on cover -->
-    <text x="-10" y="-100" font-family="Georgia, 'DM Serif Display', serif" font-size="16" font-style="italic" font-weight="400" fill="#1A0E0B" text-anchor="middle">IA para</text>
-    <text x="-10" y="-78" font-family="Georgia, 'DM Serif Display', serif" font-size="20" font-weight="700" fill="#1A0E0B" text-anchor="middle">Marketing</text>
-    <!-- Decorative divider -->
-    <rect x="-30" y="-62" width="40" height="2" fill="#9C0307"/>
-    <!-- Author block -->
-    <text x="-10" y="115" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1A0E0B" text-anchor="middle" letter-spacing="2" opacity="0.7">CALAZANS LUMINA</text>
-  </g>
-  <!-- Badge EBOOK (gold) -->
-  <rect x="40" y="28" width="110" height="38" rx="2" fill="#C9A96E"/>
-  <text x="95" y="53" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#1A0E0B" text-anchor="middle" letter-spacing="3">EBOOK</text>
-  <!-- Title -->
-  <text x="50" y="170" font-family="Georgia, 'DM Serif Display', serif" font-size="58" font-weight="700" fill="#F1EAE0">IA para</text>
-  <text x="50" y="228" font-family="Georgia, 'DM Serif Display', serif" font-size="58" font-weight="700" fill="#F1EAE0">marketing</text>
-  <text x="50" y="290" font-family="Georgia, 'DM Serif Display', serif" font-size="58" font-style="italic" font-weight="400" fill="#C9A96E">de sites.</text>
-  <!-- Subtitle -->
-  <text x="50" y="336" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#F1EAE0" opacity="0.65">120 páginas. Prompts prontos.</text>
-  <text x="50" y="360" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#F1EAE0" opacity="0.65">Estratégia que funciona em 2026.</text>
-  <!-- Stats -->
-  <text x="50" y="430" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#F1EAE0" letter-spacing="1" opacity="0.85">PDF · 120 pgs · Bônus: prompts &amp; checklist</text>
-  <!-- Brand mark -->
-  <text x="750" y="475" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#F1EAE0" text-anchor="end" letter-spacing="3" opacity="0.5">CALAZANS LUMINA</text>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <circle cx="110" cy="110" r="230" fill="url(#glow)"/>
+  <circle cx="700" cy="430" r="210" fill="url(#glow)"/>
+  <rect width="800" height="500" fill="url(#vig)"/>
+  <rect x="18" y="18" width="764" height="464" rx="6" fill="none" stroke="url(#accent)" stroke-width="1" stroke-opacity="0.28"/>
+  <text x="46" y="66" font-family="Georgia, serif" font-size="26" fill="url(#accent)" opacity="0.4">✦</text>
+  <text x="742" y="470" font-family="Georgia, serif" font-size="22" fill="url(#accent)" opacity="0.35">✦</text>
+  <text x="400" y="70" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="url(#accent)" text-anchor="middle" letter-spacing="7">EBOOK · IA + SITES</text>
+  <line x1="320" y1="88" x2="480" y2="88" stroke="url(#accent)" stroke-width="0.8" stroke-opacity="0.45"/>
+  <text y="198" font-family="Georgia, 'DM Serif Display', serif" text-anchor="start" letter-spacing="-1">
+    <tspan x="180" font-size="48" font-weight="700" fill="#F5EDE0">Crie Sites </tspan><tspan font-size="48" font-weight="700" font-style="italic" fill="url(#accent)">com IA</tspan>
+  </text>
+  <text x="400" y="254" font-family="Georgia, 'DM Serif Display', serif" font-size="42" font-weight="700" font-style="italic" fill="#F5EDE0" text-anchor="middle" letter-spacing="-1">usando Claude</text>
+  <rect x="360" y="309" width="80" height="2.5" rx="1" fill="url(#accent)" opacity="0.9"/>
+  <text x="400" y="343" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#FBF7F2" text-anchor="middle" letter-spacing="4" opacity="0.72">DO BRIEFING AO SITE NO AR</text>
+  <rect x="266" y="418" width="268" height="34" rx="17" fill="rgba(255,0,5,0.12)" stroke="url(#accent)" stroke-width="1" stroke-opacity="0.6"/>
+  <text x="400" y="440" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="800" fill="url(#accent)" text-anchor="middle" letter-spacing="3">DE R$ 197 · POR R$ 9,90</text>
+  <text x="400" y="480" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#FBF7F2" text-anchor="middle" letter-spacing="7" opacity="0.5">CALAZANS LUMINA</text>
 </svg>

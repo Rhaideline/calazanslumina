@@ -1,22 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
-  <!-- Background: ink -->
-  <rect width="800" height="500" fill="#1A0E0B"/>
-  <!-- Right side: huge 10x typographic -->
-  <text x="780" y="370" font-family="Georgia, 'DM Serif Display', serif" font-size="360" font-weight="700" fill="#F1EAE0" text-anchor="end" opacity="0.95">10</text>
-  <text x="780" y="370" font-family="Georgia, 'DM Serif Display', serif" font-size="160" font-style="italic" font-weight="400" fill="#FF0005" text-anchor="end">x</text>
-  <!-- Small label above 10x -->
-  <text x="780" y="120" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#F1EAE0" text-anchor="end" letter-spacing="4" opacity="0.5">SEU ALCANCE</text>
-  <!-- Badge GRÁTIS -->
-  <rect x="40" y="28" width="120" height="38" rx="2" fill="#16a34a"/>
-  <text x="100" y="53" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="3">GRÁTIS</text>
-  <!-- Title -->
-  <text x="50" y="170" font-family="Georgia, 'DM Serif Display', serif" font-size="62" font-weight="700" fill="#F1EAE0">Redes sociais</text>
-  <text x="50" y="232" font-family="Georgia, 'DM Serif Display', serif" font-size="62" font-style="italic" font-weight="400" fill="#FF0005">que vendem.</text>
-  <!-- Subtitle -->
-  <text x="50" y="282" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#F1EAE0" opacity="0.65">Conteúdo que atrai, conecta</text>
-  <text x="50" y="308" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#F1EAE0" opacity="0.65">e converte — sem gurus.</text>
-  <!-- Stats -->
-  <text x="50" y="430" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#F1EAE0" letter-spacing="1" opacity="0.85">6 módulos · 26 aulas · Templates de post</text>
-  <!-- Brand mark -->
-  <text x="750" y="475" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#F1EAE0" text-anchor="end" letter-spacing="3" opacity="0.5">CALAZANS LUMINA</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" role="img">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#1a0507"/><stop offset="55%" stop-color="#120406"/><stop offset="100%" stop-color="#0a0203"/></linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF6B6E"/><stop offset="45%" stop-color="#FF0005"/><stop offset="100%" stop-color="#B00003"/></linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="55%"><stop offset="0%" stop-color="rgba(255,0,5,0.20)"/><stop offset="72%" stop-color="rgba(0,0,0,0)"/></radialGradient>
+    <radialGradient id="vig" cx="50%" cy="48%" r="72%"><stop offset="38%" stop-color="rgba(0,0,0,0)"/><stop offset="100%" stop-color="rgba(0,0,0,0.55)"/></radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <circle cx="110" cy="110" r="230" fill="url(#glow)"/>
+  <circle cx="700" cy="430" r="210" fill="url(#glow)"/>
+  <rect width="800" height="500" fill="url(#vig)"/>
+  <rect x="18" y="18" width="764" height="464" rx="6" fill="none" stroke="url(#accent)" stroke-width="1" stroke-opacity="0.28"/>
+  <text x="46" y="66" font-family="Georgia, serif" font-size="26" fill="url(#accent)" opacity="0.4">✦</text>
+  <text x="742" y="470" font-family="Georgia, serif" font-size="22" fill="url(#accent)" opacity="0.35">✦</text>
+  <text x="400" y="70" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="url(#accent)" text-anchor="middle" letter-spacing="7">CURSO GRATUITO · SOCIAL</text>
+  <line x1="320" y1="88" x2="480" y2="88" stroke="url(#accent)" stroke-width="0.8" stroke-opacity="0.45"/>
+  <text x="400" y="204" font-family="Georgia, 'DM Serif Display', serif" font-size="54" font-weight="700" fill="#F5EDE0" text-anchor="middle" letter-spacing="-1">Redes Sociais</text>
+  <text x="400" y="267" font-family="Georgia, 'DM Serif Display', serif" font-size="46" font-weight="700" font-style="italic" fill="url(#accent)" text-anchor="middle" letter-spacing="-1">que Vendem</text>
+  <rect x="360" y="326" width="80" height="2.5" rx="1" fill="url(#accent)" opacity="0.9"/>
+  <text x="400" y="360" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#FBF7F2" text-anchor="middle" letter-spacing="4" opacity="0.72">CONTEÚDO QUE VIRA CLIENTE</text>
+  <rect x="266" y="418" width="268" height="34" rx="17" fill="rgba(34,197,94,0.14)" stroke="#22C55E" stroke-width="1" stroke-opacity="0.6"/>
+  <text x="400" y="440" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="800" fill="#4ADE80" text-anchor="middle" letter-spacing="3">GRÁTIS · PDF IMEDIATO</text>
+  <text x="400" y="480" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#FBF7F2" text-anchor="middle" letter-spacing="7" opacity="0.5">CALAZANS LUMINA</text>
 </svg>

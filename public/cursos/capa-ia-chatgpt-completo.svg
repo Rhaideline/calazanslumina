@@ -1,36 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" role="img">
   <defs>
-    <linearGradient id="ink-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#1A0E0B"/>
-      <stop offset="100%" stop-color="#0d0706"/>
-    </linearGradient>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#1a0507"/><stop offset="55%" stop-color="#120406"/><stop offset="100%" stop-color="#0a0203"/></linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF6B6E"/><stop offset="45%" stop-color="#FF0005"/><stop offset="100%" stop-color="#B00003"/></linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="55%"><stop offset="0%" stop-color="rgba(255,0,5,0.20)"/><stop offset="72%" stop-color="rgba(0,0,0,0)"/></radialGradient>
+    <radialGradient id="vig" cx="50%" cy="48%" r="72%"><stop offset="38%" stop-color="rgba(0,0,0,0)"/><stop offset="100%" stop-color="rgba(0,0,0,0.55)"/></radialGradient>
   </defs>
-  <!-- Background: ink -->
-  <rect width="800" height="600" fill="url(#ink-grad)"/>
-
-  <!-- Big price number centered, safe from cropping -->
-  <g transform="translate(400 360)">
-    <text x="0" y="0" font-family="Georgia, 'DM Serif Display', serif" font-size="190" font-weight="700" fill="#F1EAE0" text-anchor="middle" opacity="0.95">9,90</text>
-    <!-- Subtle red underline accent under the number -->
-    <rect x="-180" y="20" width="360" height="6" fill="#FF0005"/>
-    <text x="0" y="60" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#F1EAE0" text-anchor="middle" letter-spacing="6" opacity="0.55">REAIS · LANCAMENTO</text>
-  </g>
-
-  <!-- Badge top-left: R$ 9,90 -->
-  <rect x="40" y="32" width="130" height="40" rx="3" fill="#FF0005"/>
-  <text x="105" y="58" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#0d0706" text-anchor="middle" letter-spacing="2">R$ 9,90</text>
-
-  <!-- Title block -->
-  <text x="50" y="160" font-family="Georgia, 'DM Serif Display', serif" font-size="60" font-weight="700" fill="#F1EAE0">IA &amp; ChatGPT</text>
-  <text x="50" y="220" font-family="Georgia, 'DM Serif Display', serif" font-size="54" font-style="italic" font-weight="400" fill="#FF0005">curso completo.</text>
-
-  <!-- Subtitle -->
-  <text x="50" y="265" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#F1EAE0" opacity="0.65">Do zero ao avançado — crie, automatize</text>
-  <text x="50" y="290" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#F1EAE0" opacity="0.65">e venda mais com inteligência artificial.</text>
-
-  <!-- Footer stats -->
-  <text x="400" y="540" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#F1EAE0" letter-spacing="2" opacity="0.85" text-anchor="middle">95 PÁGINAS · 10 IAS · 50 PROMPTS · CERTIFICADO</text>
-
-  <!-- Brand mark bottom right -->
-  <text x="400" y="572" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#F1EAE0" text-anchor="middle" letter-spacing="4" opacity="0.4">CALAZANS LUMINA</text>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <circle cx="110" cy="110" r="230" fill="url(#glow)"/>
+  <circle cx="700" cy="430" r="210" fill="url(#glow)"/>
+  <rect width="800" height="500" fill="url(#vig)"/>
+  <rect x="18" y="18" width="764" height="464" rx="6" fill="none" stroke="url(#accent)" stroke-width="1" stroke-opacity="0.28"/>
+  <text x="46" y="66" font-family="Georgia, serif" font-size="26" fill="url(#accent)" opacity="0.4">✦</text>
+  <text x="742" y="470" font-family="Georgia, serif" font-size="22" fill="url(#accent)" opacity="0.35">✦</text>
+  <text x="400" y="70" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="url(#accent)" text-anchor="middle" letter-spacing="7">IA &amp; MARKETING DIGITAL</text>
+  <line x1="320" y1="88" x2="480" y2="88" stroke="url(#accent)" stroke-width="0.8" stroke-opacity="0.45"/>
+  <text x="400" y="206" font-family="Georgia, 'DM Serif Display', serif" font-size="56" font-weight="700" fill="#F5EDE0" text-anchor="middle" letter-spacing="-1">IA &amp; ChatGPT</text>
+  <text x="400" y="271" font-family="Georgia, 'DM Serif Display', serif" font-size="44" font-weight="700" font-style="italic" fill="url(#accent)" text-anchor="middle" letter-spacing="-1">Curso Completo</text>
+  <rect x="360" y="328" width="80" height="2.5" rx="1" fill="url(#accent)" opacity="0.9"/>
+  <text x="400" y="362" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#FBF7F2" text-anchor="middle" letter-spacing="4" opacity="0.72">DO ZERO · APLICADO AO SEU NEGÓCIO</text>
+  <rect x="266" y="418" width="268" height="34" rx="17" fill="rgba(255,0,5,0.12)" stroke="url(#accent)" stroke-width="1" stroke-opacity="0.6"/>
+  <text x="400" y="440" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="800" fill="url(#accent)" text-anchor="middle" letter-spacing="3">R$ 9,90 · ACESSO VITALÍCIO</text>
+  <text x="400" y="480" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#FBF7F2" text-anchor="middle" letter-spacing="7" opacity="0.5">CALAZANS LUMINA</text>
 </svg>

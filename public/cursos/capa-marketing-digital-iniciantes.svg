@@ -1,23 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
-  <!-- Background: ink -->
-  <rect width="800" height="500" fill="#1A0E0B"/>
-  <!-- Right side: bold red block with R$ tipográfico -->
-  <rect x="500" y="80" width="280" height="340" fill="#FF0005"/>
-  <text x="640" y="290" font-family="Georgia, 'DM Serif Display', serif" font-size="200" font-style="italic" font-weight="700" fill="#1A0E0B" text-anchor="middle">R$</text>
-  <!-- Small label below R$ -->
-  <text x="640" y="340" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#1A0E0B" text-anchor="middle" letter-spacing="3">VENDA MAIS</text>
-  <!-- Badge R$ 10 -->
-  <rect x="40" y="28" width="110" height="38" rx="2" fill="#FF0005"/>
-  <text x="95" y="53" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#0d0706" text-anchor="middle" letter-spacing="2">R$ 10</text>
-  <!-- Title -->
-  <text x="50" y="170" font-family="Georgia, 'DM Serif Display', serif" font-size="58" font-weight="700" fill="#F1EAE0">Marketing</text>
-  <text x="50" y="226" font-family="Georgia, 'DM Serif Display', serif" font-size="58" font-weight="700" fill="#F1EAE0">digital para</text>
-  <text x="50" y="282" font-family="Georgia, 'DM Serif Display', serif" font-size="58" font-style="italic" font-weight="400" fill="#FF0005">iniciantes.</text>
-  <!-- Subtitle -->
-  <text x="50" y="328" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#F1EAE0" opacity="0.65">Do tráfego à conversão —</text>
-  <text x="50" y="352" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#F1EAE0" opacity="0.65">um plano real pra começar a vender.</text>
-  <!-- Stats -->
-  <text x="50" y="430" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#F1EAE0" letter-spacing="1" opacity="0.85">7 módulos · 28 aulas · Templates inclusos</text>
-  <!-- Brand mark -->
-  <text x="750" y="475" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#F1EAE0" text-anchor="end" letter-spacing="3" opacity="0.5">CALAZANS LUMINA</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" role="img">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#1a0507"/><stop offset="55%" stop-color="#120406"/><stop offset="100%" stop-color="#0a0203"/></linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF6B6E"/><stop offset="45%" stop-color="#FF0005"/><stop offset="100%" stop-color="#B00003"/></linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="55%"><stop offset="0%" stop-color="rgba(255,0,5,0.20)"/><stop offset="72%" stop-color="rgba(0,0,0,0)"/></radialGradient>
+    <radialGradient id="vig" cx="50%" cy="48%" r="72%"><stop offset="38%" stop-color="rgba(0,0,0,0)"/><stop offset="100%" stop-color="rgba(0,0,0,0.55)"/></radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <circle cx="110" cy="110" r="230" fill="url(#glow)"/>
+  <circle cx="700" cy="430" r="210" fill="url(#glow)"/>
+  <rect width="800" height="500" fill="url(#vig)"/>
+  <rect x="18" y="18" width="764" height="464" rx="6" fill="none" stroke="url(#accent)" stroke-width="1" stroke-opacity="0.28"/>
+  <text x="46" y="66" font-family="Georgia, serif" font-size="26" fill="url(#accent)" opacity="0.4">✦</text>
+  <text x="742" y="470" font-family="Georgia, serif" font-size="22" fill="url(#accent)" opacity="0.35">✦</text>
+  <text x="400" y="70" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="url(#accent)" text-anchor="middle" letter-spacing="7">MARKETING · INICIANTES</text>
+  <line x1="320" y1="88" x2="480" y2="88" stroke="url(#accent)" stroke-width="0.8" stroke-opacity="0.45"/>
+  <text x="400" y="200" font-family="Georgia, 'DM Serif Display', serif" font-size="50" font-weight="700" fill="#F5EDE0" text-anchor="middle" letter-spacing="-1">Marketing Digital</text>
+  <text x="400" y="259" font-family="Georgia, 'DM Serif Display', serif" font-size="44" font-weight="700" font-style="italic" fill="url(#accent)" text-anchor="middle" letter-spacing="-1">para Iniciantes</text>
+  <rect x="360" y="315" width="80" height="2.5" rx="1" fill="url(#accent)" opacity="0.9"/>
+  <text x="400" y="349" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#FBF7F2" text-anchor="middle" letter-spacing="4" opacity="0.72">COMECE DO ABSOLUTO ZERO</text>
+  <rect x="266" y="418" width="268" height="34" rx="17" fill="rgba(255,0,5,0.12)" stroke="url(#accent)" stroke-width="1" stroke-opacity="0.6"/>
+  <text x="400" y="440" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="800" fill="url(#accent)" text-anchor="middle" letter-spacing="3">DE R$ 197 · POR R$ 9,90</text>
+  <text x="400" y="480" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#FBF7F2" text-anchor="middle" letter-spacing="7" opacity="0.5">CALAZANS LUMINA</text>
 </svg>

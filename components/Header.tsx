@@ -30,7 +30,6 @@ const navLinks = [
   { href: '/para-agencias', label: 'Para Agências' },
 
   { href: '/cases', label: 'Cases' },
-  { href: '/videos', label: 'Vídeos' },
   { href: '/blog', label: 'Blog' },
   { href: '/contato', label: 'Contato' },
 ]

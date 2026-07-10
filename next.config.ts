@@ -53,6 +53,11 @@ const nextConfig: NextConfig = {
         destination: '/cursos',
         permanent: true,
       },
+      {
+        source: '/videos',
+        destination: '/cursos',
+        permanent: true,
+      },
       // Conteudo off-topic (enxoval/bebe/maternidade) agora retorna 410 Gone
       // via middleware.ts — sinal explicito pro Google desindexar permanente.
       // 410 desindexa mais rapido que 308 e nao passa autoridade off-topic

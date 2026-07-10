@@ -5,7 +5,6 @@ import { formatPreco } from '@/lib/formatters'
 import ScrollReveal from '@/components/ScrollReveal'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import PortfolioSites from '@/components/PortfolioSites'
-import ReelEmbed from '@/components/ReelEmbed'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -120,7 +119,7 @@ export default function CursosPage() {
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto bg-white/[0.03] border border-white/10 rounded-3xl p-6 md:p-10 backdrop-blur-sm">
-                  <div className="relative aspect-[8/5] md:aspect-[3/4] rounded-2xl overflow-hidden bg-brand-dark border border-white/10">
+                  <div className="relative aspect-[8/5] rounded-2xl overflow-hidden bg-brand-dark border border-white/10">
                     <Image src={premium.imagem} alt={premium.nome} fill className="object-cover" sizes="(max-width:768px) 100vw, 50vw" />
                     <div className="absolute top-3 left-3 bg-red-500 text-white text-[10px] tracking-[0.32em] uppercase font-bold px-3 py-1.5 rounded-full">
                       Premium
@@ -207,7 +206,7 @@ export default function CursosPage() {
             </div>
             <div className="container-main relative z-10">
               <ScrollReveal>
-                <div className="grid md:grid-cols-[1fr_auto] gap-10 md:gap-14 items-center max-w-6xl mx-auto">
+                <div className="max-w-3xl mx-auto">
                   <div>
                     <span className="inline-block bg-yellow-400 text-brand-dark text-[10px] font-bold tracking-[0.4em] uppercase px-4 py-2 rounded-full mb-4">
                       Lançamento · R$ 9,90
@@ -216,27 +215,27 @@ export default function CursosPage() {
                       Mercado Livre, <span className="text-yellow-400">do zero</span> ao Mercado Líder.
                     </h2>
                     <p className="text-white/70 text-base md:text-lg mb-5 leading-relaxed">
-                      A história real: em 2018, sem dinheiro e desempregada, transformei R$ 9,90 em R$ 10 mil/mês. Agora ensino o método em <strong className="text-white">126 páginas, 15 módulos</strong> — do produto de supermercado ao Mercado Líder Gold.
+                      O passo a passo pra vender no Mercado Livre — do primeiro anúncio até o selo <strong className="text-white">Mercado Líder Gold</strong>. O método completo em <strong className="text-white">126 páginas, 15 módulos</strong>, com estratégia de ROAS, anti-bloqueio e custo variável real.
                     </p>
                     <ul className="text-white/75 text-sm md:text-base space-y-1.5 mb-6">
                       <li>✦ ROAS-first (estratégia 2026)</li>
                       <li>✦ Anti-bloqueio + custo variável real</li>
                       <li>✦ Do iniciante ao Mercado Líder Gold</li>
                     </ul>
-                    <Link
-                      href="/cursos/mercado-livre-definitivo"
-                      className="inline-flex items-center gap-2 bg-yellow-400 text-brand-dark font-bold px-7 py-3.5 rounded-xl hover:bg-yellow-300 transition-all shadow-2xl hover:-translate-y-0.5"
-                    >
-                      Quero por R$ {formatPreco(ml.preco)}
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-                    </Link>
-                  </div>
-                  <div className="w-full md:w-[340px]">
-                    <ReelEmbed
-                      src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/f66145ca-639e-4a64-8fcf-d65a7f44f461.mp4"
-                      poster="/reel-mercado-livre-poster.jpg"
-                      label="A história real · 91s"
-                    />
+                    <div className="flex flex-wrap items-center gap-4">
+                      <a
+                        href={ml.linkPagamento || '#'}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 bg-yellow-400 text-brand-dark font-bold px-7 py-3.5 rounded-xl hover:bg-yellow-300 transition-all shadow-2xl hover:-translate-y-0.5"
+                      >
+                        Quero por R$ {formatPreco(ml.preco)}
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                      </a>
+                      <Link href="/cursos/mercado-livre-definitivo" className="text-white/70 text-sm font-medium hover:text-white underline underline-offset-4">
+                        Ver conteúdo do curso
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </ScrollReveal>

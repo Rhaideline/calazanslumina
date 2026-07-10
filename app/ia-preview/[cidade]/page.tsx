@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { todasCidades, getCidadeBySlug } from '@/data/todas-cidades'
+import { cursos } from '@/data/cursos'
+import CoursesSection from '@/components/CoursesSection'
 import PreviewFormCidade from './PreviewFormCidade'
 
 export async function generateStaticParams() {
@@ -28,6 +30,7 @@ export default async function IAPreviewCidadePage({ params }: { params: Promise<
 
   const localLabel = c.pais === 'BR' ? `${c.nome}, ${c.siglaEstado}` : `${c.nome}, MA`
   const moraEm = c.pais === 'BR' ? `em ${c.nome}` : `em ${c.nome}, Massachusetts`
+  const iaCompleto = cursos.find((cur) => cur.slug === 'ia-chatgpt-completo')
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-[#0a0a0a] via-[#1a0405] to-[#0a0a0a] text-white">
@@ -82,14 +85,29 @@ export default async function IAPreviewCidadePage({ params }: { params: Promise<
         {/* === CTA pro curso completo === */}
         <div className="max-w-2xl mx-auto mt-12 text-center">
           <p className="text-white/55 text-sm mb-4">Já leu a amostra? Pega o curso completo:</p>
-          <Link
-            href="/ia-completo"
-            className="inline-block bg-red-500 hover:bg-red-600 text-white font-bold text-base py-4 px-8 rounded-full transition-colors"
-          >
-            Ver o livro completo · R$ 9,90
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            {iaCompleto?.linkPagamento && (
+              <a
+                href={iaCompleto.linkPagamento}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-red-500 hover:bg-red-600 text-white font-bold text-base py-4 px-8 rounded-full transition-colors"
+              >
+                Garantir por R$ 9,90 · Acesso imediato
+              </a>
+            )}
+            <Link
+              href="/ia-completo"
+              className="inline-block border border-white/20 hover:bg-white/10 text-white font-bold text-base py-4 px-8 rounded-full transition-colors"
+            >
+              Ver o livro completo
+            </Link>
+          </div>
         </div>
       </section>
+
+      {/* === Todos os cursos com compra direta === */}
+      <CoursesSection />
     </main>
   )
 }
