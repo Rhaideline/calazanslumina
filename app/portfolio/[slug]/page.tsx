@@ -4,7 +4,6 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { projetos, getProjetoBySlug } from '@/data/portfolio'
 import ScrollReveal from '@/components/ScrollReveal'
-import Breadcrumb from '@/components/Breadcrumb'
 
 export function generateStaticParams() {
   return projetos.map((p) => ({ slug: p.slug }))
@@ -61,40 +60,41 @@ export default async function ProjetoPage({ params }: { params: Promise<{ slug: 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
 
-      <div className="container-main">
-        <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Portfólio', href: '/portfolio' }, { label: p.nome }]} />
-      </div>
-
-      {/* ===== CABEÇALHO EDITORIAL ===== */}
-      <section className="container-main pt-6 pb-12 md:pt-10 md:pb-16">
-        <ScrollReveal className="max-w-4xl">
-          <div className="flex items-center gap-4 mb-6">
-            <span className="text-brand-mint text-xs font-bold tracking-[0.32em] uppercase">{p.categoria}</span>
-            <span className="h-px w-10 bg-brand-dark/20" />
-            <span className="text-brand-dark/40 text-xs tracking-[0.24em] uppercase">
-              {p.pais === 'BR' ? '🇧🇷' : '🇺🇸'} {p.local} · {p.ano}
-            </span>
+      {/* ===== HERO FULL-BLEED (imagem + título sobreposto) ===== */}
+      <section className="relative w-full h-[78vh] min-h-[540px] bg-brand-dark">
+        <Image src={p.heroImagem} alt={`${p.nome} — ${p.categoria}`} fill priority className="object-cover" sizes="100vw" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/40" />
+        <div className="absolute inset-x-0 bottom-0">
+          <div className="container-main pb-12 md:pb-16">
+            <ScrollReveal>
+              <nav aria-label="Breadcrumb" className="flex items-center flex-wrap gap-x-3 gap-y-1 text-[11px] md:text-xs tracking-[0.22em] uppercase mb-5">
+                <Link href="/" className="text-white/70 hover:text-white transition-colors">Home</Link>
+                <span className="text-brand-mint" aria-hidden="true">◇</span>
+                <Link href="/portfolio" className="text-white/70 hover:text-white transition-colors">Portfólio</Link>
+                <span className="text-brand-mint" aria-hidden="true">◇</span>
+                <span className="text-white/50">{p.local}</span>
+              </nav>
+              <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[0.98] tracking-[-0.02em]">
+                {p.nome}
+              </h1>
+              <p className="text-white/70 text-xs md:text-sm tracking-[0.26em] uppercase mt-4">
+                {p.servicos.slice(0, 3).join(' · ')} · {p.local}
+              </p>
+            </ScrollReveal>
           </div>
-          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold text-brand-dark leading-[1.02] tracking-[-0.02em]">
-            {p.nome}
-          </h1>
-          <p className="text-brand-dark/60 text-lg md:text-2xl leading-relaxed mt-8">{p.overview}</p>
+        </div>
+      </section>
 
+      {/* ===== OVERVIEW + SERVIÇOS ===== */}
+      <section className="container-main pt-14 pb-12 md:pt-20 md:pb-16">
+        <ScrollReveal className="max-w-4xl">
+          <p className="text-brand-dark/70 text-lg md:text-2xl leading-relaxed">{p.overview}</p>
           <div className="flex flex-wrap gap-2 mt-8">
             {p.servicos.map((s) => (
               <span key={s} className="text-[11px] tracking-wide uppercase text-brand-dark/55 border border-brand-dark/15 rounded-full px-3.5 py-1.5">
                 {s}
               </span>
             ))}
-          </div>
-        </ScrollReveal>
-      </section>
-
-      {/* ===== HERO IMAGE FULL-BLEED ===== */}
-      <section className="container-main mb-16 md:mb-24">
-        <ScrollReveal>
-          <div className="relative aspect-[16/9] rounded-3xl overflow-hidden bg-brand-dark ring-1 ring-brand-dark/10">
-            <Image src={p.heroImagem} alt={`${p.nome} — ${p.categoria}`} fill priority className="object-cover" sizes="100vw" />
           </div>
         </ScrollReveal>
       </section>
