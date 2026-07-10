@@ -10,11 +10,11 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Cursos de Marketing Digital — 4 Grátis',
   description:
-    'Aprenda marketing digital do zero: IA & ChatGPT, Google Meu Negocio, Redes Sociais, Funis de Vendas. 2 cursos gratuitos + 5 a partir de R$ 9,90. PDF + acesso online. Comece agora!',
+    'Aprenda marketing digital do zero: IA & ChatGPT, Google Meu Negócio, Redes Sociais, Funis de Vendas. 4 cursos gratuitos + 7 a partir de R$ 9,90. PDF + acesso online. Comece agora!',
   alternates: { canonical: 'https://calazanslumina.com.br/cursos' },
   openGraph: {
-    title: 'Cursos de Marketing Digital | 4 Gratuitos + 3 a partir de R$ 9,90',
-    description: 'Aprenda marketing digital do zero. 7 cursos disponiveis, 2 gratuitos. PDF + acesso online.',
+    title: 'Cursos de Marketing Digital | 4 Gratuitos + 7 a partir de R$ 9,90',
+    description: 'Aprenda marketing digital do zero. 11 cursos disponíveis, 4 gratuitos. PDF + acesso online.',
     url: 'https://calazanslumina.com.br/cursos',
     type: 'website',
   },
@@ -79,7 +79,7 @@ export default function CursosPage() {
                 <p className="text-white/40 text-xs">Cursos disponíveis</p>
               </div>
               <div className="bg-white/5 border border-white/10 rounded-xl px-6 py-3 text-center">
-                <p className="text-brand-mint font-bold text-2xl">R$ 0–20</p>
+                <p className="text-brand-mint font-bold text-2xl">R$ 0–9,90</p>
                 <p className="text-white/40 text-xs">Por curso</p>
               </div>
               <div className="bg-white/5 border border-white/10 rounded-xl px-6 py-3 text-center">

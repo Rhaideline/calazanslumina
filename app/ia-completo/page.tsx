@@ -448,7 +448,7 @@ export default function IACompletoPage() {
             </div>
 
             <div className="mt-8 bg-white/[0.03] border border-white/10 rounded-2xl p-6 md:p-8 text-center">
-              <p className="text-amber-400 text-xs tracking-[0.4em] uppercase font-bold mb-3">🛡 Garantia</p>
+              <p className="text-amber-400 text-xs tracking-[0.4em] uppercase font-bold mb-3">📩 Entrega &amp; Acesso</p>
               <p className="text-white/85 text-base md:text-lg leading-relaxed max-w-xl mx-auto">{curso.vsl.garantia}</p>
             </div>
           </div>

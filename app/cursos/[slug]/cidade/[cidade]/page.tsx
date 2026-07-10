@@ -82,12 +82,6 @@ export default async function CursoCidadePage({ params }: { params: Promise<{ sl
       reviewBody: d.texto,
       reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
     })),
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: 4.9,
-      reviewCount: curso.vsl.depoimentos.length + 47,
-      bestRating: 5,
-    },
   }
 
   const seoCtx = {

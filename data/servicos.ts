@@ -48,7 +48,7 @@ export const servicos: Servico[] = [
     cta: 'Quero meu site profissional',
     ctaTexto: 'Olá, quero saber mais sobre criação de sites profissionais',
     metaTitle: 'Sites & Landing Pages de Alta Conversão | Calazans Lumina',
-    metaDescription: 'Criamos sites e landing pages em de alta performance, SEO técnico e design premium. Mais de 8 anos transformando negócios brasileiros nos EUA e no Brasil.',
+    metaDescription: 'Criamos sites e landing pages de alta performance, SEO técnico e design premium. Mais de 8 anos transformando negócios brasileiros nos EUA e no Brasil.',
     h1: 'Sites e Landing Pages Que Transformam Visitantes em Clientes Reais',
     beneficios: [
       {

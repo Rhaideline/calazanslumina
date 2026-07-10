@@ -117,7 +117,7 @@ const faqSchema = {
       name: 'Quais são os cursos gratuitos da Calazans Lumina?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A Calazans Lumina oferece 4 cursos 100% gratuitos: "ChatGPT para Idosos" (ensina IA para pessoas 60+) e "Ferramentas Digitais para Secretárias" (Google Workspace e produtividade). Além disso, oferece 3 cursos a partir de R$ 9,90: IA & ChatGPT Completo, Marketing Digital para Iniciantes, Google Meu Negócio do Zero, Redes Sociais que Vendem e Funis de Vendas Simplificado.',
+        text: 'A Calazans Lumina oferece 4 cursos 100% gratuitos: "ChatGPT para Idosos" (IA para pessoas 60+), "Google Meu Negócio do Zero", "Redes Sociais que Vendem" e "Ferramentas Digitais para Secretárias". Além disso, oferece cursos a partir de R$ 9,90, como IA & ChatGPT Completo, Marketing Digital para Iniciantes e Funis de Vendas Simplificado.',
       },
     },
     {
@@ -154,7 +154,7 @@ const speakableSchema = {
   name: 'Calazans Lumina — Marketing Digital para Brasileiros nos EUA e Brasil',
   speakable: {
     '@type': 'SpeakableSpecification',
-    cssSelector: ['#sobre-a-agência h2', '#sobre-a-agência p'],
+    cssSelector: ['#sobre-a-agencia h2', '#sobre-a-agencia p'],
   },
   mainEntity: { '@id': 'https://calazanslumina.com.br/#organization' },
 }
@@ -350,13 +350,13 @@ export default function HomePage() {
               </p>
               <p>
                 Também oferecemos{' '}
-                <Link href="/cursos" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>7 cursos online</strong></Link> sobre marketing digital e inteligência artificial — incluindo
-                2 cursos gratuitos (<Link href="/cursos/chatgpt-para-idosos" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>ChatGPT para Idosos</em></Link>{' '}
-                e <Link href="/cursos/ferramentas-digitais-secretarias" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Ferramentas Digitais para Secretárias</em></Link>) e
-                5 cursos acessíveis a partir de R$ 9,90 (<Link href="/cursos/ia-chatgpt-completo" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>IA & ChatGPT Completo</em></Link>,{' '}
-                <Link href="/cursos/marketing-digital-iniciantes" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Marketing Digital para Iniciantes</em></Link>,{' '}
+                <Link href="/cursos" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>cursos online</strong></Link> sobre marketing digital e inteligência artificial — incluindo
+                4 cursos gratuitos (<Link href="/cursos/chatgpt-para-idosos" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>ChatGPT para Idosos</em></Link>,{' '}
                 <Link href="/cursos/google-meu-negocio-do-zero" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Google Meu Negócio do Zero</em></Link>,{' '}
                 <Link href="/cursos/redes-sociais-que-vendem" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Redes Sociais que Vendem</em></Link>{' '}
+                e <Link href="/cursos/ferramentas-digitais-secretarias" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Ferramentas Digitais para Secretárias</em></Link>) e
+                cursos a partir de R$ 9,90 (<Link href="/cursos/ia-chatgpt-completo" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>IA & ChatGPT Completo</em></Link>,{' '}
+                <Link href="/cursos/marketing-digital-iniciantes" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Marketing Digital para Iniciantes</em></Link>{' '}
                 e <Link href="/cursos/funis-de-vendas-simplificado" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Funis de Vendas Simplificado</em></Link>).
               </p>
               <p>
@@ -720,7 +720,7 @@ export default function HomePage() {
               <ScrollReveal key={i} delay={i * 150}>
                 <Link href={`/blog/${post.slug}`} className="group block">
                   <div className="card-premium overflow-hidden p-0">
-                    <div className="relative aspect-vídeo overflow-hidden">
+                    <div className="relative aspect-video overflow-hidden">
                       <Image src={post.img} alt={post.titulo} fill className="object-cover transition-transform duration-500 group-hover:scale-110" sizes="33vw" />
                       <div className="absolute top-4 left-4">
                         <span className="bg-brand-mint/90 text-white text-xs font-bold px-3 py-1 rounded-full">{post.categoria}</span>
