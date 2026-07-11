@@ -60,33 +60,56 @@ export default async function ProjetoPage({ params }: { params: Promise<{ slug: 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
 
-      {/* ===== HERO FULL-BLEED (imagem + título sobreposto) ===== */}
-      <section className="relative w-full h-[78vh] min-h-[540px] bg-brand-dark">
-        <Image src={p.heroImagem} alt={`${p.nome} — ${p.categoria}`} fill priority className="object-cover" sizes="100vw" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/40" />
-        <div className="absolute inset-x-0 bottom-0">
-          <div className="container-main pb-12 md:pb-16">
-            <ScrollReveal>
-              <nav aria-label="Breadcrumb" className="flex items-center flex-wrap gap-x-3 gap-y-1 text-[11px] md:text-xs tracking-[0.22em] uppercase mb-5">
-                <Link href="/" className="text-white/70 hover:text-white transition-colors">Home</Link>
-                <span className="text-brand-mint" aria-hidden="true">◇</span>
-                <Link href="/portfolio" className="text-white/70 hover:text-white transition-colors">Portfólio</Link>
-                <span className="text-brand-mint" aria-hidden="true">◇</span>
-                <span className="text-white/50">{p.local}</span>
-              </nav>
-              <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[0.98] tracking-[-0.02em]">
-                {p.nome}
-              </h1>
-              <p className="text-white/70 text-xs md:text-sm tracking-[0.26em] uppercase mt-4">
-                {p.servicos.slice(0, 3).join(' · ')} · {p.local}
-              </p>
-            </ScrollReveal>
-          </div>
+      {/* ===== HERO — showcase em mockups de dispositivo (estilo Upthought) ===== */}
+      <section className="bg-[#F3F2EF]">
+        <div className="container-main pt-10 md:pt-16">
+          <ScrollReveal>
+            <nav aria-label="Breadcrumb" className="flex items-center gap-3 text-[11px] tracking-[0.24em] uppercase text-brand-dark/40 mb-8">
+              <Link href="/portfolio" className="hover:text-brand-dark transition-colors">Nosso trabalho</Link>
+              <span aria-hidden="true">·</span>
+              <span>{p.local}</span>
+            </nav>
+            <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold text-[#1E1C1A] leading-[1.04] tracking-[-0.015em] max-w-4xl">
+              {p.nome}
+            </h1>
+            <p className="text-brand-mint text-sm md:text-base font-semibold tracking-wide mt-5">
+              {p.servicos.join(' · ')}
+            </p>
+          </ScrollReveal>
+        </div>
+
+        <div className="container-main pt-14 md:pt-20 pb-24 md:pb-32">
+          <ScrollReveal>
+            <div className="relative max-w-5xl mx-auto">
+              {/* navegador desktop */}
+              <div className="rounded-xl overflow-hidden shadow-[0_40px_90px_-30px_rgba(0,0,0,0.42)] ring-1 ring-black/[0.06] bg-white">
+                <div className="h-10 md:h-11 bg-[#e9e7e3] flex items-center gap-2 px-4 md:px-5">
+                  <span className="w-3 h-3 rounded-full bg-[#ff5f57]" aria-hidden="true" />
+                  <span className="w-3 h-3 rounded-full bg-[#febc2e]" aria-hidden="true" />
+                  <span className="w-3 h-3 rounded-full bg-[#28c840]" aria-hidden="true" />
+                  <span className="ml-4 flex-1 max-w-md h-6 rounded-md bg-white/70 items-center px-3 text-[11px] text-brand-dark/40 truncate hidden sm:flex">
+                    {(p.url ?? 'https://calazanslumina.com.br').replace(/^https?:\/\//, '')}
+                  </span>
+                </div>
+                <div className="relative aspect-[16/10] bg-brand-dark">
+                  <Image src={p.heroImagem} alt={`${p.nome} — site`} fill priority className="object-cover object-top" sizes="(max-width:768px) 100vw, 64rem" />
+                </div>
+              </div>
+              {/* celular sobreposto */}
+              <div className="absolute -bottom-12 left-2 md:-left-6 w-[124px] md:w-[188px]">
+                <div className="rounded-[24px] md:rounded-[32px] bg-[#0b0b0d] p-1.5 md:p-2 shadow-[0_30px_60px_-20px_rgba(0,0,0,0.55)] ring-1 ring-black/20">
+                  <div className="relative rounded-[18px] md:rounded-[26px] overflow-hidden aspect-[9/19] bg-white">
+                    <Image src={p.galeria[0]?.src ?? p.heroImagem} alt={`${p.nome} — versão mobile`} fill className="object-cover object-top" sizes="188px" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* ===== OVERVIEW + SERVIÇOS ===== */}
-      <section className="container-main pt-14 pb-12 md:pt-20 md:pb-16">
+      <section className="container-main pt-16 pb-12 md:pt-24 md:pb-16">
         <ScrollReveal className="max-w-4xl">
           <p className="text-brand-dark/70 text-lg md:text-2xl leading-relaxed">{p.overview}</p>
           <div className="flex flex-wrap gap-2 mt-8">
