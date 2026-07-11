@@ -3,7 +3,6 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import { projetos, maisSites } from '@/data/portfolio'
 import ScrollReveal from '@/components/ScrollReveal'
-import Breadcrumb from '@/components/Breadcrumb'
 
 export const metadata: Metadata = {
   title: 'Portfólio · Cases de Marketing Digital e Automação com IA',
@@ -36,113 +35,95 @@ export default function PortfolioPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
 
-      <div className="container-main">
-        <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Portfólio' }]} />
-      </div>
+      <div className="bg-[#F3F2EF]">
+        {/* ===== HEADER ===== */}
+        <section className="container-main pt-16 pb-14 md:pt-24 md:pb-20">
+          <ScrollReveal className="max-w-4xl">
+            <p className="text-brand-mint text-xs md:text-sm font-semibold tracking-[0.34em] uppercase mb-7">
+              Nosso trabalho
+            </p>
+            <h1 className="font-serif text-[2.7rem] leading-[1.02] md:text-7xl lg:text-8xl font-bold text-[#1E1C1A] tracking-[-0.02em]">
+              Trabalho que fala
+              <br className="hidden md:block" /> <span className="italic font-normal">por números.</span>
+            </h1>
+            <p className="text-brand-dark/55 text-lg md:text-xl leading-relaxed mt-8 max-w-2xl">
+              Sites de alta performance, SEO 100% orgânico e automação com IA para empresas no Brasil
+              e nos Estados Unidos. Cada número veio do Google Search Console e do CRM dos clientes —
+              sem print editado.
+            </p>
+          </ScrollReveal>
+        </section>
 
-      {/* ===== HERO EDITORIAL ===== */}
-      <section className="container-main pt-8 pb-16 md:pt-14 md:pb-24">
-        <ScrollReveal className="max-w-5xl">
-          <p className="text-brand-mint text-xs md:text-sm font-bold tracking-[0.4em] uppercase mb-8">
-            Portfólio · Nosso trabalho
-          </p>
-          <h1 className="font-serif text-[2.6rem] leading-[1.02] md:text-7xl lg:text-8xl font-bold text-brand-dark tracking-[-0.02em]">
-            Trabalho que fala
-            <br />
-            <span className="italic font-normal">por números.</span>
-          </h1>
-          <p className="text-brand-dark/55 text-lg md:text-2xl leading-relaxed mt-8 max-w-2xl">
-            Sites de alta performance, SEO 100% orgânico e automação com IA para empresas
-            no Brasil e nos Estados Unidos. Sem prints editados — cada número veio do
-            Google Search Console e do CRM dos clientes.
-          </p>
-        </ScrollReveal>
-      </section>
-
-      {/* ===== LISTA EDITORIAL DE PROJETOS ===== */}
-      <section className="border-t border-brand-dark/10">
-        {projetos.map((p, i) => (
-          <ScrollReveal key={p.slug}>
-            <Link
-              href={`/portfolio/${p.slug}`}
-              className="group block border-b border-brand-dark/10 hover:bg-brand-bg/60 transition-colors"
-            >
-              <div className="container-main py-10 md:py-16">
-                <div className={`grid md:grid-cols-12 gap-8 md:gap-12 items-center ${i % 2 === 1 ? 'md:[&>*:first-child]:order-2' : ''}`}>
-                  {/* Imagem */}
-                  <div className="md:col-span-7">
-                    <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-brand-dark ring-1 ring-brand-dark/10">
+        {/* ===== GRADE DE PROJETOS (mockups) ===== */}
+        <section className="container-main pb-20 md:pb-28">
+          <div className="grid md:grid-cols-2 gap-x-8 gap-y-14 md:gap-x-10 md:gap-y-20">
+            {projetos.map((p, i) => (
+              <ScrollReveal key={p.slug} delay={(i % 2) * 90}>
+                <Link href={`/portfolio/${p.slug}`} className="group block">
+                  {/* navegador */}
+                  <div className="rounded-xl overflow-hidden bg-white ring-1 ring-black/[0.06] shadow-[0_18px_50px_-24px_rgba(0,0,0,0.35)] transition-all duration-500 group-hover:-translate-y-1.5 group-hover:shadow-[0_36px_80px_-30px_rgba(0,0,0,0.45)]">
+                    <div className="h-8 md:h-9 bg-[#e9e7e3] flex items-center gap-1.5 px-4">
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" aria-hidden="true" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" aria-hidden="true" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]" aria-hidden="true" />
+                    </div>
+                    <div className="relative aspect-[16/10] bg-brand-dark overflow-hidden">
                       <Image
                         src={p.heroImagem}
                         alt={`${p.nome} — ${p.categoria}`}
                         fill
-                        className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
-                        sizes="(max-width: 768px) 100vw, 58vw"
+                        className="object-cover object-top transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
+                        sizes="(max-width: 768px) 100vw, 44vw"
                       />
                     </div>
                   </div>
-
-                  {/* Texto */}
-                  <div className="md:col-span-5">
-                    <div className="flex items-center gap-4 mb-5">
-                      <span className="font-serif italic text-2xl text-brand-mint">
-                        {String(i + 1).padStart(2, '0')}
-                      </span>
-                      <span className="h-px flex-1 bg-brand-dark/15" />
-                      <span className="text-brand-dark/40 text-[11px] tracking-[0.28em] uppercase">
-                        {p.pais === 'BR' ? '🇧🇷 Brasil' : '🇺🇸 EUA'}
-                      </span>
-                    </div>
-
-                    <p className="text-brand-dark/40 text-xs tracking-[0.24em] uppercase mb-2">{p.categoria}</p>
-                    <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark leading-[1.05] group-hover:text-brand-mint transition-colors">
+                  {/* legenda */}
+                  <div className="mt-6">
+                    <p className="text-brand-dark/40 text-[11px] tracking-[0.24em] uppercase">
+                      {p.categoria} · {p.local}
+                    </p>
+                    <h2 className="font-serif text-2xl md:text-3xl font-bold text-[#1E1C1A] leading-tight mt-1.5 group-hover:text-brand-mint transition-colors">
                       {p.nome}
                     </h2>
-                    <p className="text-brand-dark/60 text-base md:text-lg leading-relaxed mt-4">{p.resumo}</p>
-
-                    <div className="flex flex-wrap gap-2 mt-6">
-                      {p.servicos.map((s) => (
-                        <span key={s} className="text-[11px] tracking-wide uppercase text-brand-dark/50 border border-brand-dark/15 rounded-full px-3 py-1">
-                          {s}
-                        </span>
-                      ))}
-                    </div>
-
-                    <span className="inline-flex items-center gap-2 mt-8 text-brand-dark font-medium text-sm group-hover:gap-3 transition-all">
+                    <p className="text-brand-dark/55 text-base leading-relaxed mt-2.5 max-w-md">{p.resumo}</p>
+                    <span className="inline-flex items-center gap-2 mt-5 text-brand-dark font-medium text-sm group-hover:gap-3 transition-all">
                       Ver projeto
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.6} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
                     </span>
                   </div>
-                </div>
-              </div>
-            </Link>
-          </ScrollReveal>
-        ))}
-      </section>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
+        </section>
+      </div>
 
       {/* ===== MAIS SITES ===== */}
-      <section className="section-padding bg-brand-bg">
+      <section className="section-padding bg-white border-t border-brand-dark/10">
         <div className="container-main">
           <ScrollReveal className="mb-12 max-w-2xl">
-            <p className="text-brand-mint text-xs font-bold tracking-[0.32em] uppercase mb-3">Mais entregas</p>
-            <h2 className="font-serif text-3xl md:text-5xl font-bold text-brand-dark">
-              Sites desenvolvidos
-            </h2>
+            <p className="text-brand-mint text-xs font-semibold tracking-[0.32em] uppercase mb-3">Mais entregas</p>
+            <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1E1C1A]">Sites desenvolvidos</h2>
             <p className="text-brand-dark/50 mt-3">Todos com SEO otimizado e design de alta performance.</p>
           </ScrollReveal>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 md:gap-7">
             {maisSites.map((s, i) => (
               <ScrollReveal key={i} delay={i * 70}>
-                <div className="group relative rounded-xl overflow-hidden ring-1 ring-brand-dark/10">
-                  <div className="aspect-[4/3] relative bg-brand-dark">
-                    <Image src={s.src} alt={s.nome} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width:768px) 50vw, 25vw" />
+                <div className="group">
+                  <div className="rounded-lg overflow-hidden bg-white ring-1 ring-black/[0.06] shadow-[0_12px_36px_-20px_rgba(0,0,0,0.3)] transition-all duration-500 group-hover:-translate-y-1">
+                    <div className="h-6 bg-[#e9e7e3] flex items-center gap-1 px-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#ff5f57]" aria-hidden="true" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#febc2e]" aria-hidden="true" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#28c840]" aria-hidden="true" />
+                    </div>
+                    <div className="aspect-[4/3] relative bg-brand-dark">
+                      <Image src={s.src} alt={s.nome} fill className="object-cover object-top transition-transform duration-700 group-hover:scale-105" sizes="(max-width:768px) 50vw, 25vw" />
+                    </div>
                   </div>
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                    <p className="text-white font-bold text-sm">{s.nome}</p>
-                    <p className="text-white/60 text-xs">{s.tipo}</p>
-                  </div>
+                  <p className="text-[#1E1C1A] font-semibold text-sm mt-3">{s.nome}</p>
+                  <p className="text-brand-dark/45 text-xs">{s.tipo}</p>
                 </div>
               </ScrollReveal>
             ))}
