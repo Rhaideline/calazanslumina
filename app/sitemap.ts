@@ -113,6 +113,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
+  // +100 cidades novas (2026) com conteudo pesquisado e unico por cidade
+  // (dados IBGE + vocacao economica real). Ficam no fim do array cidadesBrasil,
+  // por isso o slice(-100). Merecem sitemap: conteudo forte para indexar.
+  const cidadesBRNovasPages: MetadataRoute.Sitemap = cidadesBrasil.slice(-100).map((c) => ({
+    url: `${BASE}/brasil/${c.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
   // 9 cursos x 22 cidades MA = 198 URLs (Local SEO real)
   const cursosCidadesMAPages: MetadataRoute.Sitemap = cursos.flatMap((curso) =>
     cidadesMA.map((c) => ({
@@ -144,8 +154,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...capitaisPages,         // 27
     ...capitaisServicosPages, // 135
     ...cidadesBRTopPages,     // 200
+    ...cidadesBRNovasPages,   // 100 (novas 2026, conteudo pesquisado)
     ...cursosCidadesMAPages,  // 198
     ...cursosCapitaisPages,   // 243
-    // TOTAL: ~1.018 URLs
+    // TOTAL: ~1.118 URLs
   ]
 }
