@@ -13,6 +13,7 @@ import Breadcrumb from '@/components/Breadcrumb'
 import PricingTable from '@/components/PricingTable'
 import ServiceIcon from '@/components/ServiceIcon'
 import CoursesSection from '@/components/CoursesSection'
+import { blocoLocalServico } from '@/lib/conteudo-local'
 
 export async function generateStaticParams() {
   return cidadesMA.flatMap((cidade) =>
@@ -43,6 +44,8 @@ export default async function CidadeServicoPage({ params }: { params: Promise<{ 
   const cidade = getCidadeMABySlug(cidadeSlug)
   const servico = getServicoBySlug(servicoSlug)
   if (!cidade || !servico) notFound()
+
+  const blocoLocal = blocoLocalServico(cidade, servico, servicos.findIndex((s) => s.slug === servicoSlug))
 
   const outrosServicos = servicos.filter((s) => s.slug !== servicoSlug)
   // Cross-link Local SEO: outras cidades MA no MESMO servico (cidades vizinhas)
@@ -118,12 +121,14 @@ export default async function CidadeServicoPage({ params }: { params: Promise<{ 
                 <span className="text-brand-mint">{cidade.nome}, MA</span>
               </h1>
 
+              {/* Bloco local por par (cidade, servico) — ver lib/conteudo-local.ts.
+                  Evita que as 5 paginas de servico de Framingham repitam entre si
+                  e repitam /cidades/framingham. */}
               <p className="text-white/70 text-lg leading-relaxed mb-4 max-w-2xl">
-                {servico.descricaoLonga} Em {cidade.nome}, entendemos os desafios únicos de empreendedores
-                brasileiros que precisam competir no mercado americano.
+                {blocoLocal.contexto}
               </p>
               <p className="text-white/50 text-base mb-8 max-w-2xl">
-                {cidade.referencia}. {cidade.doresEspecificas}.
+                {blocoLocal.aplicacao}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -172,6 +177,7 @@ export default async function CidadeServicoPage({ params }: { params: Promise<{ 
           <ScrollReveal className="text-center mb-12">
             <h2 className="heading-2 text-brand-dark mb-4">Como funciona em <span className="text-brand-mint">{cidade.nome}</span></h2>
             <p className="text-brand-dark/70 text-lg leading-relaxed">{servico.solucao}</p>
+            <p className="text-brand-dark/60 text-base leading-relaxed mt-4">{blocoLocal.fechamento}</p>
           </ScrollReveal>
           <div className="grid md:grid-cols-2 gap-4">
             {servico.diferenciais.map((d, i) => (

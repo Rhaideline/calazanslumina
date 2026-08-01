@@ -44,7 +44,7 @@ export default function PortfolioSites({ compact = false }: { compact?: boolean 
           <p className="text-brand-mint text-sm font-bold uppercase tracking-wider mb-3">Portfolio — Sites com SEO</p>
           <h2 className="heading-2 text-brand-dark mb-4">Sites que eu desenvolvi e otimizei</h2>
           <p className="text-brand-dark/50 max-w-2xl mx-auto">
-            Cada site foi construido com foco em ranqueamento no Google, performance e conversao. Construction, pintura, marketing — todos os nichos.
+            Cada site foi construído com foco em ranqueamento no Google, performance e conversão. Construção, pintura, marketing — todos os nichos.
           </p>
         </ScrollReveal>
 

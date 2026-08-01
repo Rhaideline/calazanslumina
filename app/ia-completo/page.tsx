@@ -12,7 +12,11 @@ export const metadata: Metadata = {
   title: 'IA do Zero ao Avançado · Curso Completo · R$ 9,90 (era R$ 297)',
   description:
     'A bíblia da IA pra brasileiro. 95 páginas. 10 IAs detalhadas (ChatGPT, Claude, Gemini, Midjourney, Canva, ElevenLabs, Suno e mais). 50 templates de prompt. 9 planos por profissão. De R$ 297 por R$ 9,90. Acesso vitalício.',
-  alternates: { canonical: 'https://calazanslumina.com.br/ia-completo' },
+  // Esta LP renderiza o MESMO curso de /cursos/ia-chatgpt-completo (ver
+  // cursos.find abaixo), com layout de venda e checkout proprio p/ trafego
+  // pago. Mantida no ar, mas o canonical aponta p/ a pagina de curso: sao duas
+  // URLs indexaveis do mesmo produto, e antes cada uma se declarava canonica.
+  alternates: { canonical: 'https://calazanslumina.com.br/cursos/ia-chatgpt-completo' },
   openGraph: {
     title: 'IA do Zero ao Avançado · A Bíblia da IA pra Brasileiro · R$ 9,90',
     description: '95 páginas. 10 IAs. 50 templates. 9 planos por profissão. R$ 297 → R$ 9,90 (lançamento).',

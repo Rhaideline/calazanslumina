@@ -2,6 +2,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { servicos } from '@/data/servicos'
 import { capitaisBR } from '@/data/capitais-br'
+import { cidadesBrasil } from '@/data/cidades-brasil'
+
+// Derivado dos datasets que geram as rotas /brasil/[capital] — antes era "488"
+// hardcoded e ficou defasado quando o dataset cresceu. Nao deixar virar numero
+// fixo de novo.
+const totalCidadesBR = capitaisBR.length + cidadesBrasil.length
 
 const cidadesDestaque = [
   'Framingham', 'Marlborough', 'Hudson', 'Worcester', 'Cambridge',
@@ -31,7 +37,7 @@ const paginasUteis = [
   { href: '/sobre', label: 'Sobre Rhaideline Calazans' },
   { href: '/blog', label: 'Blog de Marketing Digital' },
   { href: '/cursos', label: 'Cursos de Marketing Digital' },
-  { href: '/cases', label: 'Cases de Sucesso' },
+  { href: '/portfolio', label: 'Cases de Sucesso' },
   { href: '/para-agencias', label: 'Para Agências GHL' },
   { href: '/contato', label: 'Contato' },
 ]
@@ -118,7 +124,7 @@ export default function Footer() {
             <h3 className="font-serif text-lg font-bold mb-3 text-brand-mint">Contato</h3>
             <ul className="space-y-2">
               <li><a href="https://wa.me/5531982948067?text=Olá, vim pelo site e quero saber mais sobre os serviços da Calazans Lumina" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white text-sm transition-colors">+55 31 98294-8067</a></li>
-              <li><a href="mailto:trafegocalazans@gmail.com" className="text-white/60 hover:text-white text-sm transition-colors">trafegocalazans@gmail.com</a></li>
+              <li><a href="mailto:contato@lc.calazanslumina.com.br" className="text-white/60 hover:text-white text-sm transition-colors">contato@lc.calazanslumina.com.br</a></li>
               <li><a href="https://maps.app.goo.gl/umLNmLYMyhbVx4HQ6" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white text-sm transition-colors">Framingham, MA — EUA</a></li>
             </ul>
           </div>
@@ -137,7 +143,7 @@ export default function Footer() {
             <Link href="/cursos/marketing-digital-iniciantes" className="hover:text-white/70 transition-colors">Curso de marketing digital</Link>{' · '}
             <Link href="/blog" className="hover:text-white/70 transition-colors">Blog de marketing digital</Link>{' · '}
             <Link href="/sobre" className="hover:text-white/70 transition-colors">Sobre a fundadora</Link>{' · '}
-            <Link href="/cases" className="hover:text-white/70 transition-colors">Cases de Sucesso</Link>{' · '}
+            <Link href="/portfolio" className="hover:text-white/70 transition-colors">Cases de Sucesso</Link>{' · '}
             <Link href="/contato" className="hover:text-white/70 transition-colors">Orçamento gratuito</Link>
           </p>
         </div>
@@ -145,7 +151,7 @@ export default function Footer() {
         {/* Atendimento nacional \u2014 top 20 capitais para crawl depth */}
         <div className="border-t border-white/10 pt-6 pb-2 mb-2">
           <h3 className="text-white/70 text-xs uppercase tracking-wider mb-3 text-center">
-            Atendemos em mais de 488 cidades do Brasil
+            Atendemos em mais de {totalCidadesBR} cidades do Brasil
           </h3>
           <div className="flex flex-wrap justify-center gap-x-3 gap-y-2 max-w-5xl mx-auto">
             {top20Capitais.map((c) => (
@@ -175,6 +181,32 @@ export default function Footer() {
               )
             })}
           </p>
+        </div>
+
+        {/* Identificacao legal + politicas — exigido por LGPD (art. 9, I e 41)
+            para o titular saber QUEM trata seus dados e como falar com quem
+            trata. Sem CNPJ por ora: identificacao por nome, cidade e e-mail. */}
+        <div className="border-t border-white/10 pt-6 mb-6">
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 max-w-5xl mx-auto">
+            <div className="text-white/40 text-xs leading-relaxed">
+              <p className="text-white/60 font-medium mb-1">Responsável pelo tratamento de dados</p>
+              <p>Rhaideline Calazans — Calazans Lumina</p>
+              <p>Framingham, Massachusetts, EUA</p>
+              <p>
+                <a href="mailto:contato@lc.calazanslumina.com.br" className="hover:text-white/70 transition-colors">
+                  contato@lc.calazanslumina.com.br
+                </a>
+              </p>
+            </div>
+            <nav aria-label="Políticas e termos" className="text-white/40 text-xs">
+              <p className="text-white/60 font-medium mb-1">Legal</p>
+              <ul className="space-y-1">
+                <li><Link href="/privacidade" className="hover:text-white/70 transition-colors">Política de Privacidade</Link></li>
+                <li><Link href="/termos" className="hover:text-white/70 transition-colors">Termos de Uso</Link></li>
+                <li><Link href="/cookies" className="hover:text-white/70 transition-colors">Política de Cookies</Link></li>
+              </ul>
+            </nav>
+          </div>
         </div>
 
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">

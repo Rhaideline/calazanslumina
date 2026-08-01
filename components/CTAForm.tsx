@@ -1,4 +1,4 @@
-import LazyIframe from './LazyIframe'
+import GhlForm from './GhlForm'
 
 export default function CTAForm({ cidade, servico }: { cidade?: string; servico?: string }) {
   const title = cidade && servico
@@ -18,10 +18,9 @@ export default function CTAForm({ cidade, servico }: { cidade?: string; servico?
           </p>
         </div>
         <div className="max-w-2xl mx-auto bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-10">
-          <LazyIframe
-            src="https://api.leadconnectorhq.com/widget/form/ncofzws1iEKhN6iFEA6H"
+          <GhlForm
+            formId="ncofzws1iEKhN6iFEA6H"
             title="Form 2"
-            id="inline-ncofzws1iEKhN6iFEA6H"
             className="min-h-[500px]"
             height="500px"
           />

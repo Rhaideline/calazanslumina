@@ -17,6 +17,7 @@ import {
   buildQuotableIntro,
 } from '@/lib/seo-schemas'
 import { formatPreco, formatPrecoCompacto } from '@/lib/formatters'
+import { blocoLocalCurso } from '@/lib/conteudo-local'
 
 export async function generateStaticParams() {
   const allCidades = [...capitaisBR, ...cidadesBrasil]
@@ -98,6 +99,7 @@ export default async function CursoCapitalPage({ params }: { params: Promise<{ s
   const faqSchema = buildCursoCidadeFAQ(seoCtx)
   const localBusinessSchema = buildLocalBusinessSchema(capital.nome, capital.siglaEstado, 'BR')
   const quotableIntro = buildQuotableIntro(seoCtx)
+  const blocoLocal = blocoLocalCurso(capital, curso.slug, curso.nome)
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -150,7 +152,11 @@ export default async function CursoCapitalPage({ params }: { params: Promise<{ s
               </h1>
               <p className="text-white/70 text-lg leading-relaxed mb-4">{curso.vsl.subhook}</p>
               <p className="text-white/55 text-sm leading-relaxed mb-4 italic border-l-2 border-brand-mint/40 pl-4">{quotableIntro}</p>
-              <p className="text-white/40 text-base mb-8">{capital.descricao}</p>
+              {/* Antes: {capital.descricao} — o MESMO paragrafo que a pagina-hub
+                  /brasil/[capital] usa e que se repetia de novo na secao "Por que
+                  fazer este curso aqui" mais abaixo, na MESMA pagina. Agora usa o
+                  bloco por par (cidade, curso). */}
+              <p className="text-white/40 text-base mb-8">{blocoLocal.contexto}</p>
 
               <div className="flex flex-wrap gap-4 mb-8">
                 <div className="bg-white/5 border border-white/10 rounded-xl px-5 py-3 text-center">
@@ -275,7 +281,7 @@ export default async function CursoCapitalPage({ params }: { params: Promise<{ s
           </ScrollReveal>
           <ScrollReveal>
             <div className="bg-brand-bg rounded-2xl p-8 md:p-10">
-              <p className="text-brand-dark/70 leading-relaxed mb-6">{capital.descricao}</p>
+              <p className="text-brand-dark/70 leading-relaxed mb-6">{blocoLocal.aplicacao}</p>
               <p className="text-brand-dark/70 leading-relaxed mb-6">{capital.doresEspecificas}</p>
               <p className="text-brand-dark/70 leading-relaxed">
                 Com o curso <strong>{curso.nome}</strong>, profissionais em {capital.nome} terão as ferramentas

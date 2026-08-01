@@ -54,7 +54,7 @@ export default async function CapitalPage({ params }: { params: Promise<{ capita
     description: `Agência de marketing digital em ${capital.nome}, ${capital.siglaEstado}. Sites profissionais, funis GoHighLevel, CRM com IA no WhatsApp e Google Meu Negocio.`,
     url: `https://calazanslumina.com.br/brasil/${capitalSlug}`,
     telephone: '+55-31-98294-8067',
-    email: 'trafegocalazans@gmail.com',
+    email: 'contato@lc.calazanslumina.com.br',
     address: { '@type': 'PostalAddress', addressLocality: capital.nome, addressRegion: capital.siglaEstado, addressCountry: 'BR' },
     areaServed: { '@type': 'City', name: capital.nome },
     serviceType: ['Marketing Digital', 'Criacao de Sites', 'SEO', 'Google Meu Negocio', 'GoHighLevel CRM', 'Gestao de Redes Sociais'],
@@ -123,7 +123,10 @@ export default async function CapitalPage({ params }: { params: Promise<{ capita
                 negócios em {capital.nome}: sites de alta performance, funis automatizados,
                 CRM com IA e Google Meu Negócio otimizado.
               </p>
-              <p className="text-white/50 text-base mb-8 max-w-2xl">{capital.doresEspecificas}.</p>
+              <p className="text-white/50 text-base mb-8 max-w-2xl">
+                {capital.populacao ? `${capital.nome} tem ${capital.populacao}. ` : ''}
+                {capital.doresEspecificas}.
+              </p>
 
               <a
                 href={`https://wa.me/5531982948067?text=${encodeURIComponent(`Olá, moro em ${capital.nome} e quero saber mais sobre os serviços da Calazans Lumina`)}`}

@@ -14,6 +14,7 @@ import Breadcrumb from '@/components/Breadcrumb'
 import PricingTable from '@/components/PricingTable'
 import ServiceIcon from '@/components/ServiceIcon'
 import CoursesSection from '@/components/CoursesSection'
+import { blocoLocalServico } from '@/lib/conteudo-local'
 
 export async function generateStaticParams() {
   const allCidades = [...capitaisBR, ...cidadesBrasil]
@@ -45,6 +46,10 @@ export default async function CapitalServicoPage({ params }: { params: Promise<{
   const capital = getCapitalBRBySlug(capitalSlug) || getCidadeBRBySlug(capitalSlug)
   const servico = getServicoBySlug(servicoSlug)
   if (!capital || !servico) notFound()
+
+  // indice do servico garante variante de contexto distinta entre os 5 servicos
+  // desta cidade — ver blocoLocalServico().
+  const blocoLocal = blocoLocalServico(capital, servico, servicos.findIndex((s) => s.slug === servicoSlug))
 
   const outrosServicos = servicos.filter((s) => s.slug !== servicoSlug)
   // Cross-link Local SEO: outras capitais BR no MESMO servico
@@ -119,12 +124,15 @@ export default async function CapitalServicoPage({ params }: { params: Promise<{
                 <span className="text-brand-mint">{capital.nome}</span>
               </h1>
 
+              {/* Bloco local composto por par (cidade, servico): a selecao de
+                  fatos muda a cada par, entao as 5 paginas de servico da mesma
+                  cidade nao repetem texto entre si nem repetem a pagina-hub.
+                  Todos os fatos vem do dataset ja pesquisado. */}
               <p className="text-white/70 text-lg leading-relaxed mb-4 max-w-2xl">
-                {servico.descricaoLonga} Em {capital.nome}, o mercado digital é competitivo e exige
-                estratégias profissionais. A Calazans Lumina entrega resultados mensuráveis.
+                {blocoLocal.contexto}
               </p>
               <p className="text-white/50 text-base mb-8 max-w-2xl">
-                {capital.referencia}. {capital.doresEspecificas}.
+                {blocoLocal.aplicacao}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -171,6 +179,9 @@ export default async function CapitalServicoPage({ params }: { params: Promise<{
           <ScrollReveal className="text-center mb-12">
             <h2 className="heading-2 text-brand-dark mb-4">Como funciona em <span className="text-brand-mint">{capital.nome}</span></h2>
             <p className="text-brand-dark/70 text-lg leading-relaxed">{servico.solucao}</p>
+            {/* Fecha o bloco local: diferencial escolhido para este par
+                especifico (cidade, servico), nao o mesmo em todas as paginas. */}
+            <p className="text-brand-dark/60 text-base leading-relaxed mt-4">{blocoLocal.fechamento}</p>
           </ScrollReveal>
           <div className="grid md:grid-cols-2 gap-4">
             {servico.diferenciais.map((d, i) => (
