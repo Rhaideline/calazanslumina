@@ -35,6 +35,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${BASE}/para-agencias`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/portfolio`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    // Paginas legais: prioridade baixa porque nao sao de trafego, mas PRECISAM
+    // estar no sitemap — sao sinal de Trustworthiness no E-E-A-T, e o Google
+    // usa a existencia delas pra avaliar legitimidade do negocio.
+    { url: `${BASE}/privacidade`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${BASE}/termos`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${BASE}/cookies`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
   ]
 
   // Projetos do portfolio
@@ -143,20 +149,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   )
 
+  // Contagens conferidas em 01/ago/2026 contra os datasets. Os numeros antigos
+  // destes comentarios estavam defasados (diziam 9 cursos, 22 cidades MA, 439
+  // cidades BR e total de ~1.118) e induziam a erro em qualquer analise.
   return [
-    ...staticPages,           // 9
+    ...staticPages,           // 11 (8 + 3 legais)
     ...portfolioPages,        // 5
-    ...cursosPages,           // 9
+    ...cursosPages,           // 11
     ...servicosPages,         // 5
-    ...blogPages,             // ~60
-    ...cidadesMAPages,        // 22
-    ...cidadesMAServicosPages,// 110
+    ...blogPages,             // ~65
+    ...cidadesMAPages,        // 125
+    ...cidadesMAServicosPages,// 125 x 5 = 625
     ...capitaisPages,         // 27
-    ...capitaisServicosPages, // 135
-    ...cidadesBRTopPages,     // 200
+    ...capitaisServicosPages, // 27 x 5 = 135
+    ...cidadesBRTopPages,     // 200 (das 539 do dataset)
     ...cidadesBRNovasPages,   // 100 (novas 2026, conteudo pesquisado)
-    ...cursosCidadesMAPages,  // 198
-    ...cursosCapitaisPages,   // 243
-    // TOTAL: ~1.118 URLs
+    ...cursosCidadesMAPages,  // 11 x 125 = 1.375
+    ...cursosCapitaisPages,   // 11 x 27 = 297
+    // TOTAL: ~2.980 URLs declaradas.
+    // ATENCAO: o build gera ~12.000 paginas. As ~9.000 fora do sitemap servem
+    // 200 e indexam por link interno — decisao deliberada de priorizacao, nao
+    // esquecimento. Se um dia isso mudar, revisar junto com o footer.
   ]
 }
