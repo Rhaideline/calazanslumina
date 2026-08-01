@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next'
 import { cidadesMA } from '@/data/cidades-ma'
 import { capitaisBR } from '@/data/capitais-br'
 import { cidadesBrasil } from '@/data/cidades-brasil'
+import { todasCidades } from '@/data/todas-cidades'
 import { servicos } from '@/data/servicos'
 import { cursos } from '@/data/cursos'
 import { blogPosts } from '@/data/blog'
@@ -30,6 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${BASE}/para-agencias`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/portfolio`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE}/ia-preview`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     // Paginas legais: prioridade baixa porque nao sao de trafego, mas PRECISAM
     // estar no sitemap — sao sinal de Trustworthiness no E-E-A-T, e o Google
     // usa a existencia delas pra avaliar legitimidade do negocio.
@@ -148,6 +150,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   )
 
+  // /ia-preview/[cidade] — isca de lead por cidade (amostra gratis do curso de
+  // IA). Declara robots:{index:true,follow:true} e canonical proprio, entao e
+  // pagina indexavel de verdade, nao variante de teste. Mesma fonte de cidades
+  // que a rota usa (todasCidades = capitais + interior BR + MA).
+  const iaPreviewPages: MetadataRoute.Sitemap = todasCidades.map((c) => ({
+    url: `${BASE}/ia-preview/${c.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }))
+
   // Contagens conferidas em 01/ago/2026 contra os datasets.
   return [
     ...staticPages,            // 11 (8 + 3 legais)
@@ -161,8 +174,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...cidadesBRServicosPages, // 566 x 5 = 2.830
     ...cursosCidadesMAPages,   // 11 x 125 = 1.375
     ...cursosCidadesBRPages,   // 11 x 566 = 6.226
-    // TOTAL: ~11.840 URLs — praticamente tudo que o build gera.
-    // Fica de fora so /ia-preview/[cidade] (683 paginas), que e variante de
-    // teste e nao deve competir com /cursos/[slug] no indice.
+    ...iaPreviewPages,         // 691 (566 BR + 125 MA)
+    // TOTAL: ~12.540 URLs — TODAS as paginas indexaveis do site.
+    //
+    // As unicas rotas geradas que NAO entram, e por motivo tecnico:
+    //  · /ia-completo — o canonical dela aponta p/ /cursos/ia-chatgpt-completo
+    //    (mesma LP do mesmo curso). Declarar no sitemap uma URL que canonicaliza
+    //    p/ outra manda sinais contraditorios ao Google.
+    //  · /cursos/acesso/* — bloqueada no robots.txt. URL no sitemap + Disallow
+    //    gera erro de cobertura no Search Console.
+    //  · /cases, /projetos, /ferramentas, /videos — sao 301, nao paginas.
+    //  · /cursos/[slug]/aprender e /download — renderizadas sob demanda,
+    //    conteudo de aluno.
   ]
 }
