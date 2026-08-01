@@ -44,8 +44,10 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        // aponta direto p/ o destino final: antes era /projetos -> /cases ->
+        // /portfolio (2 hops), que desperdiça crawl budget e dilui o sinal.
         source: '/projetos',
-        destination: '/cases',
+        destination: '/portfolio',
         permanent: true,
       },
       {

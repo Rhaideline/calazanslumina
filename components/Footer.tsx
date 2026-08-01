@@ -31,7 +31,7 @@ const paginasUteis = [
   { href: '/sobre', label: 'Sobre Rhaideline Calazans' },
   { href: '/blog', label: 'Blog de Marketing Digital' },
   { href: '/cursos', label: 'Cursos de Marketing Digital' },
-  { href: '/cases', label: 'Cases de Sucesso' },
+  { href: '/portfolio', label: 'Cases de Sucesso' },
   { href: '/para-agencias', label: 'Para Agências GHL' },
   { href: '/contato', label: 'Contato' },
 ]
@@ -137,7 +137,7 @@ export default function Footer() {
             <Link href="/cursos/marketing-digital-iniciantes" className="hover:text-white/70 transition-colors">Curso de marketing digital</Link>{' · '}
             <Link href="/blog" className="hover:text-white/70 transition-colors">Blog de marketing digital</Link>{' · '}
             <Link href="/sobre" className="hover:text-white/70 transition-colors">Sobre a fundadora</Link>{' · '}
-            <Link href="/cases" className="hover:text-white/70 transition-colors">Cases de Sucesso</Link>{' · '}
+            <Link href="/portfolio" className="hover:text-white/70 transition-colors">Cases de Sucesso</Link>{' · '}
             <Link href="/contato" className="hover:text-white/70 transition-colors">Orçamento gratuito</Link>
           </p>
         </div>
