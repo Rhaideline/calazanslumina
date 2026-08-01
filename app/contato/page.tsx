@@ -48,7 +48,7 @@ const canais = [
   {
     titulo: 'E-mail',
     desc: 'Para orçamentos e parcerias',
-    link: 'mailto:trafegocalazans@gmail.com',
+    link: 'mailto:contato@calazanslumina.com.br',
     cta: 'Enviar E-mail',
     icon: (
       <svg className="w-10 h-10 text-brand-mint" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
@@ -80,7 +80,7 @@ const contactSchema = {
     '@type': 'Organization',
     name: 'Calazans Lumina',
     telephone: '+55-31-98294-8067',
-    email: 'trafegocalazans@gmail.com',
+    email: 'contato@calazanslumina.com.br',
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+55-31-98294-8067',

@@ -52,7 +52,7 @@ export default async function CidadePage({ params }: { params: Promise<{ cidade:
     description: `Agência de marketing digital para brasileiros em ${cidade.nome}, Massachusetts. Sites, funis GoHighLevel, CRM com IA no WhatsApp e Google Business Profile.`,
     url: `https://calazanslumina.com.br/cidades/${cidadeSlug}`,
     telephone: '+55-31-98294-8067',
-    email: 'trafegocalazans@gmail.com',
+    email: 'contato@calazanslumina.com.br',
     address: { '@type': 'PostalAddress', addressLocality: cidade.nome, addressRegion: 'MA', addressCountry: 'US' },
     areaServed: { '@type': 'City', name: cidade.nome, containedInPlace: { '@type': 'State', name: 'Massachusetts' } },
     serviceType: ['Marketing Digital', 'Web Design', 'SEO', 'Google Business Profile', 'GoHighLevel CRM'],
