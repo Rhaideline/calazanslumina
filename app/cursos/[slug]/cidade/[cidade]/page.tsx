@@ -16,6 +16,7 @@ import {
   buildQuotableIntro,
 } from '@/lib/seo-schemas'
 import { formatPreco, formatPrecoCompacto } from '@/lib/formatters'
+import { blocoLocalCurso } from '@/lib/conteudo-local'
 
 export async function generateStaticParams() {
   return cursos.flatMap((curso) =>
@@ -96,6 +97,7 @@ export default async function CursoCidadePage({ params }: { params: Promise<{ sl
   const faqSchema = buildCursoCidadeFAQ(seoCtx)
   const localBusinessSchema = buildLocalBusinessSchema(cidade.nome, 'MA', 'US')
   const quotableIntro = buildQuotableIntro(seoCtx)
+  const blocoLocal = blocoLocalCurso(cidade, curso.slug, curso.nome)
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -148,7 +150,9 @@ export default async function CursoCidadePage({ params }: { params: Promise<{ sl
               </h1>
               <p className="text-white/70 text-lg leading-relaxed mb-4">{curso.vsl.subhook}</p>
               <p className="text-white/55 text-sm leading-relaxed mb-4 italic border-l-2 border-brand-mint/40 pl-4">{quotableIntro}</p>
-              <p className="text-white/40 text-base mb-8">{cidade.comunidade}</p>
+              {/* Antes repetia {cidade.comunidade}, o mesmo paragrafo de
+                  /cidades/[cidade] e da secao de baixo desta propria pagina. */}
+              <p className="text-white/40 text-base mb-8">{blocoLocal.contexto}</p>
 
               <div className="flex flex-wrap gap-4 mb-8">
                 <div className="bg-white/5 border border-white/10 rounded-xl px-5 py-3 text-center">
@@ -273,7 +277,7 @@ export default async function CursoCidadePage({ params }: { params: Promise<{ sl
           </ScrollReveal>
           <ScrollReveal>
             <div className="bg-brand-bg rounded-2xl p-8 md:p-10">
-              <p className="text-brand-dark/70 leading-relaxed mb-6">{cidade.comunidade}</p>
+              <p className="text-brand-dark/70 leading-relaxed mb-6">{blocoLocal.aplicacao}</p>
               <p className="text-brand-dark/70 leading-relaxed mb-6">{cidade.doresEspecificas}</p>
               <p className="text-brand-dark/70 leading-relaxed">
                 Com o curso <strong>{curso.nome}</strong>, brasileiros em {cidade.nome} têm acesso a conhecimento

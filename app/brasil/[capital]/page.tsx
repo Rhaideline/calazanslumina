@@ -123,7 +123,10 @@ export default async function CapitalPage({ params }: { params: Promise<{ capita
                 negócios em {capital.nome}: sites de alta performance, funis automatizados,
                 CRM com IA e Google Meu Negócio otimizado.
               </p>
-              <p className="text-white/50 text-base mb-8 max-w-2xl">{capital.doresEspecificas}.</p>
+              <p className="text-white/50 text-base mb-8 max-w-2xl">
+                {capital.populacao ? `${capital.nome} tem ${capital.populacao}. ` : ''}
+                {capital.doresEspecificas}.
+              </p>
 
               <a
                 href={`https://wa.me/5531982948067?text=${encodeURIComponent(`Olá, moro em ${capital.nome} e quero saber mais sobre os serviços da Calazans Lumina`)}`}
