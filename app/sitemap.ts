@@ -21,11 +21,6 @@ const SITE_LAST_UPDATE = '2026-05-28T00:00:00.000Z'
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = SITE_LAST_UPDATE
 
-  // TOP 200 cidades BR (das 439) — capitais regionais com maior populacao
-  // brasileira / clientes potenciais. As outras 239 ficam fora do sitemap
-  // mas continuam servindo 200 e podem ser indexadas via crawl natural.
-  const cidadesBrasilTop = cidadesBrasil.slice(0, 200)
-
   const staticPages: MetadataRoute.Sitemap = [
     { url: BASE, lastModified: now, changeFrequency: 'weekly', priority: 1 },
     { url: `${BASE}/sobre`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
@@ -93,16 +88,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   )
 
-  // 27 capitais BR
-  const capitaisPages: MetadataRoute.Sitemap = capitaisBR.map((c) => ({
+  // ═══════════════════════════════════════════════════════════════════
+  // TODAS as cidades BR (capitais + interior) e TODAS as combinacoes com
+  // servico. Antes o sitemap declarava so as 27 capitais x 5 servicos e as
+  // top 200 cidades sem servico — ~2.980 URLs de ~12.000 geradas.
+  //
+  // POR QUE MUDOU (dados do Search Console, 12 meses, lidos em 01/ago/2026):
+  //   dentro do sitemap ..... 832 paginas, 142 cliques, 16.498 impressoes
+  //   FORA do sitemap ..... 3.751 paginas, 302 cliques, 20.083 impressoes
+  //   -> 68% dos cliques vinham de paginas NAO declaradas.
+  //
+  // A curadoria antiga priorizava capitais, mas quem performa e o interior
+  // (Jaragua do Sul, Foz do Iguacu, Ipatinga, Pinhais, Serra, Betim,
+  // Balneario Camboriu). Essas paginas ja estao indexadas — declara-las nao
+  // pede indexacao nova, so para de esconder o que ja funciona.
+  //
+  // Limite do protocolo: 50.000 URLs / 50 MB por arquivo. ~11.800 URLs dao
+  // ~2,4 MB — cabe folgado em um sitemap so. Se um dia passar de 50k, usar
+  // generateSitemaps() do Next.
+  // ═══════════════════════════════════════════════════════════════════
+  const todasCidadesBR = [...capitaisBR, ...cidadesBrasil]
+
+  const cidadesBRPages: MetadataRoute.Sitemap = todasCidadesBR.map((c) => ({
     url: `${BASE}/brasil/${c.slug}`,
     lastModified: now,
+    // capitais mantem prioridade maior; interior entra em 0.7
     changeFrequency: 'monthly' as const,
-    priority: 0.8,
+    priority: capitaisBR.some((cap) => cap.slug === c.slug) ? 0.8 : 0.7,
   }))
 
-  // 27 capitais BR x 5 servicos = 135 URLs
-  const capitaisServicosPages: MetadataRoute.Sitemap = capitaisBR.flatMap((c) =>
+  const cidadesBRServicosPages: MetadataRoute.Sitemap = todasCidadesBR.flatMap((c) =>
     servicos.map((s) => ({
       url: `${BASE}/brasil/${c.slug}/${s.slug}`,
       lastModified: now,
@@ -110,24 +125,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.65,
     }))
   )
-
-  // TOP 200 cidades BR (sem combinacao com servicos pra nao explodir o sitemap)
-  const cidadesBRTopPages: MetadataRoute.Sitemap = cidadesBrasilTop.map((c) => ({
-    url: `${BASE}/brasil/${c.slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }))
-
-  // +100 cidades novas (2026) com conteudo pesquisado e unico por cidade
-  // (dados IBGE + vocacao economica real). Ficam no fim do array cidadesBrasil,
-  // por isso o slice(-100). Merecem sitemap: conteudo forte para indexar.
-  const cidadesBRNovasPages: MetadataRoute.Sitemap = cidadesBrasil.slice(-100).map((c) => ({
-    url: `${BASE}/brasil/${c.slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }))
 
   // 9 cursos x 22 cidades MA = 198 URLs (Local SEO real)
   const cursosCidadesMAPages: MetadataRoute.Sitemap = cursos.flatMap((curso) =>
@@ -139,9 +136,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   )
 
-  // 9 cursos x 27 capitais BR = 243 URLs (capitais merecem priority no sitemap)
-  const cursosCapitaisPages: MetadataRoute.Sitemap = cursos.flatMap((curso) =>
-    capitaisBR.map((c) => ({
+  // cursos x TODAS as cidades BR. Era so x capitais (297 URLs), mas as paginas
+  // de curso x cidade do INTERIOR sao a maior fonte de clique do site inteiro
+  // (232 dos 440 cliques em 12 meses) e nenhuma estava declarada.
+  const cursosCidadesBRPages: MetadataRoute.Sitemap = cursos.flatMap((curso) =>
+    todasCidadesBR.map((c) => ({
       url: `${BASE}/cursos/${curso.slug}/brasil/${c.slug}`,
       lastModified: now,
       changeFrequency: 'monthly' as const,
@@ -149,26 +148,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   )
 
-  // Contagens conferidas em 01/ago/2026 contra os datasets. Os numeros antigos
-  // destes comentarios estavam defasados (diziam 9 cursos, 22 cidades MA, 439
-  // cidades BR e total de ~1.118) e induziam a erro em qualquer analise.
+  // Contagens conferidas em 01/ago/2026 contra os datasets.
   return [
-    ...staticPages,           // 11 (8 + 3 legais)
-    ...portfolioPages,        // 5
-    ...cursosPages,           // 11
-    ...servicosPages,         // 5
-    ...blogPages,             // ~65
-    ...cidadesMAPages,        // 125
-    ...cidadesMAServicosPages,// 125 x 5 = 625
-    ...capitaisPages,         // 27
-    ...capitaisServicosPages, // 27 x 5 = 135
-    ...cidadesBRTopPages,     // 200 (das 539 do dataset)
-    ...cidadesBRNovasPages,   // 100 (novas 2026, conteudo pesquisado)
-    ...cursosCidadesMAPages,  // 11 x 125 = 1.375
-    ...cursosCapitaisPages,   // 11 x 27 = 297
-    // TOTAL: ~2.980 URLs declaradas.
-    // ATENCAO: o build gera ~12.000 paginas. As ~9.000 fora do sitemap servem
-    // 200 e indexam por link interno — decisao deliberada de priorizacao, nao
-    // esquecimento. Se um dia isso mudar, revisar junto com o footer.
+    ...staticPages,            // 11 (8 + 3 legais)
+    ...portfolioPages,         // 5
+    ...cursosPages,            // 11
+    ...servicosPages,          // 5
+    ...blogPages,              // ~65
+    ...cidadesMAPages,         // 125
+    ...cidadesMAServicosPages, // 125 x 5 = 625
+    ...cidadesBRPages,         // 27 capitais + 539 interior = 566
+    ...cidadesBRServicosPages, // 566 x 5 = 2.830
+    ...cursosCidadesMAPages,   // 11 x 125 = 1.375
+    ...cursosCidadesBRPages,   // 11 x 566 = 6.226
+    // TOTAL: ~11.840 URLs — praticamente tudo que o build gera.
+    // Fica de fora so /ia-preview/[cidade] (683 paginas), que e variante de
+    // teste e nao deve competir com /cursos/[slug] no indice.
   ]
 }
