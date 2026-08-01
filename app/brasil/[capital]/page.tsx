@@ -54,7 +54,7 @@ export default async function CapitalPage({ params }: { params: Promise<{ capita
     description: `Agência de marketing digital em ${capital.nome}, ${capital.siglaEstado}. Sites profissionais, funis GoHighLevel, CRM com IA no WhatsApp e Google Meu Negocio.`,
     url: `https://calazanslumina.com.br/brasil/${capitalSlug}`,
     telephone: '+55-31-98294-8067',
-    email: 'contato@calazanslumina.com.br',
+    email: 'contato@lc.calazanslumina.com.br',
     address: { '@type': 'PostalAddress', addressLocality: capital.nome, addressRegion: capital.siglaEstado, addressCountry: 'BR' },
     areaServed: { '@type': 'City', name: capital.nome },
     serviceType: ['Marketing Digital', 'Criacao de Sites', 'SEO', 'Google Meu Negocio', 'GoHighLevel CRM', 'Gestao de Redes Sociais'],
