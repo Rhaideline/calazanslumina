@@ -88,8 +88,11 @@ export const metadata: Metadata = {
   other: {
     'geo.region': 'US-MA',
     'geo.placename': 'Framingham, Massachusetts',
-    'geo.position': '42.2793;-71.4162',
-    'ICBM': '42.2793, -71.4162',
+    // geo.position/ICBM removidos: eram herdados por TODA pagina, inclusive
+    // /brasil/[capital], que declarava geo.region BR-XX com coordenada de
+    // Framingham/MA. Os datasets de cidade nao tem lat/long, entao nao ha como
+    // parametrizar. O Google ignora essas tags desde 2014 — o sinal geografico
+    // que conta e o LocalBusiness/areaServed em JSON-LD, que ja existe.
   },
 }
 
