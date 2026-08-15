@@ -5,7 +5,6 @@ import Footer from '@/components/Footer'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import ThirdPartyScripts from '@/components/ThirdPartyScripts'
 import TopOfferBar from '@/components/TopOfferBar'
-import SocialProofToaster from '@/components/SocialProofToaster'
 import './globals.css'
 
 const dmSerif = DM_Serif_Display({
@@ -241,7 +240,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
-        <SocialProofToaster />
+        {/* SocialProofToaster removido: exibia como notificacao os mesmos
+            depoimentos fabricados que sairam das paginas, em todo o site.
+            A casa tambem nao usa popup. */}
         {/* <WhatsAppButton /> */}
         <ThirdPartyScripts />
       </body>
