@@ -99,7 +99,6 @@ export default function IACompletoPage() {
                   De <span className="line-through">R$ 297</span> · Acesso vitalício
                 </p>
               </div>
-              <p className="text-amber-300 text-xs tracking-wider mb-6">⚡ 1.247 brasileiros já garantiram nessa semana</p>
 
               {/* Authority strip — quem escreveu */}
               <a href="/sobre" className="inline-flex items-center gap-3 bg-white/5 border border-white/10 hover:border-white/25 rounded-full pl-1 pr-5 py-1 mb-10 transition-all group">
@@ -111,7 +110,7 @@ export default function IACompletoPage() {
                   className="w-9 h-9 rounded-full object-cover"
                 />
                 <span className="text-white/65 text-xs md:text-sm">
-                  Escrito por <strong className="text-white">Rhaideline Calazans</strong> · 8+ anos · 50+ subcontas GHL
+                  Escrito por <strong className="text-white">Rhaideline Calazans</strong>
                 </span>
               </a>
 
@@ -280,7 +279,7 @@ export default function IACompletoPage() {
             <div className="text-center mb-16">
               <p className="text-red-500 text-xs tracking-[0.4em] uppercase font-bold mb-4">Pra quem é</p>
               <h2 className="font-serif italic font-normal text-4xl md:text-6xl leading-tight mb-4">
-                Esse livro foi feito <span className="text-red-500">pra você</span> se...
+                Esse livro foi feito <span className="text-red-500">pra você</span> se..
               </h2>
             </div>
 
@@ -375,30 +374,31 @@ export default function IACompletoPage() {
         {/* ════ DEPOIMENTOS ════ */}
         <section className="py-20 md:py-28 bg-[#0a0a0a]">
           <div className="container-main max-w-5xl">
+            {/* Antes: "Quem ja comprou — O que eles dizem", com depoimentos
+                escritos a mao. Nao havia comprador nenhum por tras deles.
+                Trocado pelo conteudo real do produto, que e verificavel. */}
             <div className="text-center mb-16">
-              <p className="text-red-400 text-xs tracking-[0.4em] uppercase font-bold mb-4">Quem já comprou</p>
+              <p className="text-red-400 text-xs tracking-[0.4em] uppercase font-bold mb-4">O que tem dentro</p>
               <h2 className="font-serif italic font-normal text-4xl md:text-6xl leading-tight">
-                O que <span className="text-red-400">eles dizem</span>.
+                Exatamente <span className="text-red-400">isto</span>.
               </h2>
             </div>
 
             <div className="grid md:grid-cols-2 gap-5 md:gap-6">
-              {curso.vsl.depoimentos.map((d, i) => (
-                <div key={i} className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 md:p-8">
-                  <p className="font-serif italic text-red-400 text-5xl leading-none mb-3">"</p>
-                  <p className="text-white/85 text-base md:text-lg leading-relaxed mb-5 italic">{d.texto}</p>
-                  <div className="flex items-center gap-3 pt-4 border-t border-white/10">
-                    <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-700 rounded-full flex items-center justify-center font-serif italic text-xl text-white flex-shrink-0">
-                      {d.nome[0]}
-                    </div>
-                    <div>
-                      <p className="font-medium">{d.nome}</p>
-                      <p className="text-white/45 text-sm">{d.cidade}</p>
-                    </div>
-                  </div>
+              {curso.oQueVaiAprender.map((item: string, i: number) => (
+                <div key={i} className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 md:p-8 flex gap-5">
+                  <p className="font-serif italic text-red-400 text-3xl leading-none shrink-0 w-10">
+                    {String(i + 1).padStart(2, '0')}
+                  </p>
+                  <p className="text-white/85 text-base md:text-lg leading-relaxed">{item}</p>
                 </div>
               ))}
             </div>
+
+            <p className="text-white/40 text-sm text-center mt-10">
+              {curso.numeroPaginas ? `${curso.numeroPaginas} páginas em PDF · ` : ''}
+              entrega por e-mail assim que o pagamento for confirmado · acesso permanente
+            </p>
           </div>
         </section>
 

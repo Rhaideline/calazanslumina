@@ -19,11 +19,11 @@ export const metadata: Metadata = {
     absolute: 'Marketing Digital para Brasileiros | Calazans Lumina',
   },
   description:
-    'Sites de alta performance, funis automatizados, CRM com IA e Google Maps para brasileiros nos EUA e Brasil. 8+ anos, 100+ projetos entregues, atendimento 100% em português.',
+    'Sites de alta performance, funis automatizados, CRM com IA e Google Maps para brasileiros nos EUA e Brasil. Atendimento 100% em português.',
   alternates: { canonical: 'https://calazanslumina.com.br' },
   openGraph: {
     title: 'Marketing Digital para Brasileiros nos EUA e Brasil | Calazans Lumina',
-    description: 'Sites, funis GHL, CRM com IA e Google Maps. 8+ anos transformando negocios de brasileiros.',
+    description: 'Sites, funis GHL, CRM com IA e Google Maps. Método próprio, cases publicados.',
     url: 'https://calazanslumina.com.br',
     type: 'website',
   },
@@ -133,7 +133,7 @@ const faqSchema = {
       name: 'Quem é Rhaideline Calazans?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Rhaideline Calazans é a fundadora da Calazans Lumina, agência de marketing digital para brasileiros nos EUA e Brasil. Com mais de 8 anos de experiência em marketing digital, é especialista em sites, SEO, automação de marketing e IA conversacional. Brasileira residente em Framingham, Massachusetts, ela já entregou mais de 100 projetos para empreendedores brasileiros.',
+        text: 'Rhaideline Calazans é a fundadora da Calazans Lumina, agência de marketing digital para brasileiros nos EUA e Brasil. É especialista em sites, SEO, automação de marketing e IA conversacional. Brasileira residente em Framingham, Massachusetts, atende empreendedores brasileiros nos EUA e no Brasil.',
       },
     },
     {
@@ -268,7 +268,7 @@ export default function HomePage() {
               </p>
 
               <ul className="space-y-3 mb-8">
-                {['8+ anos transformando negócios', '100+ projetos entregues', 'Especialista em GoHighLevel', 'Atendimento em português'].map((item) => (
+                {['Especialista em GoHighLevel', 'Atendimento em português'].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-white/80">
                     <svg className="w-5 h-5 text-brand-mint flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -337,7 +337,7 @@ export default function HomePage() {
                 <strong>Calazans Lumina</strong> é uma agência de marketing digital fundada por{' '}
                 <Link href="/sobre" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>Rhaideline Calazans</strong></Link>,
                 especializada em atender empreendedores brasileiros nos <strong>Estados Unidos (Massachusetts)</strong> e em todo o <strong>Brasil</strong>.
-                Com mais de 8 anos de experiência e 100+ projetos entregues, oferecemos soluções completas de presença digital com atendimento 100% em português.
+                Oferecemos soluções completas de presença digital com atendimento 100% em português.
               </p>
               <p>
                 Nossos serviços incluem:{' '}
@@ -554,7 +554,7 @@ export default function HomePage() {
                 <div className="absolute -inset-4 bg-gradient-to-br from-black/20 to-black/5 rounded-3xl blur-2xl" />
                 <Image
                   src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d859c95106d5e512376e8e.jpeg"
-                  alt="Rhaideline Calazans — 8 anos de experiência em marketing digital, fundadora da Calazans Lumina"
+                  alt="Rhaideline Calazans, fundadora da Calazans Lumina"
                   width={600}
                   height={700}
                   className="rounded-3xl relative z-10 w-full object-cover"
@@ -572,7 +572,7 @@ export default function HomePage() {
                   otimizar anúncios e construir presença digital do zero.
                 </p>
                 <p>
-                  Hoje, com <strong>8 anos de experiência</strong>, atende brasileiros em Massachusetts e no
+                  Hoje atende brasileiros em Massachusetts e no
                   Brasil, transformando negócios do &quot;boca a boca&quot; em máquinas previsíveis de geração de leads.
                 </p>
                 <p className="font-medium text-brand-dark">

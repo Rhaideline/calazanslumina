@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: '%s | Calazans Lumina',
   },
   description:
-    'Agencia de marketing digital para brasileiros nos EUA e Brasil. Sites profissionais, funis GHL, CRM com IA no WhatsApp, redes sociais e Google Maps. 100+ projetos. Atendimento 100% em portugues. Orcamento gratis →',
+    'Agencia de marketing digital para brasileiros nos EUA e Brasil. Sites profissionais, funis GHL, CRM com IA no WhatsApp, redes sociais e Google Maps. Atendimento 100% em portugues. Orcamento gratis →',
   // keywords meta foi descontinuado pelo Google em 2009 — removido para limpar payload.
   // Topic clustering + semantic HTML + schema.org cobrem a função melhor.
   icons: {
@@ -210,7 +210,6 @@ const personSchema = {
     'Marketing para Brasileiros nos Estados Unidos',
   ],
   alumniOf: 'Marketing Digital — Autodidata',
-  award: ['8+ anos de experiência em marketing digital', '+50 sub-contas GoHighLevel ativas'],
   homeLocation: {
     '@type': 'Place',
     address: { '@type': 'PostalAddress', addressLocality: 'Framingham', addressRegion: 'MA', addressCountry: 'US' },

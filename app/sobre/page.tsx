@@ -10,11 +10,11 @@ import PortfolioSites from '@/components/PortfolioSites'
 export const metadata: Metadata = {
   title: 'Sobre Rhaideline Calazans | 8+ Anos em Marketing Digital',
   description:
-    'De secretaria medica a especialista em marketing digital com 8+ anos e 100+ projetos. Fundadora da Calazans Lumina, atendendo brasileiros nos EUA e Brasil.',
+    'De secretaria medica a especialista em marketing digital com cases publicados. Fundadora da Calazans Lumina, atendendo brasileiros nos EUA e Brasil.',
   alternates: { canonical: 'https://calazanslumina.com.br/sobre' },
   openGraph: {
     title: 'Sobre Rhaideline Calazans | Calazans Lumina',
-    description: 'De secretaria medica a especialista em marketing digital. 8+ anos, 100+ projetos.',
+    description: 'De secretaria medica a especialista em marketing digital.',
     url: 'https://calazanslumina.com.br/sobre',
     type: 'profile',
   },
@@ -29,7 +29,7 @@ const personJsonLd = {
   url: 'https://calazanslumina.com.br/sobre',
   image: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d742765106d5f70635510a.jpeg',
   description:
-    'Especialista em marketing digital com 8+ anos de experiência e 100+ projetos. Fundadora da Calazans Lumina, agência focada em brasileiros nos EUA e Brasil.',
+    'Especialista em marketing digital com método próprio e cases publicados. Fundadora da Calazans Lumina, agência focada em brasileiros nos EUA e Brasil.',
   worksFor: {
     '@type': 'Organization',
     '@id': 'https://calazanslumina.com.br/#organization',
@@ -59,7 +59,7 @@ export default function SobrePage() {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
-      { '@type': 'Question', name: 'Quem e Rhaideline Calazans?', acceptedAnswer: { '@type': 'Answer', text: 'Rhaideline Calazans e especialista em marketing digital com 8+ anos de experiência e 100+ projetos entregues. Fundadora da Calazans Lumina, agência que atende brasileiros nos EUA (Massachusetts) e em todo o Brasil. Trabalha com sites profissionais, funis GoHighLevel, CRM com IA no WhatsApp e Google Business Profile.' } },
+      { '@type': 'Question', name: 'Quem e Rhaideline Calazans?', acceptedAnswer: { '@type': 'Answer', text: 'Rhaideline Calazans e especialista em marketing digital com método próprio e cases publicados. Fundadora da Calazans Lumina, agência que atende brasileiros nos EUA (Massachusetts) e em todo o Brasil. Trabalha com sites profissionais, funis GoHighLevel, CRM com IA no WhatsApp e Google Business Profile.' } },
       { '@type': 'Question', name: 'A Calazans Lumina atende nos EUA e no Brasil?', acceptedAnswer: { '@type': 'Answer', text: 'Sim! A Calazans Lumina atende brasileiros em mais de 100 cidades de Massachusetts (EUA) e 227 cidades do Brasil. O atendimento e 100% remoto e em portugues. Oferecemos sites, funis, CRM, redes sociais e Google Maps.' } },
       { '@type': 'Question', name: 'Quais serviços a Calazans Lumina oferece?', acceptedAnswer: { '@type': 'Answer', text: 'Oferecemos: sites profissionais otimizados para velocidade e conversão, funis de vendas no GoHighLevel, CRM com IA conversacional no WhatsApp, gestao de redes sociais, trafego pago (Google Ads e Meta Ads), Google Business Profile, SEO local e nacional, e sub-contas GoHighLevel prontas para empresas.' } },
     ],
@@ -202,10 +202,10 @@ export default function SobrePage() {
                 </div>
                 <div>
                   <h3 className="font-serif text-xl font-bold text-brand-dark mb-2">
-                    Calazans Lumina — 8 anos de resultados
+                    Calazans Lumina
                   </h3>
                   <p className="text-brand-dark/70 leading-relaxed">
-                    Hoje, com 8 anos de experiência prática em marketing digital, lidero a Calazans Lumina
+                    Hoje lidero a Calazans Lumina
                     atendendo empreendedores brasileiros em Massachusetts (EUA) e nas principais capitais
                     do Brasil. Meu trabalho transforma negócios que vivem do &quot;boca a boca&quot; em máquinas
                     previsíveis de geração de leads — com sites de alta performance, funis automatizados,
