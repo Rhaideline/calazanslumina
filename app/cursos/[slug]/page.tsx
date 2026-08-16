@@ -9,6 +9,7 @@ import type { Metadata } from 'next'
 import Breadcrumb from '@/components/Breadcrumb'
 import CoursesSection from '@/components/CoursesSection'
 import CourseViewTracker from '@/components/CourseViewTracker'
+import CapturaEmail from '@/components/CapturaEmail'
 
 export function generateStaticParams() {
   return cursos.map((c) => ({ slug: c.slug }))
@@ -726,6 +727,12 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
             <Link href="/blog" className="bg-brand-mint text-white px-5 py-2.5 rounded-full hover:bg-brand-dark transition-colors text-sm font-medium">Blog</Link>
             <Link href="/contato" className="bg-brand-mint text-white px-5 py-2.5 rounded-full hover:bg-brand-dark transition-colors text-sm font-medium">Contato</Link>
           </div>
+        </div>
+      </section>
+
+      <section className="section-padding">
+        <div className="container-main max-w-3xl">
+          <CapturaEmail origem="curso" />
         </div>
       </section>
     </>

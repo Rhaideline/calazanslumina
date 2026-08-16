@@ -6,6 +6,7 @@ import ScrollReveal from '@/components/ScrollReveal'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import PortfolioSites from '@/components/PortfolioSites'
 import type { Metadata } from 'next'
+import CapturaEmail from '@/components/CapturaEmail'
 
 export const metadata: Metadata = {
   title: 'Cursos de Marketing Digital — 4 Grátis',
@@ -388,6 +389,12 @@ export default function CursosPage() {
               Falar sobre Pacote de Cursos
             </a>
           </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="section-padding">
+        <div className="container-main max-w-3xl">
+          <CapturaEmail origem="cursos-indice" />
         </div>
       </section>
     </>

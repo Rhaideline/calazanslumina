@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import CountdownBar from './CountdownBar'
 import { trackInitiateCheckout } from '@/lib/analytics'
 import { buildUtm } from '@/lib/utm-builder'
 
@@ -28,7 +27,7 @@ export default function TopOfferBar() {
         <span className="font-medium">
           <strong>IA do Zero ao Avançado</strong> · 95 págs ·{' '}
           <span className="line-through opacity-60">R$ 297</span>{' '}
-          por <strong className="text-base">R$ 9,90</strong> · <CountdownBar />
+          por <strong className="text-base">R$ 9,90</strong> · acesso imediato
         </span>
         <a
           href={CHECKOUT_URL}

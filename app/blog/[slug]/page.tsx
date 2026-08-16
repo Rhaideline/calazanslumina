@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import CTAForm from '@/components/CTAForm'
 import CoursesSection from '@/components/CoursesSection'
+import CapturaEmail from '@/components/CapturaEmail'
 
 export async function generateStaticParams() {
   return blogPosts.map((p) => ({ slug: p.slug }))
@@ -245,6 +246,12 @@ export default async function BlogPostPage({
       </section>
 
       <CTAForm />
+
+      <section className="section-padding">
+        <div className="container-main max-w-3xl">
+          <CapturaEmail origem="blog" />
+        </div>
+      </section>
     </>
   )
 }

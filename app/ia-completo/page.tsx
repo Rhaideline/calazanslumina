@@ -3,7 +3,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { cursos } from '@/data/cursos'
 import StickyBuyBar from '@/components/StickyBuyBar'
-import CountdownBar from '@/components/CountdownBar'
 import TrackedCheckoutLink from '@/components/TrackedCheckoutLink'
 import CourseViewTracker from '@/components/CourseViewTracker'
 import { videos } from '@/data/videos'
@@ -76,9 +75,15 @@ export default function IACompletoPage() {
                 </div>
               )}
 
-              {/* === COUNTDOWN === */}
+              {/* Aqui havia um CountdownBar: "Oferta termina em 23:59:59",
+                  que contava ate a meia-noite e REINICIAVA todo dia. A oferta
+                  nunca terminava. E urgencia falsa e cai em publicidade
+                  enganosa. No lugar, o que e verdade sobre a entrega. */}
               <div className="mb-6">
-                <CountdownBar variant="hero" />
+                <span className="inline-flex items-center gap-3 bg-white/5 border border-white/15 rounded-full px-5 py-2.5">
+                  <span className="text-white/45 text-[10px] tracking-[0.32em] uppercase font-bold">Entrega</span>
+                  <span className="text-white/85 text-sm">PDF no seu e-mail assim que o pagamento cair</span>
+                </span>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-4">
@@ -365,7 +370,7 @@ export default function IACompletoPage() {
                 >
                   Garantir tudo por R$ 9,90 →
                 </TrackedCheckoutLink>
-                <p className="text-white/45 text-xs text-center mt-4"><CountdownBar /></p>
+                <p className="text-white/45 text-xs text-center mt-4">Pagamento único · acesso permanente · sem mensalidade</p>
               </div>
             </div>
           </section>
