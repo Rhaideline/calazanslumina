@@ -29,6 +29,13 @@ guia-pdf-visual-fpdf2.py
 
 # Imagens soltas de trabalho na raiz
 *.png
+# ...MENOS o que esta em public/. A regra `*.png` acima existe para nao subir
+# as centenas de PNG de trabalho espalhados no repositorio (posts, mockups,
+# capas), mas ela tambem pegava public/ — onde ficam os arquivos que o SITE
+# precisa servir. A logo subiu no commit, existia no repositorio, e devolvia
+# 404 em producao por causa disto.
+!public/**/*.png
+!public/*.png
 seo_*.md
 EMAIL-AUTOMATION.md
 FUNIS-DE-VENDA.md
