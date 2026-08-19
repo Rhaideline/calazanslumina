@@ -154,7 +154,7 @@ export default function ParaAgenciasPage() {
       <section className="relative py-24 md:py-32 lg:py-40 bg-brand-dark text-white overflow-hidden">
         {/* Background photo + escurecedor */}
         <Image
-          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d859c95106d5e512376e8e.jpeg"
+          src="/rhai-retrato-2.webp"
           alt="GoHighLevel para Empresas e Agências — Calazans Lumina"
           fill
           className="object-cover opacity-15"
@@ -938,7 +938,7 @@ export default function ParaAgenciasPage() {
                 <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-brand-mint/40 to-transparent blur-sm" />
                 <div className="relative rounded-3xl overflow-hidden border-2 border-brand-mint/30">
                   <Image
-                    src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d859c95106d5e512376e8e.jpeg"
+                    src="/rhai-retrato-2.webp"
                     alt="Rhaideline Calazans — Especialista GoHighLevel"
                     width={224}
                     height={224}

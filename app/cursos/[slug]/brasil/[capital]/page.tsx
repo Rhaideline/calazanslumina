@@ -119,7 +119,7 @@ export default async function CursoCapitalPage({ params }: { params: Promise<{ s
       {/* === HERO VSL === */}
       <section className="relative py-20 md:py-28 bg-brand-dark text-white overflow-hidden">
         <Image
-          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d859c95106d5e512376e8e.jpeg"
+          src="/rhai-retrato-2.webp"
           alt={`${curso.nome} em ${capital.nome} — Calazans Lumina`}
           fill
           className="object-cover"

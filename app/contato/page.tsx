@@ -100,7 +100,7 @@ export default function ContatoPage() {
       <section className="relative min-h-[60vh] flex items-center">
         {/* Background Image */}
         <Image
-          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d742765106d5f70635510a.jpeg"
+          src="/rhai-retrato-1.webp"
           alt="Rhaideline Calazans — Contato Calazans Lumina"
           fill
           className="object-cover"

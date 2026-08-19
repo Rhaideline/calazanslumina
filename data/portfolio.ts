@@ -168,8 +168,13 @@ export const projetos: Projeto[] = [
 
 // Sites desenvolvidos (grid secundário, sem página dedicada)
 export const maisSites = [
-  { src: `${CDN}/699b3d62df9bdf1a8f06e132.png`, nome: 'AM Painter Inc', tipo: 'Painting · MA' },
-  { src: `${CDN}/699b3d6255d8bc3b6f457169.png`, nome: 'Mass Painter Pro', tipo: 'Painting · MA' },
+  // As duas primeiras estavam TROCADAS entre si. Conferido abrindo as capturas:
+  //   699b3d62df9bdf1a8f06e132 -> cabecalho "MASS PAINTERS", e-mail
+  //     info@masspainterspro.com, "Serving Marlborough" = Mass Painter Pro
+  //   699b3d6255d8bc3b6f457169 -> logo "A&M Painter Licensed Contractor",
+  //     e-mail ampainter3766@gmail.com, "Serving Hudson" = AM Painter Inc
+  { src: `${CDN}/699b3d6255d8bc3b6f457169.png`, nome: 'AM Painter Inc', tipo: 'Painting · MA' },
+  { src: `${CDN}/699b3d62df9bdf1a8f06e132.png`, nome: 'Mass Painter Pro', tipo: 'Painting · MA' },
   { src: `${CDN}/699b3d6255d8bc756045716b.png`, nome: 'Mass HVAC', tipo: 'HVAC · MA' },
   { src: `${CDN}/699b3d6220c0352e5305e8cc.png`, nome: 'Sinmevaço', tipo: 'Sindicato · Brasil' },
 ]

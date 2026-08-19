@@ -108,7 +108,7 @@ export default function IACompletoPage() {
               {/* Authority strip — quem escreveu */}
               <a href="/sobre" className="inline-flex items-center gap-3 bg-white/5 border border-white/10 hover:border-white/25 rounded-full pl-1 pr-5 py-1 mb-10 transition-[transform,box-shadow,background-color,color] group">
                 <Image
-                  src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d859c95106d5e512376e8e.jpeg"
+                  src="/rhai-retrato-2.webp"
                   alt="Rhaideline Calazans"
                   width={36}
                   height={36}
