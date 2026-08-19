@@ -270,7 +270,7 @@ Hoje, a Calazans Lumina é resultado de cada erro, cada aprendizado e cada madru
 - [Social media para brasileiros nos EUA: como usar o Instagram para atrair clientes locais](/blog/social-media-para-brasileiros-nos-eua-como-usar-o-instagram-para-atrair-clientes-locais)`,
     categoria: 'Sites',
     imagem:
-      'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b410c4c8da2445e99c973.png',
+      '/case-fisio-bot.webp',
     dataPublicacao: '18 de Agosto de 2024',
     tempoLeitura: '6 min de leitura',
     autor: 'Rhaideline Calazans',
@@ -890,7 +890,7 @@ Faz isso por 90 dias seguidos. Em 6 meses, você não reconhece mais o estágio 
 - Como brasileiros em Massachusetts podem ganhar dinheiro online em 2026`,
     categoria: 'Estratégia',
     imagem:
-      'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b410c4c8da2445e99c973.png',
+      '/case-fisio-bot.webp',
     dataPublicacao: '20 de Maio de 2026',
     tempoLeitura: '22 min de leitura',
     autor: 'Rhaideline Calazans',

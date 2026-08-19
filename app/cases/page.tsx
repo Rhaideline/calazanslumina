@@ -452,7 +452,7 @@ export default function CasesPage() {
                 </div>
                 <div className="mt-6">
                   <div className="relative rounded-xl overflow-hidden border border-gray-200 aspect-[16/10]">
-                    <Image src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b410c4c8da2445e99c973.png" alt="Fisio Bot IA" fill className="object-cover" sizes="50vw" />
+                    <Image src="/case-fisio-bot.webp" alt="Fisio Bot IA" fill className="object-cover" sizes="50vw" />
                   </div>
                 </div>
               </div>

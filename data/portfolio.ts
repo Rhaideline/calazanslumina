@@ -161,7 +161,7 @@ export const projetos: Projeto[] = [
       { valor: '4', label: 'Templates de reputação' },
       { valor: '★', label: 'Ciclo de reviews' },
     ],
-    heroImagem: `${CDN}/699b410c4c8da2445e99c973.png`,
+    heroImagem: '/case-fisio-bot.webp',
     galeria: [],
   },
 ]

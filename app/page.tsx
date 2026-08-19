@@ -202,7 +202,7 @@ const performanceImages = [
 
 const automacaoImages = [
   { src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b406720c0355e60076365.png', alt: 'Fluxo de automação GoHighLevel — pipeline de vendas automatizado' },
-  { src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b410c4c8da2445e99c973.png', alt: 'Workflow GHL com disparo automático de WhatsApp, email e SMS' },
+  { src: '/case-fisio-bot.webp', alt: 'Workflow GHL com disparo automático de WhatsApp, email e SMS' },
   { src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b418ddf9bdf249608cf87.png', alt: 'Robô de IA conversacional no WhatsApp — atendimento 24h automatizado' },
 ]
 
