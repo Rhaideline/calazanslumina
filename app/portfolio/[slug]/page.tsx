@@ -190,7 +190,7 @@ export default async function ProjetoPage({ params }: { params: Promise<{ slug: 
               <p className="text-brand-dark/40 text-xs tracking-[0.28em] uppercase mb-2">Próximo projeto</p>
               <p className="font-serif text-3xl md:text-5xl font-bold text-brand-dark group-hover:text-brand-mint transition-colors">{proximo.nome}</p>
             </div>
-            <svg className="w-8 h-8 md:w-12 md:h-12 text-brand-dark/30 group-hover:text-brand-mint group-hover:translate-x-2 transition-all flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.4} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+            <svg className="w-8 h-8 md:w-12 md:h-12 text-brand-dark/30 group-hover:text-brand-mint group-hover:translate-x-2 transition-[transform,box-shadow,background-color,color] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.4} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
           </div>
         </Link>
       </section>

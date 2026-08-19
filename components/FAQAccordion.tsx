@@ -15,7 +15,7 @@ export default function FAQAccordion({ faqs }: { faqs: FAQ[] }) {
       {faqs.map((faq, i) => (
         <div
           key={i}
-          className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
+          className={`border rounded-2xl overflow-hidden transition-[transform,box-shadow,background-color,color] duration-300 ${
             openIndex === i
               ? 'border-brand-mint/40 bg-white shadow-lg'
               : 'border-gray-200 bg-white hover:border-brand-mint/20'
@@ -39,7 +39,7 @@ export default function FAQAccordion({ faqs }: { faqs: FAQ[] }) {
             </svg>
           </button>
           <div
-            className={`overflow-hidden transition-all duration-300 ${
+            className={`overflow-hidden transition-[transform,box-shadow,background-color,color] duration-300 ${
               openIndex === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
             }`}
           >

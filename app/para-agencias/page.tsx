@@ -199,7 +199,7 @@ export default function ParaAgenciasPage() {
               <div className="flex flex-wrap gap-3">
                 <a
                   href="#empresas"
-                  className="group inline-flex items-center gap-2.5 bg-brand-mint hover:bg-brand-mint/90 text-white font-bold text-base px-8 py-4 rounded-full transition-all hover:scale-[1.03] shadow-2xl shadow-brand-mint/30"
+                  className="group inline-flex items-center gap-2.5 bg-brand-mint hover:bg-brand-mint/90 text-white font-bold text-base px-8 py-4 rounded-full transition-[transform,box-shadow,background-color,color] hover:scale-[1.03] shadow-2xl shadow-brand-mint/30"
                 >
                   Para Empresas
                   <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -208,7 +208,7 @@ export default function ParaAgenciasPage() {
                 </a>
                 <a
                   href="#agencias"
-                  className="inline-flex items-center gap-2 border border-white/15 hover:border-white/30 hover:bg-white/5 text-white px-7 py-4 rounded-full text-base font-medium transition-all"
+                  className="inline-flex items-center gap-2 border border-white/15 hover:border-white/30 hover:bg-white/5 text-white px-7 py-4 rounded-full text-base font-medium transition-[transform,box-shadow,background-color,color]"
                 >
                   Para Agências com GHL
                 </a>
@@ -228,7 +228,7 @@ export default function ParaAgenciasPage() {
                   </h2>
 
                   <div className="space-y-4">
-                    <div className="group bg-gradient-to-br from-brand-mint/15 to-brand-mint/5 border border-brand-mint/30 rounded-2xl p-5 hover:border-brand-mint/50 transition-all">
+                    <div className="group bg-gradient-to-br from-brand-mint/15 to-brand-mint/5 border border-brand-mint/30 rounded-2xl p-5 hover:border-brand-mint/50 transition-[transform,box-shadow,background-color,color]">
                       <div className="flex items-center gap-3 mb-3">
                         <div className="w-9 h-9 bg-brand-mint rounded-full flex items-center justify-center text-white font-serif font-bold flex-shrink-0 shadow-lg shadow-brand-mint/40">1</div>
                         <p className="text-white font-bold text-base">Tem uma empresa?</p>
@@ -236,7 +236,7 @@ export default function ParaAgenciasPage() {
                       <p className="text-white/65 text-sm leading-relaxed ml-12">Sub-conta GHL pronta com tudo configurado: chatbot IA, agendamento, follow-up, CRM. Qualquer nicho. Pague configuração + mensalidade.</p>
                     </div>
 
-                    <div className="group bg-white/[0.03] border border-white/10 rounded-2xl p-5 hover:border-white/20 transition-all">
+                    <div className="group bg-white/[0.03] border border-white/10 rounded-2xl p-5 hover:border-white/20 transition-[transform,box-shadow,background-color,color]">
                       <div className="flex items-center gap-3 mb-3">
                         <div className="w-9 h-9 bg-white/15 rounded-full flex items-center justify-center text-white font-serif font-bold flex-shrink-0">2</div>
                         <p className="text-white font-bold text-base">Agência com GHL?</p>
@@ -322,7 +322,7 @@ export default function ParaAgenciasPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto mb-20">
             {subAccountFeatures.map((feat, i) => (
               <ScrollReveal key={i} delay={i * 60}>
-                <div className="group relative bg-gradient-to-br from-white to-brand-bg border border-gray-100 rounded-2xl p-7 h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-mint/10 hover:border-brand-mint/30">
+                <div className="group relative bg-gradient-to-br from-white to-brand-bg border border-gray-100 rounded-2xl p-7 h-full transition-[transform,box-shadow,background-color,color] duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-mint/10 hover:border-brand-mint/30">
                   {/* Accent line top */}
                   <div className="absolute top-0 left-7 right-7 h-px bg-gradient-to-r from-transparent via-brand-mint/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
@@ -373,7 +373,7 @@ export default function ParaAgenciasPage() {
               <h3 className="font-serif text-3xl md:text-4xl font-bold text-brand-dark leading-tight">Simples e <span className="italic text-brand-mint">transparente</span>.</h3>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="group bg-white border border-gray-100 rounded-3xl p-10 text-center transition-all hover:-translate-y-1 hover:shadow-xl">
+              <div className="group bg-white border border-gray-100 rounded-3xl p-10 text-center transition-[transform,box-shadow,background-color,color] hover:-translate-y-1 hover:shadow-xl">
                 <div className="w-14 h-14 bg-brand-mint/10 rounded-full flex items-center justify-center mx-auto mb-5">
                   <svg className="w-7 h-7 text-brand-mint" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
@@ -390,7 +390,7 @@ export default function ParaAgenciasPage() {
                 </div>
               </div>
 
-              <div className="group relative bg-gradient-to-br from-brand-dark via-[#0a1a16] to-brand-dark text-white rounded-3xl p-10 text-center border-2 border-brand-mint shadow-2xl shadow-brand-mint/20 transition-all hover:-translate-y-1 hover:shadow-brand-mint/30">
+              <div className="group relative bg-gradient-to-br from-brand-dark via-[#0a1a16] to-brand-dark text-white rounded-3xl p-10 text-center border-2 border-brand-mint shadow-2xl shadow-brand-mint/20 transition-[transform,box-shadow,background-color,color] hover:-translate-y-1 hover:shadow-brand-mint/30">
                 {/* Glow effect */}
                 <div className="absolute -top-1/3 left-1/2 -translate-x-1/2 w-[400px] h-[400px] rounded-full bg-brand-mint/15 blur-3xl pointer-events-none" />
 
@@ -417,7 +417,7 @@ export default function ParaAgenciasPage() {
                 href="https://wa.me/5531982948067?text=Olá! Quero saber mais sobre a sub-conta GoHighLevel para minha empresa"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2.5 bg-brand-mint hover:bg-brand-mint/90 text-white font-bold text-lg px-10 py-5 rounded-full transition-all hover:scale-[1.03] shadow-2xl shadow-brand-mint/30"
+                className="group inline-flex items-center gap-2.5 bg-brand-mint hover:bg-brand-mint/90 text-white font-bold text-lg px-10 py-5 rounded-full transition-[transform,box-shadow,background-color,color] hover:scale-[1.03] shadow-2xl shadow-brand-mint/30"
               >
                 Quero minha sub-conta GHL
                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -564,7 +564,7 @@ export default function ParaAgenciasPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto mb-20">
             {freelancerServices.map((servico, i) => (
               <ScrollReveal key={i} delay={i * 60}>
-                <div className="group relative bg-gradient-to-br from-white/[0.06] to-white/[0.02] border border-white/10 rounded-2xl p-7 h-full backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-mint/30 hover:bg-white/[0.08]">
+                <div className="group relative bg-gradient-to-br from-white/[0.06] to-white/[0.02] border border-white/10 rounded-2xl p-7 h-full backdrop-blur-sm transition-[transform,box-shadow,background-color,color] duration-300 hover:-translate-y-1 hover:border-brand-mint/30 hover:bg-white/[0.08]">
                   {/* Accent line top */}
                   <div className="absolute top-0 left-7 right-7 h-px bg-gradient-to-r from-transparent via-brand-mint/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
@@ -615,7 +615,7 @@ export default function ParaAgenciasPage() {
               ].map((modelo, i) => (
                 <ScrollReveal key={i} delay={i * 80}>
                   <div
-                    className={`relative rounded-3xl p-7 md:p-9 h-full flex flex-col transition-all hover:-translate-y-1 ${
+                    className={`relative rounded-3xl p-7 md:p-9 h-full flex flex-col transition-[transform,box-shadow,background-color,color] hover:-translate-y-1 ${
                       modelo.destaque
                         ? 'bg-gradient-to-br from-brand-mint via-brand-mint to-emerald-500 text-white shadow-2xl shadow-brand-mint/40 md:scale-105'
                         : 'bg-white/[0.04] border border-white/10 hover:border-white/20 hover:bg-white/[0.06]'
@@ -642,7 +642,7 @@ export default function ParaAgenciasPage() {
                       href="https://wa.me/5531982948067?text=Olá, sou de uma agência e quero saber sobre o modelo de contratação"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`group/btn text-center font-bold py-3.5 rounded-full transition-all text-sm inline-flex items-center justify-center gap-2 ${
+                      className={`group/btn text-center font-bold py-3.5 rounded-full transition-[transform,box-shadow,background-color,color] text-sm inline-flex items-center justify-center gap-2 ${
                         modelo.destaque ? 'bg-white text-brand-dark hover:bg-white/95 shadow-lg' : 'border border-white/20 text-white hover:bg-white/10'
                       }`}
                     >
@@ -893,7 +893,7 @@ export default function ParaAgenciasPage() {
               },
             ].map((grupo, i) => (
               <ScrollReveal key={i} delay={i * 40}>
-                <div className="group bg-white/[0.04] border border-white/10 rounded-2xl p-6 h-full backdrop-blur-sm hover:bg-white/[0.06] hover:border-brand-mint/20 transition-all">
+                <div className="group bg-white/[0.04] border border-white/10 rounded-2xl p-6 h-full backdrop-blur-sm hover:bg-white/[0.06] hover:border-brand-mint/20 transition-[transform,box-shadow,background-color,color]">
                   <h3 className="font-serif text-lg font-bold text-brand-mint mb-4 leading-tight pb-3 border-b border-white/10">{grupo.cat}</h3>
                   <ul className="space-y-2">
                     {grupo.triggers.map((t, j) => (
@@ -916,7 +916,7 @@ export default function ParaAgenciasPage() {
               href="https://wa.me/5531982948067?text=Olá, preciso configurar automações no GoHighLevel"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2.5 bg-brand-mint hover:bg-brand-mint/90 text-white font-bold text-base px-8 py-4 rounded-full transition-all hover:scale-[1.03] shadow-2xl shadow-brand-mint/30"
+              className="group inline-flex items-center gap-2.5 bg-brand-mint hover:bg-brand-mint/90 text-white font-bold text-base px-8 py-4 rounded-full transition-[transform,box-shadow,background-color,color] hover:scale-[1.03] shadow-2xl shadow-brand-mint/30"
             >
               Quero configurar minhas automações
               <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -991,7 +991,7 @@ export default function ParaAgenciasPage() {
               { p: 'E se o workflow quebrar depois?', r: 'Ofereço 7 dias de suporte gratuito após a entrega de cada setup. Para manutenção contínua, temos o modelo de pacote mensal com suporte prioritário.' },
             ].map((faq, i) => (
               <ScrollReveal key={i} delay={i * 40}>
-                <div className="group bg-white rounded-2xl p-7 border border-gray-100 hover:border-brand-mint/30 hover:shadow-md transition-all">
+                <div className="group bg-white rounded-2xl p-7 border border-gray-100 hover:border-brand-mint/30 hover:shadow-md transition-[transform,box-shadow,background-color,color]">
                   <div className="flex items-start gap-4">
                     <div className="w-7 h-7 bg-brand-mint/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
                       <span className="text-brand-mint font-serif font-bold text-sm">?</span>
@@ -1034,7 +1034,7 @@ export default function ParaAgenciasPage() {
                 href="https://wa.me/5531982948067?text=Olá! Quero saber mais sobre GoHighLevel para minha clínica/agência"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2.5 bg-brand-mint hover:bg-brand-mint/90 text-white font-bold text-lg px-10 py-5 rounded-full transition-all hover:scale-[1.03] shadow-2xl shadow-brand-mint/40"
+                className="group inline-flex items-center gap-2.5 bg-brand-mint hover:bg-brand-mint/90 text-white font-bold text-lg px-10 py-5 rounded-full transition-[transform,box-shadow,background-color,color] hover:scale-[1.03] shadow-2xl shadow-brand-mint/40"
               >
                 Falar pelo WhatsApp
                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1043,7 +1043,7 @@ export default function ParaAgenciasPage() {
               </a>
               <Link
                 href="/contato"
-                className="inline-flex items-center gap-2 border border-white/15 hover:border-white/30 hover:bg-white/5 text-white px-7 py-5 rounded-full text-base font-medium transition-all"
+                className="inline-flex items-center gap-2 border border-white/15 hover:border-white/30 hover:bg-white/5 text-white px-7 py-5 rounded-full text-base font-medium transition-[transform,box-shadow,background-color,color]"
               >
                 Solicitar orçamento
               </Link>

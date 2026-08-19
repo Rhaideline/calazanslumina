@@ -25,7 +25,7 @@ export default function PortfolioSites({ compact = false }: { compact?: boolean 
                 href={site.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-white border border-gray-200 rounded-full px-4 py-2 text-sm text-brand-dark/70 hover:text-brand-dark hover:border-brand-mint hover:shadow-md transition-all duration-200"
+                className="flex items-center gap-2 bg-white border border-gray-200 rounded-full px-4 py-2 text-sm text-brand-dark/70 hover:text-brand-dark hover:border-brand-mint hover:shadow-md transition-[transform,box-shadow,background-color,color] duration-200"
               >
                 <span>{site.bandeira}</span>
                 <span className="font-medium">{site.nome}</span>
@@ -55,7 +55,7 @@ export default function PortfolioSites({ compact = false }: { compact?: boolean 
                 href={site.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block bg-brand-bg rounded-2xl border border-gray-100 p-6 hover:border-brand-mint hover:shadow-lg transition-all duration-300"
+                className="group block bg-brand-bg rounded-2xl border border-gray-100 p-6 hover:border-brand-mint hover:shadow-lg transition-[transform,box-shadow,background-color,color] duration-300"
               >
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-2xl">{site.bandeira}</span>

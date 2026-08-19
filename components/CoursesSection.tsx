@@ -52,7 +52,7 @@ export default function CoursesSection() {
             {premiums.map((premium, i) => (
               <ScrollReveal key={premium.slug} delay={i * 80}>
                 <div className="group block h-full">
-                  <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-brand-dark via-[#1a0405] to-black border-2 border-red-500/30 shadow-2xl hover:border-red-500/60 transition-all hover:-translate-y-1 hover:shadow-red-500/20 h-full flex flex-col">
+                  <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-brand-dark via-[#1a0405] to-black border-2 border-red-500/30 shadow-2xl hover:border-red-500/60 transition-[transform,box-shadow,background-color,color] hover:-translate-y-1 hover:shadow-red-500/20 h-full flex flex-col">
                     <div className="absolute inset-0 opacity-30 pointer-events-none">
                       <div className="absolute -top-1/2 -right-1/4 w-[500px] h-[500px] bg-gradient-radial from-red-500/40 via-transparent to-transparent rounded-full blur-3xl" />
                     </div>

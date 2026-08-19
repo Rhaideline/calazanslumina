@@ -20,7 +20,7 @@ export default function ProgressBar({
       {/* Thin progress line */}
       <div className="h-1 bg-gray-100">
         <div
-          className="h-full bg-brand-mint transition-all duration-500 ease-out"
+          className="h-full bg-brand-mint transition-[transform,box-shadow,background-color,color] duration-500 ease-out"
           style={{ width: `${percent}%` }}
         />
       </div>

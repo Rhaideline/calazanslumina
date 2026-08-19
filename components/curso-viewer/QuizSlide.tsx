@@ -68,7 +68,7 @@ export default function QuizSlide({ slide, onComplete }: QuizSlideProps) {
               key={index}
               onClick={() => !confirmed && setSelectedIndex(index)}
               disabled={confirmed}
-              className={`w-full text-left p-4 rounded-xl border-2 transition-all duration-200 ${optionStyle}`}
+              className={`w-full text-left p-4 rounded-xl border-2 transition-[transform,box-shadow,background-color,color] duration-200 ${optionStyle}`}
             >
               <div className="flex items-start gap-3">
                 <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center flex-shrink-0 mt-0.5 ${
@@ -114,7 +114,7 @@ export default function QuizSlide({ slide, onComplete }: QuizSlideProps) {
         <button
           onClick={handleConfirm}
           disabled={selectedIndex === null}
-          className={`w-full py-3 rounded-xl text-sm font-semibold transition-all duration-200 ${
+          className={`w-full py-3 rounded-xl text-sm font-semibold transition-[transform,box-shadow,background-color,color] duration-200 ${
             selectedIndex === null
               ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
               : 'bg-brand-mint text-white hover:bg-brand-light'

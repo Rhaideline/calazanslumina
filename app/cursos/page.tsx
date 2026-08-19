@@ -72,7 +72,7 @@ export default function CursosPage() {
             </h1>
             <p className="text-white/60 text-lg md:text-xl max-w-3xl mx-auto mb-8">
               Conhecimento prático e direto ao ponto. Temos cursos <strong className="text-white">gratuitos</strong> e cursos a partir de{' '}
-              <strong className="text-white">R$ 9,90</strong> — menos que um café, mais que muitos cursos caros ensinam.
+              <strong className="text-white">R$ 9,90</strong> — o preço é de entrada, o conteúdo não.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <div className="bg-white/5 border border-white/10 rounded-xl px-6 py-3 text-center">
@@ -173,7 +173,7 @@ export default function CursosPage() {
                         href={premium.linkPagamento || '#'}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-red-500 hover:bg-red-600 text-white font-bold text-base py-4 rounded-full text-center inline-flex items-center justify-center gap-2 transition-all hover:scale-105 shadow-lg shadow-red-500/30"
+                        className="bg-red-500 hover:bg-red-600 text-white font-bold text-base py-4 rounded-full text-center inline-flex items-center justify-center gap-2 transition-[transform,box-shadow,background-color,color] hover:scale-105 shadow-lg shadow-red-500/30"
                       >
                         Garantir agora por R$ {formatPreco(premium.preco)}
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -228,7 +228,7 @@ export default function CursosPage() {
                         href={ml.linkPagamento || '#'}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-yellow-400 text-brand-dark font-bold px-7 py-3.5 rounded-xl hover:bg-yellow-300 transition-all shadow-2xl hover:-translate-y-0.5"
+                        className="inline-flex items-center gap-2 bg-yellow-400 text-brand-dark font-bold px-7 py-3.5 rounded-xl hover:bg-yellow-300 transition-[transform,box-shadow,background-color,color] shadow-2xl hover:-translate-y-0.5"
                       >
                         Quero por R$ {formatPreco(ml.preco)}
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
@@ -261,7 +261,7 @@ export default function CursosPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {cursos.map((curso, i) => (
               <ScrollReveal key={curso.slug} delay={i * 100}>
-                <div className={`relative rounded-2xl overflow-hidden h-full flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
+                <div className={`relative rounded-2xl overflow-hidden h-full flex flex-col transition-[transform,box-shadow,background-color,color] duration-300 hover:-translate-y-2 hover:shadow-2xl ${
                   curso.destaque
                     ? 'border-2 border-brand-mint shadow-xl shadow-black/10'
                     : 'border border-gray-100 shadow-sm'

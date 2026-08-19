@@ -93,7 +93,7 @@ export default function IACompletoPage() {
                   courseName={curso.nome}
                   preco={curso.preco}
                   utmMedium="hero-vsl"
-                  className="group relative bg-red-500 hover:bg-red-600 text-white font-bold text-lg md:text-xl px-10 py-5 rounded-full inline-flex items-center gap-3 transition-all hover:scale-105 shadow-2xl shadow-red-500/40"
+                  className="group relative bg-red-500 hover:bg-red-600 text-white font-bold text-lg md:text-xl px-10 py-5 rounded-full inline-flex items-center gap-3 transition-[transform,box-shadow,background-color,color] hover:scale-105 shadow-2xl shadow-red-500/40"
                 >
                   Garantir por R$ 9,90
                   <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -106,7 +106,7 @@ export default function IACompletoPage() {
               </div>
 
               {/* Authority strip — quem escreveu */}
-              <a href="/sobre" className="inline-flex items-center gap-3 bg-white/5 border border-white/10 hover:border-white/25 rounded-full pl-1 pr-5 py-1 mb-10 transition-all group">
+              <a href="/sobre" className="inline-flex items-center gap-3 bg-white/5 border border-white/10 hover:border-white/25 rounded-full pl-1 pr-5 py-1 mb-10 transition-[transform,box-shadow,background-color,color] group">
                 <Image
                   src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d859c95106d5e512376e8e.jpeg"
                   alt="Rhaideline Calazans"
@@ -268,7 +268,7 @@ export default function IACompletoPage() {
             </div>
 
             <div className="text-center mt-12">
-              <TrackedCheckoutLink href={link} courseSlug={curso.slug} courseName={curso.nome} preco={curso.preco} utmMedium="ias-grid" className="inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white font-bold text-lg px-10 py-5 rounded-full transition-all hover:scale-105 shadow-xl shadow-red-500/30">
+              <TrackedCheckoutLink href={link} courseSlug={curso.slug} courseName={curso.nome} preco={curso.preco} utmMedium="ias-grid" className="inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white font-bold text-lg px-10 py-5 rounded-full transition-[transform,box-shadow,background-color,color] hover:scale-105 shadow-xl shadow-red-500/30">
                 Quero acesso por R$ 9,90
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -366,7 +366,7 @@ export default function IACompletoPage() {
                   courseName={curso.nome}
                   preco={curso.preco}
                   utmMedium="bonus-stack"
-                  className="block bg-red-500 hover:bg-red-600 text-white font-bold text-lg py-4 rounded-full text-center transition-all hover:scale-[1.02] shadow-xl shadow-red-500/30 max-w-md mx-auto"
+                  className="block bg-red-500 hover:bg-red-600 text-white font-bold text-lg py-4 rounded-full text-center transition-[transform,box-shadow,background-color,color] hover:scale-[1.02] shadow-xl shadow-red-500/30 max-w-md mx-auto"
                 >
                   Garantir tudo por R$ 9,90 →
                 </TrackedCheckoutLink>
@@ -435,7 +435,7 @@ export default function IACompletoPage() {
                 courseName={curso.nome}
                 preco={curso.preco}
                 utmMedium="oferta-section"
-                className="block bg-red-500 hover:bg-red-600 text-white font-bold text-xl md:text-2xl py-5 md:py-6 rounded-full transition-all hover:scale-[1.02] shadow-2xl shadow-red-500/40 mb-6 text-center"
+                className="block bg-red-500 hover:bg-red-600 text-white font-bold text-xl md:text-2xl py-5 md:py-6 rounded-full transition-[transform,box-shadow,background-color,color] hover:scale-[1.02] shadow-2xl shadow-red-500/40 mb-6 text-center"
               >
                 Garantir meu acesso vitalício →
               </TrackedCheckoutLink>
@@ -509,7 +509,7 @@ export default function IACompletoPage() {
               courseName={curso.nome}
               preco={curso.preco}
               utmMedium="cta-final"
-              className="inline-flex items-center gap-3 bg-white hover:bg-amber-50 text-red-600 font-bold text-xl md:text-2xl px-12 py-6 rounded-full transition-all hover:scale-105 shadow-2xl shadow-black/40"
+              className="inline-flex items-center gap-3 bg-white hover:bg-amber-50 text-red-600 font-bold text-xl md:text-2xl px-12 py-6 rounded-full transition-[transform,box-shadow,background-color,color] hover:scale-105 shadow-2xl shadow-black/40"
             >
               Acessar por R$ 9,90
               <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">

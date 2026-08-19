@@ -97,7 +97,7 @@ export default function ExitIntentPopup() {
                 trackEngagement('exit_intent_click', { source: 'popup', action: 'accept' })
                 setOpen(false)
               }}
-              className="bg-red-500 hover:bg-red-600 text-white font-bold text-base py-4 rounded-full transition-all hover:scale-[1.02] shadow-lg shadow-red-500/30 inline-flex items-center justify-center gap-2"
+              className="bg-red-500 hover:bg-red-600 text-white font-bold text-base py-4 rounded-full transition-[transform,box-shadow,background-color,color] hover:scale-[1.02] shadow-lg shadow-red-500/30 inline-flex items-center justify-center gap-2"
             >
               Quero o preview grátis
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

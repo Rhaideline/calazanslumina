@@ -35,7 +35,7 @@ export default function ScrollReveal({ children, className = '', delay = 0 }: Sc
   return (
     <div
       ref={ref}
-      className={`opacity-0 translate-y-8 transition-all duration-700 ease-out ${className}`}
+      className={`opacity-0 translate-y-8 transition-[transform,box-shadow,background-color,color] duration-700 ease-out ${className}`}
     >
       {children}
     </div>

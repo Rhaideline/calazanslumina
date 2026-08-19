@@ -61,7 +61,7 @@ export default function PortfolioPage() {
               <ScrollReveal key={p.slug} delay={(i % 2) * 90}>
                 <Link href={`/portfolio/${p.slug}`} className="group block">
                   {/* navegador */}
-                  <div className="rounded-xl overflow-hidden bg-white ring-1 ring-black/[0.06] shadow-[0_18px_50px_-24px_rgba(0,0,0,0.35)] transition-all duration-500 group-hover:-translate-y-1.5 group-hover:shadow-[0_36px_80px_-30px_rgba(0,0,0,0.45)]">
+                  <div className="rounded-xl overflow-hidden bg-white ring-1 ring-black/[0.06] shadow-[0_18px_50px_-24px_rgba(0,0,0,0.35)] transition-[transform,box-shadow,background-color,color] duration-500 group-hover:-translate-y-1.5 group-hover:shadow-[0_36px_80px_-30px_rgba(0,0,0,0.45)]">
                     <div className="h-8 md:h-9 bg-[#e9e7e3] flex items-center gap-1.5 px-4">
                       <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" aria-hidden="true" />
                       <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" aria-hidden="true" />
@@ -86,7 +86,7 @@ export default function PortfolioPage() {
                       {p.nome}
                     </h2>
                     <p className="text-brand-dark/55 text-base leading-relaxed mt-2.5 max-w-md">{p.resumo}</p>
-                    <span className="inline-flex items-center gap-2 mt-5 text-brand-dark font-medium text-sm group-hover:gap-3 transition-all">
+                    <span className="inline-flex items-center gap-2 mt-5 text-brand-dark font-medium text-sm group-hover:gap-3 transition-[transform,box-shadow,background-color,color]">
                       Ver projeto
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.6} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -112,7 +112,7 @@ export default function PortfolioPage() {
             {maisSites.map((s, i) => (
               <ScrollReveal key={i} delay={i * 70}>
                 <div className="group">
-                  <div className="rounded-lg overflow-hidden bg-white ring-1 ring-black/[0.06] shadow-[0_12px_36px_-20px_rgba(0,0,0,0.3)] transition-all duration-500 group-hover:-translate-y-1">
+                  <div className="rounded-lg overflow-hidden bg-white ring-1 ring-black/[0.06] shadow-[0_12px_36px_-20px_rgba(0,0,0,0.3)] transition-[transform,box-shadow,background-color,color] duration-500 group-hover:-translate-y-1">
                     <div className="h-6 bg-[#e9e7e3] flex items-center gap-1 px-2.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#ff5f57]" aria-hidden="true" />
                       <span className="w-1.5 h-1.5 rounded-full bg-[#febc2e]" aria-hidden="true" />

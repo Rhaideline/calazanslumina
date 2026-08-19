@@ -210,7 +210,7 @@ function BarchartDiagram({ data }: { data: Record<string, unknown> }) {
           <div className="w-24 text-xs text-gray-600 text-right flex-shrink-0">{item.label}</div>
           <div className="flex-1 bg-gray-100 rounded-full h-6 overflow-hidden">
             <div
-              className={`${colors[i % colors.length]} h-full rounded-full flex items-center justify-end pr-2 transition-all duration-500`}
+              className={`${colors[i % colors.length]} h-full rounded-full flex items-center justify-end pr-2 transition-[transform,box-shadow,background-color,color] duration-500`}
               style={{ width: `${(item.value / maxVal) * 100}%` }}
             >
               <span className="text-white text-xs font-bold">{item.value}%</span>

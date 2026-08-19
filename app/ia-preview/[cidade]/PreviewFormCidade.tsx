@@ -119,7 +119,7 @@ export default function PreviewFormCidade({ cidadeNome, cidadeSlug, pais }: Prop
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="w-full bg-red-500 hover:bg-red-600 disabled:bg-red-700 disabled:cursor-not-allowed text-white font-bold text-base py-4 rounded-full transition-all hover:scale-[1.02] shadow-lg shadow-red-500/30 inline-flex items-center justify-center gap-2"
+        className="w-full bg-red-500 hover:bg-red-600 disabled:bg-red-700 disabled:cursor-not-allowed text-white font-bold text-base py-4 rounded-full transition-[transform,box-shadow,background-color,color] hover:scale-[1.02] shadow-lg shadow-red-500/30 inline-flex items-center justify-center gap-2"
       >
         {status === 'loading' ? (
           <>

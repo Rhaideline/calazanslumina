@@ -178,7 +178,7 @@ const localBusinessSchema = {
   },
   areaServed: ['Massachusetts, USA', 'Brasil'],
   priceRange: '$$',
-  image: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6d8ea4c91ee3015cbc.png',
+  image: 'https://calazanslumina.com.br/logo-calazans-lumina.png',
   sameAs: ['https://www.instagram.com/calazanslumina/'],
 }
 
@@ -430,7 +430,7 @@ export default function HomePage() {
                     {servico.nome}
                   </h3>
                   <p className="text-brand-dark/60 text-sm mb-6 leading-relaxed">{servico.descricaoCurta}</p>
-                  <span className="inline-flex items-center gap-2 text-brand-mint text-sm font-medium group-hover:gap-3 transition-all">
+                  <span className="inline-flex items-center gap-2 text-brand-mint text-sm font-medium group-hover:gap-3 transition-[transform,box-shadow,background-color,color]">
                     {servico.cta}
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -479,7 +479,7 @@ export default function HomePage() {
                   href={cursos.find((c) => c.slug === 'mercado-livre-definitivo')?.linkPagamento || '/cursos/mercado-livre-definitivo'}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-brand-mint text-brand-dark font-bold px-8 py-4 rounded-xl hover:bg-brand-mint/90 transition-all shadow-2xl hover:shadow-brand-mint/30 hover:-translate-y-0.5"
+                  className="inline-flex items-center gap-2 bg-brand-mint text-brand-dark font-bold px-8 py-4 rounded-xl hover:bg-brand-mint/90 transition-[transform,box-shadow,background-color,color] shadow-2xl hover:shadow-brand-mint/30 hover:-translate-y-0.5"
                 >
                   Quero acessar por R$ 9,90
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>

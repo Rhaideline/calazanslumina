@@ -120,7 +120,7 @@ export default function PricingTable() {
           {pacotes.map((pkg, i) => (
             <ScrollReveal key={pkg.nome} delay={i * 150}>
               <div
-                className={`relative rounded-2xl p-8 h-full flex flex-col transition-all duration-300 hover:-translate-y-2 ${
+                className={`relative rounded-2xl p-8 h-full flex flex-col transition-[transform,box-shadow,background-color,color] duration-300 hover:-translate-y-2 ${
                   pkg.destaque
                     ? 'bg-brand-mint text-white shadow-2xl shadow-black/20 scale-[1.02]'
                     : 'bg-white/5 border border-white/10 hover:border-brand-mint/30'
@@ -169,7 +169,7 @@ export default function PricingTable() {
                   href={`https://wa.me/5531982948067?text=${encodeURIComponent(`Olá! Tenho interesse no pacote ${pkg.nome} da Calazans Lumina`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`w-full text-center font-bold py-4 rounded-full transition-all duration-300 hover:scale-105 block ${
+                  className={`w-full text-center font-bold py-4 rounded-full transition-[transform,box-shadow,background-color,color] duration-300 hover:scale-105 block ${
                     pkg.destaque
                       ? 'bg-white text-brand-mint hover:bg-white/90'
                       : 'bg-brand-mint text-white hover:bg-brand-light'

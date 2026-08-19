@@ -21,7 +21,7 @@ export default function SlideNavigation({
       <button
         onClick={onPrev}
         disabled={isFirst}
-        className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${
+        className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-[transform,box-shadow,background-color,color] duration-200 ${
           isFirst
             ? 'text-gray-300 cursor-not-allowed'
             : 'text-brand-dark hover:bg-gray-100'
@@ -36,7 +36,7 @@ export default function SlideNavigation({
       <button
         onClick={onNext}
         disabled={isLast}
-        className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${
+        className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-[transform,box-shadow,background-color,color] duration-200 ${
           isLast
             ? 'text-gray-300 cursor-not-allowed'
             : 'bg-brand-mint text-white hover:bg-brand-light'

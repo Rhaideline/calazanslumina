@@ -656,7 +656,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
             <h2 className="heading-2 mb-4">
               {curso.gratuito
                 ? 'Não custa nada. Não perde nada. So ganha conhecimento.'
-                : `Por menos que um cafe com bolo, você transforma sua carreira.`}
+                : `Pagamento único. Sem mensalidade, sem renovação, sem pegadinha.`}
             </h2>
             <p className="text-white/40 mb-8 text-lg">{curso.vsl.urgencia}</p>
             <div className="flex flex-wrap gap-4 justify-center">

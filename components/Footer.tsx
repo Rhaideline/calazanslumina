@@ -52,7 +52,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="xl:col-span-2">
             <Image
-              src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6d8ea4c91ee3015cbc.png"
+              src="/logo-calazans-lumina.png"
               alt="Calazans Lumina - Agência de Marketing Digital"
               width={220}
               height={70}

@@ -66,7 +66,7 @@ export default function ChecklistSlide({
       <div className="flex items-center gap-3 mb-6">
         <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
           <div
-            className="h-full bg-green-500 transition-all duration-300 rounded-full"
+            className="h-full bg-green-500 transition-[transform,box-shadow,background-color,color] duration-300 rounded-full"
             style={{ width: `${(completedCount / totalCount) * 100}%` }}
           />
         </div>
@@ -81,13 +81,13 @@ export default function ChecklistSlide({
           <button
             key={index}
             onClick={() => toggleItem(index)}
-            className={`w-full flex items-start gap-3 p-4 rounded-xl border-2 text-left transition-all duration-200 ${
+            className={`w-full flex items-start gap-3 p-4 rounded-xl border-2 text-left transition-[transform,box-shadow,background-color,color] duration-200 ${
               checked[index]
                 ? 'border-green-200 bg-green-50'
                 : 'border-gray-100 hover:border-brand-mint/30 hover:bg-brand-bg'
             }`}
           >
-            <div className={`w-5 h-5 rounded flex items-center justify-center flex-shrink-0 mt-0.5 transition-all ${
+            <div className={`w-5 h-5 rounded flex items-center justify-center flex-shrink-0 mt-0.5 transition-[transform,box-shadow,background-color,color] ${
               checked[index]
                 ? 'bg-green-500'
                 : 'border-2 border-gray-300'

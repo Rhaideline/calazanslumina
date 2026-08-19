@@ -51,7 +51,7 @@ export default function RelatedLinks({ title = 'Conteúdo Relacionado', links, v
       <h2 className="font-serif text-2xl font-bold text-white mb-6 text-center">{title}</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {links.map((link) => (
-          <Link key={link.href} href={link.href} className="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-brand-mint/30 rounded-xl p-5 transition-all">
+          <Link key={link.href} href={link.href} className="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-brand-mint/30 rounded-xl p-5 transition-[transform,box-shadow,background-color,color]">
             <span className="text-brand-mint group-hover:text-white font-medium transition-colors">{link.label}</span>
             {link.description && <p className="text-white/50 text-sm mt-1.5">{link.description}</p>}
             <span className="text-brand-mint/60 text-xs mt-2 block group-hover:text-brand-mint transition-colors">Saiba mais →</span>

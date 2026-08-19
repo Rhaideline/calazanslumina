@@ -136,7 +136,7 @@ export default function CapturaEmail({
         <button
           type="submit"
           disabled={estado === 'enviando'}
-          className={`rounded-xl px-6 py-3 text-sm font-bold whitespace-nowrap transition-all disabled:opacity-50 ${
+          className={`rounded-xl px-6 py-3 text-sm font-bold whitespace-nowrap transition-[transform,box-shadow,background-color,color] disabled:opacity-50 ${
             escuro
               ? 'bg-white text-brand-dark hover:bg-white/90'
               : 'bg-brand-dark text-white hover:bg-brand-dark/90'
