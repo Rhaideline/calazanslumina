@@ -9,7 +9,12 @@ const GONE_PATTERNS: RegExp[] = [
   /^\/itens-para-casa(\/|$)/,
   /^\/maternidade(\/|$)/,
   /^\/blog\/(recem-nascido|amamentacao|rotina-de-sono|colica|bebe|gravidez)-/,
-  /^\/checklist-enxoval-bebe-.+\.pdf$/,
+  // O checklist NAO esta mais nesta lista. Ele era a pagina que mais trazia
+  // trafego do site inteiro, e "lista enxoval de bebe completo pdf 2026" e a
+  // consulta que mais perdeu clique depois que ele saiu com 410 — confirmado
+  // pela API do Search Console em 19/ago/2026.
+  // Voltou como isca de e-mail: o PDF fica em /public e a pagina
+  // /checklist-enxoval-bebe entrega o download depois do cadastro.
 ]
 
 export function middleware(req: NextRequest) {

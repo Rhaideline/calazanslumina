@@ -163,6 +163,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Contagens conferidas em 01/ago/2026 contra os datasets.
   return [
+    // Checklist de enxoval: era a pagina de maior trafego do site e voltou como
+    // isca de e-mail (ver middleware.ts). Declarada porque a busca por ela
+    // existe e e a que mais perdeu clique quando saiu do ar.
+    {
+      url: `${BASE}/checklist-enxoval-bebe`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
     ...staticPages,            // 11 (8 + 3 legais)
     ...portfolioPages,         // 5
     ...cursosPages,            // 11

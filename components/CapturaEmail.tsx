@@ -25,6 +25,8 @@ interface Props {
   origem: string
   /** Cidade, quando a pagina tiver. */
   cidade?: string
+  /** Nome do arquivo em /public a entregar depois do cadastro.
+      Ex.: "checklist-enxoval-bebe-2026.pdf" */
   titulo?: string
   descricao?: string
   isca?: string
@@ -68,6 +70,17 @@ export default function CapturaEmail({
       })
       if (!r.ok) throw new Error((await r.json().catch(() => ({}))).error || 'falhou')
       setEstado('ok')
+      // entrega a isca na hora. O e-mail tambem sai pelo GHL, mas quem acabou
+      // de digitar espera o arquivo AGORA — mandar so por e-mail perde a
+      // pessoa que digitou errado ou nao quer sair da pagina.
+      if (isca) {
+        const a = document.createElement('a')
+        a.href = `/${isca}`
+        a.download = isca
+        document.body.appendChild(a)
+        a.click()
+        a.remove()
+      }
     } catch (err) {
       setEstado('erro')
       setErro(err instanceof Error ? err.message : 'Não consegui cadastrar. Tente de novo.')
@@ -86,9 +99,20 @@ export default function CapturaEmail({
         </p>
         <p className={escuro ? 'text-white/60 text-sm' : 'text-brand-dark/60 text-sm'}>
           {isca
-            ? 'Confira seu e-mail — o material está indo agora.'
+            ? 'O download começou. Se não abrir, clique aqui:'
             : 'O primeiro e-mail chega na próxima semana.'}
         </p>
+        {isca && (
+          <a
+            href={`/${isca}`}
+            download
+            className={`inline-block mt-3 text-sm font-bold underline underline-offset-4 ${
+              escuro ? 'text-white' : 'text-brand-mint'
+            }`}
+          >
+            baixar o PDF
+          </a>
+        )}
       </div>
     )
   }
