@@ -50,7 +50,7 @@ export const metadata: Metadata = {
       'Sites, funis GHL, CRM com IA, redes sociais e Google Maps para empreendedores brasileiros. Atendimento em português.',
     images: [
       {
-        url: 'https://calazanslumina.com.br/logo-calazans-lumina.png',
+        url: 'https://calazanslumina.com.br/logo-calazans-lumina.webp',
         width: 1200,
         height: 630,
         alt: 'Calazans Lumina — Agência de Marketing Digital',
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     title: 'Calazans Lumina | Marketing Digital para Brasileiros nos EUA e Brasil',
     description:
       'Sites, funis GHL, CRM com IA, redes sociais e Google Maps para empreendedores brasileiros. Atendimento em português.',
-    images: ['https://calazanslumina.com.br/logo-calazans-lumina.png'],
+    images: ['https://calazanslumina.com.br/logo-calazans-lumina.webp'],
     creator: '@calazanslumina',
   },
   alternates: {

@@ -28,14 +28,19 @@ templates-*.html
 guia-pdf-visual-fpdf2.py
 
 # Imagens soltas de trabalho na raiz
-*.png
-# ...MENOS o que esta em public/. A regra `*.png` acima existe para nao subir
-# as centenas de PNG de trabalho espalhados no repositorio (posts, mockups,
-# capas), mas ela tambem pegava public/ — onde ficam os arquivos que o SITE
-# precisa servir. A logo subiu no commit, existia no repositorio, e devolvia
-# 404 em producao por causa disto.
-!public/**/*.png
-!public/*.png
+# A regra era `*.png` global, para nao subir as centenas de PNG de trabalho do
+# repositorio. So que ela pegava tambem public/ — a unica pasta cujo conteudo o
+# site PRECISA servir — e a logo devolvia 404 em producao.
+#
+# Excecao com `!` NAO funciona aqui: testado em producao, o Vercel ignora a
+# negacao e o arquivo continua fora. Por isso a regra passou a nomear as pastas
+# que realmente tem lixo, em vez de excluir a extensao inteira.
+img-curso-ml/*.png
+image_analysis/*.png
+_audit/**/*.png
+estudo-lumina*/**/*.png
+lumina-social/**/*.png
+lumina-identidade/**/*.png
 seo_*.md
 EMAIL-AUTOMATION.md
 FUNIS-DE-VENDA.md

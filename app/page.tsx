@@ -178,7 +178,7 @@ const localBusinessSchema = {
   },
   areaServed: ['Massachusetts, USA', 'Brasil'],
   priceRange: '$$',
-  image: 'https://calazanslumina.com.br/logo-calazans-lumina.png',
+  image: 'https://calazanslumina.com.br/logo-calazans-lumina.webp',
   sameAs: ['https://www.instagram.com/calazanslumina/'],
 }
 

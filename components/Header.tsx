@@ -122,7 +122,7 @@ export default function Header() {
                 Este arquivo usa os MESMOS dois blocos do original, so com a
                 folga fechada para 18px. Agora le "Calazans". */}
             <Image
-              src="/logo-calazans-lumina.png"
+              src="/logo-calazans-lumina.webp"
               alt="Calazans Lumina — Agência de Marketing Digital"
               width={408}
               height={168}
