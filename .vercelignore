@@ -44,3 +44,8 @@ lumina-identidade/**/*.png
 seo_*.md
 EMAIL-AUTOMATION.md
 FUNIS-DE-VENDA.md
+
+# App Law Life — projeto Next proprio, com build e deploy separados do site.
+# Sem esta linha o Vercel do calazanslumina tentaria empacotar um segundo
+# app inteiro (e o node_modules dele) junto do site.
+lawlife/
