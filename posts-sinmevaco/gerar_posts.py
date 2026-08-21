@@ -11,6 +11,26 @@ from pathlib import Path
 
 ROOT = Path(__file__).parent
 
+# ====== MARCA ======
+# TROCAR AQUI pelas cores oficiais do sindicato. Os quatro tokens abaixo
+# alimentam todos os 31 slides; nada mais precisa ser editado.
+CORES = {
+    "navy":   "#132340",  # fundo principal (escuro)
+    "navy2":  "#0B1526",  # base do degrade escuro
+    "navy3":  "#1E355C",  # caixas e destaques sobre o escuro
+    "steel":  "#2A3B57",  # fundo secundario (aco)
+    "cream":  "#F4EFE6",  # fundo claro e texto sobre escuro
+    "cream2": "#E4DACA",
+    "brass":  "#A8763E",  # acento
+    "brass2": "#C89B5C",  # acento claro (numeros, kickers)
+    "ink":    "#141A24",  # texto sobre fundo claro
+}
+
+# Logo: coloque o arquivo oficial em logos/logo.png (ou .svg) e ele entra
+# automaticamente no rodape de todos os slides. Sem o arquivo, entra o
+# lockup provisorio com a inicial.
+LOGO_FILE = "logos/logo.png"
+
 # ====== IDENTIDADE (confirmar antes de publicar) ======
 HANDLE = "@sinmevaco"
 SITE = "sinmevaco.com.br"
@@ -19,16 +39,7 @@ CIDADE = "Coronel Fabriciano - Vale do Aco / MG"
 
 # ====== BASE ======
 BASE_CSS = """
-:root{
-  --navy:#132340;
-  --navy-2:#0B1526;
-  --navy-3:#1E355C;
-  --cream:#F4EFE6;
-  --cream-2:#E4DACA;
-  --brass:#A8763E;
-  --brass-2:#C89B5C;
-  --ink:#141A24;
-}
+:root{__TOKENS__}
 *{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
 html,body{width:1080px;height:1350px;overflow:hidden;background:#000}
 body{font-family:'DM Sans',system-ui,sans-serif;color:var(--cream)}
@@ -38,16 +49,16 @@ body{font-family:'DM Sans',system-ui,sans-serif;color:var(--cream)}
 .bg-navy{background:
   radial-gradient(120% 80% at 78% 12%, rgba(60,102,168,.30) 0%, rgba(19,35,64,0) 58%),
   radial-gradient(90% 60% at 12% 96%, rgba(168,118,62,.20) 0%, rgba(11,21,38,0) 60%),
-  linear-gradient(168deg,#16294A 0%,#101E36 46%,#0A1220 100%)}
+  linear-gradient(168deg,var(--navy) 0%,var(--navy-2) 100%)}
 .bg-cream{background:
   radial-gradient(90% 70% at 20% 8%, rgba(255,255,255,.85) 0%, rgba(244,239,230,0) 60%),
   linear-gradient(158deg,#F6F2EA 0%,#EFE8DC 52%,#E4DACA 100%)}
 .bg-steel{background:
   radial-gradient(90% 70% at 24% 10%, rgba(146,163,186,.30) 0%, rgba(30,45,72,0) 62%),
-  linear-gradient(172deg,#2A3B57 0%,#1B2942 55%,#111C2E 100%)}
+  linear-gradient(172deg,var(--steel) 0%,var(--navy) 60%,var(--navy-2) 100%)}
 .bg-brass{background:
   radial-gradient(100% 70% at 78% 6%, rgba(226,182,124,.34) 0%, rgba(120,80,38,0) 62%),
-  linear-gradient(165deg,#8E6231 0%,#7A5228 55%,#5E3C1B 100%)}
+  linear-gradient(165deg,var(--brass) 0%,var(--brass) 40%,#00000055 260%)}
 .grain::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.16;mix-blend-mode:overlay;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E")}
 .veins::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.5;
@@ -70,6 +81,7 @@ body{font-family:'DM Sans',system-ui,sans-serif;color:var(--cream)}
 .counter.dark{background:rgba(20,26,36,.10);border-color:rgba(20,26,36,.16);color:var(--ink)}
 
 .logo{display:inline-flex;align-items:center;gap:16px;line-height:1}
+.logo img.mark{width:auto;height:56px;max-width:220px;object-fit:contain;flex:0 0 auto;border-radius:0;background:none}
 .logo .mark{width:56px;height:56px;border-radius:8px;flex:0 0 56px;display:flex;align-items:center;justify-content:center;
   background:var(--brass);color:#fff;font-family:'DM Serif Display',serif;font-style:italic;font-size:34px;padding-bottom:4px}
 .logo .wm2{display:flex;flex-direction:column;gap:6px}
@@ -163,7 +175,16 @@ body{font-family:'DM Sans',system-ui,sans-serif;color:var(--cream)}
   font-weight:600;letter-spacing:-.01em}
 """
 
-LOGO_LIGHT = """<div class="logo"><div class="mark">S</div><div class="wm2">
+_VARS = {"--navy": "navy", "--navy-2": "navy2", "--navy-3": "navy3", "--steel": "steel",
+         "--cream": "cream", "--cream-2": "cream2", "--brass": "brass",
+         "--brass-2": "brass2", "--ink": "ink"}
+BASE_CSS = BASE_CSS.replace("__TOKENS__", "".join(f"{css}:{CORES[k]};" for css, k in _VARS.items()))
+
+_TEM_LOGO = (ROOT / LOGO_FILE).exists()
+_MARK = (f'<img class="mark" src="{{SUBIDA}}{LOGO_FILE}" alt="SINMEVACO">'
+         if _TEM_LOGO else '<div class="mark">S</div>')
+
+LOGO_LIGHT = """<div class="logo">""" + _MARK + """<div class="wm2">
   <div class="name">SINMEVA&Ccedil;O</div><div class="sub">Sindicato dos M&eacute;dicos do Vale do A&ccedil;o</div>
 </div></div>"""
 LOGO_DARK = LOGO_LIGHT.replace('class="logo"', 'class="logo dark"')
@@ -219,8 +240,8 @@ BASE_CSS += """
 /* ---- 09 mito x verdade ---- */
 .mv{display:flex;flex-direction:column}
 .mv .faixa{position:relative;flex:1;display:flex;flex-direction:column;justify-content:center;gap:24px;padding:0 76px}
-.mv .faixa.mito{background:linear-gradient(168deg,#16294A 0%,#101E36 60%,#0A1220 100%)}
-.mv .faixa.verdade{background:linear-gradient(168deg,#8E6231 0%,#7A5228 55%,#5E3C1B 100%)}
+.mv .faixa.mito{background:linear-gradient(168deg,var(--navy) 0%,var(--navy-2) 100%)}
+.mv .faixa.verdade{background:linear-gradient(168deg,var(--brass) 0%,var(--brass) 40%,#00000055 260%)}
 .mv .pill{align-self:flex-start;font-size:15px;letter-spacing:.32em;text-transform:uppercase;font-weight:700;
   padding:11px 22px;border:1px solid rgba(244,239,230,.42);border-radius:999px}
 .mv .mito .pill{color:rgba(244,239,230,.72)}
@@ -663,6 +684,7 @@ def main():
         subida = "../" * (len(Path(pasta).parts))
         for nome, conteudo in slides:
             conteudo = conteudo.replace('href="../fontes/', f'href="{subida}fontes/')
+            conteudo = conteudo.replace("{SUBIDA}", subida)
             (d / nome).write_text(conteudo, encoding="utf-8")
             total += 1
         print(f"  {pasta}: {len(slides)} slide(s)")

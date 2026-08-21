@@ -59,6 +59,30 @@ Todos os slides usam a mesma base: marca d'água `@sinmevaco` no topo, logo no r
 - **Sexta** `3_sex_pergunta/` — post único, azul-marinho, puxa dúvida no direct
 
 
+## Cores e logo do sindicato
+
+**A paleta atual é provisória.** Marinho/creme/bronze foi escolhido por mim para casar com a linha editorial — não é a identidade oficial do SINMEVAÇO (o site do sindicato está fora do alcance desta sessão).
+
+Para trocar, edite só o topo de `gerar_posts.py`:
+
+```python
+CORES = {
+    "navy":   "#132340",  # fundo principal (escuro)
+    "navy2":  "#0B1526",  # base do degrade escuro
+    "navy3":  "#1E355C",  # caixas sobre o escuro
+    "steel":  "#2A3B57",  # fundo secundario
+    "cream":  "#F4EFE6",  # fundo claro / texto sobre escuro
+    "cream2": "#E4DACA",
+    "brass":  "#A8763E",  # acento
+    "brass2": "#C89B5C",  # acento claro
+    "ink":    "#141A24",  # texto sobre fundo claro
+}
+```
+
+Esses nove tokens alimentam os 31 slides. Depois é só `python3 gerar_posts.py && ./renderizar.sh`.
+
+**Logo:** coloque o arquivo oficial em `logos/logo.png` (fundo transparente, altura mínima 200px) e ele entra sozinho no rodapé de todos os slides, no lugar do lockup provisório com a inicial. Se o logo oficial tiver versão clara e escura, mande as duas que eu separo por tipo de fundo.
+
 ## Fotos (opcional)
 
 Cada slide já fecha sem foto. Para usar imagens próprias do sindicato, coloque os arquivos em `fotos/` com estes nomes:
