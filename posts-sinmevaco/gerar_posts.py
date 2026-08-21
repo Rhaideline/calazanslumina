@@ -192,6 +192,83 @@ def page(title, canvas_class, inner, counter=None, dark_chrome=False, foot_tag=N
 </div></body></html>"""
 
 
+# ====== CSS DOS MODELOS 07-12 ======
+BASE_CSS += """
+/* ---- 07 citacao ---- */
+.citacao{color:var(--ink)}
+.citacao .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 84px;gap:34px}
+.citacao .aspas{font-family:'DM Serif Display',serif;font-size:220px;line-height:.6;color:var(--brass);opacity:.32;height:110px}
+.citacao blockquote{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:70px;line-height:1.1;
+  letter-spacing:-.02em;max-width:17ch}
+.citacao blockquote em{font-style:italic;color:var(--brass)}
+.citacao .rule{width:96px;height:1px;background:rgba(20,26,36,.35)}
+.citacao .autor{display:flex;flex-direction:column;gap:8px}
+.citacao .autor .nome{font-size:29px;font-weight:600;letter-spacing:-.01em}
+.citacao .autor .papel{font-size:15px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;color:rgba(20,26,36,.5)}
+
+/* ---- 08 numero ---- */
+.numero .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 84px;gap:26px}
+.numero .kicker{font-size:15px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;color:var(--brass-2)}
+.numero .n{font-family:'DM Serif Display',serif;font-style:italic;font-size:290px;line-height:.82;color:var(--brass-2);
+  letter-spacing:-.04em;display:flex;align-items:baseline;gap:22px}
+.numero .n small{font-family:'DM Sans',sans-serif;font-style:normal;font-size:52px;font-weight:500;color:var(--cream);letter-spacing:-.01em}
+.numero .cap{font-size:46px;line-height:1.24;letter-spacing:-.015em;max-width:19ch;margin-top:6px}
+.numero .cap b{font-weight:700}
+.numero .fonte{font-size:15px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;opacity:.45;margin-top:14px}
+
+/* ---- 09 mito x verdade ---- */
+.mv{display:flex;flex-direction:column}
+.mv .faixa{position:relative;flex:1;display:flex;flex-direction:column;justify-content:center;gap:24px;padding:0 76px}
+.mv .faixa.mito{background:linear-gradient(168deg,#16294A 0%,#101E36 60%,#0A1220 100%)}
+.mv .faixa.verdade{background:linear-gradient(168deg,#8E6231 0%,#7A5228 55%,#5E3C1B 100%)}
+.mv .pill{align-self:flex-start;font-size:15px;letter-spacing:.32em;text-transform:uppercase;font-weight:700;
+  padding:11px 22px;border:1px solid rgba(244,239,230,.42);border-radius:999px}
+.mv .mito .pill{color:rgba(244,239,230,.72)}
+.mv .verdade .pill{color:#FBF6EE;border-color:rgba(251,246,238,.55)}
+.mv .txt{font-size:44px;line-height:1.22;letter-spacing:-.015em;max-width:19ch}
+.mv .verdade .txt{font-family:'DM Serif Display',serif;font-style:italic;font-size:56px;line-height:1.12}
+.mv .txt b{font-weight:700}
+
+/* ---- 10 agenda ---- */
+.agenda .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 76px;gap:44px}
+.agenda .kicker{font-size:15px;letter-spacing:.32em;text-transform:uppercase;font-weight:700;color:var(--brass-2)}
+.agenda .data{display:flex;align-items:flex-end;gap:26px;border-bottom:1px solid rgba(244,239,230,.18);padding-bottom:34px}
+.agenda .dia{font-family:'DM Serif Display',serif;font-style:italic;font-size:200px;line-height:.8;color:var(--cream);letter-spacing:-.03em}
+.agenda .mes{display:flex;flex-direction:column;gap:10px;padding-bottom:14px}
+.agenda .mes span{font-size:34px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--brass-2)}
+.agenda .mes small{font-size:24px;letter-spacing:.12em;opacity:.6}
+.agenda h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:62px;line-height:1.08;letter-spacing:-.02em;max-width:16ch}
+.agenda .info{display:flex;flex-direction:column;gap:16px}
+.agenda .info div{display:flex;align-items:center;gap:18px;font-size:30px;letter-spacing:-.005em}
+.agenda .info .dot{width:7px;height:7px;border-radius:50%;background:var(--brass-2);flex:0 0 7px}
+
+/* ---- 11 clausula ---- */
+.clausula{color:var(--ink)}
+.clausula .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 76px;gap:46px}
+.clausula .doc{background:#FCFAF6;padding:52px 56px;box-shadow:0 34px 70px -30px rgba(20,26,36,.45);transform:rotate(-1.1deg);
+  display:flex;flex-direction:column;gap:24px}
+.clausula .doc .head{font-size:14px;letter-spacing:.3em;text-transform:uppercase;font-weight:700;color:rgba(20,26,36,.45)}
+.clausula .doc .bar{height:13px;border-radius:3px;background:rgba(20,26,36,.10)}
+.clausula .doc .bar.s{width:62%}
+.clausula .doc .trecho{font-size:36px;line-height:1.36;letter-spacing:-.01em;font-weight:500}
+.clausula .doc .trecho mark{background:rgba(200,155,92,.42);padding:2px 6px;color:inherit}
+.clausula .leitura{display:flex;flex-direction:column;gap:18px}
+.clausula .leitura h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:58px;line-height:1.1;letter-spacing:-.02em;max-width:18ch}
+.clausula .leitura h2 em{font-style:italic;color:var(--brass)}
+.clausula .leitura p{font-size:29px;line-height:1.4;color:rgba(20,26,36,.78);max-width:26ch}
+
+/* ---- 12 pergunta do associado ---- */
+.pergunta .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 76px;gap:36px}
+.pergunta .kicker{font-size:15px;letter-spacing:.3em;text-transform:uppercase;font-weight:700;color:var(--brass-2)}
+.pergunta .balao{background:#FCFAF6;color:var(--ink);border-radius:26px 26px 26px 8px;padding:38px 42px;font-size:38px;
+  line-height:1.28;letter-spacing:-.01em;max-width:800px;box-shadow:0 28px 56px -26px rgba(0,0,0,.65)}
+.pergunta h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:66px;line-height:1.08;
+  letter-spacing:-.02em;max-width:16ch}
+.pergunta h2 em{font-style:italic;color:var(--brass-2)}
+.pergunta .nota{font-size:29px;line-height:1.42;opacity:.76;max-width:26ch}
+"""
+
+
 # ====== CONSTRUTORES DE SLIDE ======
 
 def cover(labels, titulo, ask, resposta, counter, photo=None, foot_tag=None):
@@ -269,6 +346,82 @@ def statement(lead, titulo, nota, fundo="bg-brass", extra="", foot_tag=None):
 
 BUBBLE = """<div class="bubble"><div class="file"></div>
 <div><div class="fname">Laudo-paciente.pdf</div><div class="fsize">2 p&aacute;ginas &middot; 480 KB</div></div></div>"""
+
+
+# ====== MODELOS 07-12 ======
+
+def citacao(frase, nome, papel, counter=None, foot_tag=None):
+    """07 - depoimento / posicionamento institucional (fundo claro)."""
+    return page(nome, "citacao bg-cream veins", f"""
+<div class="body">
+  <div class="aspas">&ldquo;</div>
+  <blockquote>{frase}</blockquote>
+  <div class="rule"></div>
+  <div class="autor"><div class="nome">{nome}</div><div class="papel">{papel}</div></div>
+</div>
+""", counter=counter, dark_chrome=True, foot_tag=foot_tag)
+
+
+def numero(kicker, valor, unidade, legenda, fonte, counter=None, foot_tag=None):
+    """08 - dado em destaque, sempre com fonte declarada."""
+    un = f"<small>{unidade}</small>" if unidade else ""
+    return page(legenda, "numero bg-navy", f"""
+<div class="body">
+  <div class="kicker">{kicker}</div>
+  <div class="n">{valor}{un}</div>
+  <div class="cap">{legenda}</div>
+  <div class="fonte">{fonte}</div>
+</div>
+""", counter=counter, foot_tag=foot_tag)
+
+
+def mito_verdade(mito, verdade, counter=None):
+    """09 - duas faixas: mito no azul, verdade no bronze."""
+    return page("mito x verdade", "mv", f"""
+<div class="faixa mito"><div class="pill">Mito</div><div class="txt">{mito}</div></div>
+<div class="faixa verdade"><div class="pill">Verdade</div><div class="txt">{verdade}</div></div>
+""", counter=counter, show_foot=False)
+
+
+def agenda(kicker, dia, mes, semana, titulo, infos, counter=None, foot_tag=None):
+    """10 - assembleia, reuniao, curso."""
+    li = "".join(f'<div><span class="dot"></span>{i}</div>' for i in infos)
+    return page(titulo, "agenda bg-steel", f"""
+<div class="body">
+  <div class="kicker">{kicker}</div>
+  <div class="data"><div class="dia">{dia}</div>
+    <div class="mes"><span>{mes}</span><small>{semana}</small></div></div>
+  <h2>{titulo}</h2>
+  <div class="info">{li}</div>
+</div>
+""", counter=counter, foot_tag=foot_tag)
+
+
+def clausula(head, trecho, titulo, texto, counter=None, foot_tag=None):
+    """11 - trecho de documento com marca-texto + leitura do que aquilo significa."""
+    return page(titulo, "clausula bg-cream veins", f"""
+<div class="body">
+  <div class="doc">
+    <div class="head">{head}</div>
+    <div class="bar"></div><div class="bar s"></div>
+    <div class="trecho">{trecho}</div>
+    <div class="bar"></div><div class="bar s"></div>
+  </div>
+  <div class="leitura"><h2>{titulo}</h2><p>{texto}</p></div>
+</div>
+""", counter=counter, dark_chrome=True, foot_tag=foot_tag)
+
+
+def pergunta(kicker, duvida, resposta, nota, counter=None, foot_tag=None):
+    """12 - pergunta recebida no direct + resposta curta."""
+    return page(resposta, "pergunta bg-navy", f"""
+<div class="body">
+  <div class="kicker">{kicker}</div>
+  <div class="balao">{duvida}</div>
+  <h2>{resposta}</h2>
+  <div class="nota">{nota}</div>
+</div>
+""", counter=counter, foot_tag=foot_tag)
 
 
 # ====== POSTS ======
@@ -397,6 +550,107 @@ POSTS = [
              "<b>Representa&ccedil;&atilde;o</b> junto a hospitais, prefeituras e operadoras."],
             None, foot_tag="Cel. Fabriciano &middot; Ipatinga<br>Tim&oacute;teo &middot; Santana do Para&iacute;so")),
     ]),
+
+    # ---------- modelos 07 a 12 ----------
+    ("07_posicionamento", [
+        ("01_post.html", citacao(
+            "Nenhum m&eacute;dico deveria negociar <em>sozinho</em> com um hospital.",
+            "Diretoria do SINMEVA&Ccedil;O",
+            "Posicionamento",
+            foot_tag="Posicionamento<br>SINMEVA&Ccedil;O")),
+    ]),
+
+    ("08_numero_35_anos", [
+        ("01_post.html", numero(
+            "Vale do A&ccedil;o",
+            "35", "anos",
+            "defendendo o m&eacute;dico em <b>contrato, escala e conven&ccedil;&atilde;o coletiva.</b>",
+            "SINMEVA&Ccedil;O &middot; fundado em 17 de maio de 1991",
+            foot_tag="Desde 1991")),
+    ]),
+
+    ("09_mito_verdade_sindicato", [
+        ("01_post.html", mito_verdade(
+            "O sindicato s&oacute; serve <b>na hora do problema.</b>",
+            "A maior parte do trabalho &eacute; evitar o problema: contrato lido antes, escala negociada antes, piso definido em conven&ccedil;&atilde;o.")),
+    ]),
+
+    ("10_agenda_assembleia", [
+        ("01_post.html", agenda(
+            "Assembleia geral",
+            "12", "Mar&ccedil;o", "Quinta-feira",
+            "Pauta: reajuste, escala e plant&atilde;o nos hospitais da regi&atilde;o",
+            ["19h &middot; credenciamento a partir das 18h30",
+             "Sede do SINMEVA&Ccedil;O &middot; Coronel Fabriciano",
+             "Direito a voz e voto: m&eacute;dico associado"],
+            foot_tag="Modelo de agenda<br>editar data e pauta")),
+    ]),
+
+    ("11_clausula_reajuste", [
+        ("01_post.html", clausula(
+            "Cl&aacute;usula de reajuste",
+            "O reajuste segue o <mark>&iacute;ndice e a data-base previstos na conven&ccedil;&atilde;o coletiva</mark> da categoria.",
+            "Contrato sem data-base <em>&eacute; sal&aacute;rio congelado.</em>",
+            "Se o seu contrato n&atilde;o diz quando e por qual &iacute;ndice o valor sobe, o reajuste vira favor &mdash; e favor n&atilde;o se cobra na Justi&ccedil;a.",
+            foot_tag="Leitura de contrato<br>SINMEVA&Ccedil;O")),
+    ]),
+
+    ("12_pergunta_associado", [
+        ("01_post.html", pergunta(
+            "Pergunta do associado",
+            "Posso recusar um plant&atilde;o extra se o anterior ainda n&atilde;o foi pago?",
+            "Recusar sem registro te exp&otilde;e. <em>Registrar muda o jogo.</em>",
+            "Comunique por escrito, guarde o protocolo e fale com o jur&iacute;dico antes de decidir. Para o associado, essa orienta&ccedil;&atilde;o j&aacute; est&aacute; inclu&iacute;da.",
+            foot_tag="Manda a sua<br>pergunta no direct")),
+    ]),
+
+    # ---------- semana 01: atraso no pagamento do plantao ----------
+    ("semana-01/1_seg_carrossel_atraso", [
+        ("01_capa.html", cover(
+            ["O plant&atilde;o de dezembro"],
+            "caiu na conta <em>em fevereiro.</em>",
+            "E ningu&eacute;m explica o motivo.",
+            "A resposta est&aacute; na conven&ccedil;&atilde;o coletiva.",
+            "1/5", photo="fotos/atraso-capa.jpg", foot_tag="Jur&iacute;dico<br>SINMEVA&Ccedil;O")),
+        ("02_caso.html", split(
+            "Atrasou em novembro. Atrasou em dezembro. Em janeiro, <b>j&aacute; era rotina.</b>",
+            "<span class='serif'>E ningu&eacute;m reclama no grupo</span> porque cada um acha que &eacute; o &uacute;nico.",
+            "2/5", photo_a="fotos/atraso-a.jpg", photo_b="fotos/atraso-b.jpg")),
+        ("03_clausula.html", clausula(
+            "Prazo de pagamento",
+            "O pagamento dos plant&otilde;es deve observar o <mark>prazo previsto na conven&ccedil;&atilde;o coletiva</mark> da categoria.",
+            "Atraso que se repete <em>n&atilde;o &eacute; desorganiza&ccedil;&atilde;o.</em>",
+            "&Eacute; descumprimento &mdash; e descumprimento de conven&ccedil;&atilde;o se cobra pelo sindicato, n&atilde;o m&eacute;dico a m&eacute;dico.",
+            "3/5")),
+        ("04_checklist.html", lista(
+            "Como registrar",
+            "Quatro passos antes de cobrar",
+            ["<b>Anote as datas</b>: prevista e efetiva de cada pagamento, m&ecirc;s a m&ecirc;s.",
+             "<b>Guarde escalas</b>, recibos, notas e extratos que provem o plant&atilde;o realizado.",
+             "<b>Cobre por escrito</b> &mdash; e-mail ou protocolo, nunca s&oacute; no grupo.",
+             "<b>Leve ao sindicato</b>: atraso que atinge a escala inteira se resolve coletivamente."],
+            "4/5")),
+        ("05_cta.html", cta(
+            "SINMEVA&Ccedil;O &middot; jur&iacute;dico",
+            "Atraso na sua escala? <em>Traga os documentos.</em>",
+            "O jur&iacute;dico do sindicato analisa o caso e cobra o descumprimento &mdash; sem custo adicional para o associado.",
+            "Falar com o jur&iacute;dico", "5/5")),
+    ]),
+
+    ("semana-01/2_qua_mito_verdade", [
+        ("01_post.html", mito_verdade(
+            "Atraso de pagamento &eacute; <b>problema individual</b> &mdash; cada um resolve o seu.",
+            "Atraso que se repete atinge a escala inteira. E o que atinge a escala inteira &eacute; assunto de conven&ccedil;&atilde;o coletiva.")),
+    ]),
+
+    ("semana-01/3_sex_pergunta", [
+        ("01_post.html", pergunta(
+            "Pergunta do associado",
+            "Posso parar de fazer plant&atilde;o enquanto o hospital n&atilde;o pagar os atrasados?",
+            "Antes de parar, <em>protocole.</em>",
+            "Cobran&ccedil;a por escrito, prazo registrado e c&oacute;pia guardada. Com isso na m&atilde;o, o sindicato cobra o hospital &mdash; e voc&ecirc; n&atilde;o fica exposto sozinho.",
+            foot_tag="Manda a sua<br>pergunta no direct")),
+    ]),
 ]
 
 
@@ -404,8 +658,11 @@ def main():
     total = 0
     for pasta, slides in POSTS:
         d = ROOT / pasta
-        d.mkdir(exist_ok=True)
+        d.mkdir(parents=True, exist_ok=True)
+        # ajusta o caminho das fontes conforme a profundidade da pasta
+        subida = "../" * (len(Path(pasta).parts))
         for nome, conteudo in slides:
+            conteudo = conteudo.replace('href="../fontes/', f'href="{subida}fontes/')
             (d / nome).write_text(conteudo, encoding="utf-8")
             total += 1
         print(f"  {pasta}: {len(slides)} slide(s)")

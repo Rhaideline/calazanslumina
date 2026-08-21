@@ -43,5 +43,5 @@ def cortar(path):
 
 
 if __name__ == "__main__":
-    alvos = sys.argv[1:] or [str(p) for p in Path(__file__).parent.glob("*/*.png")]
+    alvos = sys.argv[1:] or [str(p) for p in Path(__file__).parent.glob("**/*.png")]
     print(f"{sum(cortar(p) for p in alvos)} de {len(alvos)} PNGs cortados para {ALVO_W}x{ALVO_H}")

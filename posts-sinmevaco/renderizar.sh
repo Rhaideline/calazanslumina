@@ -5,7 +5,7 @@ CHROME="${CHROME:-$(ls /opt/pw-browsers/chromium-*/chrome-linux/chrome 2>/dev/nu
 [ -z "$CHROME" ] && CHROME="google-chrome"
 cd "$(dirname "$0")" || exit 1
 ok=0; fail=0
-for html in */*.html; do
+for html in */*.html */*/*.html; do
   png="${html%.html}.png"
   "$CHROME" --headless=new --disable-gpu --no-sandbox --hide-scrollbars \
     --window-size=1080,1600 --virtual-time-budget=4000 \

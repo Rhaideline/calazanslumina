@@ -144,6 +144,79 @@ body{font-family:'DM Sans',system-ui,sans-serif;color:var(--cream)}
 .cta .contatos .dot{width:7px;height:7px;border-radius:50%;background:var(--brass-2);flex:0 0 7px}
 .cta .btn{align-self:flex-start;margin-top:14px;background:var(--brass);color:#FBF6EE;padding:26px 42px;font-size:30px;
   font-weight:600;letter-spacing:-.01em}
+
+/* ---- 07 citacao ---- */
+.citacao{color:var(--ink)}
+.citacao .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 84px;gap:34px}
+.citacao .aspas{font-family:'DM Serif Display',serif;font-size:220px;line-height:.6;color:var(--brass);opacity:.32;height:110px}
+.citacao blockquote{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:70px;line-height:1.1;
+  letter-spacing:-.02em;max-width:17ch}
+.citacao blockquote em{font-style:italic;color:var(--brass)}
+.citacao .rule{width:96px;height:1px;background:rgba(20,26,36,.35)}
+.citacao .autor{display:flex;flex-direction:column;gap:8px}
+.citacao .autor .nome{font-size:29px;font-weight:600;letter-spacing:-.01em}
+.citacao .autor .papel{font-size:15px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;color:rgba(20,26,36,.5)}
+
+/* ---- 08 numero ---- */
+.numero .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 84px;gap:26px}
+.numero .kicker{font-size:15px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;color:var(--brass-2)}
+.numero .n{font-family:'DM Serif Display',serif;font-style:italic;font-size:290px;line-height:.82;color:var(--brass-2);
+  letter-spacing:-.04em;display:flex;align-items:baseline;gap:22px}
+.numero .n small{font-family:'DM Sans',sans-serif;font-style:normal;font-size:52px;font-weight:500;color:var(--cream);letter-spacing:-.01em}
+.numero .cap{font-size:46px;line-height:1.24;letter-spacing:-.015em;max-width:19ch;margin-top:6px}
+.numero .cap b{font-weight:700}
+.numero .fonte{font-size:15px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;opacity:.45;margin-top:14px}
+
+/* ---- 09 mito x verdade ---- */
+.mv{display:flex;flex-direction:column}
+.mv .faixa{position:relative;flex:1;display:flex;flex-direction:column;justify-content:center;gap:24px;padding:0 76px}
+.mv .faixa.mito{background:linear-gradient(168deg,#16294A 0%,#101E36 60%,#0A1220 100%)}
+.mv .faixa.verdade{background:linear-gradient(168deg,#8E6231 0%,#7A5228 55%,#5E3C1B 100%)}
+.mv .pill{align-self:flex-start;font-size:15px;letter-spacing:.32em;text-transform:uppercase;font-weight:700;
+  padding:11px 22px;border:1px solid rgba(244,239,230,.42);border-radius:999px}
+.mv .mito .pill{color:rgba(244,239,230,.72)}
+.mv .verdade .pill{color:#FBF6EE;border-color:rgba(251,246,238,.55)}
+.mv .txt{font-size:44px;line-height:1.22;letter-spacing:-.015em;max-width:19ch}
+.mv .verdade .txt{font-family:'DM Serif Display',serif;font-style:italic;font-size:56px;line-height:1.12}
+.mv .txt b{font-weight:700}
+
+/* ---- 10 agenda ---- */
+.agenda .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 76px;gap:44px}
+.agenda .kicker{font-size:15px;letter-spacing:.32em;text-transform:uppercase;font-weight:700;color:var(--brass-2)}
+.agenda .data{display:flex;align-items:flex-end;gap:26px;border-bottom:1px solid rgba(244,239,230,.18);padding-bottom:34px}
+.agenda .dia{font-family:'DM Serif Display',serif;font-style:italic;font-size:200px;line-height:.8;color:var(--cream);letter-spacing:-.03em}
+.agenda .mes{display:flex;flex-direction:column;gap:10px;padding-bottom:14px}
+.agenda .mes span{font-size:34px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--brass-2)}
+.agenda .mes small{font-size:24px;letter-spacing:.12em;opacity:.6}
+.agenda h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:62px;line-height:1.08;letter-spacing:-.02em;max-width:16ch}
+.agenda .info{display:flex;flex-direction:column;gap:16px}
+.agenda .info div{display:flex;align-items:center;gap:18px;font-size:30px;letter-spacing:-.005em}
+.agenda .info .dot{width:7px;height:7px;border-radius:50%;background:var(--brass-2);flex:0 0 7px}
+
+/* ---- 11 clausula ---- */
+.clausula{color:var(--ink)}
+.clausula .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 76px;gap:46px}
+.clausula .doc{background:#FCFAF6;padding:52px 56px;box-shadow:0 34px 70px -30px rgba(20,26,36,.45);transform:rotate(-1.1deg);
+  display:flex;flex-direction:column;gap:24px}
+.clausula .doc .head{font-size:14px;letter-spacing:.3em;text-transform:uppercase;font-weight:700;color:rgba(20,26,36,.45)}
+.clausula .doc .bar{height:13px;border-radius:3px;background:rgba(20,26,36,.10)}
+.clausula .doc .bar.s{width:62%}
+.clausula .doc .trecho{font-size:36px;line-height:1.36;letter-spacing:-.01em;font-weight:500}
+.clausula .doc .trecho mark{background:rgba(200,155,92,.42);padding:2px 6px;color:inherit}
+.clausula .leitura{display:flex;flex-direction:column;gap:18px}
+.clausula .leitura h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:58px;line-height:1.1;letter-spacing:-.02em;max-width:18ch}
+.clausula .leitura h2 em{font-style:italic;color:var(--brass)}
+.clausula .leitura p{font-size:29px;line-height:1.4;color:rgba(20,26,36,.78);max-width:26ch}
+
+/* ---- 12 pergunta do associado ---- */
+.pergunta .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 76px;gap:36px}
+.pergunta .kicker{font-size:15px;letter-spacing:.3em;text-transform:uppercase;font-weight:700;color:var(--brass-2)}
+.pergunta .balao{background:#FCFAF6;color:var(--ink);border-radius:26px 26px 26px 8px;padding:38px 42px;font-size:38px;
+  line-height:1.28;letter-spacing:-.01em;max-width:800px;box-shadow:0 28px 56px -26px rgba(0,0,0,.65)}
+.pergunta h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:66px;line-height:1.08;
+  letter-spacing:-.02em;max-width:16ch}
+.pergunta h2 em{font-style:italic;color:var(--brass-2)}
+.pergunta .nota{font-size:29px;line-height:1.42;opacity:.76;max-width:26ch}
 </style></head>
 <body><div class="canvas editorial bg-cream veins grain">
 

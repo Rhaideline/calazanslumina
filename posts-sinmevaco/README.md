@@ -18,6 +18,47 @@
 - `_PREVIEW.html` — todos os slides numa página só
 - `fontes/` — DM Serif Display + DM Sans locais (renderiza offline, sem depender do Google Fonts)
 
+## Sistema visual — 12 modelos
+
+Todos os slides usam a mesma base: marca d'água `@sinmevaco` no topo, logo no rodapé, DM Serif Display itálico para as frases de virada e DM Sans para leitura. O que muda é o fundo e a estrutura — é isso que faz o feed conversar sem ficar repetitivo.
+
+**Quatro fundos, sempre os mesmos:**
+
+| Fundo | Uso |
+|---|---|
+| `bg-navy` azul-marinho | capa, checklist, CTA, número, pergunta |
+| `bg-steel` aço | agenda e metade inferior dos slides de caso |
+| `bg-cream` creme | slide da virada, citação, cláusula |
+| `bg-brass` bronze | declaração forte e faixa "verdade" |
+
+**Os modelos (função → arquivo `gerar_posts.py`):**
+
+| # | Modelo | Função | Para quê |
+|---|---|---|---|
+| 01 | Capa | `cover()` | abre carrossel com a pergunta do médico |
+| 02 | Caso em duas partes | `split()` | conta o caso em duas cenas |
+| 03 | Virada editorial | `editorial()` | a frase que muda o entendimento |
+| 04 | Checklist numerado | `lista()` | o que fazer, passo a passo |
+| 05 | CTA do jurídico | `cta()` | fecha carrossel com contato |
+| 06 | Declaração | `statement()` | post único de impacto |
+| 07 | Posicionamento | `citacao()` | fala institucional da diretoria |
+| 08 | Número | `numero()` | dado em destaque, sempre com fonte |
+| 09 | Mito × Verdade | `mito_verdade()` | corrige uma crença da categoria |
+| 10 | Agenda | `agenda()` | assembleia, reunião, curso |
+| 11 | Cláusula | `clausula()` | trecho de documento com marca-texto |
+| 12 | Pergunta do associado | `pergunta()` | dúvida do direct + resposta curta |
+
+**Ritmo do feed (harmonia no grid):** alterne escuro → claro → bronze. Em três colunas, evite dois slides creme lado a lado e nunca poste dois bronzes seguidos — o bronze é o acento, aparece uma vez a cada 4 ou 5 posts. Carrossel sempre abre em azul-marinho: é a capa que dá a identidade da linha na grade.
+
+## Semana 01 — pronta para publicar
+
+`semana-01/` traz uma semana inteira sobre o mesmo assunto (atraso no pagamento de plantão), para o feed contar uma história e não três:
+
+- **Segunda** `1_seg_carrossel_atraso/` — carrossel de 5 slides (capa → caso → cláusula → checklist → CTA)
+- **Quarta** `2_qua_mito_verdade/` — post único, bronze
+- **Sexta** `3_sex_pergunta/` — post único, azul-marinho, puxa dúvida no direct
+
+
 ## Fotos (opcional)
 
 Cada slide já fecha sem foto. Para usar imagens próprias do sindicato, coloque os arquivos em `fotos/` com estes nomes:
@@ -38,4 +79,8 @@ Os dados abaixo estão no topo de `gerar_posts.py` e vieram de fontes públicas.
 - `FONE` — `(31) 99507-4027`
 - `SITE` — `sinmevaco.com.br`
 - A lista de benefícios do post 06 — jurídico, negociação coletiva e representação constam do site; leitura de contratos e orientação em PJ/cooperativa precisam de confirmação
+- Modelo 07 — a frase está atribuída à "Diretoria do SINMEVAÇO". Se for publicar como fala de alguém, use uma frase aprovada pela pessoa
+- Modelo 10 — a data (12 de março) e a pauta são exemplo: editar antes de postar
+- Modelo 11 e slide 3 do carrossel da semana 01 — os trechos são redações genéricas de cláusula, não citação da CCT vigente. Substituir pelo texto real da convenção antes de publicar
+- Nova pasta de fotos da semana: `fotos/atraso-capa.jpg`, `fotos/atraso-a.jpg`, `fotos/atraso-b.jpg`
 - O logo é um lockup provisório (letra "S" + nome). Substituir pelo logo oficial do sindicato em `.logo .mark`.

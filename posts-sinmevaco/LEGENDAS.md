@@ -120,6 +120,138 @@ Formato: 1080×1350 (4:5). Carrosséis de 5 slides + posts únicos de reforço.
 
 ---
 
+## 07 — Posicionamento (post único)
+**Pasta:** `07_posicionamento/`
+
+> "Nenhum médico deveria negociar sozinho com um hospital."
+>
+> Negociar sozinho é aceitar o valor que já veio decidido. Piso, escala, reajuste e prazo de pagamento são assunto de categoria — e categoria negocia junto, em convenção coletiva.
+>
+> É por isso que o sindicato existe há mais de três décadas no Vale do Aço.
+
+`#sinmevaco #medicos #valedoaco #negociacaocoletiva #sindicato`
+
+---
+
+## 08 — 35 anos (post único)
+**Pasta:** `08_numero_35_anos/`
+
+> 35 anos defendendo o médico do Vale do Aço em contrato, escala e convenção coletiva.
+>
+> Fundado em 17 de maio de 1991, em Coronel Fabriciano, o SINMEVAÇO acompanha médicos de Ipatinga, Timóteo, Santana do Paraíso e toda a região metropolitana — em processo ético, trabalhista e cível, e na mesa de negociação.
+>
+> Se você atende na região e ainda não é associado, chama no direct.
+
+`#sinmevaco #35anos #valedoaco #medicos #coronelfabriciano #ipatinga #timoteo`
+
+---
+
+## 09 — Mito × Verdade: o sindicato (post único)
+**Pasta:** `09_mito_verdade_sindicato/`
+
+> MITO: o sindicato só serve na hora do problema.
+>
+> VERDADE: a maior parte do trabalho é evitar o problema. Contrato lido antes da assinatura, escala negociada antes de virar rotina, piso definido em convenção antes de virar discussão individual.
+>
+> Quando o médico chega depois que o problema estourou, ainda dá para defender — só custa mais caro em tempo e desgaste.
+
+`#sinmevaco #sindicato #medicos #direitomedico #valedoaco`
+
+---
+
+## 10 — Agenda / assembleia (modelo — editar data e pauta)
+**Pasta:** `10_agenda_assembleia/`
+
+> ASSEMBLEIA GERAL — [dia] de [mês], [dia da semana]
+>
+> Pauta: reajuste, escala e plantão nos hospitais da região.
+> 19h, com credenciamento a partir das 18h30, na sede do SINMEVAÇO, em Coronel Fabriciano.
+>
+> Direito a voz e voto para o médico associado. Sua presença é o que dá força à mesa de negociação.
+
+`#sinmevaco #assembleia #medicos #valedoaco #negociacaocoletiva`
+
+---
+
+## 11 — Cláusula de reajuste (post único)
+**Pasta:** `11_clausula_reajuste/`
+
+> Contrato sem data-base é salário congelado.
+>
+> Se o seu contrato não diz quando e por qual índice o valor sobe, o reajuste vira favor — e favor não se cobra na Justiça.
+>
+> Antes de assinar, confira: índice, data-base, prazo de pagamento e o que acontece em caso de afastamento. O associado envia a proposta e o jurídico do sindicato analisa cláusula por cláusula.
+
+`#sinmevaco #contratomedico #reajuste #databaseparamedicos #direitomedico #valedoaco`
+
+---
+
+## 12 — Pergunta do associado (post único)
+**Pasta:** `12_pergunta_associado/`
+
+> "Posso recusar um plantão extra se o anterior ainda não foi pago?"
+>
+> Recusar sem registro te expõe. Registrar muda o jogo: comunique por escrito, guarde o protocolo e fale com o jurídico antes de decidir.
+>
+> Manda a sua pergunta no direct — as mais frequentes viram post.
+
+`#sinmevaco #plantao #medicos #direitomedico #valedoaco`
+
+---
+
+# SEMANA 01 — Atraso no pagamento do plantão
+
+Três publicações sobre o mesmo assunto, para o feed contar uma história só.
+Ritmo de cores: **segunda azul-marinho → quarta bronze → sexta azul-marinho.**
+
+## Segunda — carrossel (5 slides)
+**Pasta:** `semana-01/1_seg_carrossel_atraso/`
+
+> O plantão de dezembro caiu na conta em fevereiro. E ninguém explica o motivo.
+>
+> Atrasou em novembro. Atrasou em dezembro. Em janeiro, já era rotina — e ninguém reclama no grupo porque cada um acha que é o único.
+>
+> Atraso que se repete não é desorganização administrativa: é descumprimento. E descumprimento de convenção se cobra pelo sindicato, não médico a médico.
+>
+> Como registrar, antes de cobrar:
+> 1. Anote data prevista e data efetiva de cada pagamento, mês a mês
+> 2. Guarde escalas, recibos, notas e extratos que provem o plantão realizado
+> 3. Cobre por escrito — e-mail ou protocolo, nunca só no grupo
+> 4. Leve ao sindicato: atraso que atinge a escala inteira se resolve coletivamente
+>
+> Está acontecendo na sua escala? Chama no direct.
+>
+> Conteúdo informativo. Cada caso tem particularidades — associado, fale com o jurídico do sindicato.
+
+`#sinmevaco #plantao #atrasodepagamento #medicos #valedoaco #direitomedico #convencaocoletiva`
+
+## Quarta — mito × verdade
+**Pasta:** `semana-01/2_qua_mito_verdade/`
+
+> MITO: atraso de pagamento é problema individual, cada um resolve o seu.
+>
+> VERDADE: atraso que se repete atinge a escala inteira. E o que atinge a escala inteira é assunto de convenção coletiva.
+>
+> Um médico cobrando sozinho vira "caso isolado". A escala inteira documentando o atraso vira pauta de negociação.
+
+`#sinmevaco #plantao #atrasodepagamento #sindicato #medicos #valedoaco`
+
+## Sexta — pergunta do associado
+**Pasta:** `semana-01/3_sex_pergunta/`
+
+> "Posso parar de fazer plantão enquanto o hospital não pagar os atrasados?"
+>
+> Antes de parar, protocole. Cobrança por escrito, prazo registrado e cópia guardada. Com isso na mão, o sindicato cobra o hospital — e você não fica exposto sozinho.
+>
+> Recebeu essa dúvida também? Manda a sua pergunta no direct.
+>
+> Conteúdo informativo. Cada caso tem particularidades — associado, fale com o jurídico do sindicato.
+
+`#sinmevaco #plantao #medicos #direitomedico #valedoaco`
+
+
+---
+
 ## Sugestão de calendário (2 semanas)
 
 | Dia | Post | Formato |
