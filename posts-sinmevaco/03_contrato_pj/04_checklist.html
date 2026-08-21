@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Cinco cl&aacute;usulas que mudam sua vida</title>
+<link rel="stylesheet" href="../fontes/fonts.css">
+<style>
+:root{
+  --navy:#132340;
+  --navy-2:#0B1526;
+  --navy-3:#1E355C;
+  --cream:#F4EFE6;
+  --cream-2:#E4DACA;
+  --brass:#A8763E;
+  --brass-2:#C89B5C;
+  --ink:#141A24;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
+html,body{width:1080px;height:1350px;overflow:hidden;background:#000}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--cream)}
+.canvas{width:1080px;height:1350px;position:relative;overflow:hidden;display:flex;flex-direction:column}
+
+/* ---- fundos ---- */
+.bg-navy{background:
+  radial-gradient(120% 80% at 78% 12%, rgba(60,102,168,.30) 0%, rgba(19,35,64,0) 58%),
+  radial-gradient(90% 60% at 12% 96%, rgba(168,118,62,.20) 0%, rgba(11,21,38,0) 60%),
+  linear-gradient(168deg,#16294A 0%,#101E36 46%,#0A1220 100%)}
+.bg-cream{background:
+  radial-gradient(90% 70% at 20% 8%, rgba(255,255,255,.85) 0%, rgba(244,239,230,0) 60%),
+  linear-gradient(158deg,#F6F2EA 0%,#EFE8DC 52%,#E4DACA 100%)}
+.bg-steel{background:
+  radial-gradient(90% 70% at 24% 10%, rgba(146,163,186,.30) 0%, rgba(30,45,72,0) 62%),
+  linear-gradient(172deg,#2A3B57 0%,#1B2942 55%,#111C2E 100%)}
+.bg-brass{background:
+  radial-gradient(100% 70% at 78% 6%, rgba(226,182,124,.34) 0%, rgba(120,80,38,0) 62%),
+  linear-gradient(165deg,#8E6231 0%,#7A5228 55%,#5E3C1B 100%)}
+.grain::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.16;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E")}
+.veins::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.5;
+  background:
+    linear-gradient(112deg, transparent 41%, rgba(120,110,96,.14) 42%, transparent 43%),
+    linear-gradient(98deg, transparent 66%, rgba(120,110,96,.10) 67%, transparent 68%),
+    linear-gradient(126deg, transparent 20%, rgba(120,110,96,.08) 21%, transparent 22%)}
+
+/* ---- foto opcional ---- */
+.photo{position:absolute;inset:0;z-index:0;background-position:center;background-size:cover;background-repeat:no-repeat;
+  filter:saturate(.72) contrast(1.05) brightness(.78)}
+.photo::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(178deg, rgba(11,21,38,.45) 0%, rgba(11,21,38,.72) 55%, rgba(8,14,26,.94) 100%)}
+
+/* ---- chrome do post ---- */
+.wm{position:absolute;z-index:9;top:46px;left:56px;font-size:19px;letter-spacing:.06em;font-weight:500;opacity:.42}
+.wm.dark{color:var(--ink)}
+.counter{position:absolute;z-index:9;top:40px;right:56px;font-size:20px;font-weight:600;letter-spacing:.04em;
+  padding:9px 20px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.16)}
+.counter.dark{background:rgba(20,26,36,.10);border-color:rgba(20,26,36,.16);color:var(--ink)}
+
+.logo{display:inline-flex;align-items:center;gap:16px;line-height:1}
+.logo .mark{width:56px;height:56px;border-radius:8px;flex:0 0 56px;display:flex;align-items:center;justify-content:center;
+  background:var(--brass);color:#fff;font-family:'DM Serif Display',serif;font-style:italic;font-size:34px;padding-bottom:4px}
+.logo .wm2{display:flex;flex-direction:column;gap:6px}
+.logo .name{font-family:'DM Serif Display',serif;font-style:italic;font-size:30px;letter-spacing:-.01em}
+.logo .sub{font-size:11.5px;letter-spacing:.34em;text-transform:uppercase;font-weight:600;opacity:.62}
+.logo.dark .name{color:var(--ink)}
+.logo.dark .sub{color:rgba(20,26,36,.65)}
+
+.foot{position:absolute;z-index:9;left:56px;right:56px;bottom:52px;display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
+.foot .tag{font-size:15px;letter-spacing:.26em;text-transform:uppercase;font-weight:600;opacity:.5;text-align:right;line-height:1.6}
+.foot .tag.dark{color:rgba(20,26,36,.6)}
+
+/* ---- capa ---- */
+.cover .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 76px;gap:34px}
+.cover .label{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.cover .label span{background:var(--navy-3);color:var(--cream);font-size:33px;font-weight:600;letter-spacing:-.01em;
+  padding:8px 16px;box-decoration-break:clone}
+.cover h1{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:104px;line-height:.96;
+  letter-spacing:-.02em;color:var(--cream);max-width:14ch}
+.cover h1 em{font-style:italic;color:var(--brass-2)}
+.cover .ask{font-size:34px;font-weight:400;opacity:.72;letter-spacing:-.01em}
+.cover .answer{position:absolute;z-index:6;right:0;bottom:250px;background:var(--brass);padding:30px 44px 30px 40px;
+  max-width:560px;display:flex;align-items:center;gap:22px;font-size:29px;line-height:1.3;color:#FBF6EE}
+.cover .answer .arrow{flex:0 0 76px;height:1px;background:rgba(251,246,238,.85);position:relative}
+.cover .answer .arrow::after{content:"";position:absolute;right:0;top:-5px;width:11px;height:11px;
+  border-top:1px solid rgba(251,246,238,.85);border-right:1px solid rgba(251,246,238,.85);transform:rotate(45deg)}
+
+/* ---- split (2 fotos) ---- */
+.split{display:flex;flex-direction:column}
+.split .half{position:relative;flex:1;overflow:hidden;display:flex;align-items:center}
+.split .half.a{justify-content:flex-end}
+.split .half.b{justify-content:flex-start}
+.split .half.b .box{background:rgba(122,82,40,.92)}
+.split .box{position:relative;z-index:5;background:rgba(30,53,92,.90);backdrop-filter:blur(2px);
+  padding:44px 48px;max-width:660px;margin:0 60px;font-size:35px;line-height:1.34;letter-spacing:-.005em;color:var(--cream)}
+.split .box b{font-weight:700}
+.split .box .serif{display:block;margin-top:14px;font-family:'DM Serif Display',serif;font-style:italic;font-size:52px;line-height:1.08}
+
+/* ---- editorial (fundo claro) ---- */
+.editorial{color:var(--ink)}
+.editorial .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:46px;padding:0 96px;text-align:center}
+.editorial .top{font-size:34px;line-height:1.42;letter-spacing:-.005em;max-width:20ch}
+.editorial .top b{font-weight:700}
+.editorial .rule{width:1px;height:78px;background:rgba(20,26,36,.35)}
+.editorial h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:64px;line-height:1.16;
+  letter-spacing:-.015em;max-width:17ch}
+.editorial h2 em{font-style:italic;color:var(--brass)}
+.editorial .bottom{font-size:32px;line-height:1.44;max-width:24ch;color:rgba(20,26,36,.86)}
+.editorial .bottom b{font-weight:700}
+
+/* ---- lista ---- */
+.list .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 76px;gap:16px}
+.list .kicker{font-size:15px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;color:var(--brass-2);margin-bottom:6px}
+.list h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:66px;line-height:1.06;
+  letter-spacing:-.02em;margin-bottom:30px;max-width:15ch}
+.list .item{display:flex;gap:28px;padding:26px 0;border-top:1px solid rgba(244,239,230,.16)}
+.list .item:last-child{border-bottom:1px solid rgba(244,239,230,.16)}
+.list .n{font-family:'DM Serif Display',serif;font-style:italic;font-size:40px;color:var(--brass-2);flex:0 0 52px;line-height:1}
+.list .t{font-size:31px;line-height:1.34;letter-spacing:-.005em}
+.list .t b{font-weight:700}
+
+/* ---- declaracao (post unico) ---- */
+.statement .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 84px;gap:38px}
+.statement .lead{font-size:44px;line-height:1.3;font-weight:500;letter-spacing:-.015em}
+.statement .lead b{font-weight:700}
+.statement h1{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:82px;line-height:1.04;
+  letter-spacing:-.02em}
+.statement h1 em{font-style:italic;color:var(--brass-2)}
+.statement .note{font-size:28px;line-height:1.44;opacity:.74;max-width:26ch}
+
+/* ---- balao de whatsapp ---- */
+.bubble{display:inline-flex;align-items:center;gap:20px;background:#FCFAF6;color:var(--ink);
+  border-radius:22px 22px 22px 6px;padding:26px 34px;box-shadow:0 26px 54px -22px rgba(0,0,0,.6);align-self:flex-start}
+.bubble .file{width:52px;height:64px;border-radius:6px;background:#E9E2D5;position:relative;flex:0 0 52px}
+.bubble .file::after{content:"";position:absolute;right:0;top:0;border-width:0 16px 16px 0;border-style:solid;
+  border-color:#CFC4B0 #FCFAF6}
+.bubble .fname{font-size:34px;font-weight:600;color:#1D3A6B}
+.bubble .fsize{font-size:20px;opacity:.55;margin-top:4px}
+
+/* ---- CTA ---- */
+.cta .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 84px;gap:34px}
+.cta .kicker{font-size:15px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;color:var(--brass-2)}
+.cta h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:76px;line-height:1.04;letter-spacing:-.02em;max-width:15ch}
+.cta h2 em{font-style:italic;color:var(--brass-2)}
+.cta p{font-size:32px;line-height:1.42;opacity:.8;max-width:24ch}
+.cta .contatos{display:flex;flex-direction:column;gap:14px;margin-top:10px}
+.cta .contatos div{display:flex;align-items:center;gap:18px;font-size:29px;letter-spacing:-.005em}
+.cta .contatos .dot{width:7px;height:7px;border-radius:50%;background:var(--brass-2);flex:0 0 7px}
+.cta .btn{align-self:flex-start;margin-top:14px;background:var(--brass);color:#FBF6EE;padding:26px 42px;font-size:30px;
+  font-weight:600;letter-spacing:-.01em}
+</style></head>
+<body><div class="canvas list bg-navy grain">
+
+<div class="wm">@sinmevaco</div>
+<div class="counter">4/5</div>
+
+<div class="body">
+  <div class="kicker">Antes de assinar</div>
+  <h2>Cinco cl&aacute;usulas que mudam sua vida</h2>
+  <div class="item"><div class="n">1</div><div class="t"><b>Reajuste</b>: existe &iacute;ndice e data-base, ou o valor fica congelado?</div></div><div class="item"><div class="n">2</div><div class="t"><b>Afastamento</b>: o que acontece com a remunera&ccedil;&atilde;o em caso de doen&ccedil;a?</div></div><div class="item"><div class="n">3</div><div class="t"><b>Multa e aviso</b>: quanto custa sair &mdash; e quanto custa ser dispensado?</div></div><div class="item"><div class="n">4</div><div class="t"><b>Responsabilidade civil</b>: quem responde e quem paga o seguro?</div></div><div class="item"><div class="n">5</div><div class="t"><b>Escala e exclusividade</b>: o contrato descreve o que voc&ecirc; de fato faz?</div></div>
+</div>
+
+<div class="foot"><div class="logo"><div class="mark">S</div><div class="wm2">
+  <div class="name">SINMEVA&Ccedil;O</div><div class="sub">Sindicato dos M&eacute;dicos do Vale do A&ccedil;o</div>
+</div></div><div></div></div>
+</div></body></html>
