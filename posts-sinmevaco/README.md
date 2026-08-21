@@ -61,27 +61,25 @@ Todos os slides usam a mesma base: marca d'água `@sinmevaco` no topo, logo no r
 
 ## Cores e logo do sindicato
 
-**A paleta atual é provisória.** Marinho/creme/bronze foi escolhido por mim para casar com a linha editorial — não é a identidade oficial do SINMEVAÇO (o site do sindicato está fora do alcance desta sessão).
+Paleta oficial, tirada do feed e do logo do SINMEVAÇO:
 
-Para trocar, edite só o topo de `gerar_posts.py`:
+| Token | Hex | Onde entra |
+|---|---|---|
+| `navy` | `#17231A` | verde profundo — fundo escuro principal |
+| `navy2` | `#0D140F` | base do degradê escuro |
+| `navy3` | `#2E7048` | verde médio — caixas, botões, faixa "verdade" |
+| `steel` | `#24523A` | verde médio escuro — fundo secundário |
+| `cream` | `#F5F4EF` | off-white — fundo claro e texto sobre escuro |
+| `cream2` | `#E7E3D9` | apoio do fundo claro |
+| `brass` | `#C6AC73` | dourado — acento sobre fundo escuro |
+| `brass2` | `#D5BE8C` | dourado claro — numerais e kickers |
+| `ink` | `#16211A` | verde quase preto — texto sobre fundo claro |
 
-```python
-CORES = {
-    "navy":   "#132340",  # fundo principal (escuro)
-    "navy2":  "#0B1526",  # base do degrade escuro
-    "navy3":  "#1E355C",  # caixas sobre o escuro
-    "steel":  "#2A3B57",  # fundo secundario
-    "cream":  "#F4EFE6",  # fundo claro / texto sobre escuro
-    "cream2": "#E4DACA",
-    "brass":  "#A8763E",  # acento
-    "brass2": "#C89B5C",  # acento claro
-    "ink":    "#141A24",  # texto sobre fundo claro
-}
-```
+**Duas regras que vêm do feed do sindicato:** o dourado nunca é fundo, só acento de texto sobre o verde escuro; e sobre o creme quem acentua é o verde, não o dourado. Os botões seguem o padrão do sindicato — pílula branca com texto verde.
 
-Esses nove tokens alimentam os 31 slides. Depois é só `python3 gerar_posts.py && ./renderizar.sh`.
+Para ajustar qualquer tom, edite o dicionário `CORES` no topo de `gerar_posts.py` e rode `python3 gerar_posts.py && ./renderizar.sh`. Os nove tokens alimentam os 31 slides.
 
-**Logo:** coloque o arquivo oficial em `logos/logo.png` (fundo transparente, altura mínima 200px) e ele entra sozinho no rodapé de todos os slides, no lugar do lockup provisório com a inicial. Se o logo oficial tiver versão clara e escura, mande as duas que eu separo por tipo de fundo.
+**Logo:** salve o arquivo oficial como `logos/logo.png` (PNG com fundo transparente, altura mínima 200px). Ele entra sozinho dentro do selo redondo branco no rodapé de todos os slides. Enquanto o arquivo não estiver lá, o selo mostra "MSV" como provisório.
 
 ## Fotos (opcional)
 
@@ -107,4 +105,4 @@ Os dados abaixo estão no topo de `gerar_posts.py` e vieram de fontes públicas.
 - Modelo 10 — a data (12 de março) e a pauta são exemplo: editar antes de postar
 - Modelo 11 e slide 3 do carrossel da semana 01 — os trechos são redações genéricas de cláusula, não citação da CCT vigente. Substituir pelo texto real da convenção antes de publicar
 - Nova pasta de fotos da semana: `fotos/atraso-capa.jpg`, `fotos/atraso-a.jpg`, `fotos/atraso-b.jpg`
-- O logo é um lockup provisório (letra "S" + nome). Substituir pelo logo oficial do sindicato em `.logo .mark`.
+- O selo do rodapé ainda mostra "MSV" provisório: basta salvar o logo oficial em `logos/logo.png`

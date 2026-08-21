@@ -15,15 +15,15 @@ ROOT = Path(__file__).parent
 # TROCAR AQUI pelas cores oficiais do sindicato. Os quatro tokens abaixo
 # alimentam todos os 31 slides; nada mais precisa ser editado.
 CORES = {
-    "navy":   "#132340",  # fundo principal (escuro)
-    "navy2":  "#0B1526",  # base do degrade escuro
-    "navy3":  "#1E355C",  # caixas e destaques sobre o escuro
-    "steel":  "#2A3B57",  # fundo secundario (aco)
-    "cream":  "#F4EFE6",  # fundo claro e texto sobre escuro
-    "cream2": "#E4DACA",
-    "brass":  "#A8763E",  # acento
-    "brass2": "#C89B5C",  # acento claro (numeros, kickers)
-    "ink":    "#141A24",  # texto sobre fundo claro
+    "navy":   "#17231A",  # verde profundo - fundo escuro principal
+    "navy2":  "#0D140F",  # base do degrade escuro
+    "navy3":  "#2E7048",  # verde medio - caixas, destaques e faixa "verdade"
+    "steel":  "#24523A",  # verde medio escuro - fundo secundario
+    "cream":  "#F5F4EF",  # off-white - fundo claro e texto sobre escuro
+    "cream2": "#E7E3D9",
+    "brass":  "#C6AC73",  # dourado - SO como acento de texto, nunca fundo
+    "brass2": "#D5BE8C",  # dourado claro - numerais e kickers
+    "ink":    "#16211A",  # verde quase preto - texto sobre fundo claro
 }
 
 # Logo: coloque o arquivo oficial em logos/logo.png (ou .svg) e ele entra
@@ -35,7 +35,7 @@ LOGO_FILE = "logos/logo.png"
 HANDLE = "@sinmevaco"
 SITE = "sinmevaco.com.br"
 FONE = "(31) 99507-4027"
-CIDADE = "Coronel Fabriciano - Vale do Aco / MG"
+CIDADE = "Coronel Fabriciano &middot; Vale do A&ccedil;o / MG"
 
 # ====== BASE ======
 BASE_CSS = """
@@ -57,8 +57,8 @@ body{font-family:'DM Sans',system-ui,sans-serif;color:var(--cream)}
   radial-gradient(90% 70% at 24% 10%, rgba(146,163,186,.30) 0%, rgba(30,45,72,0) 62%),
   linear-gradient(172deg,var(--steel) 0%,var(--navy) 60%,var(--navy-2) 100%)}
 .bg-brass{background:
-  radial-gradient(100% 70% at 78% 6%, rgba(226,182,124,.34) 0%, rgba(120,80,38,0) 62%),
-  linear-gradient(165deg,var(--brass) 0%,var(--brass) 40%,#00000055 260%)}
+  radial-gradient(100% 70% at 78% 6%, rgba(255,255,255,.16) 0%, rgba(0,0,0,0) 62%),
+  linear-gradient(165deg,var(--navy-3) 0%,#276140 55%,#1C4630 100%)}
 .grain::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.16;mix-blend-mode:overlay;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E")}
 .veins::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.5;
@@ -81,9 +81,9 @@ body{font-family:'DM Sans',system-ui,sans-serif;color:var(--cream)}
 .counter.dark{background:rgba(20,26,36,.10);border-color:rgba(20,26,36,.16);color:var(--ink)}
 
 .logo{display:inline-flex;align-items:center;gap:16px;line-height:1}
-.logo img.mark{width:auto;height:56px;max-width:220px;object-fit:contain;flex:0 0 auto;border-radius:0;background:none}
-.logo .mark{width:56px;height:56px;border-radius:8px;flex:0 0 56px;display:flex;align-items:center;justify-content:center;
-  background:var(--brass);color:#fff;font-family:'DM Serif Display',serif;font-style:italic;font-size:34px;padding-bottom:4px}
+.logo img.mark{width:62px;height:62px;border-radius:50%;background:#fff;object-fit:contain;padding:5px;flex:0 0 62px}
+.logo .mark{width:62px;height:62px;border-radius:50%;flex:0 0 62px;display:flex;align-items:center;justify-content:center;
+  background:#fff;color:var(--navy-3);font-family:'DM Serif Display',serif;font-size:22px;letter-spacing:.02em}
 .logo .wm2{display:flex;flex-direction:column;gap:6px}
 .logo .name{font-family:'DM Serif Display',serif;font-style:italic;font-size:30px;letter-spacing:-.01em}
 .logo .sub{font-size:11.5px;letter-spacing:.34em;text-transform:uppercase;font-weight:600;opacity:.62}
@@ -92,7 +92,9 @@ body{font-family:'DM Sans',system-ui,sans-serif;color:var(--cream)}
 
 .foot{position:absolute;z-index:9;left:56px;right:56px;bottom:52px;display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
 .foot .tag{font-size:15px;letter-spacing:.26em;text-transform:uppercase;font-weight:600;opacity:.5;text-align:right;line-height:1.6}
-.foot .tag.dark{color:rgba(20,26,36,.6)}
+.foot .tag.dark{color:rgba(22,33,26,.6)}
+.foot .tag.arraste{color:var(--brass);opacity:1;font-size:14px;letter-spacing:.34em}
+.foot .tag.arraste.dark{color:#8A7440}
 
 /* ---- capa ---- */
 .cover .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 76px;gap:34px}
@@ -103,19 +105,19 @@ body{font-family:'DM Sans',system-ui,sans-serif;color:var(--cream)}
   letter-spacing:-.02em;color:var(--cream);max-width:14ch}
 .cover h1 em{font-style:italic;color:var(--brass-2)}
 .cover .ask{font-size:34px;font-weight:400;opacity:.72;letter-spacing:-.01em}
-.cover .answer{position:absolute;z-index:6;right:0;bottom:250px;background:var(--brass);padding:30px 44px 30px 40px;
+.cover .answer{position:absolute;z-index:6;right:0;bottom:250px;background:var(--navy-3);padding:30px 44px 30px 40px;
   max-width:560px;display:flex;align-items:center;gap:22px;font-size:29px;line-height:1.3;color:#FBF6EE}
-.cover .answer .arrow{flex:0 0 76px;height:1px;background:rgba(251,246,238,.85);position:relative}
+.cover .answer .arrow{flex:0 0 76px;height:1px;background:var(--brass-2);position:relative}
 .cover .answer .arrow::after{content:"";position:absolute;right:0;top:-5px;width:11px;height:11px;
-  border-top:1px solid rgba(251,246,238,.85);border-right:1px solid rgba(251,246,238,.85);transform:rotate(45deg)}
+  border-top:1px solid var(--brass-2);border-right:1px solid var(--brass-2);transform:rotate(45deg)}
 
 /* ---- split (2 fotos) ---- */
 .split{display:flex;flex-direction:column}
 .split .half{position:relative;flex:1;overflow:hidden;display:flex;align-items:center}
 .split .half.a{justify-content:flex-end}
 .split .half.b{justify-content:flex-start}
-.split .half.b .box{background:rgba(122,82,40,.92)}
-.split .box{position:relative;z-index:5;background:rgba(30,53,92,.90);backdrop-filter:blur(2px);
+.split .half.b .box{background:rgba(46,112,72,.94)}
+.split .box{position:relative;z-index:5;background:rgba(23,35,26,.90);backdrop-filter:blur(2px);
   padding:44px 48px;max-width:660px;margin:0 60px;font-size:35px;line-height:1.34;letter-spacing:-.005em;color:var(--cream)}
 .split .box b{font-weight:700}
 .split .box .serif{display:block;margin-top:14px;font-family:'DM Serif Display',serif;font-style:italic;font-size:52px;line-height:1.08}
@@ -129,7 +131,7 @@ body{font-family:'DM Sans',system-ui,sans-serif;color:var(--cream)}
 .editorial .rule{width:1px;height:78px;background:rgba(20,26,36,.35)}
 .editorial h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:64px;line-height:1.16;
   letter-spacing:-.015em;max-width:17ch}
-.editorial h2 em{font-style:italic;color:var(--brass)}
+.editorial h2 em{font-style:italic;color:var(--navy-3)}
 .editorial .bottom{font-size:32px;line-height:1.44;max-width:24ch;color:rgba(20,26,36,.86)}
 .editorial .bottom b{font-weight:700}
 
@@ -159,7 +161,7 @@ body{font-family:'DM Sans',system-ui,sans-serif;color:var(--cream)}
 .bubble .file{width:52px;height:64px;border-radius:6px;background:#E9E2D5;position:relative;flex:0 0 52px}
 .bubble .file::after{content:"";position:absolute;right:0;top:0;border-width:0 16px 16px 0;border-style:solid;
   border-color:#CFC4B0 #FCFAF6}
-.bubble .fname{font-size:34px;font-weight:600;color:#1D3A6B}
+.bubble .fname{font-size:34px;font-weight:600;color:var(--navy-3)}
 .bubble .fsize{font-size:20px;opacity:.55;margin-top:4px}
 
 /* ---- CTA ---- */
@@ -171,7 +173,7 @@ body{font-family:'DM Sans',system-ui,sans-serif;color:var(--cream)}
 .cta .contatos{display:flex;flex-direction:column;gap:14px;margin-top:10px}
 .cta .contatos div{display:flex;align-items:center;gap:18px;font-size:29px;letter-spacing:-.005em}
 .cta .contatos .dot{width:7px;height:7px;border-radius:50%;background:var(--brass-2);flex:0 0 7px}
-.cta .btn{align-self:flex-start;margin-top:14px;background:var(--brass);color:#FBF6EE;padding:26px 42px;font-size:30px;
+.cta .btn{align-self:flex-start;margin-top:14px;background:var(--cream);color:var(--navy);border-radius:999px;padding:26px 48px;font-size:30px;
   font-weight:600;letter-spacing:-.01em}
 """
 
@@ -182,7 +184,7 @@ BASE_CSS = BASE_CSS.replace("__TOKENS__", "".join(f"{css}:{CORES[k]};" for css, 
 
 _TEM_LOGO = (ROOT / LOGO_FILE).exists()
 _MARK = (f'<img class="mark" src="{{SUBIDA}}{LOGO_FILE}" alt="SINMEVACO">'
-         if _TEM_LOGO else '<div class="mark">S</div>')
+         if _TEM_LOGO else '<div class="mark">MSV</div>')
 
 LOGO_LIGHT = """<div class="logo">""" + _MARK + """<div class="wm2">
   <div class="name">SINMEVA&Ccedil;O</div><div class="sub">Sindicato dos M&eacute;dicos do Vale do A&ccedil;o</div>
@@ -193,10 +195,17 @@ LOGO_DARK = LOGO_LIGHT.replace('class="logo"', 'class="logo dark"')
 def page(title, canvas_class, inner, counter=None, dark_chrome=False, foot_tag=None, photo=None, show_foot=True):
     """Monta um slide 1080x1350 completo."""
     d = " dark" if dark_chrome else ""
+    d_wm = " dark" if dark_chrome else ""
     photo_html = ""
     if photo:
         photo_html = f'<div class="photo" style="background-image:url(\'{photo}\')"></div>'
-    counter_html = f'<div class="counter{d}">{counter}</div>' if counter else ""
+    counter_html = f'<div class="counter{" dark" if dark_chrome else ""}">{counter}</div>' if counter else ""
+    # slide de carrossel que nao e o ultimo ganha o "arraste", como no feed do sindicato
+    if counter and "/" in counter:
+        atual, total = counter.split("/")
+        if atual != total:
+            foot_tag = "Arraste &rarr;"
+            d += " arraste" 
     tag_html = f'<div class="tag{d}">{foot_tag}</div>' if foot_tag else "<div></div>"
     logo = LOGO_DARK if dark_chrome else LOGO_LIGHT
     foot_html = f'<div class="foot">{logo}{tag_html}</div>' if show_foot else ""
@@ -206,7 +215,7 @@ def page(title, canvas_class, inner, counter=None, dark_chrome=False, foot_tag=N
 <style>{BASE_CSS}</style></head>
 <body><div class="canvas {canvas_class} grain">
 {photo_html}
-<div class="wm{d}">{HANDLE}</div>
+<div class="wm{d_wm}">{HANDLE}</div>
 {counter_html}
 {inner}
 {foot_html}
@@ -218,10 +227,10 @@ BASE_CSS += """
 /* ---- 07 citacao ---- */
 .citacao{color:var(--ink)}
 .citacao .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 84px;gap:34px}
-.citacao .aspas{font-family:'DM Serif Display',serif;font-size:220px;line-height:.6;color:var(--brass);opacity:.32;height:110px}
+.citacao .aspas{font-family:'DM Serif Display',serif;font-size:220px;line-height:.6;color:var(--navy-3);opacity:.30;height:110px}
 .citacao blockquote{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:70px;line-height:1.1;
   letter-spacing:-.02em;max-width:17ch}
-.citacao blockquote em{font-style:italic;color:var(--brass)}
+.citacao blockquote em{font-style:italic;color:var(--navy-3)}
 .citacao .rule{width:96px;height:1px;background:rgba(20,26,36,.35)}
 .citacao .autor{display:flex;flex-direction:column;gap:8px}
 .citacao .autor .nome{font-size:29px;font-weight:600;letter-spacing:-.01em}
@@ -241,7 +250,7 @@ BASE_CSS += """
 .mv{display:flex;flex-direction:column}
 .mv .faixa{position:relative;flex:1;display:flex;flex-direction:column;justify-content:center;gap:24px;padding:0 76px}
 .mv .faixa.mito{background:linear-gradient(168deg,var(--navy) 0%,var(--navy-2) 100%)}
-.mv .faixa.verdade{background:linear-gradient(168deg,var(--brass) 0%,var(--brass) 40%,#00000055 260%)}
+.mv .faixa.verdade{background:linear-gradient(168deg,var(--navy-3) 0%,#276140 60%,#1C4630 100%)}
 .mv .pill{align-self:flex-start;font-size:15px;letter-spacing:.32em;text-transform:uppercase;font-weight:700;
   padding:11px 22px;border:1px solid rgba(244,239,230,.42);border-radius:999px}
 .mv .mito .pill{color:rgba(244,239,230,.72)}
@@ -272,10 +281,10 @@ BASE_CSS += """
 .clausula .doc .bar{height:13px;border-radius:3px;background:rgba(20,26,36,.10)}
 .clausula .doc .bar.s{width:62%}
 .clausula .doc .trecho{font-size:36px;line-height:1.36;letter-spacing:-.01em;font-weight:500}
-.clausula .doc .trecho mark{background:rgba(200,155,92,.42);padding:2px 6px;color:inherit}
+.clausula .doc .trecho mark{background:rgba(198,172,115,.45);padding:2px 6px;color:inherit}
 .clausula .leitura{display:flex;flex-direction:column;gap:18px}
 .clausula .leitura h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:58px;line-height:1.1;letter-spacing:-.02em;max-width:18ch}
-.clausula .leitura h2 em{font-style:italic;color:var(--brass)}
+.clausula .leitura h2 em{font-style:italic;color:var(--navy-3)}
 .clausula .leitura p{font-size:29px;line-height:1.4;color:rgba(20,26,36,.78);max-width:26ch}
 
 /* ---- 12 pergunta do associado ---- */
