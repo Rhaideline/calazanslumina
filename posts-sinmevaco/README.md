@@ -1,6 +1,6 @@
 # Posts SINMEVAÇO — Sindicato dos Médicos do Vale do Aço
 
-18 slides em 1080×1350 (4:5), no formato editorial de "caso real → pergunta → a resposta está no documento → jurídico do sindicato".
+Slides em **1080×1440 (3:4)** — o tamanho nativo de 2026, que não sofre corte nem no feed nem na grade do perfil — no formato editorial de "caso real → pergunta → a resposta está no documento → jurídico do sindicato".
 
 ```
 01_plantao_reduzido/      carrossel 5 slides — redução de valor de plantão avisada em grupo
@@ -13,7 +13,8 @@
 
 - `gerar_posts.py` — gera todos os HTML (rode `python3 gerar_posts.py`)
 - `renderizar.sh` — renderiza os HTML em PNG com Chrome headless
-- `cortar_1350.py` — corta os PNG para exatamente 1080×1350 (o headless devolve pixels extras)
+- `cortar_1440.py` — corta os PNG para exatamente 1080×1440 (o headless devolve pixels extras)
+- `ESTUDO-SOCIAL-MEDIA.md` — **as regras de ofício com fonte**: formato 3:4, capa que vale 80% do resultado, ciclo aberto, quantidade de slides, régua de tamanho de texto, textura contra o feed higienizado e a checklist de revisão antes de publicar
 - `ESTUDO-SINDICATO-MEDICO.md` — **base de conhecimento com fonte**: jornada e piso (Súmula 370 TST), escala 12x36 (art. 59-A + STF), redução salarial (CF 7º VI e CLT 468), pejotização (Tema 1389, em julgamento), acumulação de cargos (CF 37 XVI), prontuário (Res. CFM 1.821), substituto processual (CF 8º III) e contribuições. Todo post novo deve sair daqui
 - `LEGENDAS.md` — legendas prontas, hashtags e sugestão de calendário
 - `_PREVIEW.html` — todos os slides numa página só
@@ -106,7 +107,9 @@ fotos/convencao.jpg     fotos/fluxo.jpg      fotos/colchete.jpg
 fotos/tela.jpg
 ```
 
-Os modelos 15, 17, 18, 20 e 22 foram desenhados **em cima de foto** — sem imagem eles funcionam, mas rendem muito mais com uma. Os demais fecham sozinhos.
+**Nenhum slide depende mais de foto.** Onde havia buraco de imagem entrou o *campo gráfico* — degradê profundo, retícula com máscara e dois arcos que ecoam o círculo do logo. Se você colocar um arquivo no slot, a foto entra por cima do campo; se não colocar, a composição continua fechada.
+
+Foto própria do sindicato (sede, diretoria, assembleia, médicos da região) vale mais que banco de imagem para uma entidade — mas agora é ganho, não remendo.
 
 Depois rode `./renderizar.sh` de novo. Sem os arquivos, o degradê de fundo assume.
 

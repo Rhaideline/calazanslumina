@@ -1,7 +1,9 @@
 # SINMEVAÇO — Legendas dos posts
 
 Linha editorial: **caso real → pergunta do médico → "a resposta está no documento" → jurídico do sindicato.**
-Formato: 1080×1350 (4:5). Carrosséis de 5 slides + posts únicos de reforço.
+Formato: **1080×1440 (3:4)** — nativo em 2026, sem corte no feed nem na grade do perfil.
+Carrosséis de 5 slides (faixa de melhor salvamento) + posts únicos de reforço.
+As regras de ofício por trás disso estão em `ESTUDO-SOCIAL-MEDIA.md`.
 
 > Aviso sugerido no fim de toda legenda de caso:
 > *Conteúdo informativo. Cada caso tem particularidades — associado, fale com o jurídico do SINMEVAÇO.*
@@ -203,7 +205,7 @@ Formato: 1080×1350 (4:5). Carrosséis de 5 slides + posts únicos de reforço.
 
 Ancorados em `ESTUDO-SINDICATO-MEDICO.md`. Cada afirmação tem fonte lá.
 
-## 23 — Pejotização no STF (carrossel, 3 slides)
+## 23 — Pejotização no STF (carrossel, 5 slides)
 **Pasta:** `23_pejotizacao_stf/`
 
 > O STF vai decidir a pejotização. E isso alcança médico contratado como PJ.

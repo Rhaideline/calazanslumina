@@ -1,9 +1,9 @@
-"""Corta PNGs renderizados para exatamente 1080x1350 (o headless do Chrome
+"""Corta PNGs renderizados para exatamente 1080x1440 (o headless do Chrome
 devolve alguns pixels pretos a mais no rodape)."""
 import struct, zlib, sys
 from pathlib import Path
 
-ALVO_W, ALVO_H = 1080, 1350
+ALVO_W, ALVO_H = 1080, 1440
 
 
 def chunks(data):
