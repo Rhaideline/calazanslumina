@@ -47,14 +47,14 @@ body{font-family:'DM Sans',system-ui,sans-serif;color:var(--cream)}
 
 /* ---- fundos ---- */
 .bg-navy{background:
-  radial-gradient(120% 80% at 78% 12%, rgba(60,102,168,.30) 0%, rgba(19,35,64,0) 58%),
-  radial-gradient(90% 60% at 12% 96%, rgba(168,118,62,.20) 0%, rgba(11,21,38,0) 60%),
+  radial-gradient(120% 80% at 78% 12%, rgba(46,112,72,.38) 0%, rgba(13,20,15,0) 58%),
+  radial-gradient(90% 60% at 12% 96%, rgba(198,172,115,.16) 0%, rgba(13,20,15,0) 60%),
   linear-gradient(168deg,var(--navy) 0%,var(--navy-2) 100%)}
 .bg-cream{background:
   radial-gradient(90% 70% at 20% 8%, rgba(255,255,255,.85) 0%, rgba(244,239,230,0) 60%),
   linear-gradient(158deg,#F6F2EA 0%,#EFE8DC 52%,#E4DACA 100%)}
 .bg-steel{background:
-  radial-gradient(90% 70% at 24% 10%, rgba(146,163,186,.30) 0%, rgba(30,45,72,0) 62%),
+  radial-gradient(90% 70% at 24% 10%, rgba(126,178,142,.28) 0%, rgba(13,20,15,0) 62%),
   linear-gradient(172deg,var(--steel) 0%,var(--navy) 60%,var(--navy-2) 100%)}
 .bg-brass{background:
   radial-gradient(100% 70% at 78% 6%, rgba(255,255,255,.16) 0%, rgba(0,0,0,0) 62%),
@@ -192,7 +192,7 @@ LOGO_LIGHT = """<div class="logo">""" + _MARK + """<div class="wm2">
 LOGO_DARK = LOGO_LIGHT.replace('class="logo"', 'class="logo dark"')
 
 
-def page(title, canvas_class, inner, counter=None, dark_chrome=False, foot_tag=None, photo=None, show_foot=True):
+def page(title, canvas_class, inner, counter=None, dark_chrome=False, foot_tag=None, photo=None, show_foot=True, show_wm=True):
     """Monta um slide 1080x1350 completo."""
     d = " dark" if dark_chrome else ""
     d_wm = " dark" if dark_chrome else ""
@@ -200,6 +200,7 @@ def page(title, canvas_class, inner, counter=None, dark_chrome=False, foot_tag=N
     if photo:
         photo_html = f'<div class="photo" style="background-image:url(\'{photo}\')"></div>'
     counter_html = f'<div class="counter{" dark" if dark_chrome else ""}">{counter}</div>' if counter else ""
+    wm_html = f'<div class="wm{" dark" if dark_chrome else ""}">{HANDLE}</div>' if show_wm else ""
     # slide de carrossel que nao e o ultimo ganha o "arraste", como no feed do sindicato
     if counter and "/" in counter:
         atual, total = counter.split("/")
@@ -215,7 +216,7 @@ def page(title, canvas_class, inner, counter=None, dark_chrome=False, foot_tag=N
 <style>{BASE_CSS}</style></head>
 <body><div class="canvas {canvas_class} grain">
 {photo_html}
-<div class="wm{d_wm}">{HANDLE}</div>
+{wm_html}
 {counter_html}
 {inner}
 {foot_html}
@@ -454,6 +455,282 @@ def pergunta(kicker, duvida, resposta, nota, counter=None, foot_tag=None):
 """, counter=counter, foot_tag=foot_tag)
 
 
+# ====== CSS DOS MODELOS 13-17 ======
+BASE_CSS += """
+/* ---- 13 cartao com foto e pergunta ---- */
+.cardfoto{background:var(--cream-2)}
+.cardfoto .card{position:absolute;inset:38px;background:#FFFDFA;border-radius:46px;overflow:hidden;
+  display:flex;flex-direction:column;box-shadow:0 40px 90px -40px rgba(13,20,15,.45);z-index:5}
+.cardfoto .head{display:flex;justify-content:space-between;align-items:center;padding:44px 54px 30px;
+  font-size:25px;color:var(--ink);letter-spacing:-.01em}
+.cardfoto .head b{font-weight:700}
+.cardfoto .head i{font-style:italic;font-weight:600}
+.cardfoto .shot{height:470px;position:relative;margin:0 0 0;overflow:hidden;
+  background:linear-gradient(150deg,var(--navy-3) 0%,var(--steel) 55%,var(--navy) 100%)}
+.cardfoto .shot .ph{position:absolute;inset:0;background-position:center;background-size:cover;filter:saturate(.8) contrast(1.03)}
+.cardfoto .mid{flex:1;padding:52px 54px 0;display:flex;flex-direction:column;justify-content:center;gap:32px}
+.cardfoto h1{font-size:52px;line-height:1.44;letter-spacing:-.015em;color:var(--ink);font-weight:400;max-width:16ch}
+.cardfoto h1 b{font-weight:700;font-style:italic}
+.cardfoto .seta{align-self:flex-end;width:96px;height:56px;border:1.5px solid var(--ink);border-radius:999px;
+  display:flex;align-items:center;justify-content:center;font-size:30px;color:var(--ink);margin-top:-8px}
+.cardfoto .hint{font-size:27px;color:rgba(22,33,26,.8);border-top:1.5px solid rgba(22,33,26,.25);padding-top:22px}
+.cardfoto .hint b{font-weight:700;font-style:italic}
+.cardfoto .pe{display:flex;justify-content:space-between;align-items:center;padding:34px 54px 46px;
+  font-size:23px;color:rgba(22,33,26,.45)}
+
+/* ---- 14 caixa branca sobre o verde ---- */
+.boxcard .body{position:relative;z-index:5;flex:1;display:flex;align-items:center;justify-content:center;padding:0 74px}
+.boxcard .box{background:#FFFDFA;border-radius:38px;padding:74px 62px;display:flex;flex-direction:column;
+  gap:30px;align-items:flex-start;width:100%;box-shadow:0 40px 90px -44px rgba(0,0,0,.6)}
+.boxcard .box h2{font-size:62px;line-height:1.14;letter-spacing:-.025em;font-weight:700;color:var(--ink);max-width:13ch}
+.boxcard .box p{font-size:29px;line-height:1.46;color:rgba(22,33,26,.72);max-width:26ch}
+.boxcard .btn{border:1.5px solid var(--ink);color:var(--ink);padding:24px 40px;font-size:22px;
+  letter-spacing:.2em;text-transform:uppercase;font-weight:600;margin-top:8px}
+.boxcard .pe{position:absolute;z-index:6;left:74px;right:74px;bottom:56px;display:flex;justify-content:space-between;
+  font-size:22px;color:rgba(245,244,239,.62);letter-spacing:.01em}
+
+/* ---- 15 foto com moldura vazada ---- */
+.fotoframe .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;
+  padding:0 76px;gap:26px}
+.fotoframe .frame{position:absolute;z-index:4;right:56px;top:300px;bottom:300px;left:330px;
+  border:1.5px solid rgba(245,244,239,.55);border-radius:0 200px 0 0;pointer-events:none}
+.fotoframe h2{font-size:64px;line-height:1.16;letter-spacing:-.025em;font-weight:700;max-width:15ch}
+.fotoframe p{font-size:30px;line-height:1.42;color:rgba(245,244,239,.72);max-width:24ch}
+.fotoframe .pill{align-self:flex-start;margin-top:16px;border:1.5px solid rgba(245,244,239,.6);border-radius:999px;
+  padding:16px 32px;font-size:24px;letter-spacing:.02em}
+
+/* ---- 16 cartao com barra lateral ---- */
+.lateral .card{position:absolute;inset:44px;border-radius:34px;overflow:hidden;z-index:5;
+  background:linear-gradient(140deg,#1E4A34 0%,#16321F 52%,#0F2117 100%);display:flex}
+.lateral .col{flex:1;padding:74px 64px;display:flex;flex-direction:column;justify-content:center;gap:32px}
+.lateral .mark{width:66px;height:66px;border-radius:50%;background:rgba(245,244,239,.10);border:1px solid rgba(213,190,140,.5);
+  display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-size:24px;color:var(--brass-2)}
+.lateral h2{font-size:54px;line-height:1.24;letter-spacing:-.02em;font-weight:400;max-width:15ch}
+.lateral h2 b{font-weight:700;color:var(--brass-2)}
+.lateral p{font-size:27px;line-height:1.48;color:rgba(245,244,239,.72);max-width:27ch}
+.lateral .btn{align-self:flex-start;border:1.5px solid rgba(245,244,239,.7);padding:22px 38px;font-size:24px;
+  letter-spacing:.02em;margin-top:6px}
+.lateral .bar{width:110px;background:linear-gradient(180deg,var(--cream-2) 0%,#CDBE9C 100%);border-radius:70px 0 0 70px;margin:70px 0 70px 0}
+.lateral .pe{position:absolute;z-index:6;left:0;right:0;bottom:0;height:44px;display:flex;align-items:center;
+  justify-content:center;gap:26px;font-size:21px;color:rgba(22,33,26,.5)}
+
+/* ---- 17 X vs Y em serifa ---- */
+.versus .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:2px;text-align:center}
+.versus .t{font-family:'DM Serif Display',serif;font-size:150px;line-height:.98;letter-spacing:.01em;color:#FFFDFA;
+  text-shadow:0 12px 40px rgba(0,0,0,.45)}
+.versus .vs{font-family:'DM Serif Display',serif;font-style:italic;font-size:56px;color:var(--brass-2);margin:6px 0}
+.versus .sub{margin-top:36px;font-size:28px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;
+  color:rgba(245,244,239,.8)}
+"""
+
+
+def cardfoto(esq, dir_, pergunta, hint, data, photo=None, counter=None):
+    """13 - cartao branco arredondado com faixa de foto e pergunta."""
+    ph = f'<div class="ph" style="background-image:url(\'{photo}\')"></div>' if photo else ""
+    return page(pergunta, "cardfoto", f"""
+<div class="card">
+  <div class="head"><div>{esq}</div><div><b>{dir_}</b></div></div>
+  <div class="shot">{ph}</div>
+  <div class="mid">
+    <h1>{pergunta}</h1>
+    <div class="seta">&rarr;</div>
+    <div class="hint">{hint}</div>
+  </div>
+  <div class="pe"><div>{HANDLE}</div><div>{data}</div></div>
+</div>
+""", counter=counter, dark_chrome=True, show_foot=False, show_wm=False)
+
+
+def boxcard(titulo, texto, botao, counter=None):
+    """14 - caixa branca sobre o verde, com botao vazado."""
+    return page(titulo, "boxcard bg-steel", f"""
+<div class="body">
+  <div class="box"><h2>{titulo}</h2><p>{texto}</p><div class="btn">{botao}</div></div>
+</div>
+<div class="pe"><div>{HANDLE}</div><div>{SITE}</div><div>{FONE}</div></div>
+""", counter=counter, show_foot=False, show_wm=False)
+
+
+def fotoframe(titulo, texto, photo=None, counter=None):
+    """15 - foto com sobreposicao escura e moldura vazada."""
+    return page(titulo, "fotoframe bg-navy", f"""
+<div class="frame"></div>
+<div class="body">
+  <h2>{titulo}</h2>
+  <p>{texto}</p>
+  <div class="pill">{HANDLE}</div>
+</div>
+""", counter=counter, photo=photo, show_foot=False, show_wm=False)
+
+
+def lateral(titulo, texto, botao, counter=None):
+    """16 - cartao com degrade e barra bege lateral."""
+    return page(titulo, "lateral bg-cream", f"""
+<div class="card">
+  <div class="col">
+    <div class="mark">MSV</div>
+    <h2>{titulo}</h2>
+    <p>{texto}</p>
+    <div class="btn">{botao}</div>
+  </div>
+  <div class="bar"></div>
+</div>
+<div class="pe"><span>{HANDLE}</span><span>&middot;</span><span>{SITE}</span></div>
+""", counter=counter, show_foot=False, show_wm=False)
+
+
+def versus(a, b, sub, photo=None, counter=None):
+    """17 - comparacao em serifa grande sobre foto."""
+    return page(f"{a} vs {b}", "versus bg-navy", f"""
+<div class="body">
+  <div class="t">{a}</div>
+  <div class="vs">vs</div>
+  <div class="t">{b}</div>
+  <div class="sub">{sub}</div>
+</div>
+""", counter=counter, photo=photo, show_foot=False, show_wm=False)
+
+
+# ====== CSS DOS MODELOS 18-22 ======
+BASE_CSS += """
+/* ---- 18 capa foto com pergunta centralizada ---- */
+.capafoto .topo{position:absolute;z-index:6;top:46px;left:56px;right:56px;display:flex;justify-content:space-between;
+  font-size:19px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:rgba(245,244,239,.72)}
+.capafoto .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;align-items:center;
+  justify-content:flex-end;padding:0 76px 130px;text-align:center;gap:14px}
+.capafoto .l1{font-size:40px;letter-spacing:-.01em;color:rgba(245,244,239,.9)}
+.capafoto .l2{font-family:'DM Serif Display',serif;font-size:104px;line-height:1;letter-spacing:-.02em;color:#FFFDFA}
+.capafoto .l3{font-size:32px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;color:rgba(245,244,239,.85)}
+.capafoto .btn{margin-top:44px;background:var(--navy-2);color:var(--cream);border-radius:999px;padding:26px 46px;
+  font-size:23px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;display:flex;align-items:center;gap:18px}
+
+/* ---- 19 fluxo em pills ---- */
+.fluxo .body{position:relative;z-index:5;flex:1;padding:130px 70px 0}
+.fluxo h2{font-size:74px;line-height:1.08;letter-spacing:-.03em;font-weight:700;max-width:12ch}
+.fluxo h2 em{font-style:italic;font-family:'DM Serif Display',serif;font-weight:400;color:var(--brass-2)}
+.fluxo .mapa{position:absolute;inset:0;z-index:5}
+.fluxo .pill{position:absolute;background:#FFFDFA;color:var(--ink);border-radius:999px;padding:20px 38px;
+  font-size:30px;font-weight:600;letter-spacing:-.01em;box-shadow:0 18px 40px -18px rgba(0,0,0,.6)}
+.fluxo svg{position:absolute;inset:0;z-index:4}
+.fluxo .pe{position:absolute;z-index:6;left:0;right:0;bottom:52px;text-align:center;font-size:21px;
+  letter-spacing:.22em;text-transform:uppercase;color:rgba(245,244,239,.55)}
+
+/* ---- 20 capa escura com serifa entre colchetes ---- */
+.colchete .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;text-align:center;padding:0 84px;gap:22px}
+.colchete .rule{width:180px;height:1px;background:rgba(245,244,239,.5);margin-bottom:16px}
+.colchete .kicker{font-size:22px;letter-spacing:.26em;text-transform:uppercase;font-weight:500;color:rgba(245,244,239,.75);max-width:26ch;line-height:1.6}
+.colchete h1{font-family:'DM Serif Display',serif;font-size:78px;line-height:1.06;letter-spacing:-.02em;color:#FFFDFA}
+.colchete .marca{display:inline-flex;align-items:center;gap:16px;font-family:'DM Serif Display',serif;font-size:78px;
+  color:var(--brass-2);line-height:1.06}
+.colchete .marca::before,.colchete .marca::after{content:"";width:16px;height:74px;border:1.5px solid var(--brass-2)}
+.colchete .marca::before{border-right:none}
+.colchete .marca::after{border-left:none}
+.colchete .pe{position:absolute;z-index:6;left:70px;right:70px;bottom:64px;display:flex;justify-content:space-between;
+  font-size:20px;letter-spacing:.24em;text-transform:uppercase;color:rgba(245,244,239,.6)}
+
+/* ---- 21 card claro texturizado, tipografia mista ---- */
+.textura{background:linear-gradient(150deg,#EFEDE6 0%,#E3E0D7 55%,#D8D4C9 100%);color:var(--ink)}
+.textura .card{position:absolute;inset:56px;border-radius:40px;border:1px solid rgba(22,33,26,.14);z-index:5;
+  display:flex;flex-direction:column;justify-content:center;padding:0 66px;gap:34px;
+  background:linear-gradient(160deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,0) 60%)}
+.textura .kicker{position:absolute;top:56px;left:66px;font-size:19px;letter-spacing:.3em;text-transform:uppercase;
+  font-weight:600;color:rgba(22,33,26,.5)}
+.textura h1{font-size:88px;line-height:1.02;letter-spacing:-.04em;font-weight:700;text-transform:uppercase;max-width:12ch}
+.textura h1 em{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;text-transform:none;letter-spacing:-.02em}
+.textura .linha{display:flex;align-items:center;gap:18px;font-size:24px;color:rgba(22,33,26,.62)}
+.textura .linha i{flex:0 0 120px;height:1px;background:rgba(22,33,26,.4);display:block}
+.textura .pe{position:absolute;z-index:6;left:66px;right:66px;bottom:56px;display:flex;justify-content:space-between;align-items:center}
+.textura .pe .tag{border:1px solid rgba(22,33,26,.35);border-radius:999px;padding:14px 30px;font-size:21px;color:rgba(22,33,26,.7)}
+.textura .pe .mais{font-size:34px;color:rgba(22,33,26,.45)}
+
+/* ---- 22 mock de tela com destaque ---- */
+.tela .stats{position:absolute;z-index:6;top:180px;right:64px;display:flex;flex-direction:column;gap:18px;align-items:flex-end}
+.tela .stats div{background:rgba(255,253,250,.94);color:var(--ink);border-radius:999px;padding:16px 28px;font-size:24px;
+  font-weight:600;display:flex;align-items:center;gap:14px;box-shadow:0 18px 36px -16px rgba(0,0,0,.7)}
+.tela .stats .dot{width:26px;height:26px;border-radius:50%;background:var(--navy-3)}
+.tela .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:0 70px 150px;gap:30px}
+.tela h2{font-size:70px;line-height:1.12;letter-spacing:-.03em;font-weight:700;max-width:14ch}
+.tela h2 mark{background:none;color:#FFFDFA;border:1.5px solid var(--brass-2);padding:2px 14px;margin-left:6px}
+.tela .btn{align-self:flex-start;background:rgba(255,253,250,.95);color:var(--ink);border-radius:12px;padding:22px 34px;
+  font-size:25px;font-weight:600;display:flex;align-items:center;gap:14px}
+.tela .pe{position:absolute;z-index:6;left:70px;bottom:64px;font-size:21px;letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(245,244,239,.6)}
+"""
+
+
+def capafoto(l1, l2, l3, botao, photo=None, counter=None):
+    """18 - foto inteira com pergunta centralizada e botao pilula."""
+    return page(l2, "capafoto bg-navy", f"""
+<div class="topo"><div>SINMEVA&Ccedil;O</div><div>{HANDLE}</div></div>
+<div class="body">
+  <div class="l1">{l1}</div>
+  <div class="l2">{l2}</div>
+  <div class="l3">{l3}</div>
+  <div class="btn">{botao}</div>
+</div>
+""", counter=counter, photo=photo, show_foot=False, show_wm=False)
+
+
+def fluxo(titulo, etapas, rodape, photo=None, counter=None):
+    """19 - etapas em pilulas ligadas por curvas."""
+    pos = [(90, 430), (500, 590), (140, 750), (540, 910), (190, 1070)]
+    centros = [(x + 110, y + 37) for x, y in pos]
+    pills = "".join(f'<div class="pill" style="left:{x}px;top:{y}px">{t}</div>'
+                    for (x, y), t in zip(pos, etapas))
+    curvas = "".join(
+        f'<path d="M{x1} {y1} Q {(x1 + x2) // 2 + (150 if x2 > x1 else -150)} {(y1 + y2) // 2} {x2} {y2}" />'
+        for (x1, y1), (x2, y2) in zip(centros, centros[1:]))
+    return page(titulo, "fluxo bg-navy", f"""
+<div class="body"><h2>{titulo}</h2></div>
+<div class="mapa">
+  <svg viewBox="0 0 1080 1350" fill="none" stroke="rgba(245,244,239,.55)" stroke-width="2" stroke-dasharray="10 10">{curvas}</svg>
+  {pills}
+</div>
+<div class="pe">{rodape}</div>
+""", counter=counter, photo=photo, show_foot=False, show_wm=False)
+
+
+def colchete(kicker, linha1, destaque, esq, dir_, photo=None, counter=None):
+    """20 - capa escura, serifa grande e trecho entre colchetes."""
+    return page(destaque, "colchete bg-navy", f"""
+<div class="body">
+  <div class="rule"></div>
+  <div class="kicker">{kicker}</div>
+  <h1>{linha1}</h1>
+  <div class="marca">{destaque}</div>
+</div>
+<div class="pe"><div>{esq}</div><div>{dir_}</div></div>
+""", counter=counter, photo=photo, show_foot=False, show_wm=False)
+
+
+def textura(kicker, titulo, linha, counter=None):
+    """21 - cartao claro texturizado com tipografia mista."""
+    return page(titulo, "textura grain", f"""
+<div class="card">
+  <div class="kicker">{kicker}</div>
+  <h1>{titulo}</h1>
+  <div class="linha"><i></i>{linha}</div>
+</div>
+<div class="pe"><div class="tag">{HANDLE}</div><div class="mais">+</div></div>
+""", counter=counter, show_foot=False, show_wm=False)
+
+
+def tela(stats, titulo, botao, rodape, photo=None, counter=None):
+    """22 - mock de tela com pilulas de metrica e palavra destacada."""
+    st = "".join(f'<div><span class="dot"></span>{t}</div>' for t in stats)
+    return page(titulo, "tela bg-navy", f"""
+<div class="stats">{st}</div>
+<div class="body">
+  <h2>{titulo}</h2>
+  <div class="btn">{botao}</div>
+</div>
+<div class="pe">{rodape}</div>
+""", counter=counter, photo=photo, show_foot=False, show_wm=False)
+
+
 # ====== POSTS ======
 # Slots de foto: coloque o arquivo em fotos/<nome>.jpg. Sem o arquivo,
 # o degrade de fundo assume e o slide continua fechado.
@@ -680,6 +957,79 @@ POSTS = [
             "Antes de parar, <em>protocole.</em>",
             "Cobran&ccedil;a por escrito, prazo registrado e c&oacute;pia guardada. Com isso na m&atilde;o, o sindicato cobra o hospital &mdash; e voc&ecirc; n&atilde;o fica exposto sozinho.",
             foot_tag="Manda a sua<br>pergunta no direct")),
+    ]),
+
+    # ---------- modelos 13 a 22 ----------
+    ("13_cartao_pergunta", [
+        ("01_post.html", cardfoto(
+            "Sindicato <i>SINMEVA&Ccedil;O</i>", "Jur&iacute;dico",
+            "Voc&ecirc; sabe <b>o que o sindicato faz</b> al&eacute;m de negociar reajuste?",
+            "<b>arraste</b> para o lado para conferir",
+            "22 de agosto", photo="fotos/cartao-capa.jpg")),
+    ]),
+
+    ("14_caixa_contato", [
+        ("01_post.html", boxcard(
+            "Cada contrato precisa de leitura antes da assinatura.",
+            "O jur&iacute;dico do SINMEVA&Ccedil;O analisa proposta, aditivo e contrato de plant&atilde;o &mdash; cl&aacute;usula por cl&aacute;usula, sem custo adicional para o associado.",
+            "Entre em contato")),
+    ]),
+
+    ("15_foto_moldura", [
+        ("01_post.html", fotoframe(
+            "N&atilde;o assine hoje o que voc&ecirc; n&atilde;o vai poder mudar depois",
+            "Contrato de plant&atilde;o dura muito mais que a conversa que deu origem a ele.",
+            photo="fotos/moldura.jpg")),
+    ]),
+
+    ("16_cartao_lateral", [
+        ("01_post.html", lateral(
+            "Como o <b>jur&iacute;dico do sindicato</b> protege o seu <b>plant&atilde;o</b>?",
+            "An&aacute;lise de contrato, cobran&ccedil;a de atraso, defesa em processo &eacute;tico e representa&ccedil;&atilde;o junto a hospitais e operadoras.",
+            "Saiba mais")),
+    ]),
+
+    ("17_clt_vs_pj", [
+        ("01_post.html", versus("CLT", "PJ", "O que muda quando voc&ecirc; adoece",
+                                photo="fotos/versus.jpg")),
+    ]),
+
+    ("18_capa_pergunta", [
+        ("01_post.html", capafoto(
+            "Voc&ecirc; sabe como", "a conven&ccedil;&atilde;o", "funciona?",
+            "Confira na legenda &darr;", photo="fotos/convencao.jpg")),
+    ]),
+
+    ("19_fluxo_juridico", [
+        ("01_post.html", fluxo(
+            "O jur&iacute;dico &eacute; <em>simples</em>",
+            ["Relato", "An&aacute;lise", "Documentos", "A&ccedil;&atilde;o", "Resposta"],
+            "SINMEVA&Ccedil;O &middot; jur&iacute;dico pr&oacute;prio",
+            photo="fotos/fluxo.jpg")),
+    ]),
+
+    ("20_capa_colchete", [
+        ("01_post.html", colchete(
+            "O que o sindicato faz quando o hospital atrasa",
+            "para proteger", "o seu plant&atilde;o",
+            "SINMEVA&Ccedil;O", "Jur&iacute;dico pr&oacute;prio",
+            photo="fotos/colchete.jpg")),
+    ]),
+
+    ("21_erros_contrato", [
+        ("01_post.html", textura(
+            "SINMEVA&Ccedil;O &middot; Vale do A&ccedil;o",
+            "Erros comuns no <em>contrato</em> m&eacute;dico",
+            "Cinco cl&aacute;usulas que quase ningu&eacute;m l&ecirc;")),
+    ]),
+
+    ("22_contrato_nao_protege", [
+        ("01_post.html", tela(
+            ["0 cl&aacute;usula de reajuste", "0 prazo de pagamento"],
+            "Seu contrato n&atilde;o <mark>protege</mark>",
+            "&#8600; Leia a legenda",
+            "SINMEVA&Ccedil;O &middot; leitura de contrato",
+            photo="fotos/tela.jpg")),
     ]),
 ]
 

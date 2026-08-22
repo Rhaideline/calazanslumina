@@ -199,6 +199,121 @@ Formato: 1080×1350 (4:5). Carrosséis de 5 slides + posts únicos de reforço.
 
 ---
 
+# MODELOS 13 A 22 — segunda leva
+
+Mesma paleta e tipografia, estruturas novas: cartão arredondado, caixa branca, foto com moldura, barra lateral, comparação em serifa, fluxo em etapas, capa com colchetes, cartão texturizado e mock de tela.
+
+## 13 — Cartão com foto e pergunta
+**Pasta:** `13_cartao_pergunta/` · capa de carrossel
+
+> Você sabe o que o sindicato faz além de negociar reajuste?
+>
+> Negociação coletiva é a parte visível. A rotina é outra: contrato lido antes da assinatura, atraso de pagamento cobrado do hospital, defesa em processo ético, representação em mesa com prefeitura e operadora.
+>
+> Arraste para ver o que já está incluído para o associado.
+
+`#sinmevaco #sindicato #medicos #valedoaco #direitomedico`
+
+## 14 — Caixa branca / contato
+**Pasta:** `14_caixa_contato/` · institucional
+
+> Cada contrato precisa de leitura antes da assinatura.
+>
+> Proposta de plantão, aditivo, contrato PJ, termo de credenciamento: o jurídico do SINMEVAÇO analisa cláusula por cláusula e devolve o que precisa ser negociado — sem custo adicional para o associado.
+>
+> Manda o documento antes de assinar, não depois.
+
+`#sinmevaco #contratomedico #direitomedico #medicos #valedoaco`
+
+## 15 — Foto com moldura
+**Pasta:** `15_foto_moldura/` · frase de impacto
+
+> Não assine hoje o que você não vai poder mudar depois.
+>
+> Contrato de plantão dura muito mais que a conversa que deu origem a ele. O combinado verbal some; a cláusula fica.
+>
+> Antes de assinar, mande para o jurídico do sindicato.
+
+`#sinmevaco #plantao #contratomedico #medicos #valedoaco`
+
+## 16 — Cartão com barra lateral
+**Pasta:** `16_cartao_lateral/` · explica um serviço
+
+> Como o jurídico do sindicato protege o seu plantão?
+>
+> Análise de contrato antes da assinatura. Cobrança formal quando o pagamento atrasa. Defesa em processo ético-disciplinar. Representação junto a hospitais, prefeituras e operadoras.
+>
+> É o que o associado já tem incluído.
+
+`#sinmevaco #plantao #juridico #medicos #valedoaco`
+
+## 17 — CLT vs PJ
+**Pasta:** `17_clt_vs_pj/` · comparação
+
+> CLT vs PJ: o que muda quando você adoece.
+>
+> Na CLT existe afastamento remunerado, 13º, férias e FGTS. Na PJ, nada disso vem por padrão — só o que estiver escrito no contrato.
+>
+> E atenção: o que define o vínculo não é o papel assinado, é a rotina. Subordinação, pessoalidade e habitualidade são o que a Justiça olha primeiro.
+
+`#sinmevaco #pj #clt #pejotizacao #medicos #direitomedico`
+
+## 18 — Capa com pergunta
+**Pasta:** `18_capa_pergunta/` · abertura de carrossel
+
+> Você sabe como a convenção coletiva funciona?
+>
+> Ela define piso, reajuste, data-base, prazo de pagamento e condições de escala para toda a categoria — e vale mesmo que o seu contrato individual diga outra coisa em prejuízo do médico.
+>
+> Confira na legenda o que muda no seu dia a dia.
+
+`#sinmevaco #convencaocoletiva #medicos #valedoaco #negociacaocoletiva`
+
+## 19 — Fluxo do jurídico
+**Pasta:** `19_fluxo_juridico/` · como funciona
+
+> O jurídico é simples: relato → análise → documentos → ação → resposta.
+>
+> O associado relata o caso, o jurídico analisa, pede os documentos que sustentam a tese, age (notificação, defesa ou processo) e devolve uma resposta clara sobre o que dá e o que não dá para fazer.
+>
+> Sem custo adicional. Basta estar em dia com o sindicato.
+
+`#sinmevaco #juridico #medicos #valedoaco #direitomedico`
+
+## 20 — Capa com colchetes
+**Pasta:** `20_capa_colchete/` · tema/manifesto
+
+> O que o sindicato faz quando o hospital atrasa para proteger o seu plantão.
+>
+> Atraso individual vira "caso isolado". Atraso documentado pela escala inteira vira descumprimento de convenção — e aí a cobrança é institucional, não pessoal.
+
+`#sinmevaco #plantao #atrasodepagamento #sindicato #valedoaco`
+
+## 21 — Erros comuns no contrato
+**Pasta:** `21_erros_contrato/` · lista/gancho
+
+> Erros comuns no contrato médico: cinco cláusulas que quase ninguém lê.
+>
+> Reajuste sem índice e sem data-base. Prazo de pagamento indefinido. Multa de saída desproporcional. Responsabilidade civil jogada inteira no médico. Exclusividade que não corresponde à rotina real.
+>
+> Se o seu contrato tem uma dessas, manda para o jurídico do sindicato.
+
+`#sinmevaco #contratomedico #direitomedico #medicos #valedoaco`
+
+## 22 — Seu contrato não protege
+**Pasta:** `22_contrato_nao_protege/` · alerta
+
+> Zero cláusula de reajuste. Zero prazo de pagamento definido.
+>
+> Um contrato assim não protege — ele só formaliza o que o outro lado já decidiu. E o médico só descobre quando precisa cobrar.
+>
+> Leia a legenda: os quatro pontos que todo contrato de plantão precisa ter por escrito.
+
+`#sinmevaco #contratomedico #plantao #medicos #valedoaco`
+
+
+---
+
 # SEMANA 01 — Atraso no pagamento do plantão
 
 Três publicações sobre o mesmo assunto, para o feed contar uma história só.

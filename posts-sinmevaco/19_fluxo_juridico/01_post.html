@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>O jur&iacute;dico &eacute; <em>simples</em></title>
+<link rel="stylesheet" href="../fontes/fonts.css">
+<style>
+:root{--navy:#17231A;--navy-2:#0D140F;--navy-3:#2E7048;--steel:#24523A;--cream:#F5F4EF;--cream-2:#E7E3D9;--brass:#C6AC73;--brass-2:#D5BE8C;--ink:#16211A;}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
+html,body{width:1080px;height:1350px;overflow:hidden;background:#000}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--cream)}
+.canvas{width:1080px;height:1350px;position:relative;overflow:hidden;display:flex;flex-direction:column}
+
+/* ---- fundos ---- */
+.bg-navy{background:
+  radial-gradient(120% 80% at 78% 12%, rgba(46,112,72,.38) 0%, rgba(13,20,15,0) 58%),
+  radial-gradient(90% 60% at 12% 96%, rgba(198,172,115,.16) 0%, rgba(13,20,15,0) 60%),
+  linear-gradient(168deg,var(--navy) 0%,var(--navy-2) 100%)}
+.bg-cream{background:
+  radial-gradient(90% 70% at 20% 8%, rgba(255,255,255,.85) 0%, rgba(244,239,230,0) 60%),
+  linear-gradient(158deg,#F6F2EA 0%,#EFE8DC 52%,#E4DACA 100%)}
+.bg-steel{background:
+  radial-gradient(90% 70% at 24% 10%, rgba(126,178,142,.28) 0%, rgba(13,20,15,0) 62%),
+  linear-gradient(172deg,var(--steel) 0%,var(--navy) 60%,var(--navy-2) 100%)}
+.bg-brass{background:
+  radial-gradient(100% 70% at 78% 6%, rgba(255,255,255,.16) 0%, rgba(0,0,0,0) 62%),
+  linear-gradient(165deg,var(--navy-3) 0%,#276140 55%,#1C4630 100%)}
+.grain::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.16;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E")}
+.veins::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.5;
+  background:
+    linear-gradient(112deg, transparent 41%, rgba(120,110,96,.14) 42%, transparent 43%),
+    linear-gradient(98deg, transparent 66%, rgba(120,110,96,.10) 67%, transparent 68%),
+    linear-gradient(126deg, transparent 20%, rgba(120,110,96,.08) 21%, transparent 22%)}
+
+/* ---- foto opcional ---- */
+.photo{position:absolute;inset:0;z-index:0;background-position:center;background-size:cover;background-repeat:no-repeat;
+  filter:saturate(.72) contrast(1.05) brightness(.78)}
+.photo::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(178deg, rgba(11,21,38,.45) 0%, rgba(11,21,38,.72) 55%, rgba(8,14,26,.94) 100%)}
+
+/* ---- chrome do post ---- */
+.wm{position:absolute;z-index:9;top:46px;left:56px;font-size:19px;letter-spacing:.06em;font-weight:500;opacity:.42}
+.wm.dark{color:var(--ink)}
+.counter{position:absolute;z-index:9;top:40px;right:56px;font-size:20px;font-weight:600;letter-spacing:.04em;
+  padding:9px 20px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.16)}
+.counter.dark{background:rgba(20,26,36,.10);border-color:rgba(20,26,36,.16);color:var(--ink)}
+
+.logo{display:inline-flex;align-items:center;gap:16px;line-height:1}
+.logo img.mark{width:62px;height:62px;border-radius:50%;background:#fff;object-fit:contain;padding:5px;flex:0 0 62px}
+.logo .mark{width:62px;height:62px;border-radius:50%;flex:0 0 62px;display:flex;align-items:center;justify-content:center;
+  background:#fff;color:var(--navy-3);font-family:'DM Serif Display',serif;font-size:22px;letter-spacing:.02em}
+.logo .wm2{display:flex;flex-direction:column;gap:6px}
+.logo .name{font-family:'DM Serif Display',serif;font-style:italic;font-size:30px;letter-spacing:-.01em}
+.logo .sub{font-size:11.5px;letter-spacing:.34em;text-transform:uppercase;font-weight:600;opacity:.62}
+.logo.dark .name{color:var(--ink)}
+.logo.dark .sub{color:rgba(20,26,36,.65)}
+
+.foot{position:absolute;z-index:9;left:56px;right:56px;bottom:52px;display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
+.foot .tag{font-size:15px;letter-spacing:.26em;text-transform:uppercase;font-weight:600;opacity:.5;text-align:right;line-height:1.6}
+.foot .tag.dark{color:rgba(22,33,26,.6)}
+.foot .tag.arraste{color:var(--brass);opacity:1;font-size:14px;letter-spacing:.34em}
+.foot .tag.arraste.dark{color:#8A7440}
+
+/* ---- capa ---- */
+.cover .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 76px;gap:34px}
+.cover .label{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.cover .label span{background:var(--navy-3);color:var(--cream);font-size:33px;font-weight:600;letter-spacing:-.01em;
+  padding:8px 16px;box-decoration-break:clone}
+.cover h1{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:104px;line-height:.96;
+  letter-spacing:-.02em;color:var(--cream);max-width:14ch}
+.cover h1 em{font-style:italic;color:var(--brass-2)}
+.cover .ask{font-size:34px;font-weight:400;opacity:.72;letter-spacing:-.01em}
+.cover .answer{position:absolute;z-index:6;right:0;bottom:250px;background:var(--navy-3);padding:30px 44px 30px 40px;
+  max-width:560px;display:flex;align-items:center;gap:22px;font-size:29px;line-height:1.3;color:#FBF6EE}
+.cover .answer .arrow{flex:0 0 76px;height:1px;background:var(--brass-2);position:relative}
+.cover .answer .arrow::after{content:"";position:absolute;right:0;top:-5px;width:11px;height:11px;
+  border-top:1px solid var(--brass-2);border-right:1px solid var(--brass-2);transform:rotate(45deg)}
+
+/* ---- split (2 fotos) ---- */
+.split{display:flex;flex-direction:column}
+.split .half{position:relative;flex:1;overflow:hidden;display:flex;align-items:center}
+.split .half.a{justify-content:flex-end}
+.split .half.b{justify-content:flex-start}
+.split .half.b .box{background:rgba(46,112,72,.94)}
+.split .box{position:relative;z-index:5;background:rgba(23,35,26,.90);backdrop-filter:blur(2px);
+  padding:44px 48px;max-width:660px;margin:0 60px;font-size:35px;line-height:1.34;letter-spacing:-.005em;color:var(--cream)}
+.split .box b{font-weight:700}
+.split .box .serif{display:block;margin-top:14px;font-family:'DM Serif Display',serif;font-style:italic;font-size:52px;line-height:1.08}
+
+/* ---- editorial (fundo claro) ---- */
+.editorial{color:var(--ink)}
+.editorial .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:46px;padding:0 96px;text-align:center}
+.editorial .top{font-size:34px;line-height:1.42;letter-spacing:-.005em;max-width:20ch}
+.editorial .top b{font-weight:700}
+.editorial .rule{width:1px;height:78px;background:rgba(20,26,36,.35)}
+.editorial h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:64px;line-height:1.16;
+  letter-spacing:-.015em;max-width:17ch}
+.editorial h2 em{font-style:italic;color:var(--navy-3)}
+.editorial .bottom{font-size:32px;line-height:1.44;max-width:24ch;color:rgba(20,26,36,.86)}
+.editorial .bottom b{font-weight:700}
+
+/* ---- lista ---- */
+.list .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 76px;gap:16px}
+.list .kicker{font-size:15px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;color:var(--brass-2);margin-bottom:6px}
+.list h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:66px;line-height:1.06;
+  letter-spacing:-.02em;margin-bottom:30px;max-width:15ch}
+.list .item{display:flex;gap:28px;padding:26px 0;border-top:1px solid rgba(244,239,230,.16)}
+.list .item:last-child{border-bottom:1px solid rgba(244,239,230,.16)}
+.list .n{font-family:'DM Serif Display',serif;font-style:italic;font-size:40px;color:var(--brass-2);flex:0 0 52px;line-height:1}
+.list .t{font-size:31px;line-height:1.34;letter-spacing:-.005em}
+.list .t b{font-weight:700}
+
+/* ---- declaracao (post unico) ---- */
+.statement .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 84px;gap:38px}
+.statement .lead{font-size:44px;line-height:1.3;font-weight:500;letter-spacing:-.015em}
+.statement .lead b{font-weight:700}
+.statement h1{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:82px;line-height:1.04;
+  letter-spacing:-.02em}
+.statement h1 em{font-style:italic;color:var(--brass-2)}
+.statement .note{font-size:28px;line-height:1.44;opacity:.74;max-width:26ch}
+
+/* ---- balao de whatsapp ---- */
+.bubble{display:inline-flex;align-items:center;gap:20px;background:#FCFAF6;color:var(--ink);
+  border-radius:22px 22px 22px 6px;padding:26px 34px;box-shadow:0 26px 54px -22px rgba(0,0,0,.6);align-self:flex-start}
+.bubble .file{width:52px;height:64px;border-radius:6px;background:#E9E2D5;position:relative;flex:0 0 52px}
+.bubble .file::after{content:"";position:absolute;right:0;top:0;border-width:0 16px 16px 0;border-style:solid;
+  border-color:#CFC4B0 #FCFAF6}
+.bubble .fname{font-size:34px;font-weight:600;color:var(--navy-3)}
+.bubble .fsize{font-size:20px;opacity:.55;margin-top:4px}
+
+/* ---- CTA ---- */
+.cta .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 84px;gap:34px}
+.cta .kicker{font-size:15px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;color:var(--brass-2)}
+.cta h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:76px;line-height:1.04;letter-spacing:-.02em;max-width:15ch}
+.cta h2 em{font-style:italic;color:var(--brass-2)}
+.cta p{font-size:32px;line-height:1.42;opacity:.8;max-width:24ch}
+.cta .contatos{display:flex;flex-direction:column;gap:14px;margin-top:10px}
+.cta .contatos div{display:flex;align-items:center;gap:18px;font-size:29px;letter-spacing:-.005em}
+.cta .contatos .dot{width:7px;height:7px;border-radius:50%;background:var(--brass-2);flex:0 0 7px}
+.cta .btn{align-self:flex-start;margin-top:14px;background:var(--cream);color:var(--navy);border-radius:999px;padding:26px 48px;font-size:30px;
+  font-weight:600;letter-spacing:-.01em}
+
+/* ---- 07 citacao ---- */
+.citacao{color:var(--ink)}
+.citacao .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 84px;gap:34px}
+.citacao .aspas{font-family:'DM Serif Display',serif;font-size:220px;line-height:.6;color:var(--navy-3);opacity:.30;height:110px}
+.citacao blockquote{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:70px;line-height:1.1;
+  letter-spacing:-.02em;max-width:17ch}
+.citacao blockquote em{font-style:italic;color:var(--navy-3)}
+.citacao .rule{width:96px;height:1px;background:rgba(20,26,36,.35)}
+.citacao .autor{display:flex;flex-direction:column;gap:8px}
+.citacao .autor .nome{font-size:29px;font-weight:600;letter-spacing:-.01em}
+.citacao .autor .papel{font-size:15px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;color:rgba(20,26,36,.5)}
+
+/* ---- 08 numero ---- */
+.numero .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 84px;gap:26px}
+.numero .kicker{font-size:15px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;color:var(--brass-2)}
+.numero .n{font-family:'DM Serif Display',serif;font-style:italic;font-size:290px;line-height:.82;color:var(--brass-2);
+  letter-spacing:-.04em;display:flex;align-items:baseline;gap:22px}
+.numero .n small{font-family:'DM Sans',sans-serif;font-style:normal;font-size:52px;font-weight:500;color:var(--cream);letter-spacing:-.01em}
+.numero .cap{font-size:46px;line-height:1.24;letter-spacing:-.015em;max-width:19ch;margin-top:6px}
+.numero .cap b{font-weight:700}
+.numero .fonte{font-size:15px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;opacity:.45;margin-top:14px}
+
+/* ---- 09 mito x verdade ---- */
+.mv{display:flex;flex-direction:column}
+.mv .faixa{position:relative;flex:1;display:flex;flex-direction:column;justify-content:center;gap:24px;padding:0 76px}
+.mv .faixa.mito{background:linear-gradient(168deg,var(--navy) 0%,var(--navy-2) 100%)}
+.mv .faixa.verdade{background:linear-gradient(168deg,var(--navy-3) 0%,#276140 60%,#1C4630 100%)}
+.mv .pill{align-self:flex-start;font-size:15px;letter-spacing:.32em;text-transform:uppercase;font-weight:700;
+  padding:11px 22px;border:1px solid rgba(244,239,230,.42);border-radius:999px}
+.mv .mito .pill{color:rgba(244,239,230,.72)}
+.mv .verdade .pill{color:#FBF6EE;border-color:rgba(251,246,238,.55)}
+.mv .txt{font-size:44px;line-height:1.22;letter-spacing:-.015em;max-width:19ch}
+.mv .verdade .txt{font-family:'DM Serif Display',serif;font-style:italic;font-size:56px;line-height:1.12}
+.mv .txt b{font-weight:700}
+
+/* ---- 10 agenda ---- */
+.agenda .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 76px;gap:44px}
+.agenda .kicker{font-size:15px;letter-spacing:.32em;text-transform:uppercase;font-weight:700;color:var(--brass-2)}
+.agenda .data{display:flex;align-items:flex-end;gap:26px;border-bottom:1px solid rgba(244,239,230,.18);padding-bottom:34px}
+.agenda .dia{font-family:'DM Serif Display',serif;font-style:italic;font-size:200px;line-height:.8;color:var(--cream);letter-spacing:-.03em}
+.agenda .mes{display:flex;flex-direction:column;gap:10px;padding-bottom:14px}
+.agenda .mes span{font-size:34px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--brass-2)}
+.agenda .mes small{font-size:24px;letter-spacing:.12em;opacity:.6}
+.agenda h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:62px;line-height:1.08;letter-spacing:-.02em;max-width:16ch}
+.agenda .info{display:flex;flex-direction:column;gap:16px}
+.agenda .info div{display:flex;align-items:center;gap:18px;font-size:30px;letter-spacing:-.005em}
+.agenda .info .dot{width:7px;height:7px;border-radius:50%;background:var(--brass-2);flex:0 0 7px}
+
+/* ---- 11 clausula ---- */
+.clausula{color:var(--ink)}
+.clausula .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 76px;gap:46px}
+.clausula .doc{background:#FCFAF6;padding:52px 56px;box-shadow:0 34px 70px -30px rgba(20,26,36,.45);transform:rotate(-1.1deg);
+  display:flex;flex-direction:column;gap:24px}
+.clausula .doc .head{font-size:14px;letter-spacing:.3em;text-transform:uppercase;font-weight:700;color:rgba(20,26,36,.45)}
+.clausula .doc .bar{height:13px;border-radius:3px;background:rgba(20,26,36,.10)}
+.clausula .doc .bar.s{width:62%}
+.clausula .doc .trecho{font-size:36px;line-height:1.36;letter-spacing:-.01em;font-weight:500}
+.clausula .doc .trecho mark{background:rgba(198,172,115,.45);padding:2px 6px;color:inherit}
+.clausula .leitura{display:flex;flex-direction:column;gap:18px}
+.clausula .leitura h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:58px;line-height:1.1;letter-spacing:-.02em;max-width:18ch}
+.clausula .leitura h2 em{font-style:italic;color:var(--navy-3)}
+.clausula .leitura p{font-size:29px;line-height:1.4;color:rgba(20,26,36,.78);max-width:26ch}
+
+/* ---- 12 pergunta do associado ---- */
+.pergunta .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 76px;gap:36px}
+.pergunta .kicker{font-size:15px;letter-spacing:.3em;text-transform:uppercase;font-weight:700;color:var(--brass-2)}
+.pergunta .balao{background:#FCFAF6;color:var(--ink);border-radius:26px 26px 26px 8px;padding:38px 42px;font-size:38px;
+  line-height:1.28;letter-spacing:-.01em;max-width:800px;box-shadow:0 28px 56px -26px rgba(0,0,0,.65)}
+.pergunta h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:66px;line-height:1.08;
+  letter-spacing:-.02em;max-width:16ch}
+.pergunta h2 em{font-style:italic;color:var(--brass-2)}
+.pergunta .nota{font-size:29px;line-height:1.42;opacity:.76;max-width:26ch}
+
+/* ---- 13 cartao com foto e pergunta ---- */
+.cardfoto{background:var(--cream-2)}
+.cardfoto .card{position:absolute;inset:38px;background:#FFFDFA;border-radius:46px;overflow:hidden;
+  display:flex;flex-direction:column;box-shadow:0 40px 90px -40px rgba(13,20,15,.45);z-index:5}
+.cardfoto .head{display:flex;justify-content:space-between;align-items:center;padding:44px 54px 30px;
+  font-size:25px;color:var(--ink);letter-spacing:-.01em}
+.cardfoto .head b{font-weight:700}
+.cardfoto .head i{font-style:italic;font-weight:600}
+.cardfoto .shot{height:470px;position:relative;margin:0 0 0;overflow:hidden;
+  background:linear-gradient(150deg,var(--navy-3) 0%,var(--steel) 55%,var(--navy) 100%)}
+.cardfoto .shot .ph{position:absolute;inset:0;background-position:center;background-size:cover;filter:saturate(.8) contrast(1.03)}
+.cardfoto .mid{flex:1;padding:52px 54px 0;display:flex;flex-direction:column;justify-content:center;gap:32px}
+.cardfoto h1{font-size:52px;line-height:1.44;letter-spacing:-.015em;color:var(--ink);font-weight:400;max-width:16ch}
+.cardfoto h1 b{font-weight:700;font-style:italic}
+.cardfoto .seta{align-self:flex-end;width:96px;height:56px;border:1.5px solid var(--ink);border-radius:999px;
+  display:flex;align-items:center;justify-content:center;font-size:30px;color:var(--ink);margin-top:-8px}
+.cardfoto .hint{font-size:27px;color:rgba(22,33,26,.8);border-top:1.5px solid rgba(22,33,26,.25);padding-top:22px}
+.cardfoto .hint b{font-weight:700;font-style:italic}
+.cardfoto .pe{display:flex;justify-content:space-between;align-items:center;padding:34px 54px 46px;
+  font-size:23px;color:rgba(22,33,26,.45)}
+
+/* ---- 14 caixa branca sobre o verde ---- */
+.boxcard .body{position:relative;z-index:5;flex:1;display:flex;align-items:center;justify-content:center;padding:0 74px}
+.boxcard .box{background:#FFFDFA;border-radius:38px;padding:74px 62px;display:flex;flex-direction:column;
+  gap:30px;align-items:flex-start;width:100%;box-shadow:0 40px 90px -44px rgba(0,0,0,.6)}
+.boxcard .box h2{font-size:62px;line-height:1.14;letter-spacing:-.025em;font-weight:700;color:var(--ink);max-width:13ch}
+.boxcard .box p{font-size:29px;line-height:1.46;color:rgba(22,33,26,.72);max-width:26ch}
+.boxcard .btn{border:1.5px solid var(--ink);color:var(--ink);padding:24px 40px;font-size:22px;
+  letter-spacing:.2em;text-transform:uppercase;font-weight:600;margin-top:8px}
+.boxcard .pe{position:absolute;z-index:6;left:74px;right:74px;bottom:56px;display:flex;justify-content:space-between;
+  font-size:22px;color:rgba(245,244,239,.62);letter-spacing:.01em}
+
+/* ---- 15 foto com moldura vazada ---- */
+.fotoframe .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;
+  padding:0 76px;gap:26px}
+.fotoframe .frame{position:absolute;z-index:4;right:56px;top:300px;bottom:300px;left:330px;
+  border:1.5px solid rgba(245,244,239,.55);border-radius:0 200px 0 0;pointer-events:none}
+.fotoframe h2{font-size:64px;line-height:1.16;letter-spacing:-.025em;font-weight:700;max-width:15ch}
+.fotoframe p{font-size:30px;line-height:1.42;color:rgba(245,244,239,.72);max-width:24ch}
+.fotoframe .pill{align-self:flex-start;margin-top:16px;border:1.5px solid rgba(245,244,239,.6);border-radius:999px;
+  padding:16px 32px;font-size:24px;letter-spacing:.02em}
+
+/* ---- 16 cartao com barra lateral ---- */
+.lateral .card{position:absolute;inset:44px;border-radius:34px;overflow:hidden;z-index:5;
+  background:linear-gradient(140deg,#1E4A34 0%,#16321F 52%,#0F2117 100%);display:flex}
+.lateral .col{flex:1;padding:74px 64px;display:flex;flex-direction:column;justify-content:center;gap:32px}
+.lateral .mark{width:66px;height:66px;border-radius:50%;background:rgba(245,244,239,.10);border:1px solid rgba(213,190,140,.5);
+  display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-size:24px;color:var(--brass-2)}
+.lateral h2{font-size:54px;line-height:1.24;letter-spacing:-.02em;font-weight:400;max-width:15ch}
+.lateral h2 b{font-weight:700;color:var(--brass-2)}
+.lateral p{font-size:27px;line-height:1.48;color:rgba(245,244,239,.72);max-width:27ch}
+.lateral .btn{align-self:flex-start;border:1.5px solid rgba(245,244,239,.7);padding:22px 38px;font-size:24px;
+  letter-spacing:.02em;margin-top:6px}
+.lateral .bar{width:110px;background:linear-gradient(180deg,var(--cream-2) 0%,#CDBE9C 100%);border-radius:70px 0 0 70px;margin:70px 0 70px 0}
+.lateral .pe{position:absolute;z-index:6;left:0;right:0;bottom:0;height:44px;display:flex;align-items:center;
+  justify-content:center;gap:26px;font-size:21px;color:rgba(22,33,26,.5)}
+
+/* ---- 17 X vs Y em serifa ---- */
+.versus .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:2px;text-align:center}
+.versus .t{font-family:'DM Serif Display',serif;font-size:150px;line-height:.98;letter-spacing:.01em;color:#FFFDFA;
+  text-shadow:0 12px 40px rgba(0,0,0,.45)}
+.versus .vs{font-family:'DM Serif Display',serif;font-style:italic;font-size:56px;color:var(--brass-2);margin:6px 0}
+.versus .sub{margin-top:36px;font-size:28px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;
+  color:rgba(245,244,239,.8)}
+
+/* ---- 18 capa foto com pergunta centralizada ---- */
+.capafoto .topo{position:absolute;z-index:6;top:46px;left:56px;right:56px;display:flex;justify-content:space-between;
+  font-size:19px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:rgba(245,244,239,.72)}
+.capafoto .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;align-items:center;
+  justify-content:flex-end;padding:0 76px 130px;text-align:center;gap:14px}
+.capafoto .l1{font-size:40px;letter-spacing:-.01em;color:rgba(245,244,239,.9)}
+.capafoto .l2{font-family:'DM Serif Display',serif;font-size:104px;line-height:1;letter-spacing:-.02em;color:#FFFDFA}
+.capafoto .l3{font-size:32px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;color:rgba(245,244,239,.85)}
+.capafoto .btn{margin-top:44px;background:var(--navy-2);color:var(--cream);border-radius:999px;padding:26px 46px;
+  font-size:23px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;display:flex;align-items:center;gap:18px}
+
+/* ---- 19 fluxo em pills ---- */
+.fluxo .body{position:relative;z-index:5;flex:1;padding:130px 70px 0}
+.fluxo h2{font-size:74px;line-height:1.08;letter-spacing:-.03em;font-weight:700;max-width:12ch}
+.fluxo h2 em{font-style:italic;font-family:'DM Serif Display',serif;font-weight:400;color:var(--brass-2)}
+.fluxo .mapa{position:absolute;inset:0;z-index:5}
+.fluxo .pill{position:absolute;background:#FFFDFA;color:var(--ink);border-radius:999px;padding:20px 38px;
+  font-size:30px;font-weight:600;letter-spacing:-.01em;box-shadow:0 18px 40px -18px rgba(0,0,0,.6)}
+.fluxo svg{position:absolute;inset:0;z-index:4}
+.fluxo .pe{position:absolute;z-index:6;left:0;right:0;bottom:52px;text-align:center;font-size:21px;
+  letter-spacing:.22em;text-transform:uppercase;color:rgba(245,244,239,.55)}
+
+/* ---- 20 capa escura com serifa entre colchetes ---- */
+.colchete .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;text-align:center;padding:0 84px;gap:22px}
+.colchete .rule{width:180px;height:1px;background:rgba(245,244,239,.5);margin-bottom:16px}
+.colchete .kicker{font-size:22px;letter-spacing:.26em;text-transform:uppercase;font-weight:500;color:rgba(245,244,239,.75);max-width:26ch;line-height:1.6}
+.colchete h1{font-family:'DM Serif Display',serif;font-size:78px;line-height:1.06;letter-spacing:-.02em;color:#FFFDFA}
+.colchete .marca{display:inline-flex;align-items:center;gap:16px;font-family:'DM Serif Display',serif;font-size:78px;
+  color:var(--brass-2);line-height:1.06}
+.colchete .marca::before,.colchete .marca::after{content:"";width:16px;height:74px;border:1.5px solid var(--brass-2)}
+.colchete .marca::before{border-right:none}
+.colchete .marca::after{border-left:none}
+.colchete .pe{position:absolute;z-index:6;left:70px;right:70px;bottom:64px;display:flex;justify-content:space-between;
+  font-size:20px;letter-spacing:.24em;text-transform:uppercase;color:rgba(245,244,239,.6)}
+
+/* ---- 21 card claro texturizado, tipografia mista ---- */
+.textura{background:linear-gradient(150deg,#EFEDE6 0%,#E3E0D7 55%,#D8D4C9 100%);color:var(--ink)}
+.textura .card{position:absolute;inset:56px;border-radius:40px;border:1px solid rgba(22,33,26,.14);z-index:5;
+  display:flex;flex-direction:column;justify-content:center;padding:0 66px;gap:34px;
+  background:linear-gradient(160deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,0) 60%)}
+.textura .kicker{position:absolute;top:56px;left:66px;font-size:19px;letter-spacing:.3em;text-transform:uppercase;
+  font-weight:600;color:rgba(22,33,26,.5)}
+.textura h1{font-size:88px;line-height:1.02;letter-spacing:-.04em;font-weight:700;text-transform:uppercase;max-width:12ch}
+.textura h1 em{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;text-transform:none;letter-spacing:-.02em}
+.textura .linha{display:flex;align-items:center;gap:18px;font-size:24px;color:rgba(22,33,26,.62)}
+.textura .linha i{flex:0 0 120px;height:1px;background:rgba(22,33,26,.4);display:block}
+.textura .pe{position:absolute;z-index:6;left:66px;right:66px;bottom:56px;display:flex;justify-content:space-between;align-items:center}
+.textura .pe .tag{border:1px solid rgba(22,33,26,.35);border-radius:999px;padding:14px 30px;font-size:21px;color:rgba(22,33,26,.7)}
+.textura .pe .mais{font-size:34px;color:rgba(22,33,26,.45)}
+
+/* ---- 22 mock de tela com destaque ---- */
+.tela .stats{position:absolute;z-index:6;top:180px;right:64px;display:flex;flex-direction:column;gap:18px;align-items:flex-end}
+.tela .stats div{background:rgba(255,253,250,.94);color:var(--ink);border-radius:999px;padding:16px 28px;font-size:24px;
+  font-weight:600;display:flex;align-items:center;gap:14px;box-shadow:0 18px 36px -16px rgba(0,0,0,.7)}
+.tela .stats .dot{width:26px;height:26px;border-radius:50%;background:var(--navy-3)}
+.tela .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:0 70px 150px;gap:30px}
+.tela h2{font-size:70px;line-height:1.12;letter-spacing:-.03em;font-weight:700;max-width:14ch}
+.tela h2 mark{background:none;color:#FFFDFA;border:1.5px solid var(--brass-2);padding:2px 14px;margin-left:6px}
+.tela .btn{align-self:flex-start;background:rgba(255,253,250,.95);color:var(--ink);border-radius:12px;padding:22px 34px;
+  font-size:25px;font-weight:600;display:flex;align-items:center;gap:14px}
+.tela .pe{position:absolute;z-index:6;left:70px;bottom:64px;font-size:21px;letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(245,244,239,.6)}
+</style></head>
+<body><div class="canvas fluxo bg-navy grain">
+<div class="photo" style="background-image:url('fotos/fluxo.jpg')"></div>
+
+
+
+<div class="body"><h2>O jur&iacute;dico &eacute; <em>simples</em></h2></div>
+<div class="mapa">
+  <svg viewBox="0 0 1080 1350" fill="none" stroke="rgba(245,244,239,.55)" stroke-width="2" stroke-dasharray="10 10"><path d="M200 467 Q 555 547 610 627" /><path d="M610 627 Q 280 707 250 787" /><path d="M250 787 Q 600 867 650 947" /><path d="M650 947 Q 325 1027 300 1107" /></svg>
+  <div class="pill" style="left:90px;top:430px">Relato</div><div class="pill" style="left:500px;top:590px">An&aacute;lise</div><div class="pill" style="left:140px;top:750px">Documentos</div><div class="pill" style="left:540px;top:910px">A&ccedil;&atilde;o</div><div class="pill" style="left:190px;top:1070px">Resposta</div>
+</div>
+<div class="pe">SINMEVA&Ccedil;O &middot; jur&iacute;dico pr&oacute;prio</div>
+
+
+</div></body></html>

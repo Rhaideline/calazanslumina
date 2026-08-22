@@ -47,6 +47,16 @@ Todos os slides usam a mesma base: marca d'água `@sinmevaco` no topo, logo no r
 | 10 | Agenda | `agenda()` | assembleia, reunião, curso |
 | 11 | Cláusula | `clausula()` | trecho de documento com marca-texto |
 | 12 | Pergunta do associado | `pergunta()` | dúvida do direct + resposta curta |
+| 13 | Cartão com foto | `cardfoto()` | capa de carrossel: pergunta + "arraste" |
+| 14 | Caixa branca | `boxcard()` | mensagem institucional + botão de contato |
+| 15 | Foto com moldura | `fotoframe()` | frase de impacto sobre foto |
+| 16 | Cartão com barra lateral | `lateral()` | explica um serviço do sindicato |
+| 17 | X vs Y | `versus()` | comparação (CLT vs PJ, CLT vs cooperativa) |
+| 18 | Capa com pergunta | `capafoto()` | foto inteira + pergunta + "confira na legenda" |
+| 19 | Fluxo em etapas | `fluxo()` | como funciona um processo, passo a passo |
+| 20 | Capa com colchetes | `colchete()` | manifesto/tema em serifa grande |
+| 21 | Cartão texturizado | `textura()` | título forte, tipografia mista |
+| 22 | Mock de tela | `tela()` | métrica + palavra destacada, tom de alerta |
 
 **Ritmo do feed (harmonia no grid):** alterne escuro → claro → bronze. Em três colunas, evite dois slides creme lado a lado e nunca poste dois bronzes seguidos — o bronze é o acento, aparece uma vez a cada 4 ou 5 posts. Carrossel sempre abre em azul-marinho: é a capa que dá a identidade da linha na grade.
 
@@ -89,7 +99,13 @@ Cada slide já fecha sem foto. Para usar imagens próprias do sindicato, coloque
 fotos/plantao-capa.jpg  fotos/plantao-a.jpg  fotos/plantao-b.jpg
 fotos/crm-capa.jpg      fotos/crm-a.jpg      fotos/crm-b.jpg
 fotos/pj-capa.jpg       fotos/pj-a.jpg       fotos/pj-b.jpg
+fotos/atraso-capa.jpg   fotos/atraso-a.jpg   fotos/atraso-b.jpg
+fotos/cartao-capa.jpg   fotos/moldura.jpg    fotos/versus.jpg
+fotos/convencao.jpg     fotos/fluxo.jpg      fotos/colchete.jpg
+fotos/tela.jpg
 ```
+
+Os modelos 15, 17, 18, 20 e 22 foram desenhados **em cima de foto** — sem imagem eles funcionam, mas rendem muito mais com uma. Os demais fecham sozinhos.
 
 Depois rode `./renderizar.sh` de novo. Sem os arquivos, o degradê de fundo assume.
 

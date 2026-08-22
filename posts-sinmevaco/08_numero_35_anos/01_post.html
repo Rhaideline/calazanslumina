@@ -10,14 +10,14 @@ body{font-family:'DM Sans',system-ui,sans-serif;color:var(--cream)}
 
 /* ---- fundos ---- */
 .bg-navy{background:
-  radial-gradient(120% 80% at 78% 12%, rgba(60,102,168,.30) 0%, rgba(19,35,64,0) 58%),
-  radial-gradient(90% 60% at 12% 96%, rgba(168,118,62,.20) 0%, rgba(11,21,38,0) 60%),
+  radial-gradient(120% 80% at 78% 12%, rgba(46,112,72,.38) 0%, rgba(13,20,15,0) 58%),
+  radial-gradient(90% 60% at 12% 96%, rgba(198,172,115,.16) 0%, rgba(13,20,15,0) 60%),
   linear-gradient(168deg,var(--navy) 0%,var(--navy-2) 100%)}
 .bg-cream{background:
   radial-gradient(90% 70% at 20% 8%, rgba(255,255,255,.85) 0%, rgba(244,239,230,0) 60%),
   linear-gradient(158deg,#F6F2EA 0%,#EFE8DC 52%,#E4DACA 100%)}
 .bg-steel{background:
-  radial-gradient(90% 70% at 24% 10%, rgba(146,163,186,.30) 0%, rgba(30,45,72,0) 62%),
+  radial-gradient(90% 70% at 24% 10%, rgba(126,178,142,.28) 0%, rgba(13,20,15,0) 62%),
   linear-gradient(172deg,var(--steel) 0%,var(--navy) 60%,var(--navy-2) 100%)}
 .bg-brass{background:
   radial-gradient(100% 70% at 78% 6%, rgba(255,255,255,.16) 0%, rgba(0,0,0,0) 62%),
@@ -211,6 +211,137 @@ body{font-family:'DM Sans',system-ui,sans-serif;color:var(--cream)}
   letter-spacing:-.02em;max-width:16ch}
 .pergunta h2 em{font-style:italic;color:var(--brass-2)}
 .pergunta .nota{font-size:29px;line-height:1.42;opacity:.76;max-width:26ch}
+
+/* ---- 13 cartao com foto e pergunta ---- */
+.cardfoto{background:var(--cream-2)}
+.cardfoto .card{position:absolute;inset:38px;background:#FFFDFA;border-radius:46px;overflow:hidden;
+  display:flex;flex-direction:column;box-shadow:0 40px 90px -40px rgba(13,20,15,.45);z-index:5}
+.cardfoto .head{display:flex;justify-content:space-between;align-items:center;padding:44px 54px 30px;
+  font-size:25px;color:var(--ink);letter-spacing:-.01em}
+.cardfoto .head b{font-weight:700}
+.cardfoto .head i{font-style:italic;font-weight:600}
+.cardfoto .shot{height:470px;position:relative;margin:0 0 0;overflow:hidden;
+  background:linear-gradient(150deg,var(--navy-3) 0%,var(--steel) 55%,var(--navy) 100%)}
+.cardfoto .shot .ph{position:absolute;inset:0;background-position:center;background-size:cover;filter:saturate(.8) contrast(1.03)}
+.cardfoto .mid{flex:1;padding:52px 54px 0;display:flex;flex-direction:column;justify-content:center;gap:32px}
+.cardfoto h1{font-size:52px;line-height:1.44;letter-spacing:-.015em;color:var(--ink);font-weight:400;max-width:16ch}
+.cardfoto h1 b{font-weight:700;font-style:italic}
+.cardfoto .seta{align-self:flex-end;width:96px;height:56px;border:1.5px solid var(--ink);border-radius:999px;
+  display:flex;align-items:center;justify-content:center;font-size:30px;color:var(--ink);margin-top:-8px}
+.cardfoto .hint{font-size:27px;color:rgba(22,33,26,.8);border-top:1.5px solid rgba(22,33,26,.25);padding-top:22px}
+.cardfoto .hint b{font-weight:700;font-style:italic}
+.cardfoto .pe{display:flex;justify-content:space-between;align-items:center;padding:34px 54px 46px;
+  font-size:23px;color:rgba(22,33,26,.45)}
+
+/* ---- 14 caixa branca sobre o verde ---- */
+.boxcard .body{position:relative;z-index:5;flex:1;display:flex;align-items:center;justify-content:center;padding:0 74px}
+.boxcard .box{background:#FFFDFA;border-radius:38px;padding:74px 62px;display:flex;flex-direction:column;
+  gap:30px;align-items:flex-start;width:100%;box-shadow:0 40px 90px -44px rgba(0,0,0,.6)}
+.boxcard .box h2{font-size:62px;line-height:1.14;letter-spacing:-.025em;font-weight:700;color:var(--ink);max-width:13ch}
+.boxcard .box p{font-size:29px;line-height:1.46;color:rgba(22,33,26,.72);max-width:26ch}
+.boxcard .btn{border:1.5px solid var(--ink);color:var(--ink);padding:24px 40px;font-size:22px;
+  letter-spacing:.2em;text-transform:uppercase;font-weight:600;margin-top:8px}
+.boxcard .pe{position:absolute;z-index:6;left:74px;right:74px;bottom:56px;display:flex;justify-content:space-between;
+  font-size:22px;color:rgba(245,244,239,.62);letter-spacing:.01em}
+
+/* ---- 15 foto com moldura vazada ---- */
+.fotoframe .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;
+  padding:0 76px;gap:26px}
+.fotoframe .frame{position:absolute;z-index:4;right:56px;top:300px;bottom:300px;left:330px;
+  border:1.5px solid rgba(245,244,239,.55);border-radius:0 200px 0 0;pointer-events:none}
+.fotoframe h2{font-size:64px;line-height:1.16;letter-spacing:-.025em;font-weight:700;max-width:15ch}
+.fotoframe p{font-size:30px;line-height:1.42;color:rgba(245,244,239,.72);max-width:24ch}
+.fotoframe .pill{align-self:flex-start;margin-top:16px;border:1.5px solid rgba(245,244,239,.6);border-radius:999px;
+  padding:16px 32px;font-size:24px;letter-spacing:.02em}
+
+/* ---- 16 cartao com barra lateral ---- */
+.lateral .card{position:absolute;inset:44px;border-radius:34px;overflow:hidden;z-index:5;
+  background:linear-gradient(140deg,#1E4A34 0%,#16321F 52%,#0F2117 100%);display:flex}
+.lateral .col{flex:1;padding:74px 64px;display:flex;flex-direction:column;justify-content:center;gap:32px}
+.lateral .mark{width:66px;height:66px;border-radius:50%;background:rgba(245,244,239,.10);border:1px solid rgba(213,190,140,.5);
+  display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-size:24px;color:var(--brass-2)}
+.lateral h2{font-size:54px;line-height:1.24;letter-spacing:-.02em;font-weight:400;max-width:15ch}
+.lateral h2 b{font-weight:700;color:var(--brass-2)}
+.lateral p{font-size:27px;line-height:1.48;color:rgba(245,244,239,.72);max-width:27ch}
+.lateral .btn{align-self:flex-start;border:1.5px solid rgba(245,244,239,.7);padding:22px 38px;font-size:24px;
+  letter-spacing:.02em;margin-top:6px}
+.lateral .bar{width:110px;background:linear-gradient(180deg,var(--cream-2) 0%,#CDBE9C 100%);border-radius:70px 0 0 70px;margin:70px 0 70px 0}
+.lateral .pe{position:absolute;z-index:6;left:0;right:0;bottom:0;height:44px;display:flex;align-items:center;
+  justify-content:center;gap:26px;font-size:21px;color:rgba(22,33,26,.5)}
+
+/* ---- 17 X vs Y em serifa ---- */
+.versus .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:2px;text-align:center}
+.versus .t{font-family:'DM Serif Display',serif;font-size:150px;line-height:.98;letter-spacing:.01em;color:#FFFDFA;
+  text-shadow:0 12px 40px rgba(0,0,0,.45)}
+.versus .vs{font-family:'DM Serif Display',serif;font-style:italic;font-size:56px;color:var(--brass-2);margin:6px 0}
+.versus .sub{margin-top:36px;font-size:28px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;
+  color:rgba(245,244,239,.8)}
+
+/* ---- 18 capa foto com pergunta centralizada ---- */
+.capafoto .topo{position:absolute;z-index:6;top:46px;left:56px;right:56px;display:flex;justify-content:space-between;
+  font-size:19px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:rgba(245,244,239,.72)}
+.capafoto .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;align-items:center;
+  justify-content:flex-end;padding:0 76px 130px;text-align:center;gap:14px}
+.capafoto .l1{font-size:40px;letter-spacing:-.01em;color:rgba(245,244,239,.9)}
+.capafoto .l2{font-family:'DM Serif Display',serif;font-size:104px;line-height:1;letter-spacing:-.02em;color:#FFFDFA}
+.capafoto .l3{font-size:32px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;color:rgba(245,244,239,.85)}
+.capafoto .btn{margin-top:44px;background:var(--navy-2);color:var(--cream);border-radius:999px;padding:26px 46px;
+  font-size:23px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;display:flex;align-items:center;gap:18px}
+
+/* ---- 19 fluxo em pills ---- */
+.fluxo .body{position:relative;z-index:5;flex:1;padding:130px 70px 0}
+.fluxo h2{font-size:74px;line-height:1.08;letter-spacing:-.03em;font-weight:700;max-width:12ch}
+.fluxo h2 em{font-style:italic;font-family:'DM Serif Display',serif;font-weight:400;color:var(--brass-2)}
+.fluxo .mapa{position:absolute;inset:0;z-index:5}
+.fluxo .pill{position:absolute;background:#FFFDFA;color:var(--ink);border-radius:999px;padding:20px 38px;
+  font-size:30px;font-weight:600;letter-spacing:-.01em;box-shadow:0 18px 40px -18px rgba(0,0,0,.6)}
+.fluxo svg{position:absolute;inset:0;z-index:4}
+.fluxo .pe{position:absolute;z-index:6;left:0;right:0;bottom:52px;text-align:center;font-size:21px;
+  letter-spacing:.22em;text-transform:uppercase;color:rgba(245,244,239,.55)}
+
+/* ---- 20 capa escura com serifa entre colchetes ---- */
+.colchete .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;text-align:center;padding:0 84px;gap:22px}
+.colchete .rule{width:180px;height:1px;background:rgba(245,244,239,.5);margin-bottom:16px}
+.colchete .kicker{font-size:22px;letter-spacing:.26em;text-transform:uppercase;font-weight:500;color:rgba(245,244,239,.75);max-width:26ch;line-height:1.6}
+.colchete h1{font-family:'DM Serif Display',serif;font-size:78px;line-height:1.06;letter-spacing:-.02em;color:#FFFDFA}
+.colchete .marca{display:inline-flex;align-items:center;gap:16px;font-family:'DM Serif Display',serif;font-size:78px;
+  color:var(--brass-2);line-height:1.06}
+.colchete .marca::before,.colchete .marca::after{content:"";width:16px;height:74px;border:1.5px solid var(--brass-2)}
+.colchete .marca::before{border-right:none}
+.colchete .marca::after{border-left:none}
+.colchete .pe{position:absolute;z-index:6;left:70px;right:70px;bottom:64px;display:flex;justify-content:space-between;
+  font-size:20px;letter-spacing:.24em;text-transform:uppercase;color:rgba(245,244,239,.6)}
+
+/* ---- 21 card claro texturizado, tipografia mista ---- */
+.textura{background:linear-gradient(150deg,#EFEDE6 0%,#E3E0D7 55%,#D8D4C9 100%);color:var(--ink)}
+.textura .card{position:absolute;inset:56px;border-radius:40px;border:1px solid rgba(22,33,26,.14);z-index:5;
+  display:flex;flex-direction:column;justify-content:center;padding:0 66px;gap:34px;
+  background:linear-gradient(160deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,0) 60%)}
+.textura .kicker{position:absolute;top:56px;left:66px;font-size:19px;letter-spacing:.3em;text-transform:uppercase;
+  font-weight:600;color:rgba(22,33,26,.5)}
+.textura h1{font-size:88px;line-height:1.02;letter-spacing:-.04em;font-weight:700;text-transform:uppercase;max-width:12ch}
+.textura h1 em{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;text-transform:none;letter-spacing:-.02em}
+.textura .linha{display:flex;align-items:center;gap:18px;font-size:24px;color:rgba(22,33,26,.62)}
+.textura .linha i{flex:0 0 120px;height:1px;background:rgba(22,33,26,.4);display:block}
+.textura .pe{position:absolute;z-index:6;left:66px;right:66px;bottom:56px;display:flex;justify-content:space-between;align-items:center}
+.textura .pe .tag{border:1px solid rgba(22,33,26,.35);border-radius:999px;padding:14px 30px;font-size:21px;color:rgba(22,33,26,.7)}
+.textura .pe .mais{font-size:34px;color:rgba(22,33,26,.45)}
+
+/* ---- 22 mock de tela com destaque ---- */
+.tela .stats{position:absolute;z-index:6;top:180px;right:64px;display:flex;flex-direction:column;gap:18px;align-items:flex-end}
+.tela .stats div{background:rgba(255,253,250,.94);color:var(--ink);border-radius:999px;padding:16px 28px;font-size:24px;
+  font-weight:600;display:flex;align-items:center;gap:14px;box-shadow:0 18px 36px -16px rgba(0,0,0,.7)}
+.tela .stats .dot{width:26px;height:26px;border-radius:50%;background:var(--navy-3)}
+.tela .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:0 70px 150px;gap:30px}
+.tela h2{font-size:70px;line-height:1.12;letter-spacing:-.03em;font-weight:700;max-width:14ch}
+.tela h2 mark{background:none;color:#FFFDFA;border:1.5px solid var(--brass-2);padding:2px 14px;margin-left:6px}
+.tela .btn{align-self:flex-start;background:rgba(255,253,250,.95);color:var(--ink);border-radius:12px;padding:22px 34px;
+  font-size:25px;font-weight:600;display:flex;align-items:center;gap:14px}
+.tela .pe{position:absolute;z-index:6;left:70px;bottom:64px;font-size:21px;letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(245,244,239,.6)}
 </style></head>
 <body><div class="canvas numero bg-navy grain">
 
