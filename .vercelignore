@@ -49,3 +49,6 @@ FUNIS-DE-VENDA.md
 # Sem esta linha o Vercel do calazanslumina tentaria empacotar um segundo
 # app inteiro (e o node_modules dele) junto do site.
 lawlife/
+
+# Ponte GHL <-> Docketwise — projeto Vercel proprio, deploy separado do site.
+ponte-docketwise-ghl/
