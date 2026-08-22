@@ -199,6 +199,58 @@ Formato: 1080×1350 (4:5). Carrosséis de 5 slides + posts únicos de reforço.
 
 ---
 
+# POSTS COM BASE NO ESTUDO
+
+Ancorados em `ESTUDO-SINDICATO-MEDICO.md`. Cada afirmação tem fonte lá.
+
+## 23 — Pejotização no STF (carrossel, 3 slides)
+**Pasta:** `23_pejotizacao_stf/`
+
+> O STF vai decidir a pejotização. E isso alcança médico contratado como PJ.
+>
+> O Supremo reconheceu repercussão geral no Tema 1389, que discute a licitude da contratação por pessoa jurídica e de quem é o ônus de provar a fraude. Em junho de 2026 caiu a suspensão dos processos na primeira e segunda instâncias — a discussão voltou a correr.
+>
+> Importante: o julgamento ainda não terminou e não existe tese fixada. Quem disser que "o STF já liberou" ou que "o STF já proibiu" está errado.
+>
+> O que dá para fazer hoje é documentar a rotina, porque é a rotina que sustenta qualquer discussão de vínculo:
+> 1. Quem monta a escala — e se dá para recusar sem consequência
+> 2. Se há substituição por outro médico ou se o atendimento é pessoal
+> 3. Com que frequência você atende no mesmo serviço, mês a mês
+> 4. Tudo por escrito e guardado
+>
+> Associado com contrato PJ: manda para o jurídico do sindicato analisar antes de qualquer mudança.
+
+`#sinmevaco #pejotizacao #pj #stf #medicos #direitomedico #valedoaco`
+
+## 24 — Dois cargos públicos (post único)
+**Pasta:** `24_dois_vinculos/`
+
+> "Posso acumular dois cargos públicos na saúde?"
+>
+> Pode — se os horários forem compatíveis. A Constituição, no art. 37, XVI, "c", permite a acumulação de dois cargos ou empregos privativos de profissional de saúde com profissão regulamentada.
+>
+> O critério é a compatibilidade real de horários, aferida pela administração. O STF já admitiu acumulação de um cargo de 30h com outro de 40h, afastando o limite semanal de norma infraconstitucional como impedimento automático.
+>
+> Cada caso tem detalhe próprio — antes de assumir o segundo vínculo, fale com o jurídico do sindicato.
+
+`#sinmevaco #concursopublico #acumulacaodecargos #medicos #valedoaco #direitomedico`
+
+## 25 — Mito das quatro horas (post único)
+**Pasta:** `25_mito_quatro_horas/`
+
+> MITO: a lei garante ao médico jornada de quatro horas.
+>
+> VERDADE: a Lei 3.999/61 fixa o piso da categoria para a jornada de quatro horas — não um teto de jornada. É exatamente o que diz a Súmula 370 do TST: as Leis 3.999/61 e 4.950-A/66 não estipulam jornada reduzida, apenas o salário mínimo profissional para essa referência.
+>
+> Consequência prática: só há hora extra a partir da 8ª hora diária e da 44ª semanal, desde que respeitado o valor/hora mínimo da categoria.
+>
+> O que a lei protege é a base de cálculo da sua remuneração. Confira se o seu contrato respeita isso — o jurídico do sindicato faz essa conta com você.
+
+`#sinmevaco #jornadamedica #pisosalarial #medicos #direitomedico #valedoaco`
+
+
+---
+
 # MODELOS 13 A 22 — segunda leva
 
 Mesma paleta e tipografia, estruturas novas: cartão arredondado, caixa branca, foto com moldura, barra lateral, comparação em serifa, fluxo em etapas, capa com colchetes, cartão texturizado e mock de tela.

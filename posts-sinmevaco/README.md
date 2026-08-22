@@ -14,6 +14,7 @@
 - `gerar_posts.py` — gera todos os HTML (rode `python3 gerar_posts.py`)
 - `renderizar.sh` — renderiza os HTML em PNG com Chrome headless
 - `cortar_1350.py` — corta os PNG para exatamente 1080×1350 (o headless devolve pixels extras)
+- `ESTUDO-SINDICATO-MEDICO.md` — **base de conhecimento com fonte**: jornada e piso (Súmula 370 TST), escala 12x36 (art. 59-A + STF), redução salarial (CF 7º VI e CLT 468), pejotização (Tema 1389, em julgamento), acumulação de cargos (CF 37 XVI), prontuário (Res. CFM 1.821), substituto processual (CF 8º III) e contribuições. Todo post novo deve sair daqui
 - `LEGENDAS.md` — legendas prontas, hashtags e sugestão de calendário
 - `_PREVIEW.html` — todos os slides numa página só
 - `fontes/` — DM Serif Display + DM Sans locais (renderiza offline, sem depender do Google Fonts)
@@ -119,6 +120,8 @@ Os dados abaixo estão no topo de `gerar_posts.py` e vieram de fontes públicas.
 - A lista de benefícios do post 06 — jurídico, negociação coletiva e representação constam do site; leitura de contratos e orientação em PJ/cooperativa precisam de confirmação
 - Modelo 07 — a frase está atribuída à "Diretoria do SINMEVAÇO". Se for publicar como fala de alguém, use uma frase aprovada pela pessoa
 - Modelo 10 — a data (12 de março) e a pauta são exemplo: editar antes de postar
-- Modelo 11 e slide 3 do carrossel da semana 01 — os trechos são redações genéricas de cláusula, não citação da CCT vigente. Substituir pelo texto real da convenção antes de publicar
+- Modelo 11 virou checklist de contrato ("o que procurar"), não citação de CCT — pode publicar como está
+- Slide 3 do carrossel da semana 01 agora cita a CLT, art. 459 (pagamento até o 5º dia útil do mês subsequente) — texto de lei, não de convenção
+- Se for citar a CCT do SINMEVAÇO em algum post, use o texto real do documento vigente. Nenhum slide faz isso hoje
 - Nova pasta de fotos da semana: `fotos/atraso-capa.jpg`, `fotos/atraso-a.jpg`, `fotos/atraso-b.jpg`
 - O selo do rodapé ainda mostra "MSV" provisório: basta salvar o logo oficial em `logos/logo.png`

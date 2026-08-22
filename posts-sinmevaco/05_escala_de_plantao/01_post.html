@@ -22,6 +22,9 @@ body{font-family:'DM Sans',system-ui,sans-serif;color:var(--cream)}
 .bg-brass{background:
   radial-gradient(100% 70% at 78% 6%, rgba(255,255,255,.16) 0%, rgba(0,0,0,0) 62%),
   linear-gradient(165deg,var(--navy-3) 0%,#276140 55%,#1C4630 100%)}
+.bg-navy::after,.bg-steel::after{content:"";position:absolute;z-index:1;width:960px;height:960px;border-radius:50%;
+  border:1px solid rgba(213,190,140,.11);right:-320px;top:-240px;pointer-events:none}
+.split .half::after,.mv .faixa::after{display:none}
 .grain::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.16;mix-blend-mode:overlay;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E")}
 .veins::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.5;
@@ -60,7 +63,7 @@ body{font-family:'DM Sans',system-ui,sans-serif;color:var(--cream)}
 .foot .tag.arraste.dark{color:#8A7440}
 
 /* ---- capa ---- */
-.cover .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 76px;gap:34px}
+.cover .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:0 76px 400px;gap:30px}
 .cover .label{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
 .cover .label span{background:var(--navy-3);color:var(--cream);font-size:33px;font-weight:600;letter-spacing:-.01em;
   padding:8px 16px;box-decoration-break:clone}
@@ -190,7 +193,7 @@ body{font-family:'DM Sans',system-ui,sans-serif;color:var(--cream)}
 /* ---- 11 clausula ---- */
 .clausula{color:var(--ink)}
 .clausula .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 76px;gap:46px}
-.clausula .doc{background:#FCFAF6;padding:52px 56px;box-shadow:0 34px 70px -30px rgba(20,26,36,.45);transform:rotate(-1.1deg);
+.clausula .doc{background:#FCFAF6;padding:52px 56px;box-shadow:0 34px 70px -30px rgba(20,26,36,.45);transform:rotate(-.8deg);margin:0 10px;
   display:flex;flex-direction:column;gap:24px}
 .clausula .doc .head{font-size:14px;letter-spacing:.3em;text-transform:uppercase;font-weight:700;color:rgba(20,26,36,.45)}
 .clausula .doc .bar{height:13px;border-radius:3px;background:rgba(20,26,36,.10)}
@@ -221,7 +224,12 @@ body{font-family:'DM Sans',system-ui,sans-serif;color:var(--cream)}
 .cardfoto .head b{font-weight:700}
 .cardfoto .head i{font-style:italic;font-weight:600}
 .cardfoto .shot{height:470px;position:relative;margin:0 0 0;overflow:hidden;
-  background:linear-gradient(150deg,var(--navy-3) 0%,var(--steel) 55%,var(--navy) 100%)}
+  background:
+    repeating-linear-gradient(118deg, rgba(255,255,255,.05) 0 2px, rgba(255,255,255,0) 2px 26px),
+    radial-gradient(60% 90% at 78% 20%, rgba(213,190,140,.20) 0%, rgba(0,0,0,0) 62%),
+    linear-gradient(150deg,var(--navy-3) 0%,var(--steel) 55%,var(--navy) 100%)}
+.cardfoto .shot::after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;
+  border:1px solid rgba(245,244,239,.20);right:64px;top:86px}
 .cardfoto .shot .ph{position:absolute;inset:0;background-position:center;background-size:cover;filter:saturate(.8) contrast(1.03)}
 .cardfoto .mid{flex:1;padding:52px 54px 0;display:flex;flex-direction:column;justify-content:center;gap:32px}
 .cardfoto h1{font-size:52px;line-height:1.44;letter-spacing:-.015em;color:var(--ink);font-weight:400;max-width:16ch}
@@ -352,10 +360,10 @@ body{font-family:'DM Sans',system-ui,sans-serif;color:var(--cream)}
   <div class="lead">Trocaram sua escala no grupo, <b>na v&eacute;spera do fim de semana.</b></div>
   
   <h1>Escala n&atilde;o &eacute; <em>convite.</em></h1>
-  <div class="note">Altera&ccedil;&atilde;o de jornada tem regra &mdash; e a regra est&aacute; na conven&ccedil;&atilde;o coletiva da categoria, n&atilde;o no combinado de &uacute;ltima hora.</div>
+  <div class="note">A escala 12x36 exige <b>acordo escrito</b> &mdash; individual ou coletivo (CLT, art. 59-A). Mensagem em grupo n&atilde;o &eacute; acordo escrito.</div>
 </div>
 
 <div class="foot"><div class="logo"><div class="mark">MSV</div><div class="wm2">
   <div class="name">SINMEVA&Ccedil;O</div><div class="sub">Sindicato dos M&eacute;dicos do Vale do A&ccedil;o</div>
-</div></div><div class="tag">Conven&ccedil;&atilde;o coletiva<br>da categoria</div></div>
+</div></div><div class="tag">CLT &middot; art. 59-A<br>escala 12x36</div></div>
 </div></body></html>

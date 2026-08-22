@@ -59,6 +59,9 @@ body{font-family:'DM Sans',system-ui,sans-serif;color:var(--cream)}
 .bg-brass{background:
   radial-gradient(100% 70% at 78% 6%, rgba(255,255,255,.16) 0%, rgba(0,0,0,0) 62%),
   linear-gradient(165deg,var(--navy-3) 0%,#276140 55%,#1C4630 100%)}
+.bg-navy::after,.bg-steel::after{content:"";position:absolute;z-index:1;width:960px;height:960px;border-radius:50%;
+  border:1px solid rgba(213,190,140,.11);right:-320px;top:-240px;pointer-events:none}
+.split .half::after,.mv .faixa::after{display:none}
 .grain::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.16;mix-blend-mode:overlay;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E")}
 .veins::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.5;
@@ -97,7 +100,7 @@ body{font-family:'DM Sans',system-ui,sans-serif;color:var(--cream)}
 .foot .tag.arraste.dark{color:#8A7440}
 
 /* ---- capa ---- */
-.cover .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 76px;gap:34px}
+.cover .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:0 76px 400px;gap:30px}
 .cover .label{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
 .cover .label span{background:var(--navy-3);color:var(--cream);font-size:33px;font-weight:600;letter-spacing:-.01em;
   padding:8px 16px;box-decoration-break:clone}
@@ -276,7 +279,7 @@ BASE_CSS += """
 /* ---- 11 clausula ---- */
 .clausula{color:var(--ink)}
 .clausula .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 76px;gap:46px}
-.clausula .doc{background:#FCFAF6;padding:52px 56px;box-shadow:0 34px 70px -30px rgba(20,26,36,.45);transform:rotate(-1.1deg);
+.clausula .doc{background:#FCFAF6;padding:52px 56px;box-shadow:0 34px 70px -30px rgba(20,26,36,.45);transform:rotate(-.8deg);margin:0 10px;
   display:flex;flex-direction:column;gap:24px}
 .clausula .doc .head{font-size:14px;letter-spacing:.3em;text-transform:uppercase;font-weight:700;color:rgba(20,26,36,.45)}
 .clausula .doc .bar{height:13px;border-radius:3px;background:rgba(20,26,36,.10)}
@@ -466,7 +469,12 @@ BASE_CSS += """
 .cardfoto .head b{font-weight:700}
 .cardfoto .head i{font-style:italic;font-weight:600}
 .cardfoto .shot{height:470px;position:relative;margin:0 0 0;overflow:hidden;
-  background:linear-gradient(150deg,var(--navy-3) 0%,var(--steel) 55%,var(--navy) 100%)}
+  background:
+    repeating-linear-gradient(118deg, rgba(255,255,255,.05) 0 2px, rgba(255,255,255,0) 2px 26px),
+    radial-gradient(60% 90% at 78% 20%, rgba(213,190,140,.20) 0%, rgba(0,0,0,0) 62%),
+    linear-gradient(150deg,var(--navy-3) 0%,var(--steel) 55%,var(--navy) 100%)}
+.cardfoto .shot::after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;
+  border:1px solid rgba(245,244,239,.20);right:64px;top:86px}
 .cardfoto .shot .ph{position:absolute;inset:0;background-position:center;background-size:cover;filter:saturate(.8) contrast(1.03)}
 .cardfoto .mid{flex:1;padding:52px 54px 0;display:flex;flex-direction:column;justify-content:center;gap:32px}
 .cardfoto h1{font-size:52px;line-height:1.44;letter-spacing:-.015em;color:var(--ink);font-weight:400;max-width:16ch}
@@ -740,7 +748,7 @@ POSTS = [
             ["O hospital reduziu o valor do plant&atilde;o"],
             "e avisou pelo grupo do <em>WhatsApp.</em>",
             "Sou obrigado a aceitar?",
-            "A resposta est&aacute; na conven&ccedil;&atilde;o coletiva.",
+            "A resposta est&aacute; na lei.",
             "1/5", photo="fotos/plantao-capa.jpg", foot_tag="Jur&iacute;dico<br>SINMEVA&Ccedil;O")),
         ("02_caso.html", split(
             "O comunicado chegou em um grupo com dezenas de m&eacute;dicos. <b>Nenhum aditivo assinado.</b>"
@@ -749,8 +757,8 @@ POSTS = [
             "2/5", photo_a="fotos/plantao-a.jpg", photo_b="fotos/plantao-b.jpg")),
         ("03_virada.html", editorial(
             "Esse &eacute; um caso real de um m&eacute;dico associado que <b>procurou o sindicato.</b>",
-            "O que muda tudo nessa hist&oacute;ria &eacute; que o valor do plant&atilde;o estava previsto em <em>conven&ccedil;&atilde;o coletiva.</em>",
-            "Aviso em grupo n&atilde;o substitui <b>negocia&ccedil;&atilde;o coletiva</b>, nem <b>aditivo contratual</b>, nem o que j&aacute; foi pactuado.",
+            "Reduzir o valor combinado depende de acordo. Sem acordo, a altera&ccedil;&atilde;o &eacute; <em>nula.</em>",
+            "Constitui&ccedil;&atilde;o, <b>art. 7&ordm;, VI</b> (irredutibilidade do sal&aacute;rio) e CLT, <b>art. 468</b> (altera&ccedil;&atilde;o lesiva). Aviso em grupo n&atilde;o &eacute; acordo.",
             "3/5")),
         ("04_checklist.html", lista(
             "Antes de aceitar",
@@ -842,8 +850,8 @@ POSTS = [
         ("01_post.html", statement(
             "Trocaram sua escala no grupo, <b>na v&eacute;spera do fim de semana.</b>",
             "Escala n&atilde;o &eacute; <em>convite.</em>",
-            "Altera&ccedil;&atilde;o de jornada tem regra &mdash; e a regra est&aacute; na conven&ccedil;&atilde;o coletiva da categoria, n&atilde;o no combinado de &uacute;ltima hora.",
-            fundo="bg-navy", foot_tag="Conven&ccedil;&atilde;o coletiva<br>da categoria")),
+            "A escala 12x36 exige <b>acordo escrito</b> &mdash; individual ou coletivo (CLT, art. 59-A). Mensagem em grupo n&atilde;o &eacute; acordo escrito.",
+            fundo="bg-navy", foot_tag="CLT &middot; art. 59-A<br>escala 12x36")),
     ]),
 
     ("06_beneficios_associado", [
@@ -895,8 +903,8 @@ POSTS = [
 
     ("11_clausula_reajuste", [
         ("01_post.html", clausula(
-            "Cl&aacute;usula de reajuste",
-            "O reajuste segue o <mark>&iacute;ndice e a data-base previstos na conven&ccedil;&atilde;o coletiva</mark> da categoria.",
+            "O que procurar no seu contrato",
+            "Reajuste: <mark>qual &iacute;ndice</mark> e <mark>qual data-base</mark> est&atilde;o escritos na cl&aacute;usula?",
             "Contrato sem data-base <em>&eacute; sal&aacute;rio congelado.</em>",
             "Se o seu contrato n&atilde;o diz quando e por qual &iacute;ndice o valor sobe, o reajuste vira favor &mdash; e favor n&atilde;o se cobra na Justi&ccedil;a.",
             foot_tag="Leitura de contrato<br>SINMEVA&Ccedil;O")),
@@ -917,15 +925,15 @@ POSTS = [
             ["O plant&atilde;o de dezembro"],
             "caiu na conta <em>em fevereiro.</em>",
             "E ningu&eacute;m explica o motivo.",
-            "A resposta est&aacute; na conven&ccedil;&atilde;o coletiva.",
+            "A resposta est&aacute; na CLT.",
             "1/5", photo="fotos/atraso-capa.jpg", foot_tag="Jur&iacute;dico<br>SINMEVA&Ccedil;O")),
         ("02_caso.html", split(
             "Atrasou em novembro. Atrasou em dezembro. Em janeiro, <b>j&aacute; era rotina.</b>",
             "<span class='serif'>E ningu&eacute;m reclama no grupo</span> porque cada um acha que &eacute; o &uacute;nico.",
             "2/5", photo_a="fotos/atraso-a.jpg", photo_b="fotos/atraso-b.jpg")),
         ("03_clausula.html", clausula(
-            "Prazo de pagamento",
-            "O pagamento dos plant&otilde;es deve observar o <mark>prazo previsto na conven&ccedil;&atilde;o coletiva</mark> da categoria.",
+            "CLT &middot; art. 459",
+            "O pagamento estipulado por m&ecirc;s deve ser feito, o mais tardar, at&eacute; o <mark>quinto dia &uacute;til do m&ecirc;s subsequente</mark> ao vencido.",
             "Atraso que se repete <em>n&atilde;o &eacute; desorganiza&ccedil;&atilde;o.</em>",
             "&Eacute; descumprimento &mdash; e descumprimento de conven&ccedil;&atilde;o se cobra pelo sindicato, n&atilde;o m&eacute;dico a m&eacute;dico.",
             "3/5")),
@@ -1030,6 +1038,43 @@ POSTS = [
             "&#8600; Leia a legenda",
             "SINMEVA&Ccedil;O &middot; leitura de contrato",
             photo="fotos/tela.jpg")),
+    ]),
+
+    # ---------- posts com base no estudo (ESTUDO-SINDICATO-MEDICO.md) ----------
+    ("23_pejotizacao_stf", [
+        ("01_capa.html", colchete(
+            "Tema 1389 &middot; Supremo Tribunal Federal",
+            "o que fazer", "enquanto n&atilde;o decidem",
+            "SINMEVA&Ccedil;O", "Pejotiza&ccedil;&atilde;o",
+            photo="fotos/stf.jpg", counter="1/3")),
+        ("02_estado.html", editorial(
+            "O STF reconheceu repercuss&atilde;o geral sobre a contrata&ccedil;&atilde;o de trabalhador por <b>pessoa jur&iacute;dica</b> &mdash; m&eacute;dicos inclu&iacute;dos.",
+            "O julgamento <em>ainda n&atilde;o terminou.</em> N&atilde;o existe tese fixada.",
+            "Em <b>junho de 2026</b> caiu a suspens&atilde;o dos processos na primeira e segunda inst&acirc;ncias. A discuss&atilde;o voltou a correr.",
+            "2/3")),
+        ("03_acao.html", lista(
+            "Enquanto isso",
+            "Documente a sua rotina",
+            ["<b>Quem monta a escala</b> &mdash; e se voc&ecirc; pode recus&aacute;-la sem consequ&ecirc;ncia.",
+             "<b>Se h&aacute; substitui&ccedil;&atilde;o</b> por outro m&eacute;dico ou se o atendimento &eacute; pessoal.",
+             "<b>Com que frequ&ecirc;ncia</b> voc&ecirc; atende no mesmo servi&ccedil;o, m&ecirc;s a m&ecirc;s.",
+             "<b>Guarde tudo por escrito.</b> &Eacute; o registro de hoje que sustenta a discuss&atilde;o de amanh&atilde;."],
+            "3/3", foot_tag="Jur&iacute;dico<br>SINMEVA&Ccedil;O")),
+    ]),
+
+    ("24_dois_vinculos", [
+        ("01_post.html", pergunta(
+            "Pergunta do associado",
+            "Posso acumular dois cargos p&uacute;blicos na sa&uacute;de?",
+            "Pode &mdash; se os hor&aacute;rios forem <em>compat&iacute;veis.</em>",
+            "Constitui&ccedil;&atilde;o, art. 37, XVI, &lsquo;c&rsquo;: dois cargos privativos de profissional de sa&uacute;de com profiss&atilde;o regulamentada. O crit&eacute;rio &eacute; a compatibilidade real de hor&aacute;rios.",
+            foot_tag="CF &middot; art. 37, XVI<br>acumula&ccedil;&atilde;o de cargos")),
+    ]),
+
+    ("25_mito_quatro_horas", [
+        ("01_post.html", mito_verdade(
+            "A lei garante ao m&eacute;dico jornada de <b>quatro horas.</b>",
+            "A Lei 3.999/61 fixa o piso da categoria <b>para</b> a jornada de quatro horas &mdash; n&atilde;o um teto de jornada. &Eacute; o que diz a S&uacute;mula 370 do TST.")),
     ]),
 ]
 
