@@ -14,16 +14,17 @@ ROOT = Path(__file__).parent
 # ====== MARCA ======
 # TROCAR AQUI pelas cores oficiais do sindicato. Os quatro tokens abaixo
 # alimentam todos os 31 slides; nada mais precisa ser editado.
+# Tokens oficiais, conforme o README do repositorio do sindicato.
 CORES = {
-    "navy":   "#17231A",  # verde profundo - fundo escuro principal
-    "navy2":  "#0D140F",  # base do degrade escuro
-    "navy3":  "#2E7048",  # verde medio - caixas, destaques e faixa "verdade"
-    "steel":  "#24523A",  # verde medio escuro - fundo secundario
-    "cream":  "#F5F4EF",  # off-white - fundo claro e texto sobre escuro
-    "cream2": "#E7E3D9",
-    "brass":  "#C6AC73",  # dourado - SO como acento de texto, nunca fundo
-    "brass2": "#D5BE8C",  # dourado claro - numerais e kickers
-    "ink":    "#16211A",  # verde quase preto - texto sobre fundo claro
+    "navy":   "#16231B",  # bg-dark  - fundo escuro da casa
+    "navy2":  "#0A2A17",  # bg-deep  - base do degrade
+    "navy3":  "#0F6A3D",  # verde da marca - caixas, botoes, faixa "verdade"
+    "steel":  "#0F3D22",  # topo do bg-deep - fundo secundario
+    "cream":  "#F5F7F3",  # papel
+    "cream2": "#E4EAE1",
+    "brass":  "#C6A15B",  # dourado da marca - acento, nunca fundo
+    "brass2": "#D7BB84",  # tom claro do mesmo dourado, para numerais e kickers
+    "ink":    "#16231B",  # texto sobre papel
 }
 
 # Logo: coloque o arquivo oficial em logos/logo.png (ou .svg) e ele entra
@@ -42,7 +43,7 @@ BASE_CSS = """
 :root{__TOKENS__}
 *{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
 html,body{width:1080px;height:1440px;overflow:hidden;background:#000}
-body{font-family:'DM Sans',system-ui,sans-serif;color:var(--cream)}
+body{font-family:'Poppins',system-ui,sans-serif;color:var(--cream)}
 .canvas{width:1080px;height:1440px;position:relative;overflow:hidden;display:flex;flex-direction:column}
 
 /* ---- fundos ---- */
@@ -106,9 +107,9 @@ body{font-family:'DM Sans',system-ui,sans-serif;color:var(--cream)}
 .logo{display:inline-flex;align-items:center;gap:16px;line-height:1}
 .logo img.mark{width:62px;height:62px;border-radius:50%;background:#fff;object-fit:contain;padding:5px;flex:0 0 62px}
 .logo .mark{width:62px;height:62px;border-radius:50%;flex:0 0 62px;display:flex;align-items:center;justify-content:center;
-  background:#fff;color:var(--navy-3);font-family:'DM Serif Display',serif;font-size:22px;letter-spacing:.02em}
+  background:#fff;color:var(--navy-3);font-family:'Spectral',serif;font-size:22px;letter-spacing:.02em}
 .logo .wm2{display:flex;flex-direction:column;gap:6px}
-.logo .name{font-family:'DM Serif Display',serif;font-style:italic;font-size:30px;letter-spacing:-.01em}
+.logo .name{font-family:'Quicksand',sans-serif;font-weight:600;font-size:26px;letter-spacing:.14em}
 .logo .sub{font-size:11.5px;letter-spacing:.34em;text-transform:uppercase;font-weight:600;opacity:.62}
 .logo.dark .name{color:var(--ink)}
 .logo.dark .sub{color:rgba(20,26,36,.65)}
@@ -127,9 +128,9 @@ body{font-family:'DM Sans',system-ui,sans-serif;color:var(--cream)}
 .cover .label{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
 .cover .label span{background:var(--navy-3);color:var(--cream);font-size:33px;font-weight:600;letter-spacing:-.01em;
   padding:8px 16px;box-decoration-break:clone}
-.cover h1{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:112px;line-height:.96;
+.cover h1{font-family:'Spectral',serif;font-style:normal;font-weight:300;font-size:112px;line-height:.96;
   letter-spacing:-.02em;color:var(--cream);max-width:14ch}
-.cover h1 em{font-style:italic;color:var(--brass-2)}
+.cover h1 em{font-style:italic;font-weight:600;color:var(--brass-2)}
 .cover .ask{font-size:34px;font-weight:400;opacity:.72;letter-spacing:-.01em}
 .cover .answer{position:absolute;z-index:6;right:0;bottom:270px;background:var(--navy-3);padding:30px 44px 30px 40px;
   max-width:560px;display:flex;align-items:center;gap:22px;font-size:29px;line-height:1.3;color:#FBF6EE}
@@ -146,7 +147,7 @@ body{font-family:'DM Sans',system-ui,sans-serif;color:var(--cream)}
 .split .box{position:relative;z-index:5;background:rgba(23,35,26,.90);backdrop-filter:blur(2px);
   padding:44px 48px;max-width:660px;margin:0 60px;font-size:35px;line-height:1.34;letter-spacing:-.005em;color:var(--cream)}
 .split .box b{font-weight:700}
-.split .box .serif{display:block;margin-top:14px;font-family:'DM Serif Display',serif;font-style:italic;font-size:52px;line-height:1.08}
+.split .box .serif{display:block;margin-top:14px;font-family:'Spectral',serif;font-style:italic;font-size:52px;line-height:1.08}
 
 /* ---- editorial (fundo claro) ---- */
 .editorial{color:var(--ink)}
@@ -155,20 +156,20 @@ body{font-family:'DM Sans',system-ui,sans-serif;color:var(--cream)}
 .editorial .top{font-size:34px;line-height:1.42;letter-spacing:-.005em;max-width:20ch}
 .editorial .top b{font-weight:700}
 .editorial .rule{width:1px;height:78px;background:rgba(20,26,36,.35)}
-.editorial h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:64px;line-height:1.16;
+.editorial h2{font-family:'Spectral',serif;font-style:normal;font-weight:300;font-size:64px;line-height:1.16;
   letter-spacing:-.015em;max-width:17ch}
-.editorial h2 em{font-style:italic;color:var(--navy-3)}
+.editorial h2 em{font-style:italic;font-weight:600;color:var(--navy-3)}
 .editorial .bottom{font-size:32px;line-height:1.44;max-width:24ch;color:rgba(20,26,36,.86)}
 .editorial .bottom b{font-weight:700}
 
 /* ---- lista ---- */
 .list .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 76px;gap:16px}
 .list .kicker{font-size:17px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;color:var(--brass-2);margin-bottom:6px}
-.list h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:66px;line-height:1.06;
+.list h2{font-family:'Spectral',serif;font-style:normal;font-weight:300;font-size:66px;line-height:1.06;
   letter-spacing:-.02em;margin-bottom:30px;max-width:15ch}
 .list .item{display:flex;gap:28px;padding:26px 0;border-top:1px solid rgba(244,239,230,.16)}
 .list .item:last-child{border-bottom:1px solid rgba(244,239,230,.16)}
-.list .n{font-family:'DM Serif Display',serif;font-style:italic;font-size:40px;color:var(--brass-2);flex:0 0 52px;line-height:1}
+.list .n{font-family:'Spectral',serif;font-style:italic;font-size:40px;color:var(--brass-2);flex:0 0 52px;line-height:1}
 .list .t{font-size:31px;line-height:1.34;letter-spacing:-.005em}
 .list .t b{font-weight:700}
 
@@ -176,9 +177,9 @@ body{font-family:'DM Sans',system-ui,sans-serif;color:var(--cream)}
 .statement .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 84px;gap:38px}
 .statement .lead{font-size:44px;line-height:1.3;font-weight:500;letter-spacing:-.015em}
 .statement .lead b{font-weight:700}
-.statement h1{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:82px;line-height:1.04;
+.statement h1{font-family:'Spectral',serif;font-style:normal;font-weight:300;font-size:82px;line-height:1.04;
   letter-spacing:-.02em}
-.statement h1 em{font-style:italic;color:var(--brass-2)}
+.statement h1 em{font-style:italic;font-weight:600;color:var(--brass-2)}
 .statement .note{font-size:28px;line-height:1.44;opacity:.74;max-width:26ch}
 
 /* ---- balao de whatsapp ---- */
@@ -193,8 +194,8 @@ body{font-family:'DM Sans',system-ui,sans-serif;color:var(--cream)}
 /* ---- CTA ---- */
 .cta .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 84px;gap:34px}
 .cta .kicker{font-size:17px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;color:var(--brass-2)}
-.cta h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:76px;line-height:1.04;letter-spacing:-.02em;max-width:15ch}
-.cta h2 em{font-style:italic;color:var(--brass-2)}
+.cta h2{font-family:'Spectral',serif;font-style:normal;font-weight:300;font-size:76px;line-height:1.04;letter-spacing:-.02em;max-width:15ch}
+.cta h2 em{font-style:italic;font-weight:600;color:var(--brass-2)}
 .cta p{font-size:32px;line-height:1.42;opacity:.8;max-width:24ch}
 .cta .contatos{display:flex;flex-direction:column;gap:14px;margin-top:10px}
 .cta .contatos div{display:flex;align-items:center;gap:18px;font-size:29px;letter-spacing:-.005em}
@@ -238,7 +239,7 @@ def page(title, canvas_class, inner, counter=None, dark_chrome=False, foot_tag=N
     foot_html = f'<div class="foot">{logo}{tag_html}</div>' if show_foot else ""
     return f"""<!doctype html>
 <html lang="pt-BR"><head><meta charset="utf-8"><title>{title}</title>
-<link rel="stylesheet" href="../fontes/fonts.css">
+<link rel="stylesheet" href="../fontes/casa.css">
 <style>{BASE_CSS}</style></head>
 <body><div class="canvas {canvas_class} grain">
 {photo_html}
@@ -254,10 +255,10 @@ BASE_CSS += """
 /* ---- 07 citacao ---- */
 .citacao{color:var(--ink)}
 .citacao .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 84px;gap:34px}
-.citacao .aspas{font-family:'DM Serif Display',serif;font-size:220px;line-height:.6;color:var(--navy-3);opacity:.30;height:110px}
-.citacao blockquote{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:70px;line-height:1.1;
+.citacao .aspas{font-family:'Spectral',serif;font-size:220px;line-height:.6;color:var(--navy-3);opacity:.30;height:110px}
+.citacao blockquote{font-family:'Spectral',serif;font-style:normal;font-weight:300;font-size:70px;line-height:1.1;
   letter-spacing:-.02em;max-width:17ch}
-.citacao blockquote em{font-style:italic;color:var(--navy-3)}
+.citacao blockquote em{font-style:italic;font-weight:600;color:var(--navy-3)}
 .citacao .rule{width:96px;height:1px;background:rgba(20,26,36,.35)}
 .citacao .autor{display:flex;flex-direction:column;gap:8px}
 .citacao .autor .nome{font-size:29px;font-weight:600;letter-spacing:-.01em}
@@ -266,9 +267,9 @@ BASE_CSS += """
 /* ---- 08 numero ---- */
 .numero .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 84px;gap:26px}
 .numero .kicker{font-size:17px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;color:var(--brass-2)}
-.numero .n{font-family:'DM Serif Display',serif;font-style:italic;font-size:290px;line-height:.82;color:var(--brass-2);
+.numero .n{font-family:'Spectral',serif;font-style:italic;font-size:290px;line-height:.82;color:var(--brass-2);
   letter-spacing:-.04em;display:flex;align-items:baseline;gap:22px}
-.numero .n small{font-family:'DM Sans',sans-serif;font-style:normal;font-size:52px;font-weight:500;color:var(--cream);letter-spacing:-.01em}
+.numero .n small{font-family:'Poppins',sans-serif;font-style:normal;font-size:52px;font-weight:500;color:var(--cream);letter-spacing:-.01em}
 .numero .cap{font-size:46px;line-height:1.24;letter-spacing:-.015em;max-width:19ch;margin-top:6px}
 .numero .cap b{font-weight:700}
 .numero .fonte{font-size:18px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;opacity:.45;margin-top:14px}
@@ -283,18 +284,18 @@ BASE_CSS += """
 .mv .mito .pill{color:rgba(244,239,230,.72)}
 .mv .verdade .pill{color:#FBF6EE;border-color:rgba(251,246,238,.55)}
 .mv .txt{font-size:44px;line-height:1.22;letter-spacing:-.015em;max-width:19ch}
-.mv .verdade .txt{font-family:'DM Serif Display',serif;font-style:italic;font-size:56px;line-height:1.12}
+.mv .verdade .txt{font-family:'Spectral',serif;font-style:italic;font-size:56px;line-height:1.12}
 .mv .txt b{font-weight:700}
 
 /* ---- 10 agenda ---- */
 .agenda .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 76px;gap:44px}
 .agenda .kicker{font-size:17px;letter-spacing:.32em;text-transform:uppercase;font-weight:700;color:var(--brass-2)}
 .agenda .data{display:flex;align-items:flex-end;gap:26px;border-bottom:1px solid rgba(244,239,230,.18);padding-bottom:34px}
-.agenda .dia{font-family:'DM Serif Display',serif;font-style:italic;font-size:200px;line-height:.8;color:var(--cream);letter-spacing:-.03em}
+.agenda .dia{font-family:'Spectral',serif;font-style:italic;font-size:200px;line-height:.8;color:var(--cream);letter-spacing:-.03em}
 .agenda .mes{display:flex;flex-direction:column;gap:10px;padding-bottom:14px}
 .agenda .mes span{font-size:34px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--brass-2)}
 .agenda .mes small{font-size:24px;letter-spacing:.12em;opacity:.6}
-.agenda h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:62px;line-height:1.08;letter-spacing:-.02em;max-width:16ch}
+.agenda h2{font-family:'Spectral',serif;font-style:normal;font-weight:300;font-size:62px;line-height:1.08;letter-spacing:-.02em;max-width:16ch}
 .agenda .info{display:flex;flex-direction:column;gap:16px}
 .agenda .info div{display:flex;align-items:center;gap:18px;font-size:30px;letter-spacing:-.005em}
 .agenda .info .dot{width:7px;height:7px;border-radius:50%;background:var(--brass-2);flex:0 0 7px}
@@ -310,8 +311,8 @@ BASE_CSS += """
 .clausula .doc .trecho{font-size:36px;line-height:1.36;letter-spacing:-.01em;font-weight:500}
 .clausula .doc .trecho mark{background:rgba(198,172,115,.45);padding:2px 6px;color:inherit}
 .clausula .leitura{display:flex;flex-direction:column;gap:18px}
-.clausula .leitura h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:58px;line-height:1.1;letter-spacing:-.02em;max-width:18ch}
-.clausula .leitura h2 em{font-style:italic;color:var(--navy-3)}
+.clausula .leitura h2{font-family:'Spectral',serif;font-style:normal;font-weight:300;font-size:58px;line-height:1.1;letter-spacing:-.02em;max-width:18ch}
+.clausula .leitura h2 em{font-style:italic;font-weight:600;color:var(--navy-3)}
 .clausula .leitura p{font-size:29px;line-height:1.4;color:rgba(20,26,36,.78);max-width:26ch}
 
 /* ---- 12 pergunta do associado ---- */
@@ -319,9 +320,9 @@ BASE_CSS += """
 .pergunta .kicker{font-size:17px;letter-spacing:.3em;text-transform:uppercase;font-weight:700;color:var(--brass-2)}
 .pergunta .balao{background:#FCFAF6;color:var(--ink);border-radius:26px 26px 26px 8px;padding:38px 42px;font-size:38px;
   line-height:1.28;letter-spacing:-.01em;max-width:800px;box-shadow:0 28px 56px -26px rgba(0,0,0,.65)}
-.pergunta h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:66px;line-height:1.08;
+.pergunta h2{font-family:'Spectral',serif;font-style:normal;font-weight:300;font-size:66px;line-height:1.08;
   letter-spacing:-.02em;max-width:16ch}
-.pergunta h2 em{font-style:italic;color:var(--brass-2)}
+.pergunta h2 em{font-style:italic;font-weight:600;color:var(--brass-2)}
 .pergunta .nota{font-size:29px;line-height:1.42;opacity:.76;max-width:26ch}
 """
 
@@ -536,7 +537,7 @@ BASE_CSS += """
   background:linear-gradient(140deg,#1E4A34 0%,#16321F 52%,#0F2117 100%);display:flex}
 .lateral .col{flex:1;padding:74px 64px;display:flex;flex-direction:column;justify-content:center;gap:32px}
 .lateral .mark{width:66px;height:66px;border-radius:50%;background:rgba(245,244,239,.10);border:1px solid rgba(213,190,140,.5);
-  display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-size:24px;color:var(--brass-2)}
+  display:flex;align-items:center;justify-content:center;font-family:'Spectral',serif;font-size:24px;color:var(--brass-2)}
 .lateral h2{font-size:54px;line-height:1.24;letter-spacing:-.02em;font-weight:400;max-width:15ch}
 .lateral h2 b{font-weight:700;color:var(--brass-2)}
 .lateral p{font-size:27px;line-height:1.48;color:rgba(245,244,239,.72);max-width:27ch}
@@ -552,7 +553,7 @@ BASE_CSS += """
   padding:0 76px;gap:26px}
 .versus .lado.a{background:linear-gradient(150deg,#2E7048 0%,#245839 60%,#1A3F29 100%)}
 .versus .lado.b{background:linear-gradient(150deg,#16261B 0%,#101B14 55%,#0A0F0B 100%)}
-.versus .lado .t{font-family:'DM Serif Display',serif;font-size:128px;line-height:.9;color:#FFFDFA;letter-spacing:-.01em}
+.versus .lado .t{font-family:'Spectral',serif;font-size:128px;line-height:.9;color:#FFFDFA;letter-spacing:-.01em}
 .versus .lado.b .t{color:var(--brass-2)}
 .versus .itens{display:flex;flex-wrap:wrap;gap:14px;max-width:820px}
 .versus .itens span{border:1px solid rgba(245,244,239,.42);border-radius:999px;padding:13px 26px;font-size:26px;
@@ -560,7 +561,7 @@ BASE_CSS += """
 .versus .costura{position:absolute;z-index:8;left:0;right:0;top:50%;height:1px;background:rgba(213,190,140,.5)}
 .versus .selo{position:absolute;z-index:9;left:50%;top:50%;transform:translate(-50%,-50%);width:132px;height:132px;
   border-radius:50%;background:var(--cream);color:var(--ink);display:flex;align-items:center;justify-content:center;
-  font-family:'DM Serif Display',serif;font-style:italic;font-size:50px;box-shadow:0 24px 50px -22px rgba(0,0,0,.8)}
+  font-family:'Spectral',serif;font-style:italic;font-size:50px;box-shadow:0 24px 50px -22px rgba(0,0,0,.8)}
 .versus .sub{position:absolute;z-index:9;left:0;right:0;bottom:70px;text-align:center;font-size:24px;
   letter-spacing:.26em;text-transform:uppercase;font-weight:600;color:var(--brass-2)}
 """
@@ -644,7 +645,7 @@ BASE_CSS += """
 .capafoto .pe{position:absolute;z-index:6;left:0;right:0;bottom:74px;text-align:center;font-size:23px;
   letter-spacing:.2em;color:rgba(245,244,239,.6)}
 .capafoto .l1{font-size:40px;letter-spacing:-.01em;color:rgba(245,244,239,.9)}
-.capafoto .l2{font-family:'DM Serif Display',serif;font-size:104px;line-height:1;letter-spacing:-.02em;color:#FFFDFA}
+.capafoto .l2{font-family:'Spectral',serif;font-size:104px;line-height:1;letter-spacing:-.02em;color:#FFFDFA}
 .capafoto .l3{font-size:32px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;color:rgba(245,244,239,.85)}
 .capafoto .btn{margin-top:44px;background:var(--navy-2);color:var(--cream);border-radius:999px;padding:26px 46px;
   font-size:23px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;display:flex;align-items:center;gap:18px}
@@ -652,7 +653,7 @@ BASE_CSS += """
 /* ---- 19 fluxo em pills ---- */
 .fluxo .body{position:relative;z-index:5;flex:1;padding:140px 70px 0}
 .fluxo h2{font-size:74px;line-height:1.08;letter-spacing:-.03em;font-weight:700;max-width:12ch}
-.fluxo h2 em{font-style:italic;font-family:'DM Serif Display',serif;font-weight:400;color:var(--brass-2)}
+.fluxo h2 em{font-style:italic;font-family:'Spectral',serif;font-weight:400;color:var(--brass-2)}
 .fluxo .mapa{position:absolute;inset:0;z-index:5}
 .fluxo .pill{position:absolute;background:#FFFDFA;color:var(--ink);border-radius:999px;padding:20px 38px;
   font-size:30px;font-weight:600;letter-spacing:-.01em;box-shadow:0 18px 40px -18px rgba(0,0,0,.6)}
@@ -665,8 +666,8 @@ BASE_CSS += """
   justify-content:center;text-align:center;padding:0 84px;gap:22px}
 .colchete .rule{width:180px;height:1px;background:rgba(245,244,239,.5);margin-bottom:16px}
 .colchete .kicker{font-size:22px;letter-spacing:.26em;text-transform:uppercase;font-weight:500;color:rgba(245,244,239,.75);max-width:26ch;line-height:1.6}
-.colchete h1{font-family:'DM Serif Display',serif;font-size:78px;line-height:1.06;letter-spacing:-.02em;color:#FFFDFA}
-.colchete .marca{display:inline-flex;align-items:center;gap:16px;font-family:'DM Serif Display',serif;font-size:78px;
+.colchete h1{font-family:'Spectral',serif;font-size:78px;line-height:1.06;letter-spacing:-.02em;color:#FFFDFA}
+.colchete .marca{display:inline-flex;align-items:center;gap:16px;font-family:'Spectral',serif;font-size:78px;
   color:var(--brass-2);line-height:1.06}
 .colchete .marca::before,.colchete .marca::after{content:"";width:16px;height:74px;border:1.5px solid var(--brass-2)}
 .colchete .marca::before{border-right:none}
@@ -682,7 +683,7 @@ BASE_CSS += """
 .textura .kicker{position:absolute;top:60px;left:66px;font-size:21px;letter-spacing:.3em;text-transform:uppercase;
   font-weight:600;color:rgba(22,33,26,.5)}
 .textura h1{font-size:88px;line-height:1.02;letter-spacing:-.04em;font-weight:700;text-transform:uppercase;max-width:12ch}
-.textura h1 em{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;text-transform:none;letter-spacing:-.02em}
+.textura h1 em{font-family:'Spectral',serif;font-style:normal;font-weight:300;text-transform:none;letter-spacing:-.02em}
 .textura .linha{display:flex;align-items:center;gap:18px;font-size:24px;color:rgba(22,33,26,.62)}
 .textura .linha i{flex:0 0 120px;height:1px;background:rgba(22,33,26,.4);display:block}
 .textura .pe{position:absolute;z-index:6;left:66px;right:66px;bottom:56px;display:flex;justify-content:space-between;align-items:center}
@@ -963,17 +964,17 @@ POSTS = [
             ["O plant&atilde;o de dezembro"],
             "caiu na conta <em>em fevereiro.</em>",
             "E ningu&eacute;m explica o motivo.",
-            "A resposta est&aacute; na CLT.",
+            "Isso agora &eacute; regist&aacute;vel no CRM.",
             "1/5", photo="fotos/atraso-capa.jpg", foot_tag="Jur&iacute;dico<br>SINMEVA&Ccedil;O")),
         ("02_caso.html", split(
             "Atrasou em novembro. Atrasou em dezembro. Em janeiro, <b>j&aacute; era rotina.</b>",
             "<span class='serif'>E ningu&eacute;m reclama no grupo</span> porque cada um acha que &eacute; o &uacute;nico.",
             "2/5", photo_a="fotos/atraso-a.jpg", photo_b="fotos/atraso-b.jpg")),
         ("03_clausula.html", clausula(
-            "CLT &middot; art. 459",
-            "O pagamento estipulado por m&ecirc;s deve ser feito, o mais tardar, at&eacute; o <mark>quinto dia &uacute;til do m&ecirc;s subsequente</mark> ao vencido.",
-            "Atraso que se repete <em>n&atilde;o &eacute; desorganiza&ccedil;&atilde;o.</em>",
-            "&Eacute; descumprimento &mdash; e descumprimento de conven&ccedil;&atilde;o se cobra pelo sindicato, n&atilde;o m&eacute;dico a m&eacute;dico.",
+            "Resolu&ccedil;&atilde;o CFM 2.462/2026",
+            "Atrasar honor&aacute;rio m&eacute;dico agora sujeita a pessoa jur&iacute;dica a <mark>advert&ecirc;ncia, multa e suspens&atilde;o do registro</mark>.",
+            "Atraso deixou de ser <em>s&oacute; assunto de contrato.</em>",
+            "A resolu&ccedil;&atilde;o alcan&ccedil;a hospitais, OSs, cooperativas e intermediadoras. A multa chega a 100 vezes a anuidade em caso de reincid&ecirc;ncia.",
             "3/5")),
         ("04_checklist.html", lista(
             "Como registrar",
@@ -981,7 +982,7 @@ POSTS = [
             ["<b>Anote as datas</b>: prevista e efetiva de cada pagamento, m&ecirc;s a m&ecirc;s.",
              "<b>Guarde escalas</b>, recibos, notas e extratos que provem o plant&atilde;o realizado.",
              "<b>Cobre por escrito</b> &mdash; e-mail ou protocolo, nunca s&oacute; no grupo.",
-             "<b>Leve ao sindicato</b>: atraso que atinge a escala inteira se resolve coletivamente."],
+             "<b>Leve ao sindicato</b>: com a 2.462/2026, o caso pode ir ao CRM, n&atilde;o s&oacute; &agrave; Justi&ccedil;a."],
             "4/5")),
         ("05_cta.html", cta(
             "SINMEVA&Ccedil;O &middot; jur&iacute;dico",

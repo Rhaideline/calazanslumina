@@ -18,7 +18,7 @@ Slides em **1080×1440 (3:4)** — o tamanho nativo de 2026, que não sofre cort
 - `ESTUDO-SINDICATO-MEDICO.md` — **base de conhecimento com fonte**: jornada e piso (Súmula 370 TST), escala 12x36 (art. 59-A + STF), redução salarial (CF 7º VI e CLT 468), pejotização (Tema 1389, em julgamento), acumulação de cargos (CF 37 XVI), prontuário (Res. CFM 1.821), substituto processual (CF 8º III) e contribuições. Todo post novo deve sair daqui
 - `LEGENDAS.md` — legendas prontas, hashtags e sugestão de calendário
 - `_PREVIEW.html` — todos os slides numa página só
-- `fontes/` — DM Serif Display + DM Sans locais (renderiza offline, sem depender do Google Fonts)
+- `fontes/` — **Spectral, Poppins e Quicksand** locais, a tipografia oficial da casa (renderiza offline)
 
 ## Sistema visual — 12 modelos
 
@@ -73,19 +73,21 @@ Todos os slides usam a mesma base: marca d'água `@sinmevaco` no topo, logo no r
 
 ## Cores e logo do sindicato
 
-Paleta oficial, tirada do feed e do logo do SINMEVAÇO:
+Paleta oficial, conforme o README do repositório `Rhaideline/sinmevaco-posts`:
 
 | Token | Hex | Onde entra |
 |---|---|---|
-| `navy` | `#17231A` | verde profundo — fundo escuro principal |
-| `navy2` | `#0D140F` | base do degradê escuro |
-| `navy3` | `#2E7048` | verde médio — caixas, botões, faixa "verdade" |
-| `steel` | `#24523A` | verde médio escuro — fundo secundário |
-| `cream` | `#F5F4EF` | off-white — fundo claro e texto sobre escuro |
-| `cream2` | `#E7E3D9` | apoio do fundo claro |
-| `brass` | `#C6AC73` | dourado — acento sobre fundo escuro |
-| `brass2` | `#D5BE8C` | dourado claro — numerais e kickers |
-| `ink` | `#16211A` | verde quase preto — texto sobre fundo claro |
+| `navy` | `#16231B` | bg-dark oficial |
+| `navy2` | `#0A2A17` | base do bg-deep oficial |
+| `navy3` | `#0F6A3D` | verde da marca |
+| `steel` | `#0F3D22` | topo do bg-deep |
+| `cream` | `#F5F7F3` | papel oficial |
+| `cream2` | `#E4EAE1` | apoio do papel |
+| `brass` | `#C6A15B` | dourado da marca |
+| `brass2` | `#D7BB84` | tom claro do mesmo dourado |
+| `ink` | `#16231B` | texto sobre papel |
+
+**Tipografia oficial** (conforme o README do repositório `sinmevaco-posts`): **Spectral** nos títulos, com **um único itálico por peça** — só o acento; **Poppins** no apoio; **Quicksand** no lockup da marca.
 
 **Duas regras que vêm do feed do sindicato:** o dourado nunca é fundo, só acento de texto sobre o verde escuro; e sobre o creme quem acentua é o verde, não o dourado. Os botões seguem o padrão do sindicato — pílula branca com texto verde.
 
