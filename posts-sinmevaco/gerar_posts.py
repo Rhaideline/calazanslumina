@@ -1264,24 +1264,135 @@ POSTS = [
             "A lei garante ao m&eacute;dico jornada de <b>quatro horas.</b>",
             "A Lei 3.999/61 fixa o piso da categoria <b>para</b> a jornada de quatro horas &mdash; n&atilde;o um teto de jornada. &Eacute; o que diz a S&uacute;mula 370 do TST.")),
     ]),
+
+    # ---------- pecas que fecham o ciclo mensal ----------
+    ("26_substituto_processual", [
+        ("01_capa.html", cover(
+            ["Voc&ecirc; cobra sozinho, vira caso isolado"],
+            "O sindicato cobra <em>em nome da categoria.</em>",
+            "Por que isso muda tudo?",
+            "A resposta est&aacute; na Constitui&ccedil;&atilde;o.",
+            "1/5", olho="O que o sindicato faz", foot_tag="Jur&iacute;dico<br>SINMEVA&Ccedil;O")),
+        ("02_caso.html", split(
+            "Quem entra sozinho contra o hospital <b>aparece como autor.</b> E continua na escala do mesmo hospital.",
+            "<span class='serif'>Na a&ccedil;&atilde;o coletiva</span> quem figura &eacute; o sindicato. O m&eacute;dico &eacute; substitu&iacute;do, n&atilde;o exposto.",
+            "2/5")),
+        ("03_virada.html", editorial(
+            "A Constitui&ccedil;&atilde;o, no <b>art. 8&ordm;, III</b>, d&aacute; ao sindicato a defesa dos direitos da categoria em ju&iacute;zo.",
+            "N&atilde;o &eacute; favor da entidade. &Eacute; <em>fun&ccedil;&atilde;o dela.</em>",
+            "O STF reconhece legitimidade ampla como <b>substituto processual</b>, dispensada autoriza&ccedil;&atilde;o de cada m&eacute;dico. O TST cancelou a S&uacute;mula 310, que restringia isso.",
+            "3/5")),
+        ("04_checklist.html", lista(
+            "Quando faz diferen&ccedil;a",
+            "Quatro situa&ccedil;&otilde;es de a&ccedil;&atilde;o coletiva",
+            ["<b>Atraso que atinge a escala inteira</b>, n&atilde;o s&oacute; um plant&atilde;o.",
+             "<b>Corte de valor</b> aplicado a todos os plantonistas do servi&ccedil;o.",
+             "<b>Descumprimento de conven&ccedil;&atilde;o</b> repetido pelo mesmo contratante.",
+             "<b>Condi&ccedil;&atilde;o de trabalho</b> que se repete e ningu&eacute;m reclama sozinho."],
+            "4/5")),
+        ("05_cta.html", cta(
+            "SINMEVA&Ccedil;O &middot; jur&iacute;dico",
+            "Traga o caso. <em>Quem aparece &eacute; o sindicato.</em>",
+            "An&aacute;lise sem custo adicional para o associado, e sem expor o seu nome ao contratante.",
+            "Falar com o jur&iacute;dico", "5/5")),
+    ]),
+
+    ("27_prontuario_20_anos", [
+        ("01_post.html", numero(
+            "Guarda de prontu&aacute;rio",
+            "20", "anos",
+            "&eacute; o prazo m&iacute;nimo a contar do <b>&uacute;ltimo registro</b>, antes de qualquer descarte.",
+            "Resolu&ccedil;&atilde;o CFM 1.821/2008",
+            foot_tag="Prontu&aacute;rio<br>e defesa")),
+    ]),
+
+    ("28_contribuicoes", [
+        ("01_post.html", clausula(
+            "O que mudou desde 2017",
+            "A contribui&ccedil;&atilde;o sindical &eacute; <mark>facultativa</mark>. A assistencial, prevista em norma coletiva, alcan&ccedil;a a categoria <mark>com direito de oposi&ccedil;&atilde;o</mark>.",
+            "Duas contribui&ccedil;&otilde;es diferentes, <em>e quase ningu&eacute;m explica.</em>",
+            "A sindical depende de autoriza&ccedil;&atilde;o expressa desde a Reforma de 2017. A assistencial foi declarada constitucional pelo STF em 2023, desde que assegurado o direito de oposi&ccedil;&atilde;o na forma e no prazo da norma coletiva.",
+            foot_tag="Reforma 2017<br>e STF 2023")),
+    ]),
+
+    ("29_feriado_12x36", [
+        ("01_post.html", pergunta(
+            "Pergunta do associado",
+            "Trabalhei no feriado na escala 12x36. Recebo em dobro?",
+            "A regra est&aacute; no <em>art. 59-A.</em>",
+            "O par&aacute;grafo &uacute;nico diz que a remunera&ccedil;&atilde;o mensal da 12x36 abrange os repousos e feriados. Antes de cobrar, confira o que a sua conven&ccedil;&atilde;o coletiva prev&ecirc; &mdash; ela pode ser mais favor&aacute;vel.",
+            foot_tag="CLT &middot; art. 59-A<br>par&aacute;grafo &uacute;nico")),
+    ]),
+
+    ("30_provar_vinculo", [
+        ("01_post.html", lista(
+            "Antes de discutir v&iacute;nculo",
+            "O que a Justi&ccedil;a olha primeiro",
+            ["<b>Pessoalidade</b>: s&oacute; voc&ecirc; pode atender, ou pode mandar outro no seu lugar?",
+             "<b>Habitualidade</b>: com que frequ&ecirc;ncia voc&ecirc; est&aacute; naquele servi&ccedil;o?",
+             "<b>Subordina&ccedil;&atilde;o</b>: quem monta a escala e cobra o cumprimento dela?",
+             "<b>Onerosidade</b>: como e por quem voc&ecirc; &eacute; pago, m&ecirc;s a m&ecirc;s?"],
+            None, foot_tag="CLT &middot; art. 3&ordm;<br>requisitos do v&iacute;nculo")),
+    ]),
+
 ]
 
 
 
 # ====== MOTOR DE VARIACAO ======
-# Ordem em que os posts vao ao ar. O motor garante que duas publicacoes
-# seguidas nunca caiam no mesmo fundo nem no mesmo modelo.
-ORDEM = [
-    "semana-01/1_seg_carrossel_atraso", "09_mito_verdade_sindicato", "12_pergunta_associado",
-    "01_plantao_reduzido", "21_erros_contrato", "24_dois_vinculos",
-    "23_pejotizacao_stf", "11_clausula_reajuste", "05_escala_de_plantao",
-    "02_ameaca_de_processo", "07_posicionamento", "22_contrato_nao_protege",
-    "03_contrato_pj", "19_fluxo_juridico", "25_mito_quatro_horas",
-    "13_cartao_pergunta", "semana-01/2_qua_mito_verdade", "20_capa_colchete",
-    "16_cartao_lateral", "08_numero_35_anos", "17_clt_vs_pj",
-    "semana-01/3_sex_pergunta", "10_agenda_assembleia", "04_lgpd_laudo_whatsapp",
-    "14_caixa_contato", "06_beneficios_associado", "15_foto_moldura", "18_capa_pergunta",
+# Fila de publicacao do mes. Cada linha: pasta, pilar editorial e o gancho
+# de uma frase que justifica a peca estar ali.
+CALENDARIO = [
+    # ---- Semana 1: o que ja e seu ----
+    ("semana-01/1_seg_carrossel_atraso", "Caso real",  "O plantao caiu na conta dois meses depois"),
+    ("25_mito_quatro_horas",             "Correcao",   "A lei nao da jornada de 4 horas: da o piso"),
+    ("27_prontuario_20_anos",            "Direito",    "Vinte anos de guarda, a contar do ultimo registro"),
+    ("12_pergunta_associado",            "Convite",    "Duvida do direct vira post"),
+    ("14_caixa_contato",                 "Bastidor",   "Contrato passa pelo juridico antes da assinatura"),
+    # ---- Semana 2: contrato ----
+    ("03_contrato_pj",                   "Caso real",  "PJ e o afastamento que ninguem previu"),
+    ("11_clausula_reajuste",             "Direito",    "Sem indice e data-base, reajuste vira favor"),
+    ("21_erros_contrato",                "Correcao",   "Cinco clausulas que quase ninguem le"),
+    ("17_clt_vs_pj",                     "Direito",    "O que muda quando voce adoece"),
+    ("30_provar_vinculo",                "Bastidor",   "O que a Justica olha primeiro no vinculo"),
+    # ---- Semana 3: quando o hospital descumpre ----
+    ("01_plantao_reduzido",              "Caso real",  "Cortaram o valor e avisaram no grupo"),
+    ("20_capa_colchete",                 "Correcao",   "O que o sindicato faz quando o hospital atrasa"),
+    ("26_substituto_processual",         "Bastidor",   "Quem aparece na acao coletiva e o sindicato"),
+    ("05_escala_de_plantao",             "Direito",    "12x36 exige acordo escrito"),
+    ("29_feriado_12x36",                 "Convite",    "Feriado na 12x36: o que diz o art. 59-A"),
+    # ---- Semana 4: o sindicato por dentro ----
+    ("23_pejotizacao_stf",               "Direito",    "Tema 1389: o que fazer enquanto nao decidem"),
+    ("09_mito_verdade_sindicato",        "Correcao",   "O sindicato nao serve so na hora do problema"),
+    ("19_fluxo_juridico",                "Bastidor",   "Relato, analise, documentos, acao, resposta"),
+    ("28_contribuicoes",                 "Direito",    "Sindical e assistencial nao sao a mesma coisa"),
+    ("08_numero_35_anos",                "Convite",    "Desde 1991, do lado de ca"),
 ]
+
+# Banco: pecas prontas fora do mes, prontas para entrar em substituicao.
+RESERVA = [
+    "02_ameaca_de_processo", "04_lgpd_laudo_whatsapp", "06_beneficios_associado",
+    "07_posicionamento", "10_agenda_assembleia", "13_cartao_pergunta",
+    "15_foto_moldura", "16_cartao_lateral", "18_capa_pergunta",
+    "22_contrato_nao_protege", "24_dois_vinculos",
+    "semana-01/2_qua_mito_verdade", "semana-01/3_sex_pergunta",
+]
+
+ORDEM = [pasta for pasta, _, _ in CALENDARIO] + RESERVA
+
+
+def datas_do_mes(inicio="2026-09-14", feriados=()):
+    """Dias uteis a partir de inicio, pulando feriados, um por publicacao."""
+    from datetime import date, timedelta
+    d = date.fromisoformat(inicio)
+    fer = {date.fromisoformat(f) for f in feriados}
+    saida = []
+    while len(saida) < len(CALENDARIO):
+        if d.weekday() < 5 and d not in fer:
+            saida.append(d)
+        d += timedelta(days=1)
+    return saida
+
 
 # Familia de fundo natural de cada modelo. Le SO a classe do canvas — procurar
 # as palavras no HTML inteiro acerta o CSS embutido e classifica tudo errado.
@@ -1330,12 +1441,16 @@ def main():
     total = 0
     primeiros = {pasta: slides[0][1] for pasta, slides in POSTS}
     plano = variacao(primeiros)
-    print("\n  Ordem de publicacao (fundo de cada peca):")
-    for i, pasta in enumerate(ORDEM, 1):
+    datas = datas_do_mes()
+    dia_semana = ["seg", "ter", "qua", "qui", "sex"]
+    print("\n  Calendario do mes (data, pilar, fundo):")
+    for i, ((pasta, pilar, _), data) in enumerate(zip(CALENDARIO, datas), 1):
         tema, var = plano.get(pasta, ("", ""))
         fam = familia(primeiros.get(pasta, ""))
         rotulo = {"t-claro": "papel", "t-verde": "verde", "t-escuro": "escuro"}.get(tema, fam)
-        print(f"    {i:2d}. {rotulo:<7} {var}  {pasta}")
+        marca = "  |" if i % 5 == 1 and i > 1 else "   "
+        print(f"  {marca}{i:2d}. {data.strftime('%d/%m')} {dia_semana[data.weekday()]}  "
+              f"{pilar:<10} {rotulo:<7} {var}  {pasta}")
     print()
     fora = [p for p, _ in POSTS if p not in plano]
     if fora:
