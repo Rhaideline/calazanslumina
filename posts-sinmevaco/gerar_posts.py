@@ -7,6 +7,7 @@ Cada slide e um HTML autonomo (renderiza sem foto). Os blocos .photo aceitam
 uma imagem opcional em fotos/<nome>.jpg - se o arquivo nao existir, o degrade
 de fundo assume e o slide continua fechado.
 """
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).parent
@@ -706,6 +707,131 @@ BASE_CSS += """
 """
 
 
+# ====== TEMAS E VARIANTES (motor de variacao) ======
+BASE_CSS += """
+/* ---- t-claro: joga uma peca escura para o papel ---- */
+.t-claro{background:
+  radial-gradient(88% 66% at 22% 8%, rgba(255,255,255,.95) 0%, rgba(244,247,243,0) 62%),
+  linear-gradient(158deg,#F7F9F5 0%,#EFF2EC 52%,#E4EAE1 100%) !important;color:var(--ink)}
+.t-claro .campo{background:
+  radial-gradient(78% 64% at 74% 14%, rgba(15,106,61,.10) 0%, rgba(244,247,243,0) 62%),
+  linear-gradient(158deg,#F7F9F5 0%,#EDF1EA 46%,#E2E8DF 100%)}
+.t-claro .campo::before{border-color:rgba(15,106,61,.22);box-shadow:0 0 0 120px rgba(15,106,61,.035), inset 0 0 0 90px rgba(15,106,61,.02)}
+.t-claro .campo::after{background-image:radial-gradient(rgba(22,35,27,.17) 1.7px, transparent 1.8px)}
+.t-claro .campo i{border-color:rgba(15,106,61,.30);box-shadow:inset 0 0 0 70px rgba(15,106,61,.05)}
+.t-claro h1,.t-claro h2,.t-claro blockquote,.t-claro .t,.t-claro .l2,.t-claro .n,.t-claro .dia{color:var(--ink)}
+.t-claro em{color:var(--navy-3)}
+.t-claro .wm,.t-claro .ask,.t-claro p,.t-claro .nota,.t-claro .cap,.t-claro .l1,.t-claro .sub,.t-claro .hint{color:rgba(22,35,27,.74)}
+.t-claro .counter{background:rgba(22,35,27,.08);border-color:rgba(22,35,27,.16);color:var(--ink)}
+.t-claro .kicker,.t-claro .fonte,.t-claro .olho span{color:#8C6F32}
+.t-claro .olho i{background:linear-gradient(90deg,rgba(140,111,50,.7),rgba(140,111,50,0))}
+.t-claro .logo .name{color:var(--ink)}
+.t-claro .logo .sub,.t-claro .foot .tag{color:rgba(22,35,27,.6)}
+.t-claro .logo .mark{background:#fff;box-shadow:0 0 0 1px rgba(22,35,27,.10)}
+.t-claro .item{border-color:rgba(22,35,27,.16) !important}
+.t-claro .n{color:var(--navy-3)}
+.t-claro .btn{background:var(--navy-3);color:#FFFDFA}
+.t-claro .answer{background:var(--navy-3);color:#FFFDFA}
+.t-claro .label span{background:var(--navy-3);color:#FFFDFA}
+.t-claro .balao,.t-claro .box{background:#FFFDFA;color:var(--ink)}
+.t-claro .rule,.t-claro .fio{background:rgba(22,35,27,.3)}
+.t-claro .n small{color:var(--ink)}
+.t-claro h2 mark{color:var(--ink);border-color:#8C6F32}
+.t-claro .marca{color:#8C6F32}
+.t-claro .marca::before,.t-claro .marca::after{border-color:#8C6F32}
+.t-claro .fluxo svg,.t-claro svg{stroke:rgba(22,35,27,.40)}
+.t-claro .stats div{box-shadow:0 18px 36px -18px rgba(22,35,27,.35)}
+.t-claro .topo{color:rgba(22,35,27,.7)}
+.t-claro .pill{border-color:rgba(22,35,27,.4);color:rgba(22,35,27,.8)}
+
+/* ---- t-escuro: leva uma peca de papel para o fundo escuro da marca ---- */
+.t-escuro{background:
+  radial-gradient(86% 66% at 76% 12%, rgba(15,106,61,.40) 0%, rgba(10,42,23,0) 60%),
+  linear-gradient(158deg,#1B2E21 0%,#16231B 46%,#0A2A17 100%) !important;color:var(--cream)}
+.t-escuro .campo{background:
+  radial-gradient(80% 70% at 76% 16%, rgba(15,106,61,.38) 0%, rgba(10,42,23,0) 58%),
+  linear-gradient(158deg,#22422D 0%,#17281C 44%,#101B14 100%)}
+.t-escuro .campo::before{border-color:rgba(215,187,132,.26)}
+.t-escuro .campo::after{background-image:radial-gradient(rgba(245,247,243,.30) 1.7px, transparent 1.8px)}
+.t-escuro .campo i{border-color:rgba(15,106,61,.55)}
+.t-escuro h1,.t-escuro h2,.t-escuro blockquote,.t-escuro .t,.t-escuro .dia{color:var(--cream)}
+.t-escuro em{color:var(--brass-2)}
+.t-escuro p,.t-escuro .nota,.t-escuro .cap,.t-escuro .bottom,.t-escuro .top,.t-escuro .linha,.t-escuro .hint{color:rgba(245,247,243,.76)}
+.t-escuro .kicker,.t-escuro .aspas{color:var(--brass-2)}
+.t-escuro .counter{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.16);color:var(--cream)}
+.t-escuro .wm{color:rgba(245,247,243,.45)}
+.t-escuro .logo .name{color:var(--cream)}
+.t-escuro .logo .sub,.t-escuro .foot .tag,.t-escuro .autor .papel{color:rgba(245,247,243,.6)}
+.t-escuro .autor .nome{color:var(--cream)}
+.t-escuro .rule,.t-escuro .fio{background:rgba(245,247,243,.35)}
+.t-escuro .card{border-color:rgba(245,247,243,.16);
+  background:linear-gradient(160deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,0) 60%)}
+.t-escuro .pe .tag{border-color:rgba(245,247,243,.35);color:rgba(245,247,243,.75)}
+.t-escuro .pe .mais{color:rgba(245,247,243,.5)}
+.t-escuro .doc{background:#FCFAF6;color:var(--ink)}
+.t-escuro .head{color:var(--ink)}
+.t-escuro .mid h1{color:var(--ink)}
+.t-escuro .head{color:rgba(22,35,27,.55)}
+.t-escuro .cardfoto .pe{color:rgba(22,35,27,.45)}
+.t-escuro .seta{border-color:var(--ink);color:var(--ink)}
+.t-escuro .hint{color:rgba(22,35,27,.8)}
+.t-escuro .doc .trecho{color:var(--ink)}
+
+/* ---- t-verde: peca inteira no verde da marca ---- */
+.t-verde{background:
+  radial-gradient(86% 64% at 76% 12%, rgba(255,255,255,.14) 0%, rgba(15,106,61,0) 60%),
+  linear-gradient(158deg,#177A46 0%,#0F6A3D 46%,#0A4A2A 100%) !important}
+.t-verde .campo{background:
+  radial-gradient(80% 66% at 74% 16%, rgba(255,255,255,.16) 0%, rgba(15,106,61,0) 62%),
+  linear-gradient(158deg,#177A46 0%,#0F6A3D 48%,#0A4A2A 100%)}
+.t-verde .campo::before{border-color:rgba(255,253,250,.28)}
+.t-verde .campo::after{background-image:radial-gradient(rgba(255,253,250,.26) 1.7px, transparent 1.8px)}
+.t-verde .campo i{border-color:rgba(255,253,250,.24);box-shadow:inset 0 0 0 70px rgba(255,255,255,.05)}
+.t-verde .kicker,.t-verde .fonte,.t-verde .olho span,.t-verde .foot .tag{color:#EBDFC0}
+.t-verde em{color:#EBDFC0}
+.t-verde .label span{background:rgba(10,74,42,.9)}
+.t-verde .answer{background:rgba(10,74,42,.92)}
+.t-verde .btn{background:var(--cream);color:var(--navy-3)}
+/* modelos que nascem no papel precisam inverter o texto quando vao para o verde */
+.t-verde{color:var(--cream)}
+.t-verde h1,.t-verde h2,.t-verde blockquote,.t-verde .t,.t-verde .dia,.t-verde .n,.t-verde .autor .nome{color:#FFFDFA}
+.t-verde p,.t-verde .nota,.t-verde .cap,.t-verde .top,.t-verde .bottom,.t-verde .linha,.t-verde .hint,.t-verde .sub,.t-verde .ask,.t-verde .l1{color:rgba(255,253,250,.82)}
+.t-verde .wm,.t-verde .autor .papel,.t-verde .logo .sub{color:rgba(255,253,250,.6)}
+.t-verde .logo .name{color:#FFFDFA}
+.t-verde .counter{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.2);color:#FFFDFA}
+.t-verde .card{border-color:rgba(255,253,250,.2);background:linear-gradient(160deg,rgba(255,255,255,.08) 0%,rgba(255,255,255,0) 60%)}
+.t-verde .rule,.t-verde .fio{background:rgba(255,253,250,.4)}
+.t-verde .aspas{color:#EBDFC0}
+.t-verde .pe .tag{border-color:rgba(255,253,250,.42);color:rgba(255,253,250,.85)}
+.t-verde .pe .mais{color:rgba(255,253,250,.6)}
+.t-verde .item{border-color:rgba(255,253,250,.2) !important}
+.t-verde .doc{background:#FCFAF6;color:var(--ink)}
+.t-verde .doc .trecho,.t-verde .head{color:var(--ink)}
+.t-verde .mid h1,.t-verde .seta{color:var(--ink)}
+.t-verde .seta{border-color:var(--ink)}
+.t-verde .balao{color:var(--ink)}
+
+/* ---- variantes do campo: o grafismo nunca cai no mesmo lugar ---- */
+.v1 .campo::before{right:-260px;top:-180px}
+.v1 .campo i{left:-280px;bottom:-300px}
+.v2 .campo::before{right:auto;left:-340px;top:-260px}
+.v2 .campo i{left:auto;right:-260px;bottom:-340px}
+.v2 .campo::after{-webkit-mask-image:radial-gradient(66% 52% at 84% 20%, rgba(0,0,0,.95) 0%, transparent 68%);
+  mask-image:radial-gradient(66% 52% at 84% 20%, rgba(0,0,0,.95) 0%, transparent 68%)}
+.v3 .campo::before{right:-420px;top:auto;bottom:-380px;width:1240px;height:1240px}
+.v3 .campo i{left:-200px;bottom:auto;top:-320px;width:820px;height:820px}
+.v3 .campo::after{-webkit-mask-image:linear-gradient(196deg, rgba(0,0,0,.9) 0%, transparent 52%);
+  mask-image:linear-gradient(196deg, rgba(0,0,0,.9) 0%, transparent 52%)}
+.v4 .campo::before{right:-180px;top:-520px;width:1400px;height:1400px}
+.v4 .campo i{left:-420px;bottom:-420px;width:1100px;height:1100px}
+.v4 .campo::after{opacity:.55;background-size:30px 30px;
+  -webkit-mask-image:linear-gradient(140deg, rgba(0,0,0,.9) 0%, transparent 60%);
+  mask-image:linear-gradient(140deg, rgba(0,0,0,.9) 0%, transparent 60%)}
+"""
+
+
+
+
 def capafoto(l1, l2, l3, botao, photo=None, counter=None):
     """18 - foto inteira com pergunta centralizada e botao pilula."""
     return page(l2, "capafoto bg-navy", f"""
@@ -755,7 +881,7 @@ def colchete(kicker, linha1, destaque, esq, dir_, photo=None, counter=None):
 
 def textura(kicker, titulo, linha, counter=None):
     """21 - cartao claro texturizado com tipografia mista."""
-    return page(titulo, "textura grain", f"""
+    return page(titulo, "textura", f"""
 <div class="card">
   <div class="kicker">{kicker}</div>
   <h1>{titulo}</h1>
@@ -1129,14 +1255,89 @@ POSTS = [
 ]
 
 
+
+# ====== MOTOR DE VARIACAO ======
+# Ordem em que os posts vao ao ar. O motor garante que duas publicacoes
+# seguidas nunca caiam no mesmo fundo nem no mesmo modelo.
+ORDEM = [
+    "semana-01/1_seg_carrossel_atraso", "09_mito_verdade_sindicato", "12_pergunta_associado",
+    "01_plantao_reduzido", "21_erros_contrato", "24_dois_vinculos",
+    "23_pejotizacao_stf", "11_clausula_reajuste", "05_escala_de_plantao",
+    "02_ameaca_de_processo", "07_posicionamento", "22_contrato_nao_protege",
+    "03_contrato_pj", "19_fluxo_juridico", "25_mito_quatro_horas",
+    "13_cartao_pergunta", "semana-01/2_qua_mito_verdade", "20_capa_colchete",
+    "16_cartao_lateral", "08_numero_35_anos", "17_clt_vs_pj",
+    "semana-01/3_sex_pergunta", "10_agenda_assembleia", "04_lgpd_laudo_whatsapp",
+    "14_caixa_contato", "06_beneficios_associado", "15_foto_moldura", "18_capa_pergunta",
+]
+
+# Familia de fundo natural de cada modelo. Le SO a classe do canvas — procurar
+# as palavras no HTML inteiro acerta o CSS embutido e classifica tudo errado.
+def familia(html):
+    m = re.search(r'<div class="canvas ([^"]*)"', html)
+    classes = set(m.group(1).split()) if m else set()
+    if {"mv", "versus"} & classes:
+        return "misto"          # a peca ja tem duas faixas, nunca repete com a vizinha
+    if {"bg-cream", "textura", "cardfoto"} & classes:
+        return "papel"
+    if {"bg-steel", "boxcard"} & classes:
+        return "verde"
+    return "escuro"
+
+# Ciclo de fundos: seis passos com as tres familias, sem repetir vizinho
+# e sem cair no vai-e-vem de duas cores.
+CICLO = ["escuro", "papel", "verde", "escuro", "verde", "papel"]
+TEMA = {"escuro": "t-escuro", "papel": "t-claro", "verde": "t-verde"}
+
+
+def variacao(posts_por_pasta):
+    """Devolve {pasta: (classe_tema, classe_variante)}.
+
+    Cada peca vai para a familia que o ciclo pede naquela posicao. Se ela ja
+    nasce nessa familia, nao recebe tema nenhum; se nasce em outra, recebe o
+    tema que a leva ate la. Pecas de duas faixas (mito x verdade, X vs Y)
+    ficam como sao e so nao podem ser vizinhas entre si.
+    """
+    plano, anterior = {}, None
+    for i, pasta in enumerate(ORDEM):
+        fam_natural = familia(posts_por_pasta.get(pasta, ""))
+        if fam_natural == "misto":
+            plano[pasta] = ("", f"v{(i % 4) + 1}")
+            anterior = "misto"
+            continue
+        alvo = CICLO[i % len(CICLO)]
+        if alvo == anterior:
+            alvo = CICLO[(i + 1) % len(CICLO)]
+        tema = "" if fam_natural == alvo else TEMA[alvo]
+        plano[pasta] = (tema, f"v{(i % 4) + 1}")
+        anterior = alvo
+    return plano
+
+
 def main():
     total = 0
+    primeiros = {pasta: slides[0][1] for pasta, slides in POSTS}
+    plano = variacao(primeiros)
+    print("\n  Ordem de publicacao (fundo de cada peca):")
+    for i, pasta in enumerate(ORDEM, 1):
+        tema, var = plano.get(pasta, ("", ""))
+        fam = familia(primeiros.get(pasta, ""))
+        rotulo = {"t-claro": "papel", "t-verde": "verde", "t-escuro": "escuro"}.get(tema, fam)
+        print(f"    {i:2d}. {rotulo:<7} {var}  {pasta}")
+    print()
+    fora = [p for p, _ in POSTS if p not in plano]
+    if fora:
+        print(f"  aviso: fora da ORDEM de publicacao -> {', '.join(fora)}")
     for pasta, slides in POSTS:
         d = ROOT / pasta
         d.mkdir(parents=True, exist_ok=True)
         # ajusta o caminho das fontes conforme a profundidade da pasta
         subida = "../" * (len(Path(pasta).parts))
-        for nome, conteudo in slides:
+        tema, variante = plano.get(pasta, ("", "v1"))
+        for j, (nome, conteudo) in enumerate(slides):
+            # dentro do carrossel a variante tambem gira, para os slides nao ficarem gemeos
+            vslide = f"v{((int(variante[1:]) - 1 + j) % 4) + 1}"
+            conteudo = conteudo.replace('<div class="canvas ', f'<div class="canvas {tema} {vslide} ')
             conteudo = conteudo.replace('href="../fontes/', f'href="{subida}fontes/')
             conteudo = conteudo.replace("{SUBIDA}", subida)
             (d / nome).write_text(conteudo, encoding="utf-8")

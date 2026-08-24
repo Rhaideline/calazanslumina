@@ -385,8 +385,127 @@ body{font-family:'Poppins',system-ui,sans-serif;color:var(--cream)}
   font-size:25px;font-weight:600;display:flex;align-items:center;gap:14px}
 .tela .pe{position:absolute;z-index:6;left:70px;bottom:70px;font-size:23px;letter-spacing:.2em;
   text-transform:uppercase;color:rgba(245,244,239,.6)}
+
+/* ---- t-claro: joga uma peca escura para o papel ---- */
+.t-claro{background:
+  radial-gradient(88% 66% at 22% 8%, rgba(255,255,255,.95) 0%, rgba(244,247,243,0) 62%),
+  linear-gradient(158deg,#F7F9F5 0%,#EFF2EC 52%,#E4EAE1 100%) !important;color:var(--ink)}
+.t-claro .campo{background:
+  radial-gradient(78% 64% at 74% 14%, rgba(15,106,61,.10) 0%, rgba(244,247,243,0) 62%),
+  linear-gradient(158deg,#F7F9F5 0%,#EDF1EA 46%,#E2E8DF 100%)}
+.t-claro .campo::before{border-color:rgba(15,106,61,.22);box-shadow:0 0 0 120px rgba(15,106,61,.035), inset 0 0 0 90px rgba(15,106,61,.02)}
+.t-claro .campo::after{background-image:radial-gradient(rgba(22,35,27,.17) 1.7px, transparent 1.8px)}
+.t-claro .campo i{border-color:rgba(15,106,61,.30);box-shadow:inset 0 0 0 70px rgba(15,106,61,.05)}
+.t-claro h1,.t-claro h2,.t-claro blockquote,.t-claro .t,.t-claro .l2,.t-claro .n,.t-claro .dia{color:var(--ink)}
+.t-claro em{color:var(--navy-3)}
+.t-claro .wm,.t-claro .ask,.t-claro p,.t-claro .nota,.t-claro .cap,.t-claro .l1,.t-claro .sub,.t-claro .hint{color:rgba(22,35,27,.74)}
+.t-claro .counter{background:rgba(22,35,27,.08);border-color:rgba(22,35,27,.16);color:var(--ink)}
+.t-claro .kicker,.t-claro .fonte,.t-claro .olho span{color:#8C6F32}
+.t-claro .olho i{background:linear-gradient(90deg,rgba(140,111,50,.7),rgba(140,111,50,0))}
+.t-claro .logo .name{color:var(--ink)}
+.t-claro .logo .sub,.t-claro .foot .tag{color:rgba(22,35,27,.6)}
+.t-claro .logo .mark{background:#fff;box-shadow:0 0 0 1px rgba(22,35,27,.10)}
+.t-claro .item{border-color:rgba(22,35,27,.16) !important}
+.t-claro .n{color:var(--navy-3)}
+.t-claro .btn{background:var(--navy-3);color:#FFFDFA}
+.t-claro .answer{background:var(--navy-3);color:#FFFDFA}
+.t-claro .label span{background:var(--navy-3);color:#FFFDFA}
+.t-claro .balao,.t-claro .box{background:#FFFDFA;color:var(--ink)}
+.t-claro .rule,.t-claro .fio{background:rgba(22,35,27,.3)}
+.t-claro .n small{color:var(--ink)}
+.t-claro h2 mark{color:var(--ink);border-color:#8C6F32}
+.t-claro .marca{color:#8C6F32}
+.t-claro .marca::before,.t-claro .marca::after{border-color:#8C6F32}
+.t-claro .fluxo svg,.t-claro svg{stroke:rgba(22,35,27,.40)}
+.t-claro .stats div{box-shadow:0 18px 36px -18px rgba(22,35,27,.35)}
+.t-claro .topo{color:rgba(22,35,27,.7)}
+.t-claro .pill{border-color:rgba(22,35,27,.4);color:rgba(22,35,27,.8)}
+
+/* ---- t-escuro: leva uma peca de papel para o fundo escuro da marca ---- */
+.t-escuro{background:
+  radial-gradient(86% 66% at 76% 12%, rgba(15,106,61,.40) 0%, rgba(10,42,23,0) 60%),
+  linear-gradient(158deg,#1B2E21 0%,#16231B 46%,#0A2A17 100%) !important;color:var(--cream)}
+.t-escuro .campo{background:
+  radial-gradient(80% 70% at 76% 16%, rgba(15,106,61,.38) 0%, rgba(10,42,23,0) 58%),
+  linear-gradient(158deg,#22422D 0%,#17281C 44%,#101B14 100%)}
+.t-escuro .campo::before{border-color:rgba(215,187,132,.26)}
+.t-escuro .campo::after{background-image:radial-gradient(rgba(245,247,243,.30) 1.7px, transparent 1.8px)}
+.t-escuro .campo i{border-color:rgba(15,106,61,.55)}
+.t-escuro h1,.t-escuro h2,.t-escuro blockquote,.t-escuro .t,.t-escuro .dia{color:var(--cream)}
+.t-escuro em{color:var(--brass-2)}
+.t-escuro p,.t-escuro .nota,.t-escuro .cap,.t-escuro .bottom,.t-escuro .top,.t-escuro .linha,.t-escuro .hint{color:rgba(245,247,243,.76)}
+.t-escuro .kicker,.t-escuro .aspas{color:var(--brass-2)}
+.t-escuro .counter{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.16);color:var(--cream)}
+.t-escuro .wm{color:rgba(245,247,243,.45)}
+.t-escuro .logo .name{color:var(--cream)}
+.t-escuro .logo .sub,.t-escuro .foot .tag,.t-escuro .autor .papel{color:rgba(245,247,243,.6)}
+.t-escuro .autor .nome{color:var(--cream)}
+.t-escuro .rule,.t-escuro .fio{background:rgba(245,247,243,.35)}
+.t-escuro .card{border-color:rgba(245,247,243,.16);
+  background:linear-gradient(160deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,0) 60%)}
+.t-escuro .pe .tag{border-color:rgba(245,247,243,.35);color:rgba(245,247,243,.75)}
+.t-escuro .pe .mais{color:rgba(245,247,243,.5)}
+.t-escuro .doc{background:#FCFAF6;color:var(--ink)}
+.t-escuro .head{color:var(--ink)}
+.t-escuro .mid h1{color:var(--ink)}
+.t-escuro .head{color:rgba(22,35,27,.55)}
+.t-escuro .cardfoto .pe{color:rgba(22,35,27,.45)}
+.t-escuro .seta{border-color:var(--ink);color:var(--ink)}
+.t-escuro .hint{color:rgba(22,35,27,.8)}
+.t-escuro .doc .trecho{color:var(--ink)}
+
+/* ---- t-verde: peca inteira no verde da marca ---- */
+.t-verde{background:
+  radial-gradient(86% 64% at 76% 12%, rgba(255,255,255,.14) 0%, rgba(15,106,61,0) 60%),
+  linear-gradient(158deg,#177A46 0%,#0F6A3D 46%,#0A4A2A 100%) !important}
+.t-verde .campo{background:
+  radial-gradient(80% 66% at 74% 16%, rgba(255,255,255,.16) 0%, rgba(15,106,61,0) 62%),
+  linear-gradient(158deg,#177A46 0%,#0F6A3D 48%,#0A4A2A 100%)}
+.t-verde .campo::before{border-color:rgba(255,253,250,.28)}
+.t-verde .campo::after{background-image:radial-gradient(rgba(255,253,250,.26) 1.7px, transparent 1.8px)}
+.t-verde .campo i{border-color:rgba(255,253,250,.24);box-shadow:inset 0 0 0 70px rgba(255,255,255,.05)}
+.t-verde .kicker,.t-verde .fonte,.t-verde .olho span,.t-verde .foot .tag{color:#EBDFC0}
+.t-verde em{color:#EBDFC0}
+.t-verde .label span{background:rgba(10,74,42,.9)}
+.t-verde .answer{background:rgba(10,74,42,.92)}
+.t-verde .btn{background:var(--cream);color:var(--navy-3)}
+/* modelos que nascem no papel precisam inverter o texto quando vao para o verde */
+.t-verde{color:var(--cream)}
+.t-verde h1,.t-verde h2,.t-verde blockquote,.t-verde .t,.t-verde .dia,.t-verde .n,.t-verde .autor .nome{color:#FFFDFA}
+.t-verde p,.t-verde .nota,.t-verde .cap,.t-verde .top,.t-verde .bottom,.t-verde .linha,.t-verde .hint,.t-verde .sub,.t-verde .ask,.t-verde .l1{color:rgba(255,253,250,.82)}
+.t-verde .wm,.t-verde .autor .papel,.t-verde .logo .sub{color:rgba(255,253,250,.6)}
+.t-verde .logo .name{color:#FFFDFA}
+.t-verde .counter{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.2);color:#FFFDFA}
+.t-verde .card{border-color:rgba(255,253,250,.2);background:linear-gradient(160deg,rgba(255,255,255,.08) 0%,rgba(255,255,255,0) 60%)}
+.t-verde .rule,.t-verde .fio{background:rgba(255,253,250,.4)}
+.t-verde .aspas{color:#EBDFC0}
+.t-verde .pe .tag{border-color:rgba(255,253,250,.42);color:rgba(255,253,250,.85)}
+.t-verde .pe .mais{color:rgba(255,253,250,.6)}
+.t-verde .item{border-color:rgba(255,253,250,.2) !important}
+.t-verde .doc{background:#FCFAF6;color:var(--ink)}
+.t-verde .doc .trecho,.t-verde .head{color:var(--ink)}
+.t-verde .mid h1,.t-verde .seta{color:var(--ink)}
+.t-verde .seta{border-color:var(--ink)}
+.t-verde .balao{color:var(--ink)}
+
+/* ---- variantes do campo: o grafismo nunca cai no mesmo lugar ---- */
+.v1 .campo::before{right:-260px;top:-180px}
+.v1 .campo i{left:-280px;bottom:-300px}
+.v2 .campo::before{right:auto;left:-340px;top:-260px}
+.v2 .campo i{left:auto;right:-260px;bottom:-340px}
+.v2 .campo::after{-webkit-mask-image:radial-gradient(66% 52% at 84% 20%, rgba(0,0,0,.95) 0%, transparent 68%);
+  mask-image:radial-gradient(66% 52% at 84% 20%, rgba(0,0,0,.95) 0%, transparent 68%)}
+.v3 .campo::before{right:-420px;top:auto;bottom:-380px;width:1240px;height:1240px}
+.v3 .campo i{left:-200px;bottom:auto;top:-320px;width:820px;height:820px}
+.v3 .campo::after{-webkit-mask-image:linear-gradient(196deg, rgba(0,0,0,.9) 0%, transparent 52%);
+  mask-image:linear-gradient(196deg, rgba(0,0,0,.9) 0%, transparent 52%)}
+.v4 .campo::before{right:-180px;top:-520px;width:1400px;height:1400px}
+.v4 .campo i{left:-420px;bottom:-420px;width:1100px;height:1100px}
+.v4 .campo::after{opacity:.55;background-size:30px 30px;
+  -webkit-mask-image:linear-gradient(140deg, rgba(0,0,0,.9) 0%, transparent 60%);
+  mask-image:linear-gradient(140deg, rgba(0,0,0,.9) 0%, transparent 60%)}
 </style></head>
-<body><div class="canvas split grain">
+<body><div class="canvas  v2 split grain">
 <div class="campo"><i></i></div>
 <div class="wm">@sinmevaco</div>
 <div class="counter">2/5</div>

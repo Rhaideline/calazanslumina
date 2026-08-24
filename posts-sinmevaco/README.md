@@ -60,6 +60,19 @@ Todos os slides usam a mesma base: marca d'água `@sinmevaco` no topo, logo no r
 | 21 | Cartão texturizado | `textura()` | título forte, tipografia mista |
 | 22 | Mock de tela | `tela()` | métrica + palavra destacada, tom de alerta |
 
+### Motor de variação (§ o mesmo princípio do `SISTEMA_POSTS_DATA.md`)
+
+Sem isso o feed vira 28 retângulos verde-escuros. O gerador agora decide o fundo de cada peça
+pela **posição dela na fila de publicação**, não pelo modelo:
+
+- `ORDEM` no `gerar_posts.py` é a fila real de publicação.
+- Um ciclo de seis passos percorre as três famílias — `escuro → papel → verde → escuro → verde → papel` — e **nunca deixa duas publicações seguidas na mesma família**.
+- A peça que já nasce na família pedida vai sem tema; a que nasce em outra recebe `t-claro`, `t-escuro` ou `t-verde`, que a leva até lá. O mesmo modelo rende três feeds diferentes.
+- Peças de duas faixas (mito × verdade, X vs Y) ficam como são e só não podem ser vizinhas entre si.
+- O grafismo de fundo gira em quatro variantes (`v1`–`v4`): arco e retícula mudam de canto. Dentro do carrossel a variante também avança slide a slide, para os cinco não saírem gêmeos.
+
+Rodar `python3 gerar_posts.py` imprime a fila com o fundo de cada peça — é a conferência antes de exportar.
+
 **Ritmo do feed (harmonia no grid):** alterne escuro → claro → bronze. Em três colunas, evite dois slides creme lado a lado e nunca poste dois bronzes seguidos — o bronze é o acento, aparece uma vez a cada 4 ou 5 posts. Carrossel sempre abre em azul-marinho: é a capa que dá a identidade da linha na grade.
 
 ## Semana 01 — pronta para publicar
