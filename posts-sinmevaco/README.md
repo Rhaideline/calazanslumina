@@ -93,7 +93,9 @@ Paleta oficial, conforme o README do repositório `Rhaideline/sinmevaco-posts`:
 
 Para ajustar qualquer tom, edite o dicionário `CORES` no topo de `gerar_posts.py` e rode `python3 gerar_posts.py && ./renderizar.sh`. Os nove tokens alimentam os 31 slides.
 
-**Logo:** salve o arquivo oficial como `logos/logo.png` (PNG com fundo transparente, altura mínima 200px). Ele entra sozinho dentro do selo redondo branco no rodapé de todos os slides. Enquanto o arquivo não estiver lá, o selo mostra "MSV" como provisório.
+**Logo:** o emblema oficial está em `logos/logo.png` — 512×512, fundo removido, gerado a partir do `logo-sinmevaco.jpeg` do repositório `sinmevaco-posts`. Entra sozinho no selo redondo branco do rodapé de todos os slides.
+
+Cuidado ao limpar PNGs antigos: use `find . -name "*.png" -not -path "./logos/*" -delete`. Um `rm -f */*.png` apaga o logo junto — e os slides saem com o texto alternativo no lugar do emblema.
 
 ## Fotos (opcional)
 
@@ -129,4 +131,4 @@ Os dados abaixo estão no topo de `gerar_posts.py` e vieram de fontes públicas.
 - Slide 3 do carrossel da semana 01 agora cita a CLT, art. 459 (pagamento até o 5º dia útil do mês subsequente) — texto de lei, não de convenção
 - Se for citar a CCT do SINMEVAÇO em algum post, use o texto real do documento vigente. Nenhum slide faz isso hoje
 - Nova pasta de fotos da semana: `fotos/atraso-capa.jpg`, `fotos/atraso-a.jpg`, `fotos/atraso-b.jpg`
-- O selo do rodapé ainda mostra "MSV" provisório: basta salvar o logo oficial em `logos/logo.png`
+
