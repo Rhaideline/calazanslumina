@@ -54,10 +54,22 @@ body{font-family:'Poppins',system-ui,sans-serif;color:var(--cream)}
 .campo.claro::after{background-image:radial-gradient(rgba(22,33,26,.16) 1.5px, transparent 1.6px)}
 
 /* ---- foto opcional ---- */
+/* Foto entra colorida — regra da casa. O scrim resolve a leitura do texto
+   e o dourado sobre a imagem, sem lavar a cor. */
 .photo{position:absolute;inset:0;z-index:0;background-position:center;background-size:cover;background-repeat:no-repeat;
-  filter:saturate(.72) contrast(1.05) brightness(.78)}
+  filter:saturate(1.02) contrast(1.04)}
 .photo::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(178deg, rgba(11,21,38,.45) 0%, rgba(11,21,38,.72) 55%, rgba(8,14,26,.94) 100%)}
+  background:
+    linear-gradient(178deg, rgba(10,42,23,.28) 0%, rgba(13,20,15,.62) 46%, rgba(10,15,11,.93) 100%),
+    radial-gradient(78% 58% at 22% 18%, rgba(15,106,61,.34) 0%, rgba(13,20,15,0) 62%)}
+.t-claro .photo{filter:saturate(1.0) contrast(1.02)}
+.t-claro .photo::after{background:
+    linear-gradient(178deg, rgba(245,247,243,.55) 0%, rgba(245,247,243,.80) 44%, rgba(245,247,243,.96) 100%)}
+.t-verde .photo::after{background:
+    linear-gradient(178deg, rgba(15,106,61,.42) 0%, rgba(12,80,46,.72) 48%, rgba(9,58,33,.94) 100%)}
+/* nos modelos que nascem sobre foto o scrim sobe menos, para a imagem aparecer */
+.fotoframe .photo::after,.capafoto .photo::after,.tela .photo::after{
+  background:linear-gradient(178deg, rgba(10,42,23,.20) 0%, rgba(13,20,15,.55) 42%, rgba(10,15,11,.92) 100%)}
 
 /* ---- chrome do post ---- */
 .wm{position:absolute;z-index:9;top:52px;left:60px;font-size:20px;letter-spacing:.06em;font-weight:500;opacity:.42}
@@ -509,6 +521,6 @@ body{font-family:'Poppins',system-ui,sans-serif;color:var(--cream)}
 <div class="campo"><i></i></div>
 <div class="wm">@sinmevaco</div>
 <div class="counter">2/5</div>
-<div class="half a bg-navy"><div class="photo" style="background-image:url('fotos/crm-a.jpg')"></div><div class="box">Mensagem enviada no impulso vira prova &mdash; <b>inclusive contra quem escreveu.</b></div></div><div class="half b bg-steel"><div class="photo" style="background-image:url('fotos/crm-b.jpg')"></div><div class="box"><span class='serif'>Prontu&aacute;rio completo,</span> datado e assinado, &eacute; a pe&ccedil;a central de qualquer defesa.</div></div>
+<div class="half a bg-navy"><div class="photo" style="background-image:url('../fotos/crm-a.jpg')"></div><div class="box">Mensagem enviada no impulso vira prova &mdash; <b>inclusive contra quem escreveu.</b></div></div><div class="half b bg-steel"><div class="photo" style="background-image:url('../fotos/crm-b.jpg')"></div><div class="box"><span class='serif'>Prontu&aacute;rio completo,</span> datado e assinado, &eacute; a pe&ccedil;a central de qualquer defesa.</div></div>
 
 </div></body></html>
