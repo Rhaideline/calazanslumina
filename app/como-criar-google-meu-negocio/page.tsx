@@ -7,6 +7,8 @@ import {
   erros,
   faq,
   checklistFinal,
+  cola,
+  fontes,
   totalPassos,
 } from '@/data/guia-google-meu-negocio'
 
@@ -37,12 +39,13 @@ import {
  */
 
 const PDF = '/guia-google-meu-negocio-passo-a-passo.pdf'
+const PAGINAS_PDF = 49
 const URL = 'https://calazanslumina.com.br/como-criar-google-meu-negocio'
 
 const TITULO = 'Como criar o Google Meu Negócio do zero — guia passo a passo (PDF grátis)'
 const DESC =
   'O passo a passo completo para criar, verificar e otimizar seu Perfil da Empresa no Google. ' +
-  `${totalPassos} passos com as palavras que aparecem na tela, textos prontos para copiar e um PDF de 34 páginas para baixar de graça.`
+  `${totalPassos} passos com as palavras que aparecem na tela, textos prontos para copiar e um PDF de ${PAGINAS_PDF} páginas para baixar de graça. Regras conferidas na documentação oficial do Google em agosto de 2026.`
 
 export const metadata: Metadata = {
   title: TITULO,
@@ -78,7 +81,7 @@ function BotaoPdf() {
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
       </svg>
-      Baixar o PDF de 34 páginas
+      Baixar o PDF de {PAGINAS_PDF} páginas
     </a>
   )
 }
@@ -149,7 +152,7 @@ export default function ComoCriarGoogleMeuNegocioPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 pt-10 border-t border-white/10">
             {[
               { n: `${totalPassos}`, t: 'passos numerados' },
-              { n: '34', t: 'páginas no PDF' },
+              { n: `${PAGINAS_PDF}`, t: 'páginas no PDF' },
               { n: '1h30', t: 'do zero ao ar' },
               { n: 'R$ 0', t: 'é grátis, sempre' },
             ].map((c) => (
@@ -256,7 +259,51 @@ export default function ComoCriarGoogleMeuNegocioPage() {
                   <p className="text-brand-mint text-xs font-bold tracking-[0.18em] uppercase mb-3">
                     Por que isso importa
                   </p>
-                  <p className="text-brand-dark/75 leading-relaxed">{passo.detalhe}</p>
+                  <div className="space-y-4">
+                    {passo.detalhe.map((d) => (
+                      <p key={d} className="text-brand-dark/75 leading-relaxed">{d}</p>
+                    ))}
+                  </div>
+
+                  {passo.tabela && (
+                    <div className="mt-6">
+                      <p className="text-brand-mint text-xs font-bold tracking-[0.18em] uppercase mb-3">
+                        {passo.tabela.titulo}
+                      </p>
+                      <div className="overflow-x-auto">
+                        <table className="w-full text-left border-collapse">
+                          <thead>
+                            <tr>
+                              {passo.tabela.colunas.map((c) => (
+                                <th
+                                  key={c}
+                                  className="text-brand-dark/50 text-[11px] font-bold tracking-[0.12em] uppercase pb-2 pr-6 border-b-2 border-brand-dark align-bottom"
+                                >
+                                  {c}
+                                </th>
+                              ))}
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {passo.tabela.linhas.map((l) => (
+                              <tr key={l.join('|')}>
+                                {l.map((c, ci) => (
+                                  <td
+                                    key={c}
+                                    className={`py-3 pr-6 align-top border-b border-gray-100 text-sm leading-relaxed ${
+                                      ci === 0 ? 'font-bold text-brand-dark' : 'text-brand-dark/75'
+                                    }`}
+                                  >
+                                    {c}
+                                  </td>
+                                ))}
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  )}
 
                   {passo.copiar && (
                     <div className="mt-6 border border-dashed border-gray-300 rounded-2xl p-5 bg-gray-50/60">
@@ -286,6 +333,12 @@ export default function ComoCriarGoogleMeuNegocioPage() {
                       <p className="text-white/80 text-sm leading-relaxed">{passo.atencao}</p>
                     </div>
                   )}
+
+                  {passo.fonte && (
+                    <p className="mt-5 pt-3 border-t border-gray-100 text-brand-dark/50 text-xs leading-relaxed">
+                      <strong className="text-brand-dark/70">Fonte.</strong> {passo.fonte}
+                    </p>
+                  )}
                 </article>
               ))}
             </div>
@@ -305,7 +358,7 @@ export default function ComoCriarGoogleMeuNegocioPage() {
           <div className="text-center mt-8">
             <BotaoPdf />
             <p className="text-brand-dark/40 text-xs mt-3">
-              Download direto, sem cadastro · 34 páginas A4, feito para imprimir
+              Download direto, sem cadastro · {PAGINAS_PDF} páginas A4, feito para imprimir
             </p>
           </div>
         </div>
@@ -344,6 +397,26 @@ export default function ComoCriarGoogleMeuNegocioPage() {
         </div>
       </section>
 
+      {/* ---------------------------------------------------------- cola -- */}
+      <section className="section-padding bg-brand-dark text-white">
+        <div className="container-main max-w-3xl">
+          <h2 className="font-serif text-3xl md:text-4xl font-bold mb-3 leading-tight">A cola</h2>
+          <div className="w-14 h-1 bg-brand-mint mb-6" />
+          <p className="text-white/60 mb-10">
+            Todos os limites e prazos citados acima, num lugar só. É a parte para deixar aberta
+            enquanto preenche.
+          </p>
+          <dl className="divide-y divide-white/10">
+            {cola.linhas.map(([oQue, quanto]) => (
+              <div key={oQue} className="py-4 flex flex-col sm:flex-row sm:gap-8">
+                <dt className="text-white/50 text-sm sm:w-48 sm:shrink-0">{oQue}</dt>
+                <dd className="text-white leading-relaxed">{quanto}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
       {/* ----------------------------------------------------------- faq -- */}
       <section className="section-padding bg-brand-bg">
         <div className="container-main max-w-3xl">
@@ -372,8 +445,9 @@ export default function ComoCriarGoogleMeuNegocioPage() {
 
           {checklistFinal.map((g) => (
             <div key={g.grupo} className="mb-10">
-              <p className="text-brand-mint text-xs font-bold tracking-[0.18em] uppercase mb-4 pb-2 border-b border-gray-100">
-                {g.grupo}
+              <p className="text-brand-mint text-xs font-bold tracking-[0.18em] uppercase mb-4 pb-2 border-b border-gray-100 flex justify-between gap-4">
+                <span className="text-brand-dark">{g.grupo}</span>
+                <span>{g.quando}</span>
               </p>
               <ul className="space-y-4">
                 {g.itens.map((i) => (
@@ -385,6 +459,28 @@ export default function ComoCriarGoogleMeuNegocioPage() {
               </ul>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* -------------------------------------------------------- fontes -- */}
+      <section className="section-padding bg-brand-bg">
+        <div className="container-main max-w-3xl">
+          <h2 className="heading-2 text-brand-dark mb-3">Onde conferir</h2>
+          <div className="w-14 h-1 bg-brand-mint mb-6" />
+          <p className="text-brand-dark/60 mb-10">
+            Guia sem fonte é opinião com cara de manual. Estas são as páginas consultadas em
+            agosto de 2026. Prazos, limites e nomes de botão mudam: se a tela que você encontrar
+            for diferente da descrita aqui, confie na tela e volte a estes endereços.
+          </p>
+          <div className="space-y-6">
+            {fontes.map((f) => (
+              <div key={f.url + f.o}>
+                <p className="font-bold text-brand-dark leading-snug">{f.o}</p>
+                <p className="text-brand-dark/60 text-sm mt-1">{f.onde}</p>
+                <p className="text-brand-mint text-sm mt-0.5">{f.url}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
