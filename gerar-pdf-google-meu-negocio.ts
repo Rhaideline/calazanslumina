@@ -2,18 +2,32 @@
  * Gera o PDF do guia "Como criar o Google Meu Negocio do zero".
  *
  *   node gerar-pdf-google-meu-negocio.ts
- *   PAGINA=7 node gerar-pdf-google-meu-negocio.ts   (so a pagina 7, para conferir)
+ *   PNG=fora.png PAGINA=7 node gerar-pdf-google-meu-negocio.ts   (confere 1 folha)
  *
  * O conteudo NAO mora aqui — mora em data/guia-google-meu-negocio.ts, o mesmo
- * arquivo que a pagina do site le. Este script so desenha.
+ * arquivo que a pagina do site le. Este script so diagrama.
  *
- * POR QUE PAGINA FIXA E NAO FLUXO
- * Deixar o Chromium quebrar as paginas sozinho da um PDF que parece impressao
- * de site: titulo orfao no pe da folha, caixa de dica cortada no meio. Aqui
- * cada folha e um retangulo de 210x297mm montado a mao, entao o passo 7 comeca
- * e termina na mesma folha, sempre. O preco disso e que conteudo demais
- * transborda em silencio — por isso existe a checagem de transbordo no fim,
- * que roda o Chromium, mede cada folha e reclama antes de gerar o arquivo.
+ * POR QUE EXISTE UMA PAGINACAO PROPRIA AQUI
+ * A primeira versao montava cada folha a mao, com altura fixa. Funcionava
+ * enquanto o corpo do texto era pequeno; ao aumentar a letra para 12,4pt —
+ * que e o tamanho em que uma pessoa de 60 anos le sem apertar os olhos — cada
+ * passo passou a ocupar mais de uma folha e o modelo quebrou.
+ *
+ * Deixar o Chromium quebrar sozinho tambem nao serve: da titulo orfao no pe da
+ * folha, tabela cortada no meio e nenhum jeito de imprimir numero de pagina
+ * (o Chromium nao implementa as margin boxes do CSS).
+ *
+ * Entao o script faz o que um programa de diagramacao faz:
+ *   1. mede, no proprio Chromium, a altura real de cada bloco de conteudo;
+ *   2. distribui os blocos em folhas de altura conhecida, respeitando o que
+ *      nao pode se separar (rotulo gruda no que vem depois);
+ *   3. so entao imprime, ja com cabecalho, folio e numeros do sumario certos.
+ *
+ * O sumario e diagramado duas vezes de proposito: na primeira passagem os
+ * numeros de pagina ainda nao existem, entao ele e medido com "00" — que ocupa
+ * a mesma largura do numero real, porque fica numa caixa de largura fixa. Sem
+ * isso, escrever o numero mudaria a altura do sumario e, com ela, a pagina de
+ * todo o resto.
  */
 
 import { readFileSync, writeFileSync, mkdtempSync } from 'node:fs'
@@ -21,607 +35,764 @@ import { execFileSync } from 'node:child_process'
 import { tmpdir } from 'node:os'
 import { join, dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { partes, preparacao, erros, faq, checklistFinal, totalPassos } from './data/guia-google-meu-negocio.ts'
+import {
+  partes, preparacao, erros, faq, checklistFinal, cola, fontes, totalPassos,
+  type Passo, type Tabela,
+} from './data/guia-google-meu-negocio.ts'
 
 const RAIZ = dirname(fileURLToPath(import.meta.url))
 const SAIDA = join(RAIZ, 'public', 'guia-google-meu-negocio-passo-a-passo.pdf')
 const SITE = 'calazanslumina.com.br'
-const TITULO_CURTO = 'Google Meu Negócio do Zero'
-
-/* Chromium do Playwright, ja instalado no ambiente. */
+const EDICAO = 'Edição de agosto de 2026'
 const CHROME = process.env.CHROME_BIN || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome'
+
+/* Geometria da folha, em milimetros. */
+const FOLHA_L = 210
+const FOLHA_A = 297
+const MARGEM = { topo: 20, lado: 19, pe: 20 }
+const LARGURA = FOLHA_L - MARGEM.lado * 2          // 172mm
+const ALTURA_UTIL = FOLHA_A - MARGEM.topo - MARGEM.pe // 257mm
+const ALTURA_CABECALHO = 13                         // cabecalho corrido + fio
+const ALTURA_FLUXO = ALTURA_UTIL - ALTURA_CABECALHO  // 244mm por folha de texto
 
 const esc = (s: string) =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 
-const fonte = (arq: string) =>
+const fonte64 = (arq: string) =>
   readFileSync(join(RAIZ, 'templates-assets', 'fontes', arq)).toString('base64')
 
-/* ---------------------------------------------------------------- icones --
-   SVG inline: o PDF precisa abrir em qualquer lugar sem baixar nada.        */
+const dois = (n: number) => String(n).padStart(2, '0')
 
-const ico = {
-  seta: `<svg viewBox="0 0 24 24" class="i"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-  dica: `<svg viewBox="0 0 24 24" class="i"><path d="M9 21h6M10 18h4M12 3a6 6 0 0 0-3.5 10.9c.6.5.9 1.1 1 1.6h5c.1-.5.4-1.1 1-1.6A6 6 0 0 0 12 3z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-  alerta: `<svg viewBox="0 0 24 24" class="i"><path d="M12 3.5 1.8 20.5h20.4L12 3.5z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M12 10v4.2M12 17.3v.1" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg>`,
-  copiar: `<svg viewBox="0 0 24 24" class="i"><rect x="8.5" y="3.5" width="12" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M15.5 20.5h-11a2 2 0 0 1-2-2v-11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
-  check: `<svg viewBox="0 0 24 24" class="i"><path d="M4 12.5l5.5 5.5L20 6.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-  relogio: `<svg viewBox="0 0 24 24" class="i"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M12 7v5.3l3.4 2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>`,
-  alvo: `<svg viewBox="0 0 24 24" class="i"><circle cx="12" cy="12" r="8.6" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/></svg>`,
-  x: `<svg viewBox="0 0 24 24" class="i"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>`,
-}
-
-/* ------------------------------------------------------------------- css -- */
+/* ------------------------------------------------------------------- css --
+   Sem canto arredondado, sem sombra, sem caixa colorida em cada paragrafo.
+   A hierarquia vem do tamanho, do peso e do fio — que e como livro se faz.   */
 
 const css = `
-@font-face{font-family:'DM Sans';src:url(data:font/woff2;base64,${fonte('dmsans-var.woff2')}) format('woff2');font-weight:100 1000;font-style:normal;}
-@font-face{font-family:'DM Serif Display';src:url(data:font/woff2;base64,${fonte('dmserif-400.woff2')}) format('woff2');font-weight:400;font-style:normal;}
+@font-face{font-family:'DM Sans';src:url(data:font/woff2;base64,${fonte64('dmsans-var.woff2')}) format('woff2');font-weight:100 1000;font-style:normal;}
+@font-face{font-family:'DM Serif Display';src:url(data:font/woff2;base64,${fonte64('dmserif-400.woff2')}) format('woff2');font-weight:400;font-style:normal;}
 
 :root{
-  --tinta:#111111;
+  --tinta:#16161A;
+  --tinta-fraca:#55555C;
   --vermelho:#C8102E;
-  --vermelho-claro:#E23148;
-  --bg:#F5F5F5;
-  --cinza:#57575E;
-  --linha:#E4E4E7;
-  --tinta-suave:#F7EDEF;
+  --papel:#FFFFFF;
+  --fio:#D8D8DC;
+  --fio-forte:#16161A;
+  --areia:#F2F2F3;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-html,body{background:#8a8a8a;}
+html,body{background:#8C8C90;}
 body{font-family:'DM Sans',system-ui,sans-serif;color:var(--tinta);
-  -webkit-font-smoothing:antialiased;font-size:10.4pt;line-height:1.55;}
+  font-size:12.4pt;line-height:1.62;-webkit-font-smoothing:antialiased;
+  font-variant-numeric:lining-nums tabular-nums;}
 
-.folha{width:210mm;height:297mm;background:#fff;position:relative;overflow:hidden;
-  page-break-after:always;break-after:page;margin:0 auto;}
+.folha{width:${FOLHA_L}mm;height:${FOLHA_A}mm;background:var(--papel);position:relative;
+  overflow:hidden;page-break-after:always;break-after:page;margin:0 auto;}
 .folha:last-of-type{page-break-after:auto;break-after:auto;}
-.miolo{position:absolute;inset:15mm 16mm 20mm 16mm;display:flex;flex-direction:column;}
+.util{position:absolute;left:${MARGEM.lado}mm;right:${MARGEM.lado}mm;
+  top:${MARGEM.topo}mm;height:${ALTURA_UTIL}mm;display:flex;flex-direction:column;}
+.util > *{flex:0 0 auto;}
+/* Fio grosso entre um passo e o seguinte dentro da mesma parte. */
+.b.separa{padding-top:9mm;}
 
-h1,h2,h3,.serif{font-family:'DM Serif Display',Georgia,serif;font-weight:400;letter-spacing:-.01em;}
+/* ---- cabecalho corrido e folio ---- */
+.corrido{height:${ALTURA_CABECALHO}mm;display:flex;justify-content:space-between;
+  align-items:flex-start;border-bottom:.4pt solid var(--fio);}
+.corrido span{font-size:8.6pt;line-height:1.2;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--tinta-fraca);font-weight:500;}
+.corrido .esq{color:var(--vermelho);font-weight:700;}
+.folio{position:absolute;left:${MARGEM.lado}mm;right:${MARGEM.lado}mm;bottom:${MARGEM.pe / 2}mm;
+  display:flex;justify-content:space-between;align-items:baseline;}
+.folio .marca{font-size:8.2pt;letter-spacing:.1em;color:#9A9AA0;}
+.folio .n{font-family:'DM Serif Display',serif;font-size:12pt;color:var(--tinta);}
 
-/* ---- topo e rodape das folhas de conteudo ---- */
-.topo{display:flex;justify-content:space-between;align-items:baseline;
-  border-bottom:1px solid var(--linha);padding-bottom:3.2mm;margin-bottom:6.5mm;flex:0 0 auto;}
-.topo .parte{font-size:7.4pt;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--vermelho);}
-.topo .secao{font-size:7.4pt;letter-spacing:.14em;text-transform:uppercase;color:#9A9AA2;}
-.rodape{position:absolute;left:16mm;right:16mm;bottom:8mm;display:flex;justify-content:space-between;
-  align-items:center;font-size:7.2pt;color:#9A9AA2;letter-spacing:.05em;border-top:1px solid var(--linha);padding-top:2.6mm;}
-.rodape .marca{display:flex;align-items:center;gap:2mm;}
-.rodape .quad{width:2.6mm;height:2.6mm;background:var(--vermelho);display:inline-block;}
-.rodape .num{font-family:'DM Serif Display',serif;font-size:10pt;color:var(--tinta);}
+/* ---- blocos de texto ---- */
+.b{padding-top:6mm;}
+.b:first-child{padding-top:0;}
+p{font-size:12.4pt;line-height:1.62;}
+.lead{font-size:14pt;line-height:1.5;color:var(--tinta-fraca);}
 
-.i{width:1em;height:1em;display:inline-block;vertical-align:-.13em;}
+.rotulo{font-size:9pt;font-weight:700;letter-spacing:.17em;text-transform:uppercase;
+  color:var(--vermelho);}
 
-/* ---- capa ---- */
-.capa{background:var(--tinta);color:#fff;}
-.capa .miolo{inset:16mm 16mm 14mm 16mm;}
-.capa .marca{display:flex;align-items:center;gap:2.6mm;font-size:8pt;letter-spacing:.24em;
-  text-transform:uppercase;color:rgba(255,255,255,.72);}
-.capa .marca .quad{width:3.4mm;height:3.4mm;background:var(--vermelho);}
-.capa .selo{margin-top:auto;font-size:8.2pt;letter-spacing:.22em;text-transform:uppercase;color:var(--vermelho-claro);font-weight:700;}
-.capa h1{font-size:40pt;line-height:1.03;margin:5mm 0 0;max-width:150mm;}
-.capa h1 em{font-style:normal;color:var(--vermelho-claro);}
-.capa .regua{width:38mm;height:1.4mm;background:var(--vermelho);margin:7mm 0 6mm;}
-.capa .sub{font-size:12pt;line-height:1.55;color:rgba(255,255,255,.78);max-width:132mm;}
-.capa .fichas{display:flex;gap:3mm;margin-top:9mm;}
-.capa .ficha{flex:1;border:1px solid rgba(255,255,255,.18);border-radius:3mm;padding:5mm 4mm;background:rgba(255,255,255,.04);}
-.capa .ficha b{display:block;font-family:'DM Serif Display',serif;font-size:19pt;color:#fff;line-height:1;}
-.capa .ficha span{display:block;margin-top:2.2mm;font-size:7.6pt;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);}
-.capa .pe{margin-top:9mm;display:flex;justify-content:space-between;align-items:flex-end;
-  border-top:1px solid rgba(255,255,255,.16);padding-top:5mm;font-size:8.6pt;color:rgba(255,255,255,.6);}
-.capa .pe strong{color:#fff;font-weight:500;}
+h1,h2,h3,h4,.serif{font-family:'DM Serif Display',Georgia,serif;font-weight:400;letter-spacing:-.005em;}
 
-/* ---- abertura de parte ---- */
-.abre{background:var(--bg);}
-.abre .numerao{font-family:'DM Serif Display',serif;font-size:128pt;line-height:.78;color:var(--bg);
-  -webkit-text-stroke:1.2mm var(--vermelho);margin-top:2mm;}
-.abre .rot{font-size:8pt;letter-spacing:.24em;text-transform:uppercase;color:var(--vermelho);font-weight:700;margin-bottom:4mm;}
-.abre h2{font-size:32pt;line-height:1.06;margin:6mm 0 4mm;max-width:140mm;}
-.abre .resumo{font-size:11.4pt;color:var(--cinza);line-height:1.6;max-width:132mm;}
-.abre ol{list-style:none;margin-top:11mm;border-top:1px solid #DCDCE0;padding-top:6mm;}
-.abre ol li{display:flex;gap:4mm;align-items:baseline;padding:2.6mm 0;border-bottom:1px solid #E7E7EA;font-size:10.2pt;}
-.abre ol li b{font-family:'DM Serif Display',serif;color:var(--vermelho);font-size:12pt;width:9mm;flex:0 0 9mm;}
-.abre ol li .nome{flex:1;color:var(--tinta);}
-.abre ol li .tempo{color:var(--cinza);margin-left:auto;padding-left:5mm;text-align:right;font-size:8.2pt;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;}
+/* ---- abertura de passo ---- */
+.passo-abre .olho{font-size:9pt;font-weight:700;letter-spacing:.17em;text-transform:uppercase;
+  color:var(--vermelho);display:flex;justify-content:space-between;align-items:baseline;}
+.passo-abre .olho .t{color:var(--tinta-fraca);font-weight:500;}
+.passo-abre h2{font-size:28pt;line-height:1.1;margin-top:4mm;}
+.passo-abre .numeral{font-family:'DM Serif Display',serif;font-size:15pt;color:var(--vermelho);}
 
-/* ---- passo ---- */
-.passo .cabeca{display:flex;gap:5mm;align-items:flex-start;flex:0 0 auto;}
-.passo .bolha{flex:0 0 16mm;height:16mm;background:var(--vermelho);color:#fff;border-radius:3mm;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;}
-.passo .bolha small{font-size:6.4pt;letter-spacing:.14em;text-transform:uppercase;opacity:.85;margin-bottom:.8mm;}
-.passo .bolha b{font-family:'DM Serif Display',serif;font-size:21pt;font-weight:400;}
-.passo h2{font-size:22pt;line-height:1.12;}
-.passo .tempo{display:inline-flex;align-items:center;gap:1.6mm;margin-top:2.4mm;font-size:8pt;
-  color:var(--cinza);letter-spacing:.06em;text-transform:uppercase;}
-.passo .objetivo{margin-top:5mm;background:var(--tinta);color:#fff;border-radius:2.5mm;padding:3.4mm 4.6mm;
-  display:flex;gap:3.4mm;align-items:flex-start;flex:0 0 auto;}
-.passo .objetivo .i{color:var(--vermelho-claro);flex:0 0 auto;font-size:12pt;margin-top:.4mm;}
-.passo .objetivo p{font-size:10pt;line-height:1.5;}
-.passo .objetivo b{display:block;font-size:7.2pt;letter-spacing:.18em;text-transform:uppercase;
-  color:rgba(255,255,255,.5);font-weight:700;margin-bottom:1.4mm;}
+/* ---- caminho de clique ---- */
+.clique{display:flex;gap:6mm;align-items:baseline;padding-top:3.4mm;padding-bottom:3.4mm;
+  border-bottom:.4pt solid var(--fio);}
+.clique:first-of-type{border-top:.4pt solid var(--fio);}
+.clique .n{font-family:'DM Serif Display',serif;font-size:13pt;color:var(--vermelho);
+  flex:0 0 7mm;line-height:1.35;}
+.clique p{font-size:12.2pt;line-height:1.5;}
 
-.bloco{margin-top:5.4mm;}
-.rotulo{font-size:7.6pt;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--vermelho);
-  display:flex;align-items:center;gap:2mm;margin-bottom:2.6mm;}
-.rotulo::after{content:"";flex:1;height:1px;background:var(--linha);}
+/* ---- notas ---- */
+.nota{padding-left:7mm;border-left:2pt solid var(--vermelho);}
+.nota .rotulo{color:var(--vermelho);}
+.nota p{margin-top:2mm;font-size:12pt;line-height:1.56;}
+.nota.grave{border-left-color:var(--tinta);background:var(--areia);
+  padding:5mm 6mm 5.5mm 7mm;margin-left:-1mm;}
+.nota.grave .rotulo{color:var(--tinta);}
 
-.cliques{background:var(--bg);border-left:1.2mm solid var(--vermelho);border-radius:0 2.5mm 2.5mm 0;padding:3.8mm 4.6mm;}
-.cliques li{list-style:none;display:flex;gap:3mm;align-items:flex-start;font-size:9.8pt;line-height:1.48;padding:1.2mm 0;}
-.cliques li + li{border-top:1px solid #E7E7E9;}
-.cliques li .i{color:var(--vermelho);flex:0 0 auto;font-size:9pt;margin-top:.9mm;}
-.cliques li b{font-weight:700;}
+/* ---- modelo para copiar ---- */
+.modelo{padding-left:7mm;border-left:.4pt solid var(--fio);}
+.modelo .rotulo{color:var(--tinta-fraca);}
+.modelo pre{margin-top:2.5mm;white-space:pre-wrap;font-family:'DM Sans',sans-serif;
+  font-size:11.6pt;line-height:1.55;color:var(--tinta);}
 
-.texto p{font-size:10.3pt;line-height:1.62;color:#26262B;}
+/* ---- tabelas ---- */
+.tab .cap{font-size:9pt;font-weight:700;letter-spacing:.17em;text-transform:uppercase;
+  color:var(--vermelho);margin-bottom:3mm;}
+table{width:100%;border-collapse:collapse;}
+th{font-size:8.8pt;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--tinta-fraca);text-align:left;padding:0 5mm 2.5mm 0;
+  border-bottom:1.2pt solid var(--tinta);}
+th:last-child,td:last-child{padding-right:0;}
+td{font-size:11.6pt;line-height:1.48;padding:3.4mm 5mm 3.4mm 0;vertical-align:top;
+  border-bottom:.4pt solid var(--fio);}
+td:first-child{font-weight:700;}
+.tab.simples td:first-child{font-weight:500;color:var(--tinta-fraca);width:52mm;}
+.tab.simples td:last-child{font-weight:500;}
 
-.nota{margin-top:4.2mm;border-radius:2.5mm;padding:3.4mm 4.6mm;display:flex;gap:3.4mm;align-items:flex-start;}
-.nota .i{flex:0 0 auto;font-size:12.5pt;margin-top:.3mm;}
-.nota b{display:block;font-size:7.2pt;letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:1.4mm;}
-.nota p{font-size:9.6pt;line-height:1.5;}
-.nota.dica{background:var(--tinta-suave);color:#3A1F25;}
-.nota.dica .i,.nota.dica b{color:var(--vermelho);}
-.nota.alerta{background:var(--tinta);color:rgba(255,255,255,.86);}
-.nota.alerta .i,.nota.alerta b{color:var(--vermelho-claro);}
+/* ---- fonte citada ---- */
+.fonte{font-size:9.6pt;line-height:1.45;color:var(--tinta-fraca);
+  padding-top:3mm;border-top:.4pt solid var(--fio);}
+.fonte b{font-weight:700;color:var(--tinta);}
 
-.copiar{margin-top:4.2mm;border:1px dashed #C9C9CF;border-radius:2.5mm;background:#FCFCFD;padding:3.5mm 4.6mm;}
-.copiar .top{display:flex;align-items:center;gap:2mm;font-size:7.2pt;letter-spacing:.16em;
-  text-transform:uppercase;font-weight:700;color:var(--cinza);margin-bottom:2.6mm;}
-.copiar .top .i{color:var(--vermelho);font-size:9.5pt;}
-.passo .concluir{margin-top:auto;display:flex;align-items:center;gap:3mm;border-top:1px dashed #D5D5DA;
-  padding-top:4mm;font-size:8.6pt;color:var(--cinza);}
-.passo .concluir .caixa{flex:0 0 4.4mm;height:4.4mm;border:1.5px solid var(--tinta);border-radius:.8mm;}
-.passo .concluir b{color:var(--tinta);font-weight:700;}
-.passo .concluir .prox{margin-left:auto;text-align:right;max-width:105mm;}
-.passo .concluir .prox i{font-style:normal;color:var(--vermelho);font-weight:700;}
+/* ---- barra de conclusao ---- */
+.feito{display:flex;align-items:center;gap:4mm;border-top:1.2pt solid var(--tinta);padding-top:3.5mm;}
+.feito .cx{flex:0 0 5mm;height:5mm;border:1pt solid var(--tinta);}
+.feito b{font-size:11pt;font-weight:700;}
+.feito .prox{margin-left:auto;text-align:right;font-size:10pt;color:var(--tinta-fraca);
+  max-width:105mm;line-height:1.35;}
+.feito .prox i{font-style:normal;color:var(--vermelho);font-weight:700;}
 
-.copiar pre{white-space:pre-wrap;font-family:'DM Sans',sans-serif;font-size:9.1pt;line-height:1.52;color:#26262B;}
+/* ---- listas gerais ---- */
+.item{padding-top:5mm;}
+.item h4{font-size:15pt;line-height:1.25;}
+.item p{font-size:11.8pt;line-height:1.55;color:var(--tinta-fraca);margin-top:1.5mm;}
+.item .nn{font-family:'DM Serif Display',serif;font-size:13pt;color:var(--vermelho);}
 
-/* ---- listas genericas ---- */
-.cartoes{display:flex;flex-direction:column;gap:3mm;}
-.cartao{border:1px solid var(--linha);border-radius:2.5mm;padding:3.6mm 4.6mm;}
-.cartao h3{font-size:12.6pt;line-height:1.25;margin-bottom:1.8mm;}
-.cartao p{font-size:9.5pt;line-height:1.5;color:var(--cinza);}
-.cartao p + p{margin-top:1.6mm;}
-.cartao .marcador{font-size:7.2pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--vermelho);}
+.erro{display:flex;gap:6mm;padding-top:5mm;}
+.erro .nn{font-family:'DM Serif Display',serif;font-size:17pt;color:var(--vermelho);
+  flex:0 0 9mm;line-height:1.05;}
+.erro h4{font-size:14.5pt;line-height:1.25;}
+.erro .pq{font-size:11.6pt;line-height:1.5;color:var(--tinta-fraca);margin-top:1.5mm;}
+.erro .sol{font-size:11.6pt;line-height:1.5;margin-top:2mm;}
+.erro .sol b{color:var(--vermelho);font-weight:700;}
 
-.erro{display:flex;gap:4mm;border:1px solid var(--linha);border-radius:2.5mm;padding:4mm 4.6mm;}
-.erro .sinal{flex:0 0 7.5mm;height:7.5mm;border-radius:50%;background:var(--tinta);color:#fff;
-  display:flex;align-items:center;justify-content:center;font-size:8.4pt;}
-.erro h3{font-size:11.8pt;line-height:1.25;margin-bottom:1.4mm;}
-.erro .pq{font-size:9.2pt;color:var(--cinza);line-height:1.48;}
-.erro .sol{margin-top:1.8mm;font-size:9.2pt;line-height:1.48;display:flex;gap:2.2mm;color:#26262B;}
-.erro .sol .i{color:var(--vermelho);flex:0 0 auto;font-size:9.5pt;margin-top:.7mm;}
-.erro .sol b{font-weight:700;}
+.q h4{font-size:15pt;line-height:1.3;}
+.q p{font-size:11.9pt;line-height:1.58;color:var(--tinta-fraca);margin-top:2mm;}
 
-.pergunta + .pergunta{margin-top:4.6mm;padding-top:4.6mm;border-top:1px solid var(--linha);}
-.pergunta h3{font-size:12.2pt;line-height:1.28;margin-bottom:1.8mm;}
-.pergunta p{font-size:9.7pt;line-height:1.55;color:var(--cinza);}
-
-.grupo-check + .grupo-check{margin-top:6.5mm;}
-.grupo-check .cab{display:flex;align-items:center;gap:2.6mm;margin-bottom:3.4mm;}
-.grupo-check .cab h3{font-size:14pt;}
-.grupo-check .cab .tag{font-size:7pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-  color:#fff;background:var(--vermelho);border-radius:1mm;padding:.9mm 2.2mm;}
-.grupo-check li{list-style:none;display:flex;gap:3.4mm;align-items:flex-start;font-size:10pt;line-height:1.45;padding:2.4mm 0;}
-.grupo-check li + li{border-top:1px solid #EEEEF1;}
-.grupo-check .caixa{flex:0 0 4.4mm;height:4.4mm;border:1.5px solid var(--tinta);border-radius:.8mm;margin-top:.5mm;}
-
-.intro h2{font-size:28pt;line-height:1.1;margin-bottom:5mm;}
-.intro .chamada{font-size:11.6pt;line-height:1.6;color:var(--cinza);}
-.intro .chamada strong{color:var(--tinta);font-weight:700;}
-
-.sumario .linha{display:flex;align-items:baseline;gap:3mm;padding:1.05mm 0;border-bottom:1px solid #EEEEF1;font-size:9.4pt;}
-.sumario .linha .p{font-family:'DM Serif Display',serif;color:var(--vermelho);font-size:11.5pt;width:8mm;flex:0 0 8mm;}
-.sumario .linha .pontos{flex:1;border-bottom:1px dotted #C9C9CF;transform:translateY(-1mm);}
-.sumario .linha .pg{font-family:'DM Serif Display',serif;font-size:11pt;width:8mm;text-align:right;flex:0 0 8mm;}
-.sumario .titulo-parte{margin-top:2.8mm;font-size:8pt;font-weight:700;letter-spacing:.18em;
+.check li{list-style:none;display:flex;gap:5mm;align-items:flex-start;
+  padding:3.4mm 0;border-bottom:.4pt solid var(--fio);font-size:12pt;line-height:1.45;}
+.check .cx{flex:0 0 5mm;height:5mm;border:1pt solid var(--tinta);margin-top:1mm;}
+.grupo-cab{display:flex;align-items:baseline;gap:4mm;border-bottom:1.2pt solid var(--tinta);
+  padding-bottom:2.5mm;}
+.grupo-cab h3{font-size:19pt;}
+.grupo-cab span{margin-left:auto;font-size:9pt;font-weight:700;letter-spacing:.15em;
   text-transform:uppercase;color:var(--vermelho);}
-.sumario .titulo-parte:first-child{margin-top:0;}
 
-/* ---- folha final ---- */
+.fonte-item{padding-top:3.6mm;}
+.fonte-item .o{font-size:11.8pt;line-height:1.45;font-weight:700;}
+.fonte-item .onde{font-size:11pt;line-height:1.45;color:var(--tinta-fraca);margin-top:1mm;}
+.fonte-item .url{font-size:10pt;color:var(--vermelho);margin-top:.8mm;}
+
+/* ---- titulo de secao (abre capitulo de conteudo) ---- */
+.secao-titulo{padding-top:9mm;}
+.secao-titulo h2{font-size:31pt;line-height:1.08;margin-top:2mm;}
+.secao-titulo .lead{margin-top:4mm;}
+
+/* ---- sumario ---- */
+.sum-parte{padding-top:6mm;font-size:9pt;font-weight:700;letter-spacing:.17em;
+  text-transform:uppercase;color:var(--vermelho);}
+.sum-linha{display:flex;align-items:baseline;gap:3mm;padding:2.6mm 0;
+  border-bottom:.4pt solid var(--fio);}
+.sum-linha .nn{font-family:'DM Serif Display',serif;font-size:12pt;color:var(--vermelho);
+  flex:0 0 9mm;}
+.sum-linha .tx{font-size:12pt;}
+.sum-linha .pt{flex:1;}
+.sum-linha .pg{font-family:'DM Serif Display',serif;font-size:12pt;
+  display:inline-block;width:11mm;text-align:right;flex:0 0 11mm;}
+
+/* ---- folhas inteiras ---- */
+.capa{background:var(--tinta);color:#fff;}
+.capa .util{display:flex;flex-direction:column;}
+.capa .marca{font-size:9pt;letter-spacing:.26em;text-transform:uppercase;
+  color:rgba(255,255,255,.7);display:flex;align-items:center;gap:3mm;}
+.capa .marca i{width:3.6mm;height:3.6mm;background:var(--vermelho);display:inline-block;}
+.capa .tipo{margin-top:auto;font-size:9.5pt;letter-spacing:.24em;text-transform:uppercase;
+  color:#E8637A;font-weight:700;}
+.capa h1{font-size:47pt;line-height:1.02;margin-top:6mm;}
+.capa h1 em{font-style:normal;color:#E8637A;}
+.capa .regua{width:42mm;height:1.6mm;background:var(--vermelho);margin:9mm 0 7mm;}
+.capa .sub{font-size:14.5pt;line-height:1.5;color:rgba(255,255,255,.82);max-width:140mm;}
+.capa .pe{margin-top:11mm;padding-top:6mm;border-top:.6pt solid rgba(255,255,255,.22);
+  display:flex;justify-content:space-between;align-items:flex-end;
+  font-size:10pt;color:rgba(255,255,255,.62);}
+.capa .pe b{color:#fff;font-weight:500;}
+
+.abre{background:var(--papel);}
+.abre .util{display:flex;flex-direction:column;}
+.abre .rot{font-size:9pt;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--vermelho);}
+.abre .numerao{font-family:'DM Serif Display',serif;font-size:150pt;line-height:.74;
+  color:var(--papel);-webkit-text-stroke:1.3mm var(--vermelho);margin-top:6mm;}
+.abre h2{font-size:40pt;line-height:1.05;margin-top:8mm;max-width:150mm;}
+.abre .resumo{font-size:14.5pt;line-height:1.5;color:var(--tinta-fraca);max-width:142mm;margin-top:6mm;}
+.abre ol{list-style:none;margin-top:auto;border-top:1.6pt solid var(--tinta);padding-top:4mm;}
+.abre ol li{display:flex;gap:5mm;align-items:baseline;padding:2.8mm 0;
+  border-bottom:.4pt solid var(--fio);font-size:12pt;}
+.abre ol li b{font-family:'DM Serif Display',serif;color:var(--vermelho);font-size:13pt;
+  font-weight:400;flex:0 0 9mm;}
+.abre ol li .t{margin-left:auto;color:var(--tinta-fraca);font-size:10pt;
+  letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;padding-left:6mm;}
+
 .fim{background:var(--tinta);color:#fff;}
-.fim h2{font-size:30pt;line-height:1.1;margin-bottom:5mm;}
-.fim p{font-size:11pt;line-height:1.6;color:rgba(255,255,255,.75);max-width:140mm;}
-.fim .caixas{display:flex;gap:3.4mm;margin-top:8mm;}
-.fim .cx{flex:1;border:1px solid rgba(255,255,255,.18);border-radius:3mm;padding:5mm;background:rgba(255,255,255,.04);}
-.fim .cx b{display:block;font-family:'DM Serif Display',serif;font-size:14pt;margin-bottom:2mm;}
-.fim .cx span{font-size:9pt;color:rgba(255,255,255,.66);line-height:1.5;display:block;}
-.fim .assina{margin-top:auto;border-top:1px solid rgba(255,255,255,.16);padding-top:6mm;
+.fim .util{display:flex;flex-direction:column;}
+.fim .marca{font-size:9pt;letter-spacing:.26em;text-transform:uppercase;
+  color:rgba(255,255,255,.7);display:flex;align-items:center;gap:3mm;}
+.fim .marca i{width:3.6mm;height:3.6mm;background:var(--vermelho);display:inline-block;}
+.fim h2{font-size:34pt;line-height:1.08;margin-top:auto;}
+.fim p{font-size:13.5pt;line-height:1.55;color:rgba(255,255,255,.78);max-width:145mm;margin-top:6mm;}
+.fim .assina{margin-top:auto;padding-top:6mm;border-top:.6pt solid rgba(255,255,255,.22);
   display:flex;justify-content:space-between;align-items:flex-end;}
-.fim .assina .nome{font-family:'DM Serif Display',serif;font-size:16pt;}
-.fim .assina .site{font-size:9pt;color:rgba(255,255,255,.6);}
+.fim .assina .nome{font-family:'DM Serif Display',serif;font-size:19pt;}
+.fim .assina .lin{font-size:10.5pt;color:rgba(255,255,255,.62);margin-top:2mm;}
 
 #relatorio{display:none;}
 @page{size:A4;margin:0;}
-@media print{body{background:#fff;}.folha{margin:0;}}
+@media print{html,body{background:#fff;}.folha{margin:0;}}
 `
 
-/* ------------------------------------------------------------ montagem --- */
+/* =========================================================== conteudo ===== */
 
-type Folha = { id: string; render: (n: number) => string }
+type Bloco = { html: string; junto?: boolean; ancora?: string; marcador?: string }
+type Secao =
+  | { tipo: 'inteira'; html: string; folio: boolean; ancora?: string }
+  | { tipo: 'fluxo'; esq: string; dir: string; dirCont?: string; blocos: Bloco[]; ancora?: string }
 
-const folhas: Folha[] = []
-const add = (id: string, render: (n: number) => string) => folhas.push({ id, render })
+const secoes: Secao[] = []
 
-const rodape = (n: number) => `
-  <div class="rodape">
-    <span class="marca"><i class="quad"></i> ${esc(TITULO_CURTO)} · ${SITE}</span>
-    <span class="num">${n}</span>
-  </div>`
+const bloco = (html: string, junto = false, ancora?: string, marcador?: string): Bloco =>
+  ({ html, junto, ancora, marcador })
 
-const conteudo = (o: {
-  parte: string
-  secao: string
-  classe?: string
-  corpo: string
-  n: number
-}) => `
-<section class="folha ${o.classe || ''}">
-  <div class="miolo">
-    <div class="topo"><span class="parte">${esc(o.parte)}</span><span class="secao">${esc(o.secao)}</span></div>
-    ${o.corpo}
-  </div>
-  ${rodape(o.n)}
-</section>`
+const tabelaHtml = (t: Tabela, classe = '') => `
+<div class="b tab ${classe}">
+  <div class="cap">${esc(t.titulo)}</div>
+  <table>
+    <thead><tr>${t.colunas.map((c) => `<th>${esc(c)}</th>`).join('')}</tr></thead>
+    <tbody>${t.linhas
+      .map((l) => `<tr>${l.map((c) => `<td>${esc(c)}</td>`).join('')}</tr>`)
+      .join('')}</tbody>
+  </table>
+</div>`
 
-/* ---------- 1. capa ---------- */
-add('capa', () => `
-<section class="folha capa">
-  <div class="miolo">
-    <div class="marca"><i class="quad"></i> Calazans Lumina</div>
-    <div class="selo">Guia passo a passo · edição 2026</div>
+/* ---------- capa ---------- */
+secoes.push({
+  tipo: 'inteira', folio: false, html: `
+  <div class="util">
+    <div class="marca"><i></i> Calazans Lumina</div>
+    <div class="tipo">Guia prático · ${esc(EDICAO)}</div>
     <h1>Como criar seu <em>Google Meu Negócio</em> do zero</h1>
     <div class="regua"></div>
-    <p class="sub">Do cadastro à verificação, com as palavras que aparecem na tela.
-      Feito para quem nunca fez, tem medo de clicar errado e vai fazer sozinho.</p>
-    <div class="fichas">
-      <div class="ficha"><b>${totalPassos}</b><span>passos numerados</span></div>
-      <div class="ficha"><b>1h30</b><span>do zero ao ar</span></div>
-      <div class="ficha"><b>R$ 0</b><span>é grátis, sempre</span></div>
-    </div>
+    <p class="sub">Do cadastro à verificação por vídeo, com as palavras que aparecem
+    na tela. Escrito para quem nunca fez, tem medo de clicar errado e vai fazer sozinho.</p>
     <div class="pe">
-      <span>Sem termo técnico. Sem atalho falso.<br><strong>Só o caminho que funciona.</strong></span>
+      <span><b>${totalPassos} passos em 4 partes.</b><br>Cada regra deste guia tem fonte citada no fim.</span>
       <span>${SITE}</span>
     </div>
-  </div>
-</section>`)
-
-/* ---------- 2. leia primeiro ---------- */
-add('leia', (n) => conteudo({
-  parte: 'Comece por aqui', secao: 'Leia antes de clicar', n,
-  corpo: `
-  <div class="intro">
-    <h2>Leia estas 10 linhas antes<br>de começar</h2>
-    <p class="chamada">Este guia foi escrito para uma pessoa específica: a que precisa colocar o
-    próprio negócio no Google, <strong>não tem quem faça por ela</strong> e trava na primeira tela
-    porque todo tutorial diz "acesse as configurações" sem dizer onde fica.</p>
-  </div>
-  <div class="bloco">
-    <div class="rotulo">Como este guia funciona</div>
-    <div class="cartoes">
-      <div class="cartao">
-        <span class="marcador">1 · Uma folha por passo</span>
-        <h3>Faça um passo, vire a página</h3>
-        <p>São ${totalPassos} passos em 4 partes. Cada passo cabe numa folha só: o que você vai
-        conseguir, onde clicar (com as palavras da tela), por que aquilo importa, e o erro
-        que costuma acontecer ali.</p>
-      </div>
-      <div class="cartao">
-        <span class="marcador">2 · Não pule a Parte 1</span>
-        <h3>A verificação é o único passo com prazo</h3>
-        <p>Perfil não verificado quase não aparece nas buscas. Se você fizer só a Parte 1 hoje
-        e o resto na semana que vem, tudo bem — mas faça a Parte 1 inteira de uma vez.</p>
-      </div>
-      <div class="cartao">
-        <span class="marcador">3 · Textos prontos</span>
-        <h3>Onde tiver caixa pontilhada, é para copiar</h3>
-        <p>Descrição do negócio, mensagem para pedir avaliação, resposta para nota 1 estrela.
-        Copie, troque o que está em MAIÚSCULA pelos seus dados e use.</p>
-      </div>
-      <div class="cartao">
-        <span class="marcador">4 · No fim, um checklist</span>
-        <h3>Imprima as duas últimas folhas</h3>
-        <p>Elas têm a lista completa com quadradinho para marcar. É por ali que você confere
-        se ficou faltando alguma coisa.</p>
-      </div>
-    </div>
-  </div>
-  <div class="nota alerta" style="margin-top:6mm">
-    ${ico.alerta}
-    <div><b>Um aviso que vale dinheiro</b>
-    <p>Criar, verificar e manter o perfil é <strong>gratuito, para sempre</strong>. O Google nunca
-    liga cobrando taxa de ativação. Logo depois que você publicar o telefone, é comum receber
-    ligação de gente se passando pelo Google e pedindo pagamento ou código. É golpe: não pague
-    e não passe código a ninguém por telefone.</p></div>
   </div>`,
-}))
-
-/* ---------- 3. sumario (numeros calculados depois) ---------- */
-add('sumario', (n) => {
-  const linha = (t: string, pg: number) =>
-    `<div class="linha"><span class="p">${pg <= 0 ? '' : ''}</span><span>${esc(t)}</span><span class="pontos"></span><span class="pg">${pg}</span></div>`
-  let html = ''
-  html += `<div class="titulo-parte">Antes de tudo</div>`
-  html += linha('O que ter em mãos antes de começar', pagina('prep'))
-  for (const p of partes) {
-    html += `<div class="titulo-parte">Parte ${p.numero} · ${esc(p.titulo)}</div>`
-    for (const passo of p.passos) html += linha(`${passo.n}. ${passo.titulo}`, pagina(`passo-${passo.n}`))
-  }
-  html += `<div class="titulo-parte">Para consultar depois</div>`
-  html += linha('Os 10 erros que derrubam um perfil', pagina('erros-1'))
-  html += linha('Perguntas que todo mundo faz', pagina('faq-1'))
-  html += linha('Checklist para imprimir e marcar', pagina('check-1'))
-  return conteudo({
-    parte: 'Comece por aqui', secao: 'Sumário', n,
-    corpo: `<div class="intro"><h2>O que tem aqui dentro</h2></div>
-      <div class="bloco sumario">${html}</div>`,
-  })
 })
 
-/* ---------- 4. preparacao ---------- */
-add('prep', (n) => conteudo({
-  parte: 'Antes de tudo', secao: 'Preparação', n,
-  corpo: `
-  <div class="intro">
-    <h2>O que ter em mãos<br>antes de começar</h2>
-    <p class="chamada">Separe estas seis coisas agora. Quem começa sem elas trava no meio do
-    cadastro, sai para procurar, e volta com o formulário expirado.</p>
-  </div>
-  <div class="bloco cartoes">
-    ${preparacao.map((p, i) => `
-      <div class="cartao">
-        <span class="marcador">Item ${i + 1}</span>
-        <h3>${esc(p.item)}</h3>
-        <p>${esc(p.porque)}</p>
-      </div>`).join('')}
-  </div>`,
-}))
+/* ---------- como usar ---------- */
+secoes.push({
+  tipo: 'fluxo', esq: 'Comece por aqui', dir: 'Antes de começar',
+  blocos: [
+    bloco(`<div class="b secao-titulo"><h2>Antes de começar</h2>
+      <p class="lead">Este guia foi escrito para uma pessoa específica: a que precisa colocar
+      o próprio negócio no Google, não tem quem faça por ela, e trava na primeira tela porque
+      todo tutorial diz “acesse as configurações” sem dizer onde fica.</p></div>`, true),
+    bloco(`<div class="b"><p>São ${totalPassos} passos, divididos em quatro partes. Cada passo diz o que
+      você vai conseguir, onde clicar com as palavras exatas da tela, por que aquilo importa
+      e o erro que costuma acontecer ali. Onde houver caixa recuada, é texto pronto: copie e
+      troque o que está em maiúscula pelos seus dados.</p></div>`),
+    bloco(`<div class="b"><p>A Parte 1 é a única que depende de alguém do outro lado aprovar, e é
+      onde a maioria desiste. Faça ela inteira de uma vez, com o celular carregado e o negócio
+      aberto. As Partes 2, 3 e 4 podem esperar a semana seguinte.</p></div>`),
+    bloco(`<div class="b"><p>No fim do guia há uma cola com todos os limites e prazos, um checklist
+      para imprimir e marcar à caneta, e a lista de onde cada regra foi conferida. Se você
+      discordar de alguma coisa que está aqui, essa última página diz exatamente onde ir
+      checar.</p></div>`),
+    bloco(`<div class="b"><div class="rotulo">Como o Google monta a lista do mapa</div></div>`, true),
+    bloco(`<div class="b"><p>Vale saber disto antes de começar, porque explica por que o guia
+      insiste em algumas coisas e ignora outras. Segundo o próprio Google, o resultado local
+      nasce de três fatores: relevância — o quanto o seu perfil combina com o que foi
+      pesquisado; distância — onde está quem pesquisou; e destaque — o quanto o negócio é
+      conhecido, dentro e fora do Google.</p></div>`),
+    bloco(`<div class="b"><p>Você não controla a distância. Controla a relevância, preenchendo o
+      perfil com precisão, e o destaque, acumulando avaliações e presença. É disso que trata o
+      resto deste guia.</p></div>`),
+    bloco(`<div class="b nota grave"><div class="rotulo">O aviso que vale dinheiro</div>
+      <p>Criar, verificar e manter o perfil é gratuito, do começo ao fim, para sempre. O Google
+      não liga cobrando taxa de ativação. Logo depois que o seu telefone fica público, é comum
+      receber ligação de gente se passando pelo Google e pedindo pagamento ou código de
+      verificação. É golpe. Não pague, não repasse código por telefone e não dê acesso ao perfil
+      para quem ligou sem você ter procurado.</p></div>`),
+  ],
+})
 
-/* ---------- partes, aberturas e passos ---------- */
+/* ---------- sumario (numeros entram na 2a passagem) ---------- */
+type LinhaSumario = { nn: string; tx: string; ancora: string }
+const linhasSumario: { parte?: string; linha?: LinhaSumario }[] = []
+linhasSumario.push({ parte: 'Antes de tudo' })
+linhasSumario.push({ linha: { nn: '', tx: 'O que ter em mãos antes de começar', ancora: 'prep' } })
+for (const p of partes) {
+  linhasSumario.push({ parte: `Parte ${p.numero} · ${p.titulo}` })
+  for (const s of p.passos)
+    linhasSumario.push({ linha: { nn: dois(s.n), tx: s.titulo, ancora: `passo-${s.n}` } })
+}
+linhasSumario.push({ parte: 'Para consultar depois' })
+linhasSumario.push({ linha: { nn: '', tx: 'Os dez erros que derrubam um perfil', ancora: 'erros' } })
+linhasSumario.push({ linha: { nn: '', tx: 'Perguntas que todo mundo faz', ancora: 'faq' } })
+linhasSumario.push({ linha: { nn: '', tx: 'A cola: todos os números num lugar só', ancora: 'cola' } })
+linhasSumario.push({ linha: { nn: '', tx: 'Checklist para imprimir e marcar', ancora: 'check' } })
+linhasSumario.push({ linha: { nn: '', tx: 'Onde cada regra foi conferida', ancora: 'fontes' } })
+
+const sumarioBlocos = (pg: (a: string) => string): Bloco[] => {
+  const b: Bloco[] = [
+    bloco(`<div class="b secao-titulo"><h2>O que tem aqui dentro</h2></div>`, true),
+  ]
+  for (const l of linhasSumario) {
+    if (l.parte) b.push(bloco(`<div class="sum-parte">${esc(l.parte)}</div>`, true))
+    else if (l.linha)
+      b.push(bloco(`<div class="sum-linha"><span class="nn">${l.linha.nn}</span>
+        <span class="tx">${esc(l.linha.tx)}</span><span class="pt"></span>
+        <span class="pg">${pg(l.linha.ancora)}</span></div>`))
+  }
+  return b
+}
+const iSumario = secoes.length
+secoes.push({ tipo: 'fluxo', esq: 'Comece por aqui', dir: 'Sumário', blocos: sumarioBlocos(() => '00') })
+
+/* ---------- preparacao ---------- */
+secoes.push({
+  tipo: 'fluxo', esq: 'Antes de tudo', dir: 'Preparação', ancora: 'prep',
+  blocos: [
+    bloco(`<div class="b secao-titulo"><h2>O que ter em mãos<br>antes de começar</h2>
+      <p class="lead">Separe estas seis coisas agora. Quem começa sem elas trava no meio do
+      cadastro, sai para procurar, e volta com a sessão expirada.</p></div>`, true),
+    ...preparacao.map((p, i) =>
+      bloco(`<div class="b item"><h4><span class="nn">${dois(i + 1)}</span>&nbsp;&nbsp;${esc(p.item)}</h4>
+        <p>${esc(p.porque)}</p></div>`)),
+  ],
+})
+
+/* ---------- partes e passos ---------- */
 const todosPassos = partes.flatMap((p) => p.passos)
 
+const blocosPasso = (passo: Passo): Bloco[] => {
+  const b: Bloco[] = []
+  b.push(bloco(`<div class="b passo-abre">
+      <div class="olho"><span>Passo ${dois(passo.n)} de ${totalPassos}</span><span class="t">${esc(passo.tempo)}</span></div>
+      <h2>${esc(passo.titulo)}</h2>
+    </div>`, true, `passo-${passo.n}`, `Passo ${dois(passo.n)}`))
+  /* objetivo e rotulo grudam na abertura: titulo sozinho no pe da folha e o
+     defeito de diagramacao que mais salta aos olhos. */
+  b.push(bloco(`<div class="b"><p class="lead">${esc(passo.objetivo)}</p></div>`, true))
+  b.push(bloco(`<div class="b"><div class="rotulo">Onde clicar</div></div>`, true))
+  /* Cada item do caminho de clique e um bloco solto: a lista pode quebrar entre
+     folhas. O que NAO pode e o rotulo "Onde clicar" ficar sem nenhum item
+     embaixo — disso cuida o `junto` do rotulo, que gruda no item 1. Marcar os
+     itens como `junto` tornaria a lista inteira indivisivel e jogaria passos
+     inteiros para a folha seguinte. */
+  passo.ondeClicar.forEach((c, i) =>
+    b.push(bloco(`<div class="clique"><span class="n">${i + 1}</span><p>${esc(c)}</p></div>`)))
+  b.push(bloco(`<div class="b"><div class="rotulo">Por que isso importa</div></div>`, true))
+  passo.detalhe.forEach((d) =>
+    b.push(bloco(`<div class="b"><p>${esc(d)}</p></div>`)))
+  if (passo.tabela) b.push(bloco(tabelaHtml(passo.tabela)))
+  if (passo.copiar)
+    b.push(bloco(`<div class="b modelo"><div class="rotulo">${esc(passo.copiar.titulo)}</div>
+      <pre>${esc(passo.copiar.texto)}</pre></div>`))
+  if (passo.dica)
+    b.push(bloco(`<div class="b nota"><div class="rotulo">Dica</div><p>${esc(passo.dica)}</p></div>`))
+  if (passo.atencao)
+    b.push(bloco(`<div class="b"><div class="nota grave"><div class="rotulo">Atenção</div>
+      <p>${esc(passo.atencao)}</p></div></div>`))
+  if (passo.fonte)
+    b.push(bloco(`<div class="b fonte"><b>Fonte.</b> ${esc(passo.fonte)}</div>`))
+  const prox = todosPassos[todosPassos.findIndex((x) => x.n === passo.n) + 1]
+  b.push(bloco(`<div class="b feito"><span class="cx"></span><b>Passo ${dois(passo.n)} concluído</b>
+    <span class="prox">${prox ? `<i>A seguir:</i> ${esc(prox.titulo)}` : '<i>Último passo.</i> Siga para o checklist.'}</span></div>`))
+  return b
+}
+
 for (const parte of partes) {
-  add(`abre-${parte.numero}`, (n) => `
-    <section class="folha abre">
-      <div class="miolo">
-        <div class="rot">Parte ${parte.numero} de ${partes.length}</div>
-        <div class="numerao">${parte.numero}</div>
-        <h2>${esc(parte.titulo)}</h2>
-        <p class="resumo">${esc(parte.resumo)}</p>
-        <ol>
-          ${parte.passos.map((p) => `
-            <li><b>${p.n}</b><span class="nome">${esc(p.titulo)}</span>
-            <span class="tempo">${esc(p.tempo)}</span></li>`).join('')}
-        </ol>
-      </div>
-      ${rodape(n)}
-    </section>`)
-
-  for (const passo of parte.passos) {
-    add(`passo-${passo.n}`, (n) => conteudo({
-      parte: `Parte ${parte.numero} · ${parte.titulo}`,
-      secao: `Passo ${passo.n} de ${totalPassos}`,
-      classe: 'passo', n,
-      corpo: `
-      <div class="cabeca">
-        <div class="bolha"><small>Passo</small><b>${passo.n}</b></div>
-        <div>
-          <h2>${esc(passo.titulo)}</h2>
-          <span class="tempo">${ico.relogio} ${esc(passo.tempo)}</span>
-        </div>
-      </div>
-      <div class="objetivo">
-        ${ico.alvo}
-        <p><b>Ao final deste passo</b>${esc(passo.objetivo)}</p>
-      </div>
-      <div class="bloco">
-        <div class="rotulo">Onde clicar</div>
-        <ul class="cliques">
-          ${passo.ondeClicar.map((c) => `<li>${ico.seta}<span>${esc(c)}</span></li>`).join('')}
-        </ul>
-      </div>
-      <div class="bloco texto">
-        <div class="rotulo">Por que isso importa</div>
-        <p>${esc(passo.detalhe)}</p>
-      </div>
-      ${passo.copiar ? `
-      <div class="copiar">
-        <div class="top">${ico.copiar} ${esc(passo.copiar.titulo)}</div>
-        <pre>${esc(passo.copiar.texto)}</pre>
-      </div>` : ''}
-      ${passo.dica ? `
-      <div class="nota dica">${ico.dica}<div><b>Dica</b><p>${esc(passo.dica)}</p></div></div>` : ''}
-      ${passo.atencao ? `
-      <div class="nota alerta">${ico.alerta}<div><b>Atenção</b><p>${esc(passo.atencao)}</p></div></div>` : ''}
-      <div class="concluir">
-        <span class="caixa"></span><b>Passo ${passo.n} feito</b>
-        <span class="prox">${(() => {
-          const prox = todosPassos[todosPassos.findIndex((x) => x.n === passo.n) + 1]
-          return prox ? `<i>Próximo:</i> ${esc(prox.titulo)}` : '<i>Este era o último passo.</i> Vá para o checklist no fim do guia.'
-        })()}</span>
-      </div>
-      `,
-    }))
-  }
-}
-
-/* ---------- erros (5 por folha) ---------- */
-for (let i = 0; i < erros.length; i += 5) {
-  const lote = erros.slice(i, i + 5)
-  const parteN = i / 5 + 1
-  add(`erros-${parteN}`, (n) => conteudo({
-    parte: 'Para consultar depois', secao: `Erros · ${parteN} de ${Math.ceil(erros.length / 5)}`, n,
-    corpo: `
-    ${parteN === 1 ? `<div class="intro"><h2>Os 10 erros que<br>derrubam um perfil</h2>
-      <p class="chamada">Nenhum destes é teoria. São os motivos reais pelos quais um perfil some
-      da busca, é suspenso, ou fica no ar sem trazer ninguém.</p></div><div class="bloco"></div>` : ''}
-    <div class="cartoes">
-      ${lote.map((e, k) => `
-        <div class="erro">
-          <div class="sinal">${ico.x}</div>
-          <div>
-            <h3>${i + k + 1}. ${esc(e.erro)}</h3>
-            <p class="pq">${esc(e.porque)}</p>
-            <p class="sol">${ico.check}<span><b>O que fazer:</b> ${esc(e.solucao)}</span></p>
-          </div>
-        </div>`).join('')}
+  secoes.push({
+    tipo: 'inteira', folio: false, html: `
+    <div class="util">
+      <div class="rot">Parte ${parte.numero} de ${partes.length}</div>
+      <div class="numerao">${parte.numero}</div>
+      <h2>${esc(parte.titulo)}</h2>
+      <p class="resumo">${esc(parte.resumo)}</p>
+      <ol>${parte.passos.map((p) => `<li><b>${dois(p.n)}</b><span>${esc(p.titulo)}</span>
+        <span class="t">${esc(p.tempo)}</span></li>`).join('')}</ol>
     </div>`,
-  }))
+  })
+  /* Uma secao por parte, com os passos correndo dentro dela — como as secoes
+     de um capitulo. Um passo por folha desperdicava meia pagina em cada um
+     depois que o corpo do texto cresceu. */
+  secoes.push({
+    tipo: 'fluxo',
+    esq: `Parte ${parte.numero} · ${parte.titulo}`,
+    dir: '',
+    blocos: parte.passos.flatMap((passo, i) => [
+      ...(i > 0 ? [bloco('<div class="b separa"></div>', true)] : []),
+      ...blocosPasso(passo),
+    ]),
+  })
 }
 
-/* ---------- faq (4 por folha) ---------- */
-for (let i = 0; i < faq.length; i += 4) {
-  const lote = faq.slice(i, i + 4)
-  const parteN = i / 4 + 1
-  add(`faq-${parteN}`, (n) => conteudo({
-    parte: 'Para consultar depois', secao: `Dúvidas · ${parteN} de ${Math.ceil(faq.length / 4)}`, n,
-    corpo: `
-    ${parteN === 1 ? `<div class="intro"><h2>Perguntas que<br>todo mundo faz</h2></div><div class="bloco"></div>` : ''}
-    <div>
-      ${lote.map((f) => `
-        <div class="pergunta">
-          <h3>${esc(f.q)}</h3>
-          <p>${esc(f.a)}</p>
-        </div>`).join('')}
-    </div>`,
-  }))
-}
+/* ---------- erros ---------- */
+secoes.push({
+  tipo: 'fluxo', esq: 'Para consultar depois', dir: 'Dez erros', ancora: 'erros',
+  blocos: [
+    bloco(`<div class="b secao-titulo"><h2>Os dez erros que<br>derrubam um perfil</h2>
+      <p class="lead">Nenhum destes é teoria. São os motivos pelos quais um perfil some da busca,
+      é suspenso, ou fica no ar sem trazer ninguém.</p></div>`, true),
+    ...erros.map((e, i) =>
+      bloco(`<div class="erro"><span class="nn">${dois(i + 1)}</span><div>
+        <h4>${esc(e.erro)}</h4>
+        <p class="pq">${esc(e.porque)}</p>
+        <p class="sol"><b>O que fazer:</b> ${esc(e.solucao)}</p></div></div>`)),
+  ],
+})
+
+/* ---------- faq ---------- */
+secoes.push({
+  tipo: 'fluxo', esq: 'Para consultar depois', dir: 'Perguntas', ancora: 'faq',
+  blocos: [
+    bloco(`<div class="b secao-titulo"><h2>Perguntas que<br>todo mundo faz</h2></div>`, true),
+    ...faq.map((f) =>
+      bloco(`<div class="b q"><h4>${esc(f.q)}</h4><p>${esc(f.a)}</p></div>`)),
+  ],
+})
+
+/* ---------- cola ---------- */
+secoes.push({
+  tipo: 'fluxo', esq: 'Para consultar depois', dir: 'A cola', ancora: 'cola',
+  blocos: [
+    bloco(`<div class="b secao-titulo"><h2>A cola</h2>
+      <p class="lead">Todos os limites e prazos citados no guia, num lugar só. É a página para
+      deixar aberta enquanto preenche.</p></div>`, true),
+    bloco(tabelaHtml(
+      { titulo: 'Limites e prazos', colunas: ['O quê', 'Quanto'], linhas: cola.linhas },
+      'simples')),
+  ],
+})
 
 /* ---------- checklist ---------- */
-add('check-1', (n) => conteudo({
-  parte: 'Para consultar depois', secao: 'Checklist · 1 de 2', n,
-  corpo: `
-  <div class="intro">
-    <h2>Checklist para imprimir<br>e ir marcando</h2>
-    <p class="chamada">Marque conforme fizer. O que sobrar sem marcar é exatamente o que está
-    segurando seu perfil.</p>
-  </div>
-  <div class="bloco">
-    ${[checklistFinal[0]].map((g) => grupoCheck(g)).join('')}
-    ${[checklistFinal[1]].map((g) => grupoCheck(g)).join('')}
-  </div>`,
-}))
+secoes.push({
+  tipo: 'fluxo', esq: 'Para consultar depois', dir: 'Checklist', ancora: 'check',
+  blocos: [
+    bloco(`<div class="b secao-titulo"><h2>Checklist para imprimir<br>e ir marcando</h2>
+      <p class="lead">Marque conforme fizer. O que sobrar sem marcar é exatamente o que está
+      segurando o seu perfil.</p></div>`, true),
+    ...checklistFinal.flatMap((g) => [
+      bloco(`<div class="b grupo-cab"><h3>${esc(g.grupo)}</h3><span>${esc(g.quando)}</span></div>`, true),
+      ...g.itens.map((i) =>
+        bloco(`<ul class="check"><li><span class="cx"></span><span>${esc(i)}</span></li></ul>`)),
+    ]),
+  ],
+})
 
-add('check-2', (n) => conteudo({
-  parte: 'Para consultar depois', secao: 'Checklist · 2 de 2', n,
-  corpo: `
-  <div class="bloco" style="margin-top:0">
-    ${grupoCheck(checklistFinal[2])}
-  </div>
-  <div class="nota dica" style="margin-top:8mm">
-    ${ico.dica}
-    <div><b>O segredo é chato de propósito</b>
-    <p>Os perfis que ficam nas três primeiras posições do mapa não fazem nada de mágico:
-    publicam toda semana, respondem toda avaliação, têm foto recente e informação certa.
-    É repetitivo — e é exatamente por isso que a maioria dos concorrentes desiste no segundo
-    mês e você fica.</p></div>
-  </div>`,
-}))
+/* ---------- fontes ---------- */
+secoes.push({
+  tipo: 'fluxo', esq: 'Para consultar depois', dir: 'Fontes', ancora: 'fontes',
+  blocos: [
+    bloco(`<div class="b secao-titulo"><h2>Onde conferir</h2>
+      <p class="lead">Guia sem fonte é opinião com cara de manual. Estas são as páginas
+      consultadas em agosto de 2026. Prazos, limites e nomes de botão mudam: se a tela que você
+      encontrar for diferente da descrita aqui, confie na tela e volte a estes endereços.</p></div>`, true),
+    ...fontes.map((f) =>
+      bloco(`<div class="fonte-item"><div class="o">${esc(f.o)}</div>
+        <div class="onde">${esc(f.onde)}</div><div class="url">${esc(f.url)}</div></div>`)),
+  ],
+})
 
-function grupoCheck(g: { grupo: string; itens: string[] }) {
-  return `
-  <div class="grupo-check">
-    <div class="cab"><span class="tag">${esc(g.grupo.split('(')[0].trim())}</span>
-      <h3>${esc(g.grupo.includes('(') ? g.grupo.split('(')[1].replace(')', '') : '')}</h3></div>
-    <ul>
-      ${g.itens.map((i) => `<li><span class="caixa"></span><span>${esc(i)}</span></li>`).join('')}
-    </ul>
-  </div>`
-}
-
-/* ---------- folha final ---------- */
-add('fim', () => `
-<section class="folha fim">
-  <div class="miolo">
-    <div class="marca" style="display:flex;align-items:center;gap:2.6mm;font-size:8pt;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.72)">
-      <i style="width:3.4mm;height:3.4mm;background:var(--vermelho);display:inline-block"></i> Calazans Lumina
-    </div>
-    <div style="margin-top:auto">
-      <h2>Você chegou ao fim.<br>Agora é rotina.</h2>
-      <p>Se você fez os ${totalPassos} passos, seu negócio já está no Google com endereço, horário,
-      foto, serviço e um jeito do cliente falar com você. O que separa um perfil que traz cliente
-      de um perfil parado são 15 minutos por semana — sempre no mesmo dia.</p>
-      <div class="caixas">
-        <div class="cx"><b>Toda semana</b><span>1 publicação nova e responder as avaliações que chegaram.</span></div>
-        <div class="cx"><b>Todo mês</b><span>3 fotos novas, conferir o horário e olhar o Desempenho.</span></div>
-        <div class="cx"><b>A cada 3 meses</b><span>Revisar descrição, serviços, preços e feriados que vêm.</span></div>
-      </div>
-    </div>
+/* ---------- contracapa ---------- */
+secoes.push({
+  tipo: 'inteira', folio: false, html: `
+  <div class="util">
+    <div class="marca"><i></i> Calazans Lumina</div>
+    <h2>Você chegou ao fim.<br>Agora é rotina.</h2>
+    <p>Se você fez os ${totalPassos} passos, seu negócio está no Google com endereço, horário,
+    foto, serviço e um jeito de o cliente falar com você. O que separa um perfil que traz cliente
+    de um perfil parado são quinze minutos por semana — uma publicação, as avaliações
+    respondidas, e a informação sempre certa.</p>
+    <p>Não existe truque. Existe continuar fazendo depois que o entusiasmo passa, que é
+    exatamente onde a maior parte dos seus concorrentes vai parar.</p>
     <div class="assina">
-      <div>
-        <div class="nome">Calazans Lumina</div>
-        <div class="site" style="margin-top:1.5mm">Marketing digital e sites que aparecem no Google</div>
-      </div>
-      <div class="site" style="text-align:right">${SITE}<br>Guia gratuito · edição 2026</div>
+      <div><div class="nome">Calazans Lumina</div>
+        <div class="lin">Marketing digital e sites que aparecem no Google</div></div>
+      <div style="text-align:right"><div class="lin">${SITE}</div>
+        <div class="lin">Guia gratuito · ${esc(EDICAO)}</div></div>
     </div>
-  </div>
-</section>`)
+  </div>`,
+})
 
-/* -------------------------------------------------------- numeracao ------ */
+/* ============================================== medicao e paginacao ====== */
 
-function pagina(id: string) {
-  const i = folhas.findIndex((f) => f.id === id)
-  return i < 0 ? 0 : i + 1
-}
+const tmp = mkdtempSync(join(tmpdir(), 'guia-gmn-'))
 
-/* --------------------------------------------------------- render -------- */
-
-const soPagina = process.env.PAGINA ? Number(process.env.PAGINA) : 0
-const corpo = folhas
-  .map((f, i) => (soPagina && i + 1 !== soPagina ? '' : f.render(i + 1)))
-  .join('\n')
-
-/* Mede transbordo: cada .miolo nao pode passar da altura util da folha. */
-const medidor = `
+/** Passagem 1: mede a altura real de cada bloco dentro da largura da folha. */
+function medir(secs: Secao[]): Map<string, number> {
+  const partesHtml: string[] = []
+  secs.forEach((s, si) => {
+    if (s.tipo !== 'fluxo') return
+    partesHtml.push(`<div class="regua-secao" style="width:${LARGURA}mm">${s.blocos
+      .map((b, bi) => `<div data-b="${si}:${bi}">${b.html}</div>`)
+      .join('')}</div>`)
+  })
+  const doc = `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<style>${css}
+body{background:#fff;}
+.regua-secao{margin:0 auto 40mm;}
+.regua-secao > div > .b:first-child{padding-top:6mm;}
+#sonda{height:100mm;}
+</style></head><body>
+<div id="sonda"></div>
+${partesHtml.join('\n')}
 <script>
 window.addEventListener('load', function () {
-  var ruins = [];
-  document.querySelectorAll('.folha').forEach(function (f, i) {
-    var m = f.querySelector('.miolo');
-    if (!m) return;
-    var sobra = m.scrollHeight - m.clientHeight;
-    if (sobra > 2) ruins.push((i + 1) + ':+' + sobra + 'px');
+  var r = { mm: document.getElementById('sonda').getBoundingClientRect().height / 100, b: {} };
+  document.querySelectorAll('[data-b]').forEach(function (el) {
+    r.b[el.getAttribute('data-b')] = el.getBoundingClientRect().height;
   });
   var d = document.createElement('div');
   d.id = 'relatorio';
-  d.textContent = ruins.length ? 'TRANSBORDO ' + ruins.join(' ') : 'OK';
+  d.textContent = JSON.stringify(r);
   document.body.appendChild(d);
 });
-</script>`
+</script></body></html>`
+  const arq = join(tmp, 'medir.html')
+  writeFileSync(arq, doc)
+  const dom = execFileSync(CHROME, [
+    '--headless=new', '--no-sandbox', '--disable-gpu', '--disable-dev-shm-usage',
+    `--user-data-dir=${join(tmp, 'perfil-medir')}`, '--virtual-time-budget=8000',
+    '--dump-dom', `file://${arq}`,
+  ], { encoding: 'utf8', maxBuffer: 128 * 1024 * 1024, stdio: ['ignore', 'pipe', 'ignore'] })
+  const bruto = /<div id="relatorio">([\s\S]*?)<\/div>/.exec(dom)?.[1]
+  if (!bruto) throw new Error('a passagem de medição não devolveu relatório')
+  const dados = JSON.parse(bruto.replace(/&quot;/g, '"').replace(/&amp;/g, '&'))
+  PX_POR_MM = dados.mm
+  return new Map(Object.entries(dados.b as Record<string, number>))
+}
 
-const html = `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
-<title>Como criar seu Google Meu Negócio do zero — Guia passo a passo | Calazans Lumina</title>
+let PX_POR_MM = 3.7795275
+
+type Pagina = { html: string; folio: boolean }
+
+/** Passagem 2: distribui os blocos medidos em folhas de altura conhecida. */
+function paginar(secs: Secao[], alturas: Map<string, number>) {
+  const paginas: Pagina[] = []
+  const ondeComeca = new Map<string, number>()
+  const limite = ALTURA_FLUXO * PX_POR_MM
+
+  const marca = (ancora: string | undefined) => {
+    if (ancora && !ondeComeca.has(ancora)) ondeComeca.set(ancora, paginas.length + 1)
+  }
+
+  for (let si = 0; si < secs.length; si++) {
+    const s = secs[si]
+    if (s.tipo === 'inteira') {
+      marca(s.ancora)
+      paginas.push({ html: s.html, folio: s.folio })
+      continue
+    }
+
+    /* Agrupa: um bloco marcado `junto` nao se separa do proximo. E o que
+       impede rotulo orfao no pe da folha e cabecalho de tabela sozinho. */
+    type Grupo = { blocos: number[]; altura: number }
+    const grupos: Grupo[] = []
+    for (let i = 0; i < s.blocos.length; i++) {
+      const h = alturas.get(`${si}:${i}`) ?? 0
+      const ultimo = grupos[grupos.length - 1]
+      if (ultimo && s.blocos[ultimo.blocos[ultimo.blocos.length - 1]].junto) {
+        ultimo.blocos.push(i)
+        ultimo.altura += h
+      } else {
+        grupos.push({ blocos: [i], altura: h })
+      }
+    }
+
+    /* Enche folha por folha. */
+    const folhas: Grupo[][] = [[]]
+    let altura = 0
+    for (const g of grupos) {
+      if (folhas[folhas.length - 1].length && altura + g.altura > limite) {
+        folhas.push([])
+        altura = 0
+      }
+      folhas[folhas.length - 1].push(g)
+      altura += g.altura
+    }
+
+    /* Equilibra as duas ultimas folhas.
+       Sem isto, um passo que termina com pouco espaco sobrando joga dica,
+       atencao e fecho sozinhos para a folha seguinte, que fica dois tercos
+       vazia — e nada denuncia mais uma diagramacao automatica do que isso.
+       Aqui os grupos migram de volta enquanto o desnivel entre as duas folhas
+       diminuir, o que faz a divisao parar sozinha no ponto mais parelho
+       possivel, sem nunca estourar nenhuma das duas. */
+    const soma = (f: Grupo[]) => f.reduce((t, g) => t + g.altura, 0)
+    if (folhas.length > 1) {
+      const ultima = folhas[folhas.length - 1]
+      const penultima = folhas[folhas.length - 2]
+      while (penultima.length > 1) {
+        const move = penultima[penultima.length - 1]
+        if (soma(ultima) + move.altura > limite) break
+        const desnivelAgora = Math.abs(soma(penultima) - soma(ultima))
+        const desnivelDepois = Math.abs(
+          soma(penultima) - move.altura - (soma(ultima) + move.altura))
+        if (desnivelDepois >= desnivelAgora) break
+        penultima.pop()
+        ultima.unshift(move)
+      }
+    }
+
+    if (process.env.DEBUG_PAG) {
+      const total = grupos.reduce((t, g) => t + g.altura, 0)
+      console.error(`secao ${si} "${s.esq} / ${s.dir}" total=${(total / PX_POR_MM).toFixed(0)}mm ` +
+        `limite=${ALTURA_FLUXO}mm folhas=${folhas.map((f) => (soma(f) / PX_POR_MM).toFixed(0) + 'mm').join(' ')}`)
+    }
+    marca(s.ancora)
+    /* O cabecalho da direita segue a regra classica de livro: se um passo
+       comeca nesta folha, e o nome dele que aparece; se a folha e continuacao
+       do passo anterior, o nome vem com "continuacao". */
+    let corrente = s.dir
+    folhas.forEach((f, fi) => {
+      const indices = f.flatMap((g) => g.blocos)
+      const comeca = indices.map((i) => s.blocos[i].marcador).find(Boolean)
+      const direita = comeca
+        || (fi === 0 ? s.dir : corrente ? `${corrente} · continuação` : s.dir)
+      if (comeca) corrente = comeca
+      for (const i of indices) marca(s.blocos[i].ancora)
+      // marca() usa paginas.length + 1, entao roda antes do push desta folha
+      paginas.push({
+        html: `<div class="util">
+          <div class="corrido"><span class="esq">${esc(s.esq)}</span><span>${esc(direita)}</span></div>
+          ${indices.map((i) => s.blocos[i].html).join('\n')}
+        </div>`,
+        folio: true,
+      })
+    })
+  }
+
+  return { paginas, ondeComeca }
+}
+
+/* ------------------------------------------------------------- render ---- */
+
+/* As folhas inteiras trazem a propria classe no wrapper — capa, abre, fim. */
+function classeDaSecao(s: Secao) {
+  if (s.tipo !== 'inteira') return ''
+  if (s.html.includes('class="tipo"')) return ' capa'
+  if (s.html.includes('class="numerao"')) return ' abre'
+  return ' fim'
+}
+
+/* Reconstroi marcando a classe correta de cada folha inteira. */
+function montarComClasses(secs: Secao[], paginas: Pagina[]) {
+  const classes: string[] = []
+  let idx = 0
+  secs.forEach((s) => {
+    if (s.tipo === 'inteira') { classes[idx] = classeDaSecao(s); idx++; return }
+    while (idx < paginas.length && !classes[idx] && paginas[idx].folio) { classes[idx] = ''; idx++ }
+  })
+  return paginas.map((p, i) => {
+    const rodape = p.folio
+      ? `<div class="folio"><span class="marca">Google Meu Negócio do Zero · ${SITE}</span><span class="n">${i + 1}</span></div>`
+      : ''
+    return `<section class="folha${classes[i] || ''}">${p.html}${rodape}</section>`
+  })
+}
+
+const flags = [
+  '--headless=new', '--no-sandbox', '--disable-gpu', '--disable-dev-shm-usage',
+  '--font-render-hinting=none', '--force-color-profile=srgb',
+  `--user-data-dir=${join(tmp, 'perfil')}`, '--virtual-time-budget=8000',
+]
+
+const documento = (folhas: string[]) => `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<title>Como criar seu Google Meu Negócio do zero — guia passo a passo | Calazans Lumina</title>
 <meta name="author" content="Calazans Lumina">
-<meta name="description" content="Guia passo a passo para criar, verificar e otimizar o Perfil da Empresa no Google (Google Meu Negócio), escrito para quem nunca fez.">
-<style>${css}</style></head><body>${corpo}${medidor}</body></html>`
+<meta name="description" content="Guia passo a passo para criar, verificar e otimizar o Perfil da Empresa no Google, com as regras conferidas na documentação oficial em agosto de 2026.">
+<style>${css}</style></head><body>${folhas.join('\n')}</body></html>`
 
-const tmp = mkdtempSync(join(tmpdir(), 'guia-gmn-'))
+/* ---- passagem 1: mede e pagina com o sumario provisorio ---- */
+let alturas = medir(secoes)
+let { paginas, ondeComeca } = paginar(secoes, alturas)
+
+/* ---- passagem 2: reescreve o sumario com os numeros reais e repagina ---- */
+;(secoes[iSumario] as Extract<Secao, { tipo: 'fluxo' }>).blocos =
+  sumarioBlocos((a) => String(ondeComeca.get(a) ?? 0))
+alturas = medir(secoes)
+;({ paginas, ondeComeca } = paginar(secoes, alturas))
+
+const folhas = montarComClasses(secoes, paginas)
+const soPagina = process.env.PAGINA ? Number(process.env.PAGINA) : 0
+const html = documento(soPagina ? [folhas[soPagina - 1]] : folhas)
+
 const arqHtml = join(tmp, 'guia.html')
 writeFileSync(arqHtml, html)
 
-const flagsBase = [
-  '--headless=new', '--no-sandbox', '--disable-gpu', '--disable-dev-shm-usage',
-  '--font-render-hinting=none', '--force-color-profile=srgb',
-  `--user-data-dir=${join(tmp, 'perfil')}`,
-]
-
-/* 1) checagem de transbordo */
-const dom = execFileSync(CHROME, [...flagsBase, '--virtual-time-budget=6000', '--dump-dom', `file://${arqHtml}`], {
-  encoding: 'utf8', maxBuffer: 64 * 1024 * 1024, stdio: ['ignore', 'pipe', 'ignore'],
-})
-const relatorio = /<div id="relatorio">([^<]*)<\/div>/.exec(dom)?.[1] || '(sem relatório)'
-console.log(`Folhas: ${folhas.length}  |  Transbordo: ${relatorio}`)
-if (relatorio.startsWith('TRANSBORDO') && !process.env.IGNORAR_TRANSBORDO) {
-  console.error('\nConteúdo passou da folha nas páginas acima. Corrija antes de publicar o PDF.')
-  process.exit(1)
+/* Rede de seguranca. O paginador ja garante que nada estoura, mas ele confia
+   nas alturas medidas antes; se um ajuste de CSS mudar a altura real depois da
+   medicao, o texto sairia cortado no PDF sem ninguem perceber. Esta passagem
+   abre o documento final e mede de novo, folha por folha. */
+if (!soPagina) {
+  const conferencia = html.replace('</body>', `<script>
+window.addEventListener('load', function () {
+  var ruins = [];
+  document.querySelectorAll('.folha').forEach(function (f, i) {
+    var u = f.querySelector('.util');
+    if (u && u.scrollHeight - u.clientHeight > 2) ruins.push((i + 1) + ':+' + (u.scrollHeight - u.clientHeight) + 'px');
+  });
+  var d = document.createElement('div');
+  d.id = 'conferencia';
+  d.textContent = ruins.length ? 'TRANSBORDO ' + ruins.join(' ') : 'OK';
+  document.body.appendChild(d);
+});
+</script></body>`)
+  const arqConf = join(tmp, 'conferencia.html')
+  writeFileSync(arqConf, conferencia)
+  const dom = execFileSync(CHROME, [...flags, '--dump-dom', `file://${arqConf}`], {
+    encoding: 'utf8', maxBuffer: 128 * 1024 * 1024, stdio: ['ignore', 'pipe', 'ignore'],
+  })
+  const veredito = /<div id="conferencia">([^<]*)<\/div>/.exec(dom)?.[1] || '(sem veredito)'
+  console.log('Conferência de transbordo:', veredito)
+  if (veredito.startsWith('TRANSBORDO')) {
+    console.error('\nTexto passou da mancha nas folhas acima. Corrija antes de publicar.')
+    process.exit(1)
+  }
 }
 
-/* 2) PDF ou PNG de conferencia */
+console.log(`Folhas: ${paginas.length}  ·  corpo 12,4pt  ·  ${LARGURA}mm de coluna`)
+
 if (process.env.PNG) {
   const png = resolve(RAIZ, process.env.PNG)
-  execFileSync(CHROME, [...flagsBase, '--hide-scrollbars', '--window-size=794,1210',
-    '--virtual-time-budget=6000', `--screenshot=${png}`, `file://${arqHtml}`], { stdio: 'ignore' })
+  execFileSync(CHROME, [...flags, '--hide-scrollbars', '--window-size=794,1210',
+    `--screenshot=${png}`, `file://${arqHtml}`], { stdio: 'ignore' })
   console.log('PNG:', png)
 } else {
-  execFileSync(CHROME, [...flagsBase, '--virtual-time-budget=6000', '--no-pdf-header-footer',
-    `--print-to-pdf=${SAIDA}`, `file://${arqHtml}`], { stdio: 'ignore' })
+  execFileSync(CHROME, [...flags, '--no-pdf-header-footer', `--print-to-pdf=${SAIDA}`,
+    `file://${arqHtml}`], { stdio: 'ignore' })
   console.log('PDF:', SAIDA)
 }
