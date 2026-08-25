@@ -283,6 +283,8 @@ Hoje, a Calazans Lumina é resultado de cada erro, cada aprendizado e cada madru
       'Seu perfil no Google Business Profile pode ser a primeira impressão que um cliente tem do seu negócio. Se ele está incompleto ou desatualizado, você está perdendo oportunidades todos os dias sem perceber.',
     conteudo: `> Esse é um post do **cluster A — SEO Local para Brasileiros nos EUA**. Pillar: [SEO Local para Brasileiros nos EUA: o Guia Definitivo (2026)](/blog/seo-local-brasileiros-eua-guia-completo-pillar)
 
+> Ainda não tem perfil nenhum? Comece pelo passo a passo: [Como criar o Google Meu Negócio do zero](/como-criar-google-meu-negocio) — 18 passos, com PDF grátis para baixar e imprimir.
+
 ## A primeira impressão é digital
 
 Quando alguém pesquisa o seu tipo de serviço no Google, a primeira coisa que aparece — antes mesmo dos sites — é o painel do Google Business Profile. Ali está o nome da sua empresa, fotos, horário de funcionamento, endereço, avaliações e um botão para ligar ou pedir direções. Essa é a primeira impressão que muitos clientes terão do seu negócio. Se seu perfil tem foto genérica, horário desatualizado, nenhuma descrição e zero avaliações, a mensagem que você passa é: "Esse negócio pode já ter fechado" ou "Não é profissional o suficiente."

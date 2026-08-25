@@ -172,6 +172,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
+    // Guia do Google Meu Negocio: passo a passo completo em HTML + PDF gratuito.
+    // Prioridade alta porque "como criar google meu negocio" e busca de volume
+    // constante do publico deste site — negocio local que vai fazer sozinho.
+    {
+      url: `${BASE}/como-criar-google-meu-negocio`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
+    },
     ...staticPages,            // 11 (8 + 3 legais)
     ...portfolioPages,         // 5
     ...cursosPages,            // 11
