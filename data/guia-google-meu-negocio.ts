@@ -56,6 +56,8 @@ export interface Passo {
   copiar?: { titulo: string; texto: string }
   /** De onde veio a regra ou o numero citado no passo. */
   fonte?: string
+  /** Chaves de data/ilustracoes-google-meu-negocio.ts, na ordem de leitura. */
+  ilustracoes?: string[]
 }
 
 export interface Parte {
@@ -128,6 +130,7 @@ export const partes: Parte[] = [
       {
         n: 2,
         titulo: 'Antes de criar: veja se seu negócio já existe no Google',
+        ilustracoes: ['busca', 'cartao'],
         tempo: '3 minutos',
         objetivo: 'Descobrir se você precisa criar do zero ou apenas reivindicar um perfil que já está lá.',
         ondeClicar: [
@@ -166,6 +169,7 @@ export const partes: Parte[] = [
       {
         n: 4,
         titulo: 'Nome do negócio: exatamente como está na fachada',
+        ilustracoes: ['nome'],
         tempo: '2 minutos',
         objetivo: 'Escrever o nome de um jeito que não derrube seu perfil lá na frente.',
         ondeClicar: [
@@ -195,6 +199,7 @@ export const partes: Parte[] = [
       {
         n: 5,
         titulo: 'Categoria principal: a escolha que mais pesa',
+        ilustracoes: ['categoria'],
         tempo: '5 minutos',
         objetivo: 'Escolher a categoria que decide em quais buscas você vai aparecer.',
         ondeClicar: [
@@ -216,6 +221,7 @@ export const partes: Parte[] = [
       {
         n: 6,
         titulo: 'Endereço ou área de atendimento (não erre aqui)',
+        ilustracoes: ['endereco'],
         tempo: '5 minutos',
         objetivo: 'Aparecer no mapa da região certa sem expor o endereço de casa.',
         ondeClicar: [
@@ -262,6 +268,7 @@ export const partes: Parte[] = [
       {
         n: 8,
         titulo: 'Verificação: a prova de que o negócio é seu',
+        ilustracoes: ['video'],
         tempo: '20 minutos, mais a espera',
         objetivo: 'Provar ao Google que o negócio existe e é seu, para o perfil começar a aparecer.',
         ondeClicar: [
@@ -340,6 +347,7 @@ export const partes: Parte[] = [
       {
         n: 10,
         titulo: 'Horário de funcionamento (e o de feriado)',
+        ilustracoes: ['horario'],
         tempo: '5 minutos, mais 10 uma vez por ano',
         objetivo: 'Nunca mais aparecer como "Fechado" num dia em que você está aberto.',
         ondeClicar: [
@@ -358,6 +366,7 @@ export const partes: Parte[] = [
       {
         n: 11,
         titulo: 'A descrição: 750 caracteres que vendem',
+        ilustracoes: ['descricao'],
         tempo: '15 minutos',
         objetivo: 'Responder "por que eu escolheria você?" em 30 segundos de leitura.',
         ondeClicar: [
@@ -383,6 +392,7 @@ export const partes: Parte[] = [
       {
         n: 12,
         titulo: 'Fotos: quais tirar, quantas e em que ordem',
+        ilustracoes: ['fotos'],
         tempo: '20 minutos',
         objetivo: 'Fazer o perfil parecer um negócio de verdade — porque perfil sem foto passa batido.',
         ondeClicar: [
@@ -458,6 +468,7 @@ export const partes: Parte[] = [
       {
         n: 15,
         titulo: 'Sua primeira publicação',
+        ilustracoes: ['publicacao'],
         tempo: '10 minutos',
         objetivo: 'Mostrar ao Google, e a quem visita o perfil, que o negócio está ativo.',
         ondeClicar: [
@@ -482,6 +493,7 @@ export const partes: Parte[] = [
       {
         n: 16,
         titulo: 'Pegue seu link de avaliação e comece a pedir',
+        ilustracoes: ['avaliacao'],
         tempo: '10 minutos',
         objetivo: 'Ter um link curto que abre a janela de estrelas em um clique.',
         ondeClicar: [
@@ -539,6 +551,7 @@ export const partes: Parte[] = [
       {
         n: 18,
         titulo: 'Leia o Desempenho (só cinco números importam)',
+        ilustracoes: ['desempenho'],
         tempo: '10 minutos por mês',
         objetivo: 'Saber se o perfil está trazendo cliente — e não só "visualização".',
         ondeClicar: [
@@ -788,3 +801,221 @@ export const fontes = [
 ]
 
 export const totalPassos = partes.reduce((n, p) => n + p.passos.length, 0)
+
+/* ==========================================================================
+   O QUE TRANSFORMA REFERENCIA EM PRODUTO
+
+   Os 19 passos acima sao a enciclopedia: certos, conferidos, completos. So que
+   enciclopedia ninguem termina. O que faz alguem chegar ao fim e um plano com
+   data, um exemplo que ele possa copiar inteiro, e um lugar onde ele se
+   reconhece antes de comecar.
+
+   E por isso que vem abaixo: diagnostico (onde voce esta), plano de 30 dias
+   (quando fazer cada coisa), um negocio de exemplo preenchido campo por campo,
+   modelos por ramo, e um mes de publicacoes ja escritas.
+   ========================================================================== */
+
+/** Diagnostico de entrada. A pessoa marca, soma, e descobre por onde comecar. */
+export const diagnostico = {
+  titulo: 'Em que pé está o seu perfil hoje?',
+  instrucao:
+    'Marque cada frase verdadeira e some 1 ponto para cada uma. Leva dois minutos e diz por onde você deve começar.',
+  itens: [
+    'Meu negócio aparece no Google quando eu pesquiso o nome dele',
+    'O perfil está verificado (não aparece nenhum aviso pedindo verificação)',
+    'Eu tenho o acesso — consigo editar sem pedir para ninguém',
+    'O nome está igual ao da fachada, sem cidade nem serviço grudado',
+    'A categoria principal descreve o que eu faço na maior parte do faturamento',
+    'O horário está certo, incluindo feriados dos próximos meses',
+    'Tem pelo menos 10 fotos, e alguma foi tirada nos últimos 30 dias',
+    'Todos os meus serviços estão cadastrados um a um',
+    'Publiquei alguma coisa nos últimos 7 dias',
+    'Recebi pelo menos uma avaliação no último mês',
+    'Respondi todas as avaliações, inclusive as ruins',
+    'Olhei o Desempenho no último mês e sei quantas ligações vieram de lá',
+  ],
+  faixas: [
+    {
+      de: 0, ate: 3,
+      titulo: 'Você está começando do zero',
+      texto:
+        'É o cenário mais comum, e o melhor: nada para desfazer. Faça a Parte 1 inteira hoje, de uma vez só. Ela termina com a verificação enviada, que é a etapa que depende de alguém aprovar — quanto antes sair, antes o resto começa a valer.',
+    },
+    {
+      de: 4, ate: 7,
+      titulo: 'O perfil existe, mas está pela metade',
+      texto:
+        'É onde está a maioria dos negócios do Brasil, e onde mais se perde cliente sem perceber: você aparece, a pessoa abre, e não encontra o que precisava para decidir. Pule direto para a Parte 2 e reserve uma tarde. Fotos, serviços e horário, nessa ordem, são os que mudam mais rápido.',
+    },
+    {
+      de: 8, ate: 10,
+      titulo: 'Está bom — e é aqui que quase todo mundo para',
+      texto:
+        'Seu perfil está melhor que o do concorrente médio. O que separa você do bloco de três agora não é preenchimento, é frequência. Vá para as Partes 3 e 4 e monte a rotina: publicação semanal e pedido de avaliação depois de cada atendimento.',
+    },
+    {
+      de: 11, ate: 12,
+      titulo: 'Você está entre os que disputam de verdade',
+      texto:
+        'Poucos chegam aqui. Use este guia como conferência: leia a página da cola, rode o checklist do fim, e concentre-se em manter o que já funciona. A partir deste ponto o ganho vem de avaliação recente e de responder rápido — não de mexer no cadastro.',
+    },
+  ],
+}
+
+/** Plano de execucao. O guia diz o que fazer; isto diz quando. */
+export const plano30 = [
+  {
+    quando: 'Dia 1',
+    tempo: '1h30',
+    titulo: 'Nasce o perfil',
+    tarefas: [
+      'Passos 1 a 3: conta certa, busca pelo que já existe, criação',
+      'Passos 4 a 7: nome, categoria, endereço ou área, telefone e site',
+      'Passo 8: gravar e enviar a verificação, com o negócio aberto e o celular carregado',
+    ],
+    resultado: 'Perfil criado e verificação enviada. A partir daqui é esperar.',
+  },
+  {
+    quando: 'Dias 2 a 5',
+    tempo: '30 min por dia',
+    titulo: 'Enquanto o Google analisa',
+    tarefas: [
+      'Passo 10: horário completo, com os feriados do ano inteiro',
+      'Passo 11: escrever a descrição usando o modelo do seu ramo',
+      'Passo 12: tirar e enviar as 10 primeiras fotos',
+      'Passo 9: se a verificação reprovar, corrigir e reenviar no mesmo dia',
+    ],
+    resultado: 'Perfil pronto por dentro, esperando só a aprovação para render.',
+  },
+  {
+    quando: 'Semana 2',
+    tempo: '1h no total',
+    titulo: 'Tudo que você vende, cadastrado',
+    tarefas: [
+      'Passo 13: cadastrar os serviços um a um, com o nome que o cliente usa',
+      'Passo 14: marcar atributos de pagamento, acessibilidade e comodidade',
+      'Passo 15: publicar a primeira novidade',
+      'Passo 16: copiar o link curto de avaliação e salvar no celular',
+    ],
+    resultado: 'O perfil passa a aparecer em buscas por serviço, não só pelo nome.',
+  },
+  {
+    quando: 'Semana 3',
+    tempo: '20 min por dia',
+    titulo: 'As primeiras avaliações',
+    tarefas: [
+      'Mandar o pedido de avaliação para todo cliente atendido, no mesmo dia',
+      'Passo 17: responder cada avaliação que chegar, em até 48 horas',
+      'Publicar a segunda novidade, no mesmo dia da semana da primeira',
+      'Acrescentar 3 fotos novas',
+    ],
+    resultado: 'De 5 a 10 avaliações reais, e o hábito de pedir já instalado.',
+  },
+  {
+    quando: 'Semana 4',
+    tempo: '30 min',
+    titulo: 'Medir e fechar o ciclo',
+    tarefas: [
+      'Passo 18: abrir o Desempenho e anotar os cinco números',
+      'Conferir os termos pesquisados e cadastrar o serviço que faltou',
+      'Publicar a terceira e a quarta novidade',
+      'Rodar o checklist do fim do guia e marcar o que ficou faltando',
+    ],
+    resultado: 'Você sabe quantos clientes o Google trouxe — e o que fazer no mês seguinte.',
+  },
+]
+
+/**
+ * Um negocio de exemplo, preenchido campo por campo.
+ * Leigo nao aprende com regra abstrata: aprende vendo alguem preencher.
+ */
+export const exemploCompleto = {
+  titulo: 'Um perfil inteiro, preenchido na sua frente',
+  intro:
+    'A Padaria do Sol é inventada, mas cada campo abaixo segue exatamente as regras dos 19 passos. Use como gabarito: troque os dados pelos seus e o resultado é um perfil correto.',
+  /* Duas tabelas em vez de uma: onze linhas de tres colunas nao cabem numa
+     folha, e tabela cortada no meio e pior que tabela dividida por tema. */
+  camposIdentidade: [
+    ['Nome', 'Padaria do Sol', 'Igual à placa. Sem "melhor pão de Contagem" grudado.'],
+    ['Categoria principal', 'Padaria', 'É o que ela é na maior parte do faturamento.'],
+    ['Categorias secundárias', 'Confeitaria · Cafeteria · Loja de bolos', 'Só o que ela faz de verdade e toda semana.'],
+    ['Endereço', 'R. das Flores, 240 — Jardim Industrial, Contagem/MG', 'Visível: o cliente vai até lá. Pino arrastado até a porta.'],
+    ['Áreas atendidas', 'Jardim Industrial, Eldorado, Cidade Industrial', 'Só para as encomendas com entrega.'],
+    ['Telefone', '(31) 98294-8067', 'É o WhatsApp da loja, e alguém responde.'],
+    ['Site', 'wa.me/5531982948067', 'Não tem site ainda; o link leva direto à conversa.'],
+    ['Horário', 'Seg a sáb, 6h às 19h · Dom, 6h às 12h', 'Com os feriados do ano já cadastrados.'],
+  ],
+  camposOferta: [
+    ['Serviços', 'Bolo de aniversário · Salgado para festa · Café da manhã · Encomenda de pão', 'Um por um, com o nome que o cliente fala.'],
+    ['Atributos', 'Pix · Cartão · Entrada acessível · Empresa familiar', 'Cada um vira filtro de busca para alguém.'],
+    ['Fotos', '12 no primeiro dia, 3 novas por mês', 'Logo, capa, 3 da fachada, 4 do salão, 2 da equipe, resto de produto.'],
+  ],
+  descricao:
+    'A Padaria do Sol assa pão quente de hora em hora no Jardim Industrial, em Contagem, desde 2011. Fazemos bolo de aniversário, salgado para festa e encomenda de pão para padarias menores da região.\n\nAtendemos Jardim Industrial, Eldorado e Cidade Industrial. Encomenda de bolo com 48 horas de antecedência, e entrega no bairro sem taxa.\n\nAbrimos às 6h todos os dias, inclusive domingo. Estamos na R. das Flores, 240, com estacionamento na porta.',
+}
+
+/** Descricao pronta por ramo. O modelo generico do Passo 11, ja preenchido. */
+export const modelosPorRamo = [
+  {
+    ramo: 'Salão de beleza',
+    texto:
+      'O NOME atende em BAIRRO, CIDADE, desde ANO, com corte feminino, escova, coloração e penteado para festa. Trabalhamos com hora marcada, então você não espera.\n\nAtendemos BAIRRO 1, BAIRRO 2 e região. Coloração com avaliação de fio antes, sem compromisso.\n\nDe terça a sábado, das 9h às 19h. Agende pelo WhatsApp TELEFONE ou passe na RUA, NÚMERO.',
+  },
+  {
+    ramo: 'Eletricista, encanador, montador',
+    texto:
+      'NOME atende CIDADE e região desde ANO em instalação elétrica, troca de disjuntor, chuveiro e tomada. Atendimento no mesmo dia para urgência.\n\nVamos até BAIRRO 1, BAIRRO 2 e arredores. Orçamento sem compromisso pelo WhatsApp, com foto do problema.\n\nGarantia de 90 dias no serviço. Chame no TELEFONE de segunda a sábado, das 7h às 18h.',
+  },
+  {
+    ramo: 'Restaurante, lanchonete, padaria',
+    texto:
+      'O NOME serve TIPO DE COMIDA em BAIRRO, CIDADE, desde ANO. O mais pedido é PRATO CARRO-CHEFE.\n\nTemos salão com ar-condicionado, atendimento para grupo e entrega em BAIRRO 1 e BAIRRO 2. Aceitamos Pix e cartão.\n\nDe DIA a DIA, das HORA às HORA. Reserve pelo TELEFONE ou venha na RUA, NÚMERO — tem estacionamento na porta.',
+  },
+  {
+    ramo: 'Clínica, consultório, profissional de saúde',
+    texto:
+      'A NOME atua em BAIRRO, CIDADE, desde ANO, com ESPECIALIDADE 1, ESPECIALIDADE 2 e ESPECIALIDADE 3. Atendimento com hora marcada e retorno incluso.\n\nRecebemos pacientes de BAIRRO 1, BAIRRO 2 e região. Aceitamos CONVÊNIO 1 e CONVÊNIO 2, e também particular.\n\nDe DIA a DIA, das HORA às HORA. Agende pelo TELEFONE. Estamos na RUA, NÚMERO, com entrada acessível.',
+  },
+  {
+    ramo: 'Loja de bairro',
+    texto:
+      'A NOME vende O QUE VENDE em BAIRRO, CIDADE, desde ANO. Trabalhamos com MARCA 1, MARCA 2 e MARCA 3.\n\nTem troca em 30 dias, parcelamento em até 6 vezes e Pix. Se não tiver na loja, a gente encomenda e avisa quando chegar.\n\nDe DIA a DIA, das HORA às HORA. Passe na RUA, NÚMERO ou chame no TELEFONE.',
+  },
+  {
+    ramo: 'Serviço feito em casa (bolo, costura, artesanato)',
+    texto:
+      'NOME faz O QUE FAZ por encomenda, em CIDADE, desde ANO. Cada peça é feita sob medida, com PRAZO de antecedência.\n\nEntregamos em BAIRRO 1, BAIRRO 2 e região; combinamos o ponto de entrega pelo WhatsApp. Orçamento na hora, pela foto do que você quer.\n\nChame no TELEFONE de DIA a DIA, das HORA às HORA. Atendimento só por encomenda — não temos loja.',
+  },
+]
+
+/** Um mes de publicacoes ja escritas. Tira a desculpa de "nao sei o que postar". */
+export const calendarioPublicacoes = [
+  {
+    semana: 'Semana 1',
+    tema: 'Apresentação',
+    oQue: 'Diga que vocês estão no Google, com endereço, horário e o que fazem.',
+    modelo:
+      'Agora você encontra a NOME DO NEGÓCIO aqui no Google, com endereço, horário e telefone sempre atualizados. Estamos na RUA, NÚMERO, de DIA a DIA. Fazemos SERVIÇO 1, SERVIÇO 2 e SERVIÇO 3.',
+  },
+  {
+    semana: 'Semana 2',
+    tema: 'O carro-chefe',
+    oQue: 'Mostre o serviço ou produto mais vendido, com foto dele pronto.',
+    modelo:
+      'O mais pedido aqui é SERVIÇO MAIS VENDIDO — e é por isso: MOTIVO CURTO E CONCRETO. A partir de R$ VALOR. Chame no TELEFONE para reservar o seu.',
+  },
+  {
+    semana: 'Semana 3',
+    tema: 'Prova',
+    oQue: 'Um trabalho concluído, um antes e depois, ou um agradecimento a um cliente.',
+    modelo:
+      'Terminamos mais um TIPO DE TRABALHO em BAIRRO esta semana. Levou TEMPO e ficou assim. Se você precisa de SERVIÇO, chame no TELEFONE que a gente passa o orçamento hoje mesmo.',
+  },
+  {
+    semana: 'Semana 4',
+    tema: 'Utilidade',
+    oQue: 'Ensine algo pequeno do seu ramo. É o que mais faz a pessoa salvar o perfil.',
+    modelo:
+      'DICA RÁPIDA DO SEU RAMO — em duas linhas, do jeito que você explicaria para um cliente no balcão. Qualquer dúvida, chame no TELEFONE: a gente responde mesmo sem você comprar nada.',
+  },
+]
