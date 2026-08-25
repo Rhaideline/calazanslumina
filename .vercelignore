@@ -27,6 +27,11 @@ ebook-ia-marketing-sites.md
 templates-*.html
 guia-pdf-visual-fpdf2.py
 
+# Gerador do PDF do guia do Google Meu Negocio + fontes que ele embute.
+# O PDF pronto vive em public/ e vai pro deploy; o gerador, nao.
+gerar-pdf-google-meu-negocio.ts
+templates-assets/fontes/
+
 # Imagens soltas de trabalho na raiz
 # A regra era `*.png` global, para nao subir as centenas de PNG de trabalho do
 # repositorio. So que ela pegava tambem public/ — a unica pasta cujo conteudo o

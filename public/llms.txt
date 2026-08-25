@@ -33,6 +33,11 @@ Catálogo de 9 cursos digitais focados em marketing, IA e operação de negócio
 8. **Ferramentas Digitais para Secretárias** (GRATUITO) — 6 módulos. https://calazanslumina.com.br/cursos/ferramentas-digitais-secretarias
 9. **Ebook: IA para Marketing Digital — Como Criar Sites com Claude** (R$ 9,90) — 44 páginas. https://calazanslumina.com.br/cursos/ebook-ia-marketing-sites
 
+## Guias Gratuitos (HTML + PDF, sem cadastro)
+
+- **Como criar o Google Meu Negócio do zero** — passo a passo com 18 passos numerados para criar, verificar (inclusive a verificação por vídeo) e otimizar o Perfil da Empresa no Google. Inclui textos prontos para copiar, os 10 erros que causam suspensão e checklist. PDF de 34 páginas para download direto. https://calazanslumina.com.br/como-criar-google-meu-negocio
+- **Checklist de Enxoval de Bebê 2026** — lista enxuta com quantidades e o que não comprar. https://calazanslumina.com.br/checklist-enxoval-bebe
+
 ## Frameworks Proprietários
 
 ### Framework CRIA da Calazans Lumina
