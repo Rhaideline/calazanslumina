@@ -37,8 +37,10 @@ import { join, dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import {
   partes, preparacao, erros, faq, checklistFinal, cola, fontes, totalPassos,
+  diagnostico, plano30, exemploCompleto, modelosPorRamo, calendarioPublicacoes,
   type Passo, type Tabela,
 } from './data/guia-google-meu-negocio.ts'
+import { ilustracoes } from './data/ilustracoes-google-meu-negocio.ts'
 
 const RAIZ = dirname(fileURLToPath(import.meta.url))
 const SAIDA = join(RAIZ, 'public', 'guia-google-meu-negocio-passo-a-passo.pdf')
@@ -78,7 +80,7 @@ const css = `
   --papel:#FFFFFF;
   --fio:#D8D8DC;
   --fio-forte:#16161A;
-  --areia:#F2F2F3;
+  --areia:#F5F1EC;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 html,body{background:#8C8C90;}
@@ -159,6 +161,42 @@ td{font-size:11.6pt;line-height:1.48;padding:3.4mm 5mm 3.4mm 0;vertical-align:to
 td:first-child{font-weight:700;}
 .tab.simples td:first-child{font-weight:500;color:var(--tinta-fraca);width:52mm;}
 .tab.simples td:last-child{font-weight:500;}
+
+/* ---- figura ----
+   O desenho ocupa a largura inteira da mancha e a legenda vem embaixo, menor.
+   Sem moldura em volta: o proprio desenho ja tem contorno, e caixa dentro de
+   caixa e o que faz material parecer apostila. */
+.fig svg{width:100%;height:auto;display:block;}
+.fig .legenda{margin-top:3mm;padding-top:2.5mm;border-top:.4pt solid var(--fio);
+  font-size:10.4pt;line-height:1.45;color:var(--tinta-fraca);}
+
+/* ---- faixas do diagnostico ---- */
+.faixa{display:flex;gap:6mm;align-items:flex-start;}
+.faixa .pontos{flex:0 0 22mm;font-family:'DM Serif Display',serif;font-size:19pt;
+  color:var(--vermelho);line-height:1;padding-top:1mm;}
+.faixa h4{font-size:15pt;line-height:1.25;}
+.faixa p{font-size:11.6pt;line-height:1.55;color:var(--tinta-fraca);margin-top:1.5mm;}
+
+/* ---- etapas do plano de 30 dias ---- */
+.etapa .quando{display:flex;align-items:baseline;gap:4mm;border-bottom:1.2pt solid var(--tinta);
+  padding-bottom:2mm;}
+.etapa .quando b{font-size:11pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--vermelho);}
+.etapa .quando span{margin-left:auto;font-size:10pt;color:var(--tinta-fraca);
+  letter-spacing:.08em;text-transform:uppercase;}
+.etapa h4{font-size:19pt;margin-top:3mm;font-family:'DM Serif Display',serif;font-weight:400;}
+.etapa-corpo{padding-top:2.5mm;}
+.etapa-corpo ul{list-style:none;}
+.etapa-corpo li{position:relative;padding-left:7mm;padding-bottom:2.2mm;font-size:11.8pt;line-height:1.5;}
+.etapa-corpo li::before{content:"";position:absolute;left:0;top:2.6mm;width:3mm;height:3mm;
+  background:var(--vermelho);}
+.etapa-corpo .resultado{margin-top:2mm;font-size:11.4pt;line-height:1.5;color:var(--tinta-fraca);}
+.etapa-corpo .resultado b{color:var(--tinta);}
+
+/* ---- modelos por ramo ---- */
+.ramo h4{font-size:17pt;font-family:'DM Serif Display',serif;font-weight:400;}
+.ramo .sub{font-size:11.4pt;color:var(--tinta-fraca);margin-top:1mm;line-height:1.45;}
+.modelo-solto{padding-top:3mm;}
 
 /* ---- fonte citada ---- */
 .fonte{font-size:9.6pt;line-height:1.45;color:var(--tinta-fraca);
@@ -272,7 +310,7 @@ td:first-child{font-weight:700;}
 
 /* =========================================================== conteudo ===== */
 
-type Bloco = { html: string; junto?: boolean; ancora?: string; marcador?: string }
+type Bloco = { html: string; junto?: boolean; ancora?: string; marcador?: string; flutua?: boolean }
 type Secao =
   | { tipo: 'inteira'; html: string; folio: boolean; ancora?: string }
   | { tipo: 'fluxo'; esq: string; dir: string; dirCont?: string; blocos: Bloco[]; ancora?: string }
@@ -304,7 +342,7 @@ secoes.push({
     <p class="sub">Do cadastro à verificação por vídeo, com as palavras que aparecem
     na tela. Escrito para quem nunca fez, tem medo de clicar errado e vai fazer sozinho.</p>
     <div class="pe">
-      <span><b>${totalPassos} passos em 4 partes.</b><br>Cada regra deste guia tem fonte citada no fim.</span>
+      <span><b>${totalPassos} passos · ${Object.keys(ilustracoes).length} telas ilustradas · plano de 30 dias</b><br>Cada regra deste guia tem a fonte citada no fim.</span>
       <span>${SITE}</span>
     </div>
   </div>`,
@@ -351,12 +389,18 @@ secoes.push({
 type LinhaSumario = { nn: string; tx: string; ancora: string }
 const linhasSumario: { parte?: string; linha?: LinhaSumario }[] = []
 linhasSumario.push({ parte: 'Antes de tudo' })
+linhasSumario.push({ linha: { nn: '', tx: 'Em que pé está o seu perfil hoje?', ancora: 'diagnostico' } })
 linhasSumario.push({ linha: { nn: '', tx: 'O que ter em mãos antes de começar', ancora: 'prep' } })
+linhasSumario.push({ linha: { nn: '', tx: 'O plano de 30 dias', ancora: 'plano' } })
 for (const p of partes) {
   linhasSumario.push({ parte: `Parte ${p.numero} · ${p.titulo}` })
   for (const s of p.passos)
     linhasSumario.push({ linha: { nn: dois(s.n), tx: s.titulo, ancora: `passo-${s.n}` } })
 }
+linhasSumario.push({ parte: 'Pronto para copiar' })
+linhasSumario.push({ linha: { nn: '', tx: 'Um perfil inteiro, preenchido na sua frente', ancora: 'exemplo' } })
+linhasSumario.push({ linha: { nn: '', tx: 'Descrição pronta para o seu ramo', ancora: 'modelos' } })
+linhasSumario.push({ linha: { nn: '', tx: 'Um mês de publicações já escritas', ancora: 'calendario' } })
 linhasSumario.push({ parte: 'Para consultar depois' })
 linhasSumario.push({ linha: { nn: '', tx: 'Os dez erros que derrubam um perfil', ancora: 'erros' } })
 linhasSumario.push({ linha: { nn: '', tx: 'Perguntas que todo mundo faz', ancora: 'faq' } })
@@ -380,6 +424,21 @@ const sumarioBlocos = (pg: (a: string) => string): Bloco[] => {
 const iSumario = secoes.length
 secoes.push({ tipo: 'fluxo', esq: 'Comece por aqui', dir: 'Sumário', blocos: sumarioBlocos(() => '00') })
 
+/* ---------- diagnostico ---------- */
+secoes.push({
+  tipo: 'fluxo', esq: 'Antes de tudo', dir: 'Diagnóstico', ancora: 'diagnostico',
+  blocos: [
+    bloco(`<div class="b secao-titulo"><h2>${esc(diagnostico.titulo)}</h2>
+      <p class="lead">${esc(diagnostico.instrucao)}</p></div>`, true),
+    ...diagnostico.itens.map((i) =>
+      bloco(`<ul class="check"><li><span class="cx"></span><span>${esc(i)}</span></li></ul>`)),
+    bloco(`<div class="b"><div class="rotulo">Agora some e leia a sua faixa</div></div>`, true),
+    ...diagnostico.faixas.map((f) =>
+      bloco(`<div class="b faixa"><div class="pontos">${f.de}–${f.ate}</div>
+        <div><h4>${esc(f.titulo)}</h4><p>${esc(f.texto)}</p></div></div>`)),
+  ],
+})
+
 /* ---------- preparacao ---------- */
 secoes.push({
   tipo: 'fluxo', esq: 'Antes de tudo', dir: 'Preparação', ancora: 'prep',
@@ -390,6 +449,22 @@ secoes.push({
     ...preparacao.map((p, i) =>
       bloco(`<div class="b item"><h4><span class="nn">${dois(i + 1)}</span>&nbsp;&nbsp;${esc(p.item)}</h4>
         <p>${esc(p.porque)}</p></div>`)),
+  ],
+})
+
+/* ---------- plano de 30 dias ---------- */
+secoes.push({
+  tipo: 'fluxo', esq: 'Antes de tudo', dir: 'Plano de 30 dias', ancora: 'plano',
+  blocos: [
+    bloco(`<div class="b secao-titulo"><h2>O plano de 30 dias</h2>
+      <p class="lead">O resto do guia diz o que fazer. Esta página diz quando. Siga na ordem e,
+      em um mês, o perfil está no ar, completo e com as primeiras avaliações.</p></div>`, true),
+    ...plano30.flatMap((e) => [
+      bloco(`<div class="b etapa"><div class="quando"><b>${esc(e.quando)}</b><span>${esc(e.tempo)}</span></div>
+        <h4>${esc(e.titulo)}</h4></div>`, true),
+      bloco(`<div class="etapa-corpo"><ul>${e.tarefas.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>
+        <p class="resultado"><b>No fim:</b> ${esc(e.resultado)}</p></div>`),
+    ]),
   ],
 })
 
@@ -416,6 +491,16 @@ const blocosPasso = (passo: Passo): Bloco[] => {
   b.push(bloco(`<div class="b"><div class="rotulo">Por que isso importa</div></div>`, true))
   passo.detalhe.forEach((d) =>
     b.push(bloco(`<div class="b"><p>${esc(d)}</p></div>`)))
+  for (const chave of passo.ilustracoes || []) {
+    const il = ilustracoes[chave]
+    if (!il) throw new Error(`ilustração desconhecida: ${chave}`)
+    /* Figura flutua: se nao couber no que sobrou da folha, ela espera a
+       proxima e o texto segue. Prender a figura ao ponto exato do texto
+       deixaria meia folha em branco toda vez que uma nao coubesse. */
+    const f = bloco(`<div class="b fig">${il.svg}<p class="legenda">${esc(il.legenda)}</p></div>`)
+    f.flutua = true
+    b.push(f)
+  }
   if (passo.tabela) b.push(bloco(tabelaHtml(passo.tabela)))
   if (passo.copiar)
     b.push(bloco(`<div class="b modelo"><div class="rotulo">${esc(passo.copiar.titulo)}</div>
@@ -458,6 +543,56 @@ for (const parte of partes) {
     ]),
   })
 }
+
+/* ---------- exemplo preenchido ---------- */
+secoes.push({
+  tipo: 'fluxo', esq: 'Pronto para copiar', dir: 'Exemplo', ancora: 'exemplo',
+  blocos: [
+    bloco(`<div class="b secao-titulo"><h2>${esc(exemploCompleto.titulo)}</h2>
+      <p class="lead">${esc(exemploCompleto.intro)}</p></div>`, true),
+    bloco(tabelaHtml({
+      titulo: 'Identidade e localização',
+      colunas: ['Campo', 'O que foi escrito', 'Por quê'],
+      linhas: exemploCompleto.camposIdentidade,
+    })),
+    bloco(tabelaHtml({
+      titulo: 'O que a padaria oferece',
+      colunas: ['Campo', 'O que foi escrito', 'Por quê'],
+      linhas: exemploCompleto.camposOferta,
+    })),
+    bloco(`<div class="b modelo"><div class="rotulo">E a descrição, escrita por inteiro</div>
+      <pre>${esc(exemploCompleto.descricao)}</pre></div>`),
+  ],
+})
+
+/* ---------- modelos por ramo ---------- */
+secoes.push({
+  tipo: 'fluxo', esq: 'Pronto para copiar', dir: 'Modelos', ancora: 'modelos',
+  blocos: [
+    bloco(`<div class="b secao-titulo"><h2>Descrição pronta<br>para o seu ramo</h2>
+      <p class="lead">Ache o seu, copie, troque o que está em maiúscula. Cada um já respeita as
+      regras do Passo 11: nada de preço com prazo, telefone repetido ou link.</p></div>`, true),
+    ...modelosPorRamo.flatMap((m) => [
+      bloco(`<div class="b ramo"><h4>${esc(m.ramo)}</h4></div>`, true),
+      bloco(`<div class="modelo modelo-solto"><pre>${esc(m.texto)}</pre></div>`),
+    ]),
+  ],
+})
+
+/* ---------- calendario de publicacoes ---------- */
+secoes.push({
+  tipo: 'fluxo', esq: 'Pronto para copiar', dir: 'Publicações', ancora: 'calendario',
+  blocos: [
+    bloco(`<div class="b secao-titulo"><h2>Um mês de publicações<br>já escritas</h2>
+      <p class="lead">Uma por semana, sempre no mesmo dia. Quando o mês acabar, recomece do
+      começo com assunto novo — o formato continua funcionando.</p></div>`, true),
+    ...calendarioPublicacoes.flatMap((c) => [
+      bloco(`<div class="b ramo"><h4>${esc(c.semana)} · ${esc(c.tema)}</h4>
+        <p class="sub">${esc(c.oQue)}</p></div>`, true),
+      bloco(`<div class="modelo modelo-solto"><pre>${esc(c.modelo)}</pre></div>`),
+    ]),
+  ],
+})
 
 /* ---------- erros ---------- */
 secoes.push({
@@ -619,7 +754,7 @@ function paginar(secs: Secao[], alturas: Map<string, number>) {
 
     /* Agrupa: um bloco marcado `junto` nao se separa do proximo. E o que
        impede rotulo orfao no pe da folha e cabecalho de tabela sozinho. */
-    type Grupo = { blocos: number[]; altura: number }
+    type Grupo = { blocos: number[]; altura: number; flutua?: boolean }
     const grupos: Grupo[] = []
     for (let i = 0; i < s.blocos.length; i++) {
       const h = alturas.get(`${si}:${i}`) ?? 0
@@ -628,21 +763,49 @@ function paginar(secs: Secao[], alturas: Map<string, number>) {
         ultimo.blocos.push(i)
         ultimo.altura += h
       } else {
-        grupos.push({ blocos: [i], altura: h })
+        grupos.push({ blocos: [i], altura: h, flutua: s.blocos[i].flutua })
       }
     }
 
-    /* Enche folha por folha. */
+    /* Um grupo indivisivel maior que a mancha nao tem como caber: falhar aqui,
+       nomeando a secao, e melhor do que deixar o texto ser cortado no PDF. */
+    for (const g of grupos) {
+      if (g.altura > limite) {
+        const trecho = s.blocos[g.blocos[0]].html.replace(/<[^>]+>/g, ' ').trim().slice(0, 70)
+        throw new Error(
+          `bloco indivisível de ${(g.altura / PX_POR_MM).toFixed(0)}mm na seção ` +
+          `"${s.esq} / ${s.dir}" — a mancha tem ${ALTURA_FLUXO}mm. Divida o conteúdo. ` +
+          `Começa em: "${trecho}…"`)
+      }
+    }
+
+    /* Enche folha por folha, com figuras flutuantes.
+       Uma figura que nao cabe no resto da folha nao forca a quebra: ela vai
+       para a fila e entra no alto da folha seguinte, enquanto o texto continua
+       preenchendo a atual. E o comportamento de qualquer livro ilustrado, e o
+       que evita meia pagina em branco antes de cada desenho. */
     const folhas: Grupo[][] = [[]]
     let altura = 0
+    let fila: Grupo[] = []
+    const abreFolha = () => {
+      folhas.push([])
+      altura = 0
+      for (const p of fila) {
+        folhas[folhas.length - 1].push(p)
+        altura += p.altura
+      }
+      fila = []
+    }
     for (const g of grupos) {
-      if (folhas[folhas.length - 1].length && altura + g.altura > limite) {
-        folhas.push([])
-        altura = 0
+      const cabe = altura + g.altura <= limite
+      if (!cabe && folhas[folhas.length - 1].length) {
+        if (g.flutua && fila.length === 0) { fila.push(g); continue }
+        abreFolha()
       }
       folhas[folhas.length - 1].push(g)
       altura += g.altura
     }
+    if (fila.length) abreFolha()
 
     /* Equilibra as duas ultimas folhas.
        Sem isto, um passo que termina com pouco espaco sobrando joga dica,

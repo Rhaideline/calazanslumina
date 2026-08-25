@@ -4,6 +4,11 @@ import CapturaEmail from '@/components/CapturaEmail'
 import {
   partes,
   preparacao,
+  diagnostico,
+  plano30,
+  exemploCompleto,
+  modelosPorRamo,
+  calendarioPublicacoes,
   erros,
   faq,
   checklistFinal,
@@ -11,6 +16,7 @@ import {
   fontes,
   totalPassos,
 } from '@/data/guia-google-meu-negocio'
+import { ilustracoes } from '@/data/ilustracoes-google-meu-negocio'
 
 /**
  * Guia gratuito "Como criar o Google Meu Negocio do zero".
@@ -39,7 +45,7 @@ import {
  */
 
 const PDF = '/guia-google-meu-negocio-passo-a-passo.pdf'
-const PAGINAS_PDF = 49
+const PAGINAS_PDF = 63
 const URL = 'https://calazanslumina.com.br/como-criar-google-meu-negocio'
 
 const TITULO = 'Como criar o Google Meu Negócio do zero — guia passo a passo (PDF grátis)'
@@ -177,6 +183,38 @@ export default function ComoCriarGoogleMeuNegocioPage() {
         </div>
       </section>
 
+      {/* ------------------------------------------------- diagnostico -- */}
+      <section className="section-padding">
+        <div className="container-main max-w-3xl">
+          <h2 className="heading-2 text-brand-dark mb-3">{diagnostico.titulo}</h2>
+          <div className="w-14 h-1 bg-brand-mint mb-6" />
+          <p className="text-brand-dark/60 mb-10">{diagnostico.instrucao}</p>
+
+          <ul className="mb-12">
+            {diagnostico.itens.map((i) => (
+              <li key={i} className="flex gap-4 py-3.5 border-b border-gray-100">
+                <span className="shrink-0 w-4 h-4 mt-1 border border-gray-300 rounded-sm" />
+                <span className="text-brand-dark/80 leading-relaxed">{i}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="space-y-8">
+            {diagnostico.faixas.map((f) => (
+              <div key={f.titulo} className="flex flex-col sm:flex-row gap-5">
+                <p className="font-serif text-3xl text-brand-mint shrink-0 sm:w-24 leading-none">
+                  {f.de}–{f.ate}
+                </p>
+                <div>
+                  <p className="font-bold text-brand-dark mb-1.5 leading-snug">{f.titulo}</p>
+                  <p className="text-brand-dark/65 leading-relaxed">{f.texto}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* -------------------------------------------------- preparacao -- */}
       <section className="section-padding">
         <div className="container-main max-w-4xl">
@@ -195,6 +233,47 @@ export default function ComoCriarGoogleMeuNegocioPage() {
                 </p>
                 <p className="font-bold text-brand-dark mb-2 leading-snug">{p.item}</p>
                 <p className="text-brand-dark/65 text-sm leading-relaxed">{p.porque}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ---------------------------------------------- plano 30 dias -- */}
+      <section className="section-padding bg-brand-dark text-white">
+        <div className="container-main max-w-3xl">
+          <h2 className="font-serif text-3xl md:text-4xl font-bold mb-3 leading-tight">
+            O plano de 30 dias
+          </h2>
+          <div className="w-14 h-1 bg-brand-mint mb-6" />
+          <p className="text-white/60 mb-12 max-w-2xl">
+            O resto da página diz o que fazer. Esta parte diz quando. Siga na ordem e, em um mês,
+            o perfil está no ar, completo e com as primeiras avaliações.
+          </p>
+
+          <div className="space-y-10">
+            {plano30.map((e) => (
+              <div key={e.quando}>
+                <div className="flex items-baseline gap-4 pb-2 border-b border-white/25">
+                  <span className="text-brand-light text-xs font-bold tracking-[0.16em] uppercase">
+                    {e.quando}
+                  </span>
+                  <span className="ml-auto text-white/40 text-xs uppercase tracking-[0.1em]">
+                    {e.tempo}
+                  </span>
+                </div>
+                <p className="font-serif text-2xl mt-3 mb-4">{e.titulo}</p>
+                <ul className="space-y-2 mb-4">
+                  {e.tarefas.map((t) => (
+                    <li key={t} className="flex gap-3 text-white/85 leading-relaxed">
+                      <span className="shrink-0 w-2 h-2 mt-2.5 bg-brand-mint" />
+                      <span>{t}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-white/55 text-sm leading-relaxed">
+                  <strong className="text-white">No fim:</strong> {e.resultado}
+                </p>
               </div>
             ))}
           </div>
@@ -264,6 +343,21 @@ export default function ComoCriarGoogleMeuNegocioPage() {
                       <p key={d} className="text-brand-dark/75 leading-relaxed">{d}</p>
                     ))}
                   </div>
+
+                  {(passo.ilustracoes || []).map((chave) => {
+                    const il = ilustracoes[chave]
+                    return (
+                      <figure key={chave} className="mt-6">
+                        <div
+                          className="[&_svg]:w-full [&_svg]:h-auto [&_svg]:block"
+                          dangerouslySetInnerHTML={{ __html: il.svg }}
+                        />
+                        <figcaption className="mt-3 pt-2.5 border-t border-gray-100 text-brand-dark/55 text-sm leading-relaxed">
+                          {il.legenda}
+                        </figcaption>
+                      </figure>
+                    )
+                  })}
 
                   {passo.tabela && (
                     <div className="mt-6">
@@ -345,6 +439,99 @@ export default function ComoCriarGoogleMeuNegocioPage() {
           </div>
         </section>
       ))}
+
+      {/* ------------------------------------------------------ exemplo -- */}
+      <section className="section-padding border-t border-gray-100">
+        <div className="container-main max-w-4xl">
+          <p className="text-brand-mint text-xs font-bold tracking-[0.22em] uppercase mb-3">
+            Pronto para copiar
+          </p>
+          <h2 className="heading-2 text-brand-dark mb-4">{exemploCompleto.titulo}</h2>
+          <div className="w-14 h-1 bg-brand-mint mb-6" />
+          <p className="text-brand-dark/60 max-w-2xl mb-10">{exemploCompleto.intro}</p>
+
+          <div className="overflow-x-auto mb-10">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr>
+                  {['Campo', 'O que foi escrito', 'Por quê'].map((c) => (
+                    <th key={c} className="text-brand-dark/50 text-[11px] font-bold tracking-[0.12em] uppercase pb-2 pr-6 border-b-2 border-brand-dark align-bottom">
+                      {c}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {[...exemploCompleto.camposIdentidade, ...exemploCompleto.camposOferta].map((l) => (
+                  <tr key={l[0]}>
+                    {l.map((c, ci) => (
+                      <td key={c} className={`py-3 pr-6 align-top border-b border-gray-100 text-sm leading-relaxed ${ci === 0 ? 'font-bold text-brand-dark whitespace-nowrap' : 'text-brand-dark/75'}`}>
+                        {c}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="border-l-2 border-gray-200 pl-6">
+            <p className="text-brand-dark/50 text-[10px] font-bold tracking-[0.16em] uppercase mb-3">
+              E a descrição, escrita por inteiro
+            </p>
+            <pre className="whitespace-pre-wrap font-sans text-sm text-brand-dark/85 leading-relaxed">
+              {exemploCompleto.descricao}
+            </pre>
+          </div>
+        </div>
+      </section>
+
+      {/* ------------------------------------------------------ modelos -- */}
+      <section className="section-padding bg-brand-bg">
+        <div className="container-main max-w-3xl">
+          <h2 className="heading-2 text-brand-dark mb-3">Descrição pronta para o seu ramo</h2>
+          <div className="w-14 h-1 bg-brand-mint mb-6" />
+          <p className="text-brand-dark/60 mb-10">
+            Ache o seu, copie, troque o que está em maiúscula. Cada um já respeita as regras do
+            Passo 11 — nada de preço com prazo, telefone repetido ou link.
+          </p>
+          <div className="space-y-8">
+            {modelosPorRamo.map((m) => (
+              <div key={m.ramo} className="bg-white rounded-2xl p-6">
+                <p className="font-serif text-xl text-brand-dark mb-3">{m.ramo}</p>
+                <pre className="whitespace-pre-wrap font-sans text-sm text-brand-dark/80 leading-relaxed">
+                  {m.texto}
+                </pre>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* --------------------------------------------------- calendario -- */}
+      <section className="section-padding">
+        <div className="container-main max-w-3xl">
+          <h2 className="heading-2 text-brand-dark mb-3">Um mês de publicações já escritas</h2>
+          <div className="w-14 h-1 bg-brand-mint mb-6" />
+          <p className="text-brand-dark/60 mb-10">
+            Uma por semana, sempre no mesmo dia. Quando o mês acabar, recomece com assunto novo —
+            o formato continua funcionando.
+          </p>
+          <div className="space-y-8">
+            {calendarioPublicacoes.map((c) => (
+              <div key={c.semana}>
+                <p className="font-serif text-xl text-brand-dark">
+                  {c.semana} <span className="text-brand-mint">· {c.tema}</span>
+                </p>
+                <p className="text-brand-dark/60 text-sm mt-1 mb-3">{c.oQue}</p>
+                <pre className="whitespace-pre-wrap font-sans text-sm text-brand-dark/85 leading-relaxed border-l-2 border-gray-200 pl-5">
+                  {c.modelo}
+                </pre>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* -------------------------------------------------- captura pdf -- */}
       <section className="section-padding bg-brand-bg">
