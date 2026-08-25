@@ -305,7 +305,7 @@ export default function ComoCriarGoogleMeuNegocioPage() {
           <div className="text-center mt-8">
             <BotaoPdf />
             <p className="text-brand-dark/40 text-xs mt-3">
-              Download direto, sem cadastro · 1,4 MB · A4, feito para imprimir
+              Download direto, sem cadastro · 34 páginas A4, feito para imprimir
             </p>
           </div>
         </div>
