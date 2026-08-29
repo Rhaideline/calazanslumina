@@ -66,6 +66,42 @@ const videoSchemas = [
     uploadDate: '2025-03-01T00:00:00-03:00',
     publisher: { '@type': 'Organization', name: 'Calazans Lumina', '@id': 'https://calazanslumina.com.br/#organization' },
   },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: 'Por Que Investir em Marketing Profissional — Calazans Lumina',
+    description: 'A importância de contratar um profissional de marketing digital para resultados reais e mensuráveis',
+    contentUrl: 'https://calazanslumina.com.br/video-marketing-profissional.mp4',
+    uploadDate: '2026-08-28T00:00:00-03:00',
+    publisher: { '@type': 'Organization', name: 'Calazans Lumina', '@id': 'https://calazanslumina.com.br/#organization' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: 'Contratar Profissional vs Fazer Sozinho — Calazans Lumina',
+    description: 'Entenda quando vale a pena contratar um especialista em marketing digital versus fazer por conta própria',
+    contentUrl: 'https://calazanslumina.com.br/video-contratar-vs-fazer-sozinho.mp4',
+    uploadDate: '2026-08-28T00:00:00-03:00',
+    publisher: { '@type': 'Organization', name: 'Calazans Lumina', '@id': 'https://calazanslumina.com.br/#organization' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: 'Identidade Visual: A Base do Seu Negócio — Calazans Lumina',
+    description: 'Como uma identidade visual profissional é essencial para construir credibilidade e reconhecimento de marca',
+    contentUrl: 'https://calazanslumina.com.br/video-identidade-visual-importancia.mp4',
+    uploadDate: '2026-08-28T00:00:00-03:00',
+    publisher: { '@type': 'Organization', name: 'Calazans Lumina', '@id': 'https://calazanslumina.com.br/#organization' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: 'Estratégia de Marketing vs Postagens Soltas — Calazans Lumina',
+    description: 'A diferença entre ter uma estratégia integrada de marketing digital e apenas fazer postagens isoladas nas redes sociais',
+    contentUrl: 'https://calazanslumina.com.br/video-estrategia-vs-postagens.mp4',
+    uploadDate: '2026-08-28T00:00:00-03:00',
+    publisher: { '@type': 'Organization', name: 'Calazans Lumina', '@id': 'https://calazanslumina.com.br/#organization' },
+  },
 ]
 
 const faqSchema = {
@@ -502,13 +538,13 @@ export default function HomePage() {
           <ScrollReveal className="text-center mb-16">
             <p className="text-brand-mint font-medium mb-2 text-sm uppercase tracking-wider">Assista e aprenda</p>
             <h2 className="heading-2 mb-4">
-              Conteudo em <span className="text-brand-mint">Video</span>
+              Conteúdo em <span className="text-brand-mint">Vídeo</span>
             </h2>
             <p className="text-white/50 text-lg max-w-2xl mx-auto">
-              Dicas praticas de marketing digital, ferramentas e estrategias para fazer seu negocio crescer.
+              Dicas práticas de marketing digital, branding e estratégias para fazer seu negócio crescer.
             </p>
           </ScrollReveal>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f81590acb2f32c57fde.mp4',
@@ -526,15 +562,31 @@ export default function HomePage() {
                 src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f8110bc9c7c8a6841ea.mp4',
                 label: 'Como Conseguir Mais Avaliações 5 Estrelas',
               },
+              {
+                src: '/video-marketing-profissional.mp4',
+                label: 'Por Que Investir em Marketing Profissional',
+              },
+              {
+                src: '/video-contratar-vs-fazer-sozinho.mp4',
+                label: 'Contratar Profissional vs Fazer Sozinho',
+              },
+              {
+                src: '/video-identidade-visual-importancia.mp4',
+                label: 'Identidade Visual: A Base do Seu Negócio',
+              },
+              {
+                src: '/video-estrategia-vs-postagens.mp4',
+                label: 'Estratégia de Marketing vs Postagens Soltas',
+              },
             ].map((video, i) => (
-              <ScrollReveal key={i} delay={i * 150}>
-                <div className="bg-white/5 rounded-2xl overflow-hidden border border-white/10">
+              <ScrollReveal key={i} delay={i * 100}>
+                <div className="bg-white/5 rounded-2xl overflow-hidden border border-white/10 hover:border-brand-mint/50 transition-all duration-300">
                   <LazyVideo src={video.src} label={video.label} />
                   <div className="p-4">
                     <p className="text-brand-mint font-bold text-sm uppercase tracking-wider mb-1">
-                      Video {i + 1}
+                      Vídeo {i + 1}
                     </p>
-                    <h3 className="text-white font-serif text-lg font-bold">
+                    <h3 className="text-white font-serif text-base font-bold leading-tight">
                       {video.label}
                     </h3>
                   </div>
