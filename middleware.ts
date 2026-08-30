@@ -5,10 +5,11 @@ import type { NextRequest } from 'next/server'
 // pra Google desindexar rapido, ao inves de 308 (que sinaliza 'movido' e
 // nao desindexa). Vale so para conteudo que NUNCA mais voltara ao site.
 const GONE_PATTERNS: RegExp[] = [
-  /^\/enxoval-de-bebe(\/|$)/,
   /^\/itens-para-casa(\/|$)/,
   /^\/maternidade(\/|$)/,
   /^\/blog\/(recem-nascido|amamentacao|rotina-de-sono|colica|bebe|gravidez)-/,
+  // /enxoval-de-bebe SAIU desta lista em 29/ago/2026: a arvore voltou de
+  // proposito, agora com vitrine de produto e conteudo local por cidade.
   // O checklist NAO esta mais nesta lista. Ele era a pagina que mais trazia
   // trafego do site inteiro, e "lista enxoval de bebe completo pdf 2026" e a
   // consulta que mais perdeu clique depois que ele saiu com 410 — confirmado

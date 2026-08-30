@@ -161,6 +161,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
+  // Enxoval por cidade BR. A pagina de cada cidade nao e a nacional com o slug
+  // trocado: clima do estado muda a quantidade de cada peca, a regiao muda o
+  // mes de fechar o enxoval, o porte muda o conselho de loja fisica, e item
+  // sem sentido no calor sai da lista. Ver lib/enxoval-local.ts.
+  const enxovalCidadesPages: MetadataRoute.Sitemap = todasCidadesBR.map((c) => ({
+    url: `${BASE}/enxoval-de-bebe/${c.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: capitaisBR.some((cap) => cap.slug === c.slug) ? 0.8 : 0.7,
+  }))
+
   // Contagens conferidas em 01/ago/2026 contra os datasets.
   return [
     // Checklist de enxoval: era a pagina de maior trafego do site e voltou como
@@ -181,6 +192,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 0.9,
     },
+    // Hub nacional do enxoval, com vitrine de produto e preco.
+    {
+      url: `${BASE}/enxoval-de-bebe`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
+    },
     ...staticPages,            // 11 (8 + 3 legais)
     ...portfolioPages,         // 5
     ...cursosPages,            // 11
@@ -193,7 +211,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...cursosCidadesMAPages,   // 11 x 125 = 1.375
     ...cursosCidadesBRPages,   // 11 x 566 = 6.226
     ...iaPreviewPages,         // 691 (566 BR + 125 MA)
-    // TOTAL: ~12.540 URLs — TODAS as paginas indexaveis do site.
+    ...enxovalCidadesPages,    // 566 (27 capitais + 539 interior)
+    // TOTAL: ~13.107 URLs — TODAS as paginas indexaveis do site.
     //
     // As unicas rotas geradas que NAO entram, e por motivo tecnico:
     //  · /ia-completo — o canonical dela aponta p/ /cursos/ia-chatgpt-completo

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import CapturaEmail from '@/components/CapturaEmail'
-import { listaEnxoval, naoCompre, ordemCompra } from '@/data/enxoval'
+import ProdutosEnxoval from '@/components/ProdutosEnxoval'
+import { listaEnxoval, naoCompre, ordemCompra, produtosEnxoval } from '@/data/enxoval'
 
 /**
  * Pagina do checklist de enxoval.
@@ -137,9 +138,13 @@ export default function ChecklistEnxovalPage() {
         <div className="container-main max-w-3xl">
           <h2 className="heading-2 text-brand-dark mb-3">A lista</h2>
           <div className="w-14 h-1 bg-brand-mint mb-6" />
-          <p className="text-brand-dark/60 mb-8">
+          <p className="text-brand-dark/60 mb-2">
             As quantidades não são chute. Recém-nascido troca de roupa 3 a 4 vezes por
             dia, e cresce rápido demais para justificar estoque de tamanho RN.
+          </p>
+          <p className="text-brand-dark/40 text-xs mb-8">
+            Os produtos sugeridos usam link de afiliado: se você comprar por eles, a
+            Calazans Lumina pode ganhar uma comissão, sem custo extra para você.
           </p>
 
           {Object.entries(porGrupo).map(([grupo, itens]) => (
@@ -159,6 +164,7 @@ export default function ChecklistEnxovalPage() {
                       {i.dica && (
                         <p className="text-brand-mint text-sm italic leading-relaxed mt-1">{i.dica}</p>
                       )}
+                      {i.chave && <ProdutosEnxoval produtos={produtosEnxoval[i.chave]} />}
                     </div>
                   </li>
                 ))}
