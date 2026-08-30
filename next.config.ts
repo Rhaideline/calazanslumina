@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next'
+import { soMaternidade } from './lib/so-maternidade'
 
 const nextConfig: NextConfig = {
   images: {
@@ -18,60 +19,9 @@ const nextConfig: NextConfig = {
     ],
   },
   async redirects() {
-    return [
-      // CANONICAL: forca www → non-www (301 permanente)
-      // Resolve duplicate-content do Google Search Console:
-      // antes Google indexava 50% das URLs como www.calazanslumina.com.br
-      {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'www.calazanslumina.com.br' }],
-        destination: 'https://calazanslumina.com.br/:path*',
-        permanent: true,
-      },
-      {
-        source: '/blog/robo-whatsapp-automacao-atendimento',
-        destination: '/blog/robo-de-whatsapp-como-automatizar-seu-atendimento-sem-perder-o-lado-humano',
-        permanent: true,
-      },
-      {
-        source: '/blog/brasileiros-massachusetts-presenca-digital',
-        destination: '/blog/como-brasileiros-em-massachusetts-estao-perdendo-clientes-por-falta-de-presenca-digital',
-        permanent: true,
-      },
-      {
-        source: '/blog/seo-local-brasileiros-eua',
-        destination: '/blog/seo-local-para-brasileiros-nos-eua-como-aparecer-no-google-da-sua-cidade',
-        permanent: true,
-      },
-      {
-        // aponta direto p/ o destino final: antes era /projetos -> /cases ->
-        // /portfolio (2 hops), que desperdiça crawl budget e dilui o sinal.
-        source: '/projetos',
-        destination: '/portfolio',
-        permanent: true,
-      },
-      {
-        source: '/ferramentas',
-        destination: '/cursos',
-        permanent: true,
-      },
-      {
-        source: '/videos',
-        destination: '/cursos',
-        permanent: true,
-      },
-      {
-        source: '/cases',
-        destination: '/portfolio',
-        permanent: true,
-      },
-      // Conteudo off-topic (enxoval/bebe/maternidade) agora retorna 410 Gone
-      // via middleware.ts — sinal explicito pro Google desindexar permanente.
-      // 410 desindexa mais rapido que 308 e nao passa autoridade off-topic
-      // pra home. Padroes capturados: /enxoval-de-bebe, /itens-para-casa,
-      // /maternidade, /blog/(bebe|gravidez|colica|amamentacao|rotina-de-sono|recem-nascido)-*
-      // + PDF orfao /checklist-enxoval-bebe-*.pdf.
-    ]
+    // O .com.br e o site de maternidade. Tudo que e assunto de agencia sai
+    // daqui com 301 para o .com. Ver lib/so-maternidade.ts.
+    return soMaternidade
   },
   async headers() {
     return [
