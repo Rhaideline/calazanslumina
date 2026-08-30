@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import CapturaEmail from '@/components/CapturaEmail'
+import BaixarPdf from '@/components/BaixarPdf'
 import EnxovalConteudo from '@/components/EnxovalConteudo'
 import { capitaisBR } from '@/data/capitais-br'
 import { listaEnxoval } from '@/data/enxoval'
@@ -126,11 +126,10 @@ export default function EnxovalPage() {
 
       <section className="pb-24 pt-16">
         <div className="container-main max-w-3xl">
-          <CapturaEmail
-            origem="enxoval-hub"
-            isca="checklist-enxoval-bebe-2026.pdf"
+          <BaixarPdf
+            variante="escuro"
             titulo="Leve a lista com você"
-            descricao="O PDF tem tudo isto em 8 páginas, com caixinha para marcar. Deixe seu e-mail e ele chega agora."
+            descricao="O PDF tem tudo isto em 8 páginas, com caixinha para marcar. Sem cadastro: baixe e leve no celular ou impresso."
           />
         </div>
       </section>
