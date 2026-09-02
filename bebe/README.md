@@ -43,6 +43,7 @@ Se você só tiver energia para uma coisa hoje, é esta:
 | 🔶 [`09-sangue-nas-fezes-e-dermatite.md`](09-sangue-nas-fezes-e-dermatite.md) | **Suspeita de APLV.** Sangue nas fezes + eczema + grito noturno |
 | 🔶 [`10-dipirona-e-qual-dor.md`](10-dipirona-e-qual-dor.md) | A dose de dipirona, por que não repetir sozinha, e qual dor pode ser |
 | 🔶 [`11-retirada-da-proteina-do-leite.md`](11-retirada-da-proteina-do-leite.md) | **Protocolo de dieta de exclusão.** Prazos reais, onde o leite se esconde, sua nutrição |
+| 🛒 [`12-lista-de-alimentos-e-cardapio.md`](12-lista-de-alimentos-e-cardapio.md) | **O que comer.** Lista de compras, substituições, cálcio e cardápio de 10 min |
 | [`registros/diario-de-sono.md`](registros/diario-de-sono.md) | Diário de 7 dias — é o que faz o pediatra achar o padrão |
 
 ---

@@ -44,6 +44,8 @@ Não "a partir de segunda", não "quando acabar o que tem na geladeira". Agora. 
 ### Hora 0–2 — limpe a cozinha
 Tire de vista tudo que tem leite. Não é simbolismo: às 4 da manhã, faminta, você come o que está ao alcance da mão.
 
+➡️ **Lista completa do que pode comer, lista de compras e cardápio: [`12-lista-de-alimentos-e-cardapio.md`](12-lista-de-alimentos-e-cardapio.md).**
+
 ### Hora 2–4 — resolva a sua comida das próximas 48 h
 Deixe pronto e acessível, do tipo que se come com **uma mão só**: arroz, feijão, ovo, frango, carne, peixe, batata, mandioca, frutas, castanhas, pão sem leite, azeite. Amamentando e sem dormir, você **não** vai cozinhar do zero. Se não deixar pronto, você escorrega.
 
@@ -97,7 +99,7 @@ Uma parte relevante dos bebês com APLV reage também à soja. Muitos protocolos
 Você está amamentando, sem dormir, e prestes a cortar a principal fonte de cálcio da dieta brasileira. **Isso não é detalhe.**
 
 - **Cálcio:** a necessidade na lactação é da ordem de **1000 mg/dia**. Sem laticínios, quase ninguém alcança pela comida. **Peça a prescrição de cálcio e vitamina D ao médico** — dose, marca, horário. Não improvise e não pule.
-- **Fontes sem leite:** sardinha com a espinha, couve, brócolis, gergelim e tahine, amêndoa, tofu (se soja estiver liberada), bebidas vegetais **fortificadas com cálcio**, feijão, água mineral rica em cálcio.
+- **Fontes sem leite:** sardinha com a espinha, couve, brócolis, gergelim e tahine, amêndoa, tofu (se soja estiver liberada), bebidas vegetais **fortificadas com cálcio**, feijão. Tabela com as quantidades em [`12`](12-lista-de-alimentos-e-cardapio.md).
 - **Calorias e proteína:** cortar laticínio sem repor o que ele trazia derruba a produção de leite e o seu humor. Coma mais, não menos.
 - **Peça encaminhamento a nutricionista** se der. Dieta de exclusão em lactante tem risco nutricional real.
 
