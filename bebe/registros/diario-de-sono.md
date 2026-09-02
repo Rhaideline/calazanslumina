@@ -52,6 +52,10 @@ Preencha por 7 dias seguidos. É a ferramenta mais útil que existe: padrões qu
 
 **Fraldas:** xixi ____ | cocô ____ (cor/consistência: ____________)
 
+**🔶 Fezes:** [ ] raia de sangue → **tirei foto** [ ] sim [ ] não · [ ] muco · [ ] duras/esforço · [ ] normais
+**🔶 Pele:** [ ] coçou/se esfregou dormindo · [ ] lesão nova · hidratante passado ____×  · corticoide [ ] sim [ ] não
+**🔶 Minha dieta:** [ ] sem leite e derivados hoje · escorreguei em: ____________
+
 **🧑 Eu dormi:** ____ h no total | maior bloco seguido: ____ h
 
 **Notas livres:**
@@ -79,6 +83,8 @@ Depois de 7 dias, olhe o conjunto e responda:
 6. **Sonecas curtas demais / poucas sonecas?** [ ] sim [ ] não → excesso de cansaço é a principal suspeita
 7. **Qual foi a melhor noite da semana, e o que teve de diferente naquele dia?**
    _________________________________________________________________
-8. **Meu maior bloco de sono na semana:** ____ h  → *se foi menos de 4 h, o arquivo `07` é urgente*
+8. 🔶 **Quantos dias tiveram sangue na fralda?** ____ | **quantos dias com coceira noturna?** ____
+   *Se você já começou a dieta de exclusão: o sangue diminuiu ao longo da semana? Costuma sumir entre 72 h e 2 semanas.*
+9. **Meu maior bloco de sono na semana:** ____ h  → *se foi menos de 4 h, o arquivo `07` é urgente*
 
 **➡️ Leve isto na consulta junto com o arquivo [`08`](../08-perguntas-para-o-pediatra.md).**

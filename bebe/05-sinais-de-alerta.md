@@ -13,7 +13,8 @@ Este é o arquivo mais importante da pasta. Se algo aqui aparecer, **pare de ten
 - **Muito molinho** (hipotonia), difícil de acordar, não responde, não acorda para mamar
 - **Convulsão** ou movimentos repetitivos estranhos e ritmados
 - **Vômito em jato repetido**, ou vômito **esverdeado/amarelo forte**
-- **Sangue** nas fezes, no vômito, ou fezes pretas
+- **Sangue** nas fezes **em quantidade** (não raias), fezes **pretas** tipo borra de café, ou sangue no vômito
+- 🔶 **Suspeita de invaginação intestinal:** choro em crises com as pernas dobradas sobre a barriga, em ondas — e **entre as crises ele fica pálido, molinho e apático**; vômito esverdeado; fezes tipo "geleia de framboesa". Pico entre 3 meses e 3 anos. **É cirúrgico e o tempo conta.** Ver [`09`](09-sangue-nas-fezes-e-dermatite.md).
 - **Choro inconsolável há mais de 2–3 horas**, com um som diferente de tudo que você já ouviu dele
 - Barriga **muito distendida e dura**
 - **Manchas roxas ou vermelhas na pele que não somem** quando você aperta (teste do copo de vidro)
@@ -30,7 +31,8 @@ Este é o arquivo mais importante da pasta. Se algo aqui aparecer, **pare de ten
 - **Sua muito** durante o sono, sem estar calor
 - **Não ganhou peso** ou emagreceu desde a última consulta
 - **Arqueia as costas com força e recorrentemente**, principalmente após mamar (pode ser refluxo)
-- **Muco ou raias de sangue nas fezes**, eczema importante, regurgitação intensa (pode ser alergia à proteína do leite de vaca)
+- 🔶 **Muco ou raias de sangue nas fezes**, eczema, regurgitação intensa → **é o caso dele.** Ver [`09`](09-sangue-nas-fezes-e-dermatite.md)
+- **Dermatite atópica que não controla** com hidratante, ou lesões com crosta amarelada / pus (infecção secundária)
 - **Puxa ou bate na orelha**, principalmente depois de resfriado
 - **Sono não melhorou nada** depois de 14 noites do plano do arquivo `04`
 - Ele dorme **muito menos que 12 h** ou **muito mais que 17 h** no total, de forma consistente

@@ -6,6 +6,14 @@ Feito para uma mãe cansada às 3 da manhã. Por isso a ordem é essa: **primeir
 
 ---
 
+## 🔶 ATUALIZAÇÃO — leia o arquivo `09` antes de tudo
+
+Ele teve **raias de sangue nas fezes** e tem **dermatite atópica**. Isso muda a ordem das coisas: o quadro sugere **alergia à proteína do leite de vaca**, e o grito noturno pode ser **dor**, não hábito de sono.
+
+➡️ **[`09-sangue-nas-fezes-e-dermatite.md`](09-sangue-nas-fezes-e-dermatite.md)** — leia este primeiro. O plano de sono do arquivo `04` está em pausa até isso ser avaliado pelo pediatra.
+
+---
+
 ## 🔴 Leia isto primeiro (2 minutos)
 
 Se você só tiver energia para uma coisa hoje, é esta:
@@ -30,9 +38,12 @@ Se você só tiver energia para uma coisa hoje, é esta:
 | [`06-sono-seguro.md`](06-sono-seguro.md) | Regras de berço seguro (não negociáveis) |
 | [`07-para-a-mae.md`](07-para-a-mae.md) | Você. Sobrevivência, revezamento, e quando o cansaço vira outra coisa |
 | [`08-perguntas-para-o-pediatra.md`](08-perguntas-para-o-pediatra.md) | Leve impresso na consulta |
+| 🔶 [`09-sangue-nas-fezes-e-dermatite.md`](09-sangue-nas-fezes-e-dermatite.md) | **Suspeita de APLV.** Sangue nas fezes + eczema + grito noturno |
 | [`registros/diario-de-sono.md`](registros/diario-de-sono.md) | Diário de 7 dias — é o que faz o pediatra achar o padrão |
 
 ---
+
+> ⏸️ **O cronograma abaixo vale para depois** que o quadro do arquivo `09` estiver resolvido. Não se treina sono com dor.
 
 ## ⏱️ Expectativa honesta
 

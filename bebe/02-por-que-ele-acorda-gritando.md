@@ -1,5 +1,7 @@
 # 02 — Por que ele acorda GRITANDO
 
+> 🔶 **No caso dele, comece pelo item 5 desta lista** (alergia à proteína do leite de vaca) — o quadro de sangue nas fezes + dermatite atópica aponta para lá. Detalhes completos em [`09-sangue-nas-fezes-e-dermatite.md`](09-sangue-nas-fezes-e-dermatite.md).
+
 Acordar chorando é uma coisa. Acordar **gritando, de repente, difícil de acalmar** é outra — e tem uma lista curta de causas prováveis. Vamos da mais comum para a mais rara.
 
 Primeiro, aprenda a diferença entre os dois choros:
@@ -58,11 +60,13 @@ Muito comum e muito subdiagnosticado como causa de grito noturno.
 
 ---
 
-## 5. Alergia à proteína do leite de vaca (APLV)
+## 5. 🔶 Alergia à proteína do leite de vaca (APLV) — *principal suspeita no caso dele*
 
 **Sinais:** choro inconsolável, refluxo intenso, **fezes com muco ou raias de sangue**, eczema/pele muito ressecada, ganho de peso ruim, cólica que não passou.
 
 **O que fazer:** **isso é avaliação do pediatra, não teste por conta própria.** O caminho usual é a mãe retirar leite e derivados da dieta por 2–4 semanas, com orientação — mas fazer sem acompanhamento arrisca sua própria nutrição num momento em que você já está no limite.
+
+➡️ **Arquivo dedicado, com as armadilhas do diagnóstico e o passo a passo: [`09`](09-sangue-nas-fezes-e-dermatite.md).**
 
 ---
 
@@ -123,4 +127,4 @@ Muita visita, muita tela, shopping, luz, barulho, gente pegando no colo. O cére
 
 ## Como usar esta lista hoje à noite
 
-Passe pelas quatro primeiras na ordem: **cansaço → ciclo de sono → fome → refluxo**. Elas explicam a grande maioria dos casos. Ajuste ambiente e janelas por 3 noites e anote tudo no [diário](registros/diario-de-sono.md). Se em 7 dias não mudou nada, o diário vira a melhor ferramenta que o pediatra vai ter em mãos.
+🔶 **No caso dele, o item 5 (APLV) vem antes.** Depois de encaminhado isso, passe pelas quatro primeiras na ordem: **cansaço → ciclo de sono → fome → refluxo**. Elas explicam a grande maioria dos casos. Ajuste ambiente e janelas por 3 noites e anote tudo no [diário](registros/diario-de-sono.md). Se em 7 dias não mudou nada, o diário vira a melhor ferramenta que o pediatra vai ter em mãos.
