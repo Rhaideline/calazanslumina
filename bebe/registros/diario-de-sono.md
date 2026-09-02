@@ -55,6 +55,8 @@ Preencha por 7 dias seguidos. É a ferramenta mais útil que existe: padrões qu
 **🔶 Fezes:** [ ] raia de sangue → **tirei foto** [ ] sim [ ] não · [ ] muco · [ ] duras/esforço · [ ] normais
 **🔶 Pele:** [ ] coçou/se esfregou dormindo · [ ] lesão nova · hidratante passado ____×  · corticoide [ ] sim [ ] não
 **🔶 Minha dieta:** [ ] sem leite e derivados hoje · escorreguei em: ____________
+**🌡️ Temperatura medida (ANTES de qualquer remédio):** ____ °C às ____
+**💊 Medicação dada:** o quê ____________ | dose ______ | hora ______ | melhorou? [ ] sim [ ] não
 
 **🧑 Eu dormi:** ____ h no total | maior bloco seguido: ____ h
 
@@ -77,6 +79,8 @@ Depois de 7 dias, olhe o conjunto e responda:
    - Cerca de 40 min após deitar → sobressalto de ciclo de sono (arquivo `01`)
    - 20–40 min após mamar → suspeitar de refluxo (arquivo `02`, item 4)
    - Segunda metade da noite → mais comum ser fome ou desconforto
+   - Em ondas, com as pernas dobradas na barriga → cólica visceral (arquivo `10`)
+   - Na hora de evacuar → fissura anal (arquivo `10`)
 4. **Quando ele adormeceu sozinho no berço, a noite foi melhor?** [ ] sim [ ] não [ ] não testei
    *Se sim: é o caminho. Se não: pode haver causa física por trás.*
 5. **Os dias agitados viraram noites piores?** [ ] sim [ ] não

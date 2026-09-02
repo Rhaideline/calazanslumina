@@ -12,6 +12,8 @@ Ele teve **raias de sangue nas fezes** e tem **dermatite atópica**. Isso muda a
 
 ➡️ **[`09-sangue-nas-fezes-e-dermatite.md`](09-sangue-nas-fezes-e-dermatite.md)** — leia este primeiro. O plano de sono do arquivo `04` está em pausa até isso ser avaliado pelo pediatra.
 
+➡️ **[`10-dipirona-e-qual-dor.md`](10-dipirona-e-qual-dor.md)** — ele melhorou com dipirona. O que isso indica, o que não indica, e por que **medir a temperatura antes de medicar** é obrigatório enquanto o sangramento não for investigado.
+
 ---
 
 ## 🔴 Leia isto primeiro (2 minutos)
@@ -39,6 +41,7 @@ Se você só tiver energia para uma coisa hoje, é esta:
 | [`07-para-a-mae.md`](07-para-a-mae.md) | Você. Sobrevivência, revezamento, e quando o cansaço vira outra coisa |
 | [`08-perguntas-para-o-pediatra.md`](08-perguntas-para-o-pediatra.md) | Leve impresso na consulta |
 | 🔶 [`09-sangue-nas-fezes-e-dermatite.md`](09-sangue-nas-fezes-e-dermatite.md) | **Suspeita de APLV.** Sangue nas fezes + eczema + grito noturno |
+| 🔶 [`10-dipirona-e-qual-dor.md`](10-dipirona-e-qual-dor.md) | A dose de dipirona, por que não repetir sozinha, e qual dor pode ser |
 | [`registros/diario-de-sono.md`](registros/diario-de-sono.md) | Diário de 7 dias — é o que faz o pediatra achar o padrão |
 
 ---

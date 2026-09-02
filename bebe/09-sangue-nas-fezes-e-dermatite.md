@@ -123,6 +123,8 @@ Alguns pontos para você levar ao pediatra:
 - Em bebês, anti-histamínicos sedativos podem causar **agitação paradoxal** — ou seja, deixar mais agitado em vez de calmo. Vale olhar no diário: **as noites pioraram, melhoraram ou ficaram iguais nesses 7 dias?** Essa informação é útil.
 - Se ele **não foi prescrito por pediatra** e sim indicado por farmácia ou conhecido, isso muda a conversa: leve exatamente essa informação.
 
+➡️ **Sobre a dipirona e o uso de analgésico neste cenário, ver [`10-dipirona-e-qual-dor.md`](10-dipirona-e-qual-dor.md).**
+
 ⛔ **E o que já estava no arquivo `04` vale ainda mais aqui: nada de medicar para dormir.** Se entrar remédio nessa história, é para tratar a alergia e a pele — a causa da dor — não para sedar.
 
 ---

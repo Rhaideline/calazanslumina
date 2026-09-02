@@ -7,6 +7,7 @@ Este é o arquivo mais importante da pasta. Se algo aqui aparecer, **pare de ten
 ## 🔴 PRONTO-SOCORRO AGORA (não espere amanhecer)
 
 - **Febre ≥ 38 °C** (axilar) — em bebê pequeno, febre é sempre avaliação médica, não é para observar em casa
+  - ⚠️ **Meça a temperatura ANTES de dar qualquer analgésico.** Dipirona e paracetamol apagam a febre — e com o sangramento ainda sem explicação, a febre é um dos sinais que você não pode perder. Ver [`10`](10-dipirona-e-qual-dor.md).
 - **Pausa na respiração** de mais de ~20 segundos, ou qualquer pausa com mudança de cor
 - **Lábios, língua ou rosto roxos/arroxeados** (cianose) ou muito pálido/acinzentado
 - **Esforço para respirar:** costelas afundando a cada respiração (tiragem), narinas abrindo, gemido ao expirar, respiração muito rápida
