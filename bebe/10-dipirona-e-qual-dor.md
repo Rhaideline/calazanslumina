@@ -31,19 +31,53 @@ Outras referências da bula, para você ter em mãos:
 
 ---
 
-## 2. "Melhorou, então era dor?" — sim e não
+## 2. O que a melhora significa (e o que ela não significa)
 
-Sua observação **conta** e vale levar ao pediatra. Mas ela é uma **pista**, não uma prova. Motivos:
+Você fez um raciocínio legítimo: *deu analgésico, melhorou, logo era dor.* Isso tem nome em medicina — diagnóstico pela resposta ao tratamento — e é uma inferência **fraca, mas não inútil.** Vale saber exatamente onde ela é forte e onde falha.
 
-| Por que a melhora sugere dor | Por que ela não fecha o diagnóstico |
+### a) Dipirona faz três coisas, não uma
+
+| Ação | Então a melhora também é compatível com... |
 |---|---|
-| Dipirona é analgésica **e antiespasmódica** — relaxa a musculatura lisa do intestino. É justamente por isso que funciona bem em cólica visceral. Bate com o quadro de proctocolite alérgica. | Bebê acalma também **pelo colo**, pelo gosto adocicado, pela sua atenção — e é isso que acontece junto com dar o remédio |
-| A dor cedeu no tempo esperado (30–60 min) | Cólica **vem e vai em ondas** sozinha. Pode ter passado no horário em que passaria de qualquer jeito |
-| Ele estava gritando, não choramingando | Foi **uma** observação, sem repetição e sem comparação |
+| **Analgésica** | dor — a hipótese que você levantou |
+| **Antitérmica** | **febre que você não mediu** |
+| **Antiespasmódica** (relaxa musculatura lisa) | cólica / espasmo intestinal, sem dor "de lesão" |
 
-**Tradução honesta:** aumenta a chance de haver dor real no meio disso — o que já era a suspeita depois do sangue nas fezes. Não muda o plano: continua sendo consulta e investigação da alergia.
+⚠️ **Repare na linha do meio.** Se ele estava com febre e você não mediu, a dipirona derrubou a febre — e a melhora que você viu foi isso. Nesse caso "melhorou" **não é boa notícia**: febre num bebê de 4 meses com sangue nas fezes é motivo de avaliação, não de espera. É a razão nº 1 para medir a temperatura antes de medicar daqui pra frente.
 
----
+### b) O que teria melhorado sozinho, no mesmo intervalo
+
+Não houve comparação — e várias coisas acontecem junto com dar o remédio:
+
+- **O colo.** Você pegou ele para medicar. O colo, por si só, acalma.
+- **A sucção** e a sua atenção focada.
+- **O tempo.** Cólica visceral vem em ondas de 15 a 30 minutos e cede sozinha.
+- **Você.** Depois de "fazer alguma coisa", a sua tensão baixa — e bebê espelha o estado da mãe.
+
+### c) Dois detalhes que afiam muito a conclusão
+
+Tente lembrar destes dois, porque eles valem mais que tudo acima:
+
+1. **Quanto tempo até acalmar?** Dipirona oral começa a agir em **30 a 60 minutos**. Se ele acalmou em 5 minutos, foi o colo — não o remédio. Se levou meia hora e aí cedeu, aí sim bate com o medicamento.
+2. **Quanto tempo durou?** O efeito dura **4 a 6 horas**. Se ele dormiu um bloco compatível com essa janela e o grito voltou logo depois, é o sinal mais forte de todos — porque a melhora acompanhou a farmacocinética do remédio, e o acaso não faz isso.
+
+### d) O que a melhora NÃO diz: onde dói
+
+Analgesia é completamente **inespecífica quanto ao local**. Ouvido, intestino, fissura, gengiva — tudo responde igual. A melhora não estreita nada no diferencial da seção 4. **Só o padrão de horário localiza a dor** (seção 5).
+
+### e) O que ela DIZ — e este é o ponto que vale levar à consulta
+
+> **Um despertar de transição de ciclo de sono não melhora com analgésico.**
+
+O bebê que acorda gritando aos 40 minutos por causa da maturação do sono (arquivo `01`) não está sentindo nada. Analgésico não faria diferença nenhuma nele.
+
+Então o valor real da sua observação não é apontar **qual** dor. É ser **evidência contra o "é só a fase dos 4 meses"** — que é exatamente a frase que você precisa conseguir contestar se ouvir na consulta. Somada ao sangue nas fezes e ao eczema, ela empurra a balança para: **há causa física, investiguem.**
+
+### f) E não repita para testar
+
+A tentação é óbvia: dar de novo na próxima crise para confirmar. **Não faça isso** — pela seção 3 abaixo, e porque um segundo teste sem controle não prova mais que o primeiro.
+
+O teste que vale a pena rodar é outro, e tem leitura clara: **a dieta de exclusão** (arquivo `09`). Tira a proteína do leite → **o sangue some em 72 h a 2 semanas.** Esse desfecho é objetivo, visível na fralda, e não depende de interpretar choro.
 
 ## 3. 🚨 O motivo principal para NÃO repetir por conta própria
 
