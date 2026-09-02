@@ -94,6 +94,8 @@ Não resolve. O problema é a **proteína** do leite, não a **lactose**. Fórmu
 
 ### 4. Se você amamenta: a dieta de exclusão
 
+➡️ **Protocolo completo — prazos reais, lista de onde o leite se esconde, o que NÃO funciona, e a sua própria nutrição: [`11-retirada-da-proteina-do-leite.md`](11-retirada-da-proteina-do-leite.md).**
+
 **Faça com orientação do pediatra**, não por conta própria — você já está exausta e não pode comprometer sua própria nutrição agora.
 
 Como funciona, para você chegar informada:

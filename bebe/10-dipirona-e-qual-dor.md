@@ -77,7 +77,7 @@ Então o valor real da sua observação não é apontar **qual** dor. É ser **e
 
 A tentação é óbvia: dar de novo na próxima crise para confirmar. **Não faça isso** — pela seção 3 abaixo, e porque um segundo teste sem controle não prova mais que o primeiro.
 
-O teste que vale a pena rodar é outro, e tem leitura clara: **a dieta de exclusão** (arquivo `09`). Tira a proteína do leite → **o sangue some em 72 h a 2 semanas.** Esse desfecho é objetivo, visível na fralda, e não depende de interpretar choro.
+O teste que vale a pena rodar é outro, e tem leitura clara: **a dieta de exclusão** (arquivos `09` e [`11`](11-retirada-da-proteina-do-leite.md)). Tira a proteína do leite → **o sangue some em 72 h a 2 semanas.** Esse desfecho é objetivo, visível na fralda, e não depende de interpretar choro.
 
 ## 3. 🚨 O motivo principal para NÃO repetir por conta própria
 

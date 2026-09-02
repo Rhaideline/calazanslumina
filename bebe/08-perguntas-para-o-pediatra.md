@@ -78,7 +78,8 @@ Imprima ou abra no celular. Consulta de pediatra dura 20 minutos e a gente esque
 1. Isso pode ser **proctocolite alérgica / APLV**? Como vamos confirmar?
 2. Precisamos descartar **fissura anal** ou outra causa? Dá para examinar hoje?
 3. Se for APLV: eu faço **dieta de exclusão** (leite e derivados)? Por quantas semanas? Tiro soja também?
-4. Nesse caso, **quanto de cálcio e vitamina D eu preciso repor?**
+4. Nesse caso, **quanto de cálcio e vitamina D eu preciso repor?** *(qual dose, qual produto — peça por escrito)*
+4b. **Tiro soja junto** com o leite, ou só leite por enquanto?
 5. Depois, como e quando fazemos a **reintrodução** para confirmar o diagnóstico?
 6. *(Se usa fórmula)* Trocamos por **extensamente hidrolisada**? Tem como conseguir pelo SUS ou pelo plano?
 7. Se pedirmos exame de IgE e der negativo, **isso descarta**? *(a resposta correta é não — proctocolite alérgica é não mediada por IgE)*
