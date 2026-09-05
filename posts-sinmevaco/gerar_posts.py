@@ -916,6 +916,47 @@ def tela(stats, titulo, botao, rodape, photo=None, counter=None):
 """, counter=counter, photo=photo, show_foot=False, show_wm=False)
 
 
+# ====== 31 PECA DE DATA (esqueleto do SISTEMA_POSTS_DATA.md) ======
+BASE_CSS += """
+.data-med .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;text-align:center;padding:0 90px;gap:0}
+.data-med .kicker{font-size:22px;letter-spacing:.32em;text-transform:uppercase;font-weight:500;color:var(--brass-2)}
+.data-med .simbolo{width:186px;height:186px;margin:44px 0 40px;color:var(--brass-2)}
+.data-med .simbolo svg{width:100%;height:100%}
+.data-med h1{font-family:'Spectral',serif;font-weight:300;font-size:82px;line-height:1.06;letter-spacing:-.02em;color:var(--cream)}
+.data-med h1 em{font-style:italic;font-weight:600;color:var(--brass-2);display:block}
+.data-med .frase{margin-top:40px;font-size:31px;line-height:1.44;color:rgba(245,247,243,.82);max-width:22ch}
+.data-med .pe{position:absolute;z-index:6;left:0;right:0;bottom:72px;text-align:center;font-size:23px;
+  letter-spacing:.18em;color:rgba(245,247,243,.6)}
+.t-claro .data-med .frase,.t-claro .frase{color:rgba(22,35,27,.8)}
+"""
+
+# Simbolo da radioterapia: feixes que convergem num alvo, poupando o entorno.
+# Nasce da acao clinica, nao de clipart — metodo brandkit do sistema de datas.
+SIMBOLO_RADIO = """<svg viewBox="0 0 200 200" fill="none" stroke="currentColor"
+  stroke-width="1.7" stroke-linecap="round">
+  <path d="M18 30 L92 100"/><path d="M59 16 L96 96"/><path d="M100 12 L100 92"/>
+  <path d="M141 16 L104 96"/><path d="M182 30 L108 100"/>
+  <circle cx="100" cy="122" r="13"/>
+  <circle cx="100" cy="122" r="27" opacity=".6"/>
+  <circle cx="100" cy="122" r="41" opacity=".3"/>
+  <path d="M34 176 H166" opacity=".45"/>
+</svg>"""
+
+
+def data_medica(kicker, linha1, linha2, frase, simbolo, counter=None, foot_tag=None):
+    """31 - peca de data de especialidade, no esqueleto fixo da casa."""
+    return page(f"{linha1} {linha2}", "data-med bg-navy", f"""
+<div class="body">
+  <div class="kicker">{kicker}</div>
+  <div class="simbolo">{simbolo}</div>
+  <h1>{linha1}<em>{linha2}</em></h1>
+  <div class="frase">{frase}</div>
+</div>
+<div class="pe">{HANDLE} &middot; {SITE}</div>
+""", counter=counter, show_foot=False, show_wm=False)
+
+
 # ====== POSTS ======
 # Slots de foto: coloque o arquivo em fotos/<nome>.jpg. Sem o arquivo,
 # o degrade de fundo assume e o slide continua fechado.
@@ -1265,6 +1306,41 @@ POSTS = [
             "A Lei 3.999/61 fixa o piso da categoria <b>para</b> a jornada de quatro horas &mdash; n&atilde;o um teto de jornada. &Eacute; o que diz a S&uacute;mula 370 do TST.")),
     ]),
 
+    # ---------- data: 5 de setembro, Dia do Radioterapeuta ----------
+    ("31_dia_radioterapeuta", [
+        ("01_capa.html", data_medica(
+            "5 de setembro",
+            "Dia do M&eacute;dico ",
+            "Radioterapeuta",
+            "Quem calcula a dose que trata o tumor poupando o que fica em volta.",
+            SIMBOLO_RADIO, "1/5")),
+        ("02_virada.html", editorial(
+            "A radioterapia &eacute; uma das tr&ecirc;s modalidades que a lei reconhece como <b>in&iacute;cio do tratamento</b> do c&acirc;ncer.",
+            "O prazo de 60 dias s&oacute; existe de verdade <em>quando h&aacute; quem trate.</em>",
+            "Lei 12.732/2012: o paciente tem direito a come&ccedil;ar o tratamento em at&eacute; <b>60 dias</b> a contar do laudo que confirma o diagn&oacute;stico.",
+            "2/5")),
+        ("03_lei.html", clausula(
+            "Lei 12.732/2012 &middot; Lei dos 60 dias",
+            "Considera-se iniciado o tratamento com <mark>cirurgia, radioterapia ou quimioterapia</mark>, conforme a necessidade terap&ecirc;utica do caso.",
+            "O prazo &eacute; do paciente. A conta <em>cai no servi&ccedil;o.</em>",
+            "Fila, equipamento parado e escala apertada viram press&atilde;o sobre quem assina o plano de tratamento.",
+            "3/5")),
+        ("04_registro.html", lista(
+            "Quando o prazo aperta",
+            "O que o m&eacute;dico registra",
+            ["<b>Data do laudo</b> e a data em que o paciente entrou na fila do servi&ccedil;o.",
+             "<b>Capacidade real</b>: equipamentos dispon&iacute;veis, parados e o tempo m&eacute;dio de espera.",
+             "<b>Pedidos formais</b> de amplia&ccedil;&atilde;o de equipe ou de escala, com protocolo.",
+             "<b>Comunica&ccedil;&atilde;o por escrito</b> &agrave; dire&ccedil;&atilde;o quando o prazo legal n&atilde;o puder ser cumprido."],
+            "4/5")),
+        ("05_cta.html", cta(
+            "SINMEVA&Ccedil;O &middot; 5 de setembro",
+            "Ao radioterapeuta do Vale do A&ccedil;o, <em>o nosso respeito.</em>",
+            "E o jur&iacute;dico do sindicato do lado de c&aacute; quando a estrutura n&atilde;o acompanha a responsabilidade.",
+            "Falar com o jur&iacute;dico", "5/5")),
+    ]),
+
+
     # ---------- pecas que fecham o ciclo mensal ----------
     ("26_substituto_processual", [
         ("01_capa.html", cover(
@@ -1343,6 +1419,8 @@ POSTS = [
 # Fila de publicacao do mes. Cada linha: pasta, pilar editorial e o gancho
 # de uma frase que justifica a peca estar ali.
 CALENDARIO = [
+    # ---- Data da categoria: entra na frente, e do dia ----
+    ("31_dia_radioterapeuta", "Data",  "5 de setembro, Dia do Medico Radioterapeuta"),
     # ---- Semana 1: o que ja e seu ----
     ("semana-01/1_seg_carrossel_atraso", "Caso real",  "O plantao caiu na conta dois meses depois"),
     ("25_mito_quatro_horas",             "Correcao",   "A lei nao da jornada de 4 horas: da o piso"),
