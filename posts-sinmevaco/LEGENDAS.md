@@ -201,6 +201,30 @@ As regras de ofício por trás disso estão em `ESTUDO-SOCIAL-MEDIA.md`.
 
 ---
 
+# DATA DA CATEGORIA
+
+## 31 — Dia do Médico Radioterapeuta (carrossel, 5 slides)
+**Pasta:** `31_dia_radioterapeuta/` · **agendado para 05/09/2026, 17h** — Instagram e Facebook
+
+> 5 de setembro — Dia do Médico Radioterapeuta.
+>
+> É a especialidade que calcula a dose que trata o tumor poupando o que fica em volta. E é uma das três modalidades que a lei reconhece como início do tratamento do câncer: cirurgia, radioterapia ou quimioterapia.
+>
+> A Lei 12.732/2012, a Lei dos 60 dias, dá ao paciente o direito de começar o tratamento em até 60 dias a contar do laudo que confirma o diagnóstico. Quando a hipótese principal é neoplasia maligna, os exames necessários têm prazo de até 30 dias (redação da Lei 13.896/2019).
+>
+> O prazo é do paciente. A conta, na prática, cai no serviço — e sobre quem assina o plano de tratamento. Fila, equipamento parado e escala apertada viram pressão sobre o médico.
+>
+> Se é o seu caso, registre: a data do laudo e a data de entrada na fila, a capacidade real do serviço, os pedidos formais de ampliação de equipe com protocolo, e a comunicação por escrito à direção quando o prazo legal não puder ser cumprido. Documento protege médico.
+>
+> Ao radioterapeuta do Vale do Aço, o respeito do SINMEVAÇO. E o jurídico do sindicato do lado de cá quando a estrutura não acompanha a responsabilidade.
+>
+> Fonte: Lei nº 12.732/2012, com a redação dada pela Lei nº 13.896/2019.
+
+`#SINMEVAÇO #DiaDoRadioterapeuta #Radioterapia #Oncologia #MédicosDoValeDoAço #DireitoMédico #CoronelFabriciano #Ipatinga #Timóteo`
+
+
+---
+
 # POSTS COM BASE NO ESTUDO
 
 Ancorados em `ESTUDO-SINDICATO-MEDICO.md`. Cada afirmação tem fonte lá.
