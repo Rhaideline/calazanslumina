@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { formatPreco } from '@/lib/formatters'
 
 interface FloatingCTAProps {
   gratuito: boolean
@@ -30,7 +31,7 @@ export default function FloatingCTA({ gratuito, preco, slug, linkPagamento }: Fl
           ) : (
             <p className="text-white font-bold text-sm">
               <span className="text-white/40 line-through text-xs mr-2">R$ 197</span>
-              R$ {preco},00 <span className="text-brand-mint">— Pagamento Único</span>
+              R$ {formatPreco(preco)} <span className="text-brand-mint">— Pagamento Único</span>
             </p>
           )}
         </div>
@@ -45,7 +46,7 @@ export default function FloatingCTA({ gratuito, preco, slug, linkPagamento }: Fl
             rel="noopener noreferrer"
             className="btn-primary text-sm px-6 py-2.5 whitespace-nowrap"
           >
-            Garantir por R$ {preco},00
+            Garantir por R$ {formatPreco(preco)}
           </a>
         )}
       </div>

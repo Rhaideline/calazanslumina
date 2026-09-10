@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { cursos } from '@/data/cursos'
 import ScrollReveal from '@/components/ScrollReveal'
+import { formatPrecoCompacto } from '@/lib/formatters'
 
 export default function CoursesSection() {
   const cursosDestaque = cursos.filter((c) => c.destaque || c.gratuito).slice(0, 3)
@@ -17,11 +18,11 @@ export default function CoursesSection() {
           </p>
           <h2 className="heading-2 text-brand-dark mb-4">
             Cursos de Marketing Digital —{' '}
-            <span className="text-brand-mint">2 Gratuitos</span>
+            <span className="text-brand-mint">4 Gratuitos</span>
           </h2>
           <p className="text-brand-dark/60 text-lg max-w-2xl mx-auto">
             Aprenda marketing digital, IA, redes sociais e funis de vendas com cursos
-            práticos. 2 cursos gratuitos + 5 por apenas R$20 cada.
+            práticos. 4 cursos gratuitos + 4 por apenas R$ 9,90 cada.
           </p>
         </ScrollReveal>
 
@@ -49,7 +50,7 @@ export default function CoursesSection() {
                             : 'bg-brand-mint'
                         }`}
                       >
-                        {curso.gratuito ? 'GRATUITO' : `R$${curso.preco}`}
+                        {curso.gratuito ? 'GRATUITO' : `R$ ${formatPrecoCompacto(curso.preco)}`}
                       </span>
                     </div>
                   </div>

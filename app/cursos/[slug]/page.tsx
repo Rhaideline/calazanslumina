@@ -7,6 +7,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Breadcrumb from '@/components/Breadcrumb'
 import CoursesSection from '@/components/CoursesSection'
+import { formatPreco, formatPrecoCompacto } from '@/lib/formatters'
 
 export function generateStaticParams() {
   return cursos.map((c) => ({ slug: c.slug }))
@@ -18,11 +19,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!curso) return {}
   const totalAulas = curso.modulos.reduce((acc, m) => acc + m.aulas.length, 0)
   return {
-    title: `${curso.nome} (2026) | ${curso.gratuito ? 'GRATUITO' : `Apenas R$${curso.preco}`} — ${totalAulas} Aulas`,
-    description: `${curso.descricaoCurta} ${curso.modulos.length} modulos, ${totalAulas} aulas com certificado. ${curso.gratuito ? 'Acesso 100% gratuito + material PDF. Comece agora →' : `So R$${curso.preco}. Acesso vitalicio + atualizacoes. Comece agora →`}`,
+    title: `${curso.nome} (2026) | ${curso.gratuito ? 'GRATUITO' : `Apenas R$ ${formatPrecoCompacto(curso.preco)}`} — ${totalAulas} Aulas`,
+    description: `${curso.descricaoCurta} ${curso.modulos.length} modulos, ${totalAulas} aulas com certificado. ${curso.gratuito ? 'Acesso 100% gratuito + material PDF. Comece agora →' : `So R$ ${formatPrecoCompacto(curso.preco)}. Acesso vitalicio + atualizacoes. Comece agora →`}`,
     alternates: { canonical: `https://calazanslumina.com.br/cursos/${slug}` },
     openGraph: {
-      title: `${curso.nome} | ${curso.gratuito ? 'Curso Gratuito' : `R$ ${curso.preco}`}`,
+      title: `${curso.nome} | ${curso.gratuito ? 'Curso Gratuito' : `R$ ${formatPrecoCompacto(curso.preco)}`}`,
       description: curso.descricaoCurta,
       url: `https://calazanslumina.com.br/cursos/${slug}`,
       type: 'website',
@@ -62,12 +63,6 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
       reviewBody: d.texto,
       reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
     })),
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: 4.9,
-      reviewCount: curso.vsl.depoimentos.length + 47,
-      bestRating: 5,
-    },
   }
 
   const faqSchema = {
@@ -112,7 +107,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
               <div className="inline-flex items-center gap-2 bg-brand-mint/20 border border-brand-mint/30 rounded-full px-4 py-1.5 mb-6">
                 <span className="w-2 h-2 bg-brand-mint rounded-full animate-pulse" />
                 <span className="text-brand-mint text-sm font-medium">
-                  {curso.gratuito ? 'Curso 100% Gratuito' : `Apenas R$ ${curso.preco},00 — Pagamento Unico`}
+                  {curso.gratuito ? 'Curso 100% Gratuito' : `Apenas R$ ${formatPreco(curso.preco)} — Pagamento Unico`}
                 </span>
               </div>
 
@@ -164,7 +159,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                     rel="noopener noreferrer"
                     className="btn-primary text-lg px-8 py-4"
                   >
-                    Garantir por R$ {curso.preco},00
+                    Garantir por R$ {formatPreco(curso.preco)}
                   </a>
                 )}
               </div>
@@ -182,7 +177,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                     <div>
                       <p className="text-white/30 text-sm line-through mb-1">De R$ 197,00</p>
                       <p className="font-serif text-5xl font-bold text-white">
-                        R$ {curso.preco}<span className="text-2xl text-white/40">,00</span>
+                        R$ {formatPreco(curso.preco)}
                       </p>
                       <p className="text-brand-mint text-sm mt-1">Economia de R$ {197 - curso.preco},00</p>
                     </div>
@@ -475,7 +470,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
           <ScrollReveal delay={300} className="text-center mt-6">
             <p className="text-brand-dark/40 text-sm">
               Valor total dos bonus: <span className="line-through">R$ 171,00</span>{' '}
-              <span className="text-brand-mint font-bold">INCLUSO {curso.gratuito ? 'GRATIS' : `por R$ ${curso.preco},00`}</span>
+              <span className="text-brand-mint font-bold">INCLUSO {curso.gratuito ? 'GRATIS' : `por R$ ${formatPreco(curso.preco)}`}</span>
             </p>
           </ScrollReveal>
         </div>
@@ -494,7 +489,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                 ) : (
                   <>
                     <p className="font-serif text-6xl font-bold text-white">
-                      R$ {curso.preco}<span className="text-3xl text-white/40">,00</span>
+                      R$ {formatPreco(curso.preco)}
                     </p>
                     <p className="text-brand-mint text-sm mt-2">Pagamento único · Conteúdo em PDF · Acesso imediato</p>
                   </>
@@ -521,7 +516,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                     rel="noopener noreferrer"
                     className="btn-primary text-lg px-10 py-4"
                   >
-                    Garantir por R$ {curso.preco},00
+                    Garantir por R$ {formatPreco(curso.preco)}
                   </a>
                 )}
               </div>
@@ -601,7 +596,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                   rel="noopener noreferrer"
                   className="btn-primary text-lg px-10 py-4"
                 >
-                  Garantir por R$ {curso.preco},00 — Acesso Imediato
+                  Garantir por R$ {formatPreco(curso.preco)} — Acesso Imediato
                 </a>
               )}
             </div>
@@ -623,7 +618,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                     <Image src={c.imagem} alt={c.nome} width={60} height={60} className="mx-auto mb-3 opacity-70" />
                     <h3 className="font-bold text-sm group-hover:text-brand-mint transition-colors">{c.nome}</h3>
                     <p className="text-brand-dark/40 text-xs mt-1">
-                      {c.gratuito ? 'Gratuito' : `R$ ${c.preco},00`}
+                      {c.gratuito ? 'Gratuito' : `R$ ${formatPreco(c.preco)}`}
                     </p>
                   </Link>
                 </ScrollReveal>

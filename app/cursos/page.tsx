@@ -4,15 +4,16 @@ import { cursos } from '@/data/cursos'
 import ScrollReveal from '@/components/ScrollReveal'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import type { Metadata } from 'next'
+import { formatPreco } from '@/lib/formatters'
 
 export const metadata: Metadata = {
-  title: 'Cursos de Marketing Digital | 2 Gratuitos + 5 por R$20',
+  title: 'Cursos de Marketing Digital | 4 Gratuitos + 4 por R$ 9,90',
   description:
-    'Aprenda marketing digital do zero: IA & ChatGPT, Google Meu Negocio, Redes Sociais, Funis de Vendas. 2 cursos gratuitos + 5 por apenas R$20. PDF + acesso online. Comece agora!',
+    'Aprenda marketing digital do zero: IA & ChatGPT, Google Meu Negocio, Redes Sociais, Funis de Vendas. 4 cursos gratuitos + 4 por apenas R$ 9,90. PDF + acesso online. Comece agora!',
   alternates: { canonical: 'https://calazanslumina.com.br/cursos' },
   openGraph: {
-    title: 'Cursos de Marketing Digital | 2 Gratuitos + 5 por R$20',
-    description: 'Aprenda marketing digital do zero. 7 cursos disponiveis, 2 gratuitos. PDF + acesso online.',
+    title: 'Cursos de Marketing Digital | 4 Gratuitos + 4 por R$ 9,90',
+    description: 'Aprenda marketing digital do zero. 8 cursos disponiveis, 4 gratuitos. PDF + acesso online.',
     url: 'https://calazanslumina.com.br/cursos',
     type: 'website',
   },
@@ -23,11 +24,11 @@ export default function CursosPage() {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: 'Cursos de Marketing Digital e IA — Calazans Lumina',
-    description: 'Cursos online de marketing digital, ChatGPT, Google Meu Negocio, funis de vendas e redes sociais. A partir de R$20.',
+    description: 'Cursos online de marketing digital, ChatGPT, Google Meu Negocio, funis de vendas e redes sociais. Quatro gratuitos e quatro a R$ 9,90.',
     url: 'https://calazanslumina.com.br/cursos',
     mainEntity: {
       '@type': 'ItemList',
-      numberOfItems: 7,
+      numberOfItems: 8,
       itemListElement: [
         { '@type': 'ListItem', position: 1, item: { '@type': 'Course', name: 'ChatGPT para Idosos', url: 'https://calazanslumina.com.br/cursos/chatgpt-para-idosos' } },
         { '@type': 'ListItem', position: 2, item: { '@type': 'Course', name: 'IA & ChatGPT Completo', url: 'https://calazanslumina.com.br/cursos/ia-chatgpt-completo' } },
@@ -36,6 +37,7 @@ export default function CursosPage() {
         { '@type': 'ListItem', position: 5, item: { '@type': 'Course', name: 'Redes Sociais que Vendem', url: 'https://calazanslumina.com.br/cursos/redes-sociais-que-vendem' } },
         { '@type': 'ListItem', position: 6, item: { '@type': 'Course', name: 'Funis de Vendas Simplificado', url: 'https://calazanslumina.com.br/cursos/funis-de-vendas-simplificado' } },
         { '@type': 'ListItem', position: 7, item: { '@type': 'Course', name: 'Ferramentas Digitais para Secretarias', url: 'https://calazanslumina.com.br/cursos/ferramentas-digitais-secretarias' } },
+        { '@type': 'ListItem', position: 8, item: { '@type': 'Course', name: 'IA Completa para Marketing Digital', url: 'https://calazanslumina.com.br/cursos/ia-marketing-digital-iniciantes' } },
       ],
     },
   }
@@ -69,7 +71,7 @@ export default function CursosPage() {
             </h1>
             <p className="text-white/60 text-lg md:text-xl max-w-3xl mx-auto mb-8">
               Conhecimento prático e direto ao ponto. Temos cursos <strong className="text-white">gratuitos</strong> e cursos a partir de{' '}
-              <strong className="text-white">R$ 20,00</strong> — menos que um almoço, mais que muitos cursos caros ensinam.
+              <strong className="text-white">R$ 9,90</strong> — menos que um almoço, mais que muitos cursos caros ensinam.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <div className="bg-white/5 border border-white/10 rounded-xl px-6 py-3 text-center">
@@ -141,7 +143,7 @@ export default function CursosPage() {
                           <p className="font-serif text-3xl font-bold text-green-600">GRÁTIS</p>
                         ) : (
                           <p className="font-serif text-3xl font-bold text-brand-dark">
-                            R$ {curso.preco}<span className="text-base text-brand-dark/40">,00</span>
+                            R$ {formatPreco(curso.preco)}
                           </p>
                         )}
                       </div>
@@ -187,7 +189,7 @@ export default function CursosPage() {
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
                             </svg>
-                            Comprar por R$ {curso.preco},00
+                            Comprar por R$ {formatPreco(curso.preco)}
                           </a>
                           <Link
                             href={`/cursos/${curso.slug}`}

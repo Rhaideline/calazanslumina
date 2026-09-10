@@ -90,7 +90,7 @@ const faqSchema = {
       name: 'A Calazans Lumina tem cursos de marketing digital e IA?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sim! A Calazans Lumina oferece 7 cursos online, incluindo 2 gratuitos (ChatGPT para Idosos e Ferramentas Digitais para Secretárias) e 5 cursos pagos a R$20 cada, cobrindo IA, marketing digital, Google Meu Negócio, redes sociais e funis de vendas.',
+        text: 'Sim! A Calazans Lumina oferece 8 cursos online, sendo 4 gratuitos (ChatGPT para Idosos, Ferramentas Digitais para Secretárias, Google Meu Negócio do Zero e Redes Sociais que Vendem) e 4 pagos a R$ 9,90 cada, cobrindo IA, marketing digital e funis de vendas.',
       },
     },
     {
@@ -114,7 +114,7 @@ const faqSchema = {
       name: 'Quais são os cursos gratuitos da Calazans Lumina?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A Calazans Lumina oferece 2 cursos 100% gratuitos: "ChatGPT para Idosos" (ensina IA para pessoas 60+) e "Ferramentas Digitais para Secretárias" (Google Workspace e produtividade). Além disso, oferece 5 cursos por apenas R$20: IA & ChatGPT Completo, Marketing Digital para Iniciantes, Google Meu Negócio do Zero, Redes Sociais que Vendem e Funis de Vendas Simplificado.',
+        text: 'A Calazans Lumina oferece 4 cursos 100% gratuitos: "ChatGPT para Idosos" (IA para pessoas 60+), "Ferramentas Digitais para Secretárias" (Google Workspace e produtividade), "Google Meu Negócio do Zero" e "Redes Sociais que Vendem". Além deles, 4 cursos por apenas R$ 9,90: IA Completa para Marketing Digital, IA & ChatGPT Completo, Marketing Digital para Iniciantes e Funis de Vendas Simplificado.',
       },
     },
     {
@@ -347,13 +347,14 @@ export default function HomePage() {
               </p>
               <p>
                 Também oferecemos{' '}
-                <Link href="/cursos" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>7 cursos online</strong></Link> sobre marketing digital e inteligência artificial — incluindo
-                2 cursos gratuitos (<Link href="/cursos/chatgpt-para-idosos" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>ChatGPT para Idosos</em></Link>{' '}
-                e <Link href="/cursos/ferramentas-digitais-secretarias" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Ferramentas Digitais para Secretárias</em></Link>) e
-                5 cursos acessíveis a R$20 cada (<Link href="/cursos/ia-chatgpt-completo" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>IA & ChatGPT Completo</em></Link>,{' '}
-                <Link href="/cursos/marketing-digital-iniciantes" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Marketing Digital para Iniciantes</em></Link>,{' '}
-                <Link href="/cursos/google-meu-negocio-do-zero" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Google Meu Negócio do Zero</em></Link>,{' '}
-                <Link href="/cursos/redes-sociais-que-vendem" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Redes Sociais que Vendem</em></Link>{' '}
+                <Link href="/cursos" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>8 cursos online</strong></Link> sobre marketing digital e inteligência artificial — incluindo
+                4 cursos gratuitos (<Link href="/cursos/chatgpt-para-idosos" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>ChatGPT para Idosos</em></Link>,{' '}
+                <Link href="/cursos/ferramentas-digitais-secretarias" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Ferramentas Digitais para Secretárias</em></Link>,{' '}
+                <Link href="/cursos/google-meu-negocio-do-zero" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Google Meu Negócio do Zero</em></Link>{' '}
+                e <Link href="/cursos/redes-sociais-que-vendem" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Redes Sociais que Vendem</em></Link>) e
+                4 cursos acessíveis a R$ 9,90 cada (<Link href="/cursos/ia-chatgpt-completo" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>IA & ChatGPT Completo</em></Link>,{' '}
+                <Link href="/cursos/ia-marketing-digital-iniciantes" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>IA Completa para Marketing Digital</em></Link>,{' '}
+                <Link href="/cursos/marketing-digital-iniciantes" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Marketing Digital para Iniciantes</em></Link>{' '}
                 e <Link href="/cursos/funis-de-vendas-simplificado" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Funis de Vendas Simplificado</em></Link>).
               </p>
               <p>

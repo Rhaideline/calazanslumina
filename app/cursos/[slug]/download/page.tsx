@@ -4,6 +4,7 @@ import { cursos } from '@/data/cursos'
 import { notFound, useParams, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { useEffect } from 'react'
+import { formatPreco } from '@/lib/formatters'
 
 export default function DownloadCursoPage() {
   const { slug } = useParams<{ slug: string }>()
@@ -41,7 +42,7 @@ export default function DownloadCursoPage() {
             O PDF do curso <strong className="text-brand-dark">{curso.nome}</strong> esta incluso na compra do curso.
           </p>
           <p className="text-brand-dark/80 text-2xl font-serif font-bold mb-6">
-            R$ {curso.preco},00 <span className="text-sm font-normal text-brand-dark/40">pagamento unico</span>
+            R$ {formatPreco(curso.preco)} <span className="text-sm font-normal text-brand-dark/40">pagamento unico</span>
           </p>
 
           <div className="flex flex-col gap-3 max-w-xs mx-auto">
@@ -54,7 +55,7 @@ export default function DownloadCursoPage() {
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
               </svg>
-              Comprar por R$ {curso.preco},00
+              Comprar por R$ {formatPreco(curso.preco)}
             </a>
             <Link href={`/cursos/${slug}`} className="text-brand-dark/50 hover:text-brand-dark text-sm transition-colors">
               Ver detalhes do curso

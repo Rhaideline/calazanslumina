@@ -9,6 +9,7 @@ import ScrollReveal from '@/components/ScrollReveal'
 import CTAForm from '@/components/CTAForm'
 import Breadcrumb from '@/components/Breadcrumb'
 import CoursesSection from '@/components/CoursesSection'
+import { formatPreco, formatPrecoCompacto } from '@/lib/formatters'
 
 export async function generateStaticParams() {
   const allCidades = [...capitaisBR, ...cidadesBrasil]
@@ -24,8 +25,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!curso || !capital) return {}
   const totalAulas = curso.modulos.reduce((acc, m) => acc + m.aulas.length, 0)
   return {
-    title: `${curso.nome} em ${capital.nome}, ${capital.siglaEstado} (2026) | ${curso.gratuito ? 'GRATUITO' : `R$${curso.preco}`} — ${totalAulas} Aulas`,
-    description: `${curso.descricaoCurta} Para profissionais em ${capital.nome}. ${curso.modulos.length} modulos, ${totalAulas} aulas. ${curso.gratuito ? 'Acesso 100% gratuito. Comece agora →' : `So R$${curso.preco}. Acesso vitalicio →`}`,
+    title: `${curso.nome} em ${capital.nome}, ${capital.siglaEstado} (2026) | ${curso.gratuito ? 'GRATUITO' : `R$ ${formatPrecoCompacto(curso.preco)}`} — ${totalAulas} Aulas`,
+    description: `${curso.descricaoCurta} Para profissionais em ${capital.nome}. ${curso.modulos.length} modulos, ${totalAulas} aulas. ${curso.gratuito ? 'Acesso 100% gratuito. Comece agora →' : `So R$ ${formatPrecoCompacto(curso.preco)}. Acesso vitalicio →`}`,
     alternates: { canonical: `https://calazanslumina.com.br/cursos/${slug}/brasil/${capitalSlug}` },
   }
 }
@@ -67,12 +68,6 @@ export default async function CursoCapitalPage({ params }: { params: Promise<{ s
       reviewBody: d.texto,
       reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
     })),
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: 4.9,
-      reviewCount: curso.vsl.depoimentos.length + 47,
-      bestRating: 5,
-    },
   }
 
   const faqSchema = {
@@ -113,7 +108,7 @@ export default async function CursoCapitalPage({ params }: { params: Promise<{ s
               <div className="inline-flex items-center gap-2 bg-brand-mint/20 border border-brand-mint/30 rounded-full px-4 py-1.5 mb-6">
                 <span className="w-2 h-2 bg-brand-mint rounded-full animate-pulse" />
                 <span className="text-brand-mint text-sm font-medium">
-                  {curso.gratuito ? 'Curso Gratuito' : `R$ ${curso.preco},00`} · {capital.nome}, {capital.siglaEstado}
+                  {curso.gratuito ? 'Curso Gratuito' : `R$ ${formatPreco(curso.preco)}`} · {capital.nome}, {capital.siglaEstado}
                 </span>
               </div>
 
@@ -135,7 +130,7 @@ export default async function CursoCapitalPage({ params }: { params: Promise<{ s
                 </div>
                 <div className="bg-white/5 border border-white/10 rounded-xl px-5 py-3 text-center">
                   <p className="text-brand-mint font-bold text-xl">
-                    {curso.gratuito ? 'GRÁTIS' : `R$${curso.preco}`}
+                    {curso.gratuito ? 'GRÁTIS' : `R$ ${formatPrecoCompacto(curso.preco)}`}
                   </p>
                   <p className="text-white/40 text-xs">{curso.gratuito ? 'acesso livre' : 'pagamento único'}</p>
                 </div>
@@ -156,7 +151,7 @@ export default async function CursoCapitalPage({ params }: { params: Promise<{ s
                   </>
                 ) : (
                   <a href={curso.linkPagamento || '#'} target="_blank" rel="noopener noreferrer" className="btn-primary text-base">
-                    Garantir por R$ {curso.preco},00
+                    Garantir por R$ {formatPreco(curso.preco)}
                   </a>
                 )}
               </div>
@@ -253,7 +248,7 @@ export default async function CursoCapitalPage({ params }: { params: Promise<{ s
                 Com o curso <strong>{curso.nome}</strong>, profissionais em {capital.nome} terão as ferramentas
                 necessárias para se destacar no mercado digital. {curso.gratuito
                   ? 'E o melhor: é totalmente gratuito, com acesso online e PDF para download.'
-                  : `Investimento único de apenas R$ ${curso.preco},00 com acesso imediato.`}
+                  : `Investimento único de apenas R$ ${formatPreco(curso.preco)} com acesso imediato.`}
               </p>
             </div>
           </ScrollReveal>
@@ -382,7 +377,7 @@ export default async function CursoCapitalPage({ params }: { params: Promise<{ s
             <h2 className="heading-2 mb-4">
               {curso.gratuito
                 ? `Profissionais em ${capital.nome} já estão aprendendo. E você?`
-                : `Por R$ ${curso.preco},00 você se destaca em ${capital.nome}.`}
+                : `Por R$ ${formatPreco(curso.preco)} você se destaca em ${capital.nome}.`}
             </h2>
             <p className="text-white/40 mb-8">{curso.vsl.urgencia}</p>
             <div className="flex flex-wrap gap-4 justify-center">
@@ -400,7 +395,7 @@ export default async function CursoCapitalPage({ params }: { params: Promise<{ s
                 </>
               ) : (
                 <a href={curso.linkPagamento || '#'} target="_blank" rel="noopener noreferrer" className="btn-primary text-lg px-10 py-4">
-                  Garantir por R$ {curso.preco},00 — Acesso Imediato
+                  Garantir por R$ {formatPreco(curso.preco)} — Acesso Imediato
                 </a>
               )}
             </div>
@@ -421,7 +416,7 @@ export default async function CursoCapitalPage({ params }: { params: Promise<{ s
                   <Link href={`/cursos/${c.slug}/brasil/${capital.slug}`} className="card-premium block group text-center">
                     <Image src={c.imagem} alt={c.nome} width={60} height={60} className="mx-auto mb-3 opacity-70" />
                     <h3 className="font-bold text-sm group-hover:text-brand-mint transition-colors">{c.nome}</h3>
-                    <p className="text-brand-dark/40 text-xs mt-1">{c.gratuito ? 'Gratuito' : `R$ ${c.preco},00`}</p>
+                    <p className="text-brand-dark/40 text-xs mt-1">{c.gratuito ? 'Gratuito' : `R$ ${formatPreco(c.preco)}`}</p>
                   </Link>
                 </ScrollReveal>
               ))}
