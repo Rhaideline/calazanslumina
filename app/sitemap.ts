@@ -1,70 +1,130 @@
 import type { MetadataRoute } from 'next'
+import { cidadesMA } from '@/data/cidades-ma'
 import { capitaisBR } from '@/data/capitais-br'
 import { cidadesBrasil } from '@/data/cidades-brasil'
+import { servicos } from '@/data/servicos'
+import { cursos } from '@/data/cursos'
+import { blogPosts } from '@/data/blog'
 
 const BASE = 'https://calazanslumina.com.br'
 
-// Data fixa do ultimo update significativo do site.
-// Google so respeita lastmod quando e estavel — usar new Date() faz com que
-// cada build mude todas as datas, o que sinaliza "ruido" e Google ignora.
-const SITE_LAST_UPDATE = '2026-08-30T00:00:00.000Z'
-
-/**
- * Sitemap do site de MATERNIDADE.
- *
- * Desde 30/ago/2026 este dominio e so enxoval: todo assunto de agencia
- * responde 301 para o `.com` (ver lib/so-maternidade.ts). Por isso o sitemap
- * encolheu de 13.105 para 572 URLs — declarar URL que redireciona queima
- * crawl budget e atrasa a descoberta do que e novo, que e exatamente o que
- * nao queremos agora, com 566 paginas recem-publicadas esperando indexacao.
- *
- * As ~12.500 URLs que sairam (cursos, servicos, blog, portfolio, cidades
- * MA/BR, brasil/*, ia-preview) seguem vivas no `.com` e sao declaradas no
- * sitemap DE LA.
- */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = SITE_LAST_UPDATE
+  const now = new Date().toISOString()
 
-  const todasCidadesBR = [...capitaisBR, ...cidadesBrasil]
+  // Páginas estáticas
+  const staticPages: MetadataRoute.Sitemap = [
+    { url: BASE, lastModified: now, changeFrequency: 'weekly', priority: 1 },
+    { url: `${BASE}/sobre`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/contato`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/cursos`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${BASE}/servicos`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${BASE}/projetos`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/para-agencias`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE}/ferramentas`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${BASE}/enxoval-de-bebe`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+  ]
 
-  // Enxoval por cidade. A pagina de cada cidade nao e a nacional com o slug
-  // trocado: clima do estado muda a quantidade de cada peca, a regiao muda o
-  // mes de fechar o enxoval, o porte muda o conselho de loja fisica, e item
-  // sem sentido no calor sai da lista. Ver lib/enxoval-local.ts.
-  const enxovalCidadesPages: MetadataRoute.Sitemap = todasCidadesBR.map((c) => ({
+  // Cursos
+  const cursosPages: MetadataRoute.Sitemap = cursos.map((c) => ({
+    url: `${BASE}/cursos/${c.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }))
+
+  // Serviços
+  const servicosPages: MetadataRoute.Sitemap = servicos.map((s) => ({
+    url: `${BASE}/servicos/${s.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.9,
+  }))
+
+  // Blog
+  const blogPages: MetadataRoute.Sitemap = blogPosts.map((p) => ({
+    url: `${BASE}/blog/${p.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
+  // Cidades MA
+  const cidadesPages: MetadataRoute.Sitemap = cidadesMA.map((c) => ({
+    url: `${BASE}/cidades/${c.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
+  // Cidades MA + Serviços
+  const cidadesServicosPages: MetadataRoute.Sitemap = cidadesMA.flatMap((c) =>
+    servicos.map((s) => ({
+      url: `${BASE}/cidades/${c.slug}/${s.slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    }))
+  )
+
+  // Capitais BR + Cidades BR
+  const allCidadesBR = [...capitaisBR, ...cidadesBrasil]
+  const capitaisPages: MetadataRoute.Sitemap = allCidadesBR.map((c) => ({
+    url: `${BASE}/brasil/${c.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
+  // Capitais BR + Cidades BR + Serviços
+  const capitaisServicosPages: MetadataRoute.Sitemap = allCidadesBR.flatMap((c) =>
+    servicos.map((s) => ({
+      url: `${BASE}/brasil/${c.slug}/${s.slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    }))
+  )
+
+  // Cursos × Cidades MA
+  const cursosCidadesPages: MetadataRoute.Sitemap = cursos.flatMap((curso) =>
+    cidadesMA.map((c) => ({
+      url: `${BASE}/cursos/${curso.slug}/cidade/${c.slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    }))
+  )
+
+  // Cursos × Capitais BR + Cidades BR
+  const cursosCapitaisPages: MetadataRoute.Sitemap = cursos.flatMap((curso) =>
+    allCidadesBR.map((c) => ({
+      url: `${BASE}/cursos/${curso.slug}/brasil/${c.slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    }))
+  )
+
+  // Enxoval de Bebê × Cidades BR
+  const enxovalCidadesPages: MetadataRoute.Sitemap = allCidadesBR.map((c) => ({
     url: `${BASE}/enxoval-de-bebe/${c.slug}`,
     lastModified: now,
     changeFrequency: 'monthly' as const,
-    priority: capitaisBR.some((cap) => cap.slug === c.slug) ? 0.8 : 0.7,
+    priority: 0.7,
   }))
 
   return [
-    // Hub nacional do enxoval, com vitrine de produto e preco.
-    {
-      url: `${BASE}/enxoval-de-bebe`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 1,
-    },
-    // A isca de e-mail. Era a pagina de maior trafego do site inteiro, e
-    // "lista enxoval de bebe completo pdf 2026" e a consulta que mais perdeu
-    // clique quando ela saiu do ar — confirmado pela API do Search Console.
-    {
-      url: `${BASE}/checklist-enxoval-bebe`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.95,
-    },
-    // Home. Ainda e a da agencia, por decisao da Rhai em 30/ago — e hoje a
-    // unica duplicacao entre este dominio e o `.com`.
-    { url: BASE, lastModified: now, changeFrequency: 'weekly' as const, priority: 0.9 },
-    // Paginas legais: prioridade baixa porque nao sao de trafego, mas PRECISAM
-    // estar no sitemap — sao sinal de Trustworthiness no E-E-A-T, e o Google
-    // usa a existencia delas pra avaliar legitimidade do negocio.
-    { url: `${BASE}/privacidade`, lastModified: now, changeFrequency: 'yearly' as const, priority: 0.3 },
-    { url: `${BASE}/termos`, lastModified: now, changeFrequency: 'yearly' as const, priority: 0.3 },
-    { url: `${BASE}/cookies`, lastModified: now, changeFrequency: 'yearly' as const, priority: 0.3 },
-    ...enxovalCidadesPages, // 566 (27 capitais + 539 interior)
-    // TOTAL: 572 URLs — so o que responde 200 neste dominio.
+    ...staticPages,
+    ...cursosPages,
+    ...servicosPages,
+    ...blogPages,
+    ...cidadesPages,
+    ...cidadesServicosPages,
+    ...capitaisPages,
+    ...capitaisServicosPages,
+    ...cursosCidadesPages,
+    ...cursosCapitaisPages,
+    ...enxovalCidadesPages,
   ]
 }

@@ -9,13 +9,13 @@ import CoursesSection from '@/components/CoursesSection'
 import PortfolioSites from '@/components/PortfolioSites'
 
 export const metadata: Metadata = {
-  title: 'Serviços — Sites, Funis GHL e CRM com IA',
+  title: 'Servicos de Marketing Digital | Sites, Funis GHL, CRM com IA',
   description:
     'Sites de alta performance, funis automatizados no GoHighLevel, CRM com IA no WhatsApp, gestao de redes sociais e Google Maps. Para brasileiros nos EUA e Brasil.',
   alternates: { canonical: 'https://calazanslumina.com.br/servicos' },
   openGraph: {
-    title: 'Serviços de Marketing Digital | Calazans Lumina',
-    description: 'Sites, funis GHL, CRM com IA, redes sociais e Google Maps. Soluções completas para brasileiros.',
+    title: 'Servicos de Marketing Digital | Calazans Lumina',
+    description: 'Sites, funis GHL, CRM com IA, redes sociais e Google Maps. Solucoes completas para brasileiros.',
     url: 'https://calazanslumina.com.br/servicos',
     type: 'website',
   },
@@ -25,22 +25,18 @@ export default function ServicosPage() {
   const servicosSchema = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'Serviços de Marketing Digital — Calazans Lumina',
+    name: 'Servicos de Marketing Digital — Calazans Lumina',
     description: 'Sites profissionais, funis GoHighLevel, CRM com IA, gestao de redes sociais, Google Business Profile e trafego pago para brasileiros nos EUA e Brasil.',
     url: 'https://calazanslumina.com.br/servicos',
     mainEntity: {
       '@type': 'ItemList',
-      numberOfItems: servicos.length,
-      itemListElement: servicos.map((s, i) => ({
-        '@type': 'ListItem',
-        position: i + 1,
-        item: {
-          '@type': 'Service',
-          name: s.nome,
-          description: s.descricaoCurta,
-          url: `https://calazanslumina.com.br/servicos/${s.slug}`,
-        },
-      })),
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, item: { '@type': 'Service', name: 'Sites & Landing Pages', url: 'https://calazanslumina.com.br/servicos/sites-landing-pages' } },
+        { '@type': 'ListItem', position: 2, item: { '@type': 'Service', name: 'Funis & Automacao GHL', url: 'https://calazanslumina.com.br/servicos/funis-automacao-ghl' } },
+        { '@type': 'ListItem', position: 3, item: { '@type': 'Service', name: 'CRM & IA no WhatsApp', url: 'https://calazanslumina.com.br/servicos/crm-ia-whatsapp' } },
+        { '@type': 'ListItem', position: 4, item: { '@type': 'Service', name: 'Gestao de Redes Sociais', url: 'https://calazanslumina.com.br/servicos/gestao-redes-sociais' } },
+        { '@type': 'ListItem', position: 5, item: { '@type': 'Service', name: 'Google Business Profile', url: 'https://calazanslumina.com.br/servicos/google-business-profile' } },
+      ],
     },
   }
 
@@ -86,7 +82,7 @@ export default function ServicosPage() {
                       </li>
                     ))}
                   </ul>
-                  <span className="inline-flex items-center gap-2 text-brand-mint text-sm font-medium group-hover:gap-3 transition-[transform,box-shadow,background-color,color]">
+                  <span className="inline-flex items-center gap-2 text-brand-mint text-sm font-medium group-hover:gap-3 transition-all">
                     {servico.cta}
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -112,7 +108,7 @@ export default function ServicosPage() {
                 <li><Link href="/cursos" className="text-brand-mint hover:text-brand-dark text-sm transition-colors">Cursos de Marketing Digital →</Link></li>
                 <li><Link href="/blog" className="text-brand-mint hover:text-brand-dark text-sm transition-colors">Blog com 60+ Artigos Gratuitos →</Link></li>
                 <li><Link href="/para-agencias" className="text-brand-mint hover:text-brand-dark text-sm transition-colors">Para Agências — Sub-contas GHL →</Link></li>
-                <li><Link href="/portfolio" className="text-brand-mint hover:text-brand-dark text-sm transition-colors">Portfólio de Cases →</Link></li>
+                <li><Link href="/projetos" className="text-brand-mint hover:text-brand-dark text-sm transition-colors">Portfólio de Projetos →</Link></li>
               </ul>
             </div>
             <div>

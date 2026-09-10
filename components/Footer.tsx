@@ -1,13 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { servicos } from '@/data/servicos'
-import { capitaisBR } from '@/data/capitais-br'
-import { cidadesBrasil } from '@/data/cidades-brasil'
-
-// Derivado dos datasets que geram as rotas /brasil/[capital] — antes era "488"
-// hardcoded e ficou defasado quando o dataset cresceu. Nao deixar virar numero
-// fixo de novo.
-const totalCidadesBR = capitaisBR.length + cidadesBrasil.length
 
 const cidadesDestaque = [
   'Framingham', 'Marlborough', 'Hudson', 'Worcester', 'Cambridge',
@@ -19,16 +12,13 @@ const capitaisDestaque = [
   'Salvador', 'Fortaleza', 'Recife', 'Porto Alegre', 'Goiânia',
 ]
 
-// Top 20 capitais para bloco SEO de atendimento nacional
-const top20Capitais = capitaisBR.slice(0, 20)
-
 const cursosDestaque = [
   { slug: 'chatgpt-para-idosos', nome: 'ChatGPT para Idosos', tag: 'Grátis' },
-  { slug: 'ia-chatgpt-completo', nome: 'IA & ChatGPT Completo', tag: 'R$ 9,90' },
-  { slug: 'marketing-digital-iniciantes', nome: 'Marketing Digital', tag: 'R$ 9,90' },
-  { slug: 'google-meu-negocio-do-zero', nome: 'Google Meu Negócio', tag: 'Grátis' },
-  { slug: 'redes-sociais-que-vendem', nome: 'Redes Sociais', tag: 'Grátis' },
-  { slug: 'funis-de-vendas-simplificado', nome: 'Funis de Vendas', tag: 'R$ 9,90' },
+  { slug: 'ia-chatgpt-completo', nome: 'IA & ChatGPT Completo', tag: 'R$20' },
+  { slug: 'marketing-digital-iniciantes', nome: 'Marketing Digital', tag: 'R$20' },
+  { slug: 'google-meu-negocio-do-zero', nome: 'Google Meu Negócio', tag: 'R$20' },
+  { slug: 'redes-sociais-que-vendem', nome: 'Redes Sociais', tag: 'R$20' },
+  { slug: 'funis-de-vendas-simplificado', nome: 'Funis de Vendas', tag: 'R$20' },
   { slug: 'ferramentas-digitais-secretarias', nome: 'Ferramentas Digitais', tag: 'Grátis' },
 ]
 
@@ -37,7 +27,7 @@ const paginasUteis = [
   { href: '/sobre', label: 'Sobre Rhaideline Calazans' },
   { href: '/blog', label: 'Blog de Marketing Digital' },
   { href: '/cursos', label: 'Cursos de Marketing Digital' },
-  { href: '/portfolio', label: 'Cases de Sucesso' },
+  { href: '/projetos', label: 'Portfólio de Projetos' },
   { href: '/para-agencias', label: 'Para Agências GHL' },
   { href: '/contato', label: 'Contato' },
 ]
@@ -52,17 +42,17 @@ export default function Footer() {
           {/* Brand */}
           <div className="xl:col-span-2">
             <Image
-              src="/logo-calazans-lumina.webp"
+              src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6d8ea4c91ee3015cbc.png"
               alt="Calazans Lumina - Agência de Marketing Digital"
               width={220}
               height={70}
               className="h-10 w-auto mb-4"
             />
             <p className="text-white/60 text-sm leading-relaxed mb-4">
-              Agência de marketing digital especializada em brasileiros nos EUA e Brasil. Sites profissionais de alta performance, funis GoHighLevel, CRM com IA no WhatsApp, gestão de redes sociais e Google Business Profile.
+              Agência de marketing digital especializada em brasileiros nos EUA e Brasil. Sites Next.js de alta performance, funis GoHighLevel, CRM com IA no WhatsApp, gestão de redes sociais e Google Business Profile.
             </p>
             <div className="flex gap-4 mb-4">
-              <a href="https://www.instagram.com/calazanslumina/" target="_blank" rel="me noopener noreferrer" className="text-white/40 hover:text-brand-mint transition-colors" aria-label="Instagram da Calazans Lumina">
+              <a href="https://www.instagram.com/calazanslumina/" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-brand-mint transition-colors" aria-label="Instagram da Calazans Lumina">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" /></svg>
               </a>
               <a href="https://share.google/n2TRtwjKEMy65uSx7" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-brand-mint transition-colors" aria-label="Google Business Profile">
@@ -124,7 +114,7 @@ export default function Footer() {
             <h3 className="font-serif text-lg font-bold mb-3 text-brand-mint">Contato</h3>
             <ul className="space-y-2">
               <li><a href="https://wa.me/5531982948067?text=Olá, vim pelo site e quero saber mais sobre os serviços da Calazans Lumina" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white text-sm transition-colors">+55 31 98294-8067</a></li>
-              <li><a href="mailto:contato@lc.calazanslumina.com.br" className="text-white/60 hover:text-white text-sm transition-colors">contato@lc.calazanslumina.com.br</a></li>
+              <li><a href="mailto:trafegocalazans@gmail.com" className="text-white/60 hover:text-white text-sm transition-colors">trafegocalazans@gmail.com</a></li>
               <li><a href="https://maps.app.goo.gl/umLNmLYMyhbVx4HQ6" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white text-sm transition-colors">Framingham, MA — EUA</a></li>
             </ul>
           </div>
@@ -142,28 +132,12 @@ export default function Footer() {
             <Link href="/cursos/ia-chatgpt-completo" className="hover:text-white/70 transition-colors">Curso de IA e ChatGPT</Link>{' · '}
             <Link href="/cursos/marketing-digital-iniciantes" className="hover:text-white/70 transition-colors">Curso de marketing digital</Link>{' · '}
             <Link href="/blog" className="hover:text-white/70 transition-colors">Blog de marketing digital</Link>{' · '}
+            <Link href="/enxoval-de-bebe" className="hover:text-white/70 transition-colors">Enxoval de Bebê</Link>{' · '}
+            <Link href="/ferramentas" className="hover:text-white/70 transition-colors">Ferramentas</Link>{' · '}
             <Link href="/sobre" className="hover:text-white/70 transition-colors">Sobre a fundadora</Link>{' · '}
-            <Link href="/portfolio" className="hover:text-white/70 transition-colors">Cases de Sucesso</Link>{' · '}
+            <Link href="/projetos" className="hover:text-white/70 transition-colors">Portfólio</Link>{' · '}
             <Link href="/contato" className="hover:text-white/70 transition-colors">Orçamento gratuito</Link>
           </p>
-        </div>
-
-        {/* Atendimento nacional \u2014 top 20 capitais para crawl depth */}
-        <div className="border-t border-white/10 pt-6 pb-2 mb-2">
-          <h3 className="text-white/70 text-xs uppercase tracking-wider mb-3 text-center">
-            Atendemos em mais de {totalCidadesBR} cidades do Brasil
-          </h3>
-          <div className="flex flex-wrap justify-center gap-x-3 gap-y-2 max-w-5xl mx-auto">
-            {top20Capitais.map((c) => (
-              <Link
-                key={c.slug}
-                href={`/brasil/${c.slug}`}
-                className="text-white/50 hover:text-brand-mint text-xs transition-colors"
-              >
-                Marketing Digital em {c.nome}
-              </Link>
-            ))}
-          </div>
         </div>
 
         {/* Additional city links for SEO */}
@@ -183,41 +157,10 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Identificacao legal + politicas — exigido por LGPD (art. 9, I e 41)
-            para o titular saber QUEM trata seus dados e como falar com quem
-            trata. Sem CNPJ por ora: identificacao por nome, cidade e e-mail. */}
-        <div className="border-t border-white/10 pt-6 mb-6">
-          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 max-w-5xl mx-auto">
-            <div className="text-white/40 text-xs leading-relaxed">
-              <p className="text-white/60 font-medium mb-1">Responsável pelo tratamento de dados</p>
-              <p>Rhaideline Calazans — Calazans Lumina</p>
-              <p>Framingham, Massachusetts, EUA</p>
-              <p>
-                <a href="mailto:contato@lc.calazanslumina.com.br" className="hover:text-white/70 transition-colors">
-                  contato@lc.calazanslumina.com.br
-                </a>
-              </p>
-            </div>
-            <nav aria-label="Políticas e termos" className="text-white/40 text-xs">
-              <p className="text-white/60 font-medium mb-1">Legal</p>
-              <ul className="space-y-1">
-                <li><Link href="/privacidade" className="hover:text-white/70 transition-colors">Política de Privacidade</Link></li>
-                <li><Link href="/termos" className="hover:text-white/70 transition-colors">Termos de Uso</Link></li>
-                <li><Link href="/cookies" className="hover:text-white/70 transition-colors">Política de Cookies</Link></li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6">
-            <p className="text-white/70 text-sm">&copy; {new Date().getFullYear()} Calazans Lumina. Todos os direitos reservados.</p>
-            <p className="text-white/40 text-xs">
-              <span className="text-brand-mint/70">●</span> Conteúdo atualizado em {new Date().toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' })}
-            </p>
-          </div>
+          <p className="text-white/70 text-sm">&copy; {new Date().getFullYear()} Calazans Lumina. Todos os direitos reservados.</p>
           <p className="text-white/50 text-xs text-center md:text-right max-w-lg">
-            Agência de marketing digital para brasileiros nos EUA e Brasil — Operando sob o Framework CRIA (Conteúdo · Relevância · IA · Automação).
+            Agência de marketing digital para brasileiros nos EUA e Brasil — Sites Next.js, Funis GHL, CRM com IA, Redes Sociais e Google Business Profile.
           </p>
         </div>
       </div>

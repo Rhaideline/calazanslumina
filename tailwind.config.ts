@@ -10,18 +10,8 @@ const config: Config = {
       colors: {
         brand: {
           dark: '#111111',
-          // O token chamava-se `mint` e valia '#FF0005' — vermelho puro. A
-          // paleta foi trocada de menta para vermelho em algum momento e o
-          // nome nunca acompanhou, entao quem escrevia `text-brand-mint`
-          // esperando verde recebia vermelho. `mint` continua como apelido
-          // para nao quebrar as ~600 ocorrencias ja escritas no codigo.
-          //
-          // O valor tambem mudou: '#FF0005' e vermelho de alerta, saturacao
-          // maxima — comunica perigo, nao sofisticacao. '#C8102E' carrega a
-          // mesma forca e le como marca, nao como aviso de erro.
-          red: '#C8102E',
-          mint: '#C8102E',
-          light: '#E23148',
+          mint: '#FF0005',
+          light: '#FF3333',
           bg: '#F5F5F5',
         },
       },

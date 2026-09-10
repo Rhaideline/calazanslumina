@@ -13,7 +13,6 @@ import Breadcrumb from '@/components/Breadcrumb'
 import PricingTable from '@/components/PricingTable'
 import ServiceIcon from '@/components/ServiceIcon'
 import CoursesSection from '@/components/CoursesSection'
-import { blocoLocalServico } from '@/lib/conteudo-local'
 
 export async function generateStaticParams() {
   return cidadesMA.flatMap((cidade) =>
@@ -27,8 +26,8 @@ export async function generateMetadata({ params }: { params: Promise<{ cidade: s
   const servico = getServicoBySlug(servicoSlug)
   if (!cidade || !servico) return {}
   return {
-    title: `${servico.nome} em ${cidade.nome}, MA`,
-    description: `${servico.descricaoCurta} Para brasileiros em ${cidade.nome}, MA. atendimento em portugues. Resultados em 30 dias ou menos. Orçamento gratis →`,
+    title: `${servico.nome} em ${cidade.nome}, MA (2026) | Especialista em Brasileiros`,
+    description: `${servico.descricaoCurta} Para brasileiros em ${cidade.nome}, MA. 100+ projetos entregues, atendimento em portugues. Resultados em 30 dias ou menos. Orcamento gratis →`,
     alternates: { canonical: `https://calazanslumina.com.br/cidades/${cidadeSlug}/${servicoSlug}` },
     openGraph: {
       title: `${servico.nome} em ${cidade.nome}, MA | Calazans Lumina`,
@@ -45,11 +44,7 @@ export default async function CidadeServicoPage({ params }: { params: Promise<{ 
   const servico = getServicoBySlug(servicoSlug)
   if (!cidade || !servico) notFound()
 
-  const blocoLocal = blocoLocalServico(cidade, servico, servicos.findIndex((s) => s.slug === servicoSlug))
-
   const outrosServicos = servicos.filter((s) => s.slug !== servicoSlug)
-  // Cross-link Local SEO: outras cidades MA no MESMO servico (cidades vizinhas)
-  const outrasCidades = cidadesMA.filter((c) => c.slug !== cidadeSlug).slice(0, 10)
 
   const localBusinessSchema = {
     '@context': 'https://schema.org',
@@ -65,39 +60,22 @@ export default async function CidadeServicoPage({ params }: { params: Promise<{ 
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: [
-      { '@type': 'Question', name: `Quanto custa ${servico.nome.toLowerCase()} em ${cidade.nome}, MA?`, acceptedAnswer: { '@type': 'Answer', text: `Os preços de ${servico.nome.toLowerCase()} em ${cidade.nome} variam conforme o escopo do projeto. A Calazans Lumina oferece orçamento gratuito e personalizado para empresas brasileiras em ${cidade.nome}, MA. Atendimento 100% em portugues com resultados comprovados.` } },
-      { '@type': 'Question', name: `Qual a melhor agência de ${servico.nome.toLowerCase()} para brasileiros em ${cidade.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `A Calazans Lumina e especialista em ${servico.nome.toLowerCase()} para empreendedores brasileiros em ${cidade.nome}, Massachusetts. Com atendimento em português, oferecemos ${servico.descricaoCurta.toLowerCase()}` } },
-      { '@type': 'Question', name: `A Calazans Lumina atende em ${cidade.nome}, MA?`, acceptedAnswer: { '@type': 'Answer', text: `Sim! Atendemos empresas brasileiras em ${cidade.nome} e em mais de 120 cidades de Massachusetts. ${cidade.referencia}. Nosso atendimento e 100% remoto e em portugues.` } },
-      ...servico.faqs.slice(0, 2).map((f) => ({
-        '@type': 'Question' as const,
-        name: f.pergunta,
-        acceptedAnswer: { '@type': 'Answer' as const, text: f.resposta },
-      })),
-    ],
-  }
-
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://calazanslumina.com.br/' },
-      { '@type': 'ListItem', position: 2, name: 'Cidades MA', item: 'https://calazanslumina.com.br/' },
-      { '@type': 'ListItem', position: 3, name: `${cidade.nome}, MA`, item: `https://calazanslumina.com.br/cidades/${cidadeSlug}` },
-      { '@type': 'ListItem', position: 4, name: servico.nome, item: `https://calazanslumina.com.br/cidades/${cidadeSlug}/${servicoSlug}` },
-    ],
+    mainEntity: servico.faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.pergunta,
+      acceptedAnswer: { '@type': 'Answer', text: f.resposta },
+    })),
   }
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Hero */}
       <section className="relative min-h-[80vh] flex items-center">
         <Image
-          src="/rhai-retrato-1.webp"
+          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d74aa28b2801643ac3f117.jpeg"
           alt={`${servico.nome} em ${cidade.nome}, MA — Calazans Lumina`}
           fill
           className="object-cover"
@@ -121,14 +99,12 @@ export default async function CidadeServicoPage({ params }: { params: Promise<{ 
                 <span className="text-brand-mint">{cidade.nome}, MA</span>
               </h1>
 
-              {/* Bloco local por par (cidade, servico) — ver lib/conteudo-local.ts.
-                  Evita que as 5 paginas de servico de Framingham repitam entre si
-                  e repitam /cidades/framingham. */}
               <p className="text-white/70 text-lg leading-relaxed mb-4 max-w-2xl">
-                {blocoLocal.contexto}
+                {servico.descricaoLonga} Em {cidade.nome}, entendemos os desafios únicos de empreendedores
+                brasileiros que precisam competir no mercado americano.
               </p>
               <p className="text-white/50 text-base mb-8 max-w-2xl">
-                {blocoLocal.aplicacao}
+                {cidade.referencia}. {cidade.doresEspecificas}.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -177,7 +153,6 @@ export default async function CidadeServicoPage({ params }: { params: Promise<{ 
           <ScrollReveal className="text-center mb-12">
             <h2 className="heading-2 text-brand-dark mb-4">Como funciona em <span className="text-brand-mint">{cidade.nome}</span></h2>
             <p className="text-brand-dark/70 text-lg leading-relaxed">{servico.solucao}</p>
-            <p className="text-brand-dark/60 text-base leading-relaxed mt-4">{blocoLocal.fechamento}</p>
           </ScrollReveal>
           <div className="grid md:grid-cols-2 gap-4">
             {servico.diferenciais.map((d, i) => (
@@ -212,32 +187,6 @@ export default async function CidadeServicoPage({ params }: { params: Promise<{ 
                 </Link>
               </ScrollReveal>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Cidades vizinhas — mesmo servico (cross-link Local SEO) */}
-      <section className="section-padding bg-white border-t border-brand-dark/10">
-        <div className="container-main">
-          <ScrollReveal className="text-center mb-10">
-            <h2 className="heading-2 text-brand-dark mb-3">{servico.nome} em outras cidades de Massachusetts</h2>
-            <p className="text-brand-dark/60 max-w-2xl mx-auto text-sm">
-              Atendemos brasileiros em todo o MetroWest, North Shore e South Shore. Veja a cidade mais próxima:
-            </p>
-          </ScrollReveal>
-          <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-4 gap-y-2 text-sm">
-            {outrasCidades.map((c) => (
-              <li key={c.slug}>
-                <Link href={`/cidades/${c.slug}/${servico.slug}`} className="text-brand-dark/70 hover:text-brand-mint transition-colors">
-                  {servico.nome} em {c.nome} →
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <div className="text-center mt-6">
-            <Link href="/servicos" className="text-brand-mint hover:text-brand-dark text-sm font-medium transition-colors">
-              Ver todos os serviços e cidades →
-            </Link>
           </div>
         </div>
       </section>

@@ -7,8 +7,6 @@ const sites = [
   { nome: 'AM Painter Inc', url: 'https://www.ampainterinc.com', nicho: 'Painting Company', bandeira: '🇺🇸' },
   { nome: 'RS Development Group', url: 'https://rs-developmentgroup.com', nicho: 'Construction / Development', bandeira: '🇺🇸' },
   { nome: 'Mass Painter Pro', url: 'https://masspainter.pro', nicho: 'Painting Services', bandeira: '🇺🇸' },
-  { nome: 'Mass HVAC', url: 'https://masshvac.net', nicho: 'HVAC Services', bandeira: '🇺🇸' },
-  { nome: 'Maia Construction', url: 'https://maiaconstruction.com', nicho: 'Construction Company', bandeira: '🇺🇸' },
   { nome: 'Calazans Lumina', url: 'https://www.calazanslumina.com.br', nicho: 'Marketing Digital', bandeira: '🇧🇷' },
 ]
 
@@ -25,7 +23,7 @@ export default function PortfolioSites({ compact = false }: { compact?: boolean 
                 href={site.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-white border border-gray-200 rounded-full px-4 py-2 text-sm text-brand-dark/70 hover:text-brand-dark hover:border-brand-mint hover:shadow-md transition-[transform,box-shadow,background-color,color] duration-200"
+                className="flex items-center gap-2 bg-white border border-gray-200 rounded-full px-4 py-2 text-sm text-brand-dark/70 hover:text-brand-dark hover:border-brand-mint hover:shadow-md transition-all duration-200"
               >
                 <span>{site.bandeira}</span>
                 <span className="font-medium">{site.nome}</span>
@@ -44,7 +42,7 @@ export default function PortfolioSites({ compact = false }: { compact?: boolean 
           <p className="text-brand-mint text-sm font-bold uppercase tracking-wider mb-3">Portfolio — Sites com SEO</p>
           <h2 className="heading-2 text-brand-dark mb-4">Sites que eu desenvolvi e otimizei</h2>
           <p className="text-brand-dark/50 max-w-2xl mx-auto">
-            Cada site foi construído com foco em ranqueamento no Google, performance e conversão. Construção, pintura, marketing — todos os nichos.
+            Cada site foi construido com foco em ranqueamento no Google, performance e conversao. Construction, pintura, marketing — todos os nichos.
           </p>
         </ScrollReveal>
 
@@ -55,7 +53,7 @@ export default function PortfolioSites({ compact = false }: { compact?: boolean 
                 href={site.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block bg-brand-bg rounded-2xl border border-gray-100 p-6 hover:border-brand-mint hover:shadow-lg transition-[transform,box-shadow,background-color,color] duration-300"
+                className="group block bg-brand-bg rounded-2xl border border-gray-100 p-6 hover:border-brand-mint hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-2xl">{site.bandeira}</span>

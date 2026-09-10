@@ -17,7 +17,7 @@ export default function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
-      item: item.href ? `https://calazanslumina.com.br${item.href}` : typeof window !== 'undefined' ? window.location.href : 'https://calazanslumina.com.br',
+      ...(item.href ? { item: `https://calazanslumina.com.br${item.href}` } : {}),
     })),
   }
 
@@ -27,7 +27,7 @@ export default function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
-      <nav aria-label="Breadcrumb" className="bg-brand-dark py-3 px-4 md:px-8 text-sm text-white/60">
+      <nav aria-label="Breadcrumb" className="py-3 px-4 md:px-8 text-sm text-white/60">
         <ol className="flex flex-wrap items-center gap-1">
           {allItems.map((item, i) => (
             <li key={i} className="flex items-center gap-1">

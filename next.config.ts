@@ -1,5 +1,4 @@
 import type { NextConfig } from 'next'
-import { soMaternidade } from './lib/so-maternidade'
 
 const nextConfig: NextConfig = {
   images: {
@@ -16,12 +15,26 @@ const nextConfig: NextConfig = {
         hostname: 'm.media-amazon.com',
         pathname: '/images/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'cf.shopee.com.br',
+        pathname: '/file/**',
+      },
     ],
   },
   async redirects() {
-    // O .com.br e o site de maternidade. Tudo que e assunto de agencia sai
-    // daqui com 301 para o .com. Ver lib/so-maternidade.ts.
-    return soMaternidade
+    return [
+      {
+        source: '/blog/robo-whatsapp-automacao-atendimento',
+        destination: '/blog/robo-de-whatsapp-como-automatizar-seu-atendimento-sem-perder-o-lado-humano',
+        permanent: true,
+      },
+      {
+        source: '/itens-para-casa',
+        destination: '/enxoval-de-bebe',
+        permanent: true,
+      },
+    ]
   },
   async headers() {
     return [

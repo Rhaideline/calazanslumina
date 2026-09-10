@@ -36,12 +36,6 @@
     ".next/dev/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules",
-    "Skills-24-06",
-    ".sixth",
-    "seo-skills-pack",
-    "_seo-recovery",
-    "skill-inventory",
-    "gerar-pdf-google-meu-negocio.ts"
+    "node_modules"
   ]
 }

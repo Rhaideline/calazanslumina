@@ -3,8 +3,6 @@ import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import { servicos, getServicoBySlug } from '@/data/servicos'
-import { cidadesMA } from '@/data/cidades-ma'
-import { capitaisBR } from '@/data/capitais-br'
 import ScrollReveal from '@/components/ScrollReveal'
 import CTAForm from '@/components/CTAForm'
 import ReviewsWidget from '@/components/ReviewsWidget'
@@ -25,10 +23,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params
   const servico = getServicoBySlug(slug)
   if (!servico) return {}
-  // metaTitle from data already contains "| Calazans Lumina";
-  // use absolute to skip layout template duplication
   return {
-    title: { absolute: servico.metaTitle },
+    title: servico.metaTitle,
     description: servico.metaDescription,
     alternates: {
       canonical: `https://calazanslumina.com.br/servicos/${servico.slug}`,
@@ -76,23 +72,9 @@ export default async function ServicoPage({ params }: { params: Promise<{ slug: 
     })),
   }
 
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://calazanslumina.com.br/' },
-      { '@type': 'ListItem', position: 2, name: 'Serviços', item: 'https://calazanslumina.com.br/servicos' },
-      { '@type': 'ListItem', position: 3, name: servico.nome, item: `https://calazanslumina.com.br/servicos/${servico.slug}` },
-    ],
-  }
-
   return (
     <>
       {/* JSON-LD Schemas */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
@@ -105,7 +87,7 @@ export default async function ServicoPage({ params }: { params: Promise<{ slug: 
       {/* ===== 1. HERO ===== */}
       <section className="relative min-h-[80vh] flex items-center">
         <Image
-          src="/rhai-retrato-1.webp"
+          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d74aa28b2801643ac3f117.jpeg"
           alt={`${servico.nome} — Calazans Lumina Marketing Digital`}
           fill
           className="object-cover"
@@ -407,7 +389,7 @@ export default async function ServicoPage({ params }: { params: Promise<{ slug: 
                 <li><Link href="/cursos" className="text-brand-mint hover:text-brand-dark text-sm transition-colors">Cursos de Marketing Digital →</Link></li>
                 <li><Link href="/blog" className="text-brand-mint hover:text-brand-dark text-sm transition-colors">Blog com 60+ Artigos Gratuitos →</Link></li>
                 <li><Link href="/para-agencias" className="text-brand-mint hover:text-brand-dark text-sm transition-colors">Para Agências — Sub-contas GHL →</Link></li>
-                <li><Link href="/portfolio" className="text-brand-mint hover:text-brand-dark text-sm transition-colors">Portfólio de Cases →</Link></li>
+                <li><Link href="/projetos" className="text-brand-mint hover:text-brand-dark text-sm transition-colors">Portfólio de Projetos →</Link></li>
                 <li><Link href="/sobre" className="text-brand-mint hover:text-brand-dark text-sm transition-colors">Sobre Rhaideline Calazans →</Link></li>
                 <li><Link href="/contato" className="text-brand-mint hover:text-brand-dark text-sm transition-colors">Solicitar Orçamento Gratuito →</Link></li>
               </ul>
@@ -416,51 +398,8 @@ export default async function ServicoPage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
 
-      {/* ===== 15. ÁREAS QUE ATENDEMOS — Local SEO hub-and-spoke ===== */}
-      <section className="section-padding bg-white">
-        <div className="container-main">
-          <ScrollReveal className="text-center mb-12">
-            <h2 className="heading-2 text-brand-dark mb-4">{servico.nome} — Cidades atendidas</h2>
-            <p className="text-brand-dark/60 max-w-2xl mx-auto">
-              Atendemos brasileiros em todo Massachusetts (Boston, MetroWest, North/South Shore) e nas principais capitais do Brasil. Veja a cidade mais próxima e fale conosco.
-            </p>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-2 gap-10">
-            <div>
-              <h3 className="text-lg font-bold text-brand-dark mb-4 flex items-center gap-2">
-                <span aria-hidden>🇺🇸</span> Massachusetts <span className="text-brand-dark/40 text-sm font-normal">({cidadesMA.length} cidades)</span>
-              </h3>
-              <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
-                {cidadesMA.map((c) => (
-                  <li key={c.slug}>
-                    <Link href={`/cidades/${c.slug}/${servico.slug}`} className="text-brand-dark/70 hover:text-brand-mint transition-colors">
-                      {servico.nome} em {c.nome}, MA →
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-brand-dark mb-4 flex items-center gap-2">
-                <span aria-hidden>🇧🇷</span> Brasil <span className="text-brand-dark/40 text-sm font-normal">({capitaisBR.length} capitais)</span>
-              </h3>
-              <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
-                {capitaisBR.map((c) => (
-                  <li key={c.slug}>
-                    <Link href={`/brasil/${c.slug}/${servico.slug}`} className="text-brand-dark/70 hover:text-brand-mint transition-colors">
-                      {servico.nome} em {c.nome}, {c.siglaEstado} →
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <PortfolioSites compact />
-      {/* ===== 16. CTA FORM ===== */}
+      {/* ===== 15. CTA FORM ===== */}
       <CTAForm servico={servico.nome} />
     </>
   )

@@ -1,4 +1,4 @@
-import GhlForm from './GhlForm'
+import LazyIframe from './LazyIframe'
 
 export default function HeroForm({ titulo }: { titulo?: string }) {
   return (
@@ -9,11 +9,13 @@ export default function HeroForm({ titulo }: { titulo?: string }) {
       <p className="text-white/50 text-sm mb-6">
         Preencha o formulário e retornamos em até 24 horas
       </p>
-      <GhlForm
-        formId="ncofzws1iEKhN6iFEA6H"
+      <LazyIframe
+        src="https://api.leadconnectorhq.com/widget/form/ncofzws1iEKhN6iFEA6H"
         title="Form 2"
+        id="inline-ncofzws1iEKhN6iFEA6H"
         className="min-h-[480px]"
         height="480px"
+        trigger="click"
       />
     </div>
   )

@@ -4,7 +4,6 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import ThirdPartyScripts from '@/components/ThirdPartyScripts'
-import TopOfferBar from '@/components/TopOfferBar'
 import './globals.css'
 
 const dmSerif = DM_Serif_Display({
@@ -31,9 +30,20 @@ export const metadata: Metadata = {
     template: '%s | Calazans Lumina',
   },
   description:
-    'Agencia de marketing digital para brasileiros nos EUA e Brasil. Sites profissionais, funis GHL, CRM com IA no WhatsApp, redes sociais e Google Maps. Atendimento 100% em portugues. Orcamento gratis →',
-  // keywords meta foi descontinuado pelo Google em 2009 — removido para limpar payload.
-  // Topic clustering + semantic HTML + schema.org cobrem a função melhor.
+    'Agencia de marketing digital para brasileiros nos EUA e Brasil. Sites com PageSpeed 95+, funis GHL, CRM com IA no WhatsApp, redes sociais e Google Maps. 100+ projetos. Atendimento 100% em portugues. Orcamento gratis →',
+  keywords: [
+    'marketing digital para brasileiros',
+    'agência de marketing Massachusetts',
+    'marketing digital Brasil',
+    'sites para brasileiros nos EUA',
+    'GoHighLevel',
+    'funis de vendas',
+    'CRM WhatsApp',
+    'gestão de redes sociais',
+    'Google Meu Negócio',
+    'Calazans Lumina',
+    'Rhaideline Calazans',
+  ],
   icons: {
     icon: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6da0830220a0c3e452.png',
     apple: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6da0830220a0c3e452.png',
@@ -50,7 +60,7 @@ export const metadata: Metadata = {
       'Sites, funis GHL, CRM com IA, redes sociais e Google Maps para empreendedores brasileiros. Atendimento em português.',
     images: [
       {
-        url: 'https://calazanslumina.com.br/logo-calazans-lumina.webp',
+        url: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6d8ea4c91ee3015cbc.png',
         width: 1200,
         height: 630,
         alt: 'Calazans Lumina — Agência de Marketing Digital',
@@ -62,16 +72,11 @@ export const metadata: Metadata = {
     title: 'Calazans Lumina | Marketing Digital para Brasileiros nos EUA e Brasil',
     description:
       'Sites, funis GHL, CRM com IA, redes sociais e Google Maps para empreendedores brasileiros. Atendimento em português.',
-    images: ['https://calazanslumina.com.br/logo-calazans-lumina.webp'],
+    images: ['https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6d8ea4c91ee3015cbc.png'],
     creator: '@calazanslumina',
   },
   alternates: {
     canonical: 'https://calazanslumina.com.br',
-    languages: {
-      'pt-BR': 'https://calazanslumina.com.br',
-      'pt': 'https://calazanslumina.com.br',
-      'x-default': 'https://calazanslumina.com.br',
-    },
   },
   robots: {
     index: true,
@@ -84,15 +89,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  other: {
-    'geo.region': 'US-MA',
-    'geo.placename': 'Framingham, Massachusetts',
-    // geo.position/ICBM removidos: eram herdados por TODA pagina, inclusive
-    // /brasil/[capital], que declarava geo.region BR-XX com coordenada de
-    // Framingham/MA. Os datasets de cidade nao tem lat/long, entao nao ha como
-    // parametrizar. O Google ignora essas tags desde 2014 — o sinal geografico
-    // que conta e o LocalBusiness/areaServed em JSON-LD, que ja existe.
-  },
 }
 
 const websiteJsonLd = {
@@ -102,7 +98,7 @@ const websiteJsonLd = {
   name: 'Calazans Lumina',
   url: 'https://calazanslumina.com.br',
   description:
-    'Agência de marketing digital para brasileiros nos EUA e Brasil. Sites Profissionais, funis GoHighLevel, CRM com IA, Google Maps.',
+    'Agência de marketing digital para brasileiros nos EUA e Brasil. Sites Next.js, funis GoHighLevel, CRM com IA, Google Maps.',
   publisher: { '@id': 'https://calazanslumina.com.br/#organization' },
   inLanguage: 'pt-BR',
   potentialAction: {
@@ -120,7 +116,7 @@ const organizationJsonLd = {
   url: 'https://calazanslumina.com.br',
   logo: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6da0830220a0c3e452.png',
   description:
-    'Agência de marketing digital especializada em brasileiros nos EUA (Massachusetts) e Brasil. Sites Profissionais, funis GoHighLevel, CRM com IA, gestão de redes sociais e Google Business Profile.',
+    'Agência de marketing digital especializada em brasileiros nos EUA (Massachusetts) e Brasil. Sites Next.js, funis GoHighLevel, CRM com IA, gestão de redes sociais e Google Business Profile.',
   foundingDate: '2024',
   founder: {
     '@type': 'Person',
@@ -135,12 +131,7 @@ const organizationJsonLd = {
       areaServed: ['BR', 'US'],
     },
   ],
-  sameAs: [
-    'https://www.instagram.com/calazanslumina',
-    'https://www.facebook.com/calazanslumina',
-    'https://www.linkedin.com/company/calazanslumina',
-    'https://www.youtube.com/@calazanslumina',
-  ],
+  sameAs: ['https://www.instagram.com/calazanslumina'],
   areaServed: [
     {
       '@type': 'State',
@@ -151,11 +142,9 @@ const organizationJsonLd = {
   ],
   knowsAbout: [
     'Marketing Digital',
-    'Web Development',
+    'Next.js',
     'GoHighLevel',
     'SEO',
-    'AEO (Answer Engine Optimization)',
-    'GEO (Generative Engine Optimization)',
     'Google Business Profile',
     'Inteligência Artificial',
     'ChatGPT',
@@ -167,14 +156,12 @@ const organizationJsonLd = {
     'Meta Ads',
     'WhatsApp Business',
     'IA Conversacional',
-    'Framework CRIA da Calazans Lumina',
   ],
-  slogan: 'Marketing Digital para Brasileiros nos EUA e Brasil — Framework CRIA: Conteúdo, Relevância, IA, Automação',
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Serviços de Marketing Digital',
     itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Sites & Landing Pages Profissionais' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Sites & Landing Pages Next.js' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Funis de Vendas GoHighLevel' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'CRM & Automação' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'IA Conversacional no WhatsApp' } },
@@ -184,42 +171,10 @@ const organizationJsonLd = {
   },
 }
 
-const personSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  '@id': 'https://calazanslumina.com.br/#rhaideline',
-  name: 'Rhaideline Calazans',
-  givenName: 'Rhaideline',
-  familyName: 'Calazans',
-  jobTitle: 'Founder & CEO',
-  worksFor: { '@id': 'https://calazanslumina.com.br/#organization' },
-  url: 'https://calazanslumina.com.br/sobre',
-  sameAs: [
-    'https://www.instagram.com/calazanslumina',
-    'https://www.linkedin.com/in/rhaideline-calazans',
-  ],
-  knowsAbout: [
-    'GoHighLevel',
-    'Marketing Digital',
-    'SEO Local',
-    'Answer Engine Optimization',
-    'CRM Automation',
-    'WhatsApp Business API',
-    'Google Business Profile',
-    'Marketing para Brasileiros nos Estados Unidos',
-  ],
-  alumniOf: 'Marketing Digital — Autodidata',
-  homeLocation: {
-    '@type': 'Place',
-    address: { '@type': 'PostalAddress', addressLocality: 'Framingham', addressRegion: 'MA', addressCountry: 'US' },
-  },
-}
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" className={`${dmSerif.variable} ${dmSans.variable}`}>
       <head>
-        <link rel="preconnect" href="https://assets.cdn.filesafe.space" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://api.leadconnectorhq.com" />
         <link rel="dns-prefetch" href="https://stcdn.leadconnectorhq.com" />
         <script
@@ -230,19 +185,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
-        />
       </head>
       <body className="min-h-screen flex flex-col" suppressHydrationWarning>
-        <TopOfferBar />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
-        {/* SocialProofToaster removido: exibia como notificacao os mesmos
-            depoimentos fabricados que sairam das paginas, em todo o site.
-            A casa tambem nao usa popup. */}
         {/* <WhatsAppButton /> */}
         <ThirdPartyScripts />
       </body>

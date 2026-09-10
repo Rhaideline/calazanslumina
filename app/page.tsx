@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { servicos } from '@/data/servicos'
-import { cursos } from '@/data/cursos'
 import ServiceIcon from '@/components/ServiceIcon'
 import ScrollReveal from '@/components/ScrollReveal'
 import CTAForm from '@/components/CTAForm'
@@ -15,15 +14,13 @@ import LazyVideo from '@/components/LazyVideo'
 import PortfolioSites from '@/components/PortfolioSites'
 
 export const metadata: Metadata = {
-  title: {
-    absolute: 'Marketing Digital para Brasileiros | Calazans Lumina',
-  },
+  title: 'Marketing Digital para Brasileiros nos EUA e Brasil | Calazans Lumina',
   description:
-    'Sites de alta performance, funis automatizados, CRM com IA e Google Maps para brasileiros nos EUA e Brasil. Atendimento 100% em português.',
+    'Sites de alta performance, funis automatizados, CRM com IA e Google Maps para brasileiros nos EUA e Brasil. 8+ anos, 100+ projetos. Resultado garantido.',
   alternates: { canonical: 'https://calazanslumina.com.br' },
   openGraph: {
     title: 'Marketing Digital para Brasileiros nos EUA e Brasil | Calazans Lumina',
-    description: 'Sites, funis GHL, CRM com IA e Google Maps. Método próprio, cases publicados.',
+    description: 'Sites, funis GHL, CRM com IA e Google Maps. 8+ anos transformando negocios de brasileiros.',
     url: 'https://calazanslumina.com.br',
     type: 'website',
   },
@@ -36,7 +33,7 @@ const videoSchemas = [
     name: 'Marketing Digital na Prática — Calazans Lumina',
     description: 'Dicas práticas de marketing digital para empreendedores brasileiros nos EUA e Brasil',
     contentUrl: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f81590acb2f32c57fde.mp4',
-    uploadDate: '2025-03-01T00:00:00-03:00',
+    uploadDate: '2025-03-01',
     publisher: { '@type': 'Organization', name: 'Calazans Lumina', '@id': 'https://calazanslumina.com.br/#organization' },
   },
   {
@@ -45,7 +42,7 @@ const videoSchemas = [
     name: 'Como Atrair Clientes Online — Calazans Lumina',
     description: 'Estratégias para atrair clientes pela internet com marketing digital',
     contentUrl: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f811001a525e2e45e93.mp4',
-    uploadDate: '2025-03-01T00:00:00-03:00',
+    uploadDate: '2025-03-01',
     publisher: { '@type': 'Organization', name: 'Calazans Lumina', '@id': 'https://calazanslumina.com.br/#organization' },
   },
   {
@@ -54,7 +51,7 @@ const videoSchemas = [
     name: 'Avaliações no Google: Por Que Importam — Calazans Lumina',
     description: 'Como avaliações no Google Business Profile impactam seu negócio local',
     contentUrl: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f813eba04ab9649d652.mp4',
-    uploadDate: '2025-03-01T00:00:00-03:00',
+    uploadDate: '2025-03-01',
     publisher: { '@type': 'Organization', name: 'Calazans Lumina', '@id': 'https://calazanslumina.com.br/#organization' },
   },
   {
@@ -63,43 +60,7 @@ const videoSchemas = [
     name: 'Como Conseguir Mais Avaliações 5 Estrelas — Calazans Lumina',
     description: 'Estratégia para conseguir mais reviews positivos no Google Maps',
     contentUrl: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f8110bc9c7c8a6841ea.mp4',
-    uploadDate: '2025-03-01T00:00:00-03:00',
-    publisher: { '@type': 'Organization', name: 'Calazans Lumina', '@id': 'https://calazanslumina.com.br/#organization' },
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'VideoObject',
-    name: 'Por Que Investir em Marketing Profissional — Calazans Lumina',
-    description: 'A importância de contratar um profissional de marketing digital para resultados reais e mensuráveis',
-    contentUrl: 'https://calazanslumina.com.br/video-marketing-profissional.mp4',
-    uploadDate: '2026-08-28T00:00:00-03:00',
-    publisher: { '@type': 'Organization', name: 'Calazans Lumina', '@id': 'https://calazanslumina.com.br/#organization' },
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'VideoObject',
-    name: 'Contratar Profissional vs Fazer Sozinho — Calazans Lumina',
-    description: 'Entenda quando vale a pena contratar um especialista em marketing digital versus fazer por conta própria',
-    contentUrl: 'https://calazanslumina.com.br/video-contratar-vs-fazer-sozinho.mp4',
-    uploadDate: '2026-08-28T00:00:00-03:00',
-    publisher: { '@type': 'Organization', name: 'Calazans Lumina', '@id': 'https://calazanslumina.com.br/#organization' },
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'VideoObject',
-    name: 'Identidade Visual: A Base do Seu Negócio — Calazans Lumina',
-    description: 'Como uma identidade visual profissional é essencial para construir credibilidade e reconhecimento de marca',
-    contentUrl: 'https://calazanslumina.com.br/video-identidade-visual-importancia.mp4',
-    uploadDate: '2026-08-28T00:00:00-03:00',
-    publisher: { '@type': 'Organization', name: 'Calazans Lumina', '@id': 'https://calazanslumina.com.br/#organization' },
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'VideoObject',
-    name: 'Estratégia de Marketing vs Postagens Soltas — Calazans Lumina',
-    description: 'A diferença entre ter uma estratégia integrada de marketing digital e apenas fazer postagens isoladas nas redes sociais',
-    contentUrl: 'https://calazanslumina.com.br/video-estrategia-vs-postagens.mp4',
-    uploadDate: '2026-08-28T00:00:00-03:00',
+    uploadDate: '2025-03-01',
     publisher: { '@type': 'Organization', name: 'Calazans Lumina', '@id': 'https://calazanslumina.com.br/#organization' },
   },
 ]
@@ -113,7 +74,7 @@ const faqSchema = {
       name: 'Qual a melhor agência de marketing digital para brasileiros nos EUA?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A Calazans Lumina é especializada em marketing digital para brasileiros nos Estados Unidos, com foco em Massachusetts. Oferece sites profissionais, funis de vendas, CRM com IA, gestão de redes sociais e Google Business Profile — tudo em português.',
+        text: 'A Calazans Lumina é especializada em marketing digital para brasileiros nos Estados Unidos, com foco em Massachusetts. Oferece sites Next.js, funis GoHighLevel, CRM com IA, gestão de redes sociais e Google Business Profile — tudo em português.',
       },
     },
     {
@@ -121,7 +82,7 @@ const faqSchema = {
       name: 'Quanto custa um site profissional na Calazans Lumina?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sites profissionais começam a partir de R$500 (site básico de 2 páginas). Sites com SEO completo e soluções com automação e IA são sob consulta. Todos os sites são otimizados para velocidade e conversão.',
+        text: 'Sites profissionais começam a partir de R$500 (site básico de 2 páginas). Sites com SEO completo e soluções com automação e IA são sob consulta. Todos os sites usam Next.js com PageSpeed 95+.',
       },
     },
     {
@@ -129,7 +90,7 @@ const faqSchema = {
       name: 'A Calazans Lumina tem cursos de marketing digital e IA?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sim! A Calazans Lumina oferece 7 cursos online, incluindo 2 gratuitos (ChatGPT para Idosos e Ferramentas Digitais para Secretárias) e 5 cursos pagos a partir de R$ 9,90, cobrindo IA, marketing digital, Google Meu Negócio, redes sociais e funis de vendas.',
+        text: 'Sim! A Calazans Lumina oferece 7 cursos online, incluindo 2 gratuitos (ChatGPT para Idosos e Ferramentas Digitais para Secretárias) e 5 cursos pagos a R$20 cada, cobrindo IA, marketing digital, Google Meu Negócio, redes sociais e funis de vendas.',
       },
     },
     {
@@ -153,7 +114,7 @@ const faqSchema = {
       name: 'Quais são os cursos gratuitos da Calazans Lumina?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A Calazans Lumina oferece 4 cursos 100% gratuitos: "ChatGPT para Idosos" (IA para pessoas 60+), "Google Meu Negócio do Zero", "Redes Sociais que Vendem" e "Ferramentas Digitais para Secretárias". Além disso, oferece cursos a partir de R$ 9,90, como IA & ChatGPT Completo, Marketing Digital para Iniciantes e Funis de Vendas Simplificado.',
+        text: 'A Calazans Lumina oferece 2 cursos 100% gratuitos: "ChatGPT para Idosos" (ensina IA para pessoas 60+) e "Ferramentas Digitais para Secretárias" (Google Workspace e produtividade). Além disso, oferece 5 cursos por apenas R$20: IA & ChatGPT Completo, Marketing Digital para Iniciantes, Google Meu Negócio do Zero, Redes Sociais que Vendem e Funis de Vendas Simplificado.',
       },
     },
     {
@@ -169,7 +130,7 @@ const faqSchema = {
       name: 'Quem é Rhaideline Calazans?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Rhaideline Calazans é a fundadora da Calazans Lumina, agência de marketing digital para brasileiros nos EUA e Brasil. É especialista em sites, SEO, automação de marketing e IA conversacional. Brasileira residente em Framingham, Massachusetts, atende empreendedores brasileiros nos EUA e no Brasil.',
+        text: 'Rhaideline Calazans é a fundadora da Calazans Lumina, agência de marketing digital para brasileiros nos EUA e Brasil. Com mais de 8 anos de experiência em marketing digital, é especialista em GoHighLevel, Next.js, SEO, automação de marketing e IA conversacional. Brasileira residente em Framingham, Massachusetts, ela já entregou mais de 100 projetos para empreendedores brasileiros.',
       },
     },
     {
@@ -214,7 +175,7 @@ const localBusinessSchema = {
   },
   areaServed: ['Massachusetts, USA', 'Brasil'],
   priceRange: '$$',
-  image: 'https://calazanslumina.com.br/logo-calazans-lumina.webp',
+  image: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6d8ea4c91ee3015cbc.png',
   sameAs: ['https://www.instagram.com/calazanslumina/'],
 }
 
@@ -238,7 +199,7 @@ const performanceImages = [
 
 const automacaoImages = [
   { src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b406720c0355e60076365.png', alt: 'Fluxo de automação GoHighLevel — pipeline de vendas automatizado' },
-  { src: '/case-fisio-bot.webp', alt: 'Workflow GHL com disparo automático de WhatsApp, email e SMS' },
+  { src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b410c4c8da2445e99c973.png', alt: 'Workflow GHL com disparo automático de WhatsApp, email e SMS' },
   { src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b418ddf9bdf249608cf87.png', alt: 'Robô de IA conversacional no WhatsApp — atendimento 24h automatizado' },
 ]
 
@@ -276,7 +237,7 @@ export default function HomePage() {
       <section className="relative min-h-[85vh] flex items-center">
         {/* Background Image */}
         <Image
-          src="/rhai-retrato-1.webp"
+          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d74aa28b2801643ac3f117.jpeg"
           alt="Rhaideline Calazans — Especialista em Marketing Digital para Brasileiros nos EUA e Brasil"
           fill
           className="object-cover"
@@ -304,7 +265,7 @@ export default function HomePage() {
               </p>
 
               <ul className="space-y-3 mb-8">
-                {['Especialista em GoHighLevel', 'Atendimento em português'].map((item) => (
+                {['8+ anos transformando negócios', '100+ projetos entregues', 'Especialista em GoHighLevel', 'Atendimento em português'].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-white/80">
                     <svg className="w-5 h-5 text-brand-mint flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -373,11 +334,11 @@ export default function HomePage() {
                 <strong>Calazans Lumina</strong> é uma agência de marketing digital fundada por{' '}
                 <Link href="/sobre" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>Rhaideline Calazans</strong></Link>,
                 especializada em atender empreendedores brasileiros nos <strong>Estados Unidos (Massachusetts)</strong> e em todo o <strong>Brasil</strong>.
-                Oferecemos soluções completas de presença digital com atendimento 100% em português.
+                Com mais de 8 anos de experiência e 100+ projetos entregues, oferecemos soluções completas de presença digital com atendimento 100% em português.
               </p>
               <p>
                 Nossos serviços incluem:{' '}
-                <Link href="/servicos/sites-landing-pages" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>sites profissionais de alta performance</strong></Link>,{' '}
+                <Link href="/servicos/sites-landing-pages" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>sites profissionais em Next.js</strong></Link> com PageSpeed 95+,{' '}
                 <Link href="/servicos/funis-automacao-ghl" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>funis de vendas no GoHighLevel</strong></Link>,{' '}
                 <Link href="/servicos/crm-ia-whatsapp" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>CRM com IA conversacional no WhatsApp</strong></Link> (atendimento 24h),{' '}
                 <Link href="/servicos/gestao-redes-sociais" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>gestão de redes sociais</strong></Link>,{' '}
@@ -386,13 +347,13 @@ export default function HomePage() {
               </p>
               <p>
                 Também oferecemos{' '}
-                <Link href="/cursos" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>cursos online</strong></Link> sobre marketing digital e inteligência artificial — incluindo
-                4 cursos gratuitos (<Link href="/cursos/chatgpt-para-idosos" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>ChatGPT para Idosos</em></Link>,{' '}
+                <Link href="/cursos" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>7 cursos online</strong></Link> sobre marketing digital e inteligência artificial — incluindo
+                2 cursos gratuitos (<Link href="/cursos/chatgpt-para-idosos" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>ChatGPT para Idosos</em></Link>{' '}
+                e <Link href="/cursos/ferramentas-digitais-secretarias" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Ferramentas Digitais para Secretárias</em></Link>) e
+                5 cursos acessíveis a R$20 cada (<Link href="/cursos/ia-chatgpt-completo" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>IA & ChatGPT Completo</em></Link>,{' '}
+                <Link href="/cursos/marketing-digital-iniciantes" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Marketing Digital para Iniciantes</em></Link>,{' '}
                 <Link href="/cursos/google-meu-negocio-do-zero" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Google Meu Negócio do Zero</em></Link>,{' '}
                 <Link href="/cursos/redes-sociais-que-vendem" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Redes Sociais que Vendem</em></Link>{' '}
-                e <Link href="/cursos/ferramentas-digitais-secretarias" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Ferramentas Digitais para Secretárias</em></Link>) e
-                cursos a partir de R$ 9,90 (<Link href="/cursos/ia-chatgpt-completo" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>IA & ChatGPT Completo</em></Link>,{' '}
-                <Link href="/cursos/marketing-digital-iniciantes" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Marketing Digital para Iniciantes</em></Link>{' '}
                 e <Link href="/cursos/funis-de-vendas-simplificado" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Funis de Vendas Simplificado</em></Link>).
               </p>
               <p>
@@ -403,7 +364,7 @@ export default function HomePage() {
               </p>
               <p>
                 Confira nosso <Link href="/blog" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>blog com 60+ artigos gratuitos</strong></Link> sobre marketing digital, SEO, IA e automação,
-                e nosso <Link href="/portfolio" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>portfólio de projetos</strong></Link> com resultados reais.
+                e nosso <Link href="/projetos" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>portfólio de projetos</strong></Link> com resultados reais.
                 Para orçamento gratuito, visite nossa <Link href="/contato" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>página de contato</strong></Link>.
               </p>
             </div>
@@ -466,7 +427,7 @@ export default function HomePage() {
                     {servico.nome}
                   </h3>
                   <p className="text-brand-dark/60 text-sm mb-6 leading-relaxed">{servico.descricaoCurta}</p>
-                  <span className="inline-flex items-center gap-2 text-brand-mint text-sm font-medium group-hover:gap-3 transition-[transform,box-shadow,background-color,color]">
+                  <span className="inline-flex items-center gap-2 text-brand-mint text-sm font-medium group-hover:gap-3 transition-all">
                     {servico.cta}
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -485,50 +446,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== REEL DESTAQUE — Curso Mercado Livre R$ 9,90 ===== */}
-      <section className="section-padding bg-gradient-to-br from-brand-dark via-[#0d1f1c] to-brand-dark text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-30 pointer-events-none">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-brand-mint/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-yellow-400/15 rounded-full blur-3xl" />
-        </div>
-        <div className="container-main relative z-10">
-          <div className="max-w-3xl mx-auto">
-            <ScrollReveal>
-              <p className="text-brand-mint font-medium mb-3 text-sm uppercase tracking-[0.3em]">Lançamento · R$ 9,90</p>
-              <h2 className="heading-2 mb-5">
-                Mercado Livre,{' '}
-                <span className="text-brand-mint italic">do zero</span>{' '}
-                ao Mercado Líder.
-              </h2>
-              <p className="text-white/70 text-lg md:text-xl mb-6 leading-relaxed">
-                O método completo pra vender no Mercado Livre — do primeiro anúncio até o selo{' '}
-                <strong className="text-white">Mercado Líder Gold</strong>. Tudo em{' '}
-                <strong className="text-brand-mint">126 páginas, 15 módulos</strong>.
-              </p>
-              <ul className="text-white/80 mb-8 space-y-2">
-                <li className="flex items-start gap-2"><span className="text-brand-mint">✦</span> Margem real de 4x a 5x na escolha certa de produto</li>
-                <li className="flex items-start gap-2"><span className="text-brand-mint">✦</span> Como subir do iniciante até Mercado Líder Gold</li>
-                <li className="flex items-start gap-2"><span className="text-brand-mint">✦</span> 2026: ROAS-first, anti-bloqueio, custo variável real</li>
-              </ul>
-              <div className="flex flex-wrap items-center gap-4">
-                <a
-                  href={cursos.find((c) => c.slug === 'mercado-livre-definitivo')?.linkPagamento || '/cursos/mercado-livre-definitivo'}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-brand-mint text-brand-dark font-bold px-8 py-4 rounded-xl hover:bg-brand-mint/90 transition-[transform,box-shadow,background-color,color] shadow-2xl hover:shadow-brand-mint/30 hover:-translate-y-0.5"
-                >
-                  Quero acessar por R$ 9,90
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-                </a>
-                <Link href="/cursos/mercado-livre-definitivo" className="text-white/70 text-sm font-medium hover:text-white underline underline-offset-4">
-                  Ver conteúdo do curso
-                </Link>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
       {/* ===== CURSOS ===== */}
       <CoursesSection />
 
@@ -538,13 +455,13 @@ export default function HomePage() {
           <ScrollReveal className="text-center mb-16">
             <p className="text-brand-mint font-medium mb-2 text-sm uppercase tracking-wider">Assista e aprenda</p>
             <h2 className="heading-2 mb-4">
-              Conteúdo em <span className="text-brand-mint">Vídeo</span>
+              Conteudo em <span className="text-brand-mint">Video</span>
             </h2>
             <p className="text-white/50 text-lg max-w-2xl mx-auto">
-              Dicas práticas de marketing digital, branding e estratégias para fazer seu negócio crescer.
+              Dicas praticas de marketing digital, ferramentas e estrategias para fazer seu negocio crescer.
             </p>
           </ScrollReveal>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 gap-8">
             {[
               {
                 src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f81590acb2f32c57fde.mp4',
@@ -562,31 +479,15 @@ export default function HomePage() {
                 src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f8110bc9c7c8a6841ea.mp4',
                 label: 'Como Conseguir Mais Avaliações 5 Estrelas',
               },
-              {
-                src: '/video-marketing-profissional.mp4',
-                label: 'Por Que Investir em Marketing Profissional',
-              },
-              {
-                src: '/video-contratar-vs-fazer-sozinho.mp4',
-                label: 'Contratar Profissional vs Fazer Sozinho',
-              },
-              {
-                src: '/video-identidade-visual-importancia.mp4',
-                label: 'Identidade Visual: A Base do Seu Negócio',
-              },
-              {
-                src: '/video-estrategia-vs-postagens.mp4',
-                label: 'Estratégia de Marketing vs Postagens Soltas',
-              },
             ].map((video, i) => (
-              <ScrollReveal key={i} delay={i * 100}>
-                <div className="bg-white/5 rounded-2xl overflow-hidden border border-white/10 hover:border-brand-mint/50 transition-all duration-300">
-                  <LazyVideo src={video.src} label={video.label} />
+              <ScrollReveal key={i} delay={i * 150}>
+                <div className="bg-white/5 rounded-2xl overflow-hidden border border-white/10">
+                  <LazyVideo src={video.src} />
                   <div className="p-4">
                     <p className="text-brand-mint font-bold text-sm uppercase tracking-wider mb-1">
-                      Vídeo {i + 1}
+                      Video {i + 1}
                     </p>
-                    <h3 className="text-white font-serif text-base font-bold leading-tight">
+                    <h3 className="text-white font-serif text-lg font-bold">
                       {video.label}
                     </h3>
                   </div>
@@ -605,8 +506,8 @@ export default function HomePage() {
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-br from-black/20 to-black/5 rounded-3xl blur-2xl" />
                 <Image
-                  src="/rhai-retrato-2.webp"
-                  alt="Rhaideline Calazans, fundadora da Calazans Lumina"
+                  src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c0357f3208c418.jpeg"
+                  alt="Rhaideline Calazans — 8 anos de experiência em marketing digital, fundadora da Calazans Lumina"
                   width={600}
                   height={700}
                   className="rounded-3xl relative z-10 w-full object-cover"
@@ -624,25 +525,22 @@ export default function HomePage() {
                   otimizar anúncios e construir presença digital do zero.
                 </p>
                 <p>
-                  Hoje atende brasileiros em Massachusetts e no
+                  Hoje, com <strong>8 anos de experiência</strong>, atende brasileiros em Massachusetts e no
                   Brasil, transformando negócios do &quot;boca a boca&quot; em máquinas previsíveis de geração de leads.
                 </p>
                 <p className="font-medium text-brand-dark">
                   Ela não é só especialista em ferramentas — ela viveu o que é ser dona de negócio.
                 </p>
               </div>
-              <div className="grid grid-cols-3 gap-3 mt-8">
+              <div className="grid grid-cols-3 gap-4 mt-8">
                 {[
-                  { valor: '8+', desc: 'anos de mercado' },
-                  { valor: '100+', desc: 'projetos entregues' },
-                  { valor: '50+', desc: 'sub-contas GHL' },
-                  { valor: '9k+', desc: 'páginas SEO' },
-                  { valor: '2', desc: 'paises (BR + EUA)' },
-                  { valor: 'GHL', desc: 'certified partner' },
+                  { valor: '8+', desc: 'anos' },
+                  { valor: '100+', desc: 'projetos' },
+                  { valor: '2', desc: 'países' },
                 ].map((s) => (
-                  <div key={s.desc} className="text-center bg-white rounded-xl p-3 shadow-sm">
-                    <p className="font-serif text-xl md:text-2xl font-bold text-brand-dark">{s.valor}</p>
-                    <p className="text-brand-dark/50 text-[10px] md:text-xs leading-tight">{s.desc}</p>
+                  <div key={s.desc} className="text-center bg-white rounded-xl p-4 shadow-sm">
+                    <p className="font-serif text-2xl font-bold text-brand-dark">{s.valor}</p>
+                    <p className="text-brand-dark/50 text-xs">{s.desc}</p>
                   </div>
                 ))}
               </div>
@@ -675,7 +573,7 @@ export default function HomePage() {
             ))}
           </div>
           <div className="text-center mt-10">
-            <Link href="/portfolio" className="btn-secondary-light">Ver todos os projetos</Link>
+            <Link href="/projetos" className="btn-secondary-light">Ver todos os projetos</Link>
           </div>
         </div>
       </section>

@@ -10,11 +10,11 @@ import PortfolioSites from '@/components/PortfolioSites'
 export const metadata: Metadata = {
   title: 'Sobre Rhaideline Calazans | 8+ Anos em Marketing Digital',
   description:
-    'De secretaria medica a especialista em marketing digital com cases publicados. Fundadora da Calazans Lumina, atendendo brasileiros nos EUA e Brasil.',
+    'De secretaria medica a especialista em marketing digital com 8+ anos e 100+ projetos. Fundadora da Calazans Lumina, atendendo brasileiros nos EUA e Brasil.',
   alternates: { canonical: 'https://calazanslumina.com.br/sobre' },
   openGraph: {
     title: 'Sobre Rhaideline Calazans | Calazans Lumina',
-    description: 'De secretaria medica a especialista em marketing digital.',
+    description: 'De secretaria medica a especialista em marketing digital. 8+ anos, 100+ projetos.',
     url: 'https://calazanslumina.com.br/sobre',
     type: 'profile',
   },
@@ -27,9 +27,9 @@ const personJsonLd = {
   name: 'Rhaideline Calazans',
   jobTitle: 'Especialista em Marketing Digital & Fundadora da Calazans Lumina',
   url: 'https://calazanslumina.com.br/sobre',
-  image: '/rhai-retrato-1.webp',
+  image: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d74aa28b2801643ac3f117.jpeg',
   description:
-    'Especialista em marketing digital com método próprio e cases publicados. Fundadora da Calazans Lumina, agência focada em brasileiros nos EUA e Brasil.',
+    'Especialista em marketing digital com 8+ anos de experiência e 100+ projetos. Fundadora da Calazans Lumina, agência focada em brasileiros nos EUA e Brasil.',
   worksFor: {
     '@type': 'Organization',
     '@id': 'https://calazanslumina.com.br/#organization',
@@ -38,7 +38,7 @@ const personJsonLd = {
   nationality: { '@type': 'Country', name: 'Brazil' },
   knowsAbout: [
     'Marketing Digital',
-    'Web Development',
+    'Next.js',
     'GoHighLevel',
     'SEO',
     'Google Business Profile',
@@ -59,9 +59,9 @@ export default function SobrePage() {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
-      { '@type': 'Question', name: 'Quem e Rhaideline Calazans?', acceptedAnswer: { '@type': 'Answer', text: 'Rhaideline Calazans e especialista em marketing digital com método próprio e cases publicados. Fundadora da Calazans Lumina, agência que atende brasileiros nos EUA (Massachusetts) e em todo o Brasil. Trabalha com sites profissionais, funis GoHighLevel, CRM com IA no WhatsApp e Google Business Profile.' } },
+      { '@type': 'Question', name: 'Quem e Rhaideline Calazans?', acceptedAnswer: { '@type': 'Answer', text: 'Rhaideline Calazans e especialista em marketing digital com 8+ anos de experiencia e 100+ projetos entregues. Fundadora da Calazans Lumina, agencia que atende brasileiros nos EUA (Massachusetts) e em todo o Brasil. Trabalha com sites Next.js, funis GoHighLevel, CRM com IA no WhatsApp e Google Business Profile.' } },
       { '@type': 'Question', name: 'A Calazans Lumina atende nos EUA e no Brasil?', acceptedAnswer: { '@type': 'Answer', text: 'Sim! A Calazans Lumina atende brasileiros em mais de 100 cidades de Massachusetts (EUA) e 227 cidades do Brasil. O atendimento e 100% remoto e em portugues. Oferecemos sites, funis, CRM, redes sociais e Google Maps.' } },
-      { '@type': 'Question', name: 'Quais serviços a Calazans Lumina oferece?', acceptedAnswer: { '@type': 'Answer', text: 'Oferecemos: sites profissionais otimizados para velocidade e conversão, funis de vendas no GoHighLevel, CRM com IA conversacional no WhatsApp, gestao de redes sociais, trafego pago (Google Ads e Meta Ads), Google Business Profile, SEO local e nacional, e sub-contas GoHighLevel prontas para empresas.' } },
+      { '@type': 'Question', name: 'Quais servicos a Calazans Lumina oferece?', acceptedAnswer: { '@type': 'Answer', text: 'Oferecemos: sites profissionais em Next.js com PageSpeed 95+, funis de vendas no GoHighLevel, CRM com IA conversacional no WhatsApp, gestao de redes sociais, trafego pago (Google Ads e Meta Ads), Google Business Profile, SEO local e nacional, e sub-contas GoHighLevel prontas para empresas.' } },
     ],
   }
 
@@ -78,7 +78,7 @@ export default function SobrePage() {
       <section className="relative min-h-[70vh] flex items-center">
         {/* Background Image */}
         <Image
-          src="/rhai-retrato-1.webp"
+          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c035285908c419.jpeg"
           alt="Rhaideline Calazans — Fundadora da Calazans Lumina, especialista em marketing digital para brasileiros nos EUA e Brasil"
           fill
           className="object-cover"
@@ -202,10 +202,10 @@ export default function SobrePage() {
                 </div>
                 <div>
                   <h3 className="font-serif text-xl font-bold text-brand-dark mb-2">
-                    Calazans Lumina
+                    Calazans Lumina — 8 anos de resultados
                   </h3>
                   <p className="text-brand-dark/70 leading-relaxed">
-                    Hoje lidero a Calazans Lumina
+                    Hoje, com 8 anos de experiência prática em marketing digital, lidero a Calazans Lumina
                     atendendo empreendedores brasileiros em Massachusetts (EUA) e nas principais capitais
                     do Brasil. Meu trabalho transforma negócios que vivem do &quot;boca a boca&quot; em máquinas
                     previsíveis de geração de leads — com sites de alta performance, funis automatizados,
@@ -226,7 +226,7 @@ export default function SobrePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                src: '/rhai-retrato-1.webp',
+                src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d74aa28b2801643ac3f117.jpeg',
                 alt: 'Rhaideline Calazans em ambiente profissional — marketing digital para brasileiros',
               },
               {
@@ -234,11 +234,11 @@ export default function SobrePage() {
                 alt: 'Rhaideline Calazans — estrategista de marketing digital e empreendedora',
               },
               {
-                src: '/rhai-retrato-2.webp',
+                src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c0357f3208c418.jpeg',
                 alt: 'Rhaideline Calazans — fundadora e CEO da Calazans Lumina',
               },
               {
-                src: '/rhai-retrato-1.webp',
+                src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c035285908c419.jpeg',
                 alt: 'Rhaideline Calazans trabalhando em estratégias de marketing digital',
               },
             ].map((img, i) => (
@@ -331,7 +331,7 @@ export default function SobrePage() {
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-to-br from-black/20 to-black/5 rounded-3xl blur-2xl" />
                   <Image
-                    src="/rhai-retrato-2.webp"
+                    src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c0357f3208c418.jpeg"
                     alt="Rhaideline Calazans — freelancer para agências de marketing digital"
                     width={400}
                     height={500}
@@ -354,7 +354,7 @@ export default function SobrePage() {
             <Link href="/servicos" className="bg-brand-mint text-white px-5 py-2.5 rounded-full hover:bg-brand-dark transition-colors text-sm font-medium">Nossos Serviços</Link>
             <Link href="/cursos" className="bg-brand-mint text-white px-5 py-2.5 rounded-full hover:bg-brand-dark transition-colors text-sm font-medium">Cursos Online</Link>
             <Link href="/blog" className="bg-brand-mint text-white px-5 py-2.5 rounded-full hover:bg-brand-dark transition-colors text-sm font-medium">Blog</Link>
-            <Link href="/portfolio" className="bg-brand-mint text-white px-5 py-2.5 rounded-full hover:bg-brand-dark transition-colors text-sm font-medium">Portfólio</Link>
+            <Link href="/projetos" className="bg-brand-mint text-white px-5 py-2.5 rounded-full hover:bg-brand-dark transition-colors text-sm font-medium">Portfólio</Link>
             <Link href="/para-agencias" className="bg-brand-mint text-white px-5 py-2.5 rounded-full hover:bg-brand-dark transition-colors text-sm font-medium">Para Agências</Link>
             <Link href="/contato" className="bg-brand-mint text-white px-5 py-2.5 rounded-full hover:bg-brand-dark transition-colors text-sm font-medium">Contato</Link>
           </div>

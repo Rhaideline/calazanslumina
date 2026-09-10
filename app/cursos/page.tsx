@@ -1,21 +1,18 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { cursos } from '@/data/cursos'
-import { formatPreco } from '@/lib/formatters'
 import ScrollReveal from '@/components/ScrollReveal'
 import Breadcrumbs from '@/components/Breadcrumbs'
-import PortfolioSites from '@/components/PortfolioSites'
 import type { Metadata } from 'next'
-import CapturaEmail from '@/components/CapturaEmail'
 
 export const metadata: Metadata = {
-  title: 'Cursos de Marketing Digital — 4 Grátis',
+  title: 'Cursos de Marketing Digital | 2 Gratuitos + 5 por R$20',
   description:
-    'Aprenda marketing digital do zero: IA & ChatGPT, Google Meu Negócio, Redes Sociais, Funis de Vendas. 4 cursos gratuitos + 7 a partir de R$ 9,90. PDF + acesso online. Comece agora!',
+    'Aprenda marketing digital do zero: IA & ChatGPT, Google Meu Negocio, Redes Sociais, Funis de Vendas. 2 cursos gratuitos + 5 por apenas R$20. PDF + acesso online. Comece agora!',
   alternates: { canonical: 'https://calazanslumina.com.br/cursos' },
   openGraph: {
-    title: 'Cursos de Marketing Digital | 4 Gratuitos + 7 a partir de R$ 9,90',
-    description: 'Aprenda marketing digital do zero. 11 cursos disponíveis, 4 gratuitos. PDF + acesso online.',
+    title: 'Cursos de Marketing Digital | 2 Gratuitos + 5 por R$20',
+    description: 'Aprenda marketing digital do zero. 7 cursos disponiveis, 2 gratuitos. PDF + acesso online.',
     url: 'https://calazanslumina.com.br/cursos',
     type: 'website',
   },
@@ -26,7 +23,7 @@ export default function CursosPage() {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: 'Cursos de Marketing Digital e IA — Calazans Lumina',
-    description: 'Cursos online de marketing digital, ChatGPT, Google Meu Negocio, funis de vendas e redes sociais. A partir de R$ 9,90.',
+    description: 'Cursos online de marketing digital, ChatGPT, Google Meu Negocio, funis de vendas e redes sociais. A partir de R$20.',
     url: 'https://calazanslumina.com.br/cursos',
     mainEntity: {
       '@type': 'ItemList',
@@ -54,7 +51,7 @@ export default function CursosPage() {
       {/* Hero */}
       <section className="relative py-20 md:py-28 bg-brand-dark text-white overflow-hidden">
         <Image
-          src="/rhai-retrato-2.webp"
+          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c0357f3208c418.jpeg"
           alt="Rhaideline Calazans — Cursos de Marketing Digital"
           fill
           className="object-cover"
@@ -72,7 +69,7 @@ export default function CursosPage() {
             </h1>
             <p className="text-white/60 text-lg md:text-xl max-w-3xl mx-auto mb-8">
               Conhecimento prático e direto ao ponto. Temos cursos <strong className="text-white">gratuitos</strong> e cursos a partir de{' '}
-              <strong className="text-white">R$ 9,90</strong> — o preço é de entrada, o conteúdo não.
+              <strong className="text-white">R$ 20,00</strong> — menos que um almoço, mais que muitos cursos caros ensinam.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <div className="bg-white/5 border border-white/10 rounded-xl px-6 py-3 text-center">
@@ -80,7 +77,7 @@ export default function CursosPage() {
                 <p className="text-white/40 text-xs">Cursos disponíveis</p>
               </div>
               <div className="bg-white/5 border border-white/10 rounded-xl px-6 py-3 text-center">
-                <p className="text-brand-mint font-bold text-2xl">R$ 0–9,90</p>
+                <p className="text-brand-mint font-bold text-2xl">R$ 0–20</p>
                 <p className="text-white/40 text-xs">Por curso</p>
               </div>
               <div className="bg-white/5 border border-white/10 rounded-xl px-6 py-3 text-center">
@@ -92,176 +89,13 @@ export default function CursosPage() {
         </div>
       </section>
 
-      {/* ═══════════════ CURSO PREMIUM · CARRO-CHEFE ═══════════════ */}
-      {(() => {
-        const premium = cursos.find((c) => c.tier === 'premium')
-        if (!premium) return null
-        const totalAulas = premium.modulos.reduce((acc, m) => acc + m.aulas.length, 0)
-        return (
-          <section className="py-16 md:py-20 bg-gradient-to-br from-brand-dark via-brand-dark to-black text-white relative overflow-hidden">
-            <div className="absolute inset-0 opacity-30">
-              <div className="absolute -top-1/2 -right-1/4 w-[600px] h-[600px] bg-gradient-radial from-red-500/40 via-transparent to-transparent rounded-full blur-3xl" />
-              <div className="absolute -bottom-1/2 -left-1/4 w-[500px] h-[500px] bg-gradient-radial from-amber-500/20 via-transparent to-transparent rounded-full blur-3xl" />
-            </div>
-            <div className="container-main relative z-10">
-              <ScrollReveal>
-                <div className="text-center mb-10">
-                  <span className="inline-block bg-red-500 text-white text-[10px] font-bold tracking-[0.4em] uppercase px-4 py-2 rounded-full mb-4">
-                    🔥 Edição completa · Lançamento 2026
-                  </span>
-                  <h2 className="font-serif italic font-normal text-4xl md:text-6xl leading-tight mb-4">
-                    O <span className="text-red-400">único curso</span> de IA que você precisa.
-                  </h2>
-                  <p className="text-white/70 text-lg md:text-xl max-w-3xl mx-auto">
-                    95 páginas. 10 IAs detalhadas. 50 templates de prompt. 9 planos por profissão.
-                    <br className="hidden md:block" />
-                    De <span className="line-through text-white/40">R$ {formatPreco(premium.precoOriginal || 297)}</span> por <strong className="text-white text-2xl">R$ {formatPreco(premium.preco)}</strong>. Edição de lançamento.
-                  </p>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto bg-white/[0.03] border border-white/10 rounded-3xl p-6 md:p-10 backdrop-blur-sm">
-                  <div className="relative aspect-[8/5] rounded-2xl overflow-hidden bg-brand-dark border border-white/10">
-                    <Image src={premium.imagem} alt={premium.nome} fill className="object-cover" sizes="(max-width:768px) 100vw, 50vw" />
-                    <div className="absolute top-3 left-3 bg-red-500 text-white text-[10px] tracking-[0.32em] uppercase font-bold px-3 py-1.5 rounded-full">
-                      Premium
-                    </div>
-                  </div>
-
-                  <div>
-                    <h3 className="font-serif italic font-normal text-3xl md:text-4xl leading-tight mb-3">{premium.nome}</h3>
-                    <p className="text-white/65 leading-relaxed mb-5">{premium.descricaoCurta}</p>
-
-                    <div className="grid grid-cols-3 gap-3 mb-6">
-                      <div className="bg-white/5 rounded-xl p-3 text-center border border-white/5">
-                        <p className="font-serif italic text-3xl text-red-400">{premium.numeroPaginas || 95}</p>
-                        <p className="text-[9px] tracking-[0.28em] uppercase text-white/40 mt-1">páginas</p>
-                      </div>
-                      <div className="bg-white/5 rounded-xl p-3 text-center border border-white/5">
-                        <p className="font-serif italic text-3xl text-red-400">10</p>
-                        <p className="text-[9px] tracking-[0.28em] uppercase text-white/40 mt-1">IAs</p>
-                      </div>
-                      <div className="bg-white/5 rounded-xl p-3 text-center border border-white/5">
-                        <p className="font-serif italic text-3xl text-red-400">50</p>
-                        <p className="text-[9px] tracking-[0.28em] uppercase text-white/40 mt-1">prompts</p>
-                      </div>
-                    </div>
-
-                    {premium.bonus && (
-                      <div className="mb-6 bg-amber-500/[0.08] border border-amber-500/20 rounded-xl p-4">
-                        <p className="text-[10px] tracking-[0.32em] uppercase text-amber-400 font-bold mb-3">+ 5 bônus inclusos</p>
-                        <ul className="space-y-1.5 text-sm text-white/75">
-                          {premium.bonus.slice(0, 3).map((b, i) => (
-                            <li key={i} className="flex gap-2"><span className="text-amber-400">✓</span><span>{b}</span></li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                    <div className="flex items-end gap-3 mb-5">
-                      <div>
-                        <p className="text-[10px] tracking-[0.32em] uppercase text-white/40 mb-1">Investimento</p>
-                        <div className="flex items-baseline gap-3">
-                          <span className="font-serif italic text-5xl md:text-6xl text-white">R$ {formatPreco(premium.preco)}</span>
-                          <span className="font-serif italic text-2xl text-white/40 line-through">R$ {formatPreco(premium.precoOriginal || 297)}</span>
-                        </div>
-                        <p className="text-amber-300 text-xs font-medium mt-1">Acesso vitalício · pagamento único</p>
-                      </div>
-                    </div>
-
-                    <div className="flex flex-col gap-3">
-                      <a
-                        href={premium.linkPagamento || '#'}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-red-500 hover:bg-red-600 text-white font-bold text-base py-4 rounded-full text-center inline-flex items-center justify-center gap-2 transition-[transform,box-shadow,background-color,color] hover:scale-105 shadow-lg shadow-red-500/30"
-                      >
-                        Garantir agora por R$ {formatPreco(premium.preco)}
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                        </svg>
-                      </a>
-                      <Link
-                        href={`/cursos/${premium.slug}`}
-                        className="border border-white/20 hover:bg-white/5 text-white text-sm py-3 rounded-full text-center font-medium transition-colors"
-                      >
-                        Ver o que tem dentro
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </ScrollReveal>
-            </div>
-          </section>
-        )
-      })()}
-
-      {/* ═══════════════ REEL · MERCADO LIVRE DEFINITIVO ═══════════════ */}
-      {(() => {
-        const ml = cursos.find((c) => c.slug === 'mercado-livre-definitivo')
-        if (!ml) return null
-        return (
-          <section className="py-16 md:py-20 bg-gradient-to-br from-[#0d1f1c] via-brand-dark to-black text-white relative overflow-hidden">
-            <div className="absolute inset-0 opacity-25 pointer-events-none">
-              <div className="absolute -top-1/3 -left-1/4 w-[500px] h-[500px] bg-gradient-radial from-yellow-400/40 via-transparent to-transparent rounded-full blur-3xl" />
-              <div className="absolute -bottom-1/3 -right-1/4 w-[500px] h-[500px] bg-gradient-radial from-brand-mint/30 via-transparent to-transparent rounded-full blur-3xl" />
-            </div>
-            <div className="container-main relative z-10">
-              <ScrollReveal>
-                <div className="max-w-3xl mx-auto">
-                  <div>
-                    <span className="inline-block bg-yellow-400 text-brand-dark text-[10px] font-bold tracking-[0.4em] uppercase px-4 py-2 rounded-full mb-4">
-                      Lançamento · R$ 9,90
-                    </span>
-                    <h2 className="font-serif italic font-normal text-3xl md:text-5xl leading-tight mb-4">
-                      Mercado Livre, <span className="text-yellow-400">do zero</span> ao Mercado Líder.
-                    </h2>
-                    <p className="text-white/70 text-base md:text-lg mb-5 leading-relaxed">
-                      O passo a passo pra vender no Mercado Livre — do primeiro anúncio até o selo <strong className="text-white">Mercado Líder Gold</strong>. O método completo em <strong className="text-white">126 páginas, 15 módulos</strong>, com estratégia de ROAS, anti-bloqueio e custo variável real.
-                    </p>
-                    <ul className="text-white/75 text-sm md:text-base space-y-1.5 mb-6">
-                      <li>✦ ROAS-first (estratégia 2026)</li>
-                      <li>✦ Anti-bloqueio + custo variável real</li>
-                      <li>✦ Do iniciante ao Mercado Líder Gold</li>
-                    </ul>
-                    <div className="flex flex-wrap items-center gap-4">
-                      <a
-                        href={ml.linkPagamento || '#'}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-yellow-400 text-brand-dark font-bold px-7 py-3.5 rounded-xl hover:bg-yellow-300 transition-[transform,box-shadow,background-color,color] shadow-2xl hover:-translate-y-0.5"
-                      >
-                        Quero por R$ {formatPreco(ml.preco)}
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-                      </a>
-                      <Link href="/cursos/mercado-livre-definitivo" className="text-white/70 text-sm font-medium hover:text-white underline underline-offset-4">
-                        Ver conteúdo do curso
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </ScrollReveal>
-            </div>
-          </section>
-        )
-      })()}
-
       {/* Cursos Grid */}
       <section className="section-padding bg-white">
         <div className="container-main">
-          <div className="mb-10 text-center">
-            <p className="text-brand-mint font-medium text-sm uppercase tracking-wider mb-2">Todos os cursos</p>
-            <h2 className="font-serif font-bold text-3xl md:text-4xl text-brand-dark">
-              Cursos <span className="text-brand-mint">disponíveis</span>
-            </h2>
-            <p className="text-brand-dark/60 mt-3 max-w-2xl mx-auto">
-              Cursos focados em um tema só, do gratuito ao premium. Escolha o que se encaixa no seu objetivo.
-            </p>
-          </div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {cursos.map((curso, i) => (
               <ScrollReveal key={curso.slug} delay={i * 100}>
-                <div className={`relative rounded-2xl overflow-hidden h-full flex flex-col transition-[transform,box-shadow,background-color,color] duration-300 hover:-translate-y-2 hover:shadow-2xl ${
+                <div className={`relative rounded-2xl overflow-hidden h-full flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
                   curso.destaque
                     ? 'border-2 border-brand-mint shadow-xl shadow-black/10'
                     : 'border border-gray-100 shadow-sm'
@@ -276,15 +110,22 @@ export default function CursosPage() {
                     </div>
                   ) : null}
 
-                  {/* Image area — full-bleed cover */}
-                  <Link href={`/cursos/${curso.slug}`} className="group block relative aspect-[8/5] bg-brand-dark overflow-hidden">
-                    <Image
-                      src={curso.imagem}
-                      alt={curso.nome}
-                      fill
-                      sizes="(max-width:768px) 100vw, (max-width:1280px) 50vw, 33vw"
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
+                  {/* Image area */}
+                  <Link href={`/cursos/${curso.slug}`} className="group">
+                    <div className="relative h-48 bg-brand-dark flex items-center justify-center overflow-hidden">
+                      <Image
+                        src={curso.imagem}
+                        alt={curso.nome}
+                        width={120}
+                        height={120}
+                        className="object-contain opacity-30 group-hover:opacity-50 transition-opacity"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <p className="text-white font-serif text-xl font-bold text-center px-6 leading-snug">
+                          {curso.nome}
+                        </p>
+                      </div>
+                    </div>
                   </Link>
 
                   {/* Content */}
@@ -300,7 +141,7 @@ export default function CursosPage() {
                           <p className="font-serif text-3xl font-bold text-green-600">GRÁTIS</p>
                         ) : (
                           <p className="font-serif text-3xl font-bold text-brand-dark">
-                            R$ {formatPreco(curso.preco)}
+                            R$ {curso.preco}<span className="text-base text-brand-dark/40">,00</span>
                           </p>
                         )}
                       </div>
@@ -346,7 +187,7 @@ export default function CursosPage() {
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
                             </svg>
-                            Comprar por R$ {formatPreco(curso.preco)}
+                            Comprar por R$ {curso.preco},00
                           </a>
                           <Link
                             href={`/cursos/${curso.slug}`}
@@ -364,8 +205,6 @@ export default function CursosPage() {
           </div>
         </div>
       </section>
-
-      <PortfolioSites compact />
 
       {/* CTA */}
       <section className="section-padding bg-brand-dark text-white text-center">
@@ -389,12 +228,6 @@ export default function CursosPage() {
               Falar sobre Pacote de Cursos
             </a>
           </ScrollReveal>
-        </div>
-      </section>
-
-      <section className="section-padding">
-        <div className="container-main max-w-3xl">
-          <CapturaEmail origem="cursos-indice" />
         </div>
       </section>
     </>

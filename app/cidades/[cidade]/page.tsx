@@ -13,7 +13,6 @@ import Breadcrumb from '@/components/Breadcrumb'
 import PricingTable from '@/components/PricingTable'
 import ServiceIcon from '@/components/ServiceIcon'
 import CoursesSection from '@/components/CoursesSection'
-import PortfolioSites from '@/components/PortfolioSites'
 
 export async function generateStaticParams() {
   return cidadesMA.map((c) => ({ cidade: c.slug }))
@@ -24,18 +23,14 @@ export async function generateMetadata({ params }: { params: Promise<{ cidade: s
   const cidade = getCidadeMABySlug(cidadeSlug)
   if (!cidade) return {}
   return {
-    title: `Marketing Digital em ${cidade.nome}, MA`,
-    description: `A agência #1 para brasileiros em ${cidade.nome}, MA. Sites profissionais, funis que convertem 3x mais, CRM com IA no WhatsApp e Google Maps otimizado. Atendimento 100% em portugues. Orçamento gratis →`,
+    title: `Marketing Digital em ${cidade.nome}, MA (2026) | Sites + Funis + Google Maps`,
+    description: `A agencia #1 para brasileiros em ${cidade.nome}, MA. Sites com PageSpeed 95+, funis que convertem 3x mais, CRM com IA no WhatsApp e Google Maps otimizado. Atendimento 100% em portugues. Orcamento gratis →`,
     alternates: { canonical: `https://calazanslumina.com.br/cidades/${cidadeSlug}` },
     openGraph: {
       title: `Marketing Digital em ${cidade.nome}, MA | Calazans Lumina`,
       description: `Sites, funis GHL, CRM com IA e Google Maps para brasileiros em ${cidade.nome}, MA.`,
       url: `https://calazanslumina.com.br/cidades/${cidadeSlug}`,
       type: 'website',
-    },
-    other: {
-      'geo.region': 'US-MA',
-      'geo.placename': `${cidade.nome}, Massachusetts, USA`,
     },
   }
 }
@@ -49,10 +44,10 @@ export default async function CidadePage({ params }: { params: Promise<{ cidade:
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: `Calazans Lumina — Marketing Digital em ${cidade.nome}, MA`,
-    description: `Agência de marketing digital para brasileiros em ${cidade.nome}, Massachusetts. Sites, funis GoHighLevel, CRM com IA no WhatsApp e Google Business Profile.`,
+    description: `Agencia de marketing digital para brasileiros em ${cidade.nome}, Massachusetts. Sites, funis GoHighLevel, CRM com IA no WhatsApp e Google Business Profile.`,
     url: `https://calazanslumina.com.br/cidades/${cidadeSlug}`,
     telephone: '+55-31-98294-8067',
-    email: 'contato@lc.calazanslumina.com.br',
+    email: 'trafegocalazans@gmail.com',
     address: { '@type': 'PostalAddress', addressLocality: cidade.nome, addressRegion: 'MA', addressCountry: 'US' },
     areaServed: { '@type': 'City', name: cidade.nome, containedInPlace: { '@type': 'State', name: 'Massachusetts' } },
     serviceType: ['Marketing Digital', 'Web Design', 'SEO', 'Google Business Profile', 'GoHighLevel CRM'],
@@ -64,31 +59,20 @@ export default async function CidadePage({ params }: { params: Promise<{ cidade:
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
-      { '@type': 'Question', name: `Qual a melhor agência de marketing digital para brasileiros em ${cidade.nome}, MA?`, acceptedAnswer: { '@type': 'Answer', text: `A Calazans Lumina e a agência #1 para brasileiros em ${cidade.nome}, Massachusetts. Oferecemos sites profissionais de alta performance, funis de vendas, CRM com IA no WhatsApp, Google Business Profile e gestao de redes sociais. Atendimento 100% em portugues.` } },
-      { '@type': 'Question', name: `Quanto custa um site profissional em ${cidade.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `Sites profissionais para empresas brasileiras em ${cidade.nome} a partir de $997. Inclui design premium, SEO completo, velocidade otimizada, versão mobile e integração com Google Business Profile. Orçamento gratuito disponivel.` } },
+      { '@type': 'Question', name: `Qual a melhor agencia de marketing digital para brasileiros em ${cidade.nome}, MA?`, acceptedAnswer: { '@type': 'Answer', text: `A Calazans Lumina e a agencia #1 para brasileiros em ${cidade.nome}, Massachusetts. Oferecemos sites profissionais com PageSpeed 95+, funis GoHighLevel, CRM com IA no WhatsApp, Google Business Profile e gestao de redes sociais. Atendimento 100% em portugues.` } },
+      { '@type': 'Question', name: `Quanto custa um site profissional em ${cidade.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `Sites profissionais para empresas brasileiras em ${cidade.nome} a partir de $997. Inclui design premium, SEO tecnico, PageSpeed 95+, versao mobile e integracao com Google Business Profile. Orcamento gratuito disponivel.` } },
       { '@type': 'Question', name: `A Calazans Lumina atende empresas em ${cidade.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `Sim! Atendemos cleaning companies, landscaping, saloes de beleza, restaurantes e todos os tipos de negocios brasileiros em ${cidade.nome}, MA. Atendimento remoto 100% em portugues com resultados comprovados.` } },
-    ],
-  }
-
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://calazanslumina.com.br/' },
-      { '@type': 'ListItem', position: 2, name: 'Cidades MA', item: 'https://calazanslumina.com.br/' },
-      { '@type': 'ListItem', position: 3, name: `${cidade.nome}, MA`, item: `https://calazanslumina.com.br/cidades/${cidadeSlug}` },
     ],
   }
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {/* Hero */}
       <section className="relative min-h-[80vh] flex items-center">
         <Image
-          src="/rhai-retrato-1.webp"
+          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d74aa28b2801643ac3f117.jpeg"
           alt={`Marketing Digital em ${cidade.nome}, MA — Calazans Lumina`}
           fill
           className="object-cover"
@@ -217,7 +201,6 @@ export default async function CidadePage({ params }: { params: Promise<{ cidade:
         </div>
       </section>
 
-      <PortfolioSites compact />
       <CTAForm cidade={cidade.nome} />
     </>
   )

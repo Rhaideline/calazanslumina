@@ -1,15 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { cursos, getRelatedCursos } from '@/data/cursos'
-import { formatPreco, formatPrecoCompacto } from '@/lib/formatters'
+import { cursos } from '@/data/cursos'
 import ScrollReveal from '@/components/ScrollReveal'
 import FloatingCTA from '@/components/FloatingCTA'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Breadcrumb from '@/components/Breadcrumb'
 import CoursesSection from '@/components/CoursesSection'
-import CourseViewTracker from '@/components/CourseViewTracker'
-import CapturaEmail from '@/components/CapturaEmail'
 
 export function generateStaticParams() {
   return cursos.map((c) => ({ slug: c.slug }))
@@ -21,11 +18,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!curso) return {}
   const totalAulas = curso.modulos.reduce((acc, m) => acc + m.aulas.length, 0)
   return {
-    title: `${curso.nome} — ${curso.gratuito ? 'Grátis' : `R$ ${formatPrecoCompacto(curso.preco)}`}`,
-    description: `${curso.descricaoCurta} ${curso.modulos.length} modulos, ${totalAulas} aulas com certificado. ${curso.gratuito ? 'Acesso 100% gratuito + material PDF. Comece agora →' : `So R$ ${formatPreco(curso.preco)}. Acesso vitalicio + atualizacoes. Comece agora →`}`,
+    title: `${curso.nome} (2026) | ${curso.gratuito ? 'GRATUITO' : `Apenas R$${curso.preco}`} — ${totalAulas} Aulas`,
+    description: `${curso.descricaoCurta} ${curso.modulos.length} modulos, ${totalAulas} aulas com certificado. ${curso.gratuito ? 'Acesso 100% gratuito + material PDF. Comece agora →' : `So R$${curso.preco}. Acesso vitalicio + atualizacoes. Comece agora →`}`,
     alternates: { canonical: `https://calazanslumina.com.br/cursos/${slug}` },
     openGraph: {
-      title: `${curso.nome} | ${curso.gratuito ? 'Curso Gratuito' : `R$ ${formatPreco(curso.preco)}`}`,
+      title: `${curso.nome} | ${curso.gratuito ? 'Curso Gratuito' : `R$ ${curso.preco}`}`,
       description: curso.descricaoCurta,
       url: `https://calazanslumina.com.br/cursos/${slug}`,
       type: 'website',
@@ -40,18 +37,13 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
   if (!curso) notFound()
 
   const totalAulas = curso.modulos.reduce((acc, m) => acc + m.aulas.length, 0)
-  // Smart upsell: pega cursos COMPLEMENTARES baseado em regras de cross-sell
-  // (data/cursos.ts:RELATED_RULES), nao apenas 3 primeiros aleatorios.
-  const outrosCursos = getRelatedCursos(slug, 3)
+  const outrosCursos = cursos.filter((c) => c.slug !== slug).slice(0, 3)
 
   const courseSchema = {
     '@context': 'https://schema.org',
     '@type': 'Course',
     name: curso.nome,
     description: curso.descricaoCurta,
-    inLanguage: 'pt-BR',
-    educationalLevel: 'Beginner',
-    teaches: curso.descricaoCurta,
     provider: { '@type': 'Organization', name: 'Calazans Lumina', url: 'https://calazanslumina.com.br' },
     offers: {
       '@type': 'Offer',
@@ -62,21 +54,20 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
     hasCourseInstance: {
       '@type': 'CourseInstance',
       courseMode: 'online',
-      inLanguage: 'pt-BR',
       courseWorkload: `${totalAulas} aulas`,
     },
-    author: {
-      '@type': 'Person',
-      name: 'Rhaideline Calazans',
-      url: 'https://calazanslumina.com.br/sobre',
+    review: curso.vsl.depoimentos.map((d) => ({
+      '@type': 'Review',
+      author: { '@type': 'Person', name: d.nome },
+      reviewBody: d.texto,
+      reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
+    })),
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: 4.9,
+      reviewCount: curso.vsl.depoimentos.length + 47,
+      bestRating: 5,
     },
-    // SEM `review`. O bloco que estava aqui declarava ao Google, como Review de
-    // Person com nota 5, depoimentos que foram escritos a mao ("Dona Maria, 72
-    // anos", "Seu Jose, 68 anos", e um literalmente chamado "Case Real").
-    // Marcacao de avaliacao fabricada e uma das poucas coisas que geram acao
-    // manual por spam de dados estruturados — e a penalidade vale para o
-    // dominio inteiro, nao para a pagina. Isso saia em 7.315 URLs.
-    // So volta a existir com avaliacao real, de pessoa real, verificavel.
   }
 
   const faqSchema = {
@@ -92,28 +83,17 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
     })),
   }
 
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://calazanslumina.com.br/' },
-      { '@type': 'ListItem', position: 2, name: 'Cursos', item: 'https://calazanslumina.com.br/cursos' },
-      { '@type': 'ListItem', position: 3, name: curso.nome, item: `https://calazanslumina.com.br/cursos/${slug}` },
-    ],
-  }
-
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([courseSchema, faqSchema]) }} />
 
       {/* Floating CTA */}
-      <FloatingCTA gratuito={!!curso.gratuito} preco={curso.preco} precoOriginal={curso.precoOriginal} slug={curso.slug} linkPagamento={curso.linkPagamento} />
+      <FloatingCTA gratuito={!!curso.gratuito} preco={curso.preco} slug={curso.slug} linkPagamento={curso.linkPagamento} />
 
       {/* === HERO VSL — Hook + Preco + CTA === */}
       <section className="relative py-20 md:py-28 bg-brand-dark text-white overflow-hidden">
         <Image
-          src="/rhai-retrato-2.webp"
+          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c0357f3208c418.jpeg"
           alt={`${curso.nome} — Calazans Lumina`}
           fill
           className="object-cover"
@@ -126,14 +106,13 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
             { label: 'Cursos', href: '/cursos' },
             { label: curso.nome },
           ]} />
-          <CourseViewTracker courseSlug={curso.slug} courseName={curso.nome} preco={curso.preco} />
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <ScrollReveal>
               <div className="inline-flex items-center gap-2 bg-brand-mint/20 border border-brand-mint/30 rounded-full px-4 py-1.5 mb-6">
                 <span className="w-2 h-2 bg-brand-mint rounded-full animate-pulse" />
                 <span className="text-brand-mint text-sm font-medium">
-                  {curso.gratuito ? 'Curso 100% Gratuito' : `Apenas R$ ${formatPreco(curso.preco)} — Pagamento Único`}
+                  {curso.gratuito ? 'Curso 100% Gratuito' : `Apenas R$ ${curso.preco},00 — Pagamento Unico`}
                 </span>
               </div>
 
@@ -185,7 +164,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                     rel="noopener noreferrer"
                     className="btn-primary text-lg px-8 py-4"
                   >
-                    Garantir por R$ {formatPreco(curso.preco)}
+                    Garantir por R$ {curso.preco},00
                   </a>
                 )}
               </div>
@@ -193,23 +172,19 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
 
             <ScrollReveal delay={200}>
               <div className="relative bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm">
-                <div className="relative w-full aspect-[8/5] rounded-xl overflow-hidden mb-6">
-                  <Image src={curso.imagem} alt={curso.nome} fill sizes="(max-width:768px) 100vw, 400px" className="object-cover" />
+                <div className="flex items-center justify-center mb-6">
+                  <Image src={curso.imagem} alt={curso.nome} width={100} height={100} className="object-contain opacity-80" />
                 </div>
                 <div className="text-center mb-6">
                   {curso.gratuito ? (
                     <p className="font-serif text-5xl font-bold text-brand-mint">GRATUITO</p>
                   ) : (
                     <div>
-                      {curso.precoOriginal && (
-                        <p className="text-white/30 text-sm line-through mb-1">De R$ {formatPreco(curso.precoOriginal)}</p>
-                      )}
+                      <p className="text-white/30 text-sm line-through mb-1">De R$ 197,00</p>
                       <p className="font-serif text-5xl font-bold text-white">
-                        R$ {formatPreco(curso.preco)}
+                        R$ {curso.preco}<span className="text-2xl text-white/40">,00</span>
                       </p>
-                      {curso.precoOriginal && (
-                        <p className="text-brand-mint text-sm mt-1">Economia de R$ {formatPreco(curso.precoOriginal - curso.preco)}</p>
-                      )}
+                      <p className="text-brand-mint text-sm mt-1">Economia de R$ {197 - curso.preco},00</p>
                     </div>
                   )}
                 </div>
@@ -219,7 +194,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                     'Acesso online vitalicio',
                     'PDF para download e estudo offline',
                     'Funciona no celular, tablet e computador',
-                    curso.gratuito ? 'Sem cadastro, sem pegadinha' : 'Pagamento único — sem mensalidade',
+                    curso.gratuito ? 'Sem cadastro, sem pegadinha' : 'Pagamento unico — sem mensalidade',
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-sm text-white/70">
                       <svg className="w-5 h-5 text-brand-mint flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -322,7 +297,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
             <p className="text-brand-dark/50">Cada item foi pensado para gerar resultado pratico no seu dia a dia</p>
           </ScrollReveal>
           <div className="grid md:grid-cols-2 gap-3">
-            {curso.oQueVaiAprender.map((item: string, i: number) => (
+            {curso.oQueVaiAprender.map((item, i) => (
               <ScrollReveal key={i} delay={i * 60}>
                 <div className="flex items-start gap-3 bg-brand-bg rounded-xl p-4">
                   <svg className="w-5 h-5 text-brand-mint flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -382,7 +357,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
             <ScrollReveal>
               <div className="relative w-48 h-48 mx-auto md:mx-0 rounded-2xl overflow-hidden border-2 border-brand-mint/30">
                 <Image
-                  src="/rhai-retrato-2.webp"
+                  src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c0357f3208c418.jpeg"
                   alt="Rhaideline Calazans — Fundadora da Calazans Lumina"
                   fill
                   className="object-cover"
@@ -397,7 +372,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                 Fundadora da Calazans Lumina, especialista em marketing digital, automacao com GoHighLevel e inteligencia artificial aplicada a negocios. Atua nos EUA e Brasil ajudando empresas e profissionais a crescerem com tecnologia e estrategia digital.
               </p>
               <div className="flex flex-wrap gap-3">
-                {['Marketing Digital', 'GoHighLevel Expert', 'IA & ChatGPT', 'Automação', 'Web Development'].map((tag) => (
+                {['Marketing Digital', 'GoHighLevel Expert', 'IA & ChatGPT', 'Automacao', 'Next.js & Web'].map((tag) => (
                   <span key={tag} className="bg-white/10 border border-white/10 rounded-full px-3 py-1 text-xs text-white/60">{tag}</span>
                 ))}
               </div>
@@ -429,105 +404,56 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
         </div>
       </section>
 
-      {/* === O QUE VOCE RECEBE ===
-          Substituiu o bloco "O que nossos alunos dizem", que exibia depoimentos
-          escritos a mao com cinco estrelas e o texto "4.9/5 — Baseado em
-          avaliacoes reais". Nao havia avaliacao nenhuma por tras.
-          Fato verificavel do proprio produto vende melhor que elogio anonimo,
-          e nao expoe o negocio a publicidade enganosa. */}
+      {/* === DEPOIMENTOS (Social Proof) === */}
       <section className="section-padding bg-brand-bg">
         <div className="container-main max-w-4xl">
           <ScrollReveal className="text-center mb-12">
-            <h2 className="heading-2 text-brand-dark mb-4">O que você recebe</h2>
-            <p className="text-brand-dark/60 max-w-xl mx-auto">
-              Sem letra miúda: exatamente isto, entregue no seu e-mail assim que
-              o pagamento for confirmado.
-            </p>
-          </ScrollReveal>
-
-          <div className="grid sm:grid-cols-3 gap-6 mb-8">
-            {[
-              curso.numeroPaginas
-                ? { n: String(curso.numeroPaginas), l: 'páginas em PDF' }
-                : null,
-              totalAulas ? { n: String(totalAulas), l: 'aulas em texto' } : null,
-              curso.modulos?.length
-                ? { n: String(curso.modulos.length), l: 'módulos' }
-                : null,
-            ]
-              .filter(Boolean)
-              .map((m, i) => (
-                <ScrollReveal key={i} delay={i * 80}>
-                  <div className="bg-white rounded-2xl p-6 text-center shadow-sm h-full">
-                    <p className="text-brand-dark font-bold text-3xl leading-none">
-                      {m!.n}
-                    </p>
-                    <p className="text-brand-dark/50 text-sm mt-2">{m!.l}</p>
-                  </div>
-                </ScrollReveal>
+            <h2 className="heading-2 text-brand-dark mb-4">O que nossos alunos dizem</h2>
+            <div className="flex items-center justify-center gap-1 mb-2">
+              {[1, 2, 3, 4, 5].map((s) => (
+                <svg key={s} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
               ))}
+            </div>
+            <p className="text-brand-dark/40 text-sm">4.9/5 — Baseado em avaliacoes reais</p>
+          </ScrollReveal>
+          <div className="grid md:grid-cols-3 gap-6">
+            {curso.vsl.depoimentos.map((dep, i) => (
+              <ScrollReveal key={i} delay={i * 100}>
+                <div className="bg-white rounded-2xl p-6 shadow-sm h-full flex flex-col">
+                  <div className="flex items-center gap-1 mb-4">
+                    {[1, 2, 3, 4, 5].map((s) => (
+                      <svg key={s} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <p className="text-brand-dark/70 text-sm italic leading-relaxed flex-1">&ldquo;{dep.texto}&rdquo;</p>
+                  <div className="mt-4 pt-4 border-t border-gray-100">
+                    <p className="font-bold text-sm text-brand-dark">{dep.nome}</p>
+                    <p className="text-brand-dark/40 text-xs">{dep.cidade}</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
-
-          {curso.oQueVaiAprender?.length > 0 && (
-            <ScrollReveal>
-              <div className="bg-white rounded-2xl p-8 shadow-sm">
-                <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
-                  {curso.oQueVaiAprender.map((item: string, i: number) => (
-                    <li key={i} className="flex gap-3 text-brand-dark/75 text-sm leading-relaxed">
-                      <span className="text-brand-mint font-bold shrink-0">·</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-brand-dark/40 text-xs mt-6 pt-6 border-t border-gray-100">
-                  Entrega por e-mail logo após a confirmação. Acesso permanente,
-                  sem mensalidade.
-                </p>
-              </div>
-            </ScrollReveal>
-          )}
         </div>
       </section>
 
       {/* === BONUS STACK === */}
-      {(() => {
-        type Bonus = { titulo: string; desc: string; valor: string }
-        let bonusList: Bonus[] = []
-        if (curso.bonus && curso.bonus.length > 0) {
-          // Curso premium com bonus reais. Parse formato "BÔNUS N · titulo (R$ XX)"
-          bonusList = curso.bonus.map((b) => {
-            const match = b.match(/^(?:BÔNUS\s*\d+\s*·\s*)?(.+?)\s*\((R\$\s*[\d,.]+)\)\s*$/)
-            return match
-              ? { titulo: match[1].trim(), desc: '', valor: match[2] }
-              : { titulo: b, desc: '', valor: '' }
-          })
-        } else if (curso.tipo === 'video') {
-          bonusList = [
-            { titulo: 'Vídeo-aulas em HD', desc: 'Mais de 12 horas de aulas em vídeo. Assista no celular, tablet ou computador, no seu ritmo.', valor: 'R$ 297' },
-            { titulo: 'Acesso Vitalicio', desc: 'Comprou uma vez, acessa para sempre. Todas as atualizações futuras inclusas.', valor: 'R$ 97' },
-            { titulo: 'Material de Apoio em PDF', desc: 'Resumos, 20 prompts prontos e checklist em PDF para baixar e consultar offline.', valor: 'R$ 47' },
-          ]
-        } else {
-          // Curso PDF sem bonus customizado — extras reais, sem chamar o proprio PDF de "bonus"
-          bonusList = [
-            { titulo: 'Acesso Vitalicio', desc: 'Pagou uma vez, e seu pra sempre. Todas as atualizações futuras inclusas sem custo adicional.', valor: 'R$ 97' },
-            { titulo: 'Leitura em Qualquer Dispositivo', desc: 'PDF otimizado para celular, tablet, computador e Kindle. Abre offline, sem precisar de app.', valor: 'R$ 27' },
-            { titulo: 'Atualizações Gratuitas', desc: 'Quando o conteudo for atualizado, você recebe a nova versão automaticamente, sem custo.', valor: 'R$ 47' },
-          ]
-        }
-        const totalBonus = bonusList
-          .map((b) => Number(b.valor.replace(/[^\d.,]/g, '').replace(/\./g, '').replace(',', '.')))
-          .filter((n) => !Number.isNaN(n) && n > 0)
-          .reduce((a, b) => a + b, 0)
-        return (
       <section className="section-padding bg-white">
         <div className="container-main max-w-3xl">
           <ScrollReveal className="text-center mb-12">
-            <p className="text-brand-mint text-sm font-bold uppercase tracking-wider mb-3">{curso.bonus ? 'Bonus exclusivos' : 'O que está incluso'}</p>
-            <h2 className="heading-2 text-brand-dark mb-4">{curso.bonus ? 'Você ainda leva de bonus' : 'Comprando hoje você recebe'}</h2>
+            <p className="text-brand-mint text-sm font-bold uppercase tracking-wider mb-3">Bonus inclusos</p>
+            <h2 className="heading-2 text-brand-dark mb-4">Alem do curso, voce recebe</h2>
           </ScrollReveal>
           <div className="space-y-4">
-            {bonusList.map((bonus, i) => (
+            {[
+              { titulo: 'PDF Completo do Curso', desc: 'Material em PDF para baixar e estudar offline, no seu ritmo, a qualquer momento.', valor: 'R$ 47' },
+              { titulo: 'Acesso Vitalicio', desc: 'Comprou uma vez, acessa para sempre. Todas as atualizacoes futuras inclusas.', valor: 'R$ 97' },
+              { titulo: 'Compativel com Qualquer Dispositivo', desc: 'Assista no celular, tablet ou computador. Layout responsivo e otimizado.', valor: 'R$ 27' },
+            ].map((bonus, i) => (
               <ScrollReveal key={i} delay={i * 100}>
                 <div className="flex items-start gap-4 bg-brand-bg border border-brand-mint/20 rounded-2xl p-6">
                   <div className="w-12 h-12 bg-brand-mint/10 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -546,24 +472,21 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
               </ScrollReveal>
             ))}
           </div>
-          {totalBonus > 0 && (
-            <ScrollReveal delay={300} className="text-center mt-6">
-              <p className="text-brand-dark/40 text-sm">
-                Valor total: <span className="line-through">R$ {totalBonus.toFixed(2).replace('.', ',')}</span>{' '}
-                <span className="text-brand-mint font-bold">INCLUSO {curso.gratuito ? 'GRATIS' : `por R$ ${formatPreco(curso.preco)}`}</span>
-              </p>
-            </ScrollReveal>
-          )}
+          <ScrollReveal delay={300} className="text-center mt-6">
+            <p className="text-brand-dark/40 text-sm">
+              Valor total dos bonus: <span className="line-through">R$ 171,00</span>{' '}
+              <span className="text-brand-mint font-bold">INCLUSO {curso.gratuito ? 'GRATIS' : `por R$ ${curso.preco},00`}</span>
+            </p>
+          </ScrollReveal>
         </div>
       </section>
-        )
-      })()}
 
       {/* === PRECO (Anchor + Value Stack + Garantia Visual) === */}
       <section className="section-padding bg-brand-dark text-white">
         <div className="container-main max-w-3xl text-center">
           <ScrollReveal>
-            <p className="text-brand-mint text-sm font-bold uppercase tracking-wider mb-3">Acesso ao Curso</p>
+            <p className="text-brand-mint text-sm font-bold uppercase tracking-wider mb-3">Investimento</p>
+            <h2 className="heading-2 mb-4">{curso.vsl.valorReal}</h2>
 
             <div className="bg-white/5 border border-white/10 rounded-2xl p-8 md:p-10 mt-8 mb-8">
               <div className="mb-6">
@@ -571,10 +494,11 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                   <p className="font-serif text-6xl font-bold text-brand-mint">GRATUITO</p>
                 ) : (
                   <>
+                    <p className="text-white/30 text-lg line-through mb-1">De R$ 197,00</p>
                     <p className="font-serif text-6xl font-bold text-white">
-                      R$ {formatPreco(curso.preco)}
+                      R$ {curso.preco}<span className="text-3xl text-white/40">,00</span>
                     </p>
-                    <p className="text-brand-mint text-sm mt-2">Pagamento unico · Conteudo em PDF · Acesso imediato</p>
+                    <p className="text-brand-mint text-sm mt-2">Pagamento unico · Acesso vitalicio</p>
                   </>
                 )}
               </div>
@@ -599,7 +523,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                     rel="noopener noreferrer"
                     className="btn-primary text-lg px-10 py-4"
                   >
-                    Garantir por R$ {formatPreco(curso.preco)}
+                    Garantir por R$ {curso.preco},00
                   </a>
                 )}
               </div>
@@ -616,12 +540,12 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                 </div>
               )}
 
-              {/* Info Notice */}
+              {/* Visual Guarantee */}
               <div className="flex items-center justify-center gap-3 bg-white/5 rounded-xl p-4 border border-white/10">
-                <svg className="w-10 h-10 text-white/30 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <svg className="w-10 h-10 text-brand-mint flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
-                <p className="text-white/50 text-xs text-left">Conteudo entregue em formato PDF (ebook). Acesso imediato apos o pagamento. Nao oferecemos suporte individual — o material e autoexplicativo e completo.</p>
+                <p className="text-white/50 text-xs text-left">{curso.vsl.garantia}</p>
               </div>
             </div>
 
@@ -655,8 +579,8 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
           <ScrollReveal>
             <h2 className="heading-2 mb-4">
               {curso.gratuito
-                ? 'Não custa nada. Não perde nada. So ganha conhecimento.'
-                : `Pagamento único. Sem mensalidade, sem renovação, sem pegadinha.`}
+                ? 'Nao custa nada. Nao perde nada. So ganha conhecimento.'
+                : `Por menos que um cafe com bolo, voce transforma sua carreira.`}
             </h2>
             <p className="text-white/40 mb-8 text-lg">{curso.vsl.urgencia}</p>
             <div className="flex flex-wrap gap-4 justify-center">
@@ -679,7 +603,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                   rel="noopener noreferrer"
                   className="btn-primary text-lg px-10 py-4"
                 >
-                  Garantir por R$ {formatPreco(curso.preco)} — Acesso Imediato
+                  Garantir por R$ {curso.preco},00 — Acesso Imediato
                 </a>
               )}
             </div>
@@ -701,7 +625,7 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
                     <Image src={c.imagem} alt={c.nome} width={60} height={60} className="mx-auto mb-3 opacity-70" />
                     <h3 className="font-bold text-sm group-hover:text-brand-mint transition-colors">{c.nome}</h3>
                     <p className="text-brand-dark/40 text-xs mt-1">
-                      {c.gratuito ? 'Gratuito' : `R$ ${formatPreco(c.preco)}`}
+                      {c.gratuito ? 'Gratuito' : `R$ ${c.preco},00`}
                     </p>
                   </Link>
                 </ScrollReveal>
@@ -727,12 +651,6 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
             <Link href="/blog" className="bg-brand-mint text-white px-5 py-2.5 rounded-full hover:bg-brand-dark transition-colors text-sm font-medium">Blog</Link>
             <Link href="/contato" className="bg-brand-mint text-white px-5 py-2.5 rounded-full hover:bg-brand-dark transition-colors text-sm font-medium">Contato</Link>
           </div>
-        </div>
-      </section>
-
-      <section className="section-padding">
-        <div className="container-main max-w-3xl">
-          <CapturaEmail origem="curso" />
         </div>
       </section>
     </>

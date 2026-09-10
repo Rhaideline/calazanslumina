@@ -5,7 +5,6 @@ import ScrollReveal from '@/components/ScrollReveal'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import CTAForm from '@/components/CTAForm'
 import CoursesSection from '@/components/CoursesSection'
-import PortfolioSites from '@/components/PortfolioSites'
 
 export const metadata: Metadata = {
   title: 'Contato | Fale Agora pelo WhatsApp ou Formulario',
@@ -48,7 +47,7 @@ const canais = [
   {
     titulo: 'E-mail',
     desc: 'Para orçamentos e parcerias',
-    link: 'mailto:contato@lc.calazanslumina.com.br',
+    link: 'mailto:trafegocalazans@gmail.com',
     cta: 'Enviar E-mail',
     icon: (
       <svg className="w-10 h-10 text-brand-mint" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
@@ -80,7 +79,7 @@ const contactSchema = {
     '@type': 'Organization',
     name: 'Calazans Lumina',
     telephone: '+55-31-98294-8067',
-    email: 'contato@lc.calazanslumina.com.br',
+    email: 'trafegocalazans@gmail.com',
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+55-31-98294-8067',
@@ -100,7 +99,7 @@ export default function ContatoPage() {
       <section className="relative min-h-[60vh] flex items-center">
         {/* Background Image */}
         <Image
-          src="/rhai-retrato-1.webp"
+          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d74aa28b2801643ac3f117.jpeg"
           alt="Rhaideline Calazans — Contato Calazans Lumina"
           fill
           className="object-cover"
@@ -170,7 +169,6 @@ export default function ContatoPage() {
         </div>
       </section>
 
-      <PortfolioSites compact />
       <CTAForm />
     </>
   )

@@ -1,11 +1,3 @@
 {
-  "framework": "nextjs",
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "www.calazanslumina.com.br" }],
-      "destination": "https://calazanslumina.com.br/$1",
-      "permanent": true
-    }
-  ]
+  "framework": "nextjs"
 }
