@@ -944,6 +944,21 @@ SIMBOLO_RADIO = """<svg viewBox="0 0 200 200" fill="none" stroke="currentColor"
 </svg>"""
 
 
+# Simbolo da medicina nuclear: o tracador entra, percorre e se acumula no alvo.
+# A especialidade nao ilumina de fora — ela e carregada ate o lugar.
+SIMBOLO_NUCLEAR = """<svg viewBox="0 0 200 200" fill="none" stroke="currentColor"
+  stroke-width="1.7" stroke-linecap="round">
+  <path d="M16 160 C 52 160, 58 120, 84 108" stroke-dasharray="2 11"/>
+  <path d="M84 108 C 100 101, 106 96, 118 92" stroke-dasharray="2 9"/>
+  <circle cx="132" cy="86" r="9" fill="currentColor" stroke="none"/>
+  <circle cx="132" cy="86" r="23" opacity=".62"/>
+  <circle cx="132" cy="86" r="38" opacity=".3"/>
+  <path d="M132 34 V 20" opacity=".55"/><path d="M132 152 V 166" opacity=".55"/>
+  <path d="M80 86 H 66" opacity=".55"/><path d="M184 86 H 198" opacity=".55"/>
+  <path d="M14 182 H 120" opacity=".4"/>
+</svg>"""
+
+
 def data_medica(kicker, linha1, linha2, frase, simbolo, counter=None, foot_tag=None):
     """31 - peca de data de especialidade, no esqueleto fixo da casa."""
     return page(f"{linha1} {linha2}", "data-med bg-navy", f"""
@@ -955,6 +970,58 @@ def data_medica(kicker, linha1, linha2, frase, simbolo, counter=None, foot_tag=N
 </div>
 <div class="pe">{HANDLE} &middot; {SITE}</div>
 """, counter=counter, show_foot=False, show_wm=False)
+
+
+# ====== 32 CURVA DE DECAIMENTO ======
+BASE_CSS += """
+.decai .body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:center;
+  padding:0 70px;gap:24px}
+.decai .kicker{font-size:17px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;color:var(--brass-2)}
+.decai h2{font-family:'Spectral',serif;font-weight:300;font-size:62px;line-height:1.08;letter-spacing:-.02em;max-width:17ch}
+.decai h2 em{font-style:italic;font-weight:600;color:var(--brass-2)}
+.decai .plot{margin:6px 0 0;color:var(--brass-2)}
+.decai .plot svg{width:100%;height:auto;display:block}
+.decai .plot .grade{stroke:rgba(245,247,243,.16);stroke-width:1}
+.decai .plot .curva{stroke:var(--brass-2);stroke-width:3.6;fill:none;stroke-linecap:round}
+.decai .plot .area{fill:rgba(215,187,132,.10);stroke:none}
+.decai .plot .marca{stroke:rgba(215,187,132,.45);stroke-width:1.5}
+.decai .plot text{font-family:'Poppins',sans-serif;font-size:26px;fill:rgba(245,247,243,.6)}
+.decai .eixo{font-size:22px;letter-spacing:.16em;text-transform:uppercase;color:rgba(245,247,243,.45);
+  text-align:center;margin-top:-10px}
+.decai .chips{display:flex;flex-wrap:wrap;gap:13px;margin-top:12px}
+.decai .chips span{border:1px solid rgba(215,187,132,.45);border-radius:999px;padding:13px 24px;font-size:26px;
+  color:var(--cream)}
+.decai .chips b{color:var(--brass-2);font-weight:600}
+.decai .nota{font-size:27px;line-height:1.42;color:rgba(245,247,243,.74);max-width:31ch}
+.t-claro .plot .grade{stroke:rgba(22,35,27,.18)}
+.t-claro .plot text{fill:rgba(22,35,27,.6)}
+.t-claro .chips span{color:var(--ink);border-color:rgba(140,111,50,.5)}
+.t-claro .eixo,.t-claro .decai .nota{color:rgba(22,35,27,.7)}
+"""
+
+# Curva gerada da formula A(t) = A0 * 2^(-t/T), ponto a ponto — nao desenhada no olho.
+GRAFICO_DECAIMENTO = """<svg viewBox="0 0 1000 620" fill="none">
+  <g class="grade"><line x1="96" y1="311.0" x2="976" y2="311.0"/><line x1="96" y1="418.5" x2="976" y2="418.5"/><line x1="96" y1="472.2" x2="976" y2="472.2"/><line x1="96" y1="526" x2="976" y2="526"/></g>
+  <polygon class="area" points="96,526 96.0,96.0 99.5,101.9 103.0,107.8 106.6,113.5 110.1,119.2 113.6,124.8 117.1,130.3 120.6,135.8 124.2,141.1 127.7,146.4 131.2,151.7 134.7,156.8 138.2,161.9 141.8,166.9 145.3,171.9 148.8,176.7 152.3,181.5 155.8,186.3 159.4,191.0 162.9,195.6 166.4,200.1 169.9,204.6 173.4,209.0 177.0,213.4 180.5,217.7 184.0,221.9 187.5,226.1 191.0,230.3 194.6,234.3 198.1,238.3 201.6,242.3 205.1,246.2 208.6,250.1 212.2,253.9 215.7,257.6 219.2,261.3 222.7,264.9 226.2,268.5 229.8,272.1 233.3,275.6 236.8,279.0 240.3,282.4 243.8,285.8 247.4,289.1 250.9,292.4 254.4,295.6 257.9,298.7 261.4,301.9 265.0,305.0 268.5,308.0 272.0,311.0 275.5,314.0 279.0,316.9 282.6,319.8 286.1,322.6 289.6,325.4 293.1,328.2 296.6,330.9 300.2,333.6 303.7,336.2 307.2,338.8 310.7,341.4 314.2,343.9 317.8,346.5 321.3,348.9 324.8,351.4 328.3,353.8 331.8,356.1 335.4,358.5 338.9,360.8 342.4,363.1 345.9,365.3 349.4,367.5 353.0,369.7 356.5,371.8 360.0,374.0 363.5,376.1 367.0,378.1 370.6,380.2 374.1,382.2 377.6,384.2 381.1,386.1 384.6,388.0 388.2,389.9 391.7,391.8 395.2,393.7 398.7,395.5 402.2,397.3 405.8,399.0 409.3,400.8 412.8,402.5 416.3,404.2 419.8,405.9 423.4,407.5 426.9,409.2 430.4,410.8 433.9,412.4 437.4,413.9 441.0,415.5 444.5,417.0 448.0,418.5 451.5,420.0 455.0,421.4 458.6,422.9 462.1,424.3 465.6,425.7 469.1,427.1 472.6,428.4 476.2,429.8 479.7,431.1 483.2,432.4 486.7,433.7 490.2,435.0 493.8,436.2 497.3,437.5 500.8,438.7 504.3,439.9 507.8,441.1 511.4,442.2 514.9,443.4 518.4,444.5 521.9,445.7 525.4,446.8 529.0,447.8 532.5,448.9 536.0,450.0 539.5,451.0 543.0,452.1 546.6,453.1 550.1,454.1 553.6,455.1 557.1,456.1 560.6,457.0 564.2,458.0 567.7,458.9 571.2,459.8 574.7,460.7 578.2,461.6 581.8,462.5 585.3,463.4 588.8,464.3 592.3,465.1 595.8,465.9 599.4,466.8 602.9,467.6 606.4,468.4 609.9,469.2 613.4,470.0 617.0,470.7 620.5,471.5 624.0,472.2 627.5,473.0 631.0,473.7 634.6,474.4 638.1,475.1 641.6,475.8 645.1,476.5 648.6,477.2 652.2,477.9 655.7,478.6 659.2,479.2 662.7,479.9 666.2,480.5 669.8,481.1 673.3,481.7 676.8,482.3 680.3,482.9 683.8,483.5 687.4,484.1 690.9,484.7 694.4,485.3 697.9,485.8 701.4,486.4 705.0,486.9 708.5,487.5 712.0,488.0 715.5,488.5 719.0,489.0 722.6,489.5 726.1,490.0 729.6,490.5 733.1,491.0 736.6,491.5 740.2,492.0 743.7,492.5 747.2,492.9 750.7,493.4 754.2,493.8 757.8,494.3 761.3,494.7 764.8,495.1 768.3,495.6 771.8,496.0 775.4,496.4 778.9,496.8 782.4,497.2 785.9,497.6 789.4,498.0 793.0,498.4 796.5,498.7 800.0,499.1 803.5,499.5 807.0,499.9 810.6,500.2 814.1,500.6 817.6,500.9 821.1,501.3 824.6,501.6 828.2,501.9 831.7,502.3 835.2,502.6 838.7,502.9 842.2,503.2 845.8,503.6 849.3,503.9 852.8,504.2 856.3,504.5 859.8,504.8 863.4,505.1 866.9,505.3 870.4,505.6 873.9,505.9 877.4,506.2 881.0,506.5 884.5,506.7 888.0,507.0 891.5,507.3 895.0,507.5 898.6,507.8 902.1,508.0 905.6,508.3 909.1,508.5 912.6,508.8 916.2,509.0 919.7,509.2 923.2,509.5 926.7,509.7 930.2,509.9 933.8,510.1 937.3,510.3 940.8,510.6 944.3,510.8 947.8,511.0 951.4,511.2 954.9,511.4 958.4,511.6 961.9,511.8 965.4,512.0 969.0,512.2 972.5,512.4 976.0,512.6 976,526"/>
+  <g class="marca"><line x1="272.0" y1="311.0" x2="272.0" y2="526" stroke-dasharray="6 8"/><circle cx="272.0" cy="311.0" r="7" fill="currentColor" stroke="none"/><line x1="448.0" y1="418.5" x2="448.0" y2="526" stroke-dasharray="6 8"/><circle cx="448.0" cy="418.5" r="7" fill="currentColor" stroke="none"/><line x1="624.0" y1="472.2" x2="624.0" y2="526" stroke-dasharray="6 8"/><circle cx="624.0" cy="472.2" r="7" fill="currentColor" stroke="none"/></g>
+  <polyline class="curva" points="96.0,96.0 99.5,101.9 103.0,107.8 106.6,113.5 110.1,119.2 113.6,124.8 117.1,130.3 120.6,135.8 124.2,141.1 127.7,146.4 131.2,151.7 134.7,156.8 138.2,161.9 141.8,166.9 145.3,171.9 148.8,176.7 152.3,181.5 155.8,186.3 159.4,191.0 162.9,195.6 166.4,200.1 169.9,204.6 173.4,209.0 177.0,213.4 180.5,217.7 184.0,221.9 187.5,226.1 191.0,230.3 194.6,234.3 198.1,238.3 201.6,242.3 205.1,246.2 208.6,250.1 212.2,253.9 215.7,257.6 219.2,261.3 222.7,264.9 226.2,268.5 229.8,272.1 233.3,275.6 236.8,279.0 240.3,282.4 243.8,285.8 247.4,289.1 250.9,292.4 254.4,295.6 257.9,298.7 261.4,301.9 265.0,305.0 268.5,308.0 272.0,311.0 275.5,314.0 279.0,316.9 282.6,319.8 286.1,322.6 289.6,325.4 293.1,328.2 296.6,330.9 300.2,333.6 303.7,336.2 307.2,338.8 310.7,341.4 314.2,343.9 317.8,346.5 321.3,348.9 324.8,351.4 328.3,353.8 331.8,356.1 335.4,358.5 338.9,360.8 342.4,363.1 345.9,365.3 349.4,367.5 353.0,369.7 356.5,371.8 360.0,374.0 363.5,376.1 367.0,378.1 370.6,380.2 374.1,382.2 377.6,384.2 381.1,386.1 384.6,388.0 388.2,389.9 391.7,391.8 395.2,393.7 398.7,395.5 402.2,397.3 405.8,399.0 409.3,400.8 412.8,402.5 416.3,404.2 419.8,405.9 423.4,407.5 426.9,409.2 430.4,410.8 433.9,412.4 437.4,413.9 441.0,415.5 444.5,417.0 448.0,418.5 451.5,420.0 455.0,421.4 458.6,422.9 462.1,424.3 465.6,425.7 469.1,427.1 472.6,428.4 476.2,429.8 479.7,431.1 483.2,432.4 486.7,433.7 490.2,435.0 493.8,436.2 497.3,437.5 500.8,438.7 504.3,439.9 507.8,441.1 511.4,442.2 514.9,443.4 518.4,444.5 521.9,445.7 525.4,446.8 529.0,447.8 532.5,448.9 536.0,450.0 539.5,451.0 543.0,452.1 546.6,453.1 550.1,454.1 553.6,455.1 557.1,456.1 560.6,457.0 564.2,458.0 567.7,458.9 571.2,459.8 574.7,460.7 578.2,461.6 581.8,462.5 585.3,463.4 588.8,464.3 592.3,465.1 595.8,465.9 599.4,466.8 602.9,467.6 606.4,468.4 609.9,469.2 613.4,470.0 617.0,470.7 620.5,471.5 624.0,472.2 627.5,473.0 631.0,473.7 634.6,474.4 638.1,475.1 641.6,475.8 645.1,476.5 648.6,477.2 652.2,477.9 655.7,478.6 659.2,479.2 662.7,479.9 666.2,480.5 669.8,481.1 673.3,481.7 676.8,482.3 680.3,482.9 683.8,483.5 687.4,484.1 690.9,484.7 694.4,485.3 697.9,485.8 701.4,486.4 705.0,486.9 708.5,487.5 712.0,488.0 715.5,488.5 719.0,489.0 722.6,489.5 726.1,490.0 729.6,490.5 733.1,491.0 736.6,491.5 740.2,492.0 743.7,492.5 747.2,492.9 750.7,493.4 754.2,493.8 757.8,494.3 761.3,494.7 764.8,495.1 768.3,495.6 771.8,496.0 775.4,496.4 778.9,496.8 782.4,497.2 785.9,497.6 789.4,498.0 793.0,498.4 796.5,498.7 800.0,499.1 803.5,499.5 807.0,499.9 810.6,500.2 814.1,500.6 817.6,500.9 821.1,501.3 824.6,501.6 828.2,501.9 831.7,502.3 835.2,502.6 838.7,502.9 842.2,503.2 845.8,503.6 849.3,503.9 852.8,504.2 856.3,504.5 859.8,504.8 863.4,505.1 866.9,505.3 870.4,505.6 873.9,505.9 877.4,506.2 881.0,506.5 884.5,506.7 888.0,507.0 891.5,507.3 895.0,507.5 898.6,507.8 902.1,508.0 905.6,508.3 909.1,508.5 912.6,508.8 916.2,509.0 919.7,509.2 923.2,509.5 926.7,509.7 930.2,509.9 933.8,510.1 937.3,510.3 940.8,510.6 944.3,510.8 947.8,511.0 951.4,511.2 954.9,511.4 958.4,511.6 961.9,511.8 965.4,512.0 969.0,512.2 972.5,512.4 976.0,512.6"/>
+  <g class="rot"><text x="80" y="320.0" text-anchor="end">50%</text><text x="80" y="427.5" text-anchor="end">25%</text><text x="80" y="481.2" text-anchor="end">12,5%</text><text x="272.0" y="572" text-anchor="middle">1</text><text x="448.0" y="572" text-anchor="middle">2</text><text x="624.0" y="572" text-anchor="middle">3</text><text x="800.0" y="572" text-anchor="middle">4</text><text x="976.0" y="572" text-anchor="middle">5</text></g>
+</svg>"""
+
+
+def decaimento(kicker, titulo, chips, nota, counter=None, foot_tag=None):
+    """32 - curva de decaimento radioativo com os marcos de 50%, 25% e 12,5%."""
+    ch = "".join(f"<span>{c}</span>" for c in chips)
+    return page(titulo, "decai bg-navy", f"""
+<div class="body">
+  <div class="kicker">{kicker}</div>
+  <h2>{titulo}</h2>
+  <div class="plot">{GRAFICO_DECAIMENTO}</div>
+  <div class="eixo">meias-vidas decorridas</div>
+  <div class="chips">{ch}</div>
+  <div class="nota">{nota}</div>
+</div>
+""", counter=counter, foot_tag=foot_tag)
 
 
 # ====== POSTS ======
@@ -1341,6 +1408,47 @@ POSTS = [
     ]),
 
 
+    # ---------- data: 14 de setembro, Dia do Medico Nuclear ----------
+    ("32_dia_medico_nuclear", [
+        ("01_capa.html", data_medica(
+            "14 de setembro",
+            "Dia do M&eacute;dico ",
+            "Nuclear",
+            "A especialidade que enxerga a doen&ccedil;a pelo que ela faz, antes de ela mudar de forma.",
+            SIMBOLO_NUCLEAR, "1/6")),
+        ("02_origem.html", numero(
+            "Sociedade Brasileira de Medicina Nuclear",
+            "65", "anos",
+            "A data n&atilde;o &eacute; simb&oacute;lica: a SBMN foi fundada em <b>14 de setembro de 1961</b>, e o dia da especialidade nasceu da&iacute;.",
+            "SBMN &middot; Associa&ccedil;&atilde;o M&eacute;dica Brasileira",
+            "2/6", foot_tag="Desde 1961")),
+        ("03_virada.html", editorial(
+            "A imagem anat&ocirc;mica mostra o <b>tamanho</b> da les&atilde;o.",
+            "A medicina nuclear mostra o que ela <em>est&aacute; fazendo.</em>",
+            "&Eacute; o que permite tratar pelo mesmo alvo que serviu para enxergar &mdash; o princ&iacute;pio da <b>teranóstica</b>.",
+            "3/6")),
+        ("04_decaimento.html", decaimento(
+            "O rel&oacute;gio do servi&ccedil;o",
+            "A curva &eacute; sempre a mesma. <em>O rel&oacute;gio &eacute; que muda.</em>",
+            ["Fl&uacute;or-18 &middot; <b>110 min</b>",
+             "Tecn&eacute;cio-99m &middot; <b>6 horas</b>",
+             "Iodo-131 &middot; <b>8 dias</b>"],
+            "Cada meia-vida corta a atividade pela metade. Por isso, aqui, atraso de agenda n&atilde;o se remarca: a dose decai com ou sem o paciente na sala.",
+            "4/6", foot_tag="A(t) = A&#8320; &middot; 2<sup>-t/T</sup>")),
+        ("05_protecao.html", clausula(
+            "CNEN NN 3.01 &middot; Prote&ccedil;&atilde;o radiol&oacute;gica",
+            "Para o indiv&iacute;duo ocupacionalmente exposto, a dose efetiva &eacute; limitada a <mark>20 mSv por ano</mark>, em m&eacute;dia em cinco anos, sem ultrapassar <mark>50 mSv</mark> em nenhum ano isolado.",
+            "O seu dos&iacute;metro <em>&eacute; documento.</em>",
+            "Registro de dose &eacute; hist&oacute;rico ocupacional. &Eacute; ele que sustenta qualquer discuss&atilde;o sobre exposi&ccedil;&atilde;o, afastamento ou adicional. Guarde o seu.",
+            "5/6")),
+        ("06_cta.html", cta(
+            "SINMEVA&Ccedil;O &middot; 14 de setembro",
+            "Ao m&eacute;dico nuclear do Vale do A&ccedil;o, <em>o nosso respeito.</em>",
+            "E o jur&iacute;dico do sindicato do lado de c&aacute; &mdash; da prote&ccedil;&atilde;o radiol&oacute;gica ao contrato e &agrave; escala.",
+            "Falar com o jur&iacute;dico", "6/6")),
+    ]),
+
+
     # ---------- pecas que fecham o ciclo mensal ----------
     ("26_substituto_processual", [
         ("01_capa.html", cover(
@@ -1420,7 +1528,7 @@ POSTS = [
 # de uma frase que justifica a peca estar ali.
 CALENDARIO = [
     # ---- Data da categoria: entra na frente, e do dia ----
-    ("31_dia_radioterapeuta", "Data",  "5 de setembro, Dia do Medico Radioterapeuta"),
+    ("32_dia_medico_nuclear", "Data",  "14 de setembro, Dia do Medico Nuclear"),
     # ---- Semana 1: o que ja e seu ----
     ("semana-01/1_seg_carrossel_atraso", "Caso real",  "O plantao caiu na conta dois meses depois"),
     ("25_mito_quatro_horas",             "Correcao",   "A lei nao da jornada de 4 horas: da o piso"),
@@ -1449,6 +1557,7 @@ CALENDARIO = [
 
 # Banco: pecas prontas fora do mes, prontas para entrar em substituicao.
 RESERVA = [
+    "31_dia_radioterapeuta",   # publicado em 05/09/2026
     "02_ameaca_de_processo", "04_lgpd_laudo_whatsapp", "06_beneficios_associado",
     "07_posicionamento", "10_agenda_assembleia", "13_cartao_pergunta",
     "15_foto_moldura", "16_cartao_lateral", "18_capa_pergunta",

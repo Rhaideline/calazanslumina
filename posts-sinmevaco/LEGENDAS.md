@@ -223,6 +223,26 @@ As regras de ofício por trás disso estão em `ESTUDO-SOCIAL-MEDIA.md`.
 `#SINMEVAÇO #DiaDoRadioterapeuta #Radioterapia #Oncologia #MédicosDoValeDoAço #DireitoMédico #CoronelFabriciano #Ipatinga #Timóteo`
 
 
+## 32 — Dia do Médico Nuclear (carrossel, 6 slides)
+**Pasta:** `32_dia_medico_nuclear/` · 14/09/2026
+
+> 14 de setembro — Dia do Médico Nuclear.
+>
+> A data não é simbólica: a Sociedade Brasileira de Medicina Nuclear foi fundada em 14 de setembro de 1961, e o dia da especialidade nasceu daí. Hoje a SBMN completa 65 anos.
+>
+> A imagem anatômica mostra o tamanho da lesão. A medicina nuclear mostra o que ela está fazendo — e é isso que permite tratar pelo mesmo alvo que serviu para enxergar, o princípio da teranóstica.
+>
+> Tem uma coisa nessa especialidade que quase ninguém de fora entende: o relógio. A atividade do radiofármaco cai pela metade a cada meia-vida, e a meia-vida não negocia. Flúor-18: 110 minutos. Tecnécio-99m: 6 horas. Iodo-131: 8 dias. Atraso de agenda aqui não se remarca — a dose decai com ou sem o paciente na sala.
+>
+> E tem a exposição. A norma CNEN NN 3.01 limita a dose efetiva do indivíduo ocupacionalmente exposto a 20 mSv por ano, em média em cinco anos, sem ultrapassar 50 mSv em nenhum ano isolado. O registro dosimétrico é histórico ocupacional: é ele que sustenta qualquer discussão sobre exposição, afastamento ou adicional. Guarde o seu.
+>
+> Ao médico nuclear do Vale do Aço, o respeito do SINMEVAÇO. E o jurídico do sindicato do lado de cá — da proteção radiológica ao contrato e à escala.
+>
+> Fontes: SBMN e AMB, sobre a instituição da data; norma CNEN NN 3.01, Diretrizes Básicas de Proteção Radiológica.
+
+`#SINMEVAÇO #DiaDoMédicoNuclear #MedicinaNuclear #Teranóstica #ProteçãoRadiológica #MédicosDoValeDoAço #DireitoMédico #CoronelFabriciano #Ipatinga #Timóteo`
+
+
 ---
 
 # POSTS COM BASE NO ESTUDO
