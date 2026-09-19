@@ -34,7 +34,7 @@ em{{font-style:italic}}
 .marca{{position:absolute;top:64px;left:0;right:0;display:flex;justify-content:center;
        align-items:center;gap:12px;z-index:6}}
 .marca img{{width:34px;height:34px;object-fit:contain}}
-.marca b{{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:19px;color:#fff}}
+.marca b{{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:460;font-size:19px;color:#fff}}
 .pontos{{position:absolute;top:118px;left:0;right:0;display:flex;justify-content:center;gap:8px;z-index:6}}
 .pontos i{{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.3)}}
 .pontos i.atual{{background:var(--vermelho2);width:18px;border-radius:3px}}
@@ -78,9 +78,9 @@ def cena(foto, tipo, txt, indice, total, kicker=None, num=None, suf=None,
     .cn-corpo{{position:absolute;left:64px;right:64px;top:50%;transform:translateY(-50%);z-index:5;text-align:center}}
     .cn-corpo h1{{font-family:'DM Sans',sans-serif;font-weight:700;text-transform:uppercase;color:#fff;
                  font-size:{fs}px;line-height:.96;letter-spacing:-.01em}}
-    .cn-corpo h1 em{{font-style:italic;font-family:'DM Serif Display',serif;text-transform:none;
+    .cn-corpo h1 em{{font-style:italic;font-family:'Bodoni Moda',serif;text-transform:none;
                     font-weight:400;color:var(--vermelho2)}}
-    .cn-stat{{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;color:#fff;
+    .cn-stat{{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:460;color:#fff;
              font-size:240px;line-height:.8;letter-spacing:-.03em}}
     .cn-stat sup{{font-size:100px;color:var(--vermelho2)}}
     .cn-legenda{{margin-top:20px;font-size:22px;color:rgba(255,255,255,.82);font-weight:500;

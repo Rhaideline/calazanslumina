@@ -9,7 +9,7 @@ em tres roupas diferentes sem virar outro desenho.
 Teto de 20 palavras por miolo (ver ESTUDO-CRAFT-2026.md, item 6).
 """
 
-SETA = ('<span style="font-family:\'DM Serif Display\',serif;font-style:italic;'
+SETA = ('<span style="font-family:\'Bodoni Moda\',serif;font-style:italic;'
         'font-size:26px;letter-spacing:0;text-transform:none">&rarr;</span>')
 
 
@@ -37,8 +37,8 @@ def numero(num, frase, fonte=None, chapeu=None, sufixo=None):
     """Um dado gigante. Serve de ancora visual e de prova."""
     css = """
     .nm{display:flex;flex-direction:column;gap:30px;align-items:flex-start}
-    .nm .cifra{font-family:'DM Serif Display',serif;font-style:italic;color:var(--acento);
-               font-size:340px;line-height:.78;letter-spacing:-.05em;display:flex;align-items:baseline}
+    .nm .cifra{font-family:'DM Sans',sans-serif;font-weight:700;color:var(--acento);
+               font-size:290px;line-height:.82;letter-spacing:-.02em;display:flex;align-items:baseline}
     .nm .cifra sup{font-size:150px;line-height:1;letter-spacing:-.03em}
     .nm h2{font-size:58px;line-height:1.1;max-width:880px}
     """
@@ -62,7 +62,7 @@ def capa(titulo, promessa, edicao, chapeu=None):
     .cp .promessa{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;
                   border-top:1px solid var(--fio);padding-top:26px}
     .cp .promessa p{font-size:23px;line-height:1.45;color:var(--corpo);max-width:560px;font-weight:400}
-    .cp .ed{font-family:'DM Serif Display',serif;font-style:italic;font-size:74px;color:var(--acento);
+    .cp .ed{font-family:'Bodoni Moda',serif;font-style:italic;font-size:74px;color:var(--acento);
             line-height:.9;text-align:right;white-space:nowrap}
     .cp .ed small{display:block;font-family:'DM Sans',sans-serif;font-style:normal;font-size:12px;
                   letter-spacing:.3em;text-transform:uppercase;color:var(--fraco);font-weight:600;margin-top:12px}
@@ -82,8 +82,8 @@ def passo(n, rotulo, titulo, corpo):
     css = """
     .ps{display:flex;flex-direction:column;gap:36px}
     .ps .cab{display:flex;align-items:flex-start;gap:34px}
-    .ps .n{font-family:'DM Serif Display',serif;font-style:italic;font-size:170px;line-height:.82;
-           color:var(--acento);letter-spacing:-.05em}
+    .ps .n{font-family:'DM Sans',sans-serif;font-weight:700;font-size:140px;line-height:.82;
+           color:var(--acento);letter-spacing:-.02em}
     .ps .rot{font-size:14px;letter-spacing:.3em;text-transform:uppercase;font-weight:700;
              color:var(--fraco);padding-top:22px}
     .ps h2{font-size:80px;line-height:1.0}
@@ -102,7 +102,7 @@ def erro(n, titulo, corpo, custo):
     .er{display:flex;flex-direction:column;gap:32px}
     .er .sel{display:inline-flex;align-items:center;gap:14px;font-size:14px;letter-spacing:.3em;
              text-transform:uppercase;font-weight:700;color:var(--acento);align-self:flex-start}
-    .er .sel b{font-family:'DM Serif Display',serif;font-style:italic;font-size:46px;letter-spacing:-.02em;
+    .er .sel b{font-family:'Bodoni Moda',serif;font-style:italic;font-size:46px;letter-spacing:-.02em;
                font-weight:400;line-height:1}
     .er h2{font-size:84px;line-height:1.0}
     .er .custo{margin-top:8px;border-left:4px solid var(--acento);padding:14px 0 14px 26px;
@@ -148,7 +148,7 @@ def lista(titulo, itens, chapeu=None, nota=None):
     .ls li{display:flex;gap:26px;align-items:baseline;padding:22px 0;border-top:1px solid var(--fio);
            font-size:29px;line-height:1.35;font-weight:400}
     .ls li:last-child{border-bottom:1px solid var(--fio)}
-    .ls li i{font-family:'DM Serif Display',serif;font-style:italic;font-size:34px;color:var(--acento);
+    .ls li i{font-family:'Bodoni Moda',serif;font-style:italic;font-size:34px;color:var(--acento);
              min-width:46px;line-height:1}
     .ls .nota{font-size:21px;color:var(--fraco);line-height:1.5}
     """
@@ -164,15 +164,15 @@ def prova(cliente, categoria, cifra, rotulo, frase, metricas):
     css = """
     .pv{display:flex;flex-direction:column;gap:34px}
     .pv .cli{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap}
-    .pv .cli b{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:40px}
+    .pv .cli b{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:460;font-size:40px}
     .pv .cli span{font-size:13px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;color:var(--fraco)}
-    .pv .cifra{font-family:'DM Serif Display',serif;font-style:italic;color:var(--acento);
-               font-size:240px;line-height:.8;letter-spacing:-.05em}
+    .pv .cifra{font-family:'DM Sans',sans-serif;font-weight:700;color:var(--acento);
+               font-size:210px;line-height:.85;letter-spacing:-.02em}
     .pv .rot{font-size:15px;letter-spacing:.3em;text-transform:uppercase;font-weight:700;color:var(--corpo);margin-top:-14px}
-    .pv .frase{font-family:'DM Serif Display',serif;font-style:italic;font-size:46px;line-height:1.16;max-width:820px}
+    .pv .frase{font-family:'Bodoni Moda',serif;font-style:italic;font-size:46px;line-height:1.16;max-width:820px}
     .pv .grade{display:flex;gap:0;border-top:1px solid var(--fio);padding-top:24px;margin-top:6px}
     .pv .grade div{flex:1;display:flex;flex-direction:column;gap:9px}
-    .pv .grade b{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:44px;line-height:1}
+    .pv .grade b{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:460;font-size:44px;line-height:1}
     .pv .grade span{font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--fraco);line-height:1.3}
     """
     cels = "".join(f"<div><b>{v}</b><span>{l}</span></div>" for v, l in metricas)
@@ -194,7 +194,7 @@ def pergunta(texto, opcoes, chapeu=None):
     .pg .ops{display:flex;flex-direction:column;gap:16px}
     .pg .op{display:flex;align-items:center;gap:22px;padding:24px 30px;border:1px solid var(--fio);
             border-radius:6px;font-size:27px;font-weight:400}
-    .pg .op i{font-family:'DM Serif Display',serif;font-style:italic;font-size:30px;color:var(--acento);min-width:34px}
+    .pg .op i{font-family:'Bodoni Moda',serif;font-style:italic;font-size:30px;color:var(--acento);min-width:34px}
     """
     ops = "".join(f'<div class="op"><i>{chr(97+i)})</i><span>{t}</span></div>'
                   for i, t in enumerate(opcoes))
@@ -224,7 +224,7 @@ def citacao(texto, autor, chapeu=None):
     """Fala de bastidor. O humano do feed, sem precisar de foto."""
     css = """
     .ct{display:flex;flex-direction:column;gap:34px;position:relative}
-    .ct .aspas{font-family:'DM Serif Display',serif;font-style:italic;font-size:220px;color:var(--acento);
+    .ct .aspas{font-family:'Bodoni Moda',serif;font-style:italic;font-size:220px;color:var(--acento);
                line-height:.6;height:88px;opacity:.9}
     .ct h2{font-size:64px;line-height:1.14;max-width:860px}
     .ct .autor{display:flex;align-items:center;gap:16px;font-size:15px;letter-spacing:.26em;
@@ -248,7 +248,7 @@ def agenda(titulo, blocos, chapeu=None):
     .ag .grade{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--fio)}
     .ag .cel{background:inherit;padding:30px 28px;display:flex;flex-direction:column;gap:12px}
     .ag .cel .r{font-size:12px;letter-spacing:.3em;text-transform:uppercase;font-weight:700;color:var(--acento)}
-    .ag .cel .v{font-family:'DM Serif Display',serif;font-style:italic;font-size:46px;line-height:1.05}
+    .ag .cel .v{font-family:'Bodoni Moda',serif;font-style:italic;font-size:46px;line-height:1.05}
     .ag .cel .n{font-size:19px;line-height:1.45;color:var(--corpo)}
     """
     cels = "".join(

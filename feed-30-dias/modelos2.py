@@ -89,7 +89,7 @@ def hero_foto(foto, palavra, nota=None):
       background:linear-gradient(180deg,rgba(8,8,10,.06) 0%,rgba(8,8,10,.16) 44%,rgba(8,8,10,.9) 80%,#08080a 100%)}
     .hf-base{position:absolute;left:64px;right:64px;bottom:96px;z-index:5}
     .hf-base .tracinho{margin-bottom:26px}
-    .hf-base h1{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;color:#fff;
+    .hf-base h1{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:460;color:#fff;
                 font-size:88px;line-height:.98;letter-spacing:-.02em}
     .hf-base h1 em{color:var(--vermelho2)}
     .hf-base .nota{display:block;margin-top:22px;font-size:16px;letter-spacing:.05em;
@@ -116,7 +116,7 @@ def muro(palavra, sub=None, fundo="tinta"):
     .mr{{position:absolute;inset:0;background:{bg};color:{fg};
         display:flex;flex-direction:column;justify-content:center;padding:0 64px}}
     .mr .tracinho{{margin-bottom:36px}}
-    .mr h1{{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;
+    .mr h1{{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:460;
            font-size:92px;line-height:1.06;letter-spacing:-.015em;max-width:900px}}
     .mr h1 em{{color:var(--vermelho)}}
     .mr .sub{{margin-top:30px;font-size:14px;letter-spacing:.3em;text-transform:uppercase;
@@ -140,7 +140,7 @@ def diagonal(foto, palavra, nota=None, invertido=False):
              clip-path:{clip_a};filter:saturate(.82) contrast(1.1) brightness(.92)}}
     .dg-corpo{{position:absolute;left:64px;right:64px;bottom:88px;z-index:5}}
     .dg-corpo .tracinho{{margin-bottom:24px}}
-    .dg-corpo h1{{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;color:#fff;
+    .dg-corpo h1{{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:460;color:#fff;
                  font-size:68px;line-height:1.02;letter-spacing:-.015em;max-width:860px}}
     .dg-corpo h1 em{{color:var(--vermelho2)}}
     .dg-corpo .nota{{display:block;margin-top:18px;font-size:15px;color:rgba(255,255,255,.55)}}
@@ -162,7 +162,7 @@ def ficha(numero, titulo, campos, nota=None):
     .fc-carimbo{position:absolute;top:60px;right:64px;border:2px solid var(--vermelho);
                color:var(--vermelho);padding:8px 14px;font-family:'Space Mono',monospace;
                font-size:14px;font-weight:700;transform:rotate(-3deg)}
-    .fc h1{margin-top:56px;font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;
+    .fc h1{margin-top:56px;font-family:'Bodoni Moda',serif;font-style:italic;font-weight:460;
           font-size:70px;line-height:1.04;letter-spacing:-.015em;max-width:880px}
     .fc h1 em{color:var(--vermelho)}
     .fc-campos{margin-top:52px;border-top:2px solid var(--tinta);font-family:'Space Mono',monospace}
@@ -193,7 +193,7 @@ def medalhao(foto, palavra, nota=None):
     .md-foto{width:400px;height:400px;border-radius:50%;background-size:cover;background-position:center;
              flex-shrink:0;box-shadow:0 0 0 1px var(--vermelho),0 30px 70px -20px rgba(0,0,0,.7)}
     .md-txt .tracinho{margin-bottom:24px}
-    .md-txt h1{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;
+    .md-txt h1{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:460;
                font-size:64px;line-height:1.02;letter-spacing:-.015em}
     .md-txt h1 em{color:var(--vermelho2)}
     .md-txt .nota{display:block;margin-top:20px;font-size:16px;color:rgba(255,255,255,.6)}
@@ -217,8 +217,8 @@ def central(numero, sufixo, legenda, fundo="vermelho"):
     css = f"""
     .ct{{position:absolute;inset:0;background:{bg};color:{fg};
         display:flex;flex-direction:column;align-items:center;justify-content:center}}
-    .ct .cifra{{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;color:{num_cor};
-               font-size:400px;line-height:.78;letter-spacing:-.04em;display:flex;align-items:baseline}}
+    .ct .cifra{{font-family:'DM Sans',sans-serif;font-weight:700;color:{num_cor};
+               font-size:340px;line-height:.82;letter-spacing:-.03em;display:flex;align-items:baseline}}
     .ct .cifra sup{{font-size:160px}}
     .ct .legenda{{margin-top:20px;font-size:22px;letter-spacing:.06em;text-align:center;max-width:640px;
                  font-weight:500;opacity:.85}}
@@ -241,9 +241,9 @@ def polaroid(foto, legenda, palavra):
              box-shadow:0 35px 80px -20px rgba(0,0,0,.7);flex-shrink:0;position:relative}
     .pl-foto .fita{top:-15px;left:50%;margin-left:-41px;transform:rotate(-3deg)}
     .pl-foto .img{width:100%;height:400px;background-size:cover;background-position:center}
-    .pl-foto .legenda{position:absolute;left:18px;bottom:18px;font-family:'DM Serif Display',serif;
+    .pl-foto .legenda{position:absolute;left:18px;bottom:18px;font-family:'Bodoni Moda',serif;
                       font-style:italic;font-size:18px;color:#222}
-    .pl-txt h1{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;
+    .pl-txt h1{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:460;
               font-size:64px;line-height:1.0;letter-spacing:-.015em}
     .pl-txt h1 em{color:var(--vermelho2)}
     """
@@ -263,7 +263,7 @@ def recibo(titulo, itens, total_r, total_v):
     css = """
     .rc{position:absolute;inset:0;background:var(--papel);color:var(--tinta);
         padding:64px;display:flex;flex-direction:column}
-    .rc h1{font-family:'DM Serif Display',serif;font-style:italic;
+    .rc h1{font-family:'Bodoni Moda',serif;font-style:italic;
           font-weight:400;font-size:52px;line-height:1.08;letter-spacing:-.01em;max-width:820px}
     .rc h1 em{color:var(--vermelho)}
     .rc-trilha{border-top:2px dashed rgba(17,17,17,.35);margin-top:40px;padding-top:6px;flex:1;
@@ -300,7 +300,7 @@ def janela(foto, palavra, nota=None):
     .jn-foto{width:100%;height:100%;background-size:cover;background-position:center;
              filter:saturate(.9) contrast(1.05)}
     .jn-legenda{margin-top:32px;text-align:center}
-    .jn-legenda h1{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;
+    .jn-legenda h1{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:460;
                   font-size:44px;line-height:1.1;letter-spacing:-.01em}
     .jn-legenda h1 em{color:var(--vermelho2)}
     .jn-legenda .nota{display:block;margin-top:14px;font-size:15px;color:rgba(255,255,255,.55)}
@@ -322,9 +322,9 @@ def cartaz(linha1, linha2_em, rodape=None):
         display:flex;flex-direction:column;justify-content:center}
     .cz .tracinho{margin-bottom:32px}
     .cz-pilha{display:flex;flex-direction:column}
-    .cz-pilha .a{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;
+    .cz-pilha .a{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:460;
                 font-size:96px;line-height:.96;letter-spacing:-.02em;color:rgba(255,255,255,.55)}
-    .cz-pilha .b{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;
+    .cz-pilha .b{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:460;
                 font-size:132px;line-height:.9;letter-spacing:-.03em;color:var(--vermelho2);margin-top:4px}
     .cz-rodape{margin-top:40px;font-size:14px;letter-spacing:.16em;color:rgba(255,255,255,.45)}
     """
@@ -348,7 +348,7 @@ def metade(foto, palavra, nota=None, botao=None, foto_esquerda=False):
     .mt-txt{{width:50%;height:100%;background:var(--tinta);color:#fff;padding:64px 52px;
             display:flex;flex-direction:column;justify-content:flex-end}}
     .mt-txt .tracinho{{margin-bottom:24px}}
-    .mt-txt h1{{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;
+    .mt-txt h1{{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:460;
                font-size:52px;line-height:1.06;letter-spacing:-.015em;margin-bottom:18px}}
     .mt-txt h1 em{{color:var(--vermelho2)}}
     .mt-txt .nota{{display:block;font-size:16px;color:rgba(255,255,255,.6)}}
@@ -376,7 +376,7 @@ def selo(texto_anel, palavra, fundo="papel"):
         display:flex;flex-direction:column;align-items:center;justify-content:center}}
     .sl-anel{{width:420px;height:420px;border-radius:50%;border:1px solid var(--vermelho);
              display:flex;align-items:center;justify-content:center}}
-    .sl-palavra{{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;
+    .sl-palavra{{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:460;
                 font-size:64px;text-align:center;letter-spacing:-.015em;max-width:300px;line-height:1.0}}
     .sl-palavra em{{color:var(--vermelho)}}
     .sl-legenda{{margin-top:32px;font-size:12px;letter-spacing:.34em;text-transform:uppercase;

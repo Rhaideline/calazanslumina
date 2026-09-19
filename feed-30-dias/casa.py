@@ -1,9 +1,14 @@
 """
 Calazans Lumina — sistema de design do feed.
 
-Identidade tirada do site (tailwind.config.ts) e dos templates editoriais que
-ja existiam no repositorio: DM Serif Display em italico para o acento, DM Sans
-para o suporte, tinta #111111, papel #F5F1EA, vermelho #FF0005.
+Identidade tirada do site (tailwind.config.ts), dos posts reais da propria
+conta e da pesquisa de tipografia de luxo/editorial 2026: Bodoni Moda (serifada
+de alto contraste, eixo optico) em italico para o acento, DM Sans para o
+suporte, tinta #111111, papel #F5F1EA, vermelho #FF0005.
+
+Bodoni Moda tem eixo optico (opsz) embutido no arquivo variavel: o navegador
+engrossa os tracos finos sozinho em tamanho pequeno, sem perder legibilidade
+em tamanho grande. E o que da "letra fina porem linda e compreensivel".
 
 Formato 1080x1440 (3:4) porque a grade do perfil e 3:4 — ver ESTUDO-CRAFT-2026.md.
 
@@ -79,7 +84,7 @@ body{font-family:'DM Sans',system-ui,sans-serif}
 .logo{display:inline-flex;align-items:center;gap:15px;line-height:1}
 .logo img{width:46px;height:46px;object-fit:contain;display:block;flex-shrink:0}
 .logo .wm{display:flex;flex-direction:column;gap:6px;line-height:1}
-.logo .nome{font-family:'DM Serif Display',serif;font-style:italic;font-size:28px;letter-spacing:-.005em}
+.logo .nome{font-family:'Bodoni Moda',serif;font-style:italic;font-size:28px;letter-spacing:-.005em}
 .logo .sub{font-size:11px;letter-spacing:.46em;text-transform:uppercase;font-weight:600;color:var(--acento)}
 
 /* ---- Etiquetas ---- */
@@ -92,7 +97,7 @@ body{font-family:'DM Sans',system-ui,sans-serif}
 .pilula.clara{background:#fff;border-color:#fff;color:var(--tinta);font-weight:700}
 
 /* ---- Tipografia ---- */
-h1,h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;letter-spacing:-.03em;line-height:.94}
+h1,h2{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:460;letter-spacing:-.03em;line-height:.94}
 em{font-style:italic;color:var(--acento)}
 .xl{font-size:132px}
 .g{font-size:104px}
@@ -123,15 +128,9 @@ def fontes(base=""):
     return css.replace("{BASE}", base)
 
 
-def marca_topo(sub=SOB, base=""):
-    return (f'<div class="logo"><img src="{base}logos/marca.png" alt="">'
-            f'<div class="wm"><span class="nome">{ASSINATURA}</span>'
-            f'<span class="sub">{sub}</span></div></div>')
-
-
 def pe(dir_txt=None, arrasta=False):
     if arrasta:
-        dir_txt = 'Arrasta <span style="font-family:\'DM Serif Display\',serif;font-style:italic;text-transform:none;letter-spacing:0;font-size:22px">&rarr;</span>'
+        dir_txt = 'Arrasta <span style="font-family:\'Bodoni Moda\',serif;font-style:italic;text-transform:none;letter-spacing:0;font-size:22px">&rarr;</span>'
     return (f'<div class="pe"><span class="marca">{HANDLE}</span>'
             f'<span>{dir_txt or WHATS}</span></div>')
 
@@ -156,7 +155,7 @@ def pagina(titulo, classes, topo_dir, meio, rodape, css_extra="",
 {css_extra}</style></head>
 <body><div class="canvas {classes}">
   {em}
-  <div class="topo">{marca_topo(base=base)}{topo_dir}</div>
+  <div class="topo">{topo_dir}</div>
   <div class="meio">{meio}</div>
   {rodape}{pr}
 </div></body></html>"""

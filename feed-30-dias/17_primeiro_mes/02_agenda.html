@@ -13,6 +13,9 @@
 @font-face{font-family:'Space Mono';font-style:normal;font-weight:400;font-display:block;src:url('../fontes/spacemono-normal-400.woff2') format('woff2');}
 @font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:block;src:url('../fontes/spacemono-normal-700.woff2') format('woff2');}
 
+@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:400 900;font-display:block;font-stretch:normal;src:url('../fontes/bodonimoda-italic-variable.woff2') format('woff2');}
+@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:400 900;font-display:block;font-stretch:normal;src:url('../fontes/bodonimoda-normal-variable.woff2') format('woff2');}
+
 :root{--tinta:#111111;--tinta2:#1A1A1A;--tinta3:#08080A;--papel:#F5F1EA;--papel2:#EDE6D6;--vermelho:#FF0005;--vermelho2:#FF3B3B;--vermelho3:#A00306;--brasa:#1A0D0D;}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased}
 html,body{width:1080px;height:1440px;overflow:hidden;background:#000}
@@ -49,7 +52,7 @@ body{font-family:'DM Sans',system-ui,sans-serif}
 .logo{display:inline-flex;align-items:center;gap:15px;line-height:1}
 .logo img{width:46px;height:46px;object-fit:contain;display:block;flex-shrink:0}
 .logo .wm{display:flex;flex-direction:column;gap:6px;line-height:1}
-.logo .nome{font-family:'DM Serif Display',serif;font-style:italic;font-size:28px;letter-spacing:-.005em}
+.logo .nome{font-family:'Bodoni Moda',serif;font-style:italic;font-size:28px;letter-spacing:-.005em}
 .logo .sub{font-size:11px;letter-spacing:.46em;text-transform:uppercase;font-weight:600;color:var(--acento)}
 
 /* ---- Etiquetas ---- */
@@ -62,7 +65,7 @@ body{font-family:'DM Sans',system-ui,sans-serif}
 .pilula.clara{background:#fff;border-color:#fff;color:var(--tinta);font-weight:700}
 
 /* ---- Tipografia ---- */
-h1,h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;letter-spacing:-.03em;line-height:.94}
+h1,h2{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:460;letter-spacing:-.03em;line-height:.94}
 em{font-style:italic;color:var(--acento)}
 .xl{font-size:132px}
 .g{font-size:104px}
@@ -92,12 +95,12 @@ em{font-style:italic;color:var(--acento)}
     .ag .grade{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--fio)}
     .ag .cel{background:inherit;padding:30px 28px;display:flex;flex-direction:column;gap:12px}
     .ag .cel .r{font-size:12px;letter-spacing:.3em;text-transform:uppercase;font-weight:700;color:var(--acento)}
-    .ag .cel .v{font-family:'DM Serif Display',serif;font-style:italic;font-size:46px;line-height:1.05}
+    .ag .cel .v{font-family:'Bodoni Moda',serif;font-style:italic;font-size:46px;line-height:1.05}
     .ag .cel .n{font-size:19px;line-height:1.45;color:var(--corpo)}
     </style></head>
 <body><div class="canvas t-tinta">
   <div class="emenda dir" style="top:250px;height:240px"></div>
-  <div class="topo"><div class="logo"><img src="../logos/marca.png" alt=""><div class="wm"><span class="nome">Calazans Lumina</span><span class="sub">Agência · MG</span></div></div><span class="tag">As quatro semanas</span></div>
+  <div class="topo"><span class="tag">As quatro semanas</span></div>
   <div class="meio"><div class="ag"><h2>Quatro semanas,<br>quatro <em>entregas</em>.</h2><div class="grade"><div class="cel"><span class="r">Semana 1</span><span class="v">Medir</span><span class="n">O que entra hoje, por onde chega e em que ponto some.</span></div><div class="cel"><span class="r">Semana 2</span><span class="v">Estancar</span><span class="n">Arrumar o vazamento maior antes de construir qualquer coisa nova.</span></div><div class="cel"><span class="r">Semana 3</span><span class="v">Construir</span><span class="n">Site, fluxo ou perfil — o que o diagnóstico apontou, não o que está na moda.</span></div><div class="cel"><span class="r">Semana 4</span><span class="v">Entregar</span><span class="n">Funcionando, documentado, e com você sabendo mexer.</span></div></div></div></div>
-  <div class="pe"><span class="marca">@calazanslumina</span><span>Arrasta <span style="font-family:'DM Serif Display',serif;font-style:italic;text-transform:none;letter-spacing:0;font-size:22px">&rarr;</span></span></div><div class="trilho"></div><div class="progresso" style="width:360px"></div>
+  <div class="pe"><span class="marca">@calazanslumina</span><span>Arrasta <span style="font-family:'Bodoni Moda',serif;font-style:italic;text-transform:none;letter-spacing:0;font-size:22px">&rarr;</span></span></div><div class="trilho"></div><div class="progresso" style="width:360px"></div>
 </div></body></html>
