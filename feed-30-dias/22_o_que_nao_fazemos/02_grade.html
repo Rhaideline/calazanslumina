@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>grade</title>
+<style>
+@font-face{font-family:'DM Serif Display';font-style:italic;font-weight:400;font-display:block;src:url('../fontes/dmserif-italic-400.woff2') format('woff2');}
+@font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:block;src:url('../fontes/dmserif-normal-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:italic;font-weight:400;font-display:block;src:url('../fontes/dmsans-italic-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:300;font-display:block;src:url('../fontes/dmsans-normal-300.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:block;src:url('../fontes/dmsans-normal-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:500;font-display:block;src:url('../fontes/dmsans-normal-500.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:600;font-display:block;src:url('../fontes/dmsans-normal-600.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:700;font-display:block;src:url('../fontes/dmsans-normal-700.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:italic;font-weight:400;font-display:block;src:url('../fontes/spacemono-italic-400.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:400;font-display:block;src:url('../fontes/spacemono-normal-400.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:block;src:url('../fontes/spacemono-normal-700.woff2') format('woff2');}
+
+@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:400 900;font-display:block;font-stretch:normal;src:url('../fontes/bodonimoda-italic-variable.woff2') format('woff2');}
+@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:400 900;font-display:block;font-stretch:normal;src:url('../fontes/bodonimoda-normal-variable.woff2') format('woff2');}
+
+:root{--tinta:#111111;--tinta2:#1A1A1A;--tinta3:#08080A;--papel:#F5F1EA;--papel2:#EDE6D6;--vermelho:#FF0005;--vermelho2:#FF3B3B;--vermelho3:#A00306;--brasa:#1A0D0D;}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased}
+html,body{width:1080px;height:1440px;overflow:hidden;background:#000}
+body{font-family:'DM Sans',sans-serif}
+.tela{position:relative;width:1080px;height:1440px;overflow:hidden}
+em{font-style:italic;color:var(--vermelho)}
+.grao{position:absolute;inset:0;z-index:60;pointer-events:none;opacity:.32;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .13 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.rodape{position:absolute;left:62px;bottom:52px;z-index:50;font-size:11px;
+        letter-spacing:.34em;text-transform:uppercase;font-weight:600}
+
+    .gr{position:absolute;inset:0;background:var(--papel);color:var(--tinta);
+        padding:62px 56px 0;display:flex;flex-direction:column}
+    .gr .fios{position:absolute;inset:62px 56px 52px;display:grid;
+              grid-template-columns:repeat(12,1fr);pointer-events:none}
+    .gr .fios span{border-left:1px solid rgba(17,17,17,.09)}
+    .gr .topo{display:flex;justify-content:space-between;align-items:baseline;
+              border-bottom:2px solid var(--tinta);padding-bottom:14px;z-index:2}
+    .gr .topo .ix{font-family:'Space Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.1em}
+    .gr .topo .dt{font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.1em;opacity:.5}
+    .gr h1{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:700;font-size:104px;
+           line-height:.96;letter-spacing:-.025em;margin:60px 0 0;z-index:2;max-width:880px}
+    .gr .cols{margin-top:auto;margin-bottom:0;display:grid;
+              grid-template-columns:repeat(3,1fr);gap:30px;z-index:2}
+    .gr .col{border-top:1px solid var(--tinta);padding-top:16px}
+    .gr .col b{display:block;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;
+               text-transform:uppercase;margin-bottom:10px;color:var(--vermelho)}
+    .gr .col p{font-size:18px;line-height:1.45}
+    .gr .nota{margin:34px 0 86px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.2em;
+              text-transform:uppercase;color:var(--vermelho);z-index:2}
+    .gr .rodape{color:rgba(17,17,17,.4)}
+    
+</style></head><body><div class="tela"><div class="gr">
+      <div class="fios"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="topo"><span class="ix">AS SEIS RECUSAS</span><span class="dt">CALAZANS LUMINA</span></div>
+      <h1>Cada uma já<br>custou <em>contrato</em>.</h1>
+      <div class="cols"><div class="col"><b>Promessa</b><p>Prometer número de leads em prazo fixo. Contagem regressiva falsa e vaga que nunca acaba.</p></div><div class="col"><b>Vaidade</b><p>Comprar seguidor, curtida ou avaliação. Relatório de métrica que não vira decisão.</p></div><div class="col"><b>Refém</b><p>Copiar o site do concorrente trocando as cores. Segurar o acesso do cliente como garantia.</p></div></div><div class="nota">E eu manteria todas as seis.</div>
+      <div class="rodape">@calazanslumina</div>
+      </div><div class="grao"></div></div></body></html>

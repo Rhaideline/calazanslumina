@@ -72,11 +72,12 @@ def mascara(foto, palavra, nota=None):
     .ms{{position:absolute;inset:0;background:var(--tinta);display:flex;
         flex-direction:column;justify-content:center;padding:0 56px}}
     .ms h1{{font-family:{SERIF};font-style:italic;font-weight:860;
-           font-size:150px;line-height:.9;letter-spacing:-.045em;
+           font-size:150px;line-height:1.02;letter-spacing:-.045em;
+           padding:.06em 0;
            background-image:url('../fotos/{foto}');background-size:cover;
            background-position:center 45%;
            -webkit-background-clip:text;background-clip:text;color:transparent;
-           filter:contrast(1.7) saturate(1.5) brightness(1.55)}}
+           filter:contrast(1.9) saturate(1.7) brightness(1.06)}}
     .ms .nota{{margin-top:44px;font-size:19px;letter-spacing:.22em;
               text-transform:uppercase;font-weight:600;color:var(--vermelho)}}
     .ms .rodape{{color:rgba(255,255,255,.34)}}
@@ -104,21 +105,24 @@ def grade(indice, titulo, colunas, nota=None):
     .gr .topo .dt{{font-family:{MONO};font-size:13px;letter-spacing:.1em;opacity:.5}}
     .gr h1{{font-family:{SERIF};font-style:italic;font-weight:700;font-size:104px;
            line-height:.96;letter-spacing:-.025em;margin:60px 0 0;z-index:2;max-width:880px}}
-    .gr .cols{{margin-top:70px;margin-bottom:auto;display:grid;
+    .gr .cols{{margin-top:auto;margin-bottom:0;display:grid;
               grid-template-columns:repeat(3,1fr);gap:30px;z-index:2}}
     .gr .col{{border-top:1px solid var(--tinta);padding-top:16px}}
     .gr .col b{{display:block;font-family:{MONO};font-size:11px;letter-spacing:.16em;
                text-transform:uppercase;margin-bottom:10px;color:var(--vermelho)}}
-    .gr .col p{{font-size:17px;line-height:1.45}}
+    .gr .col p{{font-size:18px;line-height:1.45}}
+    .gr .nota{{margin:34px 0 86px;font-family:{MONO};font-size:12px;letter-spacing:.2em;
+              text-transform:uppercase;color:var(--vermelho);z-index:2}}
     .gr .rodape{{color:rgba(17,17,17,.4)}}
     """
+    nt = f'<div class="nota">{nota}</div>' if nota else '<div style="height:86px"></div>'
     fios = "".join("<span></span>" for _ in range(12))
     cols = "".join(f'<div class="col"><b>{r}</b><p>{t}</p></div>' for r, t in colunas)
     return _pagina("grade", css, f"""<div class="tela"><div class="gr">
       <div class="fios">{fios}</div>
       <div class="topo"><span class="ix">{indice}</span><span class="dt">CALAZANS LUMINA</span></div>
       <h1>{titulo}</h1>
-      <div class="cols">{cols}</div>
+      <div class="cols">{cols}</div>{nt}
       <div class="rodape">@calazanslumina</div>
       </div><div class="grao"></div></div>""")
 
@@ -408,15 +412,15 @@ def travessa(foto, titulo_claro, titulo_escuro, nota=None):
     imagem e termina dentro do bloco. Uma frase, dois territórios."""
     css = f"""
     .tv{{position:absolute;inset:0;background:var(--papel)}}
-    .tv .foto{{position:absolute;left:0;right:0;top:0;height:56%;
+    .tv .foto{{position:absolute;left:0;right:0;top:0;height:74%;
               background-image:url('../fotos/{foto}');background-size:cover;
               background-position:center 35%;filter:saturate(.9) contrast(1.15) brightness(.78)}}
-    .tv .bloco{{position:absolute;left:0;right:0;top:44%;bottom:0;background:var(--vermelho)}}
-    .tv .txt{{position:absolute;left:56px;right:56px;top:34%;z-index:5}}
+    .tv .bloco{{position:absolute;left:0;right:0;top:64%;bottom:0;background:var(--vermelho)}}
+    .tv .txt{{position:absolute;left:56px;right:56px;top:54%;z-index:5}}
     .tv h1{{font-family:{SERIF};font-style:italic;font-weight:740;font-size:104px;
            line-height:.94;letter-spacing:-.03em;color:#fff}}
     .tv h1 em{{color:var(--tinta)}}
-    .tv .nota{{position:absolute;left:56px;right:56px;bottom:104px;z-index:5;
+    .tv .nota{{position:absolute;left:56px;right:56px;bottom:100px;z-index:5;
               font-family:{MONO};font-size:13px;letter-spacing:.2em;
               text-transform:uppercase;color:rgba(255,255,255,.85)}}
     .tv .rodape{{color:rgba(255,255,255,.7)}}
@@ -445,7 +449,7 @@ def linha(titulo, pontos, nota=None):
         padding:74px 56px;display:flex;flex-direction:column}}
     .ln h1{{font-family:{SERIF};font-style:italic;font-weight:700;font-size:82px;
            line-height:1.0;letter-spacing:-.025em;max-width:900px}}
-    .ln .trilho{{position:relative;margin-top:76px;margin-bottom:auto;padding-top:60px}}
+    .ln .trilho{{position:relative;margin-top:auto;margin-bottom:auto;padding-top:60px}}
     .ln .trilho::before{{content:"";position:absolute;left:0;right:0;top:60px;
                         height:1px;background:rgba(255,255,255,.28)}}
     .ln .marcos{{display:grid;grid-template-columns:repeat({n},1fr);gap:18px}}
@@ -454,8 +458,8 @@ def linha(titulo, pontos, nota=None):
               margin-top:-6px;margin-bottom:26px}}
     .ln .rot{{font-family:{MONO};font-size:11px;letter-spacing:.18em;
              text-transform:uppercase;color:var(--vermelho);margin-bottom:10px}}
-    .ln .txt{{font-size:19px;line-height:1.4;color:rgba(255,255,255,.82)}}
-    .ln .nota{{font-size:16px;color:rgba(255,255,255,.5);max-width:640px;margin-bottom:8px}}
+    .ln .txt{{font-size:22px;line-height:1.38;color:rgba(255,255,255,.82)}}
+    .ln .nota{{font-size:17px;color:rgba(255,255,255,.5);max-width:700px;margin-bottom:34px}}
     .ln .rodape{{color:rgba(255,255,255,.4)}}
     """
     nt = f'<div class="nota">{nota}</div>' if nota else ""
@@ -478,14 +482,17 @@ def colunas(rot_a, itens_a, rot_b, itens_b, titulo=None):
         padding:74px 56px;display:flex;flex-direction:column}}
     .cl h1{{font-family:{SERIF};font-style:italic;font-weight:700;font-size:82px;
            line-height:.98;letter-spacing:-.025em;margin-bottom:54px;max-width:780px}}
-    .cl .par{{flex:1;display:grid;grid-template-columns:1fr 1px 1fr;gap:40px}}
+    .cl .par{{flex:1 1 auto;min-height:0;margin-bottom:58px;
+             display:grid;grid-template-columns:1fr 1px 1fr;gap:40px}}
     .cl .fio{{background:rgba(17,17,17,.25)}}
+    .cl .lado{{display:flex;flex-direction:column;min-height:0}}
     .cl .lado b{{display:block;font-family:{MONO};font-size:12px;letter-spacing:.2em;
                 text-transform:uppercase;padding-bottom:16px;
-                border-bottom:2px solid var(--tinta);margin-bottom:20px}}
+                border-bottom:2px solid var(--tinta);margin-bottom:8px;flex:0 0 auto}}
     .cl .lado.b b{{color:var(--vermelho);border-bottom-color:var(--vermelho)}}
-    .cl ul{{list-style:none}}
-    .cl li{{font-size:23px;line-height:1.35;padding:16px 0;
+    .cl ul{{list-style:none;flex:1 1 auto;min-height:0;display:flex;flex-direction:column}}
+    .cl li{{flex:1 1 0;min-height:0;display:flex;align-items:center;
+           font-size:27px;line-height:1.25;
            border-bottom:1px solid rgba(17,17,17,.12)}}
     .cl .lado.a li{{color:rgba(17,17,17,.45)}}
     .cl .rodape{{color:rgba(17,17,17,.4)}}
@@ -505,8 +512,11 @@ def colunas(rot_a, itens_a, rot_b, itens_b, titulo=None):
 def aspas(texto, autor, fundo="tinta"):
     """Aspa tipográfica gigante como elemento de construção, não enfeite —
     ela sangra pela borda e o texto se encaixa nela."""
-    cores = {"tinta": ("#111111", "#fff"), "papel": ("#F5F1EA", "#111111")}
+    cores = {"tinta": ("#111111", "#fff"), "papel": ("#F5F1EA", "#111111"),
+             "vermelho": ("#FF0005", "#fff")}
     bg, fg = cores[fundo]
+    # aspa vermelha sobre vermelho some: no fundo vermelho ela vira vazada
+    aspa = "rgba(255,255,255,.34)" if fundo == "vermelho" else "var(--vermelho)"
     css = f"""
     .as{{position:absolute;inset:0;background:{bg};color:{fg};
         padding:0 56px;display:flex;flex-direction:column;justify-content:center}}
@@ -525,9 +535,9 @@ def aspas(texto, autor, fundo="tinta"):
     return _pagina("aspas", css, f"""<div class="tela"><div class="as">
       <div class="marca"><svg viewBox="0 0 200 150" aria-hidden="true">
         <path d="M14 150 C14 84 34 26 84 0 L96 22 C66 42 52 70 52 96 L88 96 L88 150 Z"
-              fill="var(--vermelho)"/>
+              fill="{aspa}"/>
         <path d="M112 150 C112 84 132 26 182 0 L194 22 C164 42 150 70 150 96 L186 96 L186 150 Z"
-              fill="var(--vermelho)"/>
+              fill="{aspa}"/>
       </svg></div>
       <blockquote>{texto}</blockquote>
       <div class="autor">{autor}</div>

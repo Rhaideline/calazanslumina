@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><title>cartaz</title>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>vazado</title>
 <style>
 @font-face{font-family:'DM Serif Display';font-style:italic;font-weight:400;font-display:block;src:url('../fontes/dmserif-italic-400.woff2') format('woff2');}
 @font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:block;src:url('../fontes/dmserif-normal-400.woff2') format('woff2');}
@@ -19,36 +19,27 @@
 :root{--tinta:#111111;--tinta2:#1A1A1A;--tinta3:#08080A;--papel:#F5F1EA;--papel2:#EDE6D6;--vermelho:#FF0005;--vermelho2:#FF3B3B;--vermelho3:#A00306;--brasa:#1A0D0D;}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased}
 html,body{width:1080px;height:1440px;overflow:hidden;background:#000}
-body{font-family:'DM Sans',system-ui,sans-serif}
+body{font-family:'DM Sans',sans-serif}
 .tela{position:relative;width:1080px;height:1440px;overflow:hidden}
-em{font-style:italic}
-.grao{position:absolute;inset:0;z-index:40;pointer-events:none;opacity:.35;
+em{font-style:italic;color:var(--vermelho)}
+.grao{position:absolute;inset:0;z-index:60;pointer-events:none;opacity:.32;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .13 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.rodape{position:absolute;left:62px;bottom:52px;z-index:50;font-size:11px;
+        letter-spacing:.34em;text-transform:uppercase;font-weight:600}
 
-/* ---- Marca: um traço e um nome, nada mais. Nenhum ícone, nenhuma pílula. */
-.tracinho{width:34px;height:3px;background:var(--vermelho);display:block}
-.assinatura{position:absolute;left:64px;bottom:56px;z-index:6;
-            font-size:12px;letter-spacing:.32em;text-transform:uppercase;
-            font-weight:600;color:rgba(255,255,255,.42)}
-.assinatura.escura{color:rgba(17,17,17,.4)}
-.fita{position:absolute;width:82px;height:28px;background:rgba(245,241,234,.82);
-      box-shadow:0 2px 6px rgba(0,0,0,.25);z-index:6}
-.fita::before{content:"";position:absolute;inset:0;
-      background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.04) 0 2px,transparent 2px 6px)}
-.mono{font-family:'Space Mono',monospace}
-
-    .cz{position:absolute;inset:0;background:var(--tinta);color:#fff;padding:64px;
-        display:flex;flex-direction:column;justify-content:center}
-    .cz .tracinho{margin-bottom:32px}
-    .cz-pilha{display:flex;flex-direction:column}
-    .cz-pilha .a{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:640;
-                font-size:132px;line-height:.96;letter-spacing:-.02em;color:rgba(255,255,255,.55)}
-    .cz-pilha .b{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:640;
-                font-size:190px;line-height:.9;letter-spacing:-.03em;color:var(--vermelho2);margin-top:4px}
-    .cz-rodape{margin-top:40px;font-size:14px;letter-spacing:.16em;color:rgba(255,255,255,.45)}
+    .vz{position:absolute;inset:0;background:#111111;color:#fff;
+        padding:0 56px;display:flex;flex-direction:column;justify-content:center;gap:4px}
+    .vz .cheia{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:760;
+               font-size:104px;line-height:1.04;letter-spacing:-.02em;padding-left:6px}
+    .vz .vazada{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:820;
+                font-size:104px;line-height:1.04;letter-spacing:-.02em;padding-left:6px;
+                color:transparent;-webkit-text-stroke:3px #fff}
+    .vz .nota{margin-top:46px;font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.24em;
+              text-transform:uppercase;color:rgba(255,255,255,.72)}
+    .vz .rodape{color:rgba(255,255,255,.55)}
     
-</style></head><body><div class="tela"><div class="cz">
-      <span class="tracinho"></span>
-      <div class="cz-pilha"><span class="a">Seu site está</span><span class="b">perdendo venda?</span></div>
-      <div class="cz-rodape">Sete perguntas · responda sem defender o site</div>
+</style></head><body><div class="tela"><div class="vz">
+      <div class="cheia">Seu site está</div>
+      <div class="vazada">perdendo venda?</div><div class="nota">Sete perguntas · responda sem defender o site</div>
+      <div class="rodape">@calazanslumina</div>
       </div><div class="grao"></div></div></body></html>

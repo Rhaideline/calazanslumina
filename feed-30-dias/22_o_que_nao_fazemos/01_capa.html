@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><title>ficha</title>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>colunas</title>
 <style>
 @font-face{font-family:'DM Serif Display';font-style:italic;font-weight:400;font-display:block;src:url('../fontes/dmserif-italic-400.woff2') format('woff2');}
 @font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:block;src:url('../fontes/dmserif-normal-400.woff2') format('woff2');}
@@ -19,40 +19,39 @@
 :root{--tinta:#111111;--tinta2:#1A1A1A;--tinta3:#08080A;--papel:#F5F1EA;--papel2:#EDE6D6;--vermelho:#FF0005;--vermelho2:#FF3B3B;--vermelho3:#A00306;--brasa:#1A0D0D;}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased}
 html,body{width:1080px;height:1440px;overflow:hidden;background:#000}
-body{font-family:'DM Sans',system-ui,sans-serif}
+body{font-family:'DM Sans',sans-serif}
 .tela{position:relative;width:1080px;height:1440px;overflow:hidden}
-em{font-style:italic}
-.grao{position:absolute;inset:0;z-index:40;pointer-events:none;opacity:.35;
+em{font-style:italic;color:var(--vermelho)}
+.grao{position:absolute;inset:0;z-index:60;pointer-events:none;opacity:.32;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .13 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.rodape{position:absolute;left:62px;bottom:52px;z-index:50;font-size:11px;
+        letter-spacing:.34em;text-transform:uppercase;font-weight:600}
 
-/* ---- Marca: um traço e um nome, nada mais. Nenhum ícone, nenhuma pílula. */
-.tracinho{width:34px;height:3px;background:var(--vermelho);display:block}
-.assinatura{position:absolute;left:64px;bottom:56px;z-index:6;
-            font-size:12px;letter-spacing:.32em;text-transform:uppercase;
-            font-weight:600;color:rgba(255,255,255,.42)}
-.assinatura.escura{color:rgba(17,17,17,.4)}
-.fita{position:absolute;width:82px;height:28px;background:rgba(245,241,234,.82);
-      box-shadow:0 2px 6px rgba(0,0,0,.25);z-index:6}
-.fita::before{content:"";position:absolute;inset:0;
-      background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.04) 0 2px,transparent 2px 6px)}
-.mono{font-family:'Space Mono',monospace}
-
-    .fc{position:absolute;inset:0;background:var(--papel);color:var(--tinta);padding:64px}
-    .fc-carimbo{position:absolute;top:60px;right:64px;border:2px solid var(--vermelho);
-               color:var(--vermelho);padding:8px 14px;font-family:'Space Mono',monospace;
-               font-size:14px;font-weight:700;transform:rotate(-3deg)}
-    .fc h1{margin-top:56px;font-family:'Bodoni Moda',serif;font-style:italic;font-weight:640;
-          font-size:92px;line-height:1.04;letter-spacing:-.015em;max-width:880px}
-    .fc h1 em{color:var(--vermelho)}
-    .fc-campos{margin-top:52px;border-top:2px solid var(--tinta);font-family:'Space Mono',monospace}
-    .fc-campo{display:flex;justify-content:space-between;align-items:baseline;gap:24px;
-              padding:20px 0;border-bottom:1px solid rgba(17,17,17,.18)}
-    .fc-campo .r{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:rgba(17,17,17,.5)}
-    .fc-campo .v{font-size:20px;font-weight:700;text-align:right}
-    .fc-nota{margin-top:26px;font-size:15px;color:rgba(17,17,17,.55);line-height:1.5}
+    .cl{position:absolute;inset:0;background:var(--papel);color:var(--tinta);
+        padding:74px 56px;display:flex;flex-direction:column}
+    .cl h1{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:700;font-size:82px;
+           line-height:.98;letter-spacing:-.025em;margin-bottom:54px;max-width:780px}
+    .cl .par{flex:1 1 auto;min-height:0;margin-bottom:58px;
+             display:grid;grid-template-columns:1fr 1px 1fr;gap:40px}
+    .cl .fio{background:rgba(17,17,17,.25)}
+    .cl .lado{display:flex;flex-direction:column;min-height:0}
+    .cl .lado b{display:block;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.2em;
+                text-transform:uppercase;padding-bottom:16px;
+                border-bottom:2px solid var(--tinta);margin-bottom:8px;flex:0 0 auto}
+    .cl .lado.b b{color:var(--vermelho);border-bottom-color:var(--vermelho)}
+    .cl ul{list-style:none;flex:1 1 auto;min-height:0;display:flex;flex-direction:column}
+    .cl li{flex:1 1 0;min-height:0;display:flex;align-items:center;
+           font-size:27px;line-height:1.25;
+           border-bottom:1px solid rgba(17,17,17,.12)}
+    .cl .lado.a li{color:rgba(17,17,17,.45)}
+    .cl .rodape{color:rgba(17,17,17,.4)}
     
-</style></head><body><div class="tela"><div class="fc">
-      <div class="fc-carimbo">Nº 09</div>
+</style></head><body><div class="tela"><div class="cl">
       <h1>O que a gente<br><em>não</em> faz.</h1>
-      <div class="fc-campos"><div class="fc-campo"><span class="r">Prometer prazo fixo</span><span class="v">Recusado</span></div><div class="fc-campo"><span class="r">Comprar avaliação</span><span class="v">Recusado</span></div><div class="fc-campo"><span class="r">Segurar seu acesso</span><span class="v">Recusado</span></div><div class="fc-campo"><span class="r">Copiar concorrente</span><span class="v">Recusado</span></div></div><p class="fc-nota">Seis recusas guiam todo contrato — aqui estão quatro.</p>
+      <div class="par">
+        <div class="lado a"><b>Recusado</b><ul><li>Prometer prazo fixo</li><li>Comprar avaliação</li><li>Segurar seu acesso</li><li>Copiar concorrente</li></ul></div>
+        <div class="fio"></div>
+        <div class="lado b"><b>Em vez disso</b><ul><li>Mostrar caso publicado</li><li>Pedir review no fluxo</li><li>Acesso no seu nome</li><li>Partir do seu diagnóstico</li></ul></div>
+      </div>
+      <div class="rodape">@calazanslumina</div>
       </div><div class="grao"></div></div></body></html>

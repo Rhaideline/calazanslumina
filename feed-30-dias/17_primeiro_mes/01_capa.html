@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><title>metade</title>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>travessa</title>
 <style>
 @font-face{font-family:'DM Serif Display';font-style:italic;font-weight:400;font-display:block;src:url('../fontes/dmserif-italic-400.woff2') format('woff2');}
 @font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:block;src:url('../fontes/dmserif-normal-400.woff2') format('woff2');}
@@ -19,39 +19,30 @@
 :root{--tinta:#111111;--tinta2:#1A1A1A;--tinta3:#08080A;--papel:#F5F1EA;--papel2:#EDE6D6;--vermelho:#FF0005;--vermelho2:#FF3B3B;--vermelho3:#A00306;--brasa:#1A0D0D;}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased}
 html,body{width:1080px;height:1440px;overflow:hidden;background:#000}
-body{font-family:'DM Sans',system-ui,sans-serif}
+body{font-family:'DM Sans',sans-serif}
 .tela{position:relative;width:1080px;height:1440px;overflow:hidden}
-em{font-style:italic}
-.grao{position:absolute;inset:0;z-index:40;pointer-events:none;opacity:.35;
+em{font-style:italic;color:var(--vermelho)}
+.grao{position:absolute;inset:0;z-index:60;pointer-events:none;opacity:.32;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .13 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.rodape{position:absolute;left:62px;bottom:52px;z-index:50;font-size:11px;
+        letter-spacing:.34em;text-transform:uppercase;font-weight:600}
 
-/* ---- Marca: um traço e um nome, nada mais. Nenhum ícone, nenhuma pílula. */
-.tracinho{width:34px;height:3px;background:var(--vermelho);display:block}
-.assinatura{position:absolute;left:64px;bottom:56px;z-index:6;
-            font-size:12px;letter-spacing:.32em;text-transform:uppercase;
-            font-weight:600;color:rgba(255,255,255,.42)}
-.assinatura.escura{color:rgba(17,17,17,.4)}
-.fita{position:absolute;width:82px;height:28px;background:rgba(245,241,234,.82);
-      box-shadow:0 2px 6px rgba(0,0,0,.25);z-index:6}
-.fita::before{content:"";position:absolute;inset:0;
-      background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.04) 0 2px,transparent 2px 6px)}
-.mono{font-family:'Space Mono',monospace}
-
-    .mt{position:absolute;inset:0;display:flex;flex-direction:row}
-    .mt-foto{width:50%;height:100%;background-size:cover;background-position:center;
-             filter:saturate(.94) contrast(1.16) brightness(.88)}
-    .mt-txt{width:50%;height:100%;background:var(--tinta);color:#fff;padding:64px 52px;
-            display:flex;flex-direction:column;justify-content:flex-end}
-    .mt-txt .tracinho{margin-bottom:24px}
-    .mt-txt h1{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:640;
-               font-size:70px;line-height:1.06;letter-spacing:-.015em;margin-bottom:18px}
-    .mt-txt h1 em{color:var(--vermelho2)}
-    .mt-txt .nota{display:block;font-size:16px;color:rgba(255,255,255,.6)}
-    .mt-botao{display:inline-flex;align-self:flex-start;margin-top:28px;padding:14px 22px;
-              background:#fff;color:var(--tinta);border-radius:999px;font-size:12px;
-              letter-spacing:.18em;text-transform:uppercase;font-weight:700}
+    .tv{position:absolute;inset:0;background:var(--papel)}
+    .tv .foto{position:absolute;left:0;right:0;top:0;height:74%;
+              background-image:url('../fotos/compras-online.jpg');background-size:cover;
+              background-position:center 35%;filter:saturate(.9) contrast(1.15) brightness(.78)}
+    .tv .bloco{position:absolute;left:0;right:0;top:64%;bottom:0;background:var(--vermelho)}
+    .tv .txt{position:absolute;left:56px;right:56px;top:54%;z-index:5}
+    .tv h1{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:740;font-size:104px;
+           line-height:.94;letter-spacing:-.03em;color:#fff}
+    .tv h1 em{color:var(--tinta)}
+    .tv .nota{position:absolute;left:56px;right:56px;bottom:100px;z-index:5;
+              font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.2em;
+              text-transform:uppercase;color:rgba(255,255,255,.85)}
+    .tv .rodape{color:rgba(255,255,255,.7)}
     
-</style></head><body><div class="tela"><div class="mt">
-      <div class="mt-foto" style="background-image:url('../fotos/tecnologia-simples.jpg')"></div>
-      <div class="mt-txt"><span class="tracinho"></span><h1>O primeiro<br><em>mês</em>.</h1><span class="nota">Medir · estancar · construir · entregar</span><span class="mt-botao">Ver as 4 semanas</span></div>
+</style></head><body><div class="tela"><div class="tv">
+      <div class="foto"></div><div class="bloco"></div>
+      <div class="txt"><h1>O que a gente faz<br>no <em>primeiro mês</em>.</h1></div><div class="nota">Na ordem real · sem reunião de alinhamento</div>
+      <div class="rodape">@calazanslumina</div>
       </div><div class="grao"></div></div></body></html>

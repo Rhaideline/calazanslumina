@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><title>hero-foto</title>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>veladura</title>
 <style>
 @font-face{font-family:'DM Serif Display';font-style:italic;font-weight:400;font-display:block;src:url('../fontes/dmserif-italic-400.woff2') format('woff2');}
 @font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:block;src:url('../fontes/dmserif-normal-400.woff2') format('woff2');}
@@ -19,39 +19,31 @@
 :root{--tinta:#111111;--tinta2:#1A1A1A;--tinta3:#08080A;--papel:#F5F1EA;--papel2:#EDE6D6;--vermelho:#FF0005;--vermelho2:#FF3B3B;--vermelho3:#A00306;--brasa:#1A0D0D;}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased}
 html,body{width:1080px;height:1440px;overflow:hidden;background:#000}
-body{font-family:'DM Sans',system-ui,sans-serif}
+body{font-family:'DM Sans',sans-serif}
 .tela{position:relative;width:1080px;height:1440px;overflow:hidden}
-em{font-style:italic}
-.grao{position:absolute;inset:0;z-index:40;pointer-events:none;opacity:.35;
+em{font-style:italic;color:var(--vermelho)}
+.grao{position:absolute;inset:0;z-index:60;pointer-events:none;opacity:.32;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .13 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.rodape{position:absolute;left:62px;bottom:52px;z-index:50;font-size:11px;
+        letter-spacing:.34em;text-transform:uppercase;font-weight:600}
 
-/* ---- Marca: um traço e um nome, nada mais. Nenhum ícone, nenhuma pílula. */
-.tracinho{width:34px;height:3px;background:var(--vermelho);display:block}
-.assinatura{position:absolute;left:64px;bottom:56px;z-index:6;
-            font-size:12px;letter-spacing:.32em;text-transform:uppercase;
-            font-weight:600;color:rgba(255,255,255,.42)}
-.assinatura.escura{color:rgba(17,17,17,.4)}
-.fita{position:absolute;width:82px;height:28px;background:rgba(245,241,234,.82);
-      box-shadow:0 2px 6px rgba(0,0,0,.25);z-index:6}
-.fita::before{content:"";position:absolute;inset:0;
-      background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.04) 0 2px,transparent 2px 6px)}
-.mono{font-family:'Space Mono',monospace}
-
-    .hf-foto{position:absolute;inset:0;background-size:cover;background-position:center;
-             filter:saturate(.95) contrast(1.18) brightness(.72)}
-    .hf-scrim{position:absolute;inset:0;
-      background:linear-gradient(180deg,rgba(8,8,10,.06) 0%,rgba(8,8,10,.16) 44%,rgba(8,8,10,.9) 80%,#08080a 100%)}
-    .hf-base{position:absolute;left:64px;right:64px;bottom:96px;z-index:5}
-    .hf-base .tracinho{margin-bottom:26px}
-    .hf-base h1{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:640;color:#fff;
-                font-size:136px;line-height:.98;letter-spacing:-.02em}
-    .hf-base h1 em{color:var(--vermelho2)}
-    .hf-base .nota{display:block;margin-top:22px;font-size:16px;letter-spacing:.05em;
-                   color:rgba(255,255,255,.6);font-weight:500}
+    .vl{position:absolute;inset:0;background:var(--tinta);overflow:hidden}
+    .vl .foto{position:absolute;inset:0;background-image:url('../fotos/ideia-lampada.jpg');
+              background-size:cover;background-position:center;
+              filter:saturate(1.05) contrast(1.1)}
+    .vl .tinge{position:absolute;inset:0;background:
+               linear-gradient(200deg,rgba(255,0,5,.5) 0%,rgba(17,17,17,.88) 70%);
+               mix-blend-mode:hard-light}
+    .vl .fundo{position:absolute;inset:0;background:rgba(10,8,10,.34)}
+    .vl .txt{position:absolute;left:56px;right:56px;top:50%;transform:translateY(-50%);z-index:5}
+    .vl h1{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:740;color:#fff;
+           font-size:132px;line-height:.92;letter-spacing:-.03em}
+    .vl .nota{margin-top:26px;font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.22em;
+              text-transform:uppercase;color:rgba(255,255,255,.88)}
+    .vl .rodape{color:rgba(255,255,255,.5)}
     
-</style></head><body><div class="tela">
-      <div class="hf-foto" style="background-image:url('../fotos/compras-online.jpg')"></div>
-      <div class="hf-scrim"></div>
-      <div class="hf-base"><span class="tracinho"></span><h1>Eu olho<br>o <em>seu</em>.</h1><span class="nota">Convite · e te digo o que está travando</span></div>
-      <div class="grao"></div>
-    </div></body></html>
+</style></head><body><div class="tela"><div class="vl">
+      <div class="foto"></div><div class="tinge"></div><div class="fundo"></div>
+      <div class="txt"><h1>Eu olho<br>o <em>seu</em>.</h1><div class="nota">Diagnóstico sem custo · 31 98294-8067</div></div>
+      <div class="rodape">@calazanslumina</div>
+      </div><div class="grao"></div></div></body></html>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><title>diagonal</title>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>duotone</title>
 <style>
 @font-face{font-family:'DM Serif Display';font-style:italic;font-weight:400;font-display:block;src:url('../fontes/dmserif-italic-400.woff2') format('woff2');}
 @font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:block;src:url('../fontes/dmserif-normal-400.woff2') format('woff2');}
@@ -19,35 +19,30 @@
 :root{--tinta:#111111;--tinta2:#1A1A1A;--tinta3:#08080A;--papel:#F5F1EA;--papel2:#EDE6D6;--vermelho:#FF0005;--vermelho2:#FF3B3B;--vermelho3:#A00306;--brasa:#1A0D0D;}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased}
 html,body{width:1080px;height:1440px;overflow:hidden;background:#000}
-body{font-family:'DM Sans',system-ui,sans-serif}
+body{font-family:'DM Sans',sans-serif}
 .tela{position:relative;width:1080px;height:1440px;overflow:hidden}
-em{font-style:italic}
-.grao{position:absolute;inset:0;z-index:40;pointer-events:none;opacity:.35;
+em{font-style:italic;color:var(--vermelho)}
+.grao{position:absolute;inset:0;z-index:60;pointer-events:none;opacity:.32;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .13 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.rodape{position:absolute;left:62px;bottom:52px;z-index:50;font-size:11px;
+        letter-spacing:.34em;text-transform:uppercase;font-weight:600}
 
-/* ---- Marca: um traço e um nome, nada mais. Nenhum ícone, nenhuma pílula. */
-.tracinho{width:34px;height:3px;background:var(--vermelho);display:block}
-.assinatura{position:absolute;left:64px;bottom:56px;z-index:6;
-            font-size:12px;letter-spacing:.32em;text-transform:uppercase;
-            font-weight:600;color:rgba(255,255,255,.42)}
-.assinatura.escura{color:rgba(17,17,17,.4)}
-.fita{position:absolute;width:82px;height:28px;background:rgba(245,241,234,.82);
-      box-shadow:0 2px 6px rgba(0,0,0,.25);z-index:6}
-.fita::before{content:"";position:absolute;inset:0;
-      background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.04) 0 2px,transparent 2px 6px)}
-.mono{font-family:'Space Mono',monospace}
-
-    .dg{position:absolute;inset:0;background:var(--tinta)}
-    .dg-foto{position:absolute;inset:0;background-size:cover;background-position:center;
-             clip-path:polygon(0 0,100% 0,100% 42%,0 62%);filter:saturate(.9) contrast(1.2) brightness(.8)}
-    .dg-corpo{position:absolute;left:64px;right:64px;bottom:88px;z-index:5}
-    .dg-corpo .tracinho{margin-bottom:24px}
-    .dg-corpo h1{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:640;color:#fff;
-                 font-size:100px;line-height:1.02;letter-spacing:-.015em;max-width:860px}
-    .dg-corpo h1 em{color:var(--vermelho2)}
-    .dg-corpo .nota{display:block;margin-top:18px;font-size:15px;color:rgba(255,255,255,.55)}
+    .dt{position:absolute;inset:0;background:var(--tinta);overflow:hidden}
+    .dt .base{position:absolute;inset:0;background-image:url('../fotos/equipe-feliz.jpg');
+              background-size:cover;background-position:center;
+              filter:grayscale(1) contrast(1.55) brightness(.95)}
+    .dt .cor{position:absolute;inset:0;background:var(--vermelho);
+             mix-blend-mode:lighten;opacity:.92}
+    .dt .escuro{position:absolute;inset:0;background:#120608;mix-blend-mode:multiply;opacity:.55}
+    .dt .txt{position:absolute;left:56px;right:56px;bottom:88px;z-index:5}
+    .dt h1{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:700;color:#fff;
+           font-size:120px;line-height:.94;letter-spacing:-.03em}
+    .dt .nota{margin-top:22px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.22em;
+              text-transform:uppercase;color:rgba(255,255,255,.8)}
+    .dt .rodape{color:rgba(255,255,255,.55)}
     
-</style></head><body><div class="tela"><div class="dg">
-      <div class="dg-foto" style="background-image:url('../fotos/equipe-feliz.jpg')"></div>
-      <div class="dg-corpo"><span class="tracinho"></span><h1>Página 3 <em>virou</em><br>página 1.</h1><span class="nota">Wolf's Siding · 28 dias · sem anúncio</span></div>
+</style></head><body><div class="tela"><div class="dt">
+      <div class="base"></div><div class="cor"></div><div class="escuro"></div>
+      <div class="txt"><h1>Página 3.<br>28 dias depois,<br><em>página 1</em>.</h1><div class="nota">Wolf's Siding · Northborough MA · sem anúncio</div></div>
+      <div class="rodape">@calazanslumina</div>
       </div><div class="grao"></div></div></body></html>
