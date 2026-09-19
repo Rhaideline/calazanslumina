@@ -19,48 +19,36 @@ html,body{width:1080px;height:1440px;overflow:hidden;background:#000}
 body{font-family:'DM Sans',system-ui,sans-serif}
 .tela{position:relative;width:1080px;height:1440px;overflow:hidden}
 em{font-style:italic}
-.grao{position:absolute;inset:0;z-index:40;pointer-events:none;opacity:.4;
+.grao{position:absolute;inset:0;z-index:40;pointer-events:none;opacity:.35;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .13 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.marca{display:inline-flex;align-items:center;gap:13px;line-height:1}
-.marca img{width:38px;height:38px;object-fit:contain;flex-shrink:0}
-.marca b{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:22px}
-.marca span{display:block;font-size:9px;letter-spacing:.44em;text-transform:uppercase;font-weight:600;color:var(--vermelho);margin-top:4px}
 
-/* ---- Sinais de mão humana (Canva, "Imperfect by Design", 2026) ----------
-   Nada aqui é sujeira: é imperfeicao deliberada, no lugar certo. Fita
-   adesiva em foto, sublinhado de marcador em vez de itálico o tempo todo,
-   leve rotação em selos/etiquetas. O contramovimento ao polimento de IA. */
-.fita{position:absolute;width:86px;height:30px;background:rgba(245,241,234,.82);
+/* ---- Marca: um traço e um nome, nada mais. Nenhum ícone, nenhuma pílula. */
+.tracinho{width:34px;height:3px;background:var(--vermelho);display:block}
+.assinatura{position:absolute;left:64px;bottom:56px;z-index:6;
+            font-size:12px;letter-spacing:.32em;text-transform:uppercase;
+            font-weight:600;color:rgba(255,255,255,.42)}
+.assinatura.escura{color:rgba(17,17,17,.4)}
+.fita{position:absolute;width:82px;height:28px;background:rgba(245,241,234,.82);
       box-shadow:0 2px 6px rgba(0,0,0,.25);z-index:6}
 .fita::before{content:"";position:absolute;inset:0;
       background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.04) 0 2px,transparent 2px 6px)}
-.marcador{position:relative;white-space:nowrap}
-.marcador::after{content:"";position:absolute;left:-4%;right:-4%;bottom:.06em;height:.34em;
-      background:var(--vermelho);opacity:.32;z-index:-1;
-      clip-path:polygon(0 18%,12% 0,29% 22%,47% 2%,63% 24%,81% 4%,100% 20%,100% 100%,0 100%)}
 .mono{font-family:'Space Mono',monospace}
 
     .pl{position:absolute;inset:0;background:linear-gradient(160deg,#1a0d0d 0%,#111 55%,#000 100%);
-        color:#fff;padding:64px;display:flex;flex-direction:column}
-    .pl-topo{display:flex;justify-content:space-between;align-items:center}
-    .pl-topo .marca b, .pl-topo .marca span{color:#fff}
-    .pl-corpo{flex:1;display:flex;align-items:center;gap:64px;margin-top:10px}
-    .pl-foto{width:420px;background:#fff;padding:18px 18px 70px;transform:rotate(-5deg);
+        color:#fff;padding:64px;display:flex;align-items:center;gap:64px}
+    .pl-foto{width:400px;background:#fff;padding:18px 18px 68px;transform:rotate(-5deg);
              box-shadow:0 35px 80px -20px rgba(0,0,0,.7);flex-shrink:0;position:relative}
-    .pl-foto .img{width:100%;height:420px;background-size:cover;background-position:center}
+    .pl-foto .fita{top:-15px;left:50%;margin-left:-41px;transform:rotate(-3deg)}
+    .pl-foto .img{width:100%;height:400px;background-size:cover;background-position:center}
     .pl-foto .legenda{position:absolute;left:18px;bottom:18px;font-family:'DM Serif Display',serif;
-                      font-style:italic;font-size:19px;color:#222}
-    .pl-foto .fita{top:-16px;left:50%;margin-left:-43px;transform:rotate(-3deg)}
-    .pl-txt h1{font-family:'DM Sans',sans-serif;font-weight:700;text-transform:uppercase;
-              font-size:66px;line-height:.94;letter-spacing:-.01em}
-    .pl-txt h1 em{font-style:italic;font-family:'DM Serif Display',serif;text-transform:none;
-                  font-weight:400;color:var(--vermelho2)}
+                      font-style:italic;font-size:18px;color:#222}
+    .pl-txt h1{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;
+              font-size:64px;line-height:1.0;letter-spacing:-.015em}
+    .pl-txt h1 em{color:var(--vermelho2)}
     
 </style></head><body><div class="tela"><div class="pl">
-      <div class="pl-topo"><span class="marca"><img src="../logos/marca.png"><b>Calazans Lumina</b></span></div>
-      <div class="pl-corpo">
         <div class="pl-foto"><div class="fita"></div>
           <div class="img" style="background-image:url('../fotos/pessoa-celular.jpg')"></div>
           <div class="legenda">Sete etapas, nesta ordem.</div></div>
         <div class="pl-txt"><h1>Funil que<br>não <em>vaza</em>.</h1></div>
-      </div></div><div class="grao"></div></div></body></html>
+      </div><div class="grao"></div></div></body></html>

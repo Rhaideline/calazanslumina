@@ -1,31 +1,28 @@
 # -*- coding: utf-8 -*-
 """
 Mapa dos 14 posts "de imagem única ou capa" (9 capas de carrossel + 5
-estáticos) para os 12 modelos novos de modelos2.py.
+estáticos) para os 12 modelos de modelos2.py — versão sem chapéu em pílula,
+sem logo repetido, sem selo: só o que carrega informação.
 
-Regra de intercalação que o cliente pediu: alterna com foto e sem foto.
-Dos 14, 8 levam foto e 6 são só tipografia/forma — o mais perto de 50/50
-que dá pra chegar com 12 modelos (6 são fotográficos por natureza).
-
-Cada modelo aparece pelo menos uma vez; hero_foto e medalhao repetem uma
-vez cada (14 posts, 12 modelos), sempre com foto e conteúdo diferentes.
+Regra de intercalação: alterna com foto e sem foto. Dos 14, 8 levam foto
+e 6 são só tipografia/forma.
 """
 import modelos2 as m
 
 CAPAS = {
     # ── carrosséis: substitui o slide 1 (a capa) ──────────────────────
     "02_erros_google": lambda: m.hero_foto(
-        foto="coding-laptop.jpg", kicker="Google Meu Negócio",
+        foto="coding-laptop.jpg",
         palavra="5 erros<br><em>escondem</em><br>seu negócio.",
-        nota="Nenhum custa dinheiro para consertar."),
+        nota="Google Meu Negócio · nenhum custa dinheiro para consertar"),
 
     "04_case_wolfs": lambda: m.diagonal(
-        foto="equipe-feliz.jpg", kicker="Caso real",
+        foto="equipe-feliz.jpg",
         palavra="Página 3 <em>virou</em><br>página 1.",
         nota="Wolf's Siding · 28 dias · sem anúncio"),
 
     "07_ia_atendimento": lambda: m.medalhao(
-        foto="chatbot-whatsapp.jpg", kicker="Método da casa",
+        foto="chatbot-whatsapp.jpg",
         palavra="Antes de<br>atender,<br><em>saber</em>.",
         nota="O que toda IA precisa saber primeiro"),
 
@@ -40,11 +37,11 @@ CAPAS = {
         total_r="RS Development · 4 meses", total_v="358 → 88.103"),
 
     "15_checklist_site": lambda: m.cartaz(
-        linha1="Seu site está", linha2_em="perdendo", linha3="venda?",
+        linha1="Seu site está", linha2_em="perdendo venda?",
         rodape="Sete perguntas · responda sem defender o site"),
 
     "17_primeiro_mes": lambda: m.metade(
-        foto="tecnologia-simples.jpg", kicker="Sem caixa fechada",
+        foto="tecnologia-simples.jpg",
         palavra="O primeiro<br><em>mês</em>.",
         nota="Medir · estancar · construir · entregar",
         botao="Ver as 4 semanas"),
@@ -72,12 +69,12 @@ CAPAS = {
         texto_anel="Mito × Verdade", palavra="Espanta<br><em>bot ruim</em>", fundo="papel"),
 
     "13_bastidor": lambda: m.medalhao(
-        foto="ideia-lampada.jpg", kicker="Bastidor",
+        foto="ideia-lampada.jpg",
         palavra="O que não<br><em>aparece</em><br>no print.",
         nota="Quem decide o que cada página diz"),
 
     "20_convite_auditoria": lambda: m.hero_foto(
-        foto="compras-online.jpg", kicker="Convite",
+        foto="compras-online.jpg",
         palavra="Eu olho<br>o <em>seu</em>.",
-        nota="E te digo o que está travando"),
+        nota="Convite · e te digo o que está travando"),
 }

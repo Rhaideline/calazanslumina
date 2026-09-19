@@ -19,49 +19,38 @@ html,body{width:1080px;height:1440px;overflow:hidden;background:#000}
 body{font-family:'DM Sans',system-ui,sans-serif}
 .tela{position:relative;width:1080px;height:1440px;overflow:hidden}
 em{font-style:italic}
-.grao{position:absolute;inset:0;z-index:40;pointer-events:none;opacity:.4;
+.grao{position:absolute;inset:0;z-index:40;pointer-events:none;opacity:.35;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .13 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.marca{display:inline-flex;align-items:center;gap:13px;line-height:1}
-.marca img{width:38px;height:38px;object-fit:contain;flex-shrink:0}
-.marca b{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:22px}
-.marca span{display:block;font-size:9px;letter-spacing:.44em;text-transform:uppercase;font-weight:600;color:var(--vermelho);margin-top:4px}
 
-/* ---- Sinais de mão humana (Canva, "Imperfect by Design", 2026) ----------
-   Nada aqui é sujeira: é imperfeicao deliberada, no lugar certo. Fita
-   adesiva em foto, sublinhado de marcador em vez de itálico o tempo todo,
-   leve rotação em selos/etiquetas. O contramovimento ao polimento de IA. */
-.fita{position:absolute;width:86px;height:30px;background:rgba(245,241,234,.82);
+/* ---- Marca: um traço e um nome, nada mais. Nenhum ícone, nenhuma pílula. */
+.tracinho{width:34px;height:3px;background:var(--vermelho);display:block}
+.assinatura{position:absolute;left:64px;bottom:56px;z-index:6;
+            font-size:12px;letter-spacing:.32em;text-transform:uppercase;
+            font-weight:600;color:rgba(255,255,255,.42)}
+.assinatura.escura{color:rgba(17,17,17,.4)}
+.fita{position:absolute;width:82px;height:28px;background:rgba(245,241,234,.82);
       box-shadow:0 2px 6px rgba(0,0,0,.25);z-index:6}
 .fita::before{content:"";position:absolute;inset:0;
       background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.04) 0 2px,transparent 2px 6px)}
-.marcador{position:relative;white-space:nowrap}
-.marcador::after{content:"";position:absolute;left:-4%;right:-4%;bottom:.06em;height:.34em;
-      background:var(--vermelho);opacity:.32;z-index:-1;
-      clip-path:polygon(0 18%,12% 0,29% 22%,47% 2%,63% 24%,81% 4%,100% 20%,100% 100%,0 100%)}
 .mono{font-family:'Space Mono',monospace}
 
     .rc{position:absolute;inset:0;background:var(--papel);color:var(--tinta);
         padding:64px;display:flex;flex-direction:column}
-    .rc-topo{text-align:center}
-    .rc-topo .marca{justify-content:center}
-    .rc-topo .marca b{color:var(--tinta)}
-    .rc h1{margin-top:36px;text-align:center;font-family:'DM Serif Display',serif;font-style:italic;
-          font-weight:400;font-size:52px;line-height:1.08;letter-spacing:-.01em}
+    .rc h1{font-family:'DM Serif Display',serif;font-style:italic;
+          font-weight:400;font-size:52px;line-height:1.08;letter-spacing:-.01em;max-width:820px}
     .rc h1 em{color:var(--vermelho)}
-    .rc-trilha{border-top:2px dashed rgba(17,17,17,.35);margin-top:44px;padding-top:8px;flex:1;
+    .rc-trilha{border-top:2px dashed rgba(17,17,17,.35);margin-top:40px;padding-top:6px;flex:1;
               font-family:'Space Mono',monospace}
-    .rc-item{display:flex;align-items:baseline;gap:14px;padding:18px 0;
-             border-bottom:1px dashed rgba(17,17,17,.28);font-size:18px}
+    .rc-item{display:flex;align-items:baseline;gap:14px;padding:17px 0;
+             border-bottom:1px dashed rgba(17,17,17,.28);font-size:17px}
     .rc-item .pontos{flex:1;border-bottom:1px dotted rgba(17,17,17,.4);height:0;transform:translateY(-6px)}
     .rc-item .v{font-weight:700;white-space:nowrap}
     .rc-total{display:flex;justify-content:space-between;align-items:baseline;
-              border-top:2px dashed rgba(17,17,17,.35);padding-top:22px;margin-top:12px;
-              font-family:'Space Mono',monospace}
-    .rc-total .r{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
-    .rc-total .v{font-size:44px;font-weight:700;color:var(--vermelho)}
+              border-top:2px dashed rgba(17,17,17,.35);padding-top:20px;margin-top:10px}
+    .rc-total .r{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+    .rc-total .v{font-size:42px;font-weight:700;color:var(--vermelho)}
     
 </style></head><body><div class="tela"><div class="rc">
-      <div class="rc-topo"><span class="marca"><img src="../logos/marca.png"><b>Calazans Lumina</b></span></div>
       <h1>100 páginas.<br>Zero <em>anúncio</em>.</h1>
       <div class="rc-trilha"><div class="rc-item"><span>Impressões / mês</span><span class="pontos"></span><span class="v">+24.500%</span></div><div class="rc-item"><span>Cliques</span><span class="pontos"></span><span class="v">+1.092%</span></div><div class="rc-item"><span>Páginas indexadas</span><span class="pontos"></span><span class="v">100+</span></div><div class="rc-item"><span>Leads orgânicos</span><span class="pontos"></span><span class="v">8</span></div>
         <div class="rc-total"><span class="r">RS Development · 4 meses</span><span class="v">358 → 88.103</span></div>

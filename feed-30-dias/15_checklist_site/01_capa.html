@@ -19,44 +19,33 @@ html,body{width:1080px;height:1440px;overflow:hidden;background:#000}
 body{font-family:'DM Sans',system-ui,sans-serif}
 .tela{position:relative;width:1080px;height:1440px;overflow:hidden}
 em{font-style:italic}
-.grao{position:absolute;inset:0;z-index:40;pointer-events:none;opacity:.4;
+.grao{position:absolute;inset:0;z-index:40;pointer-events:none;opacity:.35;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .13 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.marca{display:inline-flex;align-items:center;gap:13px;line-height:1}
-.marca img{width:38px;height:38px;object-fit:contain;flex-shrink:0}
-.marca b{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:22px}
-.marca span{display:block;font-size:9px;letter-spacing:.44em;text-transform:uppercase;font-weight:600;color:var(--vermelho);margin-top:4px}
 
-/* ---- Sinais de mão humana (Canva, "Imperfect by Design", 2026) ----------
-   Nada aqui é sujeira: é imperfeicao deliberada, no lugar certo. Fita
-   adesiva em foto, sublinhado de marcador em vez de itálico o tempo todo,
-   leve rotação em selos/etiquetas. O contramovimento ao polimento de IA. */
-.fita{position:absolute;width:86px;height:30px;background:rgba(245,241,234,.82);
+/* ---- Marca: um traço e um nome, nada mais. Nenhum ícone, nenhuma pílula. */
+.tracinho{width:34px;height:3px;background:var(--vermelho);display:block}
+.assinatura{position:absolute;left:64px;bottom:56px;z-index:6;
+            font-size:12px;letter-spacing:.32em;text-transform:uppercase;
+            font-weight:600;color:rgba(255,255,255,.42)}
+.assinatura.escura{color:rgba(17,17,17,.4)}
+.fita{position:absolute;width:82px;height:28px;background:rgba(245,241,234,.82);
       box-shadow:0 2px 6px rgba(0,0,0,.25);z-index:6}
 .fita::before{content:"";position:absolute;inset:0;
       background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.04) 0 2px,transparent 2px 6px)}
-.marcador{position:relative;white-space:nowrap}
-.marcador::after{content:"";position:absolute;left:-4%;right:-4%;bottom:.06em;height:.34em;
-      background:var(--vermelho);opacity:.32;z-index:-1;
-      clip-path:polygon(0 18%,12% 0,29% 22%,47% 2%,63% 24%,81% 4%,100% 20%,100% 100%,0 100%)}
 .mono{font-family:'Space Mono',monospace}
 
-    .cz{position:absolute;inset:0;background:var(--tinta);color:#fff;padding:56px 60px;
-        display:flex;flex-direction:column;justify-content:space-between}
-    .cz-topo{display:flex;justify-content:space-between;align-items:center}
-    .cz-topo .marca b, .cz-topo .marca span{color:#fff}
-    .cz-pilha{display:flex;flex-direction:column;gap:0}
-    .cz-pilha .a{font-family:'DM Sans',sans-serif;font-weight:700;font-size:44px;
-                letter-spacing:-.01em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+    .cz{position:absolute;inset:0;background:var(--tinta);color:#fff;padding:64px;
+        display:flex;flex-direction:column;justify-content:center}
+    .cz .tracinho{margin-bottom:32px}
+    .cz-pilha{display:flex;flex-direction:column}
+    .cz-pilha .a{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;
+                font-size:96px;line-height:.96;letter-spacing:-.02em;color:rgba(255,255,255,.55)}
     .cz-pilha .b{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;
-                font-size:156px;line-height:.86;letter-spacing:-.03em;color:var(--vermelho2);margin:6px 0 10px}
-    .cz-pilha .c{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;
-                font-size:88px;line-height:.96;letter-spacing:-.02em}
-    .cz-rodape{border-top:1px solid rgba(255,255,255,.22);padding-top:22px;
-              font-size:14px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;
-              color:rgba(255,255,255,.6)}
+                font-size:132px;line-height:.9;letter-spacing:-.03em;color:var(--vermelho2);margin-top:4px}
+    .cz-rodape{margin-top:40px;font-size:14px;letter-spacing:.16em;color:rgba(255,255,255,.45)}
     
 </style></head><body><div class="tela"><div class="cz">
-      <div class="cz-topo"><span class="marca"><img src="../logos/marca.png"><b>Calazans Lumina</b></span></div>
-      <div class="cz-pilha"><span class="a">Seu site está</span><span class="b">perdendo</span><span class="c">venda?</span></div>
+      <span class="tracinho"></span>
+      <div class="cz-pilha"><span class="a">Seu site está</span><span class="b">perdendo venda?</span></div>
       <div class="cz-rodape">Sete perguntas · responda sem defender o site</div>
       </div><div class="grao"></div></div></body></html>
