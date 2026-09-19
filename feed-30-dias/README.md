@@ -19,20 +19,41 @@ por que essa mistura e não outra).
 
 ## O sistema (código, se precisar regenerar ou ajustar)
 
-- `casa.py` — tokens de marca (cores, fontes, logo), formato 1080×1440 (3:4)
-- `modelos.py` — miolo dos carrosséis (passo, erro, lista, prova, agenda…)
-- `modelos2.py` — os 12 modelos de capa/estático (a variedade que aparece
-  na grade do perfil): 6 com foto real, 6 só forma/tipografia
-- `capas.py` — qual dos 12 modelos cada publicação usa, com o conteúdo real
-- `conteudo.py` — o calendário inteiro: datas, legendas, slides, cenas de reel
-- `reels.py` + `reel_fotos.py` + `gerar_reels.py` — motor dos reels (Ken
-  Burns sobre foto real via ffmpeg zoompan)
+Tudo sai de um repertório só — `modelos3.py`, 16 dispositivos gráficos. A
+versão anterior tinha duas camadas (capa bonita + miolo genérico) e foi o
+que a cliente apontou; ela está no histórico do git, não no diretório.
+
+- `casa.py` — tokens de marca (cores, fontes), formato 1080×1440 (3:4)
+- `modelos3.py` — os 16 modelos. Cada um tem um recurso gráfico próprio,
+  não é o mesmo bloco com padding diferente:
+
+  | | |
+  |---|---|
+  | `mascara` foto dentro das letras | `grade` grade editorial de 12 colunas |
+  | `fantasma` algarismo gigante vazado | `vazado` linha cheia + linha em contorno |
+  | `duotone` foto em duas cores | `reticula` foto virando pontos |
+  | `lombada` texto vertical na borda | `recorte` foto fatiada em tiras |
+  | `trama` palavra repetida, uma linha em vermelho | `mosaico` quatro fotos assimétricas |
+  | `planta` ficha técnica com medidas | `travessa` frase atravessando claro/escuro |
+  | `linha` linha do tempo com marcos | `colunas` duas colunas confrontadas |
+  | `aspas` citação com aspa desenhada | `veladura` foto sob camada de cor |
+
+- `feed3.py` — qual modelo cada uma das 66 peças usa, com o conteúdo real.
+  Cada carrossel é capa → mapa (grade/linha/colunas) → detalhe (fantasma
+  numerado) → respiro (aspas/travessa/retícula) → fecho vazado vermelho,
+  que é igual em todos e funciona como assinatura da casa.
+- `conteudo.py` — o calendário inteiro: datas, legendas, slides, cenas
+- `reels3.py` + `reel_fotos.py` + `gerar_reels3.py` — motor dos reels, mesmo
+  repertório em 9:16 (abertura, dito, travessa, cifra, vazado)
+- `showcase3.py` — um exemplo de cada modelo, para escolher sem abrir o feed
 - `fotos/` — 7 fotos já existentes no repositório da agência (não veio de
   banco de imagem — está bloqueado nesta rede; ver estudo, nota de rede)
-- `gerar.py` → gera todo HTML · `renderizar.sh` → screenshot + recorte
 
-Para regenerar tudo do zero: `python3 gerar.py && ./renderizar.sh &&
-python3 gerar_reels.py`
+Para regenerar tudo do zero:
+
+```
+python3 gerar3.py && ./renderizar.sh && python3 gerar_reels3.py
+```
 
 ## O limite que preciso deixar claro
 

@@ -7,9 +7,10 @@
 set -u
 CHROME=/opt/pw-browsers/chromium-1194/chrome-linux/chrome
 cd "$(dirname "$0")"
-find . -name "*.png" -not -path "./logos/*" -not -path "./fontes/*" -delete
+# só os PNG de slide — showcase3/, logos/ e fontes/ ficam
+find . -path "./[0-9]*" -name "*.png" -delete
 n=0
-for f in */[0-9]*.html; do
+for f in [0-9]*/[0-9]*.html; do
   out="${f%.html}.png"
   "$CHROME" --headless --disable-gpu --no-sandbox --hide-scrollbars \
     --force-device-scale-factor=1 --window-size=1080,1620 \
