@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>medalhao</title>
+<style>
+@font-face{font-family:'DM Serif Display';font-style:italic;font-weight:400;font-display:block;src:url('../fontes/dmserif-italic-400.woff2') format('woff2');}
+@font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:block;src:url('../fontes/dmserif-normal-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:italic;font-weight:400;font-display:block;src:url('../fontes/dmsans-italic-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:300;font-display:block;src:url('../fontes/dmsans-normal-300.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:block;src:url('../fontes/dmsans-normal-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:500;font-display:block;src:url('../fontes/dmsans-normal-500.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:600;font-display:block;src:url('../fontes/dmsans-normal-600.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:700;font-display:block;src:url('../fontes/dmsans-normal-700.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:italic;font-weight:400;font-display:block;src:url('../fontes/spacemono-italic-400.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:400;font-display:block;src:url('../fontes/spacemono-normal-400.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:block;src:url('../fontes/spacemono-normal-700.woff2') format('woff2');}
+
+:root{--tinta:#111111;--tinta2:#1A1A1A;--tinta3:#08080A;--papel:#F5F1EA;--papel2:#EDE6D6;--vermelho:#FF0005;--vermelho2:#FF3B3B;--vermelho3:#A00306;--brasa:#1A0D0D;}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased}
+html,body{width:1080px;height:1440px;overflow:hidden;background:#000}
+body{font-family:'DM Sans',system-ui,sans-serif}
+.tela{position:relative;width:1080px;height:1440px;overflow:hidden}
+em{font-style:italic}
+.grao{position:absolute;inset:0;z-index:40;pointer-events:none;opacity:.4;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .13 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.marca{display:inline-flex;align-items:center;gap:13px;line-height:1}
+.marca img{width:38px;height:38px;object-fit:contain;flex-shrink:0}
+.marca b{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:22px}
+.marca span{display:block;font-size:9px;letter-spacing:.44em;text-transform:uppercase;font-weight:600;color:var(--vermelho);margin-top:4px}
+
+/* ---- Sinais de mão humana (Canva, "Imperfect by Design", 2026) ----------
+   Nada aqui é sujeira: é imperfeicao deliberada, no lugar certo. Fita
+   adesiva em foto, sublinhado de marcador em vez de itálico o tempo todo,
+   leve rotação em selos/etiquetas. O contramovimento ao polimento de IA. */
+.fita{position:absolute;width:86px;height:30px;background:rgba(245,241,234,.82);
+      box-shadow:0 2px 6px rgba(0,0,0,.25);z-index:6}
+.fita::before{content:"";position:absolute;inset:0;
+      background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.04) 0 2px,transparent 2px 6px)}
+.marcador{position:relative;white-space:nowrap}
+.marcador::after{content:"";position:absolute;left:-4%;right:-4%;bottom:.06em;height:.34em;
+      background:var(--vermelho);opacity:.32;z-index:-1;
+      clip-path:polygon(0 18%,12% 0,29% 22%,47% 2%,63% 24%,81% 4%,100% 20%,100% 100%,0 100%)}
+.mono{font-family:'Space Mono',monospace}
+
+    .md{position:absolute;inset:0;background:var(--tinta);color:#fff;padding:64px;
+        display:flex;flex-direction:column}
+    .md-topo{display:flex;justify-content:space-between;align-items:center}
+    .md-topo .marca b, .md-topo .marca span{color:#fff}
+    .md-kicker{font-size:12px;letter-spacing:.32em;text-transform:uppercase;font-weight:700;color:var(--vermelho2);
+               display:inline-block;transform:rotate(1.6deg)}
+    .md-corpo{flex:1;display:flex;align-items:center;gap:56px;margin-top:20px}
+    .md-foto{width:420px;height:420px;border-radius:50%;background-size:cover;background-position:center;
+             flex-shrink:0;box-shadow:0 0 0 3px var(--vermelho),0 30px 70px -20px rgba(0,0,0,.7)}
+    .md-txt h1{font-family:'DM Sans',sans-serif;font-weight:700;text-transform:uppercase;
+               font-size:60px;line-height:.96;letter-spacing:-.01em}
+    .md-txt h1 em{font-style:italic;font-family:'DM Serif Display',serif;text-transform:none;
+                  font-weight:400;color:var(--vermelho2)}
+    .md-txt .nota{display:block;margin-top:20px;font-family:'DM Serif Display',serif;font-style:italic;
+                  font-weight:400;font-size:21px;color:rgba(255,255,255,.72)}
+    
+</style></head><body><div class="tela"><div class="md">
+      <div class="md-topo"><span class="marca"><img src="../logos/marca.png"><b>Calazans Lumina</b></span>
+        <span class="md-kicker">Bastidor</span></div>
+      <div class="md-corpo">
+        <div class="md-foto" style="background-image:url('../fotos/ideia-lampada.jpg')"></div>
+        <div class="md-txt"><h1>O que não<br><em>aparece</em><br>no print.</h1><span class="nota">Quem decide o que cada página diz</span></div>
+      </div></div><div class="grao"></div></div></body></html>
