@@ -190,3 +190,21 @@ export function cursoLocal(
     contexto: c.referencia,
   }
 }
+
+/**
+ * Variante para cidade americana: o publico e brasileiro morando nos EUA, e a
+ * pesquisa guardou `comunidade` em vez de `descricao`. Mesma mecanica, mesma
+ * regra — so escolhe a ordem de fatos verdadeiros, nao inventa nenhum.
+ */
+export function cursoLocalEUA(
+  c: { slug: string; nome: string },
+  cursoSlug: string
+) {
+  const semente = c.slug + '|eua|' + cursoSlug
+  const aberturas = [
+    `O curso é em português e online, então ele funciona igual em ${c.nome} ou em qualquer lugar. O que muda é para quem você vai vender depois — e a comunidade brasileira daqui tem um jeito próprio de procurar serviço.`,
+    `Fazer o curso morando em ${c.nome} não muda a aula. Muda o mercado onde você aplica: aqui o cliente é brasileiro, procura em português e decide por indicação antes de procurar no Google.`,
+    `O conteúdo não é regional, o uso dele é. Em ${c.nome} o que decide não é o mesmo que decide no Brasil — muda o canal, muda a concorrência e muda o jeito de cobrar.`,
+  ]
+  return { abertura: escolhe(aberturas, semente) }
+}

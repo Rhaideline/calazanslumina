@@ -89,11 +89,17 @@ export default function Footer() {
           {/* Cidades */}
           <div>
             <h3 className="font-serif text-lg font-bold mb-4 text-brand-mint">Cidades</h3>
-            <p className="text-white/70 text-[10px] uppercase tracking-wider mb-2">Massachusetts</p>
+            {/* ⚠️ Eram seis links para /cidades/<cidade MA>, que a partir de
+                20/set redirecionam 301 para o .com. Link interno apontando
+                para redirecionamento gasta rastreio e, num site que passou a
+                ser do Brasil, confunde o tema. Vira uma linha honesta. */}
+            <p className="text-white/70 text-[10px] uppercase tracking-wider mb-2">Estados Unidos</p>
             <ul className="space-y-1 mb-3">
-              {cidadesDestaque.slice(0, 6).map((c) => (
-                <li key={c}><Link href={`/cidades/${c.toLowerCase().replace(/ /g, '-')}`} className="text-white/60 hover:text-white text-sm transition-colors">{c}, MA</Link></li>
-              ))}
+              <li>
+                <a href="https://calazanslumina.com" rel="noopener" className="text-white/60 hover:text-white text-sm transition-colors">
+                  Massachusetts e Flórida →
+                </a>
+              </li>
             </ul>
             <p className="text-white/70 text-[10px] uppercase tracking-wider mb-2">Brasil</p>
             <ul className="space-y-1">
@@ -144,16 +150,22 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-4 mb-6">
           <p className="text-white/30 text-[11px] leading-relaxed text-center max-w-5xl mx-auto">
             Marketing digital em{' '}
-            {[...cidadesDestaque, ...capitaisDestaque.slice(5)].map((c, i) => {
+            {/* ⚠️ so cidade BRASILEIRA aqui. A lista misturava cidades de
+                Massachusetts apontando para /cidades/<slug>, que agora
+                redireciona 301 para o .com — link de rodape para
+                redirecionamento, em toda pagina do site. */}
+            {capitaisDestaque.map((c, i) => {
               const slug = c.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ /g, '-')
-              const isMA = cidadesDestaque.includes(c)
+
               return (
                 <span key={c}>
                   {i > 0 && ' · '}
-                  <Link href={isMA ? `/cidades/${slug}` : `/brasil/${slug}`} className="hover:text-white/50 transition-colors">{c}</Link>
+                  <Link href={`/brasil/${slug}`} className="hover:text-white/50 transition-colors">{c}</Link>
                 </span>
               )
             })}
+            {' · '}
+            <Link href="/brasil" className="hover:text-white/50 transition-colors">ver as 209 cidades</Link>
           </p>
         </div>
 

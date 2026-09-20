@@ -697,18 +697,31 @@ export default function HomePage() {
       <section className="section-padding bg-brand-bg">
         <div className="container-main">
           <ScrollReveal className="text-center mb-12">
-            <h2 className="heading-2 text-brand-dark mb-4">Cidades atendidas</h2>
+            <h2 className="heading-2 text-brand-dark mb-4">Onde eu atendo</h2>
           </ScrollReveal>
-          <div className="mb-10">
-            <h3 className="font-serif text-xl font-bold text-brand-dark mb-4">
-              Massachusetts, EUA
+          {/* ⚠️ Estas cidades NAO moram mais aqui. O atendimento nos Estados
+              Unidos tem site proprio, e as paginas /cidades/* deste dominio
+              redirecionam para la — link interno apontando para 301 gasta
+              rastreio e confunde o tema da pagina. Entao o bloco assume o que
+              e: uma ponte para o outro site. */}
+          <div className="mb-10 rounded-2xl border border-brand-dark/10 bg-white p-6 md:p-8">
+            <h3 className="font-serif text-xl font-bold text-brand-dark">
+              Você está nos Estados Unidos?
             </h3>
-            <div className="flex flex-wrap gap-2">
-              {cidadesMA.map((c) => (
-                <Link key={c} href={`/cidades/${c.toLowerCase().replace(/ /g, '-')}`} className="bg-white text-brand-dark text-sm px-4 py-2 rounded-full hover:bg-brand-mint hover:text-white transition-colors shadow-sm">{c}, MA</Link>
-              ))}
-              <Link href="/cidades/framingham" className="bg-brand-dark text-white text-sm px-4 py-2 rounded-full hover:bg-brand-mint hover:text-white transition-colors">+ ver todas</Link>
-            </div>
+            <p className="mt-3 text-brand-dark/60 leading-relaxed max-w-2xl">
+              O atendimento a brasileiros em Massachusetts e na Flórida tem site
+              próprio, com página para cada cidade — lá o assunto é o mercado
+              americano: Google Business Profile, licença de ofício, a
+              comunidade brasileira local.
+            </p>
+            <a
+              href="https://calazanslumina.com"
+              rel="noopener"
+              className="mt-5 inline-flex items-center gap-2 rounded-full bg-brand-dark px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-mint"
+            >
+              Ir para calazanslumina.com
+              <span aria-hidden="true">→</span>
+            </a>
           </div>
           <div>
             <h3 className="font-serif text-xl font-bold text-brand-dark mb-4">

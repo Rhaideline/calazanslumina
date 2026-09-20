@@ -7,11 +7,11 @@ import CTAForm from '@/components/CTAForm'
 import PortfolioSites from '@/components/PortfolioSites'
 
 export const metadata: Metadata = {
-  title: 'GoHighLevel para Empresas & Agencias | Sub-contas Prontas + Freelancer GHL — Calazans Lumina',
+  title: 'GoHighLevel para Empresas e Agências',
   description: 'Sub-contas GoHighLevel prontas para qualquer tipo de empresa (clinicas, construction, energia solar, pintura e mais) com automacoes, chatbot IA e CRM. Tambem ofereço servicos de freelancer GHL para agencias.',
   alternates: { canonical: 'https://calazanslumina.com.br/para-agencias' },
   openGraph: {
-    title: 'GoHighLevel para Empresas & Agencias | Calazans Lumina',
+    title: 'GoHighLevel para Empresas e Agências | Calazans Lumina',
     description: 'Sub-contas GHL prontas para qualquer empresa + freelancer operacional para agencias.',
     url: 'https://calazanslumina.com.br/para-agencias',
     type: 'website',

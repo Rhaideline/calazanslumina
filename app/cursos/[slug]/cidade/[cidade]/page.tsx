@@ -9,6 +9,7 @@ import CTAForm from '@/components/CTAForm'
 import Breadcrumb from '@/components/Breadcrumb'
 import CoursesSection from '@/components/CoursesSection'
 import { formatPreco, formatPrecoCompacto } from '@/lib/formatters'
+import { cursoLocalEUA } from '@/lib/local-br'
 
 export async function generateStaticParams() {
   return cursos.flatMap((curso) =>
@@ -37,6 +38,9 @@ export default async function CursoCidadePage({ params }: { params: Promise<{ sl
 
   const totalAulas = curso.modulos.reduce((acc, m) => acc + m.aulas.length, 0)
   const outrosCursos = cursos.filter((c) => c.slug !== slug).slice(0, 4)
+
+  // abertura que varia por cidade — ver lib/local-br.ts
+  const local = cursoLocalEUA(cidade, curso.slug)
 
   const courseSchema = {
     '@context': 'https://schema.org',
@@ -177,58 +181,9 @@ export default async function CursoCidadePage({ params }: { params: Promise<{ sl
         </div>
       </section>
 
-      {/* === PROBLEMA — Agitação === */}
-      <section className="section-padding bg-white">
-        <div className="container-main max-w-4xl">
-          <ScrollReveal className="text-center mb-12">
-            <p className="text-red-500 text-sm font-bold uppercase tracking-wider mb-3">Você se identifica?</p>
-            <h2 className="heading-2 text-brand-dark">Se isso é você, esse curso resolve</h2>
-          </ScrollReveal>
-          <div className="grid md:grid-cols-2 gap-4">
-            {curso.vsl.problemas.map((problema, i) => (
-              <ScrollReveal key={i} delay={i * 80}>
-                <div className="flex items-start gap-4 bg-red-50 border border-red-100 rounded-xl p-5">
-                  <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
-                    </svg>
-                  </div>
-                  <p className="text-brand-dark/80 text-sm font-medium">{problema}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* === TRANSFORMAÇÃO — Antes vs Depois === */}
-      <section className="section-padding bg-brand-dark text-white">
-        <div className="container-main max-w-4xl">
-          <ScrollReveal className="text-center mb-6">
-            <p className="text-brand-mint text-sm font-bold uppercase tracking-wider mb-3">A transformação</p>
-            <h2 className="heading-2 mb-6">{curso.vsl.transformacao}</h2>
-          </ScrollReveal>
-          <div className="space-y-4 mt-12">
-            {curso.vsl.antesDepois.map((item, i) => (
-              <ScrollReveal key={i} delay={i * 100}>
-                <div className="grid grid-cols-[1fr_auto_1fr] gap-4 items-center">
-                  <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4 text-right">
-                    <p className="text-red-400 text-xs font-bold uppercase mb-1">Antes</p>
-                    <p className="text-white/60 text-sm">{item.antes}</p>
-                  </div>
-                  <svg className="w-6 h-6 text-brand-mint flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                  <div className="bg-brand-mint/10 border border-brand-mint/20 rounded-xl p-4">
-                    <p className="text-brand-mint text-xs font-bold uppercase mb-1">Depois</p>
-                    <p className="text-white/80 text-sm">{item.depois}</p>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ⚠️ "Voce se identifica?" e "A transformacao" sairam: 107 palavras
+          identicas nas 832 paginas. Pertencem a pagina do curso, onde ja
+          estao. Ver o commit da malha brasileira para a medida. */}
 
       {/* === POR QUE EM {CIDADE} === */}
       <section className="section-padding bg-white">
@@ -240,6 +195,7 @@ export default async function CursoCidadePage({ params }: { params: Promise<{ sl
           </ScrollReveal>
           <ScrollReveal>
             <div className="bg-brand-bg rounded-2xl p-8 md:p-10">
+              <p className="text-brand-dark/70 leading-relaxed mb-6">{local.abertura}</p>
               <p className="text-brand-dark/70 leading-relaxed mb-6">{cidade.comunidade}</p>
               <p className="text-brand-dark/70 leading-relaxed mb-6">{cidade.doresEspecificas}</p>
               <p className="text-brand-dark/70 leading-relaxed">
@@ -253,94 +209,48 @@ export default async function CursoCidadePage({ params }: { params: Promise<{ sl
         </div>
       </section>
 
-      {/* === DEPOIMENTOS === */}
+      {/* ⚠️ AQUI FICAVAM DEPOIMENTOS, CONTEUDO PROGRAMATICO e FAQ: 239
+          palavras IDENTICAS nas 832 paginas de curso x cidade americana.
+          Medicao de 20/set contra o site no ar: 80,9% de sobreposicao entre
+          irmas, 860 palavras por pagina — a pior malha do site.
+          A ementa ser igual nao e erro: e o mesmo curso. O erro e publica-la
+          832 vezes. Ela vive em /cursos/<slug>. */}
       <section className="section-padding bg-brand-bg">
         <div className="container-main max-w-4xl">
-          <ScrollReveal className="text-center mb-12">
-            <h2 className="heading-2 text-brand-dark mb-4">Resultados reais de quem já fez</h2>
-            <div className="flex items-center justify-center gap-1 mb-2">
-              {[1, 2, 3, 4, 5].map((s) => (
-                <svg key={s} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              ))}
+          <div className="grid gap-8 md:grid-cols-12 md:items-start">
+            <div className="md:col-span-7">
+              <h2 className="heading-2 text-brand-dark">O curso, em uma linha</h2>
+              <p className="mt-5 text-brand-dark/70 leading-relaxed">
+                {curso.modulos.length} módulos e{' '}
+                {curso.modulos.reduce((a, m) => a + m.aulas.length, 0)} aulas, em
+                português, com PDF para baixar e acesso online.{' '}
+                {curso.gratuito
+                  ? 'Gratuito, sem pedir cartão.'
+                  : `Pagamento único de R$ ${formatPreco(curso.preco)}, com acesso imediato.`}
+              </p>
+              <p className="mt-4 text-brand-dark/55 text-sm leading-relaxed">
+                O conteúdo é o mesmo em qualquer cidade — seria estranho se não
+                fosse. A ementa completa, aula por aula, com as perguntas
+                frequentes,{' '}
+                <Link
+                  href={`/cursos/${curso.slug}`}
+                  className="font-semibold text-brand-dark underline underline-offset-4"
+                >
+                  está na página do curso
+                </Link>
+                .
+              </p>
             </div>
-          </ScrollReveal>
-          <div className="grid md:grid-cols-3 gap-6">
-            {curso.vsl.depoimentos.map((dep, i) => (
-              <ScrollReveal key={i} delay={i * 100}>
-                <div className="bg-white rounded-2xl p-6 shadow-sm h-full flex flex-col">
-                  <div className="flex items-center gap-1 mb-4">
-                    {[1, 2, 3, 4, 5].map((s) => (
-                      <svg key={s} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
-                  </div>
-                  <p className="text-brand-dark/70 text-sm italic leading-relaxed flex-1">&ldquo;{dep.texto}&rdquo;</p>
-                  <div className="mt-4 pt-4 border-t border-gray-100">
-                    <p className="font-bold text-sm text-brand-dark">{dep.nome}</p>
-                    <p className="text-brand-dark/40 text-xs">{dep.cidade}</p>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* === CONTEÚDO PROGRAMÁTICO === */}
-      <section className="section-padding bg-white">
-        <div className="container-main max-w-4xl">
-          <ScrollReveal className="text-center mb-12">
-            <h2 className="heading-2 text-brand-dark mb-4">Conteúdo Programático</h2>
-            <p className="text-brand-dark/50">{curso.modulos.length} módulos · {totalAulas} aulas</p>
-          </ScrollReveal>
-          <div className="space-y-4">
-            {curso.modulos.map((modulo, i) => (
-              <ScrollReveal key={i} delay={i * 100}>
-                <div className="bg-brand-bg rounded-2xl border border-gray-100 overflow-hidden">
-                  <div className="flex items-center gap-4 p-6 border-b border-gray-50">
-                    <div className="w-10 h-10 bg-brand-mint rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
-                      {i + 1}
-                    </div>
-                    <div>
-                      <h3 className="font-serif text-lg font-bold text-brand-dark">{modulo.titulo}</h3>
-                      <p className="text-brand-dark/40 text-xs">{modulo.aulas.length} aulas</p>
-                    </div>
-                  </div>
-                  <ul className="p-6 space-y-2">
-                    {modulo.aulas.map((aula, j) => (
-                      <li key={j} className="flex items-center gap-3 text-sm text-brand-dark/60">
-                        <svg className="w-4 h-4 text-brand-mint/60 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                        </svg>
-                        {aula}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* === FAQ === */}
-      <section className="section-padding bg-brand-bg">
-        <div className="container-main max-w-3xl">
-          <ScrollReveal className="text-center mb-12">
-            <h2 className="heading-2 text-brand-dark mb-4">Perguntas Frequentes</h2>
-          </ScrollReveal>
-          <div className="space-y-4">
-            {curso.vsl.objecoes.map((obj, i) => (
-              <ScrollReveal key={i} delay={i * 80}>
-                <div className="bg-white rounded-2xl p-6 shadow-sm">
-                  <h3 className="font-bold text-brand-dark mb-2">{obj.pergunta}</h3>
-                  <p className="text-brand-dark/60 text-sm leading-relaxed">{obj.resposta}</p>
-                </div>
-              </ScrollReveal>
-            ))}
+            <div className="md:col-span-5">
+              <div className="rounded-2xl border border-brand-dark/10 bg-white p-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-dark/40">
+                  {cidade.nome}, MA
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-brand-dark/65">
+                  {cidade.referencia}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -400,7 +310,10 @@ export default async function CursoCidadePage({ params }: { params: Promise<{ sl
         </section>
       )}
 
-      <CoursesSection />
+      {/* ⚠️ <CoursesSection /> saiu: 224 palavras IDENTICAS, 37% da pagina,
+          nas 832 paginas de curso x cidade americana. Foi removido da malha
+          brasileira e ficou aqui por descuido meu — a medicao bloco a bloco
+          pegou. */}
       <CTAForm cidade={cidade.nome} />
     </>
   )
