@@ -3,27 +3,28 @@ import Image from 'next/image'
 import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import ListaCidadesBR from '@/components/ListaCidadesBR'
 
 const BASE = 'https://calazanslumina.com.br'
 
 export const metadata: Metadata = {
-  title: 'Enxoval de Bebe Completo 2026: Checklist + Lista PDF Gratis | Calazans Lumina',
-  description: 'Checklist enxoval de bebe 2026 com PDF gratis. Roupas 100% algodao, berco, fraldas, carrinho e bebe conforto com melhores precos Shopee. Guia completo!',
+  title: 'Enxoval de Bebê 2026: Checklist + PDF',
+  description: 'Checklist de enxoval de bebê 2026 com PDF grátis. Roupas 100% algodão, berço, fraldas, carrinho e bebê conforto com melhores precos Shopee. Guia completo!',
   keywords: [
-    'enxoval de bebe', 'enxoval de bebe completo', 'lista enxoval bebe',
+    'enxoval de bebê', 'enxoval de bebê completo', 'lista enxoval bebe',
     'checklist enxoval bebe 2026', 'enxoval recem nascido', 'roupinha de bebe 100 algodao',
     'enxoval bebe menina', 'enxoval bebe menino', 'lista de enxoval para imprimir',
     'berco portatil', 'mamadeira anti colica MAM', 'carrinho de bebe',
     'bebe conforto', 'bolsa maternidade', 'fraldas recem nascido',
-    'enxoval de bebe barato', 'enxoval bebe shopee', 'o que comprar enxoval bebe',
+    'enxoval de bebê barato', 'enxoval bebe shopee', 'o que comprar enxoval bebe',
     'quantas roupas enxoval bebe', 'enxoval bebe essencial',
-    'enxoval de bebe lista completa', 'checklist maternidade',
+    'enxoval de bebê lista completa', 'checklist maternidade',
     'mala maternidade o que levar', 'produtos para recem nascido',
   ],
   alternates: { canonical: `${BASE}/enxoval-de-bebe` },
   openGraph: {
-    title: 'Enxoval de Bebe Completo 2026: Checklist + Lista PDF Gratis',
-    description: 'O guia definitivo para montar o enxoval do bebe. Checklist com quantidades, dicas de especialistas, produtos 100% algodao e os melhores precos. Baixe o PDF gratis!',
+    title: 'Enxoval de Bebê Completo 2026: Checklist + Lista em PDF Grátis',
+    description: 'O guia definitivo para montar o enxoval do bebê. Checklist com quantidades, dicas de especialistas, produtos 100% algodão e os melhores precos. Baixe o PDF grátis!',
     url: `${BASE}/enxoval-de-bebe`,
     type: 'website',
     siteName: 'Calazans Lumina',
@@ -31,8 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Enxoval de Bebe Completo 2026: Checklist + Lista PDF Gratis',
-    description: 'Checklist completo de enxoval de bebe com lista em PDF gratis. Roupinhas 100% algodao, berco, fraldas, higiene e passeio com melhores precos.',
+    title: 'Enxoval de Bebê Completo 2026: Checklist + Lista em PDF Grátis',
+    description: 'Checklist completo de enxoval de bebê com lista em PDF grátis. Roupinhas 100% algodão, berço, fraldas, higiene e passeio com melhores precos.',
   },
   robots: {
     index: true,
@@ -72,14 +73,14 @@ const categorias: Categoria[] = [
   {
     id: 'roupas-bebe',
     titulo: 'Roupinhas do Bebe',
-    subtitulo: 'Bodies, mijoes, macacoes e saida de maternidade — priorize 100% algodao para pele sensivel do RN',
+    subtitulo: 'Bodies, mijoes, macacoes e saída de maternidade — priorize 100% algodão para pele sensivel do RN',
     icone: 'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z',
     gradient: 'from-fuchsia-400 to-pink-500',
     dica: 'Compre poucas pecas RN — o bebe cresce rapido! Invista mais nos tamanhos P e M. Prefira aberturas frontais com botoes de pressao.',
     produtos: [
       {
         nome: 'Kit 8 Pecas Menina (4 Body Longo + 4 Calca Mijao)',
-        desc: '4 bodies manga longa + 4 calcas mijao para bebe menina. Kit completo para o enxoval do recem-nascido. Conforto e praticidade.',
+        desc: '4 bodies manga longa + 4 calças mijão para bebê menina. Kit completo para o enxoval do recem-nascido. Conforto e praticidade.',
         preco: 74.99, precoOriginal: 221.90, desconto: 66, rating: 4.80, likes: 12538,
         imagem: 'https://cf.shopee.com.br/file/br-11134207-820lq-mlexlbiw1zwk48',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F341167297%2F23293141751',
@@ -87,7 +88,7 @@ const categorias: Categoria[] = [
       },
       {
         nome: 'Kit 12 Pecas Menino (6 Body Curto + 6 Calca Mijao)',
-        desc: '6 bodies manga curta + 6 calcas mijao para bebe menino. Kit essencial para recem-nascido com pecas sortidas.',
+        desc: '6 bodies manga curta + 6 calças mijão para bebê menino. Kit essencial para recem-nascido com pecas sortidas.',
         preco: 124.90, precoOriginal: 172.50, desconto: 28, rating: 4.86, likes: 10017,
         imagem: 'https://cf.shopee.com.br/file/br-11134207-7r98o-lxr9dvvow5129f',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F341167297%2F22597639114',
@@ -95,7 +96,7 @@ const categorias: Categoria[] = [
       },
       {
         nome: 'Kit 8 Pecas Menina (4 Body Longo + 4 Mijao) Conjunto',
-        desc: '4 bodies manga longa + 4 calcas mijao. 5 conjuntos body + calca para bebe menina. Ideal para enxoval.',
+        desc: '4 bodies manga longa + 4 calças mijão. 5 conjuntos body + calca para bebê menina. Ideal para enxoval.',
         preco: 79.99, precoOriginal: 180.00, desconto: 56, rating: 4.83, likes: 9192,
         imagem: 'https://cf.shopee.com.br/file/br-11134207-820me-mlewko7gmfie30',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F341167297%2F18899074880',
@@ -103,7 +104,7 @@ const categorias: Categoria[] = [
       },
       {
         nome: 'Kit 4 Pecas Menino (2 Body Longo + 2 Calca Mijao)',
-        desc: '2 bodies manga longa + 2 calcas mijao para bebe menino. Kit basico para recem-nascido.',
+        desc: '2 bodies manga longa + 2 calças mijão para bebê menino. Kit basico para recem-nascido.',
         preco: 39.99, precoOriginal: 78.90, desconto: 49, rating: 4.75, likes: 4712,
         imagem: 'https://cf.shopee.com.br/file/br-11134207-7r98o-lxu2gey0u0n373',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F341167297%2F22397658385',
@@ -111,7 +112,7 @@ const categorias: Categoria[] = [
       },
       {
         nome: 'Kit 6 Pecas Menina (3 Body Curto + 3 Calca Mijao)',
-        desc: '3 bodies manga curta + 3 calcas mijao para bebe menina. Estampas sortidas, algodao macio.',
+        desc: '3 bodies manga curta + 3 calças mijão para bebê menina. Estampas sortidas, algodão macio.',
         preco: 62.90, precoOriginal: 89.90, desconto: 30, rating: 4.79, likes: 3320,
         imagem: 'https://cf.shopee.com.br/file/br-11134207-81ztc-mjjxyahua0p268',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F341167297%2F18797500443',
@@ -119,7 +120,7 @@ const categorias: Categoria[] = [
       },
       {
         nome: 'Kit Body 6 Pecas Menino (2 Body Curto + 2 Longo + 2 Mijao)',
-        desc: '2 bodies manga curta + 2 bodies manga longa + 2 calcas mijao. Kit versatil para menino.',
+        desc: '2 bodies manga curta + 2 bodies manga longa + 2 calças mijão. Kit versatil para menino.',
         preco: 115.90, precoOriginal: 200.00, desconto: 42, rating: 4.90, likes: 3597,
         imagem: 'https://cf.shopee.com.br/file/br-11134207-7r98o-m22p63ad3vfoae',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F341167297%2F23597708268',
@@ -135,7 +136,7 @@ const categorias: Categoria[] = [
       },
       {
         nome: 'Kit Saida Maternidade Menino 7 Pecas Completa',
-        desc: 'Saida de maternidade completa: body, mijao, macacao, manta, luva, touca e meia. Tudo para o primeiro dia do bebe.',
+        desc: 'Saida de maternidade completa: body, mijão, macacao, manta, luva, touca e meia. Tudo para o primeiro dia do bebê.',
         preco: 209.90, precoOriginal: 280.00, desconto: 25, rating: 4.85, likes: 8500,
         imagem: 'https://cf.shopee.com.br/file/br-11134207-7r98o-lyqhktrxbgw152',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F338592214%2F4763603548',
@@ -143,7 +144,7 @@ const categorias: Categoria[] = [
       },
       {
         nome: 'Manta Cobertor Microfibra Dupla Face Bebe',
-        desc: 'Manta de bebe antialergica dupla face sherpa. Macia, quentinha e perfeita para enxoval e saida de maternidade.',
+        desc: 'Manta de bebê antialérgica dupla face sherpa. Macia, quentinha e perfeita para enxoval e saída de maternidade.',
         preco: 43.89, precoOriginal: 65.00, desconto: 33, rating: 4.88, likes: 12400,
         imagem: 'https://cf.shopee.com.br/file/br-11134207-7r98o-m8p0k8n32o0258',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F424219988%2F22592975480',
@@ -151,7 +152,7 @@ const categorias: Categoria[] = [
       },
       {
         nome: 'Kit Calcinhas Algodao Gestante e Pos-Parto',
-        desc: 'Calcinhas 100% algodao ideais para gestantes e mamães no pos-parto. Confortaveis, macias e com cintura alta para nao apertar a barriga. Essencial no enxoval da mamae!',
+        desc: 'Calcinhas 100% algodão ideais para gestantes e mamães no pos-parto. Confortaveis, macias e com cintura alta para nao apertar a barriga. Essencial no enxoval da mamae!',
         preco: 29.90, precoOriginal: 49.90, desconto: 40, rating: 4.70, likes: 5000,
         imagem: 'https://cf.shopee.com.br/file/sg-11134201-7rdvu-mc7g31995bxq06',
         link: 'https://s.shopee.com.br/4qApqASsHM',
@@ -169,7 +170,7 @@ const categorias: Categoria[] = [
     produtos: [
       {
         nome: 'Berco Portatil Cercado com Mosquiteiro Kababy',
-        desc: 'Berco portatil desmontavel com mosquiteiro Sleep. Seguro e pratico para levar a qualquer lugar.',
+        desc: 'Berco portátil desmontavel com mosquiteiro Sleep. Seguro e pratico para levar a qualquer lugar.',
         preco: 420.00, precoOriginal: 600.00, desconto: 30, rating: 4.96, likes: 24712,
         imagem: 'https://cf.shopee.com.br/file/sg-11134201-7rat5-mabnrf7gcd6m00',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F1009324389%2F23798071706',
@@ -177,21 +178,21 @@ const categorias: Categoria[] = [
       },
       {
         nome: 'Berco Portatil Cercado Lazy MaxiBaby 0-15kg',
-        desc: 'Berco cercado portatil para bebes ate 15kg. Facil de montar e desmontar.',
+        desc: 'Berco cercado portátil para bebês ate 15kg. Facil de montar e desmontar.',
         preco: 480.00, precoOriginal: 600.00, desconto: 20, rating: 4.96, likes: 22902,
         imagem: 'https://cf.shopee.com.br/file/sg-11134201-7rbkx-ll3qajuocnedb0',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F340054154%2F23392272469',
       },
       {
         nome: 'Berco Co-Leito Snuggle Maxi Baby ate 9kg',
-        desc: 'Berco portatil co-leito para ficar junto da cama dos pais. Pratico e aconchegante.',
+        desc: 'Berco portátil co-leito para ficar junto da cama dos pais. Pratico e aconchegante.',
         preco: 290.00, precoOriginal: 299.00, desconto: 3, rating: 4.77, likes: 23104,
         imagem: 'https://cf.shopee.com.br/file/sg-11134201-22100-y6r5etkucviv72',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F340054154%2F18156043829',
       },
       {
         nome: 'Berco Multifuncional 3x1 Ditalia',
-        desc: 'Berco que vira mini-cama e sofazinho. 3 em 1 para acompanhar o crescimento do bebe.',
+        desc: 'Berco que vira mini-cama e sofazinho. 3 em 1 para acompanhar o crescimento do bebê.',
         preco: 348.00, precoOriginal: 360.00, desconto: 3, rating: 4.84, likes: 13645,
         imagem: 'https://cf.shopee.com.br/file/sg-11134201-7rd6b-lu9pr7a5k1fk8d',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F522316174%2F16487846020',
@@ -213,7 +214,7 @@ const categorias: Categoria[] = [
       },
       {
         nome: 'Cadeira de Descanso Vibratoria Protek Girafa',
-        desc: 'Cadeira vibratoria e musical para bebe. Confortavel e divertida com a Girafa Gigi.',
+        desc: 'Cadeira vibratoria e musical para bebê. Confortavel e divertida com a Girafa Gigi.',
         preco: 166.00, precoOriginal: 190.00, desconto: 13, rating: 4.88, likes: 45612,
         imagem: 'https://cf.shopee.com.br/file/br-11134207-7qukw-lg2ddsdvmqfae7',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F340054154%2F12338701517',
@@ -229,14 +230,14 @@ const categorias: Categoria[] = [
       },
       {
         nome: 'Cercadinho Bebe + Tapete + Bolsa 180x150',
-        desc: 'Cercadinho portatil com tapete, bolsa e argola. Grande (180x150cm) e dobravel.',
+        desc: 'Cercadinho portátil com tapete, bolsa e argola. Grande (180x150cm) e dobravel.',
         preco: 350.00, precoOriginal: 500.00, desconto: 30, rating: 4.93, likes: 30103,
         imagem: 'https://cf.shopee.com.br/file/br-11134207-81ztp-ml3ppw7d9zb5fc',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F1095160737%2F23393156386',
       },
       {
         nome: 'Berco Moises Portatil com Balanco Comfy Maxi Baby',
-        desc: 'Berco moises portatil com balanco suave ate 9kg. Perfeito para deixar o bebe perto de voce em qualquer comodo.',
+        desc: 'Berco moises portátil com balanco suave ate 9kg. Perfeito para deixar o bebê perto de voce em qualquer comodo.',
         preco: 549.00, precoOriginal: 789.90, desconto: 30, rating: 4.97, likes: 36651,
         imagem: 'https://cf.shopee.com.br/file/br-11134207-7r98o-ls8gz2uij3twea',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F340054154%2F5965156815',
@@ -244,7 +245,7 @@ const categorias: Categoria[] = [
       },
       {
         nome: 'Mini Berco Bedside 2 em 1 com Colchao e Trocador',
-        desc: 'Mini berco co-leito 2 em 1 com colchao e trocador incluso. Compacto e portatil para recem-nascido.',
+        desc: 'Mini berço co-leito 2 em 1 com colchao e trocador incluso. Compacto e portátil para recem-nascido.',
         preco: 279.30, precoOriginal: 399.00, desconto: 30, rating: 4.87, likes: 13061,
         imagem: 'https://cf.shopee.com.br/file/br-11134207-7r98o-mak9a7xjcmpl54',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F1467752495%2F23793691583',
@@ -252,7 +253,7 @@ const categorias: Categoria[] = [
       },
       {
         nome: 'Colchao Para Berco 60x130cm Espuma D18 Probel',
-        desc: 'Colchao firme D18 para berco padrao 60x130cm. Densidade ideal recomendada por pediatras para recem-nascido.',
+        desc: 'Colchao firme D18 para berço padrao 60x130cm. Densidade ideal recomendada por pediatras para recem-nascido.',
         preco: 110.99, precoOriginal: 115.28, desconto: 4, rating: 4.84, likes: 6762,
         imagem: 'https://cf.shopee.com.br/file/sg-11134201-22110-br1qq66vidjv2f',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F789777799%2F23503386319',
@@ -260,7 +261,7 @@ const categorias: Categoria[] = [
       },
       {
         nome: 'Kit Cueiro Flanela 100% Algodao 100x80cm 3 Pecas',
-        desc: 'Kit 3 cueiros em flanela 100% algodao. Macio e quentinho para enrolar o bebe. Perfeito para recem-nascido.',
+        desc: 'Kit 3 cueiros em flanela 100% algodão. Macio e quentinho para enrolar o bebê. Perfeito para recem-nascido.',
         preco: 48.90, precoOriginal: 48.90, desconto: 0, rating: 5.00, likes: 18,
         imagem: 'https://cf.shopee.com.br/file/sg-11134201-7rcc6-m6eecc83y3gb74',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F1275097038%2F23298211482',
@@ -271,7 +272,7 @@ const categorias: Categoria[] = [
   {
     id: 'higiene-bebe',
     titulo: 'Higiene & Banho do Bebe',
-    subtitulo: 'Banheiras, lencos, shampoos, fraldas e produtos hipoalergenicos para a pele sensivel do bebe',
+    subtitulo: 'Banheiras, lencos, shampoos, fraldas e produtos hipoalergenicos para a pele sensivel do bebê',
     icone: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01',
     gradient: 'from-cyan-400 to-teal-500',
     dica: 'Nos primeiros 15 dias, use algodao com agua morna em vez de lencos umedecidos. A pele do recem-nascido e extremamente sensivel. Prefira produtos sem fragrancia.',
@@ -286,7 +287,7 @@ const categorias: Categoria[] = [
       },
       {
         nome: 'Banheira Dobravel Infantil Flexi KaBaby',
-        desc: 'Banheira dobravel compacta e pratica. Economiza espaco e facilita o banho do bebe. Marca KaBaby.',
+        desc: 'Banheira dobravel compacta e pratica. Economiza espaco e facilita o banho do bebê. Marca KaBaby.',
         preco: 229.90, precoOriginal: 499.90, desconto: 54, rating: 4.91, likes: 4218,
         imagem: 'https://cf.shopee.com.br/file/sg-11134201-7rbm8-m5odw4f6u25457',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F1009324389%2F23293679433',
@@ -294,7 +295,7 @@ const categorias: Categoria[] = [
       },
       {
         nome: 'Rede de Protecao Redutor Banheira Apoio Seguranca',
-        desc: 'Rede de protecao para banheira que apoia o bebe com seguranca durante o banho. Ideal para recem-nascidos.',
+        desc: 'Rede de protecao para banheira que apoia o bebê com segurança durante o banho. Ideal para recem-nascidos.',
         preco: 39.90, precoOriginal: 69.90, desconto: 43, rating: 4.94, likes: 4795,
         imagem: 'https://cf.shopee.com.br/file/br-11134207-81z1k-mfs9zp1ank79b8',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F637480448%2F23496586340',
@@ -302,7 +303,7 @@ const categorias: Categoria[] = [
       },
       {
         nome: 'Lencos Umedecidos Bepantol Hipoalergenico 4x48un',
-        desc: 'Kit com 4 pacotes de lencos Bepantol. Hipoalergenico, suave para a pele do bebe.',
+        desc: 'Kit com 4 pacotes de lencos Bepantol. Hipoalergenico, suave para a pele do bebê.',
         preco: 57.00, precoOriginal: 65.00, desconto: 12, rating: 4.95, likes: 29599,
         imagem: 'https://cf.shopee.com.br/file/br-11134207-7r98o-m9zxeatpaoftb1',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F340054154%2F21145355218',
@@ -318,7 +319,7 @@ const categorias: Categoria[] = [
       },
       {
         nome: 'Lencos Umedecidos Pampers Caricia 576un',
-        desc: 'Mega pacote Pampers com 576 unidades. Suave e delicado para o bebe.',
+        desc: 'Mega pacote Pampers com 576 unidades. Suave e delicado para o bebê.',
         preco: 145.00, precoOriginal: 145.00, desconto: 0, rating: 4.97, likes: 18929,
         imagem: 'https://cf.shopee.com.br/file/5b4a2c4487753a6da0ae4e835b39afed',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F1062557396%2F23296759926',
@@ -332,7 +333,7 @@ const categorias: Categoria[] = [
       },
       {
         nome: 'Kit 3 Lava Roupas Baby Soft 3L',
-        desc: 'Sabao liquido especial para roupas de bebe. Kit com 3 galoes de 3L. Hipoalergenico.',
+        desc: 'Sabao liquido especial para roupas de bebê. Kit com 3 galoes de 3L. Hipoalergenico.',
         preco: 69.00, precoOriginal: 90.00, desconto: 23, rating: 4.94, likes: 24296,
         imagem: 'https://cf.shopee.com.br/file/br-11134207-7r98o-m5sq8of7ls3pde',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F534023108%2F22597600131',
@@ -381,14 +382,14 @@ const categorias: Categoria[] = [
   {
     id: 'alimentacao-bebe',
     titulo: 'Alimentacao do Bebe',
-    subtitulo: 'Mamadeiras anti-colica, cadeiras de alimentacao e utensilios essenciais',
+    subtitulo: 'Mamadeiras anti-cólica, cadeiras de alimentacao e utensilios essenciais',
     icone: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z',
     gradient: 'from-sky-400 to-blue-500',
     dica: 'Amamentacao exclusiva e recomendada ate os 6 meses. Congele leite materno em porcoes de 60-120ml. Validade: 15 dias no freezer, 12h na geladeira apos descongelar.',
     produtos: [
       {
         nome: 'Cadeira de Alimentacao Infantil',
-        desc: 'Cadeira pratica e segura para refeicao do bebe. Para meninos e meninas.',
+        desc: 'Cadeira pratica e segura para refeicao do bebê. Para meninos e meninas.',
         preco: 65.00, precoOriginal: 105.00, desconto: 38, rating: 4.78, likes: 19623,
         imagem: 'https://cf.shopee.com.br/file/br-11134207-7r98o-m7w9jpkbp9m9bc',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F325008325%2F23196614815',
@@ -396,7 +397,7 @@ const categorias: Categoria[] = [
       },
       {
         nome: 'Cadeira de Alimentacao Portatil Honey Maxi Baby',
-        desc: 'Cadeira portatil premium com regulagens. Pratica para levar a qualquer lugar.',
+        desc: 'Cadeira portátil premium com regulagens. Pratica para levar a qualquer lugar.',
         preco: 459.00, precoOriginal: 459.00, desconto: 0, rating: 4.96, likes: 15016,
         imagem: 'https://cf.shopee.com.br/file/sg-11134201-7qvfm-ljd8qlu3ie2p99',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F340054154%2F22591811020',
@@ -404,7 +405,7 @@ const categorias: Categoria[] = [
       },
       {
         nome: 'Cadeira Alimentacao Burigotto Poke Polar',
-        desc: 'Cadeira de alimentacao da Burigotto. Marca de confianca, seguranca garantida.',
+        desc: 'Cadeira de alimentacao da Burigotto. Marca de confianca, segurança garantida.',
         preco: 317.00, precoOriginal: 403.00, desconto: 21, rating: 4.96, likes: 6409,
         imagem: 'https://cf.shopee.com.br/file/sg-11134201-7repu-m8z3oe14clog27',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F1479622710%2F20999713015',
@@ -420,14 +421,14 @@ const categorias: Categoria[] = [
       },
       {
         nome: 'Kit 2 Mamadeiras MAM Easy Start 130/260ml',
-        desc: 'Mamadeiras MAM referencia mundial. Kit com 2 tamanhos. Anti-colica e facil de limpar.',
+        desc: 'Mamadeiras MAM referencia mundial. Kit com 2 tamanhos. Anti-cólica e facil de limpar.',
         preco: 120.00, precoOriginal: 120.00, desconto: 0, rating: 4.91, likes: 17864,
         imagem: 'https://cf.shopee.com.br/file/br-11134207-81ztc-mka3hl6ox14x8b',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F340054154%2F17725599153',
       },
       {
         nome: 'Kit 3 Mamadeiras MAM Easy Start 130/260/320ml',
-        desc: 'Kit completo MAM com 3 mamadeiras de tamanhos diferentes. Do recem-nascido ao bebe maior.',
+        desc: 'Kit completo MAM com 3 mamadeiras de tamanhos diferentes. Do recem-nascido ao bebê maior.',
         preco: 189.00, precoOriginal: 189.00, desconto: 0, rating: 4.97, likes: 10352,
         imagem: 'https://cf.shopee.com.br/file/sg-11134201-7rdvm-lycge8eww6qw73',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F340054154%2F23797673343',
@@ -435,14 +436,14 @@ const categorias: Categoria[] = [
       },
       {
         nome: 'Copo de Treinamento com Alca 150ml Lillo',
-        desc: 'Copo de transicao para bebes. Com alca, facil de segurar. Marca Lillo.',
+        desc: 'Copo de transicao para bebês. Com alca, facil de segurar. Marca Lillo.',
         preco: 35.00, precoOriginal: 37.00, desconto: 5, rating: 4.90, likes: 7932,
         imagem: 'https://cf.shopee.com.br/file/br-11134207-7qukw-lj1evtz1r8og92',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F481992044%2F3295101131',
       },
       {
         nome: 'Kit Mamadeira Primeiros Passos 50/150/240ml Lillo',
-        desc: 'Kit com 3 mamadeiras de tamanhos diferentes para cada fase do bebe. Do recem-nascido ao bebe maior. Marca Lillo.',
+        desc: 'Kit com 3 mamadeiras de tamanhos diferentes para cada fase do bebê. Do recem-nascido ao bebê maior. Marca Lillo.',
         preco: 63.00, precoOriginal: 63.00, desconto: 0, rating: 4.95, likes: 57277,
         imagem: 'https://cf.shopee.com.br/file/35c8d05bcffdefd48eafc4b0a6912a0b',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F340054154%2F9123773340',
@@ -458,14 +459,14 @@ const categorias: Categoria[] = [
       },
       {
         nome: 'Aquecedor de Mamadeiras Portatil com Bolsa Buba',
-        desc: 'Aquecedor de mamadeiras portatil com bolsa termica. Ideal para passeios e viagens com o bebe.',
+        desc: 'Aquecedor de mamadeiras portátil com bolsa termica. Ideal para passeios e viagens com o bebê.',
         preco: 52.99, precoOriginal: 52.99, desconto: 0, rating: 4.76, likes: 7130,
         imagem: 'https://cf.shopee.com.br/file/df806d24fc848498a31274fb07d46c89',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F446413605%2F20143020699',
       },
       {
         nome: 'Kit 2 Mamadeiras Easy Active 270/330ml MAM',
-        desc: 'Mamadeiras MAM Easy Active com 2 tamanhos. Anti-colica, facil de limpar. Referencia mundial.',
+        desc: 'Mamadeiras MAM Easy Active com 2 tamanhos. Anti-cólica, facil de limpar. Referencia mundial.',
         preco: 119.00, precoOriginal: 119.00, desconto: 0, rating: 4.94, likes: 6596,
         imagem: 'https://cf.shopee.com.br/file/0f7bba4b8f54865e3c9c8d70b5a0f46c',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F340054154%2F18903583481',
@@ -473,14 +474,14 @@ const categorias: Categoria[] = [
       },
       {
         nome: 'Chupeta Soft Calming Silicone Simetrico Tam.1 Lillo',
-        desc: 'Chupeta de silicone simetrica tamanho 1 (0-6 meses). Formato que respeita o palato do bebe. Marca Lillo.',
+        desc: 'Chupeta de silicone simetrica tamanho 1 (0-6 meses). Formato que respeita o palato do bebê. Marca Lillo.',
         preco: 23.90, precoOriginal: 23.90, desconto: 0, rating: 4.95, likes: 4455,
         imagem: 'https://cf.shopee.com.br/file/br-11134207-7qukw-lf9v4xel9icf2f',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F481992044%2F9780248731',
       },
       {
         nome: 'Dosador de Remedio Bebe Formato Chupeta Buba',
-        desc: 'Dosador de remedio com formato de chupeta para dar medicamentos ao bebe sem estresse. Marca Buba.',
+        desc: 'Dosador de remedio com formato de chupeta para dar medicamentos ao bebê sem estresse. Marca Buba.',
         preco: 38.99, precoOriginal: 38.99, desconto: 0, rating: 4.95, likes: 4421,
         imagem: 'https://cf.shopee.com.br/file/sg-11134201-82615-mlhyxsvehddxa2',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F446413605%2F23008054473',
@@ -490,7 +491,7 @@ const categorias: Categoria[] = [
   {
     id: 'passeio-bebe',
     titulo: 'Passeio & Transporte',
-    subtitulo: 'Carrinhos, bebe conforto, bolsas maternidade e cangurus — seguranca em primeiro lugar',
+    subtitulo: 'Carrinhos, bebê conforto, bolsas maternidade e cangurus — segurança em primeiro lugar',
     icone: 'M8 7h12l2 5H6l2-5zM3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z',
     gradient: 'from-indigo-500 to-blue-600',
     dica: 'O bebe conforto e OBRIGATORIO por lei no carro. Instale de costas para o movimento ate pelo menos 2 anos. O bebe so deve frequentar lugares publicos apos as primeiras vacinas (2 meses).',
@@ -513,21 +514,21 @@ const categorias: Categoria[] = [
       },
       {
         nome: 'Cadeirinha para Carro Styll Baby ate 36kg',
-        desc: 'Cadeirinha de bebe para carro infantil ate 10 anos (36kg). Com regulagem de altura.',
+        desc: 'Cadeirinha de bebê para carro infantil ate 10 anos (36kg). Com regulagem de altura.',
         preco: 314.00, precoOriginal: 390.00, desconto: 19, rating: 4.91, likes: 5668,
         imagem: 'https://cf.shopee.com.br/file/br-11134207-7r98o-m2glp26toocm0b',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F504754787%2F22198027272',
       },
       {
         nome: 'Bebe Conforto Cadeirinha Styll Baby ate 36kg',
-        desc: 'Cadeirinha 0 a 10 anos com assento de elevacao. Seguranca maxima para seu bebe.',
+        desc: 'Cadeirinha 0 a 10 anos com assento de elevacao. Seguranca maxima para seu bebê.',
         preco: 320.00, precoOriginal: 390.00, desconto: 18, rating: 4.94, likes: 5351,
         imagem: 'https://cf.shopee.com.br/file/br-11134207-7r98o-m26nodhjd61ia0',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F504754787%2F22193530656',
       },
       {
         nome: 'Canguru Baby Carrier 3 em 1 Nuk',
-        desc: 'Canguru ergonomico 3 posicoes. Marca Nuk, referencia em produtos para bebe.',
+        desc: 'Canguru ergonomico 3 posicoes. Marca Nuk, referencia em produtos para bebê.',
         preco: 304.00, precoOriginal: 304.00, desconto: 0, rating: 4.91, likes: 5102,
         imagem: 'https://cf.shopee.com.br/file/bdb267f0d9eaccedda088a000042126c',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F467697231%2F9767275523',
@@ -542,14 +543,14 @@ const categorias: Categoria[] = [
       },
       {
         nome: 'Cadeirinha Maximus para Carro Galzerano ate 25kg',
-        desc: 'Cadeirinha de seguranca Galzerano. Marca premium brasileira, conforto e protecao.',
+        desc: 'Cadeirinha de segurança Galzerano. Marca premium brasileira, conforto e protecao.',
         preco: 376.00, precoOriginal: 550.00, desconto: 32, rating: 4.95, likes: 2068,
         imagem: 'https://cf.shopee.com.br/file/br-11134207-81z1k-mehphm202yo3d3',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F601021305%2F22998877617',
       },
       {
         nome: 'Carrinho EasyGo 3 Rodas KaBaby ate 15kg',
-        desc: 'Carrinho de bebe 3 rodas com cesto. Leve e compacto. Da marca KaBaby.',
+        desc: 'Carrinho de bebê 3 rodas com cesto. Leve e compacto. Da marca KaBaby.',
         preco: 340.00, precoOriginal: 800.00, desconto: 58, rating: 4.86, likes: 3484,
         imagem: 'https://cf.shopee.com.br/file/sg-11134201-7ravr-maoij9kqdfgwba',
         link: 'https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F1009324389%2F23298540871',
@@ -589,7 +590,7 @@ export default function EnxovalBebePage() {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'Checklist Enxoval de Bebe Completo 2026',
-    description: 'Guia completo de enxoval de bebe com checklist, quantidades, dicas de especialistas e produtos selecionados com avaliacao 4.7+ na Shopee.',
+    description: 'Guia completo de enxoval de bebê com checklist, quantidades, dicas de especialistas e produtos selecionados com avaliação 4.7+ na Shopee.',
     url: `${BASE}/enxoval-de-bebe`,
     numberOfItems: totalProdutos,
     itemListElement: categorias.flatMap((cat, ci) =>
@@ -625,22 +626,22 @@ export default function EnxovalBebePage() {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'O que nao pode faltar no enxoval do bebe?',
-        acceptedAnswer: { '@type': 'Answer', text: 'O enxoval essencial inclui: 6-8 bodies (manga curta e longa) 100% algodao, 6-8 calcas com pe, 4-6 macacoes, meias, toucas, luvas antiarranhao, fraldas (RN, P e M), lencos umedecidos, pomada contra assaduras, sabonete liquido neutro, berco com certificacao INMETRO, colchao firme, lencois com elastico, mamadeiras anti-colica, bebe conforto para carro e bolsa maternidade.' },
+        name: 'O que nao pode faltar no enxoval do bebê?',
+        acceptedAnswer: { '@type': 'Answer', text: 'O enxoval essencial inclui: 6-8 bodies (manga curta e longa) 100% algodão, 6-8 calcas com pe, 4-6 macacoes, meias, toucas, luvas antiarranhao, fraldas (RN, P e M), lencos umedecidos, pomada contra assaduras, sabonete liquido neutro, berco com certificacao INMETRO, colchao firme, lencois com elastico, mamadeiras anti-colica, bebe conforto para carro e bolsa maternidade.' },
       },
       {
         '@type': 'Question',
-        name: 'Quantas roupas comprar para o enxoval do bebe?',
+        name: 'Quantas roupas comprar para o enxoval do bebê?',
         acceptedAnswer: { '@type': 'Answer', text: 'Para recem-nascido: 6-8 bodies manga curta, 6-8 bodies manga longa, 6-8 calcas com pe, 4-6 macacoes, 4-6 conjuntos, 6-8 pares de meias, 3-4 pares de luvas, 2-3 toucas, 2-3 casaquinhos e 3-4 pijamas. Compre poucas pecas no tamanho RN (o bebe cresce rapido) e invista mais nos tamanhos P e M.' },
       },
       {
         '@type': 'Question',
-        name: 'Por que escolher roupas 100% algodao para bebe?',
+        name: 'Por que escolher roupas 100% algodão para bebe?',
         acceptedAnswer: { '@type': 'Answer', text: 'A pele do bebe e 5 vezes mais fina que a do adulto. Tecidos sinteticos podem causar alergias, irritacao e dermatite de contato. O algodao puro e hipoalergenico, macio, permite a pele respirar e regula melhor a temperatura corporal do bebe. Sempre verifique a etiqueta antes de comprar.' },
       },
       {
         '@type': 'Question',
-        name: 'Quando comecar a montar o enxoval do bebe?',
+        name: 'Quando comecar a montar o enxoval do bebê?',
         acceptedAnswer: { '@type': 'Answer', text: 'O ideal e comecar a montar o enxoval a partir da 20a semana de gestacao (5o mes). Isso da tempo para pesquisar precos, aproveitar promocoes e organizar tudo com calma. A bolsa maternidade deve estar pronta na 36a semana (9o mes). Nao compre tudo de uma vez — monte gradualmente.' },
       },
       {
@@ -670,10 +671,10 @@ export default function EnxovalBebePage() {
     '@context': 'https://schema.org',
     '@type': 'HowTo',
     name: 'Como Montar o Enxoval de Bebe Completo em 2026',
-    description: 'Passo a passo para montar o enxoval do bebe com economia e qualidade, priorizando itens 100% algodao e seguranca.',
+    description: 'Passo a passo para montar o enxoval do bebê com economia e qualidade, priorizando itens 100% algodão e segurança.',
     step: [
       { '@type': 'HowToStep', position: 1, name: 'Comece na 20a semana', text: 'Inicie o planejamento do enxoval a partir da 20a semana de gestacao. Faca uma lista e pesquise precos.' },
-      { '@type': 'HowToStep', position: 2, name: 'Priorize roupas 100% algodao', text: 'Compre bodies, macacoes e conjuntos em algodao puro. Evite tecidos sinteticos que irritam a pele do bebe.' },
+      { '@type': 'HowToStep', position: 2, name: 'Priorize roupas 100% algodão', text: 'Compre bodies, macacoes e conjuntos em algodao puro. Evite tecidos sinteticos que irritam a pele do bebe.' },
       { '@type': 'HowToStep', position: 3, name: 'Monte o quarto com seguranca', text: 'Escolha berco com selo INMETRO, colchao firme e nada solto dentro do berco. Sem travesseiro ate 1 ano.' },
       { '@type': 'HowToStep', position: 4, name: 'Estoque fraldas gradualmente', text: 'Compre poucas fraldas RN, mais P e M. Nao compre tudo de uma marca so — teste diferentes marcas.' },
       { '@type': 'HowToStep', position: 5, name: 'Prepare a alimentacao', text: 'Tenha mamadeiras anti-colica, bomba tira-leite e potes para armazenar leite materno.' },
@@ -695,7 +696,7 @@ export default function EnxovalBebePage() {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     name: 'Enxoval de Bebe Completo 2026: Checklist + Lista PDF Gratis',
-    description: 'Checklist completo de enxoval de bebe 2026 com lista em PDF gratis. Roupinhas 100% algodao, berco, fraldas, higiene, carrinho e bebe conforto.',
+    description: 'Checklist completo de enxoval de bebê 2026 com lista em PDF grátis. Roupinhas 100% algodão, berço, fraldas, higiene, carrinho e bebe conforto.',
     url: `${BASE}/enxoval-de-bebe`,
     inLanguage: 'pt-BR',
     isPartOf: { '@type': 'WebSite', name: 'Calazans Lumina', url: BASE },
@@ -745,7 +746,7 @@ export default function EnxovalBebePage() {
               <p className="text-white/70 text-lg md:text-xl leading-relaxed mb-6 max-w-2xl">
                 O guia definitivo para mamaes de primeira viagem. Tudo que voce precisa para
                 montar o enxoval do seu bebe com seguranca, qualidade e economia.
-                Roupinhas 100% algodao, berco, higiene, alimentacao e passeio
+                Roupinhas 100% algodão, berco, higiene, alimentacao e passeio
                 — com dicas de especialistas e os melhores precos da Shopee.
               </p>
 
@@ -797,7 +798,7 @@ export default function EnxovalBebePage() {
               { num: `${totalProdutos}`, label: 'Produtos selecionados' },
               { num: `${categorias.length}`, label: 'Categorias' },
               { num: '4.7+', label: 'Avaliacao minima' },
-              { num: `${totalAlgodao}+`, label: 'Itens 100% algodao' },
+              { num: `${totalAlgodao}+`, label: 'Itens 100% algodão' },
             ].map((d, i) => (
               <div key={i}>
                 <p className="font-serif text-2xl md:text-3xl font-bold text-white">{d.num}</p>
@@ -886,7 +887,7 @@ export default function EnxovalBebePage() {
               {
                 icone: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
                 titulo: '100% Algodao',
-                desc: 'A pele do bebe e 5x mais fina que a do adulto. Priorizamos itens de algodao puro, que sao hipoalergenicos e permitem a pele respirar.',
+                desc: 'A pele do bebê e 5x mais fina que a do adulto. Priorizamos itens de algodão puro, que sao hipoalergenicos e permitem a pele respirar.',
               },
               {
                 icone: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253',
@@ -896,7 +897,7 @@ export default function EnxovalBebePage() {
               {
                 icone: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z',
                 titulo: 'Dicas de Especialistas',
-                desc: 'Cada categoria vem com orientacoes de seguranca e cuidados baseadas em recomendacoes pediatricas e da SBP.',
+                desc: 'Cada categoria vem com orientacoes de segurança e cuidados baseadas em recomendacoes pediatricas e da SBP.',
               },
             ].map((item, i) => (
               <ScrollReveal key={i} delay={i * 100}>
@@ -1084,12 +1085,12 @@ export default function EnxovalBebePage() {
 
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              { titulo: 'Tecido 100% Algodao', desc: 'A pele do bebe e 5x mais fina. Tecidos sinteticos podem causar alergias e dermatite. Sempre verifique a etiqueta.' },
+              { titulo: 'Tecido 100% Algodao', desc: 'A pele do bebê e 5x mais fina. Tecidos sinteticos podem causar alergias e dermatite. Sempre verifique a etiqueta.' },
               { titulo: 'Lave Antes de Usar', desc: 'Toda roupa nova deve ser lavada com sabao neutro antes do primeiro uso. Nunca use amaciante convencional.' },
-              { titulo: 'Menos e Mais no RN', desc: 'Compre poucas pecas tamanho RN. O bebe cresce rapido e pode nascer grande demais para RN. Invista em P e M.' },
+              { titulo: 'Menos e Mais no RN', desc: 'Compre poucas pecas tamanho RN. O bebê cresce rapido e pode nascer grande demais para RN. Invista em P e M.' },
               { titulo: 'Estacao do Nascimento', desc: 'Verao? Roupas leves. Inverno? Macacoes e mantas. Planeje as roupas considerando 3 meses a frente.' },
-              { titulo: 'Seguranca no Berco', desc: 'Nada dentro do berco alem do lencol. Sem travesseiro ate 1 ano. Sem cobertor solto. Use saco de dormir.' },
-              { titulo: 'Monte Gradualmente', desc: 'Nao compre tudo de uma vez. Muitas coisas voce so descobre que precisa apos o bebe nascer.' },
+              { titulo: 'Seguranca no Berco', desc: 'Nada dentro do berço alem do lencol. Sem travesseiro ate 1 ano. Sem cobertor solto. Use saco de dormir.' },
+              { titulo: 'Monte Gradualmente', desc: 'Nao compre tudo de uma vez. Muitas coisas voce so descobre que precisa apos o bebê nascer.' },
               { titulo: 'Bebe Conforto e Lei', desc: 'OBRIGATORIO no carro. Instale de costas ate 2 anos. Sempre com selo INMETRO.' },
               { titulo: 'Comece na 20a Semana', desc: 'Ideal comecar a montar o enxoval a partir da 20a semana de gestacao. Bolsa maternidade pronta na 36a.' },
             ].map((regra, i) => (
@@ -1149,7 +1150,7 @@ export default function EnxovalBebePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { slug: 'gestacao-mes-a-mes-o-que-esperar-em-cada-fase-da-gravidez', titulo: 'Gestacao Mes a Mes', desc: 'O que esperar do 1o ao 9o mes — sintomas, exames e marcos do bebe', icon: '🤰' },
+              { slug: 'gestacao-mes-a-mes-o-que-esperar-em-cada-fase-da-gravidez', titulo: 'Gestacao Mes a Mes', desc: 'O que esperar do 1o ao 9o mes — sintomas, exames e marcos do bebê', icon: '🤰' },
               { slug: 'recem-nascido-primeiros-30-dias-guia-completo-para-maes-de-primeira-viagem', titulo: 'Primeiros 30 Dias', desc: 'Guia completo para maes de primeira viagem — banho, fralda, umbigo e mais', icon: '👶' },
               { slug: 'rotina-de-sono-do-bebe-do-recem-nascido-aos-12-meses', titulo: 'Rotina de Sono', desc: 'Janelas de sono, tabela por idade e como criar rotina saudavel', icon: '🌙' },
               { slug: 'colica-do-bebe-o-que-e-como-aliviar-e-manobras-que-funcionam', titulo: 'Colica do Bebe', desc: '5 manobras que funcionam — bicicleta, aviaozinho, massagem ILU e mais', icon: '💆' },
@@ -1255,10 +1256,10 @@ export default function EnxovalBebePage() {
 
           <div className="space-y-4">
             {[
-              { q: 'O que nao pode faltar no enxoval do bebe?', a: 'O enxoval essencial inclui: 6-8 bodies (manga curta e longa) 100% algodao, 6-8 calcas com pe, 4-6 macacoes, meias, toucas, luvas antiarranhao, fraldas (RN, P e M), lencos umedecidos, pomada contra assaduras, sabonete liquido neutro, berco com certificacao INMETRO, colchao firme, lencois com elastico, mamadeiras anti-colica, bebe conforto para carro e bolsa maternidade.' },
-              { q: 'Quantas roupas comprar para o enxoval do bebe?', a: 'Para recem-nascido: 6-8 bodies manga curta, 6-8 bodies manga longa, 6-8 calcas com pe, 4-6 macacoes, 4-6 conjuntos, 6-8 pares de meias, 3-4 pares de luvas, 2-3 toucas, 2-3 casaquinhos e 3-4 pijamas. Compre poucas pecas no tamanho RN (o bebe cresce rapido) e invista mais nos tamanhos P e M.' },
-              { q: 'Por que escolher roupas 100% algodao para bebe?', a: 'A pele do bebe e 5 vezes mais fina que a do adulto. Tecidos sinteticos podem causar alergias, irritacao e dermatite de contato. O algodao puro e hipoalergenico, macio, permite a pele respirar e regula melhor a temperatura corporal do bebe.' },
-              { q: 'Quando comecar a montar o enxoval do bebe?', a: 'O ideal e comecar a partir da 20a semana de gestacao (5o mes). Isso da tempo para pesquisar precos, aproveitar promocoes e organizar tudo com calma. A bolsa maternidade deve estar pronta na 36a semana.' },
+              { q: 'O que nao pode faltar no enxoval do bebê?', a: 'O enxoval essencial inclui: 6-8 bodies (manga curta e longa) 100% algodão, 6-8 calcas com pe, 4-6 macacoes, meias, toucas, luvas antiarranhao, fraldas (RN, P e M), lencos umedecidos, pomada contra assaduras, sabonete liquido neutro, berco com certificacao INMETRO, colchao firme, lencois com elastico, mamadeiras anti-colica, bebe conforto para carro e bolsa maternidade.' },
+              { q: 'Quantas roupas comprar para o enxoval do bebê?', a: 'Para recem-nascido: 6-8 bodies manga curta, 6-8 bodies manga longa, 6-8 calcas com pe, 4-6 macacoes, 4-6 conjuntos, 6-8 pares de meias, 3-4 pares de luvas, 2-3 toucas, 2-3 casaquinhos e 3-4 pijamas. Compre poucas pecas no tamanho RN (o bebe cresce rapido) e invista mais nos tamanhos P e M.' },
+              { q: 'Por que escolher roupas 100% algodão para bebe?', a: 'A pele do bebe e 5 vezes mais fina que a do adulto. Tecidos sinteticos podem causar alergias, irritacao e dermatite de contato. O algodao puro e hipoalergenico, macio, permite a pele respirar e regula melhor a temperatura corporal do bebe.' },
+              { q: 'Quando comecar a montar o enxoval do bebê?', a: 'O ideal e comecar a partir da 20a semana de gestacao (5o mes). Isso da tempo para pesquisar precos, aproveitar promocoes e organizar tudo com calma. A bolsa maternidade deve estar pronta na 36a semana.' },
               { q: 'Quantas fraldas o recem-nascido usa por dia?', a: 'O recem-nascido usa em media 8 a 10 fraldas por dia. Estoque inicial: 2-4 pacotes RN (2-3 semanas de uso), 10-15 pacotes P (2 meses) e 10-15 pacotes M (compre gradualmente).' },
               { q: 'O que levar na bolsa maternidade para o hospital?', a: 'Para o bebe: 3 bodies manga curta e 3 longa, 3 macacoes, 3 pares de meias, 2 luvas, 2 toucas, 2 mantas, fraldas RN e lencos. Para a mamae: camisolas com abertura frontal, sutia de amamentacao, calcinhas confortaveis, absorvente pos-parto e chinelo.' },
               { q: 'Qual o berco mais seguro para recem-nascido?', a: 'Deve ter certificacao INMETRO, grades com espacamento maximo de 6,5cm, colchao firme (D18 a D23) e justo. NUNCA coloque travesseiros, almofadas ou bichos de pelucia dentro do berco.' },
@@ -1281,6 +1282,16 @@ export default function EnxovalBebePage() {
           </div>
         </div>
       </section>
+
+      {/* ⚠️ Religa 209 paginas orfas: este indice tinha ZERO link para as
+          versoes por cidade. Ver components/ListaCidadesBR.tsx. */}
+      <ListaCidadesBR
+        href={(cidade) => `/enxoval-de-bebe/${cidade}`}
+        titulo="Enxoval de bebê na sua cidade"
+        apoio="A lista de itens é a mesma em todo lugar. O que muda é preço, onde comprar e o que o clima da região exige — e é isso que cada página traz."
+        rodape="lista igual, contexto local"
+        fundo="bg-white"
+      />
 
     </>
   )

@@ -25,12 +25,12 @@ export async function generateMetadata({ params }: { params: Promise<{ capital: 
   const capital = getCapitalBRBySlug(capitalSlug) || getCidadeBRBySlug(capitalSlug)
   if (!capital) return {}
   return {
-    title: `Marketing Digital em ${capital.nome} (2026) | Sites + Funis + Google Maps`,
-    description: `Agencia de marketing digital em ${capital.nome}, ${capital.siglaEstado}. Sites com PageSpeed 95+, funis automatizados que convertem 3x mais, CRM com IA no WhatsApp e Google Meu Negocio. 100+ projetos. Orcamento gratis →`,
+    title: { absolute: `Marketing Digital em ${capital.nome}, ${capital.siglaEstado}` },
+    description: `Marketing digital em ${capital.nome}, ${capital.siglaEstado}. Sites com PageSpeed 95+, funis que respondem o lead na hora, CRM com IA no WhatsApp e Google Meu Negócio. Orçamento gratuito →`,
     alternates: { canonical: `https://calazanslumina.com.br/brasil/${capitalSlug}` },
     openGraph: {
       title: `Marketing Digital em ${capital.nome} | Calazans Lumina`,
-      description: `Sites, funis GHL, CRM com IA e Google Maps para negocios em ${capital.nome}.`,
+      description: `Sites, funis GHL, CRM com IA e Google Maps para negócios em ${capital.nome}.`,
       url: `https://calazanslumina.com.br/brasil/${capitalSlug}`,
       type: 'website',
     },
@@ -46,13 +46,13 @@ export default async function CapitalPage({ params }: { params: Promise<{ capita
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: `Calazans Lumina — Marketing Digital em ${capital.nome}, ${capital.siglaEstado}`,
-    description: `Agencia de marketing digital em ${capital.nome}, ${capital.siglaEstado}. Sites profissionais, funis GoHighLevel, CRM com IA no WhatsApp e Google Meu Negocio.`,
+    description: `Agencia de marketing digital em ${capital.nome}, ${capital.siglaEstado}. Sites profissionais, funis GoHighLevel, CRM com IA no WhatsApp e Google Meu Negócio.`,
     url: `https://calazanslumina.com.br/brasil/${capitalSlug}`,
     telephone: '+55-31-98294-8067',
     email: 'trafegocalazans@gmail.com',
     address: { '@type': 'PostalAddress', addressLocality: capital.nome, addressRegion: capital.siglaEstado, addressCountry: 'BR' },
     areaServed: { '@type': 'City', name: capital.nome },
-    serviceType: ['Marketing Digital', 'Criacao de Sites', 'SEO', 'Google Meu Negocio', 'GoHighLevel CRM', 'Gestao de Redes Sociais'],
+    serviceType: ['Marketing Digital', 'Criacao de Sites', 'SEO', 'Google Meu Negócio', 'GoHighLevel CRM', 'Gestao de Redes Sociais'],
     availableLanguage: ['Portuguese'],
     priceRange: '$$',
   }
@@ -61,8 +61,8 @@ export default async function CapitalPage({ params }: { params: Promise<{ capita
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
-      { '@type': 'Question', name: `Qual a melhor agencia de marketing digital em ${capital.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `A Calazans Lumina oferece servicos completos de marketing digital em ${capital.nome}, ${capital.siglaEstado}: sites profissionais com PageSpeed 95+, funis GoHighLevel, CRM com IA no WhatsApp, Google Meu Negocio e gestao de redes sociais. Mais de 100 projetos entregues.` } },
-      { '@type': 'Question', name: `Quanto custa criar um site profissional em ${capital.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `Sites profissionais para empresas em ${capital.nome} com precos acessiveis. Inclui design premium, SEO tecnico, PageSpeed 95+, versao mobile e integracao com Google Meu Negocio. Solicite um orcamento gratuito.` } },
+      { '@type': 'Question', name: `Qual a melhor agencia de marketing digital em ${capital.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `A Calazans Lumina oferece servicos completos de marketing digital em ${capital.nome}, ${capital.siglaEstado}: sites profissionais com PageSpeed 95+, funis GoHighLevel, CRM com IA no WhatsApp, Google Meu Negócio e gestao de redes sociais. Mais de 100 projetos entregues.` } },
+      { '@type': 'Question', name: `Quanto custa criar um site profissional em ${capital.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `Sites profissionais para empresas em ${capital.nome} com precos acessiveis. Inclui design premium, SEO tecnico, PageSpeed 95+, versao mobile e integracao com Google Meu Negócio. Solicite um orcamento gratuito.` } },
       { '@type': 'Question', name: `A Calazans Lumina atende empresas em ${capital.nome}, ${capital.siglaEstado}?`, acceptedAnswer: { '@type': 'Answer', text: `Sim! Atendemos empresas de todos os segmentos em ${capital.nome}: clinicas, energia solar, construction, pintura, servicos em geral. Atendimento remoto com resultados comprovados em mais de 200 cidades brasileiras.` } },
     ],
   }

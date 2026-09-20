@@ -4,6 +4,11 @@
 User-agent: *
 Allow: /
 Disallow: /cursos/acesso/
+# area de aluno, nao conteudo: o visualizador e o download chegam ao rastreador
+# praticamente vazios e com o titulo generico da home. Ver
+# app/cursos/[slug]/aprender/layout.tsx
+Disallow: /cursos/*/aprender
+Disallow: /cursos/*/download
 Disallow: /_next/
 Disallow: /api/
 

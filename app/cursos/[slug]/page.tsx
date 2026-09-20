@@ -7,6 +7,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Breadcrumb from '@/components/Breadcrumb'
 import CoursesSection from '@/components/CoursesSection'
+import ListaCidadesBR from '@/components/ListaCidadesBR'
 import { formatPreco, formatPrecoCompacto } from '@/lib/formatters'
 
 export function generateStaticParams() {
@@ -19,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!curso) return {}
   const totalAulas = curso.modulos.reduce((acc, m) => acc + m.aulas.length, 0)
   return {
-    title: `${curso.nome} (2026) | ${curso.gratuito ? 'GRATUITO' : `Apenas R$ ${formatPrecoCompacto(curso.preco)}`} — ${totalAulas} Aulas`,
+    title: `${curso.nome}${curso.gratuito ? ' — Curso Gratuito' : ''}`,
     description: `${curso.descricaoCurta} ${curso.modulos.length} modulos, ${totalAulas} aulas com certificado. ${curso.gratuito ? 'Acesso 100% gratuito + material PDF. Comece agora →' : `So R$ ${formatPrecoCompacto(curso.preco)}. Acesso vitalicio + atualizacoes. Comece agora →`}`,
     alternates: { canonical: `https://calazanslumina.com.br/cursos/${slug}` },
     openGraph: {
@@ -629,6 +630,17 @@ export default async function CursoPage({ params }: { params: Promise<{ slug: st
       )}
 
       <CoursesSection />
+
+      {/* ⚠️ A SECAO QUE RELIGA 1.672 PAGINAS ORFAS.
+          Ate 20/set/2026 esta pagina nao tinha UM link para as 209 versoes
+          por cidade dela. Ver components/CidadesDoCurso.tsx para a medida e
+          o veredito do Google. */}
+      <ListaCidadesBR
+        href={(cidade) => `/cursos/${curso.slug}/brasil/${cidade}`}
+        titulo={`${curso.nome} na sua cidade`}
+        apoio="O curso é online e o conteúdo é o mesmo em qualquer lugar. O que muda em cada página é o contexto: como o mercado daquela cidade se comporta e onde a formação pesa mais por lá."
+        rodape="o curso é o mesmo, o contexto muda"
+      />
 
       {/* Cross-Links */}
       <section className="section-padding bg-white">

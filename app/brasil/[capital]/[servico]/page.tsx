@@ -28,12 +28,12 @@ export async function generateMetadata({ params }: { params: Promise<{ capital: 
   const servico = getServicoBySlug(servicoSlug)
   if (!capital || !servico) return {}
   return {
-    title: `${servico.nome} em ${capital.nome}, ${capital.siglaEstado} (2026) | Resultados Reais`,
-    description: `${servico.descricaoCurta} Para negocios em ${capital.nome}. PageSpeed 95+, ROI comprovado, 100+ projetos entregues. Orcamento gratis em 24h →`,
+    title: { absolute: `${servico.nome} em ${capital.nome}, ${capital.siglaEstado}` },
+    description: `${servico.descricaoCurta} Para negócios em ${capital.nome}. Sites com PageSpeed 95+, conta no seu nome e atendimento em português. Orçamento gratuito →`,
     alternates: { canonical: `https://calazanslumina.com.br/brasil/${capitalSlug}/${servicoSlug}` },
     openGraph: {
       title: `${servico.nome} em ${capital.nome}, ${capital.siglaEstado} | Calazans Lumina`,
-      description: `${servico.descricaoCurta} Para negocios em ${capital.nome}, ${capital.estado}.`,
+      description: `${servico.descricaoCurta} Para negócios em ${capital.nome}, ${capital.estado}.`,
       url: `https://calazanslumina.com.br/brasil/${capitalSlug}/${servicoSlug}`,
       type: 'website',
     },

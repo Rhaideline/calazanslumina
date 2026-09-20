@@ -25,7 +25,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!curso || !capital) return {}
   const totalAulas = curso.modulos.reduce((acc, m) => acc + m.aulas.length, 0)
   return {
-    title: `${curso.nome} em ${capital.nome}, ${capital.siglaEstado} (2026) | ${curso.gratuito ? 'GRATUITO' : `R$ ${formatPrecoCompacto(curso.preco)}`} — ${totalAulas} Aulas`,
+    // `absolute` tira o " | Calazans Lumina" que o layout acrescenta: numa
+    // pagina de cauda longa a marca nao faz ser clicada e come 18 caracteres.
+    title: { absolute: `${curso.nome} em ${capital.nome}, ${capital.siglaEstado}` },
     description: `${curso.descricaoCurta} Para profissionais em ${capital.nome}. ${curso.modulos.length} modulos, ${totalAulas} aulas. ${curso.gratuito ? 'Acesso 100% gratuito. Comece agora →' : `So R$ ${formatPrecoCompacto(curso.preco)}. Acesso vitalicio →`}`,
     alternates: { canonical: `https://calazanslumina.com.br/cursos/${slug}/brasil/${capitalSlug}` },
   }

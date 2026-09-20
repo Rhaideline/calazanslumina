@@ -47,7 +47,7 @@ export const servicos: Servico[] = [
     ],
     cta: 'Quero meu site profissional',
     ctaTexto: 'Olá, quero saber mais sobre criação de sites profissionais',
-    metaTitle: 'Sites & Landing Pages de Alta Conversão | Calazans Lumina',
+    metaTitle: 'Sites & Landing Pages de Alta Conversão',
     metaDescription: 'Criamos sites e landing pages em Next.js com PageSpeed 95+, SEO técnico e design premium. Mais de 8 anos transformando negócios brasileiros nos EUA e no Brasil.',
     h1: 'Sites e Landing Pages Que Transformam Visitantes em Clientes Reais',
     beneficios: [
@@ -170,7 +170,7 @@ export const servicos: Servico[] = [
     ],
     cta: 'Quero automatizar meu processo de vendas',
     ctaTexto: 'Olá, quero saber mais sobre funis de vendas e automação GHL',
-    metaTitle: 'Funis de Vendas & Automação GHL | Calazans Lumina',
+    metaTitle: 'Funis de Vendas & Automação GHL',
     metaDescription: 'Funis de vendas automatizados no GoHighLevel com email, SMS e WhatsApp. Capte, nutra e converta leads 24h por dia. Resultados reais para brasileiros nos EUA.',
     h1: 'Funis de Vendas Automatizados Que Vendem Enquanto Você Dorme',
     beneficios: [
@@ -292,7 +292,7 @@ export const servicos: Servico[] = [
     ],
     cta: 'Quero um robô respondendo por mim',
     ctaTexto: 'Olá, quero saber mais sobre CRM e IA conversacional',
-    metaTitle: 'CRM com IA Conversacional para WhatsApp | Calazans Lumina',
+    metaTitle: 'CRM com IA Conversacional para WhatsApp',
     metaDescription: 'CRM com inteligência artificial que responde seus clientes 24h no WhatsApp. Agendamento automático, follow-up e pipeline visual. Para brasileiros nos EUA.',
     h1: 'CRM Inteligente com IA Que Atende Seus Clientes 24 Horas por Dia',
     beneficios: [
@@ -414,7 +414,7 @@ export const servicos: Servico[] = [
     ],
     cta: 'Quero minha gestão de redes sociais',
     ctaTexto: 'Olá, quero saber mais sobre gestão de redes sociais',
-    metaTitle: 'Gestão de Redes Sociais para Brasileiros | Calazans Lumina',
+    metaTitle: 'Gestão de Redes Sociais para Brasileiros',
     metaDescription: 'Gestão estratégica de Instagram e Facebook em português. Conteúdo profissional, reels, stories e crescimento orgânico para empreendedores brasileiros nos EUA.',
     h1: 'Gestão de Redes Sociais Que Transforma Seguidores em Clientes Reais',
     beneficios: [
@@ -535,7 +535,7 @@ export const servicos: Servico[] = [
     ],
     cta: 'Quero aparecer no Google Maps',
     ctaTexto: 'Olá, quero saber mais sobre Google Meu Negócio',
-    metaTitle: 'Google Business Profile para Brasileiros | Calazans Lumina',
+    metaTitle: 'Google Business Profile para Brasileiros',
     metaDescription: 'Criação e otimização do Google Business Profile para brasileiros nos EUA. Apareça no Google Maps, conquiste avaliações 5 estrelas e domine as buscas locais.',
     h1: 'Google Business Profile: Apareça no Topo das Buscas Locais e no Google Maps',
     beneficios: [

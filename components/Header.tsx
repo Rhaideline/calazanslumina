@@ -25,6 +25,7 @@ const cursosMenu = [
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/sobre', label: 'Sobre' },
+  { href: '/brasil', label: 'Cidades' },
   { href: '/para-agencias', label: 'Para Agências' },
   { href: '/ferramentas', label: 'Ferramentas' },
   { href: '/projetos', label: 'Projetos' },

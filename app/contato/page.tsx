@@ -7,7 +7,7 @@ import CTAForm from '@/components/CTAForm'
 import CoursesSection from '@/components/CoursesSection'
 
 export const metadata: Metadata = {
-  title: 'Contato | Fale Agora pelo WhatsApp ou Formulario',
+  title: 'Contato',
   description:
     'Fale com a Calazans Lumina pelo WhatsApp, Instagram ou formulario. Marketing digital para brasileiros nos EUA e Brasil. Resposta em ate 24h. Orcamento gratuito!',
   alternates: { canonical: 'https://calazanslumina.com.br/contato' },

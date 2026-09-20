@@ -12,15 +12,16 @@ import PricingTable from '@/components/PricingTable'
 import CoursesSection from '@/components/CoursesSection'
 import LazyVideo from '@/components/LazyVideo'
 import PortfolioSites from '@/components/PortfolioSites'
+import { blogPosts } from '@/data/blog'
 
 export const metadata: Metadata = {
-  title: 'Marketing Digital para Brasileiros nos EUA e Brasil | Calazans Lumina',
+  title: 'Marketing Digital para Brasileiros nos EUA e Brasil',
   description:
-    'Sites de alta performance, funis automatizados, CRM com IA e Google Maps para brasileiros nos EUA e Brasil. 8+ anos, 100+ projetos. Resultado garantido.',
+    'Sites que abrem rápido, funis que respondem o lead na hora, CRM com IA no WhatsApp e Google Meu Negócio. Atendimento em português, para quem empreende nos EUA e no Brasil.',
   alternates: { canonical: 'https://calazanslumina.com.br' },
   openGraph: {
-    title: 'Marketing Digital para Brasileiros nos EUA e Brasil | Calazans Lumina',
-    description: 'Sites, funis GHL, CRM com IA e Google Maps. 8+ anos transformando negocios de brasileiros.',
+    title: 'Marketing Digital para Brasileiros nos EUA e Brasil',
+    description: 'Sites, funis no GoHighLevel, CRM com IA e Google Meu Negócio, em português.',
     url: 'https://calazanslumina.com.br',
     type: 'website',
   },
@@ -265,7 +266,7 @@ export default function HomePage() {
               </p>
 
               <ul className="space-y-3 mb-8">
-                {['8+ anos transformando negócios', '100+ projetos entregues', 'Especialista em GoHighLevel', 'Atendimento em português'].map((item) => (
+                {['Quem desenha é quem monta', 'A conta fica no seu nome', 'Especialista em GoHighLevel', 'Atendimento em português'].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-white/80">
                     <svg className="w-5 h-5 text-brand-mint flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -334,7 +335,7 @@ export default function HomePage() {
                 <strong>Calazans Lumina</strong> é uma agência de marketing digital fundada por{' '}
                 <Link href="/sobre" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>Rhaideline Calazans</strong></Link>,
                 especializada em atender empreendedores brasileiros nos <strong>Estados Unidos (Massachusetts)</strong> e em todo o <strong>Brasil</strong>.
-                Com mais de 8 anos de experiência e 100+ projetos entregues, oferecemos soluções completas de presença digital com atendimento 100% em português.
+                Quem desenha a estratégia é quem monta o site, o funil e a automação, com atendimento 100% em português.
               </p>
               <p>
                 Nossos serviços incluem:{' '}
@@ -663,16 +664,17 @@ export default function HomePage() {
             <h2 className="heading-2 text-brand-dark mb-4">Conteúdo que <span className="text-brand-mint">educa e converte</span></h2>
           </ScrollReveal>
           <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { titulo: 'Como brasileiros em Massachusetts estão perdendo clientes por falta de presença digital', categoria: 'Sites', slug: 'brasileiros-massachusetts-presenca-digital', img: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d624c8da2a02097df7b.png' },
-              { titulo: 'SEO local para brasileiros nos EUA: como aparecer no Google da sua cidade', categoria: 'Google', slug: 'seo-local-brasileiros-eua', img: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3f1320c035efa006b443.png' },
-              { titulo: 'Robô de WhatsApp: como automatizar sem perder o lado humano', categoria: 'Automação', slug: 'robo-whatsapp-automacao-atendimento', img: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b418ddf9bdf249608cf87.png' },
-            ].map((post, i) => (
+            {/* ⚠️ LER DO DADO, NUNCA ESCREVER SLUG A MAO AQUI.
+                Ate 20/set/2026 estes tres cartoes eram escritos a mao no JSX,
+                e DOIS deles apontavam para artigos que nao existem: o slug
+                tinha sido encurtado e o artigo real tem o slug longo. A home
+                linkava dois 404. Lendo de blogPosts o erro nao pode voltar. */}
+            {blogPosts.slice(0, 3).map((post, i) => (
               <ScrollReveal key={i} delay={i * 150}>
                 <Link href={`/blog/${post.slug}`} className="group block">
                   <div className="card-premium overflow-hidden p-0">
                     <div className="relative aspect-video overflow-hidden">
-                      <Image src={post.img} alt={post.titulo} fill className="object-cover transition-transform duration-500 group-hover:scale-110" sizes="33vw" />
+                      <Image src={post.imagem} alt={post.titulo} fill className="object-cover transition-transform duration-500 group-hover:scale-110" sizes="33vw" />
                       <div className="absolute top-4 left-4">
                         <span className="bg-brand-mint/90 text-white text-xs font-bold px-3 py-1 rounded-full">{post.categoria}</span>
                       </div>

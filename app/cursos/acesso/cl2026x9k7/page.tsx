@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Obrigado pela Compra! | Calazans Lumina',
+  title: 'Obrigado pela compra',
   description: 'Seu pagamento foi confirmado. O curso foi enviado para seu email.',
   robots: 'noindex, nofollow',
 }

@@ -34,6 +34,37 @@ const nextConfig: NextConfig = {
         destination: '/enxoval-de-bebe',
         permanent: true,
       },
+
+      // ---- recuperacao de URLs que ficaram 404 (auditoria de 20/set/2026) ----
+
+      // /cursos-em/<cidade> deixou de existir em algum restore. Ela somava 200
+      // impressoes no Search Console e hoje devolve 404. Redirecionar devolve
+      // ao indice de cursos o que a URL antiga ainda carrega.
+      {
+        source: '/cursos-em/:cidade',
+        destination: '/cursos',
+        permanent: true,
+      },
+      {
+        source: '/cursos-em',
+        destination: '/cursos',
+        permanent: true,
+      },
+
+      // A home linkava estes dois slugs encurtados, que nunca existiram: os
+      // artigos reais tem o slug longo. O link foi corrigido na home (agora le
+      // de blogPosts), mas o Google pode ter as URLs curtas na fila — entao
+      // elas apontam para o artigo certo em vez de morrer em 404.
+      {
+        source: '/blog/brasileiros-massachusetts-presenca-digital',
+        destination: '/blog/como-brasileiros-em-massachusetts-estao-perdendo-clientes-por-falta-de-presenca-digital',
+        permanent: true,
+      },
+      {
+        source: '/blog/seo-local-brasileiros-eua',
+        destination: '/blog/seo-local-para-brasileiros-nos-eua-como-aparecer-no-google-da-sua-cidade',
+        permanent: true,
+      },
     ]
   },
   async headers() {

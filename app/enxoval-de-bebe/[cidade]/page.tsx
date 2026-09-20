@@ -20,11 +20,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const cidade = getCapitalBRBySlug(slug) || getCidadeBRBySlug(slug)
   if (!cidade) return {}
 
-  const title = `Enxoval de Bebe em ${cidade.nome}, ${cidade.siglaEstado} — Checklist Completo 2026 + PDF Gratis`
-  const description = `Lista completa de enxoval de bebe para mamaes em ${cidade.nome}, ${cidade.siglaEstado}. Checklist com quantidades, roupinhas 100% algodao, berco, fraldas, higiene e passeio. Baixe o PDF gratis com dicas de especialistas e melhores precos na Shopee.`
+  // 88 caracteres antes, e sem acento. `absolute` tira o sufixo da marca
+  // que o layout acrescenta — numa pagina de cauda longa ele so ocupa
+  // espaco. Ver _fix4-titulos.py para a medida.
+  const title = `Enxoval de Bebê em ${cidade.nome}, ${cidade.siglaEstado}: Checklist 2026`
+  const description = `Lista completa de enxoval de bebê para mamães em ${cidade.nome}, ${cidade.siglaEstado}. Checklist com quantidades, roupinhas 100% algodão, berco, fraldas, higiene e passeio. Baixe o PDF gratis com dicas de especialistas e melhores precos na Shopee.`
 
   return {
-    title,
+    title: { absolute: title },
     description,
     keywords: [
       `enxoval de bebe ${cidade.nome}`, `enxoval de bebe em ${cidade.nome}`,
@@ -37,8 +40,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ],
     alternates: { canonical: `${BASE}/enxoval-de-bebe/${slug}` },
     openGraph: {
-      title: `Enxoval de Bebe em ${cidade.nome} — Checklist 2026 + PDF`,
-      description: `Guia completo de enxoval de bebe para ${cidade.nome}, ${cidade.siglaEstado}. ${cidade.populacao}. Checklist, dicas e melhores precos.`,
+      title: `Enxoval de Bebê em ${cidade.nome} — Checklist 2026 + PDF`,
+      description: `Guia completo de enxoval de bebê para ${cidade.nome}, ${cidade.siglaEstado}. Checklist, dicas e onde comprar.`,
       url: `${BASE}/enxoval-de-bebe/${slug}`,
       type: 'website',
       siteName: 'Calazans Lumina',
@@ -46,7 +49,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: 'summary_large_image',
-      title: `Enxoval de Bebe em ${cidade.nome} — Checklist + PDF`,
+      title: `Enxoval de Bebê em ${cidade.nome} — Checklist + PDF`,
       description: `Lista completa de enxoval de bebe em ${cidade.nome}. Roupinhas 100% algodao, berco, fraldas e passeio.`,
     },
     robots: {

@@ -7,12 +7,12 @@ import type { Metadata } from 'next'
 import { formatPreco } from '@/lib/formatters'
 
 export const metadata: Metadata = {
-  title: 'Cursos de Marketing Digital | 4 Gratuitos + 4 por R$ 9,90',
+  title: 'Cursos de Marketing Digital | 4 Gratuitos',
   description:
-    'Aprenda marketing digital do zero: IA & ChatGPT, Google Meu Negocio, Redes Sociais, Funis de Vendas. 4 cursos gratuitos + 4 por apenas R$ 9,90. PDF + acesso online. Comece agora!',
+    'Aprenda marketing digital do zero: IA & ChatGPT, Google Meu Negócio, Redes Sociais, Funis de Vendas. 4 cursos gratuitos + 4 por apenas R$ 9,90. PDF + acesso online. Comece agora!',
   alternates: { canonical: 'https://calazanslumina.com.br/cursos' },
   openGraph: {
-    title: 'Cursos de Marketing Digital | 4 Gratuitos + 4 por R$ 9,90',
+    title: 'Cursos de Marketing Digital | 4 Gratuitos',
     description: 'Aprenda marketing digital do zero. 8 cursos disponiveis, 4 gratuitos. PDF + acesso online.',
     url: 'https://calazanslumina.com.br/cursos',
     type: 'website',
@@ -24,7 +24,7 @@ export default function CursosPage() {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: 'Cursos de Marketing Digital e IA — Calazans Lumina',
-    description: 'Cursos online de marketing digital, ChatGPT, Google Meu Negocio, funis de vendas e redes sociais. Quatro gratuitos e quatro a R$ 9,90.',
+    description: 'Cursos online de marketing digital, ChatGPT, Google Meu Negócio, funis de vendas e redes sociais. Quatro gratuitos e quatro a R$ 9,90.',
     url: 'https://calazanslumina.com.br/cursos',
     mainEntity: {
       '@type': 'ItemList',
@@ -33,7 +33,7 @@ export default function CursosPage() {
         { '@type': 'ListItem', position: 1, item: { '@type': 'Course', name: 'ChatGPT para Idosos', url: 'https://calazanslumina.com.br/cursos/chatgpt-para-idosos' } },
         { '@type': 'ListItem', position: 2, item: { '@type': 'Course', name: 'IA & ChatGPT Completo', url: 'https://calazanslumina.com.br/cursos/ia-chatgpt-completo' } },
         { '@type': 'ListItem', position: 3, item: { '@type': 'Course', name: 'Marketing Digital para Iniciantes', url: 'https://calazanslumina.com.br/cursos/marketing-digital-iniciantes' } },
-        { '@type': 'ListItem', position: 4, item: { '@type': 'Course', name: 'Google Meu Negocio do Zero', url: 'https://calazanslumina.com.br/cursos/google-meu-negocio-do-zero' } },
+        { '@type': 'ListItem', position: 4, item: { '@type': 'Course', name: 'Google Meu Negócio do Zero', url: 'https://calazanslumina.com.br/cursos/google-meu-negocio-do-zero' } },
         { '@type': 'ListItem', position: 5, item: { '@type': 'Course', name: 'Redes Sociais que Vendem', url: 'https://calazanslumina.com.br/cursos/redes-sociais-que-vendem' } },
         { '@type': 'ListItem', position: 6, item: { '@type': 'Course', name: 'Funis de Vendas Simplificado', url: 'https://calazanslumina.com.br/cursos/funis-de-vendas-simplificado' } },
         { '@type': 'ListItem', position: 7, item: { '@type': 'Course', name: 'Ferramentas Digitais para Secretarias', url: 'https://calazanslumina.com.br/cursos/ferramentas-digitais-secretarias' } },

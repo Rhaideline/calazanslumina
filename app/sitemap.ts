@@ -18,6 +18,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/contato`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/cursos`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${BASE}/servicos`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    // indice das cidades brasileiras — criado em 20/set/2026. Ele nao existia,
+    // e por isso 209 paginas de cidade e 1.045 de cidade x servico estavam sem
+    // nenhum link apontando para elas. Ver app/brasil/page.tsx.
+    { url: `${BASE}/brasil`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${BASE}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE}/projetos`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/para-agencias`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
