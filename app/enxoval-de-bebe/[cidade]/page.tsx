@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import ScrollReveal from '@/components/ScrollReveal'
 import { capitaisBR, getCapitalBRBySlug } from '@/data/capitais-br'
 import { cidadesBrasil, getCidadeBRBySlug } from '@/data/cidades-brasil'
+import { enxovalLocal } from '@/lib/local-br'
 
 const BASE = 'https://calazanslumina.com.br'
 
@@ -138,6 +139,9 @@ export default async function EnxovalCidadePage({ params }: Props) {
   const { cidade: slug } = await params
   const cidade = getCapitalBRBySlug(slug) || getCidadeBRBySlug(slug)
   if (!cidade) notFound()
+
+  // o que o clima daqui muda no enxoval — ver lib/local-br.ts
+  const local = enxovalLocal(cidade)
 
   const dor = getDorEnxoval(cidade)
 
@@ -289,113 +293,71 @@ export default async function EnxovalCidadePage({ params }: Props) {
         </div>
       </section>
 
-      {/* === CHECKLIST VISUAL === */}
+      {/* ⚠️ AQUI FICAVAM CHECKLIST (154 palavras), DICAS (202) e FAQ (164).
+          Eram 520 palavras de conselho universal, identicas nas 209 cidades —
+          enxoval de bebe nao muda por cidade. Medicao de 20/set: a pagina
+          tinha 756 palavras e ZERO variavam; 73,9% de sobreposicao entre
+          irmas, e o Google respondia "Rastreada, mas nao indexada".
+          O conselho completo vive em /enxoval-de-bebe, uma vez so. Aqui fica
+          o que e verdade DESTA cidade: o clima e o que ele exige.
+          Ver lib/local-br.ts. */}
       <section className="section-padding bg-white">
         <div className="container-main max-w-4xl">
-          <ScrollReveal className="text-center mb-12">
-            <h2 className="heading-2 text-brand-dark mb-4">Checklist do Enxoval para {cidade.nome}</h2>
-            <p className="text-brand-dark/50">Tudo que voce precisa, com quantidades recomendadas por pediatras</p>
-          </ScrollReveal>
+          <p className="text-brand-dark/60 leading-relaxed">{local.abertura}</p>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {checklistItems.map((cat, i) => (
-              <ScrollReveal key={i} delay={i * 80}>
-                <div className="bg-pink-50 rounded-2xl p-6 border border-pink-100 h-full">
-                  <h3 className="font-bold text-pink-700 mb-4 text-lg">{cat.categoria}</h3>
-                  <ul className="space-y-2">
-                    {cat.itens.map((item, j) => (
-                      <li key={j} className="flex items-start gap-2 text-brand-dark/70 text-sm">
-                        <svg className="w-4 h-4 text-pink-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+          <h2 className="heading-2 text-brand-dark mt-8 max-w-2xl">{local.titulo}</h2>
+          <p className="mt-5 text-lg leading-relaxed text-brand-dark/75">{local.texto}</p>
 
-          <ScrollReveal delay={200}>
-            <div className="text-center mt-10">
-              <a
-                href="/checklist-enxoval-bebe-2026.pdf"
-                download
-                className="inline-flex items-center gap-3 bg-pink-500 hover:bg-pink-600 text-white font-bold py-4 px-8 rounded-full text-lg transition-all"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                Baixar Checklist Completo em PDF
-              </a>
-              <p className="text-brand-dark/40 text-sm mt-3">9 paginas | Gratuito | Pronto para imprimir</p>
+          <div className="mt-10 grid gap-8 md:grid-cols-2">
+            <div className="border-t-2 border-brand-mint pt-5">
+              <h3 className="font-serif text-lg font-bold text-brand-dark">
+                O que entra por causa daqui
+              </h3>
+              <ul className="mt-4 space-y-2.5">
+                {local.entra.map((item, i) => (
+                  <li key={i} className="text-sm leading-relaxed text-brand-dark/70">
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* === DICAS REGIONAIS === */}
-      <section className="section-padding bg-brand-bg">
-        <div className="container-main max-w-4xl">
-          <ScrollReveal className="text-center mb-12">
-            <h2 className="heading-2 text-brand-dark mb-4">Dicas Essenciais para Mamaes em {cidade.nome}</h2>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              { titulo: 'Tecido 100% Algodao e Essencial', desc: `A pele do bebe e 5x mais fina que a do adulto. Em ${cidade.nome}, com o clima de ${cidade.siglaEstado}, escolher roupinhas de algodao puro e ainda mais importante para evitar irritacoes e alergias.` },
-              { titulo: 'Comece na 20a Semana', desc: `Mamaes em ${cidade.nome} devem comecar o enxoval na 20a semana. Aproveite promocoes online e compare precos. Comprando pela Shopee, voce recebe tudo em casa.` },
-              { titulo: 'Menos e Mais no Tamanho RN', desc: 'Compre poucas pecas no tamanho RN (recem-nascido). O bebe cresce muito rapido e pode ate nascer grande demais para RN. Invista mais nos tamanhos P e M.' },
-              { titulo: 'Seguranca no Berco', desc: 'NUNCA coloque travesseiros, almofadas ou bichos de pelucia no berco. Use apenas lencol com elastico. O colchao deve ser firme (D18 a D23) e ter selo INMETRO.' },
-              { titulo: 'Bebe Conforto e Lei', desc: `Em ${cidade.nome} e em todo o Brasil, o bebe conforto e obrigatorio por lei no carro. Deve ter selo INMETRO e ser instalado de costas ate pelo menos 2 anos.` },
-              { titulo: 'Bolsa Maternidade Pronta na 36a Semana', desc: 'Monte a bolsa com roupas do bebe, roupas da mamae e documentos em sacolas separadas. Lave tudo com sabao neutro antes.' },
-            ].map((dica, i) => (
-              <ScrollReveal key={i} delay={i * 60}>
-                <div className="flex items-start gap-4 bg-white rounded-xl p-5 border border-pink-100">
-                  <div className="w-8 h-8 bg-pink-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <span className="text-pink-500 font-bold text-sm">{i + 1}</span>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-brand-dark mb-1">{dica.titulo}</h3>
-                    <p className="text-brand-dark/50 text-sm leading-relaxed">{dica.desc}</p>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
+            <div className="border-t-2 border-brand-dark/15 pt-5">
+              <h3 className="font-serif text-lg font-bold text-brand-dark">
+                O que a lista genérica manda comprar e aqui não serve
+              </h3>
+              <ul className="mt-4 space-y-2.5">
+                {local.sai.map((item, i) => (
+                  <li key={i} className="text-sm leading-relaxed text-brand-dark/45 line-through decoration-brand-dark/25">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-        </div>
-      </section>
 
-      {/* === FAQ === */}
-      <section className="section-padding bg-white">
-        <div className="container-main max-w-4xl">
-          <ScrollReveal className="text-center mb-12">
-            <h2 className="heading-2 text-brand-dark mb-4">Perguntas Frequentes — Enxoval em {cidade.nome}</h2>
-          </ScrollReveal>
+          <div className="mt-10 border-t border-brand-dark/10 pt-6">
+            <h3 className="font-serif text-lg font-bold text-brand-dark">
+              Onde comprar, daqui
+            </h3>
+            <p className="mt-3 text-brand-dark/65 leading-relaxed">{local.onde}</p>
+          </div>
 
-          <div className="space-y-4">
-            {[
-              { q: `Onde comprar enxoval de bebe em ${cidade.nome}?`, a: `Voce pode comprar o enxoval em lojas fisicas de ${cidade.nome} ou online pela Shopee com precos ate 58% menores. Nosso guia reune 45+ produtos com avaliacao 4.7+ e entrega para ${cidade.nome}, ${cidade.siglaEstado}.` },
-              { q: `Quanto custa o enxoval de bebe em ${cidade.nome}?`, a: `O custo varia de R$2.000 a R$8.000. Com nosso guia e precos de Shopee, e possivel montar o enxoval completo entre R$2.000 e R$3.500, economizando muito em relacao as lojas fisicas.` },
-              { q: 'O que nao pode faltar no enxoval?', a: 'Bodies 100% algodao, calcas, macacoes, fraldas (RN, P e M), lencos umedecidos, pomada para assadura, berco INMETRO, colchao firme, mamadeiras anti-colica e bebe conforto.' },
-              { q: 'Quando comecar a montar o enxoval?', a: 'A partir da 20a semana de gestacao. Bolsa maternidade pronta na 36a semana.' },
-              { q: `A Shopee entrega em ${cidade.nome}?`, a: `Sim! A Shopee entrega em ${cidade.nome}, ${cidade.siglaEstado} e em todo o Brasil. Muitos produtos tem frete gratis e prazo de 3 a 10 dias uteis.` },
-            ].map((faq, i) => (
-              <ScrollReveal key={i} delay={i * 40}>
-                <details className="group bg-brand-bg rounded-2xl border border-gray-100 overflow-hidden">
-                  <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
-                    <h3 className="font-bold text-brand-dark text-left pr-4">{faq.q}</h3>
-                    <svg className="w-5 h-5 text-pink-500 flex-shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </summary>
-                  <div className="px-6 pb-6">
-                    <p className="text-brand-dark/60 leading-relaxed">{faq.a}</p>
-                  </div>
-                </details>
-              </ScrollReveal>
-            ))}
+          <div className="mt-8 border-t border-brand-dark/10 pt-6">
+            <p className="text-sm leading-relaxed text-brand-dark/55">
+              <span className="font-semibold text-brand-dark">
+                {cidade.nome}, {cidade.siglaEstado}
+              </span>{' '}
+              · {local.contexto}
+            </p>
+            <p className="mt-4 text-brand-dark/60 leading-relaxed">
+              A lista completa — quantidades por item, higiene, banho, passeio e
+              o que dá para deixar para depois —{' '}
+              <Link href="/enxoval-de-bebe" className="font-semibold text-brand-dark underline underline-offset-4">
+                está no checklist geral, com PDF para baixar
+              </Link>
+              . Ela vale para o país inteiro; esta página cobre só o que o clima
+              daqui muda.
+            </p>
           </div>
         </div>
       </section>
