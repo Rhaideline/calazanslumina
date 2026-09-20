@@ -14,6 +14,7 @@ import Breadcrumb from '@/components/Breadcrumb'
 import PricingTable from '@/components/PricingTable'
 import ServiceIcon from '@/components/ServiceIcon'
 import CoursesSection from '@/components/CoursesSection'
+import CtaLocalBR from '@/components/CtaLocalBR'
 
 export async function generateStaticParams() {
   const allCidades = [...capitaisBR, ...cidadesBrasil]
@@ -102,7 +103,10 @@ export default async function CapitalPage({ params }: { params: Promise<{ capita
                 negócios em {capital.nome}: sites de alta performance, funis automatizados,
                 CRM com IA e Google Meu Negócio otimizado.
               </p>
-              <p className="text-white/50 text-base mb-8 max-w-2xl">{capital.doresEspecificas}.</p>
+              {/* ⚠️ `doresEspecificas` saiu do hero: ele aparecia AQUI e de novo
+                  em <CtaLocalBR>, na mesma pagina. O dado unico da cidade e
+                  escasso (cerca de 90 palavras por cidade entre descricao,
+                  dores e referencia) — gasta-lo duas vezes e desperdicio. */}
 
               <a
                 href={`https://wa.me/5531982948067?text=${encodeURIComponent(`Olá, moro em ${capital.nome} e quero saber mais sobre os serviços da Calazans Lumina`)}`}
@@ -120,30 +124,12 @@ export default async function CapitalPage({ params }: { params: Promise<{ capita
         </div>
       </section>
 
-      {/* Dores */}
-      <section className="section-padding bg-brand-bg">
-        <div className="container-main">
-          <ScrollReveal className="text-center mb-12">
-            <h2 className="heading-2 text-brand-dark mb-4">Desafios de empreendedores em {capital.nome}</h2>
-          </ScrollReveal>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
-            {[
-              `Alta concorrência digital em ${capital.nome} — CPL cada vez mais caro`,
-              'Sites antigos sem mobile, sem velocidade e sem SEO',
-              'Perder leads no WhatsApp por falta de automação',
-              'Campanhas sem estrutura — dinheiro jogado fora',
-              'Instagram com seguidores que não compram',
-              `Google Meu Negócio nunca configurado corretamente em ${capital.nome}`,
-            ].map((dor, i) => (
-              <ScrollReveal key={i} delay={i * 80}>
-                <div className="bg-white rounded-xl p-5 shadow-sm border-l-4 border-red-400/50 h-full">
-                  <p className="text-brand-dark/70 text-sm">{dor}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ⚠️ O bloco "Desafios de empreendedores" saiu daqui.
+          Eram seis frases genericas, iguais nas 209 cidades (54 palavras, 76%
+          de semelhanca entre irmas), e das seis so duas citavam a cidade.
+          A dor real desta cidade — escrita pela pesquisa, uma por uma — ja
+          aparece em <CtaLocalBR>, que le `doresEspecificas` do dado. Manter as
+          duas era repetir generico e especifico na mesma pagina. */}
 
       {/* Serviços */}
       <section className="section-padding bg-white">
@@ -157,7 +143,14 @@ export default async function CapitalPage({ params }: { params: Promise<{ capita
                 <Link href={`/brasil/${capital.slug}/${servico.slug}`} className="card-premium block h-full group">
                   <ServiceIcon name={servico.icone} className="w-8 h-8 text-brand-mint mb-3" />
                   <h3 className="text-lg font-bold mb-2 group-hover:text-brand-mint transition-colors">{servico.nome}</h3>
-                  <p className="text-brand-dark/70 text-sm mb-4">{servico.descricaoCurta}</p>
+                  {/* ⚠️ AQUI NAO ENTRA DESCRICAO DE SERVICO, E ISSO E DELIBERADO.
+                      Primeiro havia `servico.descricaoCurta`: a mesma frase nas
+                      209 cidades, 80% de semelhanca entre irmas. Troquei por uma
+                      frase que citava a cidade — e nao adiantou quase nada
+                      (76%), porque texto que muda SO O NOME PROPRIO nao e texto
+                      diferente: o trigrama continua identico.
+                      A pagina de cidade fala da CIDADE e LINKA o servico. Quem
+                      descreve o servico e a pagina do servico. */}
                   <span className="text-brand-mint text-sm font-medium">{servico.cta} em {capital.nome} →</span>
                 </Link>
               </ScrollReveal>
@@ -166,29 +159,16 @@ export default async function CapitalPage({ params }: { params: Promise<{ capita
         </div>
       </section>
 
-      <PricingTable />
-      <CoursesSection />
-      <ReviewsWidget />
+      {/* ⚠️ Aqui ficavam PricingTable (268 palavras), CoursesSection (224) e
+          ReviewsWidget (337): 829 palavras IDENTICAS nas 209 cidades. Era 72%
+          da pagina repetida, e o Google respondia "Rastreada, mas nao
+          indexada". Ver components/CtaLocalBR.tsx. */}
+      <CtaLocalBR cidade={capital} />
 
       {/* Cross-Links */}
-      <section className="section-padding bg-brand-bg">
-        <div className="container-main">
-          <h2 className="font-serif text-xl font-bold text-brand-dark mb-4">Serviços Disponíveis</h2>
-          <div className="flex flex-wrap gap-2 mb-6">
-            {servicos.map(s => (
-              <Link key={s.slug} href={`/servicos/${s.slug}`} className="bg-white text-brand-dark text-sm px-4 py-2 rounded-full hover:bg-brand-mint hover:text-white transition-colors shadow-sm">
-                {s.nome}
-              </Link>
-            ))}
-          </div>
-          <div className="flex flex-wrap gap-4 text-sm">
-            <Link href="/cursos" className="text-brand-mint hover:text-brand-dark transition-colors">Cursos de Marketing Digital →</Link>
-            <Link href="/blog" className="text-brand-mint hover:text-brand-dark transition-colors">Blog →</Link>
-            <Link href="/sobre" className="text-brand-mint hover:text-brand-dark transition-colors">Sobre Nós →</Link>
-            <Link href="/contato" className="text-brand-mint hover:text-brand-dark transition-colors">Contato →</Link>
-          </div>
-        </div>
-      </section>
+      {/* O bloco "Servicos Disponiveis" saiu: 35 palavras 100% identicas
+          nas 209 cidades, e redundante — a secao acima ja lista os mesmos
+          cinco servicos, com link. */}
 
       <CTAForm cidade={capital.nome} />
     </>

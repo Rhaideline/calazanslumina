@@ -123,8 +123,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...cursosPages,
     ...servicosPages,
     ...blogPages,
-    ...cidadesPages,
-    ...cidadesServicosPages,
+    // ⚠️ /cidades/* (624 URLs de cidade americana) SAIU DO SITEMAP.
+    // Elas passaram a redirecionar 301 para o mesmo caminho no .com — ver o
+    // bloco em next.config.ts. URL que redireciona nao deve estar no sitemap:
+    // o sitemap diz "indexe isto", e o 301 diz "isto mora noutro lugar". Os
+    // dois sinais juntos sao contraditorios e o Google reporta como erro.
+    // As paginas continuam no repositorio; para reverter, religar aqui e
+    // apagar o redirect.
     ...capitaisPages,
     ...capitaisServicosPages,
     ...cursosCidadesPages,

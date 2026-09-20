@@ -51,6 +51,32 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
+      // ---- FIM DA COMPETICAO COM O .com (20/set/2026) ----
+      //
+      // ⚠️ O MESMO CAMINHO EXISTIA NOS DOIS DOMINIOS.
+      // /cidades/framingham respondia 200 no .com.br E no .com, servindo a
+      // mesma cidade, o mesmo servico e o mesmo publico: brasileiro em
+      // Massachusetts. Sao 104 cidades x (1 + 5 servicos) = 624 URLs de uma
+      // ponta disputando busca com a outra ponta. Duas paginas dela mesma
+      // competindo, e o Google escolhendo uma.
+      //
+      // A divisao passa a ser por MERCADO, que e o unico corte que nao
+      // colide: o .com atende brasileiro nos Estados Unidos, o .com.br
+      // atende empresa no Brasil.
+      //
+      // Conferido antes de ligar: as 104 cidades do .com.br existem TODAS no
+      // .com (128 MA + 50 FL), e os cinco servicos tambem. Nenhum 301 cai em
+      // 404. O caminho e identico, entao o redirecionamento e 1:1 e leva o
+      // sinal acumulado para a pagina mais forte — a do .com, que passou pela
+      // reforma de setembro.
+      //
+      // Para reverter: apagar este bloco. As paginas continuam no repositorio.
+      {
+        source: '/cidades/:caminho*',
+        destination: 'https://calazanslumina.com/cidades/:caminho*',
+        permanent: true,
+      },
+
       // A home linkava estes dois slugs encurtados, que nunca existiram: os
       // artigos reais tem o slug longo. O link foi corrigido na home (agora le
       // de blogPosts), mas o Google pode ter as URLs curtas na fila — entao

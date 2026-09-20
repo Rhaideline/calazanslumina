@@ -14,6 +14,7 @@ import Breadcrumb from '@/components/Breadcrumb'
 import PricingTable from '@/components/PricingTable'
 import ServiceIcon from '@/components/ServiceIcon'
 import CoursesSection from '@/components/CoursesSection'
+import CtaLocalBR from '@/components/CtaLocalBR'
 
 export async function generateStaticParams() {
   const allCidades = [...capitaisBR, ...cidadesBrasil]
@@ -168,8 +169,8 @@ export default async function CapitalServicoPage({ params }: { params: Promise<{
         </div>
       </section>
 
-      <PricingTable />
-      <ReviewsWidget />
+      {/* mesmos blocos repetidos, mesma medida — ver CtaLocalBR.tsx */}
+      <CtaLocalBR cidade={capital} servico={{ slug: servico.slug, nome: servico.nome }} />
 
       <section className="section-padding bg-brand-bg">
         <div className="container-main">
@@ -189,7 +190,6 @@ export default async function CapitalServicoPage({ params }: { params: Promise<{
         </div>
       </section>
 
-      <CoursesSection />
 
       <CTAForm cidade={capital.nome} servico={servico.nome} />
     </>

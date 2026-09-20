@@ -427,7 +427,14 @@ export default async function CursoCapitalPage({ params }: { params: Promise<{ s
         </section>
       )}
 
-      <CoursesSection />
+      {/* ⚠️ <CoursesSection /> saiu: 224 palavras IDENTICAS, e ele aparecia
+          nas 1.672 paginas de curso x cidade alem de na propria pagina do
+          curso. Comparando o MESMO curso em cidades diferentes, a
+          sobreposicao era de 78,5% — a comparacao que importa, porque sao
+          essas que disputam entre si.
+          O conteudo programatico continua igual de proposito: e o mesmo
+          curso, e mentir sobre isso seria pior. O que precisa variar e o que
+          fala da cidade. */}
       <CTAForm cidade={capital.nome} />
     </>
   )
