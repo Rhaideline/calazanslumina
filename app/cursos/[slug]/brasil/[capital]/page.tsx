@@ -11,6 +11,7 @@ import Breadcrumb from '@/components/Breadcrumb'
 import CoursesSection from '@/components/CoursesSection'
 import { formatPreco, formatPrecoCompacto } from '@/lib/formatters'
 import { cursoLocal } from '@/lib/local-br'
+import { textoVocacao } from '@/lib/vocacao-br'
 
 export async function generateStaticParams() {
   const allCidades = [...capitaisBR, ...cidadesBrasil]
@@ -45,6 +46,7 @@ export default async function CursoCapitalPage({ params }: { params: Promise<{ s
 
   // abertura e contexto da cidade — ver lib/local-br.ts
   const local = cursoLocal(capital, curso.slug)
+  const voc = textoVocacao(capital.slug, capital.nome)
 
   const courseSchema = {
     '@context': 'https://schema.org',
@@ -203,6 +205,16 @@ export default async function CursoCapitalPage({ params }: { params: Promise<{ s
               <p className="text-brand-dark/70 leading-relaxed mb-6">{local.abertura}</p>
               <p className="text-brand-dark/70 leading-relaxed mb-6">{capital.descricao}</p>
               <p className="text-brand-dark/70 leading-relaxed mb-6">{capital.doresEspecificas}</p>
+              {voc && (
+                <>
+                  <h3 className="font-serif text-lg font-bold text-brand-dark mt-8 mb-3">{voc.titulo}</h3>
+                  <p className="text-brand-dark/70 leading-relaxed mb-4">{voc.texto}</p>
+                  {voc.segundo && (
+                    <p className="text-brand-dark/60 leading-relaxed mb-4">{voc.segundo}</p>
+                  )}
+                  <p className="text-brand-dark/60 leading-relaxed mb-6">{voc.porte}</p>
+                </>
+              )}
               <p className="text-brand-dark/70 leading-relaxed">
                 Com o curso <strong>{curso.nome}</strong>, profissionais em {capital.nome} terão as ferramentas
                 necessárias para se destacar no mercado digital. {curso.gratuito

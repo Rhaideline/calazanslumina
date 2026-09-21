@@ -198,6 +198,23 @@ export default async function CursoCidadePage({ params }: { params: Promise<{ sl
               <p className="text-brand-dark/70 leading-relaxed mb-6">{local.abertura}</p>
               <p className="text-brand-dark/70 leading-relaxed mb-6">{cidade.comunidade}</p>
               <p className="text-brand-dark/70 leading-relaxed mb-6">{cidade.doresEspecificas}</p>
+              {/* ⚠️ `regraLocal` e o fato mais especifico que existe sobre cada
+                  cidade: a licenca, a certificacao ou o comite historico que
+                  muda a operacao ali. Veio da pesquisa profunda do .com em
+                  20/set — 104 cidades enriquecidas de 72 para 174 palavras
+                  proprias. Ver _enriquece-ma.py. */}
+              {cidade.regraLocal && (
+                <p className="text-brand-dark/70 leading-relaxed mb-6">
+                  <span className="font-semibold text-brand-dark">O que vale em {cidade.nome}: </span>
+                  {cidade.regraLocal}
+                </p>
+              )}
+              {cidade.nichos && cidade.nichos.length > 0 && (
+                <p className="text-brand-dark/60 leading-relaxed mb-6 text-sm">
+                  Os ofícios que mais aparecem por aqui: {cidade.nichos.join(', ')}. É para
+                  esse cliente que o curso vai te ajudar a aparecer.
+                </p>
+              )}
               <p className="text-brand-dark/70 leading-relaxed">
                 Com o curso <strong>{curso.nome}</strong>, brasileiros em {cidade.nome} têm acesso a conhecimento
                 prático e atualizado. {curso.gratuito

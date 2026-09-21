@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { tituloAngulo, anguloLongo } from '@/lib/angulo-servico-br'
+import { textoVocacao } from '@/lib/vocacao-br'
 import type { CapitalBR } from '@/data/capitais-br'
 import type { CidadeBR } from '@/data/cidades-brasil'
 
@@ -55,6 +56,8 @@ export default function CtaLocalBR({
   const uf = cidade.siglaEstado
   const titulo = servico ? tituloAngulo(servico.slug) : ''
   const paragrafo = servico ? anguloLongo(servico.slug, nome) : ''
+  // o que a vocacao economica da cidade muda — ver lib/vocacao-br.ts
+  const voc = textoVocacao(cidade.slug, nome)
 
   const whats = `https://wa.me/5531982948067?text=${encodeURIComponent(
     servico
@@ -78,6 +81,19 @@ export default function CtaLocalBR({
 
             {paragrafo && (
               <p className="mt-5 leading-relaxed text-brand-dark/60">{paragrafo}</p>
+            )}
+
+            {voc && (
+              <div className="mt-9 border-t border-brand-dark/10 pt-7">
+                <h3 className="font-serif text-xl font-bold text-brand-dark max-w-lg">
+                  {voc.titulo}
+                </h3>
+                <p className="mt-4 leading-relaxed text-brand-dark/70">{voc.texto}</p>
+                {voc.segundo && (
+                  <p className="mt-4 leading-relaxed text-brand-dark/60">{voc.segundo}</p>
+                )}
+                <p className="mt-4 leading-relaxed text-brand-dark/60">{voc.porte}</p>
+              </div>
             )}
 
             <div className="mt-8 border-t border-brand-dark/10 pt-6">
