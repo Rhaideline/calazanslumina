@@ -2,39 +2,32 @@
 """
 "Se eu fosse você, e tivesse acabado de virar mãe" — perfil @rhaicalazans.
 
-O TEXTO É O PONTO DESTE ARQUIVO. A cliente mandou o carrossel da
-@dradunniabaldissera como referência e eu tinha copiado só o desenho. Ao
-ler os textos dela de perto, o que sustenta aquele carrossel são cinco
-coisas, e o meu não tinha nenhuma:
+Segunda escrita. O que estava errado na primeira, item por item:
 
-1. UM MODO VERBAL SUSTENTADO. Dez slides inteiros no futuro do pretérito:
-   "eu faria", "eu estabeleceria", "não seguiria", "não confiaria". Não é
-   estilo, é dispositivo — segura o carrossel como uma peça só. Até o
-   pedido final dela obedece: "depois eu também curtiria este post".
+  4 e 5   eram conteúdo da referência, não só forma dela. "Seguiria duas
+          pessoas, não vinte" e "escolheria uma hora e sempre a mesma" são
+          quase as frases da Dra. Dunnia. Copiar o dispositivo é aprender;
+          copiar a ideia é outra coisa. Os dois saíram.
+  fio     os oito itens puxavam para três assuntos diferentes — manipulação
+          de anúncio, rotina de trabalho e sentimento. Carrossel bom tem um
+          fio só.
+  8       "nenhuma das duas resolve o dia difícil" era bonito e vago, do
+          tipo que soa bem e não deixa nada com quem lê.
 
-2. AÇÃO CONCRETA, NÃO SLOGAN. "Estabeleceria uma hora para iniciar o nosso
-   dia. Sempre a mesma." É coisa que se faz amanhã. Eu vinha escrevendo
-   "ter um horário e defender ele", que é frase de crachá.
+O fio agora é um só, e é o único que ela pode puxar sem concorrência:
+**ela escreve anúncio pra viver e virou alvo dos próprios truques.** Cada
+item nomeia uma tática real usada em mãe recém-parida e entrega um teste
+que dá pra fazer amanhã — abrir o anúncio três dias depois, procurar o
+nome do pediatra, ler o valor total antes do "12x". Nomear o mecanismo é o
+que a referência faz de melhor ("cutucando a minha dor"); dar o teste é o
+que sobra pra quem lê.
 
-3. UMA RESSALVA QUE PROVA PENSAMENTO. "Eu até pesquisaria na IA, mas não o
-   faria sem o apoio de alguém para confirmar." O "até... mas" é o que faz
-   soar gente pesando, e não copy.
+O item 4 assume o custo da honestidade — "inclusive por mim". Sem essa
+linha, o carrossel é uma pessoa acusando o mercado. Com ela, é alguém
+contando como o próprio trabalho funciona, que é o que dá autoridade.
 
-4. COMPRIMENTO. Duas a quatro frases por slide. Eu tinha cortado tanto que
-   não sobrou nada pra ler.
-
-5. UMA VERDADE QUE NINGUÉM DIZ EM VOZ ALTA. O item mais forte dela é o que
-   nomeia o mecanismo: "não confiaria em ninguém que me induzisse a comprar
-   algo para o meu filho cutucando a minha dor".
-
-O ângulo desta versão sai daí. A Rhaideline é mãe E escreve anúncio pra
-viver. Então ela é a pessoa que consegue mostrar, de dentro, como uma mãe
-recém-parida é alvo de marketing — e isso ninguém no nicho dela pode
-dizer com a mesma autoridade. É o item 5 da lista acima, aplicado ao que
-ela sabe de verdade.
-
-Nenhum conselho de sono, saúde ou amamentação: continua não sendo a área
-dela. Tudo aqui é sobre dinheiro, atenção e rotina, que é.
+Continua sem conselho de sono, saúde ou amamentação — não é a área dela.
+Aqui é dinheiro, atenção e persuasão, que é.
 """
 
 FOTO = "rhai-bebe2.jpg"
@@ -44,8 +37,6 @@ CARROSSEL = {
     "titulo": "Se eu fosse você, e tivesse acabado de virar mãe",
     "foto": FOTO,
     "slides": [
-        # capa_texto, não capa: a pilha gigante cobre os dois rostos com
-        # uma frase de nove palavras, e o rosto é metade do motivo do post
         ("capa_texto", dict(frase="Se eu fosse você, e tivesse acabado de virar mãe",
                             sub="eu faria todas estas coisas", n_linhas=4)),
 
@@ -55,24 +46,24 @@ CARROSSEL = {
          "é o que abre a carteira na última.")),
 
         ("texto", dict(numero=2, corpo=
-         "Antes de comprar qualquer coisa, eu esperaria vinte e quatro "
-         "horas. Não por disciplina. Porque quase toda pressa que eu sinto "
-         "foi colocada ali por alguém — e ela não sobrevive a um dia.")),
+         "Eu abriria o mesmo anúncio três dias depois. Se o contador de "
+         "“últimas unidades” tivesse reiniciado, eu já saberia o que fazer "
+         "com aquela pressa.")),
 
         ("texto", dict(numero=3, corpo=
-         "Eu não confiaria em nenhum vídeo que começasse com “ninguém te "
-         "conta isso”. Sempre contam. Essa frase não existe para te "
-         "informar, existe para te segurar mais trinta segundos.")),
+         "Eu procuraria o nome do pediatra em “aprovado por pediatras”. "
+         "Quando não tem nome, não tem pediatra — tem uma frase que "
+         "ninguém precisa provar.")),
 
         ("texto", dict(numero=4, corpo=
-         "Eu seguiria duas pessoas, não vinte. E escolheria pelo que elas "
-         "dizem quando não estão vendendo nada. Informação demais não "
-         "organiza ninguém.")),
+         "Eu lembraria que ninguém filma a noite em que não funcionou. "
+         "Todo depoimento é o melhor resultado de alguém, escolhido a dedo "
+         "por quem está vendendo. Inclusive por mim.")),
 
         ("texto", dict(numero=5, corpo=
-         "Eu escolheria uma hora do dia que fosse só nossa e não entregaria "
-         "ela pra ninguém. Nem pro trabalho, nem pro celular. Sempre a "
-         "mesma hora.")),
+         "Quando um anúncio começasse com “não cometa esse erro”, eu "
+         "perguntaria o que vem logo depois do medo. Se a resposta for um "
+         "botão, o medo era o produto.")),
 
         ("texto", dict(numero=6, corpo=
          "Quando alguém dissesse que eu estou “perdendo o melhor da vida "
@@ -80,37 +71,40 @@ CARROSSEL = {
          "existe, e quem usa sabe disso.")),
 
         ("texto", dict(numero=7, corpo=
-         "Eu contaria pros meus clientes que tenho um bebê em casa. Não "
-         "como desculpa — como horário. E descobriria, como descobri, que "
-         "ninguém foi embora por causa disso.")),
+         "Eu leria o valor total antes do “12x de”. O parcelamento não foi "
+         "inventado pra caber no seu mês. Foi inventado pra fazer o número "
+         "parecer menor do que ele é.")),
 
         ("texto", dict(numero=8, corpo=
-         "Eu compraria menos coisa e tiraria mais foto. Nenhuma das duas "
-         "resolve o dia difícil. Mas só uma delas continua valendo alguma "
-         "coisa em dez anos.")),
+         "E eu não chamaria nada disso de desconfiança. Chamaria de parar "
+         "de gastar, às duas da manhã, a única energia que me sobra "
+         "decidindo uma coisa que alguém já decidiu por mim.")),
 
         ("fecho", dict(frase="Depois eu também salvaria este post",
                        n_linhas=3,
-                       pedidos=[("i.", "E mandaria para uma mãe que anda comprando demais de madrugada."),
-                                ("ii.", "E comentaria qual delas eu já tinha deixado de fazer."),
-                                ("iii.", "E voltaria aqui no primeiro dia difícil.")])),
+                       pedidos=[("i.", "E mandaria pra uma amiga que está com o carrinho cheio às duas da manhã."),
+                                ("ii.", "E comentaria qual dessas eu já tinha caído."),
+                                ("iii.", "E voltaria aqui antes da próxima compra.")])),
     ],
     "legenda": """Se eu fosse você, e tivesse acabado de virar mãe, eu faria todas estas coisas.
 
-Eu escrevo anúncio pra viver. É o meu trabalho saber qual palavra faz alguém tirar o cartão do bolso — e depois que eu virei mãe, eu passei a ver esses mesmos truques virados contra mim.
+Eu escrevo anúncio pra viver. É o meu trabalho saber qual palavra faz alguém tirar o cartão do bolso.
 
-Então essa lista não é conselho de maternidade. Não é a minha área e eu não daria. É o que eu faria sabendo o que eu sei do outro lado.
+Depois que eu virei mãe, esses mesmos truques passaram a ser usados em mim — e de madrugada, que é quando funcionam melhor.
 
-O elogio na primeira linha do anúncio é o que abre a carteira na última. "Mãe que não abre mão" não é um carinho, é um gancho. A pressa que você sente às duas da manhã foi colocada ali por alguém, e ela quase nunca sobrevive a vinte e quatro horas.
+Então isso aqui não é conselho de maternidade. Não é a minha área e eu não daria. É o que eu faria sabendo o que eu sei do outro lado do anúncio.
 
-E a culpa — "você está perdendo o melhor da vida dele" — é o gatilho mais barato que existe. Quem usa sabe disso.
+O elogio da primeira linha ("mãe que não abre mão") é o que abre a carteira na última. O contador de "últimas unidades" reinicia sozinho — abre o mesmo anúncio três dias depois e você vê. "Aprovado por pediatras" sem nome de pediatra é uma frase que ninguém precisa provar. E o "12x de" existe pra fazer o número parecer menor do que ele é.
 
-A parte boa: nada aqui exige disciplina. Exige só saber o nome do que está acontecendo.
+O mais pesado de todos é a culpa. "Você está perdendo o melhor da vida dele" é o gatilho mais barato que existe, e quem usa sabe disso.
+
+Nada disso é sobre ser desconfiada. É sobre parar de gastar, às duas da manhã, a única energia que sobra decidindo uma coisa que alguém já decidiu por você.
 
 ━━━
 
 Depois eu também salvaria este post.
-E mandaria para uma mãe que anda comprando demais de madrugada.
+E mandaria pra uma amiga que está com o carrinho cheio agora.
+E comentaria qual dessas eu já tinha caído — eu começo: a 7.
 
-#maternidadereal #mãeempreendedora #publicidade #maternidadeeconsumo""",
+#maternidadereal #mãeempreendedora #maternidadeeconsumo #publicidade""",
 }
