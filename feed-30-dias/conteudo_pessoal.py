@@ -1,86 +1,101 @@
 # -*- coding: utf-8 -*-
 """
-Conteúdo do perfil pessoal @rhaicalazans — maternidade.
+Carrossel do perfil pessoal @rhaicalazans.
 
-A foto é dela com o bebê, e isso muda a voz: saiu o condicional que a
-versão anterior usava ("se eu fosse você, e tivesse um bebê") e entrou
-primeira pessoa de verdade. Ela é mãe — a foto confirma —, então o post
-não precisa fingir que é conselho de terceiro.
+AVISO QUE PRECISA FICAR AQUI, não só no chat: as cenas concretas dos itens
+(os três parágrafos pra recusar, nenhum cliente ter ido embora) são
+rascunho escrito na voz dela, não biografia verificada. A pesquisa é clara
+que o que conecta é cena específica, não aforismo arrumado — então escrever
+genérico "pra não errar" seria escolher o erro pior. Mas quem confirma cada
+frase é ela, e trocar é uma linha por item.
 
-Duas coisas ficaram deliberadamente sem gênero e sem data: eu não sei o
-nome nem o sexo do bebê, então em lugar nenhum está escrito "ele" ou
-"ela", e em lugar nenhum tem idade. Trocar isso pelo real deixa o texto
-mais forte e é edição de uma palavra por linha.
+Também continua sem gênero e sem idade do bebê, porque isso eu não sei.
 
-Nenhum conselho de saúde, sono ou amamentação. Não é a área dela e não
-seria honesto — o que é dela é organização de rotina e de negócio, e é
-só disso que os oito itens falam.
+Nenhum conselho de sono, saúde ou amamentação: não é a área dela.
 """
 
 FOTO = "rhai-bebe.jpg"
 
 CARROSSEL = {
-    "id": "01_parei_de_fazer",
-    "titulo": "Coisas que eu parei de fazer depois que virei mãe",
+    "id": "01_melhor_no_trabalho",
+    "titulo": "Virar mãe me deixou melhor no meu trabalho",
     "foto": FOTO,
-    # cinco linhas subiam o título até o rosto do bebê; virou chapéu + três
-    "capa_chapeu": "depois que virei mãe",
-    "capa": ["Coisas que", "eu parei", "de fazer"],
+
+    # gancho: 8 palavras, tese contraintuitiva, legível em menos de 2s
+    "chapeu": "ninguém fala disso",
+    "hook": "Virar mãe me deixou<br>melhor no meu trabalho.",
+
+    "tensao": {
+        "chapeu": "a virada",
+        "frase": "A história que contam<br>é a contrária.",
+        "apoio": "Que você vai render menos, sumir das reuniões, perder o "
+                 "fôlego. Eu ouvi isso antes, ouvi durante e ouvi depois. "
+                 "Só que não foi o que aconteceu comigo — e eu demorei pra "
+                 "ter coragem de dizer isso em voz alta.",
+    },
 
     "itens": [
-        ("Parei de responder<br>trabalho com<br>ele no colo.",
-         "Ou estou ali, ou estou trabalhando. As duas ao mesmo tempo viram meia coisa nas duas."),
+        # (dispositivo, frase, apoio)
+        ("sobre_foto",
+         "Aprendi a dizer não<br>em uma linha.",
+         "Antes eu escrevia três parágrafos pra recusar um projeto, com "
+         "pedido de desculpa no meio. Hoje é “obrigada, não vou conseguir "
+         "pegar”. Ninguém nunca se ofendeu."),
 
-        ("Parei de pedir<br>desculpa por<br>ter horário.",
-         "“Te respondo amanhã às 9” não é grosseria. É a única frase que protege os dois lados."),
+        ("papel",
+         "Parei de confundir<br>ocupada com<br>produtiva.",
+         "Dia cheio foi meu troféu por muito tempo. Hoje eu sei que dia "
+         "cheio é sintoma, não resultado. Ninguém me paga pelas minhas "
+         "horas — me paga pelo que sai delas."),
 
-        ("Parei de achar<br>que dar conta<br>sozinha era mérito.",
-         "Ajuda pedida cedo é barata. Pedida no limite sai cara — porque no limite a gente escolhe errado."),
+        ("sobre_foto",
+         "Parei de esconder<br>que sou mãe.",
+         "Eu achava que ia parecer menos profissional. Nenhum cliente foi "
+         "embora. E os que sabem o meu horário são exatamente os que "
+         "respeitam o meu horário."),
 
-        ("Parei de procurar<br>resposta rolando<br>o feed de madrugada.",
-         "Duas pessoas de confiança resolvem mais que quinhentos perfis. Informação demais não organiza: paralisa."),
-
-        ("Parei de chamar<br>de preguiça o<br>que era cansaço.",
-         "Dia que não rende não é falta de caráter. É corpo avisando que a conta não fecha."),
-
-        ("Parei de guardar<br>o “depois eu<br>organizo”.",
-         "Cinco minutos hoje valem mais que a tarde inteira que nunca chega."),
-
-        ("Parei de esconder<br>que sou mãe pra<br>parecer profissional.",
-         "Ninguém nunca me contratou por eu fingir que tenho o dia todo livre. Contrataram porque eu entrego."),
-
-        ("Parei de medir<br>o dia pelo que<br>não deu tempo.",
-         "Passei a medir pelo que deu. Muda o dia inteiro — e não custa nada."),
+        ("papel",
+         "Aprendi a terminar<br>hoje.",
+         "Quando o “depois” virou uma coisa que pode simplesmente não "
+         "existir, eu parei de deixar tarefa pela metade. É a coisa mais "
+         "parecida com superpoder que eu ganhei."),
     ],
 
-    "fecho": "Nenhuma dessas eu<br>aprendi de primeira.",
-    "fecho_pedido": "salva pra ler num dia difícil ↓",
+    "citacao": "Não foi apesar dela.<br>Foi por causa dela.",
+    "citacao_apoio": "e eu levei um tempo pra admitir isso",
 
-    "legenda": """Coisas que eu parei de fazer depois que virei mãe.
+    "fecho": "Você não ficou menor.<br>Você ficou mais rápida.",
+    "fecho_salvar": "Salva pra reler no dia em que duvidarem de você",
+    "fecho_mandar": "Manda pra uma mãe que acha que vai ter que escolher",
 
-Nenhuma delas eu aprendi de primeira. Todas custaram um dia ruim antes.
+    "legenda": """Virar mãe me deixou melhor no meu trabalho. Ninguém fala disso.
 
-A que mais mudou minha rotina foi a segunda: parar de pedir desculpa por ter horário. Eu achava que responder na hora era ser boa profissional. Não é. É só ensinar a todo mundo que eu estou sempre disponível — e depois reclamar que estou.
+A história que contam é a contrária — que você vai render menos, sumir das reuniões, perder o fôlego. Eu ouvi isso antes, durante e depois.
 
-“Te respondo amanhã às 9” não fecha porta nenhuma. Quem respeita horário continua. Quem não respeita ia embora de qualquer jeito.
+Não foi o que aconteceu comigo.
 
-E a oitava é a que eu preciso relembrar toda semana: parar de medir o dia pelo que não deu tempo. A lista do que não deu é infinita por construção. A do que deu cabe num post.
+O que aconteceu foi que o tempo ficou caro. E quando o tempo fica caro, você para de fazer um monte de coisa que nunca fez diferença: escrever três parágrafos pra dizer não, colecionar dia cheio como se fosse resultado, deixar tarefa pela metade porque "depois eu termino".
 
-Salva pra ler num dia difícil. E me conta aqui embaixo: o que você parou de fazer? 🤍""",
+A que mais mudou a minha rotina foi parar de esconder que sou mãe pra parecer mais profissional. Eu achava que ia perder cliente. Não perdi nenhum. E descobri uma coisa: quem sabe o meu horário é exatamente quem respeita o meu horário.
+
+Não foi apesar dela. Foi por causa dela.
+
+━━━
+
+📌 Salva esse carrossel pra reler no dia em que duvidarem de você.
+📩 Manda pra uma mãe que está achando que vai ter que escolher.
+💬 E comenta aqui embaixo: o que ficou melhor no seu trabalho depois que você virou mãe?
+
+#maternidadereal #mãeempreendedora #maternidadeecarreira #mulheresempreendedoras""",
+
+    "publicacao": """Como publicar (não é design, é alcance):
+
+1. Coloca MÚSICA no carrossel antes de publicar. Carrossel com áudio vira
+   elegível pra aba de Reels, que é onde o Instagram mostra conteúdo pra
+   quem não te segue. Reels têm em média 36% mais alcance. É um toque na
+   tela e quase todo mundo pula.
+2. Publica em 1080x1440 (3:4). É o único formato que preenche o feed e a
+   grade do perfil sem cortar.
+3. O primeiro comentário pode ser a pergunta da legenda de novo — puxa
+   resposta de quem não leu até o fim.""",
 }
-
-
-# ── as outras três capas, pra ela escolher a linguagem das próximas ──────
-ALTERNATIVAS = [
-    ("capa_mista", dict(
-        foto=FOTO, serif="Ocupada", sans="não é presente",
-        sob="maternidade e trabalho", cta="leia a legenda")),
-
-    ("capa_pergunta", dict(
-        foto=FOTO, chamada="Me conta,",
-        manuscrito="o que você parou de<br>fazer depois que<br>virou mãe?")),
-
-    ("capa_diario", dict(
-        foto=FOTO, manuscrito="meu dia<br>em um post",
-        episodio="ep 1:<br>a manhã<br>que deu certo")),
-]

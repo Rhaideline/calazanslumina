@@ -57,36 +57,30 @@ python3 gerar3.py && ./renderizar.sh && python3 gerar_reels3.py
 
 ## Perfil pessoal — @rhaicalazans
 
-Estrutura e voz separadas do feed da agência, porque é outro perfil. A
-linguagem veio das referências de Canva que ela mandou: foto real com luz
-de casa, tipografia grande misturando sem-serifa gorda com serifa itálica
-ou manuscrito, e caixa-alta espaçada fininha emoldurando. Nada de vermelho
-de marca — perfil pessoal de maternidade com paleta de agência em cima
-vira anúncio.
+Voz e sistema separados do feed da agência. As decisões desta parte estão
+todas justificadas em **`ESTUDO-PESSOAL-2026.md`**, com fonte — inclusive
+as que corrigiram entregas minhas anteriores.
 
-Formato **1080×1350 (4:5)**, não 1080×1440 como o feed da agência. É o das
-referências e o retrato que o Instagram mostra maior no feed.
+**Formato 1080×1440 (3:4)**, igual ao feed da agência. Eu tinha entregado
+4:5 antes; o Instagram passou a aceitar 3:4 nativamente em 2026 e é o
+único que preenche o feed **e** a grade de perfil sem corte.
 
-- `pessoal.py` — quatro capas e dois modelos de miolo:
+**Oito slides, quatro dispositivos alternando.** A versão anterior tinha
+dez slides com a mesma foto e o mesmo bloco de texto no mesmo canto — e
+carrossel só funciona se cada slide der motivo pra ver o próximo. A
+alternância foto → papel → foto → papel → citação é o que dá esse motivo.
 
-  | modelo | referência | quando usar |
-  |---|---|---|
-  | `capa_empilhada` | "Coisas que eu acho chique" | a mais limpa; aguenta frase longa |
-  | `capa_mista` | "Conteúdo não serve" | mais personalidade; exige duas palavras |
-  | `capa_pergunta` | "Me conta," | a que mais puxa comentário |
-  | `capa_diario` | "Meu dia em um post" | informal, boa pra série recorrente |
-  | `item` / `fecho` | — | miolo numerado e fecho |
-
-- `conteudo_pessoal.py` — o carrossel de maternidade e as três capas
-  alternativas, pra ela escolher a linguagem das próximas
+- `pessoal.py` — `capa`, `papel`, `sobre_foto`, `citacao`, `fecho`
+- `conteudo_pessoal.py` — o carrossel, a legenda e as instruções de
+  publicação (inclusive a música, que é o item de maior alcance e não é
+  código)
 - `gerar_pessoal.py` — escreve os HTML em `pessoal/<id>/`
+- `verificar_contraste.py` — mede o contraste no PNG renderizado, não nas
+  cores do CSS. Foi assim que eu peguei o acento da marca reprovando em
+  3,2:1 sobre o papel, que a folha de estilo não tinha como me contar.
 
-Fontes novas em `fontes/`: Playfair Display itálico (a serifa de moda das
-referências) e Caveat (o manuscrito). DM Sans continua carregando o peso.
-
-Tudo é ancorado no terço de baixo da peça de propósito: nesta foto os dois
-rostos ocupam o meio, e texto centralizado tapava o bebê — que é metade do
-motivo do post existir.
+Fontes em `fontes/`: Playfair Display itálico (a serifa de moda das
+referências dela) e Caveat (o manuscrito), somadas às da casa.
 
 ## O limite que preciso deixar claro
 

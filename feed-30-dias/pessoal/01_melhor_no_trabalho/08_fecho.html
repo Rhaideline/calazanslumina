@@ -19,29 +19,46 @@
 @font-face{font-family:'Playfair Display';font-style:italic;font-weight:400 700;font-display:block;src:url('../../fontes/playfair-italic-variable.woff2') format('woff2');}
 
 *{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased}
-html,body{width:1080px;height:1350px;overflow:hidden;background:#000}
+html,body{width:1080px;height:1440px;overflow:hidden;background:#241610}
 body{font-family:'DM Sans',sans-serif}
-.tela{position:relative;width:1080px;height:1350px;overflow:hidden}
-.foto{position:absolute;inset:0;background-size:cover;background-position:center 18%;
-      filter:saturate(1.06) contrast(1.03) brightness(1.02)}
-.calor{position:absolute;inset:0;background:rgba(120,72,40,.1);mix-blend-mode:multiply}
-.marca{position:absolute;left:0;right:0;z-index:20;text-align:center;
-       font-size:15px;letter-spacing:.42em;text-transform:uppercase;font-weight:600;
-       color:rgba(255,255,255,.94);text-shadow:0 1px 14px rgba(40,24,12,.6)}
-.sombra{text-shadow:0 2px 18px rgba(38,22,12,.55),0 1px 3px rgba(38,22,12,.4)}
+.tela{position:relative;width:1080px;height:1440px;overflow:hidden}
+.foto{position:absolute;inset:0;background-size:cover;background-position:center 16%;
+      filter:saturate(1.05) contrast(1.02)}
+/* véu em gradiente: escurece só a faixa atrás do texto, que é o padrão
+   recomendado (40 a 60% de preto) e preserva a luz do resto da foto */
+.veu{position:absolute;inset:0;background:linear-gradient(180deg,
+     rgba(30,17,11,.2) 0%,rgba(30,17,11,0) 20%,rgba(30,17,11,0) 44%,
+     rgba(28,16,10,.5) 62%,rgba(24,13,8,.88) 84%,rgba(22,12,7,.95) 100%)}
+.marca{position:absolute;left:0;right:0;top:56px;z-index:30;text-align:center;
+       font-size:15px;letter-spacing:.42em;text-transform:uppercase;font-weight:600}
+.sombra{text-shadow:0 2px 20px rgba(26,14,8,.65),0 1px 3px rgba(26,14,8,.5)}
+.passo{position:absolute;right:52px;bottom:54px;z-index:30;font-family:'DM Sans',sans-serif;
+       font-size:13px;letter-spacing:.28em;font-weight:600}
 
     .foto{background-image:url('../../fotos/rhai-bebe.jpg')}
-    .veu{position:absolute;inset:0;background:linear-gradient(180deg,rgba(46,28,16,0.22) 0%,rgba(46,28,16,0) 22%,rgba(46,28,16,0) 44%,rgba(40,24,13,0.52) 70%,rgba(34,20,11,0.84) 100%)}
-    .marca.topo{top:58px}
-    .bloco{position:absolute;left:54px;right:60px;bottom:104px;z-index:20}
-    h1{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;color:#fff;
-       font-size:104px;line-height:1.02;
+    .veu{background:linear-gradient(180deg,rgba(30,17,11,.24) 0%,
+         rgba(30,17,11,.04) 20%,rgba(28,16,10,.52) 46%,
+         rgba(22,12,7,.93) 74%,rgba(20,11,6,.97) 100%)}
+    .marca{color:rgba(255,255,255,.9)}
+    .bloco{position:absolute;left:54px;right:58px;bottom:96px;z-index:30}
+    h2{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;color:#fff;
+       font-size:93px;line-height:1.04;
        letter-spacing:-.02em}
-    .mao{margin-top:24px;font-family:'Caveat',cursive;font-weight:600;color:#F7E7C4;
-         font-size:62px;line-height:1.12}
+    .pedidos{margin-top:34px;display:flex;flex-direction:column;gap:16px}
+    .pedido{display:flex;align-items:center;gap:18px;font-size:29px;
+            font-weight:600;color:#fff;line-height:1.24}
+    .pedido b{flex:0 0 auto;width:52px;height:52px;border-radius:50%;
+              background:#F0C384;color:#241610;display:flex;
+              align-items:center;justify-content:center;font-size:26px}
     
 </style></head><body><div class="tela">
-      <div class="foto"></div><div class="calor"></div><div class="veu"></div>
-      <div class="marca topo">@rhaicalazans</div>
-      <div class="bloco"><h1 class="sombra">Nenhuma dessas eu<br>aprendi de primeira.</h1><div class="mao sombra">salva pra ler num dia difícil ↓</div></div>
+      <div class="foto"></div><div class="veu"></div>
+      <div class="marca sombra">@rhaicalazans</div>
+      <div class="bloco">
+        <h2 class="sombra">Você não ficou menor.<br>Você ficou mais rápida.</h2>
+        <div class="pedidos">
+          <div class="pedido sombra"><b>↓</b><span>Salva pra reler no dia em que duvidarem de você</span></div>
+          <div class="pedido sombra"><b>→</b><span>Manda pra uma mãe que acha que vai ter que escolher</span></div>
+        </div>
+      </div>
       </div></body></html>
