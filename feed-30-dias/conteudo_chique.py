@@ -1,66 +1,116 @@
 # -*- coding: utf-8 -*-
 """
-"Coisas que eu acho chique numa mãe que trabalha" — no modelo CHIQUE.
+"Se eu fosse você, e tivesse acabado de virar mãe" — perfil @rhaicalazans.
 
-As frases são escritas inteiras, sem <br>: quem decide a quebra é o
-`_quebrar()` do modelo, por largura de glifo. Foi assim que a referência
-foi feita, ainda que o designer tenha feito no olho.
+O TEXTO É O PONTO DESTE ARQUIVO. A cliente mandou o carrossel da
+@dradunniabaldissera como referência e eu tinha copiado só o desenho. Ao
+ler os textos dela de perto, o que sustenta aquele carrossel são cinco
+coisas, e o meu não tinha nenhuma:
 
-As cenas são escritas na voz dela, a partir do que ela contou de si — mãe
-e dona da própria agência. Quem confirma cada uma é ela.
+1. UM MODO VERBAL SUSTENTADO. Dez slides inteiros no futuro do pretérito:
+   "eu faria", "eu estabeleceria", "não seguiria", "não confiaria". Não é
+   estilo, é dispositivo — segura o carrossel como uma peça só. Até o
+   pedido final dela obedece: "depois eu também curtiria este post".
+
+2. AÇÃO CONCRETA, NÃO SLOGAN. "Estabeleceria uma hora para iniciar o nosso
+   dia. Sempre a mesma." É coisa que se faz amanhã. Eu vinha escrevendo
+   "ter um horário e defender ele", que é frase de crachá.
+
+3. UMA RESSALVA QUE PROVA PENSAMENTO. "Eu até pesquisaria na IA, mas não o
+   faria sem o apoio de alguém para confirmar." O "até... mas" é o que faz
+   soar gente pesando, e não copy.
+
+4. COMPRIMENTO. Duas a quatro frases por slide. Eu tinha cortado tanto que
+   não sobrou nada pra ler.
+
+5. UMA VERDADE QUE NINGUÉM DIZ EM VOZ ALTA. O item mais forte dela é o que
+   nomeia o mecanismo: "não confiaria em ninguém que me induzisse a comprar
+   algo para o meu filho cutucando a minha dor".
+
+O ângulo desta versão sai daí. A Rhaideline é mãe E escreve anúncio pra
+viver. Então ela é a pessoa que consegue mostrar, de dentro, como uma mãe
+recém-parida é alvo de marketing — e isso ninguém no nicho dela pode
+dizer com a mesma autoridade. É o item 5 da lista acima, aplicado ao que
+ela sabe de verdade.
+
+Nenhum conselho de sono, saúde ou amamentação: continua não sendo a área
+dela. Tudo aqui é sobre dinheiro, atenção e rotina, que é.
 """
 
 FOTO = "rhai-bebe2.jpg"
 
 CARROSSEL = {
-    "id": "05_acho_chique",
-    "titulo": "Coisas que eu acho chique numa mãe que trabalha",
+    "id": "05_se_eu_fosse_voce",
+    "titulo": "Se eu fosse você, e tivesse acabado de virar mãe",
     "foto": FOTO,
     "slides": [
-        ("capa", dict(frase="Coisas que eu acho chique",
-                      sub="numa mãe que trabalha", n_linhas=4)),
+        # capa_texto, não capa: a pilha gigante cobre os dois rostos com
+        # uma frase de nove palavras, e o rosto é metade do motivo do post
+        ("capa_texto", dict(frase="Se eu fosse você, e tivesse acabado de virar mãe",
+                            sub="eu faria todas estas coisas", n_linhas=4)),
 
-        ("retrato", dict(numero=1, frase="Dizer que não pode sem inventar motivo",
-                         n_linhas=3,
-                         apoio="“Nesse horário eu não consigo” é uma frase completa.")),
+        ("texto", dict(numero=1, corpo=
+         "Eu desconfiaria de todo anúncio que me chamasse de “mãe que não "
+         "abre mão”. Eu escrevo esses anúncios. O elogio da primeira linha "
+         "é o que abre a carteira na última.")),
 
-        ("janela", dict(numero=2, frase="Ter um horário e defender ele",
-                        n_linhas=2,
-                        apoio="Não é rigidez. É como a outra pessoa sabe quando pode contar com você de verdade.")),
+        ("texto", dict(numero=2, corpo=
+         "Antes de comprar qualquer coisa, eu esperaria vinte e quatro "
+         "horas. Não por disciplina. Porque quase toda pressa que eu sinto "
+         "foi colocada ali por alguém — e ela não sobrevive a um dia.")),
 
-        ("retrato", dict(numero=3, frase="Falar do filho numa reunião sem baixar a voz",
-                         n_linhas=3,
-                         apoio="A voz baixa é o que ensina todo mundo que aquilo é um problema.")),
+        ("texto", dict(numero=3, corpo=
+         "Eu não confiaria em nenhum vídeo que começasse com “ninguém te "
+         "conta isso”. Sempre contam. Essa frase não existe para te "
+         "informar, existe para te segurar mais trinta segundos.")),
 
-        ("janela", dict(numero=4, frase="Cobrar o preço certo na primeira mensagem",
-                        n_linhas=2,
-                        apoio="Desconto dado com medo vira ressentimento em trinta dias.")),
+        ("texto", dict(numero=4, corpo=
+         "Eu seguiria duas pessoas, não vinte. E escolheria pelo que elas "
+         "dizem quando não estão vendendo nada. Informação demais não "
+         "organiza ninguém.")),
 
-        ("citacao", dict(frase="Chique é não pedir licença pra ocupar o próprio lugar",
-                         n_linhas=3)),
+        ("texto", dict(numero=5, corpo=
+         "Eu escolheria uma hora do dia que fosse só nossa e não entregaria "
+         "ela pra ninguém. Nem pro trabalho, nem pro celular. Sempre a "
+         "mesma hora.")),
 
-        ("fecho", dict(frase="Qual dessas você ainda treina", n_linhas=2,
-                       pedidos=[("i.", "Salva pra lembrar na próxima reunião."),
-                                ("ii.", "Manda pra quem precisa se ouvir dizendo isso."),
-                                ("iii.", "Comenta o número que mais pegou em você.")])),
+        ("texto", dict(numero=6, corpo=
+         "Quando alguém dissesse que eu estou “perdendo o melhor da vida "
+         "dele”, eu não responderia. Culpa é o gatilho mais barato que "
+         "existe, e quem usa sabe disso.")),
+
+        ("texto", dict(numero=7, corpo=
+         "Eu contaria pros meus clientes que tenho um bebê em casa. Não "
+         "como desculpa — como horário. E descobriria, como descobri, que "
+         "ninguém foi embora por causa disso.")),
+
+        ("texto", dict(numero=8, corpo=
+         "Eu compraria menos coisa e tiraria mais foto. Nenhuma das duas "
+         "resolve o dia difícil. Mas só uma delas continua valendo alguma "
+         "coisa em dez anos.")),
+
+        ("fecho", dict(frase="Depois eu também salvaria este post",
+                       n_linhas=3,
+                       pedidos=[("i.", "E mandaria para uma mãe que anda comprando demais de madrugada."),
+                                ("ii.", "E comentaria qual delas eu já tinha deixado de fazer."),
+                                ("iii.", "E voltaria aqui no primeiro dia difícil.")])),
     ],
-    "legenda": """Coisas que eu acho chique numa mãe que trabalha. E não tem nada a ver com roupa.
+    "legenda": """Se eu fosse você, e tivesse acabado de virar mãe, eu faria todas estas coisas.
 
-01. Dizer que não pode sem inventar motivo. "Nesse horário eu não consigo" é uma frase completa. A desculpa elaborada é que soa frágil.
+Eu escrevo anúncio pra viver. É o meu trabalho saber qual palavra faz alguém tirar o cartão do bolso — e depois que eu virei mãe, eu passei a ver esses mesmos truques virados contra mim.
 
-02. Ter um horário e defender ele. Não é rigidez — é como a outra pessoa sabe quando pode contar com você de verdade.
+Então essa lista não é conselho de maternidade. Não é a minha área e eu não daria. É o que eu faria sabendo o que eu sei do outro lado.
 
-03. Falar do filho numa reunião sem baixar a voz. A voz baixa é o que ensina todo mundo que aquilo é um problema. Falar no tom normal ensina o contrário. Nunca me cobraram por isso.
+O elogio na primeira linha do anúncio é o que abre a carteira na última. "Mãe que não abre mão" não é um carinho, é um gancho. A pressa que você sente às duas da manhã foi colocada ali por alguém, e ela quase nunca sobrevive a vinte e quatro horas.
 
-04. Cobrar o preço certo na primeira mensagem. Desconto dado com medo vira ressentimento em trinta dias.
+E a culpa — "você está perdendo o melhor da vida dele" — é o gatilho mais barato que existe. Quem usa sabe disso.
 
-Chique é não pedir licença pra ocupar o próprio lugar.
+A parte boa: nada aqui exige disciplina. Exige só saber o nome do que está acontecendo.
 
 ━━━
 
-i. Salva pra lembrar na próxima reunião.
-ii. Manda pra quem precisa se ouvir dizendo isso.
-iii. Comenta o número que mais pegou em você.
+Depois eu também salvaria este post.
+E mandaria para uma mãe que anda comprando demais de madrugada.
 
-#maternidadereal #mãeempreendedora #mulheresempreendedoras #maternidadeecarreira""",
+#maternidadereal #mãeempreendedora #publicidade #maternidadeeconsumo""",
 }

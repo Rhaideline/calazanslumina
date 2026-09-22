@@ -282,3 +282,67 @@ def fecho(foto, frase, pedidos, n_linhas=2, pos="center 20%", base="../../"):
         <div class="pedidos">{itens}</div>
       </div>
       </div>""", base)
+
+
+# ══════════════════════════════════════════════════════════════ TEXTO ════
+TEXTO = "'Lora',Georgia,serif"
+
+
+def texto(foto, numero, corpo, pos="center 20%", base="../../"):
+    """Página de texto: número e parágrafo em serifa de leitura, à esquerda.
+
+    É o vaso certo para o texto longo da referência dela — três ou quatro
+    frases com caveat, não slogan de cinco palavras. A pilha gigante da
+    capa não segura esse comprimento: display é pra afirmar, não pra
+    argumentar.
+
+    Serifa é Lora, não a Playfair da capa. Playfair é serifa de moda, de
+    alto contraste: linda em corpo 90, some em corpo 46 sobre foto. Lora
+    foi desenhada pra texto corrido e tem haste grossa — sobrevive à
+    redução e à imagem por baixo."""
+    css = f"""
+    {_foto(base, foto, pos, extra=" brightness(.5) saturate(.9)")}
+    .campo{{justify-content:flex-end;align-items:flex-start;text-align:left;
+           padding-bottom:36px}}
+    .num{{font-family:{TEXTO};font-weight:500;font-size:50px;color:#fff;
+         line-height:1;margin-bottom:10px}}
+    .texto{{font-family:{TEXTO};font-weight:500;font-size:50px;line-height:1.34;
+           color:#fff;max-width:900px;letter-spacing:-.004em}}
+    .texto em{{font-style:italic}}
+    """
+    return _pagina(f"texto-{numero}", css, f"""<div class="tela">
+      <div class="foto"></div>{_placas()}
+      <div class="campo">
+        <div class="num sombra">{numero}.</div>
+        <div class="texto sombra">{corpo}</div>
+      </div>
+      </div>""", base)
+
+
+def capa_texto(foto, frase, sub=None, n_linhas=4, pos="center 20%",
+               base="../../"):
+    """Capa no gabarito da referência da Dra Dunnia: sem-serifa gorda em
+    corpo moderado, alinhada à esquerda, no terço de baixo.
+
+    A pilha gigante da `capa()` vem de outra referência e não serve aqui:
+    esta frase tem nove palavras e, em corpo de display, cobre os dois
+    rostos. Grande não é o mesmo que forte — aqui o que segura é a frase,
+    e ela precisa caber sem tapar quem está na foto."""
+    linhas = _quebrar(frase, n_linhas)
+    css = f"""
+    {_foto(base, foto, pos, extra=" brightness(.62)")}
+    .campo{{justify-content:flex-end;align-items:flex-start;text-align:left;
+           padding-bottom:30px}}
+    .frase{{font-family:{DISPLAY};font-weight:800;color:#fff;
+           font-size:{_corpo(linhas, 880, 420, 1.06)}px;line-height:1.06;
+           letter-spacing:-.03em}}
+    .sub{{margin-top:26px;font-family:{TEXTO};font-style:italic;font-size:34px;
+         color:rgba(255,255,255,.9)}}
+    """
+    sb = f'<div class="sub sombra">{sub}</div>' if sub else ""
+    return _pagina("capa-texto", css, f"""<div class="tela">
+      <div class="foto"></div>{_placas()}
+      <div class="campo">
+        <div class="frase sombra">{"<br>".join(linhas)}</div>{sb}
+      </div>
+      </div>""", base)
