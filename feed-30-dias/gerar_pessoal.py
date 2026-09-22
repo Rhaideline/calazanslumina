@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 """Monta o carrossel do perfil pessoal: 8 slides, quatro dispositivos
 alternando. A ordem não é decoração — é o que dá motivo pra deslizar."""
+import subprocess
 from pathlib import Path
 
 import pessoal
 from conteudo_pessoal import CARROSSEL
 
 SAIDA = Path(__file__).parent / "pessoal"
+CHROME = "/opt/pw-browsers/chromium-1194/chrome-linux/chrome"
 N = 8
 
 
@@ -31,6 +33,24 @@ def monta(c):
     return pecas
 
 
+def renderiza(pasta):
+    """Renderiza os HTML da pasta. Fica aqui de propósito: o main apaga os
+    PNG antigos antes de escrever, então gerar sem renderizar deixa a pasta
+    com um slide só — já aconteceu e eu só percebi depois de publicar."""
+    from PIL import Image
+    for html in sorted(pasta.glob("[0-9]*.html")):
+        png = html.with_suffix(".png")
+        subprocess.run([
+            CHROME, "--headless", "--disable-gpu", "--no-sandbox",
+            "--hide-scrollbars", "--force-device-scale-factor=1",
+            f"--window-size={pessoal.L},{pessoal.A + 180}",
+            "--virtual-time-budget=7000", f"--screenshot={png}",
+            f"file://{html.resolve()}"], check=True, capture_output=True)
+        im = Image.open(png)
+        if im.size != (pessoal.L, pessoal.A):
+            im.crop((0, 0, pessoal.L, pessoal.A)).save(png)
+
+
 def main():
     c = CARROSSEL
     pasta = SAIDA / c["id"]
@@ -40,6 +60,7 @@ def main():
     pecas = monta(c)
     for nome, html in pecas:
         (pasta / f"{nome}.html").write_text(html, encoding="utf-8")
+    renderiza(pasta)
     print(f'  {c["id"]:<24} {len(pecas)} slides')
 
 
