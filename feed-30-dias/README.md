@@ -79,6 +79,30 @@ monocromia × desfoque) e **posição do texto**. Variar por plano fechado foi
 testado e descartado — nesta foto ela ri de boca aberta e todo
 enquadramento fechado cai na boca.
 
+### Modelo REVISTA — `revista.py`
+
+Família nova, do último modelo de Canva que ela mandou, criada depois do
+diagnóstico dela: *"o carrossel após a capa tem muita cara de IA"*. Está
+certo, e dá pra nomear as três marcas que produziam essa sensação:
+
+1. degradê preto pesado cobrindo o terço de baixo da foto, em todo slide
+2. parágrafo de apoio de três a quatro linhas em toda peça
+3. nenhuma estrutura repetida — cada slide era um pôster solto
+
+O modelo resolve os três: **barra de topo** com categoria e arroba (repete
+nas seis peças e é o que faz o conjunto parecer template desenhado),
+**foto limpa** sem degradê — onde precisa de fundo entra bloco chapado com
+filete —, **pilha de tipo** com caixa-alta fina contra palavra gigante em
+serifa, e **pouca palavra**: uma frase e no máximo uma linha de apoio.
+
+Peças: `capa` · `item` · `destaque` · `frase` · `fecho`.
+Conteúdo em `conteudo_revista.py`, gerador em `gerar_revista.py`.
+
+A pilha carrega o próprio escurecimento em vez de depender de um degradê
+de peça inteira — assim ela pode parar onde a foto for calma. Nesta foto
+isso é acima dos olhos dela: a primeira versão pousava a palavra gigante
+exatamente em cima do olhar.
+
 - `pessoal.py` — a biblioteca, com o índice `LAYOUTS` no fim
 - `conteudo_pessoal.py` — três carrosséis prontos, um por linguagem de capa
 - `gerar_pessoal.py` — escreve, **renderiza** o lookbook e os três
