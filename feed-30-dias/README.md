@@ -79,6 +79,34 @@ monocromia × desfoque) e **posição do texto**. Variar por plano fechado foi
 testado e descartado — nesta foto ela ri de boca aberta e todo
 enquadramento fechado cai na boca.
 
+### Modelo CHIQUE — `chique.py`
+
+Do modelo "Coisas que eu acho chique". Três coisas o definem:
+
+**A placa.** Nome centralizado com filete embaixo, repetido em cima *e*
+embaixo. O mesmo lockup nas duas pontas, não espelhado. É o que emoldura a
+foto e transforma um post em página.
+
+**A pilha.** Palavras empilhadas, centralizadas, entrelinha 0.88 e tracking
+-0.025em. A pesquisa de tipografia recomenda -0.01 a -0.02em para display;
+em corpo muito grande e numa fonte redonda, -0.025em fecha melhor.
+
+**A quebra por largura.** As quatro linhas da referência — "Coisas / que eu
+/ acho / chique" — têm quase a mesma largura. Não é acaso da gramática: é
+quebra escolhida pro bloco virar retângulo. `_quebrar()` testa todas as
+quebras possíveis e escolhe a de menor variação, medindo **largura real de
+glifo** da Figtree via fontTools, não número de letras. Dado "Coisas que eu
+acho chique" em 4 linhas, ele reproduz exatamente a quebra da referência.
+
+**A fonte.** Figtree 900, identificada renderizando a mesma frase em cinco
+candidatas lado a lado (Figtree, Archivo, Bricolage Grotesque, Plus Jakarta
+Sans, DM Sans). É a única com o mesmo "a" de dois andares de bojo pequeno,
+o mesmo "o" circular e o mesmo peso. A DM Sans, que eu vinha usando em
+tudo, é visivelmente mais leve e mais aberta.
+
+Peças: `capa` · `retrato` · `janela` · `citacao` · `fecho`.
+Conteúdo em `conteudo_chique.py`, gerador em `gerar_chique.py`.
+
 ### Modelo REVISTA — `revista.py`
 
 Família nova, do último modelo de Canva que ela mandou, criada depois do

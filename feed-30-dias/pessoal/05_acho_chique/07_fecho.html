@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>fecho</title>
+<style>
+@font-face{font-family:'DM Serif Display';font-style:italic;font-weight:400;font-display:block;src:url('../../fontes/dmserif-italic-400.woff2') format('woff2');}
+@font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:block;src:url('../../fontes/dmserif-normal-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:italic;font-weight:400;font-display:block;src:url('../../fontes/dmsans-italic-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:300;font-display:block;src:url('../../fontes/dmsans-normal-300.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:block;src:url('../../fontes/dmsans-normal-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:500;font-display:block;src:url('../../fontes/dmsans-normal-500.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:600;font-display:block;src:url('../../fontes/dmsans-normal-600.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:700;font-display:block;src:url('../../fontes/dmsans-normal-700.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:italic;font-weight:400;font-display:block;src:url('../../fontes/spacemono-italic-400.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:400;font-display:block;src:url('../../fontes/spacemono-normal-400.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:block;src:url('../../fontes/spacemono-normal-700.woff2') format('woff2');}
+
+@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:400 900;font-display:block;font-stretch:normal;src:url('../../fontes/bodonimoda-italic-variable.woff2') format('woff2');}
+@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:400 900;font-display:block;font-stretch:normal;src:url('../../fontes/bodonimoda-normal-variable.woff2') format('woff2');}
+@font-face{font-family:'Caveat';font-style:normal;font-weight:400 700;font-display:block;src:url('../../fontes/caveat-variable.woff2') format('woff2');}
+@font-face{font-family:'Playfair Display';font-style:italic;font-weight:400 700;font-display:block;src:url('../../fontes/playfair-italic-variable.woff2') format('woff2');}
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:400 700;font-display:block;src:url('../../fontes/playfair-normal-variable.woff2') format('woff2');}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:300 900;font-display:block;src:url('../../fontes/figtree-variable.woff2') format('woff2');}
+
+*{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased}
+html,body{width:1080px;height:1440px;overflow:hidden;background:#17120F}
+body{font-family:'Figtree',system-ui,sans-serif}
+.tela{position:relative;width:1080px;height:1440px;overflow:hidden}
+.foto{position:absolute;inset:0;background-repeat:no-repeat;background-size:cover}
+
+/* a placa: nome centralizado, filete embaixo. Mesma peça em cima e
+   embaixo — é o que emoldura a foto e faz o post virar página */
+.placa{position:absolute;left:50%;transform:translateX(-50%);z-index:30;
+       width:412px;text-align:center}
+.placa .nome{font-family:'Figtree',system-ui,sans-serif;font-size:19px;letter-spacing:.3em;
+             text-transform:uppercase;color:#fff;white-space:nowrap}
+.placa .nome b{font-weight:600}
+.placa .nome span{font-weight:300;color:rgba(255,255,255,.72)}
+.placa .fio{margin-top:15px;height:1px;background:rgba(255,255,255,.72)}
+.placa.topo{top:78px}
+.placa.base{bottom:78px}
+
+/* a pilha: entrelinha apertada e tracking negativo, como manda display */
+/* campo entre as placas. Tudo que é conteúdo mora aqui, em fluxo — somar
+   altura na mão foi como o apoio acabou em cima da última linha da pilha */
+.campo{position:absolute;left:52px;right:52px;top:172px;bottom:172px;
+       z-index:26;display:flex;flex-direction:column;justify-content:center;
+       align-items:center;text-align:center}
+.pilha{font-family:'Figtree',system-ui,sans-serif;font-weight:900;color:#fff;
+       line-height:.88;letter-spacing:-.025em}
+.apoio{margin-top:32px;max-width:760px;font-family:'Figtree',system-ui,sans-serif;font-weight:400;
+       font-size:27px;line-height:1.42;color:rgba(255,255,255,.9)}
+.sombra{text-shadow:0 3px 28px rgba(14,9,7,.5),0 1px 4px rgba(14,9,7,.34)}
+
+    .foto{background-image:url('../../fotos/rhai-bebe2.jpg');background-position:center 20%;filter:saturate(1.03) contrast(1.03) brightness(.52) saturate(.86)}
+    .campo{justify-content:space-between;padding:26px 0 8px}
+    .pilha{font-size:114px}
+    .pedidos{width:100%;display:flex;flex-direction:column;gap:18px;
+             padding:0 42px}
+    .pedido{display:flex;align-items:baseline;gap:20px;
+            border-top:1px solid rgba(255,255,255,.3);padding-top:18px}
+    .pedido i{flex:0 0 auto;font-style:normal;font-family:'Playfair Display',serif;
+              font-size:24px;color:rgba(255,255,255,.72);width:34px;text-align:left}
+    .pedido span{font-family:'Figtree',system-ui,sans-serif;font-weight:400;font-size:26px;
+                 color:#fff;line-height:1.3;text-align:left}
+    
+</style></head><body><div class="tela">
+      <div class="foto"></div><div class="placa topo"><div class="nome"><b>Rhai</b> <span>Calazans</span></div><div class="fio"></div></div><div class="placa base"><div class="nome"><b>Rhai</b> <span>Calazans</span></div><div class="fio"></div></div>
+      <div class="campo">
+        <div class="pilha sombra">Qual dessas<br>você ainda treina</div>
+        <div class="pedidos"><div class="pedido"><i>i.</i><span>Salva pra lembrar na próxima reunião.</span></div><div class="pedido"><i>ii.</i><span>Manda pra quem precisa se ouvir dizendo isso.</span></div><div class="pedido"><i>iii.</i><span>Comenta o número que mais pegou em você.</span></div></div>
+      </div>
+      </div></body></html>
