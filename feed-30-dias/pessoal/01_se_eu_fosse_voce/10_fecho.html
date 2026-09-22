@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>fecho</title>
+<style>
+@font-face{font-family:'DM Serif Display';font-style:italic;font-weight:400;font-display:block;src:url('../../fontes/dmserif-italic-400.woff2') format('woff2');}
+@font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:block;src:url('../../fontes/dmserif-normal-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:italic;font-weight:400;font-display:block;src:url('../../fontes/dmsans-italic-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:300;font-display:block;src:url('../../fontes/dmsans-normal-300.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:block;src:url('../../fontes/dmsans-normal-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:500;font-display:block;src:url('../../fontes/dmsans-normal-500.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:600;font-display:block;src:url('../../fontes/dmsans-normal-600.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:700;font-display:block;src:url('../../fontes/dmsans-normal-700.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:italic;font-weight:400;font-display:block;src:url('../../fontes/spacemono-italic-400.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:400;font-display:block;src:url('../../fontes/spacemono-normal-400.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:block;src:url('../../fontes/spacemono-normal-700.woff2') format('woff2');}
+
+@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:400 900;font-display:block;font-stretch:normal;src:url('../../fontes/bodonimoda-italic-variable.woff2') format('woff2');}
+@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:400 900;font-display:block;font-stretch:normal;src:url('../../fontes/bodonimoda-normal-variable.woff2') format('woff2');}
+
+:root{--tinta:#111111;--tinta2:#1A1A1A;--tinta3:#08080A;--papel:#F5F1EA;--papel2:#EDE6D6;--vermelho:#FF0005;--vermelho2:#FF3B3B;--vermelho3:#A00306;--brasa:#1A0D0D;}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased}
+html,body{width:1080px;height:1440px;overflow:hidden;background:#000}
+body{font-family:'DM Sans',sans-serif}
+.tela{position:relative;width:1080px;height:1440px;overflow:hidden}
+.foto{position:absolute;inset:0;background-size:cover;background-position:center 30%;
+      filter:contrast(1.04) brightness(1.04)}
+.grao{position:absolute;inset:0;z-index:60;pointer-events:none;opacity:.26;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .13 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.selo{position:absolute;left:62px;bottom:52px;z-index:50;font-size:12px;
+      letter-spacing:.3em;text-transform:uppercase;font-weight:600;
+      color:rgba(255,255,255,.62)}
+
+    .foto{background-image:url('../../fotos/rhai-retrato.jpg')}
+    .veu{position:absolute;inset:0;background:linear-gradient(180deg,
+         rgba(8,8,10,.24) 0%,rgba(8,8,10,.02) 22%,rgba(8,8,10,.4) 54%,
+         rgba(8,8,10,.88) 100%)}
+    .bloco{position:absolute;left:62px;right:96px;bottom:200px;z-index:6;
+           text-shadow:0 2px 26px rgba(0,0,0,.55)}
+    p{font-family:'DM Serif Display',serif;font-style:italic;
+      font-size:76px;line-height:1.14;
+      letter-spacing:-.015em;color:#fff}
+    .nota{margin-top:26px;font-family:'DM Sans',sans-serif;font-size:19px;font-weight:500;
+          letter-spacing:.02em;color:rgba(255,255,255,.78);max-width:780px;
+          line-height:1.4}
+    
+</style></head><body><div class="tela">
+      <div class="foto"></div><div class="veu"></div>
+      <div class="bloco"><p>E depois eu salvaria<br>este post.</p><div class="nota">Pra reler no dia em que tudo parecer impossível de organizar. E mandaria pra uma amiga que acabou de ter bebê.</div></div>
+      <div class="selo">@rhaicalazans</div>
+      <div class="grao"></div></div></body></html>

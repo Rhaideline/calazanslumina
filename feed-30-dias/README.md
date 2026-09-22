@@ -55,6 +55,28 @@ Para regenerar tudo do zero:
 python3 gerar3.py && ./renderizar.sh && python3 gerar_reels3.py
 ```
 
+## Perfil pessoal — @rhaicalazans
+
+Estrutura separada, porque é outro perfil e outra voz. A referência é o
+carrossel de retrato que ela mandou: a mesma foto da pessoa nos dez
+slides, capa em sem-serifa pesada, miolo numerado em serifa. Aqui o que
+sustenta a peça é o rosto, não recurso gráfico — então o trabalho de
+design é sumir.
+
+- `pessoal.py` — três modelos: `capa`, `item`, `fecho`. Serifa é DM Serif
+  Display, não Bodoni: sobre foto o filete do Bodoni desaparece nos claros
+  do rosto, inclusive o travessão, que saía como um buraco na frase.
+- `conteudo_pessoal.py` — o carrossel de maternidade, com a nota de
+  honestidade sobre o que ainda precisa de confirmação dela
+- `gerar_pessoal.py` — escreve os HTML em `pessoal/<id>/`
+
+A foto em `fotos/rhai-retrato.jpg` é provisória: as originais estão no CDN
+do GoHighLevel e a política de rede desta sessão bloqueia o domínio
+(`assets.cdn.filesafe.space`, 403 no CONNECT). O que está ali foi
+recortado do PNG já renderizado em `posts-12modelos/`, o que significa
+preto e branco e resolução baixa. Basta ela colocar um arquivo em `fotos/`
+com esse nome e rodar o gerador de novo.
+
 ## O limite que preciso deixar claro
 
 Os reels usam foto de banco parada + movimento de câmera (Ken Burns), não
