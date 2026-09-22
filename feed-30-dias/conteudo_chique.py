@@ -38,7 +38,8 @@ CARROSSEL = {
     "foto": FOTO,
     "slides": [
         ("capa_texto", dict(frase="Se eu fosse você, e tivesse acabado de virar mãe",
-                            sub="eu faria todas estas coisas", n_linhas=4)),
+                            sub="eu faria todas estas coisas",
+                            serie="atenção · 1 de 3", n_linhas=4)),
 
         ("texto", dict(numero=1, corpo=
          "Eu desconfiaria de todo anúncio que me chamasse de “mãe que não "

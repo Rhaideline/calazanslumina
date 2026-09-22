@@ -319,8 +319,8 @@ def texto(foto, numero, corpo, pos="center 20%", base="../../"):
       </div>""", base)
 
 
-def capa_texto(foto, frase, sub=None, n_linhas=4, pos="center 20%",
-               base="../../"):
+def capa_texto(foto, frase, sub=None, serie=None, n_linhas=4,
+               pos="center 20%", base="../../"):
     """Capa no gabarito da referência da Dra Dunnia: sem-serifa gorda em
     corpo moderado, alinhada à esquerda, no terço de baixo.
 
@@ -340,8 +340,11 @@ def capa_texto(foto, frase, sub=None, n_linhas=4, pos="center 20%",
          color:rgba(255,255,255,.9)}}
     """
     sb = f'<div class="sub sombra">{sub}</div>' if sub else ""
+    # a placa de baixo carrega a série quando a peça faz parte de uma: é o
+    # que faz três carrosséis lerem como coleção na grade do perfil, e não
+    # como três posts que por acaso usam o mesmo gabarito
     return _pagina("capa-texto", css, f"""<div class="tela">
-      <div class="foto"></div>{_placas()}
+      <div class="foto"></div>{_placas(serie)}
       <div class="campo">
         <div class="frase sombra">{"<br>".join(linhas)}</div>{sb}
       </div>
