@@ -130,6 +130,34 @@ audiência dela e o serviço dela se encontram.
 Fonte: [Forbes Mulher — B2Mamy e CoCreators](https://forbes.com.br/forbes-mulher/2026/04/empreendedoras-criam-plataforma-para-transformar-maes-em-influenciadoras/),
 [O Tempo — maternidade e carreira](https://www.otempo.com.br/opiniao/fernando-berenguel/2026/5/7/maes-que-inspiram-como-a-maternidade-impulsiona-carreiras-e-redefine-o-sucesso)
 
+## 11. Ritmo com uma foto só: o que funcionou e o que não
+
+A cliente pediu foto em todos os slides, o que reabre o problema do item 6:
+se a imagem é sempre a mesma, de onde vem o motivo pra deslizar?
+
+Testei variar por **plano fechado** — rosto dela, rosto do bebê, as mãos no
+tapete. Não serve nesta foto: ela está rindo de boca bem aberta, e todo
+plano fechado cai na boca. Fica desagradável e joga fora o que a imagem tem
+de melhor, que é a cena inteira com os dois rostos.
+
+O que funcionou foi variar em três eixos que **preservam a cena**:
+
+| eixo | variação |
+|---|---|
+| layout | sangria (foto cheia) × placa (chapa emoldurada com texto no campo escuro) |
+| tratamento | cor × monocromia quente × desfoque |
+| posição do texto | rodapé × campo superior × centro |
+
+A monocromia precisou de duas tentativas: sépia direta saiu amarelo-ácida,
+com cara de filtro de aplicativo. Um `hue-rotate` negativo puxa o tom pro
+marrom e o brilho mais baixo devolve profundidade — monocromia de revista
+é escura, não amarela.
+
+A chapa também precisou de enquadramento próprio. Ela é uma faixa deitada
+e a foto é retrato: com `cover`, cabe só 57% da altura da imagem ali
+dentro, e os planos calibrados pra moldura inteira jogavam metade da cena
+pra fora.
+
 ---
 
 ## O que mudou na peça por causa disto
@@ -143,4 +171,5 @@ Fonte: [Forbes Mulher — B2Mamy e CoCreators](https://forbes.com.br/forbes-mulh
 | conselho genérico não conecta | aforismo trocado por posição com tensão |
 | salvar e mandar pesam 3–5× a curtida | fecho com pedido de salvar **e** de mandar |
 | véu de 40 a 60% | contraste medido no PNG, não no CSS |
+| ritmo com uma imagem só | variação por layout e tratamento, não por plano fechado |
 | áudio joga na aba de Reels | instrução de publicação, fora do código |

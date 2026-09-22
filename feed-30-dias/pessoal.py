@@ -1,23 +1,23 @@
 # -*- coding: utf-8 -*-
 """
-Perfil pessoal @rhaicalazans — carrossel de 8 slides, quatro dispositivos.
+Perfil pessoal @rhaicalazans — carrossel de retrato, foto em todos os slides.
 
-O que a versão anterior errava, e que a pesquisa em ESTUDO-PESSOAL-2026.md
-corrigiu:
+A cliente viu as duas versões e escolheu esta: foto em cada slide, nada de
+cartão de papel no miolo. Isso reabre o problema que o papel resolvia —
+carrossel precisa dar motivo pra deslizar, e dez slides com a mesma imagem
+não dão nenhum. A solução aqui é outra e é melhor: **o enquadramento muda
+a cada slide**. Plano aberto, fechado no rosto dela, fechado no bebê, os
+dois juntos, e um desfocado servindo de fundo pra frase. É uma foto só
+lida como se fosse um ensaio — que é exatamente o que revista faz.
 
-  formato   era 1080x1350 (4:5). O Instagram aceita 1080x1440 (3:4) nativo
-            desde 2026 e só esse preenche feed e grade de perfil sem corte.
-  contagem  eram 10 slides. O ponto ideal medido é 4 a 8.
-  ritmo     eram 10 slides com a mesma foto e o mesmo bloco de texto no
-            mesmo canto. Cada slide precisa dar motivo pra ver o próximo —
-            e depois do slide 2 não havia motivo nenhum. Agora são quatro
-            dispositivos alternando: foto, papel, foto, papel, citação.
-  fecho     era "salva pra ler num dia difícil". Salvar e mandar no direct
-            pesam 3 a 5 vezes a curtida, então os dois pedidos entram
-            explicitamente, separados, no último slide.
+Por isso a foto é guardada em 1620×2160, 1,5× o formato final: os planos
+fechados usam background-size acima de 100% e em 1080 de largura ficariam
+moles.
 
-Tipos: DM Sans carrega o peso, Playfair Display itálico é a serifa de moda
-das referências dela, Caveat é o manuscrito. Nada de vermelho de marca.
+Luxo aqui não é enfeite, é contenção: fio de cabelo em champanhe, caixa-alta
+espaçada, serifa de moda, granulado de filme, margem generosa e mais nada.
+O manuscrito saiu — letra de mão lê como recado de geladeira, não como
+editorial.
 """
 import re
 
@@ -26,16 +26,10 @@ import casa
 L, A = 1080, 1440
 SANS = "'DM Sans',sans-serif"
 MODA = "'Playfair Display',serif"
-MAO = "'Caveat',cursive"
 
 HANDLE = "@rhaicalazans"
-PAPEL = "#F4EDE1"
-TINTA = "#241610"
-# #C2702A media 3,20:1 sobre o papel: passa como texto grande (3:1) e
-# reprova como texto normal (4,5:1). O número gigante podia usar, o chapéu
-# de 14px não — então o acento escureceu para um tom que serve nos dois.
-MEL = "#A2561A"          # 4,65:1 sobre o papel — AA para texto normal
-MEL_CLARO = "#F0C384"    # sobre escuro
+CHAMPANHE = "#E7CFA6"
+OURO = "#D4AF6A"
 
 
 def _cabe(texto, base, largura=940, avanco=.5):
@@ -50,176 +44,215 @@ def _pagina(nome, css, corpo, base="../../"):
 <style>
 {{FONTES}}
 *{{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased}}
-html,body{{width:{L}px;height:{A}px;overflow:hidden;background:{TINTA}}}
+html,body{{width:{L}px;height:{A}px;overflow:hidden;background:#15100C}}
 body{{font-family:{SANS}}}
 .tela{{position:relative;width:{L}px;height:{A}px;overflow:hidden}}
-.foto{{position:absolute;inset:0;background-size:cover;background-position:center 16%;
-      filter:saturate(1.05) contrast(1.02)}}
-/* véu em gradiente: escurece só a faixa atrás do texto, que é o padrão
-   recomendado (40 a 60% de preto) e preserva a luz do resto da foto */
-.veu{{position:absolute;inset:0;background:linear-gradient(180deg,
-     rgba(30,17,11,.2) 0%,rgba(30,17,11,0) 20%,rgba(30,17,11,0) 44%,
-     rgba(28,16,10,.5) 62%,rgba(24,13,8,.88) 84%,rgba(22,12,7,.95) 100%)}}
-.marca{{position:absolute;left:0;right:0;top:56px;z-index:30;text-align:center;
-       font-size:15px;letter-spacing:.42em;text-transform:uppercase;font-weight:600}}
-.sombra{{text-shadow:0 2px 20px rgba(26,14,8,.65),0 1px 3px rgba(26,14,8,.5)}}
-.passo{{position:absolute;right:52px;bottom:54px;z-index:30;font-family:{SANS};
-       font-size:13px;letter-spacing:.28em;font-weight:600}}
+.foto{{position:absolute;inset:0;background-repeat:no-repeat}}
+/* véu em gradiente escurece só a faixa atrás do texto e preserva a luz do
+   resto — é o padrão recomendado pra tipo sobre foto */
+.veu{{position:absolute;inset:0}}
+/* granulado: é o que separa "foto com texto por cima" de peça impressa */
+.grao{{position:absolute;inset:0;z-index:40;pointer-events:none;opacity:.3;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .14 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}}
+/* fio de cabelo: uma linha de 1px a 34px da borda. É o gesto mais barato
+   que existe pra fazer uma peça parecer impressa em vez de postada */
+.moldura{{position:absolute;inset:34px;z-index:35;pointer-events:none;
+         border:1px solid rgba(231,207,166,.34)}}
+.marca{{position:absolute;left:0;right:0;top:62px;z-index:36;text-align:center;
+       font-size:13px;letter-spacing:.46em;text-transform:uppercase;
+       font-weight:600;color:rgba(255,255,255,.88)}}
+.passo{{position:absolute;right:62px;bottom:60px;z-index:36;font-size:12px;
+       letter-spacing:.3em;font-weight:600;color:rgba(231,207,166,.72)}}
+.rotulo{{font-size:14px;letter-spacing:.42em;text-transform:uppercase;
+        font-weight:700;color:{CHAMPANHE}}}
+.regua{{width:62px;height:1px;background:{OURO};margin:20px 0 26px}}
+.sombra{{text-shadow:0 2px 24px rgba(18,11,7,.72),0 1px 4px rgba(18,11,7,.55)}}
 {css}
 </style></head><body>{corpo}</body></html>"""
     return doc.replace("{FONTES}", casa.fontes(base))
 
 
-def _passo(i, n, claro=True):
-    """Contador discreto no canto. Não é enfeite: mostra que tem mais, que
-    é literalmente o motivo de alguém deslizar."""
-    if not i:
-        return ""
-    cor = "rgba(255,255,255,.62)" if claro else "rgba(36,22,16,.62)"
-    return f'<div class="passo" style="color:{cor}">{i} / {n}</div>'
+# ─────────────────────────────────────────────────────────────────────────
+# Enquadramentos. Testei variar por plano fechado — rosto dela, rosto do
+# bebê, as mãos — e não serve nesta foto: ela está rindo de boca aberta e
+# todo plano fechado cai na boca. O que esta imagem tem de melhor é a cena
+# inteira, os dois rostos juntos. Então os planos andam pouco, de 100% a
+# 114%, e a variação vem de outro lugar: do layout (sangria x placa) e do
+# tratamento (cor x monocromia quente x desfoque).
+# posição vertical da chapa: 23% é onde a faixa pega a cena de y=.10 a
+# y=.67 da foto — rosto dela inteiro e o do bebê até a boca
+CHAPA_POS = "center 23%"
+
+PLANOS = {
+    "aberto": ("100%", "center 16%"),
+    "alto":   ("108%", "center 8%"),
+    "baixo":  ("110%", "center 30%"),
+    "leve":   ("114%", "46% 18%"),
+}
+
+
+def _foto(base, foto, plano, extra=""):
+    tam, pos = PLANOS[plano]
+    return (f".foto{{background-image:url('{base}fotos/{foto}');"
+            f"background-size:{tam};background-position:{pos};"
+            f"filter:saturate(1.04) contrast(1.04){extra}}}")
+
+
+def _veu(topo=.26, inicio=44, base=.9):
+    return (f".veu{{background:linear-gradient(180deg,rgba(21,14,9,{topo}) 0%,"
+            f"rgba(21,14,9,.02) 22%,rgba(21,14,9,.06) {inicio}%,"
+            f"rgba(19,12,8,{base * .62:.2f}) {inicio + 24}%,"
+            f"rgba(17,11,7,{base}) 100%)}}")
+
+
+def _passo(i, n):
+    return f'<div class="passo">{i:02d} — {n:02d}</div>' if i else ""
 
 
 # ══════════════════════════════════════════════════════════════ CAPA ═════
-def capa(foto, chapeu, hook, base="../../"):
-    """Gancho sobre a foto. A régua é dura: precisa ser lido em menos de
-    dois segundos, então o título fica entre 5 e 8 palavras e tudo desce
-    pro terço de baixo — nesta foto os dois rostos ocupam o meio, e o
-    rosto rindo é o interruptor de padrão que segura o scroll."""
+def capa(foto, rotulo, hook, plano="aberto", base="../../"):
+    """Plano aberto: os dois rostos inteiros. O rosto rindo é o interruptor
+    de padrão que segura o scroll, então ele não pode estar cortado aqui."""
     css = f"""
-    .foto{{background-image:url('{base}fotos/{foto}')}}
-    .marca{{color:rgba(255,255,255,.95)}}
-    .bloco{{position:absolute;left:54px;right:54px;bottom:104px;z-index:30}}
-    .chapeu{{font-size:19px;letter-spacing:.34em;text-transform:uppercase;
-            font-weight:700;color:{MEL_CLARO};margin-bottom:22px}}
-    h1{{font-family:{SANS};font-weight:700;color:#fff;
-       font-size:{_cabe(hook, 116, 968, .485)}px;line-height:.98;
-       letter-spacing:-.035em}}
-    .fio{{margin-top:30px;width:120px;height:5px;background:{MEL_CLARO}}}
+    {_foto(base, foto, plano)}
+    {_veu(.3, 40, .93)}
+    .bloco{{position:absolute;left:78px;right:78px;bottom:122px;z-index:36}}
+    h1{{font-family:{SANS};font-weight:700;color:#fff;letter-spacing:-.035em;
+       font-size:{_cabe(hook, 112, 910, .485)}px;line-height:.98}}
+    .arremate{{margin-top:30px;font-family:{MODA};font-style:italic;
+              font-size:31px;color:{CHAMPANHE};letter-spacing:.01em}}
     """
     return _pagina("capa", css, f"""<div class="tela">
       <div class="foto"></div><div class="veu"></div>
-      <div class="marca sombra">{HANDLE}</div>
+      <div class="marca">{HANDLE}</div>
       <div class="bloco">
-        <div class="chapeu sombra">{chapeu}</div>
+        <div class="rotulo sombra">{rotulo}</div><div class="regua"></div>
         <h1 class="sombra">{hook}</h1>
-        <div class="fio"></div>
+        <div class="arremate sombra">deslize →</div>
       </div>
-      </div>""", base)
+      <div class="moldura"></div><div class="grao"></div></div>""", base)
 
 
-# ═════════════════════════════════════════════════════════════ PAPEL ═════
-def papel(frase, apoio=None, numero=None, chapeu=None, i=None, n=None,
-          base="../../"):
-    """Cartão de papel, sem foto. É o interruptor de padrão do miolo: sair
-    da foto para o papel é o que faz o slide seguinte parecer novo. Texto
-    escuro sobre claro, que é a combinação de melhor leitura."""
+# ═══════════════════════════════════════════════════════════ PLACA ═══════
+def placa(foto, frase, apoio, rotulo=None, numero=None, plano="aberto",
+          i=None, n=None, base="../../"):
+    """A foto deixa de sangrar e vira chapa emoldurada embaixo, com o texto
+    no campo escuro acima. É a variação que revista usa quando tem uma
+    imagem só e várias páginas — e aqui ela resolve o ritmo sem precisar
+    fechar o enquadramento, que nesta foto não funciona."""
     css = f"""
-    .pp{{position:absolute;inset:0;background:{PAPEL};color:{TINTA};
-        padding:66px 62px 100px;display:flex;flex-direction:column}}
-    .pp .topo{{display:flex;justify-content:space-between;align-items:center;
-              font-size:14px;letter-spacing:.3em;text-transform:uppercase;
-              font-weight:700;color:{MEL}}}
-    .pp .n{{font-family:{MAO};font-weight:700;font-size:150px;line-height:.7;
-           color:{MEL};margin:auto 0 18px}}
-    .pp .semn{{margin-top:auto}}
-    .pp h2{{font-family:{SANS};font-weight:700;letter-spacing:-.035em;
-           font-size:{_cabe(frase, 92, 950, .47)}px;line-height:1.0}}
-    .pp p{{margin-top:26px;font-size:31px;line-height:1.36;
-          color:rgba(36,22,16,.74);max-width:880px}}
-    .pp .rodape{{font-size:13px;letter-spacing:.3em;text-transform:uppercase;
-                font-weight:600;color:rgba(36,22,16,.62)}}
-    """
-    num = f'<div class="n">{numero}</div>' if numero else '<div class="semn"></div>'
-    ap = f"<p>{apoio}</p>" if apoio else ""
-    ch = f"<span>{chapeu}</span>" if chapeu else "<span></span>"
-    return _pagina("papel", css, f"""<div class="tela"><div class="pp">
-      <div class="topo">{ch}<span>{HANDLE}</span></div>
-      {num}<h2>{frase}</h2>{ap}
-      </div>{_passo(i, n, claro=False)}</div>""", base)
-
-
-# ════════════════════════════════════════════════════════ SOBRE FOTO ═════
-def sobre_foto(foto, frase, apoio=None, numero=None, i=None, n=None,
-               base="../../"):
-    """O mesmo item, mas na foto. Alternar com o papel é o que mantém
-    ritmo; usar só um dos dois é o erro que eu já cometi duas vezes."""
-    css = f"""
-    .foto{{background-image:url('{base}fotos/{foto}')}}
-    .marca{{color:rgba(255,255,255,.9)}}
-    .bloco{{position:absolute;left:54px;right:58px;bottom:100px;z-index:30}}
-    .n{{font-family:{MAO};font-weight:700;font-size:126px;line-height:.66;
-       color:{MEL_CLARO};margin-bottom:16px}}
+    .fundo{{position:absolute;inset:0;background:#15100C}}
+    .chapa{{position:absolute;left:34px;right:34px;bottom:34px;height:56%;
+           overflow:hidden;border:1px solid rgba(231,207,166,.34)}}
+    {_foto(base, foto, plano)}
+    .foto{{position:absolute;inset:0;background-position:{CHAPA_POS}}}
+    .chapa .veu{{background:linear-gradient(180deg,rgba(21,14,9,.28) 0%,
+                rgba(21,14,9,0) 34%,rgba(21,14,9,.3) 100%)}}
+    .bloco{{position:absolute;left:78px;right:78px;top:122px;z-index:36}}
+    .n{{font-family:{MODA};font-style:italic;font-weight:500;font-size:92px;
+       line-height:.74;color:{OURO};margin-bottom:10px}}
     h2{{font-family:{SANS};font-weight:700;color:#fff;letter-spacing:-.035em;
-       font-size:{_cabe(frase, 88, 960, .475)}px;line-height:1.0}}
-    p{{margin-top:22px;font-size:30px;line-height:1.34;
-      color:rgba(255,255,255,.92);max-width:880px}}
+       font-size:{_cabe(frase, 82, 900, .48)}px;line-height:1.0}}
+    p{{margin-top:22px;font-size:27px;line-height:1.38;
+      color:rgba(255,255,255,.84);max-width:840px}}
+    .passo{{color:rgba(231,207,166,.55)}}
     """
-    num = f'<div class="n sombra">{numero}</div>' if numero else ""
-    ap = f'<p class="sombra">{apoio}</p>' if apoio else ""
-    return _pagina("sobre-foto", css, f"""<div class="tela">
-      <div class="foto"></div><div class="veu"></div>
-      <div class="marca sombra">{HANDLE}</div>
-      <div class="bloco">{num}<h2 class="sombra">{frase}</h2>{ap}</div>
-      {_passo(i, n)}</div>""", base)
+    topo = (f'<div class="n">{numero:02d}</div>' if numero else
+            (f'<div class="rotulo">{rotulo}</div><div class="regua"></div>'
+             if rotulo else ""))
+    return _pagina("placa", css, f"""<div class="tela">
+      <div class="fundo"></div>
+      <div class="chapa"><div class="foto"></div><div class="veu"></div></div>
+      <div class="marca">{HANDLE}</div>
+      <div class="bloco">{topo}<h2>{frase}</h2><p>{apoio}</p></div>
+      {_passo(i, n)}<div class="grao"></div></div>""", base)
 
 
-# ═════════════════════════════════════════════════════════ CITAÇÃO ═══════
-def citacao(texto, apoio=None, i=None, n=None, base="../../"):
-    """Sem foto e sem número: a frase que a pessoa vai querer printar. É o
-    slide que gera envio no direct, que pesa mais que curtida."""
+# ═══════════════════════════════════════════════════════════ BAIXO ═══════
+def baixo(foto, numero, frase, apoio, plano, mono=False, i=None, n=None,
+          base="../../"):
+    """O item numerado. O algarismo é serifa itálica em ouro, não letra de
+    mão: à mão lê como recado, à serifa lê como página de revista."""
+    trat = (" grayscale(1) sepia(.6) saturate(1.45) hue-rotate(-14deg)"
+            " contrast(1.1) brightness(.82)") if mono else ""
     css = f"""
-    .ct{{position:absolute;inset:0;background:{TINTA};color:#fff;
-        padding:0 66px 118px;display:flex;flex-direction:column;
-        justify-content:flex-end}}
-    .ct .aspa{{position:relative;z-index:1;font-family:{MODA};
-              font-style:italic;font-size:300px;line-height:.42;
-              margin:0 0 -6px -14px;color:rgba(240,195,132,.22)}}
-    .ct h2{{position:relative;z-index:2;font-family:{MODA};font-style:italic;
-           font-weight:600;font-size:{_cabe(texto, 126, 948, .44)}px;
-           line-height:1.02;letter-spacing:-.025em}}
-    .ct p{{position:relative;z-index:2;margin-top:34px;font-family:{MAO};
-          font-weight:600;font-size:52px;line-height:1.1;color:{MEL_CLARO}}}
-    .ct .selo{{position:absolute;left:66px;bottom:54px;font-size:13px;
-              letter-spacing:.3em;text-transform:uppercase;font-weight:600;
-              color:rgba(255,255,255,.4)}}
+    {_foto(base, foto, plano, extra=trat)}
+    {_veu(.24, 40, .94)}
+    .bloco{{position:absolute;left:78px;right:78px;bottom:116px;z-index:36}}
+    .n{{font-family:{MODA};font-style:italic;font-weight:500;font-size:104px;
+       line-height:.74;color:{OURO};margin-bottom:8px}}
+    h2{{font-family:{SANS};font-weight:700;color:#fff;letter-spacing:-.035em;
+       font-size:{_cabe(frase, 86, 900, .48)}px;line-height:1.0}}
+    p{{margin-top:24px;font-size:29px;line-height:1.38;
+      color:rgba(255,255,255,.9);max-width:840px}}
     """
-    ap = f"<p>{apoio}</p>" if apoio else ""
-    return _pagina("citacao", css, f"""<div class="tela"><div class="ct">
-      <div class="aspa">“</div><h2>{texto}</h2>{ap}
-      <div class="selo">{HANDLE}</div>
-      </div>{_passo(i, n)}</div>""", base)
+    return _pagina("baixo", css, f"""<div class="tela">
+      <div class="foto"></div><div class="veu"></div>
+      <div class="marca">{HANDLE}</div>
+      <div class="bloco">
+        <div class="n sombra">{numero:02d}</div>
+        <h2 class="sombra">{frase}</h2>
+        <p class="sombra">{apoio}</p>
+      </div>
+      <div class="moldura"></div>{_passo(i, n)}<div class="grao"></div></div>""", base)
+
+
+# ════════════════════════════════════════════════════════ DESFOQUE ═══════
+def desfoque(foto, texto, arremate=None, plano="leve", i=None, n=None,
+             base="../../"):
+    """A frase pra printar. A foto continua ali, desfocada e fechada, virando
+    textura — o leitor reconhece a peça sem que a imagem dispute com o
+    tipo. É o slide que gera envio no direct, que pesa mais que curtida."""
+    css = f"""
+    {_foto(base, foto, plano, extra=" blur(26px) brightness(.5)")}
+    .foto{{transform:scale(1.12)}}
+    .veu{{background:radial-gradient(120% 90% at 50% 46%,
+         rgba(19,12,8,.42) 0%,rgba(17,11,7,.86) 72%,rgba(15,10,6,.95) 100%)}}
+    .bloco{{position:absolute;left:78px;right:78px;top:50%;
+           transform:translateY(-50%);z-index:36;text-align:center}}
+    .aspa{{font-family:{MODA};font-style:italic;font-size:132px;line-height:.4;
+          color:{OURO};opacity:.55;margin-bottom:34px}}
+    h2{{font-family:{MODA};font-style:italic;font-weight:600;color:#fff;
+       font-size:{_cabe(texto, 104, 900, .43)}px;line-height:1.08;
+       letter-spacing:-.02em}}
+    .arremate{{margin-top:30px;font-size:16px;letter-spacing:.4em;
+              text-transform:uppercase;font-weight:600;color:{CHAMPANHE}}}
+    """
+    ar = f'<div class="arremate">{arremate}</div>' if arremate else ""
+    return _pagina("desfoque", css, f"""<div class="tela">
+      <div class="foto"></div><div class="veu"></div>
+      <div class="marca">{HANDLE}</div>
+      <div class="bloco"><div class="aspa">“</div><h2>{texto}</h2>{ar}</div>
+      <div class="moldura"></div>{_passo(i, n)}<div class="grao"></div></div>""", base)
 
 
 # ═══════════════════════════════════════════════════════════ FECHO ═══════
-def fecho(foto, linha, salvar, mandar, base="../../"):
-    """Último slide. Os dois pedidos que o algoritmo de 2026 mais paga —
-    salvar e mandar no direct — entram separados e escritos, não
-    subentendidos numa frase bonita."""
+def fecho(foto, linha, salvar, mandar, plano="aberto", base="../../"):
+    """Salvar e mandar no direct pesam de três a cinco vezes a curtida no
+    algoritmo de 2026, então os dois pedidos entram escritos e separados —
+    não subentendidos numa frase bonita."""
     css = f"""
-    .foto{{background-image:url('{base}fotos/{foto}')}}
-    .veu{{background:linear-gradient(180deg,rgba(30,17,11,.24) 0%,
-         rgba(30,17,11,.04) 20%,rgba(28,16,10,.52) 46%,
-         rgba(22,12,7,.93) 74%,rgba(20,11,6,.97) 100%)}}
-    .marca{{color:rgba(255,255,255,.9)}}
-    .bloco{{position:absolute;left:54px;right:58px;bottom:96px;z-index:30}}
+    {_foto(base, foto, plano)}
+    {_veu(.3, 34, .96)}
+    .bloco{{position:absolute;left:78px;right:78px;bottom:112px;z-index:36}}
     h2{{font-family:{MODA};font-style:italic;font-weight:600;color:#fff;
-       font-size:{_cabe(linha, 98, 950, .44)}px;line-height:1.04;
+       font-size:{_cabe(linha, 92, 900, .43)}px;line-height:1.06;
        letter-spacing:-.02em}}
-    .pedidos{{margin-top:34px;display:flex;flex-direction:column;gap:16px}}
-    .pedido{{display:flex;align-items:center;gap:18px;font-size:29px;
-            font-weight:600;color:#fff;line-height:1.24}}
-    .pedido b{{flex:0 0 auto;width:52px;height:52px;border-radius:50%;
-              background:{MEL_CLARO};color:{TINTA};display:flex;
-              align-items:center;justify-content:center;font-size:26px}}
+    .pedidos{{margin-top:36px;border-top:1px solid rgba(231,207,166,.38);
+             padding-top:26px;display:flex;flex-direction:column;gap:18px}}
+    .pedido{{display:flex;align-items:baseline;gap:18px;font-size:27px;
+            font-weight:500;color:#fff;line-height:1.28}}
+    .pedido b{{flex:0 0 auto;font-family:{MODA};font-style:italic;
+              font-weight:500;font-size:30px;color:{OURO}}}
     """
     return _pagina("fecho", css, f"""<div class="tela">
       <div class="foto"></div><div class="veu"></div>
-      <div class="marca sombra">{HANDLE}</div>
+      <div class="marca">{HANDLE}</div>
       <div class="bloco">
         <h2 class="sombra">{linha}</h2>
         <div class="pedidos">
-          <div class="pedido sombra"><b>↓</b><span>{salvar}</span></div>
-          <div class="pedido sombra"><b>→</b><span>{mandar}</span></div>
+          <div class="pedido sombra"><b>i.</b><span>{salvar}</span></div>
+          <div class="pedido sombra"><b>ii.</b><span>{mandar}</span></div>
         </div>
       </div>
-      </div>""", base)
+      <div class="moldura"></div><div class="grao"></div></div>""", base)

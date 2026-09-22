@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><title>capa</title>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>placa</title>
 <style>
 @font-face{font-family:'DM Serif Display';font-style:italic;font-weight:400;font-display:block;src:url('../../fontes/dmserif-italic-400.woff2') format('woff2');}
 @font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:block;src:url('../../fontes/dmserif-normal-400.woff2') format('woff2');}
@@ -43,20 +43,25 @@ body{font-family:'DM Sans',sans-serif}
 .regua{width:62px;height:1px;background:#D4AF6A;margin:20px 0 26px}
 .sombra{text-shadow:0 2px 24px rgba(18,11,7,.72),0 1px 4px rgba(18,11,7,.55)}
 
-    .foto{background-image:url('../../fotos/rhai-bebe.jpg');background-size:100%;background-position:center 16%;filter:saturate(1.04) contrast(1.04)}
-    .veu{background:linear-gradient(180deg,rgba(21,14,9,0.3) 0%,rgba(21,14,9,.02) 22%,rgba(21,14,9,.06) 40%,rgba(19,12,8,0.58) 64%,rgba(17,11,7,0.93) 100%)}
-    .bloco{position:absolute;left:78px;right:78px;bottom:122px;z-index:36}
-    h1{font-family:'DM Sans',sans-serif;font-weight:700;color:#fff;letter-spacing:-.035em;
-       font-size:81px;line-height:.98}
-    .arremate{margin-top:30px;font-family:'Playfair Display',serif;font-style:italic;
-              font-size:31px;color:#E7CFA6;letter-spacing:.01em}
+    .fundo{position:absolute;inset:0;background:#15100C}
+    .chapa{position:absolute;left:34px;right:34px;bottom:34px;height:56%;
+           overflow:hidden;border:1px solid rgba(231,207,166,.34)}
+    .foto{background-image:url('../../fotos/rhai-bebe.jpg');background-size:110%;background-position:center 30%;filter:saturate(1.04) contrast(1.04)}
+    .foto{position:absolute;inset:0;background-position:center 23%}
+    .chapa .veu{background:linear-gradient(180deg,rgba(21,14,9,.28) 0%,
+                rgba(21,14,9,0) 34%,rgba(21,14,9,.3) 100%)}
+    .bloco{position:absolute;left:78px;right:78px;top:122px;z-index:36}
+    .n{font-family:'Playfair Display',serif;font-style:italic;font-weight:500;font-size:92px;
+       line-height:.74;color:#D4AF6A;margin-bottom:10px}
+    h2{font-family:'DM Sans',sans-serif;font-weight:700;color:#fff;letter-spacing:-.035em;
+       font-size:82px;line-height:1.0}
+    p{margin-top:22px;font-size:27px;line-height:1.38;
+      color:rgba(255,255,255,.84);max-width:840px}
+    .passo{color:rgba(231,207,166,.55)}
     
 </style></head><body><div class="tela">
-      <div class="foto"></div><div class="veu"></div>
+      <div class="fundo"></div>
+      <div class="chapa"><div class="foto"></div><div class="veu"></div></div>
       <div class="marca">@rhaicalazans</div>
-      <div class="bloco">
-        <div class="rotulo sombra">ninguém diz isso em voz alta</div><div class="regua"></div>
-        <h1 class="sombra">Virar mãe me deixou<br>melhor no meu trabalho.</h1>
-        <div class="arremate sombra">deslize →</div>
-      </div>
-      <div class="moldura"></div><div class="grao"></div></div></body></html>
+      <div class="bloco"><div class="n">02</div><h2>Dia cheio deixou<br>de ser troféu.</h2><p>Eu colecionava agenda lotada como prova de que ia bem. Dia cheio é sintoma, não resultado. Ninguém me paga pelas minhas horas — me paga pelo que sai delas.</p></div>
+      <div class="passo">04 — 09</div><div class="grao"></div></div></body></html>

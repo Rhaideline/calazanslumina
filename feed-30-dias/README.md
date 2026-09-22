@@ -57,30 +57,33 @@ python3 gerar3.py && ./renderizar.sh && python3 gerar_reels3.py
 
 ## Perfil pessoal — @rhaicalazans
 
-Voz e sistema separados do feed da agência. As decisões desta parte estão
-todas justificadas em **`ESTUDO-PESSOAL-2026.md`**, com fonte — inclusive
-as que corrigiram entregas minhas anteriores.
+Voz e sistema separados do feed da agência. Cada decisão está justificada
+com fonte em **`ESTUDO-PESSOAL-2026.md`**, inclusive as que corrigiram
+entregas minhas anteriores.
 
-**Formato 1080×1440 (3:4)**, igual ao feed da agência. Eu tinha entregado
-4:5 antes; o Instagram passou a aceitar 3:4 nativamente em 2026 e é o
-único que preenche o feed **e** a grade de perfil sem corte.
+**1080×1440 (3:4)**, nove slides, **foto em todos** — a cliente comparou as
+duas versões e escolheu esta.
 
-**Oito slides, quatro dispositivos alternando.** A versão anterior tinha
-dez slides com a mesma foto e o mesmo bloco de texto no mesmo canto — e
-carrossel só funciona se cada slide der motivo pra ver o próximo. A
-alternância foto → papel → foto → papel → citação é o que dá esse motivo.
+Com uma imagem só em nove slides, o ritmo tem que vir de outro lugar. Vem de
+três eixos que preservam a cena inteira: **layout** (sangria × placa
+emoldurada), **tratamento** (cor × monocromia quente × desfoque) e **posição
+do texto**. Variar por plano fechado foi testado e descartado: nesta foto
+ela está rindo de boca aberta e todo enquadramento fechado cai na boca.
 
-- `pessoal.py` — `capa`, `papel`, `sobre_foto`, `citacao`, `fecho`
+- `pessoal.py` — `capa`, `placa`, `baixo` (com `mono`), `desfoque`, `fecho`
 - `conteudo_pessoal.py` — o carrossel, a legenda e as instruções de
   publicação (inclusive a música, que é o item de maior alcance e não é
   código)
-- `gerar_pessoal.py` — escreve os HTML em `pessoal/<id>/`
+- `gerar_pessoal.py` — escreve os HTML **e renderiza**. Renderizar mora ali
+  de propósito: o gerador apaga os PNG antigos antes de escrever, então
+  gerar num passo e renderizar noutro já deixou a pasta com um slide só.
 - `verificar_contraste.py` — mede o contraste no PNG renderizado, não nas
   cores do CSS. Foi assim que eu peguei o acento da marca reprovando em
-  3,2:1 sobre o papel, que a folha de estilo não tinha como me contar.
+  3,2:1 sobre o papel, que a folha de estilo não tinha como contar.
 
-Fontes em `fontes/`: Playfair Display itálico (a serifa de moda das
-referências dela) e Caveat (o manuscrito), somadas às da casa.
+Fontes em `fontes/`: Playfair Display itálico, somada às da casa. Caveat foi
+baixada e descartada — letra de mão lê como recado de geladeira, não como
+editorial.
 
 ## O limite que preciso deixar claro
 
