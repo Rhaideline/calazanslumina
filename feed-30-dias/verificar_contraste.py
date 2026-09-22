@@ -44,7 +44,7 @@ def medir(png):
 
 def main(pasta):
     pior = 99
-    for arq in sorted(Path(pasta).glob("[0-9]*.png")):
+    for arq in sorted(Path(pasta).glob("*.png")):
         r = medir(arq)
         pior = min(pior, r)
         marca = "ok " if r >= MINIMO else "RUIM"

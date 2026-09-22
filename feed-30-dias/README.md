@@ -57,33 +57,37 @@ python3 gerar3.py && ./renderizar.sh && python3 gerar_reels3.py
 
 ## Perfil pessoal — @rhaicalazans
 
-Voz e sistema separados do feed da agência. Cada decisão está justificada
-com fonte em **`ESTUDO-PESSOAL-2026.md`**, inclusive as que corrigiram
-entregas minhas anteriores.
+Sistema próprio, separado do feed da agência. **Dez layouts, uma foto, um
+formato.** O sistema inteiro — tokens, regras e cada layout com preview —
+está publicado como Design System:
+https://claude.ai/artifact/NywUbdA6DCGZpzrgN1gJrf
 
-**1080×1440 (3:4)**, nove slides, **foto em todos** — a cliente comparou as
-duas versões e escolheu esta.
+Cinco das dez peças vieram dos modelos de Canva que a cliente mandou; as
+outras cinco são proposta da casa. Elas convivem no mesmo sistema de
+tokens, mesma régua tipográfica e mesma linha de base — que é o que as
+torna intercambiáveis de verdade.
 
-Com uma imagem só em nove slides, o ritmo tem que vir de outro lugar. Vem de
-três eixos que preservam a cena inteira: **layout** (sangria × placa
-emoldurada), **tratamento** (cor × monocromia quente × desfoque) e **posição
-do texto**. Variar por plano fechado foi testado e descartado: nesta foto
-ela está rindo de boca aberta e todo enquadramento fechado cai na boca.
+| família | peças |
+| --- | --- |
+| capas | C1 Empilhada · C2 Mista · C3 Pergunta · C4 Diário · C5 Editorial |
+| miolo | M1 Sangria · M2 Placa · M3 Monocromia |
+| pausa e fecho | P1 Desfoque · F1 Fecho |
 
-- `pessoal.py` — `capa`, `placa`, `baixo` (com `mono`), `desfoque`, `fecho`
-- `conteudo_pessoal.py` — o carrossel, a legenda e as instruções de
-  publicação (inclusive a música, que é o item de maior alcance e não é
-  código)
-- `gerar_pessoal.py` — escreve os HTML **e renderiza**. Renderizar mora ali
-  de propósito: o gerador apaga os PNG antigos antes de escrever, então
-  gerar num passo e renderizar noutro já deixou a pasta com um slide só.
+Com uma imagem só em nove slides, o ritmo vem de três eixos que preservam
+a cena inteira: **layout** (sangria × placa), **tratamento** (cor ×
+monocromia × desfoque) e **posição do texto**. Variar por plano fechado foi
+testado e descartado — nesta foto ela ri de boca aberta e todo
+enquadramento fechado cai na boca.
+
+- `pessoal.py` — a biblioteca, com o índice `LAYOUTS` no fim
+- `conteudo_pessoal.py` — três carrosséis prontos, um por linguagem de capa
+- `gerar_pessoal.py` — escreve, **renderiza** o lookbook e os três
+  carrosséis. Renderizar mora ali de propósito: o gerador apaga os PNG
+  antigos antes de escrever, e gerar num passo e renderizar noutro já
+  deixou uma pasta com um slide só.
 - `verificar_contraste.py` — mede o contraste no PNG renderizado, não nas
-  cores do CSS. Foi assim que eu peguei o acento da marca reprovando em
-  3,2:1 sobre o papel, que a folha de estilo não tinha como contar.
-
-Fontes em `fontes/`: Playfair Display itálico, somada às da casa. Caveat foi
-baixada e descartada — letra de mão lê como recado de geladeira, não como
-editorial.
+  cores do CSS
+- `ESTUDO-PESSOAL-2026.md` — os onze achados de pesquisa com fonte
 
 ## O limite que preciso deixar claro
 
