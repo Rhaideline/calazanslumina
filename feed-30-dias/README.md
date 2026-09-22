@@ -57,25 +57,36 @@ python3 gerar3.py && ./renderizar.sh && python3 gerar_reels3.py
 
 ## Perfil pessoal — @rhaicalazans
 
-Estrutura separada, porque é outro perfil e outra voz. A referência é o
-carrossel de retrato que ela mandou: a mesma foto da pessoa nos dez
-slides, capa em sem-serifa pesada, miolo numerado em serifa. Aqui o que
-sustenta a peça é o rosto, não recurso gráfico — então o trabalho de
-design é sumir.
+Estrutura e voz separadas do feed da agência, porque é outro perfil. A
+linguagem veio das referências de Canva que ela mandou: foto real com luz
+de casa, tipografia grande misturando sem-serifa gorda com serifa itálica
+ou manuscrito, e caixa-alta espaçada fininha emoldurando. Nada de vermelho
+de marca — perfil pessoal de maternidade com paleta de agência em cima
+vira anúncio.
 
-- `pessoal.py` — três modelos: `capa`, `item`, `fecho`. Serifa é DM Serif
-  Display, não Bodoni: sobre foto o filete do Bodoni desaparece nos claros
-  do rosto, inclusive o travessão, que saía como um buraco na frase.
-- `conteudo_pessoal.py` — o carrossel de maternidade, com a nota de
-  honestidade sobre o que ainda precisa de confirmação dela
+Formato **1080×1350 (4:5)**, não 1080×1440 como o feed da agência. É o das
+referências e o retrato que o Instagram mostra maior no feed.
+
+- `pessoal.py` — quatro capas e dois modelos de miolo:
+
+  | modelo | referência | quando usar |
+  |---|---|---|
+  | `capa_empilhada` | "Coisas que eu acho chique" | a mais limpa; aguenta frase longa |
+  | `capa_mista` | "Conteúdo não serve" | mais personalidade; exige duas palavras |
+  | `capa_pergunta` | "Me conta," | a que mais puxa comentário |
+  | `capa_diario` | "Meu dia em um post" | informal, boa pra série recorrente |
+  | `item` / `fecho` | — | miolo numerado e fecho |
+
+- `conteudo_pessoal.py` — o carrossel de maternidade e as três capas
+  alternativas, pra ela escolher a linguagem das próximas
 - `gerar_pessoal.py` — escreve os HTML em `pessoal/<id>/`
 
-A foto em `fotos/rhai-retrato.jpg` é provisória: as originais estão no CDN
-do GoHighLevel e a política de rede desta sessão bloqueia o domínio
-(`assets.cdn.filesafe.space`, 403 no CONNECT). O que está ali foi
-recortado do PNG já renderizado em `posts-12modelos/`, o que significa
-preto e branco e resolução baixa. Basta ela colocar um arquivo em `fotos/`
-com esse nome e rodar o gerador de novo.
+Fontes novas em `fontes/`: Playfair Display itálico (a serifa de moda das
+referências) e Caveat (o manuscrito). DM Sans continua carregando o peso.
+
+Tudo é ancorado no terço de baixo da peça de propósito: nesta foto os dois
+rostos ocupam o meio, e texto centralizado tapava o bebê — que é metade do
+motivo do post existir.
 
 ## O limite que preciso deixar claro
 

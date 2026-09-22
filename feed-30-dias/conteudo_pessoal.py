@@ -2,72 +2,85 @@
 """
 Conteúdo do perfil pessoal @rhaicalazans — maternidade.
 
-Nota de honestidade que precisa ficar no arquivo, não só no chat: eu não
-sei se a Rhaideline tem filho. A referência que ela mandou usa o
-condicional ("se eu fosse você, e tivesse um bebê") exatamente para dar
-conselho sem se colocar como caso, e é isso que está usado aqui — vale
-igual nas duas hipóteses. Se ela for mãe, os itens ficam bem mais fortes
-com detalhe real dela no lugar do genérico, e é troca de uma linha cada.
+A foto é dela com o bebê, e isso muda a voz: saiu o condicional que a
+versão anterior usava ("se eu fosse você, e tivesse um bebê") e entrou
+primeira pessoa de verdade. Ela é mãe — a foto confirma —, então o post
+não precisa fingir que é conselho de terceiro.
 
-O território é o único em que ela fala com autoridade de verdade:
-maternidade encontrando negócio próprio. Nada aqui promete resultado,
-nada aqui dá conselho de saúde — não é a praia dela e não seria honesto.
+Duas coisas ficaram deliberadamente sem gênero e sem data: eu não sei o
+nome nem o sexo do bebê, então em lugar nenhum está escrito "ele" ou
+"ela", e em lugar nenhum tem idade. Trocar isso pelo real deixa o texto
+mais forte e é edição de uma palavra por linha.
+
+Nenhum conselho de saúde, sono ou amamentação. Não é a área dela e não
+seria honesto — o que é dela é organização de rotina e de negócio, e é
+só disso que os oito itens falam.
 """
 
-CARROSSEL = {
-    "id": "01_se_eu_fosse_voce",
-    "titulo": "Se eu fosse você, e tivesse um bebê e um negócio",
-    "foto": "rhai-retrato.jpg",
+FOTO = "rhai-bebe.jpg"
 
-    "capa": "Se eu fosse você,<br>e tivesse um bebê<br>e um negócio, eu faria<br>todas estas coisas",
+CARROSSEL = {
+    "id": "01_parei_de_fazer",
+    "titulo": "Coisas que eu parei de fazer depois que virei mãe",
+    "foto": FOTO,
+    # cinco linhas subiam o título até o rosto do bebê; virou chapéu + três
+    "capa_chapeu": "depois que virei mãe",
+    "capa": ["Coisas que", "eu parei", "de fazer"],
 
     "itens": [
-        "Eu escolheria uma hora do dia<br>que é só dele. Sem celular na<br>"
-        "mão, sem “só vou ver rapidinho”.<br>A agenda se monta em volta<br>"
-        "dessa hora — não o contrário.",
+        ("Parei de responder<br>trabalho com<br>ele no colo.",
+         "Ou estou ali, ou estou trabalhando. As duas ao mesmo tempo viram meia coisa nas duas."),
 
-        "Eu deixaria o negócio responder<br>por mim nas horas em que eu<br>"
-        "não posso. Resposta automática<br>não é frieza. É não deixar a<br>"
-        "pessoa no vácuo enquanto eu<br>estou com ele no colo.",
+        ("Parei de pedir<br>desculpa por<br>ter horário.",
+         "“Te respondo amanhã às 9” não é grosseria. É a única frase que protege os dois lados."),
 
-        "Eu pararia de responder<br>orçamento de madrugada.<br>"
-        "O que parece dedicação vira<br>expectativa: quem foi atendido<br>"
-        "às duas da manhã vai esperar<br>isso sempre.",
+        ("Parei de achar<br>que dar conta<br>sozinha era mérito.",
+         "Ajuda pedida cedo é barata. Pedida no limite sai cara — porque no limite a gente escolhe errado."),
 
-        "Eu escolheria uma pediatra e<br>uma amiga que já passou por<br>"
-        "isso. E levaria minhas dúvidas<br>pra elas, não pra caixa de<br>"
-        "comentário. Opinião demais<br>não organiza. Paralisa.",
+        ("Parei de procurar<br>resposta rolando<br>o feed de madrugada.",
+         "Duas pessoas de confiança resolvem mais que quinhentos perfis. Informação demais não organiza: paralisa."),
 
-        "Eu escreveria as respostas que<br>dou dez vezes por dia e<br>"
-        "deixaria salvas. O que cansa<br>não é responder — é decidir<br>"
-        "de novo a mesma coisa.",
+        ("Parei de chamar<br>de preguiça o<br>que era cansaço.",
+         "Dia que não rende não é falta de caráter. É corpo avisando que a conta não fecha."),
 
-        "Eu não trocaria culpa por hora<br>extra. Virar a madrugada pra<br>"
-        "compensar o dia não repõe<br>nada. Só antecipa o dia ruim<br>"
-        "de amanhã.",
+        ("Parei de guardar<br>o “depois eu<br>organizo”.",
+         "Cinco minutos hoje valem mais que a tarde inteira que nunca chega."),
 
-        "Eu contaria pro cliente que<br>tenho um bebê em casa. Não<br>"
-        "como desculpa — como horário.<br>Quem sabe o seu horário<br>"
-        "respeita. Quem não sabe, invade.",
+        ("Parei de esconder<br>que sou mãe pra<br>parecer profissional.",
+         "Ninguém nunca me contratou por eu fingir que tenho o dia todo livre. Contrataram porque eu entrego."),
 
-        "Eu mediria uma semana antes<br>de mudar tudo. Onde o tempo<br>"
-        "foi, quem me interrompeu, o que<br>não podia esperar mesmo.<br>"
-        "Quase nada não podia.",
+        ("Parei de medir<br>o dia pelo que<br>não deu tempo.",
+         "Passei a medir pelo que deu. Muda o dia inteiro — e não custa nada."),
     ],
 
-    "fecho": "E depois eu salvaria<br>este post.",
-    "fecho_nota": "Pra reler no dia em que tudo parecer impossível de "
-                  "organizar. E mandaria pra uma amiga que acabou de ter bebê.",
+    "fecho": "Nenhuma dessas eu<br>aprendi de primeira.",
+    "fecho_pedido": "salva pra ler num dia difícil ↓",
 
-    "legenda": """Se eu fosse você, e tivesse um bebê e um negócio, eu faria todas estas coisas.
+    "legenda": """Coisas que eu parei de fazer depois que virei mãe.
 
-Não é conselho de maternidade — não é a minha praia e eu não daria. É conselho de organização, que é onde eu trabalho todo dia.
+Nenhuma delas eu aprendi de primeira. Todas custaram um dia ruim antes.
 
-Quase toda mãe que empreende chega no mesmo lugar: o dia não cabe. E a resposta que aparece primeiro é sempre a pior — acordar mais cedo, dormir mais tarde, responder no colo.
+A que mais mudou minha rotina foi a segunda: parar de pedir desculpa por ter horário. Eu achava que responder na hora era ser boa profissional. Não é. É só ensinar a todo mundo que eu estou sempre disponível — e depois reclamar que estou.
 
-O que funciona é menos heroico. Uma hora protegida por dia. Uma resposta automática honesta no lugar do vácuo. As mesmas dúvidas indo pra duas pessoas em vez de pra internet inteira. E uma semana de medição antes de mudar qualquer coisa — porque quase tudo que parecia urgente podia esperar.
+“Te respondo amanhã às 9” não fecha porta nenhuma. Quem respeita horário continua. Quem não respeita ia embora de qualquer jeito.
 
-Salva pra reler num dia difícil. E manda pra uma amiga que acabou de ter bebê. 🤍
+E a oitava é a que eu preciso relembrar toda semana: parar de medir o dia pelo que não deu tempo. A lista do que não deu é infinita por construção. A do que deu cabe num post.
 
-#maternidade #maternidadereal #mãeempreendedora #maternidadeenegocios""",
+Salva pra ler num dia difícil. E me conta aqui embaixo: o que você parou de fazer? 🤍""",
 }
+
+
+# ── as outras três capas, pra ela escolher a linguagem das próximas ──────
+ALTERNATIVAS = [
+    ("capa_mista", dict(
+        foto=FOTO, serif="Ocupada", sans="não é presente",
+        sob="maternidade e trabalho", cta="leia a legenda")),
+
+    ("capa_pergunta", dict(
+        foto=FOTO, chamada="Me conta,",
+        manuscrito="o que você parou de<br>fazer depois que<br>virou mãe?")),
+
+    ("capa_diario", dict(
+        foto=FOTO, manuscrito="meu dia<br>em um post",
+        episodio="ep 1:<br>a manhã<br>que deu certo")),
+]
