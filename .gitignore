@@ -41,3 +41,11 @@ next-env.d.ts
 Skills-24-06/
 .sixth/
 seo-skills-pack/
+__pycache__/
+
+# Material comercial de cliente — ESTE REPOSITORIO E PUBLICO.
+# Propostas trazem preco, condicoes e nome de cliente que ainda nao assinou.
+# Nada disso entra aqui: entrega-se ao cliente por anexo ou por link privado.
+proposta-*.pdf
+proposta-*.docx
+propostas/

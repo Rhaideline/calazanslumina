@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>reticula</title>
+<style>
+@font-face{font-family:'DM Serif Display';font-style:italic;font-weight:400;font-display:block;src:url('../fontes/dmserif-italic-400.woff2') format('woff2');}
+@font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:block;src:url('../fontes/dmserif-normal-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:italic;font-weight:400;font-display:block;src:url('../fontes/dmsans-italic-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:300;font-display:block;src:url('../fontes/dmsans-normal-300.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:block;src:url('../fontes/dmsans-normal-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:500;font-display:block;src:url('../fontes/dmsans-normal-500.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:600;font-display:block;src:url('../fontes/dmsans-normal-600.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:700;font-display:block;src:url('../fontes/dmsans-normal-700.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:italic;font-weight:400;font-display:block;src:url('../fontes/spacemono-italic-400.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:400;font-display:block;src:url('../fontes/spacemono-normal-400.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:block;src:url('../fontes/spacemono-normal-700.woff2') format('woff2');}
+
+@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:400 900;font-display:block;font-stretch:normal;src:url('../fontes/bodonimoda-italic-variable.woff2') format('woff2');}
+@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:400 900;font-display:block;font-stretch:normal;src:url('../fontes/bodonimoda-normal-variable.woff2') format('woff2');}
+
+:root{--tinta:#111111;--tinta2:#1A1A1A;--tinta3:#08080A;--papel:#F5F1EA;--papel2:#EDE6D6;--vermelho:#FF0005;--vermelho2:#FF3B3B;--vermelho3:#A00306;--brasa:#1A0D0D;}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased}
+html,body{width:1080px;height:1440px;overflow:hidden;background:#000}
+body{font-family:'DM Sans',sans-serif}
+.tela{position:relative;width:1080px;height:1440px;overflow:hidden}
+em{font-style:italic;color:var(--vermelho)}
+.grao{position:absolute;inset:0;z-index:60;pointer-events:none;opacity:.32;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .13 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.rodape{position:absolute;left:62px;bottom:52px;z-index:50;font-size:11px;
+        letter-spacing:.34em;text-transform:uppercase;font-weight:600}
+
+    .rt{position:absolute;inset:0;background:var(--papel)}
+    .rt .img{position:absolute;left:0;right:0;top:0;height:64%;
+             background-image:url('../fotos/coding-laptop.jpg');background-size:cover;
+             background-position:center;filter:grayscale(1) contrast(1.9) brightness(1.05)}
+    .rt .pontos{position:absolute;left:0;right:0;top:0;height:64%;
+                background-image:radial-gradient(circle at center,
+                  var(--papel) 0 38%, transparent 39%);
+                background-size:7px 7px;mix-blend-mode:screen}
+    .rt .veu{position:absolute;left:0;right:0;top:0;height:64%;
+             background:var(--papel);mix-blend-mode:lighten;opacity:.12}
+    .rt .txt{position:absolute;left:56px;right:56px;bottom:92px;z-index:5;color:var(--tinta)}
+    .rt h1{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:700;font-size:104px;
+           line-height:.96;letter-spacing:-.025em}
+    .rt .nota{margin-top:20px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.2em;
+              text-transform:uppercase;color:var(--vermelho)}
+    .rt .rodape{color:rgba(17,17,17,.42)}
+    
+</style></head><body><div class="tela"><div class="rt">
+      <div class="img"></div><div class="pontos"></div><div class="veu"></div>
+      <div class="txt"><h1>5 erros que<br>o Google <em>não</em><br><em>perdoa</em>.</h1><div class="nota">Nenhum deles custa dinheiro para consertar</div></div>
+      <div class="rodape">@calazanslumina</div>
+      </div><div class="grao"></div></div></body></html>

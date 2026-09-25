@@ -1,0 +1,19 @@
+@font-face{font-family:'DM Serif Display';font-style:italic;font-weight:400;font-display:block;src:url('{BASE}fontes/dmserif-italic-400.woff2') format('woff2');}
+@font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:block;src:url('{BASE}fontes/dmserif-normal-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:italic;font-weight:400;font-display:block;src:url('{BASE}fontes/dmsans-italic-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:300;font-display:block;src:url('{BASE}fontes/dmsans-normal-300.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:block;src:url('{BASE}fontes/dmsans-normal-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:500;font-display:block;src:url('{BASE}fontes/dmsans-normal-500.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:600;font-display:block;src:url('{BASE}fontes/dmsans-normal-600.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:700;font-display:block;src:url('{BASE}fontes/dmsans-normal-700.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:italic;font-weight:400;font-display:block;src:url('{BASE}fontes/spacemono-italic-400.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:400;font-display:block;src:url('{BASE}fontes/spacemono-normal-400.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:block;src:url('{BASE}fontes/spacemono-normal-700.woff2') format('woff2');}
+
+@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:400 900;font-display:block;font-stretch:normal;src:url('{BASE}fontes/bodonimoda-italic-variable.woff2') format('woff2');}
+@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:400 900;font-display:block;font-stretch:normal;src:url('{BASE}fontes/bodonimoda-normal-variable.woff2') format('woff2');}
+@font-face{font-family:'Caveat';font-style:normal;font-weight:400 700;font-display:block;src:url('{BASE}fontes/caveat-variable.woff2') format('woff2');}
+@font-face{font-family:'Playfair Display';font-style:italic;font-weight:400 700;font-display:block;src:url('{BASE}fontes/playfair-italic-variable.woff2') format('woff2');}
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:400 700;font-display:block;src:url('{BASE}fontes/playfair-normal-variable.woff2') format('woff2');}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:300 900;font-display:block;src:url('{BASE}fontes/figtree-variable.woff2') format('woff2');}
+@font-face{font-family:'Lora';font-style:normal;font-weight:400 700;font-display:block;src:url('{BASE}fontes/lora-variable.woff2') format('woff2');}
