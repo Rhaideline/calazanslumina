@@ -475,3 +475,66 @@ Ritmo de cores: **segunda azul-marinho → quarta bronze → sexta azul-marinho.
 | Seg | 02 — Ameaça de processo | Carrossel |
 | Qua | 05 — Escala | Único |
 | Sex | 03 — Contrato PJ | Carrossel |
+
+---
+
+## 33 — Sobreaviso e celular (carrossel, 6 slides)
+**Pasta:** `33_sobreaviso_celular/`
+
+> Passou o fim de semana com o celular do lado, sem sair da cidade e sem poder desligar. Isso conta como trabalho?
+>
+> Depende — e a diferença está numa linha só.
+>
+> A Súmula 428 do TST separa duas situações que vivem confundidas:
+>
+> MITO: ter o celular da instituição ligado já é sobreaviso.
+> VERDADE: o que caracteriza é a escala — ficar à espera de ser chamado, sob controle de quem contratou.
+>
+> Ou seja: carregar o aparelho, por si só, não gera direito. Mas estar escalado para atender se chamarem, num período que deveria ser de descanso, é tempo à disposição. E tempo à disposição se paga.
+>
+> Quanto? À razão de 1/3 da hora normal (CLT, art. 244, § 2º, aplicado por analogia). E um detalhe que muita gente perde: se você for efetivamente acionado e trabalhar, essas horas são pagas por inteiro — não por um terço.
+>
+> O que registrar, a partir de hoje:
+> 1. A escala — inclusive quando ela chama o período de "disponibilidade" ou "retaguarda"
+> 2. As mensagens em que a coordenação cobra resposta ou confirma que você está de sobreaviso
+> 3. Cada acionamento: data, hora da chamada e hora em que você foi liberado
+> 4. O contracheque — procure a rubrica de sobreaviso. Se ela não existe, é disso que se trata
+>
+> Você já passou um fim de semana assim? Comenta aqui.
+>
+> Conteúdo informativo. Cada caso tem particularidades — associado, fale com o jurídico do SINMEVAÇO.
+
+`#sinmevaco #valedoaco #medicos #sobreaviso #plantao #direitomedico #clt #coronelfabriciano #ipatinga #timoteo`
+
+**Âncoras:** Súmula 428 do TST (itens I e II); CLT, art. 244, § 2º, por analogia.
+
+---
+
+## 34 — Intervalo no plantão de 12 horas (carrossel, 6 slides)
+**Pasta:** `34_intervalo_plantao/`
+
+> Doze horas de plantão e o almoço comido em pé, entre dois leitos. Isso é normal?
+>
+> É comum. Não é legal.
+>
+> Em jornada acima de seis horas, o intervalo mínimo para repouso e alimentação é de 1 hora (CLT, art. 71 — mínimo de uma, máximo de duas, salvo acordo escrito ou norma coletiva).
+>
+> E na 12x36 a própria lei fecha a porta. O art. 59-A diz, com todas as letras, que a escala vale "observados ou indenizados os intervalos para repouso e alimentação". Ou o intervalo acontece, ou ele é pago. Não existe terceira saída.
+>
+> Quando não é concedido, a conta não é simbólica: paga-se o tempo suprimido com 50% sobre a hora normal (art. 71, § 4º, na redação da Lei 13.467/2017). A verba é indenizatória e alcança só o período suprimido.
+>
+> Um cuidado antes de assinar qualquer coisa: norma coletiva pode reduzir o intervalo — até o piso de 30 minutos do art. 611-A, III. Reduzir é diferente de suprimir.
+>
+> Como se prova:
+> 1. Registre o ponto real — inclusive quando o sistema marca a pausa sozinho
+> 2. Anote quem estava de plantão com você: sem substituto, não havia como parar
+> 3. Guarde a escala do dia, não só a do mês
+> 4. Leia a norma coletiva antes de assinar acordo de redução
+>
+> Quantas vezes você parou de verdade no último plantão? Comenta aí.
+>
+> Conteúdo informativo. Cada caso tem particularidades — associado, fale com o jurídico do SINMEVAÇO.
+
+`#sinmevaco #valedoaco #medicos #plantao #12x36 #intervalo #direitomedico #clt #coronelfabriciano #ipatinga`
+
+**Âncoras:** CLT, art. 71 e art. 71, § 4º (Lei 13.467/2017); CLT, art. 59-A; CLT, art. 611-A, III.

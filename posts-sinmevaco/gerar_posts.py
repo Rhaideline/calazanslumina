@@ -1519,6 +1519,101 @@ POSTS = [
             None, foot_tag="CLT &middot; art. 3&ordm;<br>requisitos do v&iacute;nculo")),
     ]),
 
+    # ---- Carrossel: o tempo que o hospital toma sem pagar (1 de 2) ----
+    ("33_sobreaviso_celular", [
+        ("01_capa.html", cover(
+            ["Passou o fim de semana com o celular do lado"],
+            "sem sair da cidade e sem poder <em>desligar.</em>",
+            "Isso conta como trabalho?",
+            "Depende da escala.",
+            "1/6", olho="Caso real", foot_tag="Jur&iacute;dico<br>SINMEVA&Ccedil;O")),
+        ("02_caso.html", split(
+            "A escala dizia <b>folga.</b> O combinado, n&atilde;o: "
+            "<span class='serif'>era para atender se chamassem.</span>",
+            "Ningu&eacute;m ligou. E, no fim do m&ecirc;s, "
+            "<b>nada daquilo apareceu no contracheque.</b>",
+            "2/6")),
+        ("03_mito.html", mito_verdade(
+            "Ter o celular da institui&ccedil;&atilde;o ligado j&aacute; &eacute; sobreaviso.",
+            "O que caracteriza &eacute; a <b>escala</b>: ficar &agrave; espera de ser chamado, "
+            "sob controle de quem contratou.",
+            "3/6")),
+        ("04_virada.html", editorial(
+            "A <b>S&uacute;mula 428 do TST</b> separa as duas situa&ccedil;&otilde;es &mdash; "
+            "e &eacute; nessa linha que os casos se decidem.",
+            "Estar de escala &agrave; dist&acirc;ncia &eacute; <em>tempo &agrave; disposi&ccedil;&atilde;o.</em>",
+            "O sobreaviso se paga &agrave; raz&atilde;o de <b>1/3 da hora normal</b> "
+            "(CLT, art. 244, &sect; 2&ordm;, por analogia). Se o m&eacute;dico for acionado e "
+            "trabalhar, essas horas s&atilde;o <b>pagas por inteiro</b> &mdash; n&atilde;o por um ter&ccedil;o.",
+            "4/6")),
+        ("05_checklist.html", lista(
+            "O que registrar",
+            "Sobreaviso se prova antes, n&atilde;o depois",
+            ["<b>Guarde a escala</b> &mdash; inclusive quando ela chama o per&iacute;odo de "
+             "&lsquo;disponibilidade&rsquo; ou &lsquo;retaguarda&rsquo;.",
+             "<b>Salve as mensagens</b> em que a coordena&ccedil;&atilde;o cobra resposta ou "
+             "confirma que voc&ecirc; est&aacute; de sobreaviso.",
+             "<b>Anote cada acionamento</b>: data, hora da chamada e hora em que voc&ecirc; foi liberado.",
+             "<b>Confira o contracheque.</b> Procure a rubrica de sobreaviso &mdash; se ela n&atilde;o "
+             "existe, &eacute; disso que se trata."],
+            "5/6")),
+        ("06_cta.html", cta(
+            "SINMEVA&Ccedil;O &middot; desde 1991",
+            "Traga a escala. <em>O resto a gente l&ecirc;.</em>",
+            "Defesa trabalhista, &eacute;tica e c&iacute;vel para o m&eacute;dico do Vale do A&ccedil;o, "
+            "com advogados de direito m&eacute;dico.",
+            "Falar com o jur&iacute;dico", "6/6")),
+    ]),
+
+    # ---- Carrossel: o tempo que o hospital toma sem pagar (2 de 2) ----
+    ("34_intervalo_plantao", [
+        ("01_capa.html", cover(
+            ["Doze horas de plant&atilde;o"],
+            "e o almo&ccedil;o comido <em>em p&eacute;, entre dois leitos.</em>",
+            "Isso &eacute; normal?",
+            "&Eacute; comum. N&atilde;o &eacute; legal.",
+            "1/6", olho="Direito", foot_tag="Jornada<br>SINMEVA&Ccedil;O")),
+        ("02_clausula.html", clausula(
+            "CLT &middot; art. 59-A",
+            "&hellip; doze horas seguidas por trinta e seis horas ininterruptas de descanso, "
+            "<mark>observados ou indenizados os intervalos</mark> para repouso e alimenta&ccedil;&atilde;o.",
+            "A lei d&aacute; duas sa&iacute;das. Nenhuma delas &eacute; ignorar.",
+            "Ou o intervalo acontece, ou ele &eacute; pago. Na 12x36, quem fecha essa porta "
+            "&eacute; a reda&ccedil;&atilde;o do pr&oacute;prio artigo.",
+            "2/6")),
+        ("03_numero.html", numero(
+            "Jornada acima de seis horas",
+            "1", "hora",
+            "&Eacute; o intervalo m&iacute;nimo para repouso e alimenta&ccedil;&atilde;o.",
+            "CLT, art. 71 &mdash; m&iacute;nimo de uma hora, m&aacute;ximo de duas, "
+            "salvo acordo escrito ou norma coletiva.",
+            "3/6")),
+        ("04_virada.html", editorial(
+            "Quando o intervalo n&atilde;o &eacute; concedido, a conta n&atilde;o &eacute; simb&oacute;lica.",
+            "Paga-se o tempo suprimido com <em>50% sobre a hora normal.</em>",
+            "CLT, <b>art. 71, &sect; 4&ordm;</b> (reda&ccedil;&atilde;o da Lei 13.467/2017): a verba &eacute; "
+            "indenizat&oacute;ria e alcan&ccedil;a s&oacute; o per&iacute;odo suprimido. Norma coletiva pode "
+            "<b>reduzir</b> o intervalo &mdash; at&eacute; o piso de 30 minutos do art. 611-A, III. "
+            "Reduzir n&atilde;o &eacute; suprimir.",
+            "4/6")),
+        ("05_checklist.html", lista(
+            "Como se prova",
+            "O intervalo que n&atilde;o houve deixa rastro",
+            ["<b>Registre o ponto real</b> &mdash; inclusive quando o sistema marca a pausa sozinho.",
+             "<b>Anote quem estava de plant&atilde;o</b> com voc&ecirc;: sem substituto, "
+             "n&atilde;o havia como parar.",
+             "<b>Guarde a escala do dia</b>, n&atilde;o s&oacute; a do m&ecirc;s.",
+             "<b>Leia a norma coletiva</b> antes de assinar qualquer acordo de "
+             "redu&ccedil;&atilde;o de intervalo."],
+            "5/6")),
+        ("06_cta.html", cta(
+            "SINMEVA&Ccedil;O &middot; desde 1991",
+            "Plant&atilde;o sem pausa <em>tem valor.</em>",
+            "Defesa trabalhista, &eacute;tica e c&iacute;vel para o m&eacute;dico do Vale do A&ccedil;o, "
+            "com advogados de direito m&eacute;dico.",
+            "Falar com o jur&iacute;dico", "6/6")),
+    ]),
+
 ]
 
 
@@ -1563,6 +1658,7 @@ RESERVA = [
     "15_foto_moldura", "16_cartao_lateral", "18_capa_pergunta",
     "22_contrato_nao_protege", "24_dois_vinculos",
     "semana-01/2_qua_mito_verdade", "semana-01/3_sex_pergunta",
+    "33_sobreaviso_celular", "34_intervalo_plantao",
 ]
 
 ORDEM = [pasta for pasta, _, _ in CALENDARIO] + RESERVA
@@ -1651,7 +1747,10 @@ def main():
         for j, (nome, conteudo) in enumerate(slides):
             # dentro do carrossel a variante tambem gira, para os slides nao ficarem gemeos
             vslide = f"v{((int(variante[1:]) - 1 + j) % 4) + 1}"
-            conteudo = conteudo.replace('<div class="canvas ', f'<div class="canvas {tema} {vslide} ')
+            # Peca de duas faixas (mito x verdade, X vs Y) traz o proprio contraste:
+            # o tema da pasta a deixaria com texto escuro sobre faixa escura.
+            tema_slide = "" if familia(conteudo) == "misto" else tema
+            conteudo = conteudo.replace('<div class="canvas ', f'<div class="canvas {tema_slide} {vslide} ')
             conteudo = conteudo.replace('href="../fontes/', f'href="{subida}fontes/')
             conteudo = conteudo.replace("url('fotos/", f"url('{subida}fotos/")
             conteudo = conteudo.replace("{SUBIDA}", subida)
