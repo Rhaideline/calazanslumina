@@ -120,7 +120,7 @@ export default function Footer() {
             <h3 className="font-serif text-lg font-bold mb-3 text-brand-mint">Contato</h3>
             <ul className="space-y-2">
               <li><a href="https://wa.me/5531982948067?text=Olá, vim pelo site e quero saber mais sobre os serviços da Calazans Lumina" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white text-sm transition-colors">+55 31 98294-8067</a></li>
-              <li><a href="mailto:trafegocalazans@gmail.com" className="text-white/60 hover:text-white text-sm transition-colors">trafegocalazans@gmail.com</a></li>
+              <li><a href="mailto:calazanslumina@gmail.com" className="text-white/60 hover:text-white text-sm transition-colors">calazanslumina@gmail.com</a></li>
               <li><a href="https://maps.app.goo.gl/umLNmLYMyhbVx4HQ6" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white text-sm transition-colors">Framingham, MA — EUA</a></li>
             </ul>
           </div>
