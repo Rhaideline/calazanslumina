@@ -929,6 +929,12 @@ BASE_CSS += """
 .data-med .pe{position:absolute;z-index:6;left:0;right:0;bottom:72px;text-align:center;font-size:23px;
   letter-spacing:.18em;color:rgba(245,247,243,.6)}
 .t-claro .data-med .frase,.t-claro .frase{color:rgba(22,35,27,.8)}
+/* Scrim da peca de data: a foto entra colorida, mas a homenagem e no verde
+   da casa. Sem isto a imagem lava a peca e o dourado perde o contraste. */
+.data-med .photo{filter:saturate(.72) contrast(1.04)}
+.data-med .photo::after{background:
+  linear-gradient(180deg, rgba(10,42,23,.88) 0%, rgba(10,42,23,.62) 32%, rgba(10,42,23,.80) 62%, rgba(8,30,17,.95) 100%),
+  radial-gradient(120% 75% at 50% 58%, rgba(8,30,17,.30) 0%, rgba(8,30,17,.78) 100%)}
 """
 
 # Simbolo da radioterapia: feixes que convergem num alvo, poupando o entorno.
