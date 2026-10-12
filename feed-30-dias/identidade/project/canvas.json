@@ -1,0 +1,13 @@
+{
+  "v": 3,
+  "createdOnFiles": {"v": 1, "at": "2026-09-19T21:00:00Z"},
+  "title": "Identidade Visual — Calazans Lumina",
+  "launch": {"view": "focused", "file": "Main.dc.html"},
+  "pages": [],
+  "boards": {
+    "Main.dc.html": {"x": 0, "y": 0, "w": 1280, "h": 6200, "expand": "fill"}
+  },
+  "order": ["Main.dc.html"],
+  "notes": {},
+  "designSystems": []
+}

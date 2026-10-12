@@ -1,0 +1,17 @@
+{
+  "postId": "6a9c4470373d7342752e3db1",
+  "parentPostId": "4f4ca106-4151-42b8-8d26-fd7a7a68a011",
+  "locationId": "gEs9xx0VPhQ0xvtLESaQ",
+  "status": "scheduled",
+  "scheduleDate": "2026-09-05T20:00:00.000Z",
+  "scheduleDateLocal": "05/09/2026 17:00 (Brasilia)",
+  "canais": ["instagram: sinmevaco", "facebook: Sindicato dos Medicos do Vale do Aco"],
+  "createdBy": "1yhh5oeVrpJzLmRSWUBA",
+  "slides": 5,
+  "midia": "raw.githubusercontent.com, commit c82e640",
+  "validacao": "GET /posts/{id} devolveu status scheduled e a data correta. O GET traz so a capa no array de media - comportamento conhecido da API, documentado no README do repositorio do cliente. Nao recriar o post por causa disso.",
+  "fontes": [
+    "Lei 12.732/2012 (Lei dos 60 dias), com a redacao da Lei 13.896/2019",
+    "Data da categoria conferida em 05/09/2026: A.C.Camargo Cancer Center e CBN"
+  ]
+}
