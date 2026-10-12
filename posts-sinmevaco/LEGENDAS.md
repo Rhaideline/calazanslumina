@@ -538,3 +538,30 @@ Ritmo de cores: **segunda azul-marinho → quarta bronze → sexta azul-marinho.
 `#sinmevaco #valedoaco #medicos #plantao #12x36 #intervalo #direitomedico #clt #coronelfabriciano #ipatinga`
 
 **Âncoras:** CLT, art. 71 e art. 71, § 4º (Lei 13.467/2017); CLT, art. 59-A; CLT, art. 611-A, III.
+
+---
+
+## 35 — Dia do Cirurgião Pediátrico (carrossel, 6 slides)
+**Pasta:** `35_dia_cirurgiao_pediatrico/` · publicado em 12/10/2026
+
+> 12 de outubro — Dia do Cirurgião Pediátrico.
+>
+> A data é a mesma do Dia das Crianças, e não foi acaso: foi escolhida para coincidir.
+>
+> Tem um número que explica a especialidade melhor do que qualquer definição. A volemia de um recém-nascido fica entre 80 e 90 mL por quilo. Um bebê de 3 kg tem, no corpo inteiro, cerca de 250 mL de sangue.
+>
+> Perda aguda acima de 15% da volemia já entra em critério de transfusão. Nesse bebê, isso é menos de 40 mL — duas seringas de 20.
+>
+> É por isso que criança não é adulto pequeno, e é por isso que a especialidade existe separada. Em cirurgia de adulto, a perda se conta em bolsas. Aqui, a margem se mede em mililitros.
+>
+> E há o que não aparece em protocolo nenhum: em cada atendimento existem dois pacientes. A criança, que muitas vezes ainda não tem palavras para dizer onde dói. E quem a trouxe, que precisa entender, decidir e assinar por ela. Some a isso o tempo — o corpo operado hoje ainda vai crescer, por anos, em cima dessa cirurgia.
+>
+> A especialidade é pequena e malformação não escolhe dia útil. Então fica também o lembrete de sempre, porque esse vale dinheiro: quem fica de espera está trabalhando. A Súmula 428 do TST reconhece que estar escalado para atender à distância, sob controle de quem contratou, é tempo à disposição — e tem valor. Se a sua escala não diz isso, fale com o sindicato.
+>
+> Ao cirurgião pediátrico do Vale do Aço, o respeito do SINMEVAÇO.
+>
+> Fontes: protocolos brasileiros de medicina transfusional em neonatologia e pediatria, para a volemia e o gatilho transfusional; Súmula 428 do TST.
+
+`#SINMEVAÇO #DiaDoCirurgiãoPediátrico #CirurgiaPediátrica #DiaDasCrianças #MédicosDoValeDoAço #DireitoMédico #Sobreaviso #CoronelFabriciano #Ipatinga #Timóteo`
+
+**Âncoras:** volemia neonatal 80–90 mL/kg e gatilho transfusional em 15% da volemia (protocolos brasileiros de medicina transfusional); Súmula 428 do TST. A autoria da escolha da data diverge entre as fontes (ABCP e FMB), por isso o post afirma apenas que a data coincide com o Dia das Crianças de propósito, sem atribuir a escolha a nenhuma entidade.

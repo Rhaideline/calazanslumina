@@ -959,6 +959,19 @@ SIMBOLO_NUCLEAR = """<svg viewBox="0 0 200 200" fill="none" stroke="currentColor
 </svg>"""
 
 
+# Simbolo da cirurgia pediatrica: o que se opera e pequeno e esta sustentado;
+# os arcos que se abrem sao os anos que ainda vao crescer por cima da cirurgia.
+SIMBOLO_CIRPED = """<svg viewBox="0 0 200 200" fill="none" stroke="currentColor"
+  stroke-width="1.7" stroke-linecap="round">
+  <circle cx="100" cy="118" r="10" fill="currentColor" stroke="none"/>
+  <path d="M68 118 A 32 32 0 0 1 132 118" opacity=".66"/>
+  <path d="M50 118 A 50 50 0 0 1 150 118" opacity=".40"/>
+  <path d="M32 118 A 68 68 0 0 1 168 118" opacity=".22"/>
+  <path d="M44 130 C 62 166, 138 166, 156 130"/>
+  <path d="M34 182 H 166" opacity=".4"/>
+</svg>"""
+
+
 def data_medica(kicker, linha1, linha2, frase, simbolo, counter=None, foot_tag=None):
     """31 - peca de data de especialidade, no esqueleto fixo da casa."""
     return page(f"{linha1} {linha2}", "data-med bg-navy", f"""
@@ -1614,6 +1627,53 @@ POSTS = [
             "Falar com o jur&iacute;dico", "6/6")),
     ]),
 
+    # ---- Data da categoria: 12 de outubro ----
+    ("35_dia_cirurgiao_pediatrico", [
+        ("01_capa.html", data_medica(
+            "12 de outubro",
+            "Dia do Cirurgi&atilde;o ",
+            "Pedi&aacute;trico",
+            "A data &eacute; a mesma do Dia das Crian&ccedil;as. N&atilde;o foi acaso: "
+            "foi escolhida para coincidir.",
+            SIMBOLO_CIRPED, "1/6")),
+        ("02_volemia.html", numero(
+            "O corpo inteiro de um rec&eacute;m-nascido",
+            "250", "mL",
+            "&Eacute; todo o sangue de um beb&ecirc; de 3 kg. A volemia neonatal fica "
+            "entre <b>80 e 90 mL por quilo</b>.",
+            "Protocolos brasileiros de medicina transfusional em neonatologia e pediatria",
+            "2/6", foot_tag="Volemia<br>80&ndash;90 mL/kg")),
+        ("03_virada.html", editorial(
+            "Em cirurgia de adulto, a perda se conta em bolsas.",
+            "Aqui, a margem <em>se mede em mililitros.</em>",
+            "Perda aguda acima de <b>15% da volemia</b> j&aacute; entra em crit&eacute;rio de "
+            "transfus&atilde;o. Num rec&eacute;m-nascido de 3 kg, isso &eacute; menos de "
+            "<b>40 mL</b> &mdash; duas seringas de 20.",
+            "3/6")),
+        ("04_dois.html", lista(
+            "O que a especialidade carrega",
+            "Em cada atendimento, dois pacientes",
+            ["<b>A crian&ccedil;a</b>, que muitas vezes ainda n&atilde;o tem palavras "
+             "para dizer onde d&oacute;i.",
+             "<b>Quem a trouxe</b> &mdash; e que precisa entender, decidir e assinar por ela.",
+             "<b>E o tempo</b>: o corpo operado hoje ainda vai crescer, por anos, "
+             "em cima dessa cirurgia."],
+            "4/6")),
+        ("05_espera.html", editorial(
+            "A especialidade &eacute; pequena, e malforma&ccedil;&atilde;o n&atilde;o escolhe dia &uacute;til.",
+            "Quem fica de espera <em>est&aacute; trabalhando.</em>",
+            "<b>S&uacute;mula 428 do TST</b>: estar escalado para atender &agrave; dist&acirc;ncia, "
+            "sob controle de quem contratou, &eacute; tempo &agrave; disposi&ccedil;&atilde;o &mdash; "
+            "e tem valor. Se a sua escala n&atilde;o diz isso, fale com o sindicato.",
+            "5/6")),
+        ("06_cta.html", cta(
+            "SINMEVA&Ccedil;O &middot; 12 de outubro",
+            "Ao cirurgi&atilde;o pedi&aacute;trico do Vale do A&ccedil;o, <em>o nosso respeito.</em>",
+            "E o jur&iacute;dico do sindicato do lado de c&aacute; &mdash; do sobreaviso "
+            "ao contrato e &agrave; escala.",
+            "Falar com o jur&iacute;dico", "6/6")),
+    ]),
+
 ]
 
 
@@ -1659,6 +1719,7 @@ RESERVA = [
     "22_contrato_nao_protege", "24_dois_vinculos",
     "semana-01/2_qua_mito_verdade", "semana-01/3_sex_pergunta",
     "33_sobreaviso_celular", "34_intervalo_plantao",
+    "35_dia_cirurgiao_pediatrico",
 ]
 
 ORDEM = [pasta for pasta, _, _ in CALENDARIO] + RESERVA
@@ -1682,6 +1743,8 @@ def datas_do_mes(inicio="2026-09-14", feriados=()):
 def familia(html):
     m = re.search(r'<div class="canvas ([^"]*)"', html)
     classes = set(m.group(1).split()) if m else set()
+    if "data-med" in classes:
+        return "fixo"           # peca de data: formato cerimonial, sempre no azul-marinho
     if {"mv", "versus"} & classes:
         return "misto"          # a peca ja tem duas faixas, nunca repete com a vizinha
     if {"bg-cream", "textura", "cardfoto"} & classes:
@@ -1707,6 +1770,12 @@ def variacao(posts_por_pasta):
     plano, anterior = {}, None
     for i, pasta in enumerate(ORDEM):
         fam_natural = familia(posts_por_pasta.get(pasta, ""))
+        if fam_natural == "fixo":
+            # Homenagem de data nao entra no rodizio: o azul-marinho com dourado
+            # e o registo da peca. Os slides seguem as familias naturais deles.
+            plano[pasta] = ("", f"v{(i % 4) + 1}")
+            anterior = "escuro"
+            continue
         if fam_natural == "misto":
             plano[pasta] = ("", f"v{(i % 4) + 1}")
             anterior = "misto"
