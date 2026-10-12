@@ -972,7 +972,18 @@ SIMBOLO_CIRPED = """<svg viewBox="0 0 200 200" fill="none" stroke="currentColor"
 </svg>"""
 
 
-def data_medica(kicker, linha1, linha2, frase, simbolo, counter=None, foot_tag=None):
+def foto_se_houver(nome):
+    """Devolve o caminho so quando o arquivo existe.
+
+    Sem isso, um slot vazio ainda injeta a camada .photo (e o scrim dela) por
+    cima do campo grafico, escurecendo a peca sem nenhuma imagem no lugar.
+    Com isso, o slide fica identico ao de hoje ate a foto chegar, e a foto
+    entra sozinha no proximo render.
+    """
+    return nome if (ROOT / nome).exists() else None
+
+
+def data_medica(kicker, linha1, linha2, frase, simbolo, counter=None, foot_tag=None, photo=None):
     """31 - peca de data de especialidade, no esqueleto fixo da casa."""
     return page(f"{linha1} {linha2}", "data-med bg-navy", f"""
 <div class="body">
@@ -982,7 +993,7 @@ def data_medica(kicker, linha1, linha2, frase, simbolo, counter=None, foot_tag=N
   <div class="frase">{frase}</div>
 </div>
 <div class="pe">{HANDLE} &middot; {SITE}</div>
-""", counter=counter, show_foot=False, show_wm=False)
+""", counter=counter, show_foot=False, show_wm=False, photo=photo)
 
 
 # ====== 32 CURVA DE DECAIMENTO ======
@@ -1635,7 +1646,8 @@ POSTS = [
             "Pedi&aacute;trico",
             "A data &eacute; a mesma do Dia das Crian&ccedil;as. N&atilde;o foi acaso: "
             "foi escolhida para coincidir.",
-            SIMBOLO_CIRPED, "1/6")),
+            SIMBOLO_CIRPED, "1/6",
+            photo=foto_se_houver("fotos/cirped-capa.jpg"))),
         ("02_volemia.html", numero(
             "O corpo inteiro de um rec&eacute;m-nascido",
             "250", "mL",

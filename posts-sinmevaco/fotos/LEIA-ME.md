@@ -22,6 +22,11 @@ Coloque o arquivo aqui com o nome do slot e rode `./renderizar.sh`. Nada mais.
 | `colchete.jpg` | quando o hospital atrasa | fachada de hospital |
 | `tela.jpg` | seu contrato não protege | celular, mensagem |
 | `cartao-capa.jpg` | cartão com pergunta | médico em cena de trabalho |
+| `cirped-capa.jpg` | capa do Dia do Cirurgião Pediátrico (35) | mão adulta segurando mão de bebê, incubadora, instrumental, foco de centro cirúrgico |
+
+**A capa de data aceita foto desde 12/10/2026,** e só injeta a camada quando o arquivo existe de verdade (`foto_se_houver`). Slot vazio não escurece mais a peça com um scrim sem imagem por baixo.
+
+> **Cuidado de direito de imagem nesta pasta:** em peça de pediatria, não use foto com criança identificável. Além da licença da imagem, paciente identificável levanta questão de uso de imagem de menor — e numa publicação de sindicato médico isso é exatamente o tipo de descuido que não se pode cometer. Prefira mão, instrumental, incubadora ou cena de centro cirúrgico sem rosto.
 
 ## O banco que vocês já têm
 
