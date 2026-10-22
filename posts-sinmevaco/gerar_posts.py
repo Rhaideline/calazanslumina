@@ -814,6 +814,13 @@ BASE_CSS += """
 .t-verde .card{border-color:rgba(255,253,250,.2);background:linear-gradient(160deg,rgba(255,255,255,.08) 0%,rgba(255,255,255,0) 60%)}
 .t-verde .rule,.t-verde .fio{background:rgba(255,253,250,.4)}
 .t-verde .aspas{color:#EBDFC0}
+/* A leitura da clausula fica FORA do cartao branco, sobre o fundo do tema.
+   .clausula .leitura p tem especificidade maior que .t-verde p, entao o texto
+   escuro vencia e saia verde-escuro sobre verde. Vale para os dois temas escuros. O tema e a clausula ficam no MESMO
+   elemento (a canvas), entao o seletor e composto, nao descendente. */
+.t-verde.clausula .leitura p,.t-escuro.clausula .leitura p{color:rgba(255,253,250,.82)}
+.t-verde.clausula .leitura h2,.t-escuro.clausula .leitura h2{color:#FFFDFA}
+.t-verde.clausula .leitura h2 em,.t-escuro.clausula .leitura h2 em{color:#EBDFC0}
 .t-verde .pe .tag{border-color:rgba(255,253,250,.42);color:rgba(255,253,250,.85)}
 .t-verde .pe .mais{color:rgba(255,253,250,.6)}
 .t-verde .item{border-color:rgba(255,253,250,.2) !important}
@@ -1692,6 +1699,66 @@ POSTS = [
             "Falar com o jur&iacute;dico", "6/6")),
     ]),
 
+    # ---- Insalubridade: o adicional que quase ninguem confere ----
+    ("36_insalubridade", [
+        ("01_capa.html", cover(
+            ["Voc&ecirc; atende doen&ccedil;a infectocontagiosa todo plant&atilde;o"],
+            "e no contracheque <em>n&atilde;o tem adicional nenhum.</em>",
+            "Tenho direito a insalubridade?",
+            "Depende de tr&ecirc;s coisas.",
+            "1/6", olho="Direito", foot_tag="Jur&iacute;dico<br>SINMEVA&Ccedil;O")),
+        ("02_numero.html", numero(
+            "Agentes biol&oacute;gicos em ambiente hospitalar",
+            "20", "%",
+            "&Eacute; o <b>grau m&eacute;dio</b> do adicional de insalubridade, o enquadramento "
+            "mais comum em hospital.",
+            "CLT, art. 192 &mdash; graus m&iacute;nimo (10%), m&eacute;dio (20%) e m&aacute;ximo (40%) "
+            "&middot; NR-15, Anexo 14",
+            "2/6", foot_tag="Grau m&eacute;dio<br>NR-15, Anexo 14")),
+        ("03_sumula.html", clausula(
+            "S&uacute;mula 448, I &middot; TST",
+            "<mark>N&atilde;o basta a constata&ccedil;&atilde;o da insalubridade por meio de laudo "
+            "pericial</mark> para que o empregado tenha direito ao respectivo adicional, sendo "
+            "necess&aacute;ria a classifica&ccedil;&atilde;o da atividade insalubre na rela&ccedil;&atilde;o "
+            "oficial elaborada pelo Minist&eacute;rio do Trabalho.",
+            "Laudo favor&aacute;vel n&atilde;o ganha o caso sozinho.",
+            "&Eacute; o erro mais comum nessa discuss&atilde;o. A per&iacute;cia pode constatar a "
+            "exposi&ccedil;&atilde;o e, mesmo assim, o adicional n&atilde;o vir &mdash; se a atividade "
+            "n&atilde;o estiver na rela&ccedil;&atilde;o oficial.",
+            "3/6")),
+        ("04_tres.html", lista(
+            "O que precisa existir junto",
+            "Tr&ecirc;s coisas, n&atilde;o uma",
+            ["<b>Exposi&ccedil;&atilde;o real</b> &mdash; contato com agente biol&oacute;gico na sua "
+             "rotina de trabalho, n&atilde;o em car&aacute;ter eventual.",
+             "<b>Enquadramento oficial</b> &mdash; a atividade precisa constar da rela&ccedil;&atilde;o "
+             "do Minist&eacute;rio do Trabalho, pela NR-15.",
+             "<b>Per&iacute;cia</b> &mdash; quando o adicional &eacute; discutido em ju&iacute;zo, ela "
+             "&eacute; obrigat&oacute;ria (CLT, art. 195, &sect; 2&ordm;)."],
+            "4/6")),
+        ("05_base.html", editorial(
+            "Sobre <b>quanto vale</b>: a base de c&aacute;lculo do adicional segue em disputa nos tribunais.",
+            "O que n&atilde;o est&aacute; em disputa &eacute; <em>o que a norma coletiva escreve.</em>",
+            "Conven&ccedil;&atilde;o e acordo coletivo podem fixar base mais favor&aacute;vel que a regra "
+            "geral. &Eacute; na mesa de negocia&ccedil;&atilde;o que a categoria resolve, por escrito, "
+            "o que os tribunais ainda discutem.",
+            "5/6")),
+        ("06_cta.html", cta(
+            "SINMEVA&Ccedil;O &middot; desde 1991",
+            "Traga o seu contracheque. <em>A gente confere.</em>",
+            "Defesa trabalhista, &eacute;tica e c&iacute;vel para o m&eacute;dico do Vale do A&ccedil;o, "
+            "com advogados de direito m&eacute;dico.",
+            "Falar com o jur&iacute;dico", "6/6")),
+    ]),
+
+    # ---- Post unico: assinar nao valida clausula ilegal ----
+    ("37_assinei_e_nulo", [
+        ("01_post.html", mito_verdade(
+            "Assinei o contrato. Agora n&atilde;o tem mais o que fazer.",
+            "Cl&aacute;usula que contraria a lei &eacute; <b>nula</b> &mdash; assinada ou n&atilde;o. "
+            "&Eacute; o que diz a CLT, no <b>art. 9&ordm;</b>.")),
+    ]),
+
 ]
 
 
@@ -1738,6 +1805,7 @@ RESERVA = [
     "semana-01/2_qua_mito_verdade", "semana-01/3_sex_pergunta",
     "33_sobreaviso_celular", "34_intervalo_plantao",
     "35_dia_cirurgiao_pediatrico",
+    "36_insalubridade", "37_assinei_e_nulo",
 ]
 
 ORDEM = [pasta for pasta, _, _ in CALENDARIO] + RESERVA

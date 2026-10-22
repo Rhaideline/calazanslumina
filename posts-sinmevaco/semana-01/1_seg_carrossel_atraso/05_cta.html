@@ -491,6 +491,13 @@ body{font-family:'Poppins',system-ui,sans-serif;color:var(--cream)}
 .t-verde .card{border-color:rgba(255,253,250,.2);background:linear-gradient(160deg,rgba(255,255,255,.08) 0%,rgba(255,255,255,0) 60%)}
 .t-verde .rule,.t-verde .fio{background:rgba(255,253,250,.4)}
 .t-verde .aspas{color:#EBDFC0}
+/* A leitura da clausula fica FORA do cartao branco, sobre o fundo do tema.
+   .clausula .leitura p tem especificidade maior que .t-verde p, entao o texto
+   escuro vencia e saia verde-escuro sobre verde. Vale para os dois temas escuros. O tema e a clausula ficam no MESMO
+   elemento (a canvas), entao o seletor e composto, nao descendente. */
+.t-verde.clausula .leitura p,.t-escuro.clausula .leitura p{color:rgba(255,253,250,.82)}
+.t-verde.clausula .leitura h2,.t-escuro.clausula .leitura h2{color:#FFFDFA}
+.t-verde.clausula .leitura h2 em,.t-escuro.clausula .leitura h2 em{color:#EBDFC0}
 .t-verde .pe .tag{border-color:rgba(255,253,250,.42);color:rgba(255,253,250,.85)}
 .t-verde .pe .mais{color:rgba(255,253,250,.6)}
 .t-verde .item{border-color:rgba(255,253,250,.2) !important}

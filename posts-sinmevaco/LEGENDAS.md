@@ -565,3 +565,60 @@ Ritmo de cores: **segunda azul-marinho → quarta bronze → sexta azul-marinho.
 `#SINMEVAÇO #DiaDoCirurgiãoPediátrico #CirurgiaPediátrica #DiaDasCrianças #MédicosDoValeDoAço #DireitoMédico #Sobreaviso #CoronelFabriciano #Ipatinga #Timóteo`
 
 **Âncoras:** volemia neonatal 80–90 mL/kg e gatilho transfusional em 15% da volemia (protocolos brasileiros de medicina transfusional); Súmula 428 do TST. A autoria da escolha da data diverge entre as fontes (ABCP e FMB), por isso o post afirma apenas que a data coincide com o Dia das Crianças de propósito, sem atribuir a escolha a nenhuma entidade.
+
+---
+
+## 36 — Insalubridade (carrossel, 6 slides)
+**Pasta:** `36_insalubridade/`
+
+> Você atende doença infectocontagiosa todo plantão — e no contracheque não tem adicional nenhum. Tem direito a insalubridade?
+>
+> A resposta honesta é: depende de três coisas acontecerem juntas. E é por não saber disso que muito médico desiste no meio do caminho, ou entra com pedido que não se sustenta.
+>
+> O enquadramento mais comum em ambiente hospitalar é o grau médio, 20%, por exposição a agentes biológicos (CLT, art. 192 — graus de 10%, 20% e 40%; NR-15, Anexo 14).
+>
+> Agora o ponto que quase ninguém explica, e que decide processo: laudo pericial favorável não basta sozinho.
+>
+> A Súmula 448, I, do TST é direta: "Não basta a constatação da insalubridade por meio de laudo pericial para que o empregado tenha direito ao respectivo adicional, sendo necessária a classificação da atividade insalubre na relação oficial elaborada pelo Ministério do Trabalho."
+>
+> Ou seja: a perícia pode constatar a exposição e, mesmo assim, o adicional não vir — se a atividade não estiver na relação oficial.
+>
+> O que precisa existir junto:
+> 1. Exposição real, na sua rotina de trabalho, não em caráter eventual
+> 2. Enquadramento oficial da atividade, pela NR-15
+> 3. Perícia — quando o adicional é discutido em juízo, ela é obrigatória (CLT, art. 195, § 2º)
+>
+> Sobre quanto vale: a base de cálculo do adicional segue em disputa nos tribunais, e não vamos prometer número aqui. O que não está em disputa é o que a norma coletiva escreve — convenção e acordo coletivo podem fixar base mais favorável que a regra geral.
+>
+> É na mesa de negociação que a categoria resolve, por escrito, o que os tribunais ainda discutem. É exatamente para isso que o sindicato existe.
+>
+> Traga o seu contracheque. A gente confere.
+>
+> Conteúdo informativo. Cada caso tem particularidades — associado, fale com o jurídico do SINMEVAÇO.
+
+`#SINMEVAÇO #Insalubridade #DireitoMédico #Medicina #NR15 #AdicionalDeInsalubridade #MédicosDoValeDoAço #CoronelFabriciano #Ipatinga #Timóteo`
+
+**Âncoras:** CLT, art. 192 (graus) e art. 195, § 2º (perícia); NR-15, Anexo 14 (agentes biológicos); Súmula 448, I, do TST. **A base de cálculo foi deliberadamente não afirmada:** a questão está em disputa (Súmula Vinculante 4 do STF, e decisão do STF em 2025 ainda em movimento). O post usa isso a favor da negociação coletiva, em vez de prometer um número que pode mudar.
+
+---
+
+## 37 — Assinei, e agora? (post único, mito × verdade)
+**Pasta:** `37_assinei_e_nulo/`
+
+> "Assinei. Agora não tem mais o que fazer."
+>
+> Tem.
+>
+> Assinatura não transforma cláusula ilegal em cláusula válida. A CLT, no art. 9º, diz que são nulos de pleno direito os atos praticados com o objetivo de desvirtuar, impedir ou fraudar a aplicação dos seus preceitos.
+>
+> Quer dizer: se a cláusula retira um direito que a lei garante, ela é nula — com a sua assinatura embaixo ou sem ela. O contrato não está acima da lei, e ninguém assina validamente a renúncia de um direito que não era disponível.
+>
+> Isso não significa que todo contrato ruim é nulo, nem que assinar não tem consequência. Significa que "eu já assinei" não é o fim da conversa — é o começo dela.
+>
+> Se você assinou alguma coisa que ficou atravessada, leve ao jurídico do SINMEVAÇO antes de concluir que não há saída.
+>
+> Conteúdo informativo. Cada caso tem particularidades — associado, fale com o jurídico do sindicato.
+
+`#SINMEVAÇO #DireitoMédico #Contrato #CLT #Medicina #MédicosDoValeDoAço #CoronelFabriciano #Ipatinga #Timóteo`
+
+**Âncora:** CLT, art. 9º.
