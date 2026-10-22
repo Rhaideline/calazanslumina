@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>linha</title>
+<style>
+@font-face{font-family:'DM Serif Display';font-style:italic;font-weight:400;font-display:block;src:url('../fontes/dmserif-italic-400.woff2') format('woff2');}
+@font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:block;src:url('../fontes/dmserif-normal-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:italic;font-weight:400;font-display:block;src:url('../fontes/dmsans-italic-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:300;font-display:block;src:url('../fontes/dmsans-normal-300.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:block;src:url('../fontes/dmsans-normal-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:500;font-display:block;src:url('../fontes/dmsans-normal-500.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:600;font-display:block;src:url('../fontes/dmsans-normal-600.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:700;font-display:block;src:url('../fontes/dmsans-normal-700.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:italic;font-weight:400;font-display:block;src:url('../fontes/spacemono-italic-400.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:400;font-display:block;src:url('../fontes/spacemono-normal-400.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:block;src:url('../fontes/spacemono-normal-700.woff2') format('woff2');}
+
+@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:400 900;font-display:block;font-stretch:normal;src:url('../fontes/bodonimoda-italic-variable.woff2') format('woff2');}
+@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:400 900;font-display:block;font-stretch:normal;src:url('../fontes/bodonimoda-normal-variable.woff2') format('woff2');}
+
+:root{--tinta:#111111;--tinta2:#1A1A1A;--tinta3:#08080A;--papel:#F5F1EA;--papel2:#EDE6D6;--vermelho:#FF0005;--vermelho2:#FF3B3B;--vermelho3:#A00306;--brasa:#1A0D0D;}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased}
+html,body{width:1080px;height:1440px;overflow:hidden;background:#000}
+body{font-family:'DM Sans',sans-serif}
+.tela{position:relative;width:1080px;height:1440px;overflow:hidden}
+em{font-style:italic;color:var(--vermelho)}
+.grao{position:absolute;inset:0;z-index:60;pointer-events:none;opacity:.32;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .13 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.rodape{position:absolute;left:62px;bottom:52px;z-index:50;font-size:11px;
+        letter-spacing:.34em;text-transform:uppercase;font-weight:600}
+
+    .ln{position:absolute;inset:0;background:var(--tinta);color:#fff;
+        padding:74px 56px;display:flex;flex-direction:column}
+    .ln h1{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:700;font-size:82px;
+           line-height:1.0;letter-spacing:-.025em;max-width:900px}
+    .ln .trilho{position:relative;margin-top:auto;margin-bottom:auto;padding-top:60px}
+    .ln .trilho::before{content:"";position:absolute;left:0;right:0;top:60px;
+                        height:1px;background:rgba(255,255,255,.28)}
+    .ln .marcos{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .ln .mk{position:relative;padding-top:0}
+    .ln .bola{width:13px;height:13px;border-radius:50%;background:var(--vermelho);
+              margin-top:-6px;margin-bottom:26px}
+    .ln .rot{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.18em;
+             text-transform:uppercase;color:var(--vermelho);margin-bottom:10px}
+    .ln .txt{font-size:22px;line-height:1.38;color:rgba(255,255,255,.82)}
+    .ln .nota{font-size:17px;color:rgba(255,255,255,.5);max-width:700px;margin-bottom:34px}
+    .ln .rodape{color:rgba(255,255,255,.4)}
+    
+</style></head><body><div class="tela"><div class="ln">
+      <h1>As quatro primeiras,<br>antes de <em>qualquer</em> verba.</h1>
+      <div class="trilho"><div class="marcos"><div class="mk">
+          <div class="bola"></div>
+          <div class="rot">01 · Achar</div>
+          <div class="txt">Medir onde o lead some hoje.</div></div><div class="mk">
+          <div class="bola"></div>
+          <div class="rot">02 · Destino</div>
+          <div class="txt">Todo canal aponta pro mesmo lugar.</div></div><div class="mk">
+          <div class="bola"></div>
+          <div class="rot">03 · Resposta</div>
+          <div class="txt">Automática, curta e honesta.</div></div><div class="mk">
+          <div class="bola"></div>
+          <div class="rot">04 · Qualificar</div>
+          <div class="txt">Três perguntas antes de você entrar.</div></div></div></div>
+      <div class="nota">As etapas 5, 6 e 7 vêm depois destas — e só depois.</div><div class="rodape">@calazanslumina</div>
+      </div><div class="grao"></div></div></body></html>

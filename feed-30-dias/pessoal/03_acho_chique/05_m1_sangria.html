@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>m1-sangria</title>
+<style>
+@font-face{font-family:'DM Serif Display';font-style:italic;font-weight:400;font-display:block;src:url('../../fontes/dmserif-italic-400.woff2') format('woff2');}
+@font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:block;src:url('../../fontes/dmserif-normal-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:italic;font-weight:400;font-display:block;src:url('../../fontes/dmsans-italic-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:300;font-display:block;src:url('../../fontes/dmsans-normal-300.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:block;src:url('../../fontes/dmsans-normal-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:500;font-display:block;src:url('../../fontes/dmsans-normal-500.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:600;font-display:block;src:url('../../fontes/dmsans-normal-600.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:700;font-display:block;src:url('../../fontes/dmsans-normal-700.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:italic;font-weight:400;font-display:block;src:url('../../fontes/spacemono-italic-400.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:400;font-display:block;src:url('../../fontes/spacemono-normal-400.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:block;src:url('../../fontes/spacemono-normal-700.woff2') format('woff2');}
+
+@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:400 900;font-display:block;font-stretch:normal;src:url('../../fontes/bodonimoda-italic-variable.woff2') format('woff2');}
+@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:400 900;font-display:block;font-stretch:normal;src:url('../../fontes/bodonimoda-normal-variable.woff2') format('woff2');}
+@font-face{font-family:'Caveat';font-style:normal;font-weight:400 700;font-display:block;src:url('../../fontes/caveat-variable.woff2') format('woff2');}
+@font-face{font-family:'Playfair Display';font-style:italic;font-weight:400 700;font-display:block;src:url('../../fontes/playfair-italic-variable.woff2') format('woff2');}
+
+*{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased}
+html,body{width:1080px;height:1440px;overflow:hidden;background:#15100C}
+body{font-family:'DM Sans',sans-serif}
+.tela{position:relative;width:1080px;height:1440px;overflow:hidden}
+.foto{position:absolute;inset:0;background-repeat:no-repeat}
+.veu{position:absolute;inset:0}
+/* granulado de filme: é o que separa "foto com texto por cima" de peça
+   impressa. Fica em todas as dez — é o que costura o sistema. */
+.grao{position:absolute;inset:0;z-index:40;pointer-events:none;opacity:.3;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .14 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+/* fio de cabelo a 34px da borda: o gesto mais barato que existe pra uma
+   peça parecer impressa em vez de postada */
+.moldura{position:absolute;inset:34px;z-index:35;pointer-events:none;
+         border:1px solid rgba(231,207,166,.34)}
+.marca{position:absolute;left:0;right:0;top:62px;z-index:36;text-align:center;
+       font-size:13px;letter-spacing:.46em;text-transform:uppercase;
+       font-weight:600;color:rgba(255,255,255,.88)}
+.passo{position:absolute;right:62px;bottom:60px;z-index:36;font-size:12px;
+       letter-spacing:.3em;font-weight:600}
+.rotulo{font-size:14px;letter-spacing:.42em;text-transform:uppercase;
+        font-weight:700;color:#E7CFA6}
+.regua{width:62px;height:1px;background:#D4AF6A;margin:20px 0 26px}
+.sombra{text-shadow:0 2px 24px rgba(18,11,7,.72),0 1px 4px rgba(18,11,7,.55)}
+
+    .foto{background-image:url('../../fotos/rhai-bebe.jpg');background-size:114%;background-position:46% 18%;filter:saturate(1.04) contrast(1.04) grayscale(1) sepia(.6) saturate(1.45) hue-rotate(-14deg) contrast(1.1) brightness(.82)}
+    .veu{background:linear-gradient(180deg,rgba(21,14,9,0.24) 0%,rgba(21,14,9,.02) 22%,rgba(21,14,9,.06) 40%,rgba(19,12,8,0.58) 64%,rgba(17,11,7,0.94) 100%)}
+    .bloco{position:absolute;left:78px;right:78px;bottom:116px;z-index:36}
+    .n{font-family:'Playfair Display',serif;font-style:italic;font-weight:500;font-size:104px;
+       line-height:.74;color:#D4AF6A;margin-bottom:8px}
+    h2{font-family:'DM Sans',sans-serif;font-weight:700;color:#fff;letter-spacing:-.035em;
+       font-size:86px;line-height:1.0}
+    p{margin-top:24px;font-size:29px;line-height:1.38;
+      color:rgba(255,255,255,.9);max-width:840px}
+    
+</style></head><body><div class="tela">
+      <div class="foto"></div><div class="veu"></div>
+      <div class="marca">@rhaicalazans</div>
+      <div class="bloco">
+        <div class="n sombra">04</div>
+        <h2 class="sombra">Cobrar o preço<br>certo na primeira<br>mensagem.</h2>
+        <p class="sombra">Desconto dado com medo vira ressentimento em trinta dias. O preço certo dito cedo poupa a conversa inteira.</p>
+      </div>
+      <div class="moldura"></div><div class="passo" style="color:rgba(231,207,166,.72)">05 — 07</div><div class="grao"></div></div></body></html>
