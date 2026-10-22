@@ -622,3 +622,228 @@ Ritmo de cores: **segunda azul-marinho → quarta bronze → sexta azul-marinho.
 `#SINMEVAÇO #DireitoMédico #Contrato #CLT #Medicina #MédicosDoValeDoAço #CoronelFabriciano #Ipatinga #Timóteo`
 
 **Âncora:** CLT, art. 9º.
+
+---
+
+# QUINZENA 24/10 a 08/11 — 15 posts
+
+**Decisão editorial, tirada dos números:** em 30 dias o perfil alcançou 738 pessoas com 24 posts (~31 por post), 19 curtidas, 1 comentário, 3 compartilhamentos, +8 seguidores. A taxa de curtida sobre quem vê é normal (~2,3%); **o gargalo é alcance, não conteúdo**. A semana das datas de especialidade (12–18/10) quadruplicou as impressões — data fura a bolha porque o especialista compartilha o dia dele.
+
+Daí as três regras desta quinzena:
+1. **Post único predomina** (12 de 15). Carrossel só onde a profundidade se paga — porque, reencaminhado, o carrossel vai só a capa.
+2. **Toda peça termina com gatilho** de compartilhamento ou pergunta respondível em três palavras.
+3. **Âncora legal visível** em todas, porque é isso que faz um médico mandar para o grupo do hospital.
+
+---
+
+## 38 — Adicional noturno · 24/10
+> Uma hora de trabalho noturno dura 52 minutos e 30 segundos.
+>
+> Não é erro de digitação. A CLT, no art. 73, manda computar a hora noturna reduzida: cada 52min30s trabalhados entre 22h e 5h contam como uma hora cheia. E essa hora ainda rende 20% de adicional sobre a hora diurna.
+>
+> Na prática: um plantão noturno de 7 horas de relógio vale mais de 8 horas de registro — antes do adicional.
+>
+> Confira duas linhas do seu contracheque: se existe rubrica de adicional noturno, e se a quantidade de horas noturnas bate com a redução.
+>
+> Manda para o colega que está de noturno esta semana.
+
+`#SINMEVAÇO #AdicionalNoturno #Plantão #DireitoMédico #CLT #MédicosDoValeDoAço #CoronelFabriciano #Ipatinga #Timóteo`
+**Âncora:** CLT, art. 73.
+
+## 39 — Acidente perfurocortante · 25/10 (carrossel, 5)
+> A agulha pegou o dedo no meio do procedimento, e você terminou o plantão sem contar a ninguém.
+>
+> Acontece muito, e quase sempre pelo mesmo motivo: ninguém quer parecer descuidado. Só que acidente com material biológico é acidente de trabalho — e tem procedimento próprio.
+>
+> O que protege você meses depois é o papel de agora. A CAT (Comunicação de Acidente de Trabalho) fixa o nexo com o trabalho. Sem ela, se algo aparecer lá na frente, a discussão começa do zero.
+>
+> E tem um detalhe que quase ninguém sabe: se a instituição não emitir a CAT, o próprio trabalhador, o médico assistente ou o sindicato podem comunicar — Lei 8.213/91, art. 22, § 2º.
+>
+> Nas primeiras horas: cuidado imediato (profilaxia tem janela), registro com data e hora, exigência da CAT, cópia de tudo com você.
+>
+> Se a CAT não sair, o SINMEVAÇO emite.
+>
+> Salva esse post. No dia em que precisar, você não vai ter cabeça para procurar.
+
+`#SINMEVAÇO #AcidenteDeTrabalho #CAT #SaúdeDoTrabalhador #DireitoMédico #MédicosDoValeDoAço #Ipatinga`
+**Âncoras:** Lei 8.213/91, art. 22, § 2º.
+
+## 40 — Interjornada · 26/10
+> Entre duas jornadas tem que haver 11 horas consecutivas de descanso. Está no art. 66 da CLT, em uma linha só.
+>
+> Emendar plantão não é dedicação — é irregularidade. E vale também entre instituições diferentes, quando o empregador é o mesmo.
+>
+> Olhe a sua escala do mês. Se em algum ponto o intervalo entre a saída e a entrada seguinte é menor que 11 horas, isso se discute. E se registra, porque escala antiga some.
+>
+> Quantas horas você teve entre o último plantão e o anterior? Comenta o número.
+
+`#SINMEVAÇO #Interjornada #Plantão #DireitoMédico #CLT #MédicosDoValeDoAço #CoronelFabriciano`
+**Âncora:** CLT, art. 66.
+
+## 41 — Gestante e insalubridade · 27/10
+> Médica grávida em setor insalubre ouve muito que "só sai se apresentar atestado".
+>
+> Não precisa. O afastamento é o padrão.
+>
+> A reforma trabalhista de 2017 tinha criado essa exigência para os graus médio e mínimo. O STF derrubou, na ADI 5938, em 2019. A gestante deve ser afastada de atividade insalubre em qualquer grau — e o ônus não é dela.
+>
+> Quer dizer: não cabe à médica provar que precisa sair. Cabe à instituição afastá-la.
+>
+> Manda para a colega que está grávida, ou para a que vai estar.
+
+`#SINMEVAÇO #GestanteNoTrabalho #Insalubridade #DireitoMédico #MédicasDoValeDoAço #Ipatinga #Timóteo`
+**Âncoras:** CLT, art. 394-A; STF, ADI 5938 (2019). A situação da lactante diverge entre as fontes e por isso não é afirmada.
+
+## 42 — Equiparação salarial · 28/10
+> Dois médicos, mesmo plantão, mesmo serviço — salários diferentes.
+>
+> Nem sempre é ilegal. Mas tem hipótese em que é, e ela tem requisitos fechados (CLT, art. 461):
+>
+> Mesma função de verdade (compara-se a atividade exercida, não o nome do cargo). Mesmo empregador e mesmo estabelecimento — depois da reforma, não basta ser a mesma cidade. Até 4 anos de diferença de casa e até 2 anos na função. E não pode existir quadro de carreira ou plano de cargos e salários, porque aí a regra muda.
+>
+> Os quatro precisam estar presentes juntos. Falta um, não equipara.
+>
+> Se você desconfia que é o seu caso, o primeiro passo é ler o plano de cargos — não é abrir processo.
+
+`#SINMEVAÇO #EquiparaçãoSalarial #DireitoMédico #CLT #MédicosDoValeDoAço #CoronelFabriciano #Ipatinga`
+**Âncora:** CLT, art. 461 (redação da Lei 13.467/2017).
+
+## 43 — 13º com plantão variável · 29/10
+> Seu plantão varia todo mês. E o 13º, calcula como?
+>
+> Um doze avos por mês trabalhado (mês com 15 dias ou mais conta inteiro). Quando a remuneração é variável — que é o caso de quase todo plantonista —, a parte variável entra pela média. Não pelo pior mês, nem pelo salário-base sozinho.
+>
+> As datas: primeira parcela até 30 de novembro, segunda até 20 de dezembro.
+>
+> Novembro começa semana que vem. Se a primeira parcela não cair, você já sabe de onde reclamar.
+>
+> Guarda esse post para conferir em dezembro.
+
+`#SINMEVAÇO #DécimoTerceiro #Plantão #DireitoMédico #MédicosDoValeDoAço #Ipatinga #Timóteo`
+**Âncora:** Lei 4.090/1962.
+
+## 44 — Assédio e escala · 31/10 (carrossel, 5)
+> Você reclamou da escala numa reunião. No mês seguinte, sobrou só plantão noturno para você.
+>
+> Ninguém escreve "isso é punição". A escala apenas muda. E muda de novo no mês seguinte.
+>
+> É a repetição que desenha o que uma mudança isolada esconde. Assédio moral raramente aparece numa frase — aparece num padrão.
+>
+> O empregador dirige a prestação do serviço (CLT, art. 2º). Mas o contrato não pode ser alterado em prejuízo do empregado (CLT, art. 468). Mudança usada como retaliação é outra coisa.
+>
+> Como se documenta: guarde as escalas de antes e de depois, salve a data do episódio em que você se posicionou, anote quem estava junto e quem recebeu — ou não recebeu — a mesma mudança.
+>
+> E não enfrente sozinho. Caso individual vira versão contra versão; o sindicato entra em nome da categoria.
+>
+> Traga as escalas. O padrão a gente enxerga.
+
+`#SINMEVAÇO #AssédioMoral #Escala #DireitoMédico #MédicosDoValeDoAço #CoronelFabriciano #Ipatinga`
+**Âncoras:** CLT, arts. 2º e 468.
+
+## 45 — Férias · 01/11
+> Antes de fechar as suas férias, quatro regras que mudam o seu dinheiro:
+>
+> Vender no máximo 1/3 — o abono pecuniário é de até dez dias (art. 143). Dividir em até três períodos, um com no mínimo 14 dias e os outros com no mínimo 5 (art. 134, § 1º). Não começar nos dois dias que antecedem feriado ou repouso semanal (art. 134, § 3º). E receber até dois dias antes do início (art. 145).
+>
+> Essa última é a mais descumprida e a mais fácil de provar: é só olhar a data do crédito.
+>
+> Você já teve férias começando numa sexta? Comenta.
+
+`#SINMEVAÇO #Férias #DireitoMédico #CLT #MédicosDoValeDoAço #Ipatinga #Timóteo`
+**Âncoras:** CLT, arts. 134, 143 e 145.
+
+## 46 — Finados · 02/11
+> Hoje é feriado nacional. Para quem está de plantão, não é.
+>
+> Pronto-socorro não fecha. Maternidade não fecha. UTI não reduz o quadro. Enquanto a maioria visita o cemitério ou fica em casa, alguém está segurando o turno.
+>
+> Trabalho em feriado tem regra própria de pagamento ou compensação. Vale conferir o contracheque deste mês — é um dos itens que mais passa batido.
+>
+> O SINMEVAÇO deseja um bom plantão a quem está trabalhando hoje, e um bom dia a todos os médicos do Vale do Aço.
+>
+> Marca nos comentários quem está de plantão hoje.
+
+`#SINMEVAÇO #Finados #Plantão #MédicosDoValeDoAço #CoronelFabriciano #Ipatinga #Timóteo`
+
+## 47 — Rescisão · 03/11
+> Antes de assinar o acerto, confira cinco coisas:
+>
+> O prazo — as verbas saem em até dez dias do fim do contrato (CLT, art. 477, § 6º). A média dos plantões, que entra no cálculo de aviso, férias e 13º. Os adicionais habituais: noturno e insalubridade pagos com habitualidade integram a base. A guia e a chave do FGTS, quando for o caso, e o motivo da saída registrado corretamente.
+>
+> E a quinta, que é a que mais custa caro: assinar não fecha tudo. Quita-se o que está discriminado no termo — não o que ficou de fora dele.
+>
+> Se você vai sair de algum serviço este mês, leve o termo ao jurídico antes de assinar. Depois também dá, mas é mais difícil.
+
+`#SINMEVAÇO #Rescisão #DireitoMédico #CLT #MédicosDoValeDoAço #Ipatinga`
+**Âncora:** CLT, art. 477.
+
+## 48 — Prescrição · 04/11
+> Tem um relógio correndo contra você, e ele não avisa.
+>
+> Depois que o contrato acaba, você tem dois anos para reclamar. E, dentro desse prazo, só dá para cobrar os últimos cinco anos.
+>
+> Quer dizer: enquanto você espera "melhorar o clima" para discutir aquele adicional que nunca veio, cada mês que passa é um mês que prescreve — e não volta.
+>
+> Não é recado para abrir processo. É recado para não deixar o prazo decidir por você.
+>
+> Está em dúvida se o seu caso ainda está dentro do prazo? Chama no direct.
+
+`#SINMEVAÇO #Prescrição #DireitoMédico #CLT #MédicosDoValeDoAço #CoronelFabriciano #Ipatinga`
+**Âncoras:** CF, art. 7º, XXIX; CLT, art. 11.
+
+## 49 — Banco de horas · 05/11
+> "Aqui a gente compensa depois." E nunca compensa.
+>
+> Banco de horas só vale por escrito. Compensação dentro do mesmo mês exige acordo individual escrito; prazo maior, até um ano, só por convenção ou acordo coletivo. Está no art. 59 da CLT.
+>
+> Combinado verbal não cria banco de horas. Cria hora extra não paga.
+>
+> Se na sua instituição existe "banco", pergunte onde está o documento. A resposta costuma ser reveladora.
+
+`#SINMEVAÇO #BancoDeHoras #HoraExtra #DireitoMédico #CLT #MédicosDoValeDoAço #Ipatinga`
+**Âncora:** CLT, art. 59.
+
+## 50 — O que o sindicato faz · 06/11 (carrossel, 5)
+> Tem coisa que o sindicato faz sem você ligar, e é a parte que quase ninguém vê.
+>
+> A maioria procura o sindicato no dia do problema. Até lá, ele parece não existir. Mas o que chega pronto no seu contracheque foi negociado meses antes, numa mesa em que você não precisou sentar.
+>
+> A Constituição, no art. 8º, III, dá ao sindicato a defesa dos direitos da categoria — coletivos e individuais. É por isso que a entidade entra em nome de todos sem que cada médico vire autor de um processo.
+>
+> Cinco frentes que correm agora: negociação coletiva (vale para filiado e não filiado), acompanhamento legislativo, ação coletiva quando o descumprimento atinge vários, representação nos 28 municípios, e o jurídico próprio — que lê contrato antes da assinatura e evita o processo que nem chega a existir.
+>
+> Nenhum médico devia precisar negociar sozinho.
+>
+> Marca um colega que ainda não é filiado.
+
+`#SINMEVAÇO #Sindicato #DireitoMédico #NegociaçãoColetiva #MédicosDoValeDoAço #CoronelFabriciano #Ipatinga #Timóteo`
+**Âncora:** CF, art. 8º, III.
+
+## 51 — Pergunta do associado · 07/11
+> Chegou no direct: "Posso recusar plantão quando o serviço está sem condição de funcionamento?"
+>
+> O Código de Ética Médica garante esse direito. O médico pode recusar-se a exercer a profissão em instituição sem condições dignas de trabalho ou que possam prejudicar o paciente — comunicando imediatamente a direção e o CRM.
+>
+> A parte que decide o caso é essa última. Comunicar por escrito é o que separa recusa fundamentada de abandono de posto. Verbal não protege ninguém.
+>
+> Manda a sua pergunta no direct. A próxima publicada pode ser a sua — sem nome, sempre.
+
+`#SINMEVAÇO #CódigoDeÉticaMédica #DireitoMédico #CRM #MédicosDoValeDoAço #Ipatinga #Timóteo`
+
+## 52 — Dia do Radiologista · 08/11 (carrossel, 6)
+> 8 de novembro — Dia do Médico Radiologista, e Dia Internacional da Radiologia.
+>
+> A data não é simbólica: foi em 8 de novembro de 1895 que Wilhelm Conrad Röntgen identificou os raios X, por acaso, estudando raios catódicos. A medicina ganhou o primeiro jeito de ver dentro sem abrir.
+>
+> O exame chega pronto para o resto da equipe, e o trabalho que o produziu não aparece. Mas o laudo é um ato médico, não um anexo: quem assina responde pelo que escreveu — e carrega a decisão de quem vai operar, internar ou mandar para casa com base naquelas linhas.
+>
+> Por isso três pontos merecem atenção no contrato: meta por exame, que transforma tempo de análise em variável de ajuste; teleradiologia sem regra clara sobre quem responde e em que prazo; e plantão emendado, porque fadiga em leitura de imagem não deixa rastro até deixar.
+>
+> Procure no seu contrato: quantos exames por turno, em que prazo, e de quem é a responsabilidade pelo laudo emitido à distância. O que não está escrito vira combinado verbal.
+>
+> Ao radiologista do Vale do Aço, o respeito do SINMEVAÇO.
+>
+> Marca um radiologista que você conhece.
+
+`#SINMEVAÇO #DiaDoRadiologista #Radiologia #RaiosX #Teleradiologia #MédicosDoValeDoAço #CoronelFabriciano #Ipatinga`
+**Âncoras:** descoberta dos raios X em 08/11/1895 (Röntgen); Colégio Brasileiro de Radiologia.

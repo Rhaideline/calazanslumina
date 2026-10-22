@@ -974,6 +974,20 @@ SIMBOLO_NUCLEAR = """<svg viewBox="0 0 200 200" fill="none" stroke="currentColor
 
 # Simbolo da cirurgia pediatrica: o que se opera e pequeno e esta sustentado;
 # os arcos que se abrem sao os anos que ainda vao crescer por cima da cirurgia.
+# Simbolo da radiologia: o feixe nasce num ponto, atravessa o corpo e se
+# registra na placa. A especialidade nao abre: ela enxerga atraves.
+SIMBOLO_RAIOX = """<svg viewBox="0 0 200 200" fill="none" stroke="currentColor"
+  stroke-width="1.7" stroke-linecap="round">
+  <circle cx="100" cy="26" r="7" fill="currentColor" stroke="none"/>
+  <path d="M100 36 L44 150" opacity=".5"/><path d="M100 36 L72 150" opacity=".65"/>
+  <path d="M100 36 L128 150" opacity=".65"/><path d="M100 36 L156 150" opacity=".5"/>
+  <circle cx="100" cy="92" r="26" opacity=".85"/>
+  <circle cx="100" cy="92" r="11" stroke-dasharray="3 6" opacity=".7"/>
+  <path d="M34 150 H166"/>
+  <path d="M34 182 H166" opacity=".4"/>
+</svg>"""
+
+
 SIMBOLO_CIRPED = """<svg viewBox="0 0 200 200" fill="none" stroke="currentColor"
   stroke-width="1.7" stroke-linecap="round">
   <circle cx="100" cy="118" r="10" fill="currentColor" stroke="none"/>
@@ -1759,6 +1773,312 @@ POSTS = [
             "&Eacute; o que diz a CLT, no <b>art. 9&ordm;</b>.")),
     ]),
 
+    # ================= QUINZENA 24/10 a 08/11 =================
+
+    ("38_adicional_noturno", [
+        ("01_post.html", numero(
+            "Plant&atilde;o entre 22h e 5h",
+            "52", "min 30s",
+            "&Eacute; quanto dura <b>uma hora</b> de trabalho noturno. A hora reduzida vale "
+            "como 60 minutos &mdash; e ainda rende <b>20% de adicional</b>.",
+            "CLT, art. 73: adicional de 20% sobre a hora diurna, e hora noturna computada "
+            "como 52 minutos e 30 segundos.",
+            None, foot_tag="CLT &middot; art. 73<br>trabalho noturno")),
+    ]),
+
+    ("39_perfurocortante", [
+        ("01_capa.html", cover(
+            ["A agulha pegou o dedo no meio do procedimento"],
+            "e voc&ecirc; terminou o plant&atilde;o <em>sem contar a ningu&eacute;m.</em>",
+            "Isso tem consequ&ecirc;ncia?",
+            "Tem &mdash; e come&ccedil;a hoje.",
+            "1/5", olho="Caso real", foot_tag="Sa&uacute;de do<br>trabalhador")),
+        ("02_caso.html", split(
+            "O medo de parecer descuidado faz muito m&eacute;dico <b>n&atilde;o notificar.</b> "
+            "<span class='serif'>O acidente vira segredo.</span>",
+            "Meses depois, se algo aparecer, <b>n&atilde;o existe registro de que aconteceu "
+            "no trabalho.</b>",
+            "2/5")),
+        ("03_virada.html", editorial(
+            "Acidente com material biol&oacute;gico &eacute; <b>acidente de trabalho</b>, e tem "
+            "procedimento pr&oacute;prio.",
+            "O que protege voc&ecirc; depois <em>&eacute; o papel de agora.</em>",
+            "A <b>CAT</b> (Comunica&ccedil;&atilde;o de Acidente de Trabalho) deve ser emitida pela "
+            "institui&ccedil;&atilde;o. Se ela n&atilde;o emitir, o pr&oacute;prio trabalhador, o "
+            "m&eacute;dico assistente ou o <b>sindicato</b> podem comunicar &mdash; Lei 8.213/91, "
+            "art. 22, &sect; 2&ordm;.",
+            "3/5")),
+        ("04_passos.html", lista(
+            "Nas primeiras horas",
+            "A ordem importa",
+            ["<b>Cuidado imediato</b> &mdash; lave o local e procure o servi&ccedil;o de refer&ecirc;ncia "
+             "da institui&ccedil;&atilde;o. Profilaxia tem janela de tempo.",
+             "<b>Registre na hora</b> &mdash; data, hor&aacute;rio, setor, procedimento e quem estava junto.",
+             "<b>Exija a CAT.</b> Emitida, ela fixa o nexo com o trabalho. Sem ela, a discuss&atilde;o "
+             "come&ccedil;a do zero depois.",
+             "<b>Guarde c&oacute;pia de tudo</b> &mdash; a sua, n&atilde;o s&oacute; a do prontu&aacute;rio "
+             "do servi&ccedil;o."],
+            "4/5")),
+        ("05_cta.html", cta(
+            "SINMEVA&Ccedil;O &middot; desde 1991",
+            "Se a CAT n&atilde;o sair, <em>o sindicato emite.</em>",
+            "Defesa trabalhista, &eacute;tica e c&iacute;vel para o m&eacute;dico do Vale do A&ccedil;o, "
+            "com advogados de direito m&eacute;dico.",
+            "Falar com o jur&iacute;dico", "5/5")),
+    ]),
+
+    ("40_interjornada", [
+        ("01_post.html", clausula(
+            "CLT &middot; art. 66",
+            "Entre duas jornadas de trabalho haver&aacute; um per&iacute;odo m&iacute;nimo de "
+            "<mark>11 (onze) horas consecutivas</mark> para descanso.",
+            "Emendar plant&atilde;o n&atilde;o &eacute; dedica&ccedil;&atilde;o. &Eacute; irregularidade.",
+            "Vale entre um plant&atilde;o e o seguinte, inclusive em institui&ccedil;&otilde;es "
+            "diferentes quando h&aacute; o mesmo empregador. Se a sua escala n&atilde;o respeita as "
+            "11 horas, isso se discute &mdash; e se registra.",
+            None, foot_tag="Descanso<br>interjornada")),
+    ]),
+
+    ("41_gestante_insalubre", [
+        ("01_post.html", editorial(
+            "M&eacute;dica gr&aacute;vida em setor insalubre ouve muito que &ldquo;s&oacute; sai "
+            "se apresentar atestado&rdquo;.",
+            "N&atilde;o precisa. <em>O afastamento &eacute; o padr&atilde;o.</em>",
+            "O <b>STF</b>, na <b>ADI 5938</b> (2019), derrubou a exig&ecirc;ncia de atestado que a "
+            "reforma tinha criado para os graus m&eacute;dio e m&iacute;nimo. A gestante deve ser "
+            "afastada de atividade insalubre <b>em qualquer grau</b>, sem depender de laudo para "
+            "provar que precisa sair.",
+            None)),
+    ]),
+
+    ("42_equiparacao", [
+        ("01_post.html", lista(
+            "Mesmo plant&atilde;o, sal&aacute;rios diferentes",
+            "Quando d&aacute; para equiparar",
+            ["<b>Mesma fun&ccedil;&atilde;o de verdade</b> &mdash; o que se compara &eacute; a atividade "
+             "exercida, n&atilde;o o nome do cargo no contrato.",
+             "<b>Mesmo empregador e mesmo estabelecimento</b> &mdash; depois da reforma, n&atilde;o "
+             "basta ser a mesma cidade.",
+             "<b>At&eacute; 4 anos</b> de diferen&ccedil;a de casa e <b>at&eacute; 2 anos</b> na "
+             "fun&ccedil;&atilde;o, entre voc&ecirc; e o colega comparado.",
+             "<b>Sem quadro de carreira</b> &mdash; se existe plano de cargos e sal&aacute;rios, a regra "
+             "muda. Vale ler o plano antes."],
+            None, foot_tag="CLT &middot; art. 461<br>equipara&ccedil;&atilde;o")),
+    ]),
+
+    ("43_decimo_terceiro", [
+        ("01_post.html", numero(
+            "Plant&atilde;o varia todo m&ecirc;s. E o 13&ordm;?",
+            "1/12", "",
+            "Por m&ecirc;s trabalhado. Quando a remunera&ccedil;&atilde;o &eacute; vari&aacute;vel, "
+            "a parte vari&aacute;vel entra pela <b>m&eacute;dia</b> &mdash; n&atilde;o pelo pior m&ecirc;s.",
+            "Lei 4.090/1962 &middot; 1&ordf; parcela at&eacute; 30 de novembro, 2&ordf; at&eacute; 20 de dezembro.",
+            None, foot_tag="Gratifica&ccedil;&atilde;o<br>natalina")),
+    ]),
+
+    ("44_assedio_escala", [
+        ("01_capa.html", cover(
+            ["Voc&ecirc; reclamou da escala numa reuni&atilde;o"],
+            "e no m&ecirc;s seguinte <em>sobrou s&oacute; plant&atilde;o noturno para voc&ecirc;.</em>",
+            "Isso tem nome?",
+            "Tem. E tem prova.",
+            "1/5", olho="Caso real", foot_tag="Jur&iacute;dico<br>SINMEVA&Ccedil;O")),
+        ("02_caso.html", split(
+            "Ningu&eacute;m escreve <b>&ldquo;isso &eacute; puni&ccedil;&atilde;o&rdquo;</b>. "
+            "<span class='serif'>A escala apenas muda.</span>",
+            "E muda de novo no m&ecirc;s seguinte. &Eacute; a <b>repeti&ccedil;&atilde;o</b> que "
+            "desenha o que uma mudan&ccedil;a isolada esconde.",
+            "2/5")),
+        ("03_virada.html", editorial(
+            "Ass&eacute;dio moral raramente aparece numa frase. Aparece num <b>padr&atilde;o.</b>",
+            "O poder de organizar a escala <em>n&atilde;o &eacute; poder de punir.</em>",
+            "O empregador dirige a presta&ccedil;&atilde;o do servi&ccedil;o (CLT, art. 2&ordm;), mas "
+            "o contrato n&atilde;o pode ser alterado em preju&iacute;zo do empregado (CLT, art. 468). "
+            "Mudan&ccedil;a usada como retalia&ccedil;&atilde;o &eacute; outra coisa &mdash; e se prova "
+            "com s&eacute;rie hist&oacute;rica, n&atilde;o com um m&ecirc;s.",
+            "3/5")),
+        ("04_prova.html", lista(
+            "Como se documenta",
+            "O padr&atilde;o &eacute; a prova",
+            ["<b>Guarde as escalas</b> &mdash; dos meses antes e dos meses depois. &Eacute; a "
+             "compara&ccedil;&atilde;o que fala.",
+             "<b>Salve a data do epis&oacute;dio</b>: a reuni&atilde;o, o e-mail, a mensagem no grupo "
+             "em que voc&ecirc; se posicionou.",
+             "<b>Anote testemunhas</b> &mdash; quem estava na sala, quem recebeu a mesma mudan&ccedil;a, "
+             "quem n&atilde;o recebeu.",
+             "<b>N&atilde;o enfrente sozinho.</b> Caso individual vira vers&atilde;o contra vers&atilde;o; "
+             "o sindicato entra em nome da categoria."],
+            "4/5")),
+        ("05_cta.html", cta(
+            "SINMEVA&Ccedil;O &middot; desde 1991",
+            "Traga as escalas. <em>O padr&atilde;o a gente enxerga.</em>",
+            "Defesa trabalhista, &eacute;tica e c&iacute;vel para o m&eacute;dico do Vale do A&ccedil;o, "
+            "com advogados de direito m&eacute;dico.",
+            "Falar com o jur&iacute;dico", "5/5")),
+    ]),
+
+    ("45_ferias", [
+        ("01_post.html", lista(
+            "Antes de fechar as suas f&eacute;rias",
+            "O que d&aacute; e o que n&atilde;o d&aacute;",
+            ["<b>Vender at&eacute; 1/3</b> &mdash; o abono pecuni&aacute;rio &eacute; de no "
+             "m&aacute;ximo dez dias (CLT, art. 143).",
+             "<b>Dividir em at&eacute; tr&ecirc;s</b> &mdash; um per&iacute;odo com no m&iacute;nimo "
+             "14 dias, os outros com no m&iacute;nimo 5 (CLT, art. 134, &sect; 1&ordm;).",
+             "<b>N&atilde;o come&ccedil;ar</b> nos dois dias antes de feriado ou do repouso semanal "
+             "(art. 134, &sect; 3&ordm;).",
+             "<b>Receber antes</b> &mdash; o pagamento sai at&eacute; dois dias antes do in&iacute;cio "
+             "(CLT, art. 145)."],
+            None, foot_tag="CLT &middot; arts. 134,<br>143 e 145")),
+    ]),
+
+    ("46_finados", [
+        ("01_post.html", statement(
+            "2 de novembro",
+            "Para quem est&aacute; de plant&atilde;o hoje, n&atilde;o &eacute; feriado.",
+            "Finados &eacute; feriado nacional. Mas pronto-socorro, maternidade e UTI n&atilde;o "
+            "fecham &mdash; e algu&eacute;m est&aacute; l&aacute;. Trabalho em feriado tem regra "
+            "pr&oacute;pria de pagamento ou compensa&ccedil;&atilde;o; confira o seu contracheque "
+            "deste m&ecirc;s.",
+            fundo="bg-brass", foot_tag="SINMEVA&Ccedil;O<br>2 de novembro")),
+    ]),
+
+    ("47_rescisao", [
+        ("01_post.html", lista(
+            "Antes de assinar o acerto",
+            "Cinco coisas para conferir",
+            ["<b>Prazo</b> &mdash; o pagamento das verbas sai em at&eacute; dez dias do fim do "
+             "contrato (CLT, art. 477, &sect; 6&ordm;).",
+             "<b>M&eacute;dia dos plant&otilde;es</b> &mdash; a parte vari&aacute;vel entra no "
+             "c&aacute;lculo de aviso, f&eacute;rias e 13&ordm;.",
+             "<b>Adicionais habituais</b> &mdash; noturno e insalubridade pagos com habitualidade "
+             "integram a base.",
+             "<b>Guia e chave do FGTS</b>, quando for o caso, e o motivo da sa&iacute;da registrado "
+             "corretamente.",
+             "<b>Assinar n&atilde;o fecha tudo</b> &mdash; quita-se o que est&aacute; discriminado, "
+             "n&atilde;o o que ficou de fora."],
+            None, foot_tag="CLT &middot; art. 477<br>rescis&atilde;o")),
+    ]),
+
+    ("48_prescricao", [
+        ("01_post.html", numero(
+            "O rel&oacute;gio que corre contra voc&ecirc;",
+            "2", "anos",
+            "&Eacute; o prazo para reclamar <b>depois</b> que o contrato acaba. E, dentro dele, "
+            "s&oacute; d&aacute; para cobrar os <b>&uacute;ltimos cinco anos</b>.",
+            "Constitui&ccedil;&atilde;o, art. 7&ordm;, XXIX &middot; CLT, art. 11. Cada m&ecirc;s "
+            "parado &eacute; um m&ecirc;s que prescreve.",
+            None, foot_tag="Prescri&ccedil;&atilde;o<br>5 anos / 2 anos")),
+    ]),
+
+    ("49_banco_horas", [
+        ("01_post.html", mito_verdade(
+            "&ldquo;Aqui a gente compensa depois&rdquo; &mdash; e nunca compensa.",
+            "Banco de horas <b>s&oacute; vale por escrito</b>. No m&ecirc;s, por acordo individual "
+            "escrito; at&eacute; um ano, s&oacute; por norma coletiva. CLT, art. 59.")),
+    ]),
+
+    ("50_sem_voce_pedir", [
+        ("01_capa.html", cover(
+            ["Tem coisa que o sindicato faz sem voc&ecirc; ligar"],
+            "e &eacute; a parte que <em>quase ningu&eacute;m v&ecirc;.</em>",
+            "O que acontece nos bastidores?",
+            "Cinco frentes.",
+            "1/5", olho="Bastidor", foot_tag="SINMEVA&Ccedil;O<br>desde 1991")),
+        ("02_caso.html", split(
+            "A maioria procura o sindicato <b>no dia do problema.</b> "
+            "<span class='serif'>At&eacute; l&aacute;, ele parece n&atilde;o existir.</span>",
+            "Mas o que chega pronto no seu contracheque <b>foi negociado meses antes</b>, "
+            "numa mesa em que voc&ecirc; n&atilde;o precisou sentar.",
+            "2/5")),
+        ("03_virada.html", editorial(
+            "A Constitui&ccedil;&atilde;o d&aacute; ao sindicato a defesa dos direitos da categoria "
+            "&mdash; <b>coletivos e individuais</b>.",
+            "Voc&ecirc; n&atilde;o precisa aparecer <em>para estar defendido.</em>",
+            "Constitui&ccedil;&atilde;o, <b>art. 8&ordm;, III</b>. &Eacute; por isso que a entidade "
+            "pode entrar em nome da categoria sem que cada m&eacute;dico vire autor de um processo.",
+            "3/5")),
+        ("04_frentes.html", lista(
+            "Acontece com ou sem voc&ecirc;",
+            "Cinco frentes em curso",
+            ["<b>Negocia&ccedil;&atilde;o coletiva</b> &mdash; piso, reajuste e cl&aacute;usulas que "
+             "valem para toda a categoria, filiado ou n&atilde;o.",
+             "<b>Acompanhamento legislativo</b> &mdash; do piso nacional &agrave;s resolu&ccedil;&otilde;es "
+             "do CFM que mudam a sua rotina.",
+             "<b>A&ccedil;&atilde;o coletiva</b> &mdash; quando o descumprimento atinge v&aacute;rios, "
+             "o sindicato entra, n&atilde;o voc&ecirc;.",
+             "<b>Representa&ccedil;&atilde;o institucional</b> &mdash; nos 28 munic&iacute;pios, diante "
+             "de hospitais, prefeituras e operadoras.",
+             "<b>Jur&iacute;dico pr&oacute;prio</b> &mdash; leitura de contrato antes de assinar, que "
+             "evita o processo que nem chega a existir."],
+            "4/5")),
+        ("05_cta.html", cta(
+            "SINMEVA&Ccedil;O &middot; 28 munic&iacute;pios",
+            "Nenhum m&eacute;dico devia precisar <em>negociar sozinho.</em>",
+            "Defesa trabalhista, &eacute;tica e c&iacute;vel para o m&eacute;dico do Vale do A&ccedil;o, "
+            "com advogados de direito m&eacute;dico.",
+            "Falar com o sindicato", "5/5")),
+    ]),
+
+    ("51_pergunta_direct", [
+        ("01_post.html", pergunta(
+            "Chegou no direct",
+            "&ldquo;Posso recusar plant&atilde;o quando o servi&ccedil;o est&aacute; sem condi&ccedil;&atilde;o "
+            "de funcionamento?&rdquo;",
+            "O C&oacute;digo de &Eacute;tica garante esse direito.",
+            "O m&eacute;dico pode recusar-se a exercer a profiss&atilde;o em institui&ccedil;&atilde;o "
+            "sem condi&ccedil;&otilde;es dignas ou que possam prejudicar o paciente &mdash; comunicando "
+            "imediatamente a dire&ccedil;&atilde;o e o CRM. Comunicar por escrito &eacute; o que separa "
+            "recusa de abandono.<br><br><b>Manda a sua pergunta no direct.</b> A pr&oacute;xima pode ser a sua.",
+            None, foot_tag="Pergunta do<br>associado")),
+    ]),
+
+    ("52_dia_radiologista", [
+        ("01_capa.html", data_medica(
+            "8 de novembro",
+            "Dia do M&eacute;dico ",
+            "Radiologista",
+            "A data &eacute; o dia exato em que os raios X foram descobertos, em 1895.",
+            SIMBOLO_RAIOX, "1/6")),
+        ("02_origem.html", numero(
+            "Wilhelm Conrad R&ouml;ntgen",
+            "1895", "",
+            "Em <b>8 de novembro de 1895</b>, por acaso, estudando raios cat&oacute;dicos. "
+            "A medicina ganhou o primeiro jeito de ver dentro sem abrir.",
+            "Col&eacute;gio Brasileiro de Radiologia &middot; Dia Internacional da Radiologia",
+            "2/6", foot_tag="Desde 1895<br>os raios X")),
+        ("03_virada.html", editorial(
+            "O exame chega pronto para o resto da equipe. O trabalho que o produziu <b>n&atilde;o aparece.</b>",
+            "O laudo &eacute; um <em>ato m&eacute;dico</em>, n&atilde;o um anexo.",
+            "Quem assina responde pelo que escreveu &mdash; e carrega a decis&atilde;o de quem vai "
+            "operar, internar ou mandar para casa com base naquelas linhas.",
+            "3/6")),
+        ("04_volume.html", lista(
+            "O que press&atilde;o por produtividade faz",
+            "Tr&ecirc;s riscos de laudar no limite",
+            ["<b>Meta por exame</b> &mdash; quando o volume vira indicador, o tempo de an&aacute;lise "
+             "vira vari&aacute;vel de ajuste.",
+             "<b>Teleradiologia sem regra clara</b> &mdash; quem responde pelo laudo &agrave; dist&acirc;ncia, "
+             "e em que prazo, precisa estar escrito.",
+             "<b>Plant&atilde;o emendado</b> &mdash; fadiga em leitura de imagem n&atilde;o deixa rastro "
+             "at&eacute; deixar."],
+            "4/6")),
+        ("05_contrato.html", clausula(
+            "No seu contrato, procure",
+            "Quantos exames por turno, <mark>em que prazo</mark> e de quem &eacute; a "
+            "responsabilidade pelo laudo emitido &agrave; dist&acirc;ncia.",
+            "O que n&atilde;o est&aacute; escrito vira combinado verbal.",
+            "E combinado verbal, na hora do problema, &eacute; a palavra de um contra a do outro. "
+            "Leve o contrato ao jur&iacute;dico antes de assinar, n&atilde;o depois.",
+            "5/6")),
+        ("06_cta.html", cta(
+            "SINMEVA&Ccedil;O &middot; 8 de novembro",
+            "Ao radiologista do Vale do A&ccedil;o, <em>o nosso respeito.</em>",
+            "E o jur&iacute;dico do sindicato do lado de c&aacute; &mdash; do contrato &agrave; escala, "
+            "da teleradiologia &agrave; prote&ccedil;&atilde;o radiol&oacute;gica.",
+            "Falar com o jur&iacute;dico", "6/6")),
+    ]),
+
 ]
 
 
@@ -1806,6 +2126,12 @@ RESERVA = [
     "33_sobreaviso_celular", "34_intervalo_plantao",
     "35_dia_cirurgiao_pediatrico",
     "36_insalubridade", "37_assinei_e_nulo",
+    # quinzena 24/10 a 08/11, na ordem de publicacao
+    "38_adicional_noturno", "39_perfurocortante", "40_interjornada",
+    "41_gestante_insalubre", "42_equiparacao", "43_decimo_terceiro",
+    "44_assedio_escala", "45_ferias", "46_finados", "47_rescisao",
+    "48_prescricao", "49_banco_horas", "50_sem_voce_pedir",
+    "51_pergunta_direct", "52_dia_radiologista",
 ]
 
 ORDEM = [pasta for pasta, _, _ in CALENDARIO] + RESERVA
