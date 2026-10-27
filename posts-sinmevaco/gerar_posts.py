@@ -434,7 +434,7 @@ def citacao(frase, nome, papel, counter=None, foot_tag=None):
 """, counter=counter, dark_chrome=True, foot_tag=foot_tag)
 
 
-def numero(kicker, valor, unidade, legenda, fonte, counter=None, foot_tag=None):
+def numero(kicker, valor, unidade, legenda, fonte, counter=None, foot_tag=None, photo=None):
     """08 - dado em destaque, sempre com fonte declarada."""
     un = f"<small>{unidade}</small>" if unidade else ""
     return page(legenda, "numero bg-navy", f"""
@@ -444,7 +444,7 @@ def numero(kicker, valor, unidade, legenda, fonte, counter=None, foot_tag=None):
   <div class="cap">{legenda}</div>
   <div class="fonte">{fonte}</div>
 </div>
-""", counter=counter, foot_tag=foot_tag)
+""", counter=counter, foot_tag=foot_tag, photo=photo)
 
 
 def mito_verdade(mito, verdade, counter=None):
@@ -936,6 +936,12 @@ BASE_CSS += """
 .data-med .pe{position:absolute;z-index:6;left:0;right:0;bottom:72px;text-align:center;font-size:23px;
   letter-spacing:.18em;color:rgba(245,247,243,.6)}
 .t-claro .data-med .frase,.t-claro .frase{color:rgba(22,35,27,.8)}
+/* Numero com foto: scrim preto, mesma decisao da peca de data. O preto
+   abaixa a luz sem tingir a imagem, e o numero em dourado mantem contraste. */
+.numero .photo{filter:saturate(.85) contrast(1.04)}
+.numero .photo::after{background:
+  linear-gradient(180deg, rgba(0,0,0,.80) 0%, rgba(0,0,0,.64) 28%, rgba(0,0,0,.82) 66%, rgba(0,0,0,.94) 100%),
+  radial-gradient(130% 70% at 28% 48%, rgba(0,0,0,.22) 0%, rgba(0,0,0,.76) 100%)}
 /* Scrim da peca de data: preto, nao verde. A foto entra colorida e o preto
    so abaixa a luz -- mantem o dourado com contraste sem tingir a imagem. */
 .data-med .photo{filter:saturate(.88) contrast(1.04)}
@@ -1783,7 +1789,8 @@ POSTS = [
             "como 60 minutos &mdash; e ainda rende <b>20% de adicional</b>.",
             "CLT, art. 73: adicional de 20% sobre a hora diurna, e hora noturna computada "
             "como 52 minutos e 30 segundos.",
-            None, foot_tag="CLT &middot; art. 73<br>trabalho noturno")),
+            None, foot_tag="CLT &middot; art. 73<br>trabalho noturno",
+            photo=foto_se_houver("fotos/noturno.jpg"))),
     ]),
 
     ("39_perfurocortante", [
