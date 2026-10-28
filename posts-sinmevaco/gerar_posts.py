@@ -1130,7 +1130,7 @@ BASE_CSS += """
    cinza ilegivel. Fonte declarada nao e enfeite -- e o que sustenta a
    afirmacao, e precisa ser lida. */
 .numero .fonte{opacity:1;color:rgba(255,253,250,.66)}
-.t-claro .numero .fonte{color:rgba(22,35,27,.62)}
+.t-claro.numero .fonte{color:rgba(22,35,27,.62)}
 .canvas:has(> .photo) .numero .fonte,.numero:has(> .photo) .fonte{color:rgba(255,253,250,.70)}
 """
 
@@ -1995,6 +1995,169 @@ POSTS = [
             None, foot_tag="CLT &middot; arts. 134,<br>143 e 145")),
     ]),
 
+    ("54_feriado_em_dobro", [
+        ("01_post.html", clausula(
+            "Lei 605/1949 &middot; art. 9&ordm;",
+            "&ldquo;Nas atividades em que n&atilde;o for poss&iacute;vel, em virtude das "
+            "exig&ecirc;ncias t&eacute;cnicas das empresas, a suspens&atilde;o do trabalho, nos "
+            "dias feriados civis e religiosos, a remunera&ccedil;&atilde;o ser&aacute; paga em "
+            "dobro, salvo se o empregador determinar outro dia de folga.&rdquo;",
+            "Feriado trabalhado: em dobro, ou folga em outro dia.",
+            "Quem trabalha no feriado e <b>n&atilde;o recebe folga compensat&oacute;ria</b> "
+            "tem direito &agrave; remunera&ccedil;&atilde;o em dobro daquele dia. Na escala "
+            "12x36 a conta &eacute; outra: o art. 59-A da CLT j&aacute; considera os "
+            "feriados compensados.",
+            foot_tag="Art. 9&ordm;<br>Lei 605/49")),
+    ]),
+    ("55_novembro_azul_medico", [
+        ("01_post.html", editorial(
+            "Novembro Azul fala de rastreamento. Vale uma pergunta a mais.",
+            "Quando foi a sua <em>&uacute;ltima consulta?</em>",
+            "O m&eacute;dico &eacute; a pessoa mais perto de um consult&oacute;rio e a mais "
+            "longe de uma consulta: conhece a conduta, dispensa o encaminhamento, resolve no "
+            "corredor. S&oacute; que atendimento de corredor n&atilde;o gera prontu&aacute;rio "
+            "&mdash; e <b>prontu&aacute;rio &eacute; o que protege voc&ecirc; tamb&eacute;m</b>, "
+            "inclusive quando a doen&ccedil;a tem rela&ccedil;&atilde;o com o trabalho. "
+            "Marque como paciente, com um colega, com registro.",
+            None)),
+    ]),
+    ("56_dsr_hora_extra", [
+        ("01_post.html", clausula(
+            "S&uacute;mula 172 do TST",
+            "&ldquo;Computam-se no c&aacute;lculo do repouso remunerado as horas extras "
+            "habitualmente prestadas.&rdquo;",
+            "Plant&atilde;o extra habitual mexe no descanso.",
+            "Hora extra feita com habitualidade n&atilde;o fica s&oacute; na linha dela: "
+            "entra no c&aacute;lculo do <b>repouso semanal remunerado</b>. N&atilde;o &eacute; "
+            "b&ocirc;nus, &eacute; reflexo. Procure a rubrica de DSR no seu contracheque e "
+            "compare dois meses de volume diferente. Se o valor do DSR &eacute; sempre o mesmo "
+            "n&uacute;mero, independentemente de quantos plant&otilde;es extras voc&ecirc; fez, "
+            "vale perguntar por qu&ecirc;.",
+            foot_tag="S&uacute;mula 172<br>TST")),
+    ]),
+    ("57_estabilidade_acidentaria", [
+        ("01_post.html", numero(
+            "Depois de um acidente de trabalho",
+            "12", "meses",
+            "&Eacute; a garantia de emprego contada <b>a partir do fim do aux&iacute;lio-doen&ccedil;a "
+            "acident&aacute;rio</b>. Demitir dentro desse prazo, sem justa causa, se discute.",
+            "Lei 8.213/1991, art. 118. S&uacute;mula 378, II, do TST: exige afastamento superior "
+            "a 15 dias e percep&ccedil;&atilde;o do benef&iacute;cio acident&aacute;rio.",
+            foot_tag="Art. 118<br>Lei 8.213/91")),
+    ]),
+    ("58_consciencia_negra", [
+        ("01_post.html", statement(
+            "20 de novembro",
+            "Dia Nacional de Zumbi e da Consci&ecirc;ncia Negra.",
+            "Feriado nacional desde a <b>Lei 14.759/2023</b>. Para quem est&aacute; escalado "
+            "hoje, segue valendo a regra do feriado trabalhado. E segue de p&eacute; a pergunta "
+            "de dentro da profiss&atilde;o: quem chega &agrave; resid&ecirc;ncia, quem chega "
+            "&agrave; chefia de equipe, quem chega ao conselho.",
+            fundo="bg-brass", foot_tag="SINMEVA&Ccedil;O<br>20 de novembro")),
+    ]),
+    ("59_contracheque", [
+        ("01_capa.html", cover(
+            ["Voc&ecirc; abre o contracheque, confere o l&iacute;quido"],
+            "e <em>fecha sem ler o resto.</em>",
+            "Quanto do seu dinheiro est&aacute; nas linhas do meio?",
+            "Mais do que parece.",
+            "1/5", olho="Linha por linha", foot_tag="Jur&iacute;dico<br>SINMEVA&Ccedil;O")),
+        ("02_rubricas.html", lista(
+            "O que precisa estar discriminado",
+            "Cinco linhas para procurar",
+            ["<b>Sal&aacute;rio-base</b> &mdash; e o n&uacute;mero de horas a que ele corresponde.",
+             "<b>Plant&otilde;es</b> &mdash; quantidade e valor unit&aacute;rio, n&atilde;o um "
+             "valor fechado sem conta.",
+             "<b>Adicional noturno</b> &mdash; com as horas noturnas somadas &agrave; parte.",
+             "<b>Insalubridade</b>, quando houver laudo, com o grau indicado.",
+             "<b>DSR</b> &mdash; o repouso semanal, que se mexe quando a parte vari&aacute;vel "
+             "se mexe."],
+            "2/5")),
+        ("03_media.html", clausula(
+            "CLT &middot; art. 464, par&aacute;grafo &uacute;nico",
+            "&ldquo;Ter&aacute; for&ccedil;a de recibo o comprovante de dep&oacute;sito em conta "
+            "banc&aacute;ria, aberta para esse fim em nome de cada empregado&hellip;&rdquo;",
+            "Dep&oacute;sito prova pagamento, n&atilde;o prova a conta.",
+            "O extrato mostra que entrou. N&atilde;o mostra <b>de que</b> entrou. Por isso o "
+            "contracheque discriminado importa: sem ele, dois anos depois, ningu&eacute;m "
+            "reconstr&oacute;i quantos plant&otilde;es foram pagos e a que valor. "
+            "<b>Guarde o PDF de cada m&ecirc;s</b> &mdash; sistema de folha troca, e o hist&oacute;rico "
+            "some junto.",
+            "3/5", foot_tag="Art. 464<br>CLT")),
+        ("04_virada.html", editorial(
+            "Quase ningu&eacute;m descobre um erro olhando um m&ecirc;s.",
+            "O erro aparece <em>quando voc&ecirc; p&otilde;e tr&ecirc;s lado a lado.</em>",
+            "Abra os contracheques dos &uacute;ltimos tr&ecirc;s meses na mesma tela. "
+            "Rubrica que n&atilde;o varia num m&ecirc;s de volume diferente, plant&atilde;o que "
+            "aparece no m&ecirc;s errado, adicional que sumiu sem mudan&ccedil;a de setor: "
+            "<b>&eacute; a compara&ccedil;&atilde;o que denuncia</b>, n&atilde;o a leitura.",
+            "4/5")),
+        ("05_cta.html", cta(
+            "Jur&iacute;dico do SINMEVA&Ccedil;O",
+            "Traga tr&ecirc;s contracheques.",
+            "A confer&ecirc;ncia &eacute; r&aacute;pida e n&atilde;o compromete voc&ecirc; com "
+            "nada. Se estiver tudo certo, voc&ecirc; sai sabendo. Se n&atilde;o estiver, "
+            "voc&ecirc; sai sabendo antes de prescrever.",
+            "Falar com o jur&iacute;dico", "5/5")),
+    ]),
+    ("60_fgts", [
+        ("01_post.html", numero(
+            "Todo m&ecirc;s, sobre a sua remunera&ccedil;&atilde;o",
+            "8", "%",
+            "&Eacute; o dep&oacute;sito mensal de FGTS que o empregador faz na sua conta "
+            "vinculada. <b>N&atilde;o sai do seu sal&aacute;rio</b> &mdash; &eacute; encargo dele.",
+            "Lei 8.036/1990, art. 15. Vale para o contrato celetista; servidor estatut&aacute;rio "
+            "segue regime pr&oacute;prio.",
+            foot_tag="Art. 15<br>Lei 8.036/90")),
+    ]),
+    ("61_assedio_sexual", [
+        ("01_post.html", lista(
+            "25 de novembro",
+            "Ass&eacute;dio no hospital: o que a lei j&aacute; exige",
+            ["<b>Ass&eacute;dio sexual &eacute; crime</b> desde a Lei 10.224/2001 &mdash; "
+             "art. 216-A do C&oacute;digo Penal.",
+             "<b>A empresa com CIPA tem obriga&ccedil;&otilde;es pr&oacute;prias</b>: canal de "
+             "den&uacute;ncia, regras de conduta e treinamento, pela Lei 14.457/2022.",
+             "<b>Quem recebe o relato tem dever de apurar.</b> Engavetar tamb&eacute;m responde.",
+             "<b>Registro com data vale mais que mem&oacute;ria.</b> Anote o epis&oacute;dio, "
+             "quem estava, o que mudou depois.",
+             "<b>N&atilde;o precisa enfrentar sozinha.</b> O sindicato acompanha, e o relato "
+             "n&atilde;o vira processo sem a sua decis&atilde;o."],
+            None, foot_tag="Lei 14.457/2022<br>CP, art. 216-A")),
+    ]),
+    ("62_convencao_coletiva", [
+        ("01_post.html", mito_verdade(
+            "&ldquo;Conven&ccedil;&atilde;o coletiva s&oacute; vale para quem &eacute; "
+            "filiado ao sindicato.&rdquo;",
+            "Vale para <b>toda a categoria</b> na base territorial, filiado ou n&atilde;o. "
+            "A Constitui&ccedil;&atilde;o reconhece as conven&ccedil;&otilde;es e acordos "
+            "coletivos no art. 7&ordm;, XXVI, e a conven&ccedil;&atilde;o &eacute; de "
+            "observ&acirc;ncia obrigat&oacute;ria na categoria (CLT, art. 611).")),
+    ]),
+    ("63_ferias_em_dobro", [
+        ("01_post.html", clausula(
+            "CLT &middot; art. 137",
+            "&ldquo;Sempre que as f&eacute;rias forem concedidas ap&oacute;s o prazo de que "
+            "trata o art. 134, o empregador pagar&aacute; em dobro a respectiva "
+            "remunera&ccedil;&atilde;o.&rdquo;",
+            "F&eacute;rias atrasadas custam o dobro.",
+            "Depois de completar o per&iacute;odo aquisitivo de 12 meses, o empregador tem "
+            "mais 12 para conceder as f&eacute;rias. Passou disso, a remunera&ccedil;&atilde;o "
+            "daquele per&iacute;odo &eacute; <b>paga em dobro</b>. N&atilde;o &eacute; multa que "
+            "se pede de favor: est&aacute; no texto. "
+            "Olhe a data do seu &uacute;ltimo per&iacute;odo gozado.",
+            foot_tag="Art. 137<br>CLT")),
+    ]),
+    ("64_primeira_parcela_13", [
+        ("01_post.html", statement(
+            "30 de novembro",
+            "Hoje &eacute; o &uacute;ltimo dia da primeira parcela do 13&ordm;.",
+            "A <b>Lei 4.749/1965</b> fixa o prazo: a primeira parcela vai at&eacute; 30 de "
+            "novembro, e a segunda at&eacute; 20 de dezembro &mdash; que em 2026 cai num "
+            "domingo, antecipando para sexta, 18/12. Se nada entrou hoje, n&atilde;o espere "
+            "dezembro para perguntar.",
+            fundo="bg-brass", foot_tag="Lei 4.749/65<br>1&ordf; parcela")),
+    ]),
     ("53_dia_servidor_publico", [
         ("01_post.html", data_medica(
             "28 de outubro",
@@ -2210,6 +2373,11 @@ RESERVA = [
     "48_prescricao", "49_banco_horas", "50_sem_voce_pedir",
     "51_pergunta_direct", "52_dia_radiologista",
     "53_dia_servidor_publico",
+    # quinzena 15/11 a 30/11
+    "54_feriado_em_dobro", "55_novembro_azul_medico", "56_dsr_hora_extra",
+    "57_estabilidade_acidentaria", "58_consciencia_negra", "59_contracheque",
+    "60_fgts", "61_assedio_sexual", "62_convencao_coletiva",
+    "63_ferias_em_dobro", "64_primeira_parcela_13",
 ]
 
 ORDEM = [pasta for pasta, _, _ in CALENDARIO] + RESERVA

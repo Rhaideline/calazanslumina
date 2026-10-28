@@ -887,3 +887,166 @@ peça 48 (prescrição). Causa provável: o payload de criação reaproveitado d
 um post de publicação imediata. Os agendamentos seguintes passaram a ser
 criados com `status: "scheduled"` explícito, e todos voltaram confirmados
 nesse estado.
+
+---
+
+# Quinzena 15/11 a 30/11
+
+## 54 — Feriado trabalhado em dobro · 15/11
+> Hoje é feriado nacional, e hospital não fecha.
+>
+> Quem trabalha em feriado e não recebe folga compensatória em outro dia tem direito à remuneração em dobro daquele dia. A redação do art. 9º da Lei 605/1949 é direta: "a remuneração será paga em dobro, salvo se o empregador determinar outro dia de folga".
+>
+> Agora o detalhe que muda a conta: na escala 12x36 a regra é outra. O art. 59-A da CLT já considera os feriados compensados nesse regime.
+>
+> Então a primeira pergunta não é quanto. É qual regime rege a sua escala — e isso está no seu contrato e na convenção coletiva, não na conversa do plantão.
+>
+> Está escalado hoje? Comenta de qual regime é a sua escala.
+
+`#SINMEVAÇO #Feriado #Plantão #DireitoMédico #MédicosDoValeDoAço #Ipatinga`
+**Âncoras:** Lei 605/1949, art. 9º; CLT, art. 59-A.
+
+## 55 — Novembro Azul e o médico-paciente · 17/11
+> Novembro Azul fala de rastreamento. Vale uma pergunta a mais: quando foi a sua última consulta?
+>
+> O médico é a pessoa mais perto de um consultório e a mais longe de uma consulta. Conhece a conduta, dispensa o encaminhamento, resolve no corredor com um colega — e nunca vira paciente de ninguém.
+>
+> Só que atendimento de corredor não gera prontuário. E prontuário é o que protege você também: é o documento que, meses depois, mostra quando o sintoma começou e o que foi feito. Isso pesa inclusive quando a doença tem relação com o trabalho — nexo se prova com registro, não com memória.
+>
+> Marque como paciente. Com um colega, com hora marcada, com registro.
+>
+> Manda para quem já disse "depois eu vejo isso".
+
+`#SINMEVAÇO #NovembroAzul #SaúdeDoMédico #DireitoMédico #MédicosDoValeDoAço #Timóteo`
+
+## 56 — DSR e hora extra habitual · 18/11
+> Tem uma linha no seu contracheque que quase ninguém olha: o DSR.
+>
+> É o repouso semanal remunerado. E a Súmula 172 do TST diz, em uma frase: "computam-se no cálculo do repouso remunerado as horas extras habitualmente prestadas".
+>
+> Quer dizer: plantão extra feito com habitualidade não fica só na linha dele. Ele aumenta o valor do descanso também. Não é bônus, é reflexo.
+>
+> O teste é simples. Pegue dois meses com volumes bem diferentes de plantão extra e compare a rubrica de DSR. Se o número é exatamente o mesmo nos dois, vale perguntar por quê.
+>
+> Salva para conferir no próximo contracheque.
+
+`#SINMEVAÇO #DSR #HoraExtra #Plantão #DireitoMédico #MédicosDoValeDoAço #CoronelFabriciano`
+**Âncora:** Súmula 172 do TST.
+
+## 57 — Estabilidade acidentária · 19/11
+> Depois de um acidente de trabalho, existe um prazo que protege o seu emprego: doze meses.
+>
+> O art. 118 da Lei 8.213/91 garante a manutenção do contrato pelo prazo mínimo de doze meses, contados do fim do auxílio-doença acidentário. Demissão sem justa causa dentro desse período se discute.
+>
+> A Súmula 378, II, do TST fecha os requisitos: afastamento superior a quinze dias e percepção do benefício acidentário. Há exceção quando a doença profissional só é constatada depois da dispensa.
+>
+> É por isso que a CAT importa tanto no dia do acidente — sem ela, o benefício sai como comum, e não como acidentário. O prazo que protege você nasce do papel que ninguém quis preencher.
+>
+> Se você se afastou por acidente neste ano, confira em que data o benefício cessou.
+
+`#SINMEVAÇO #AcidenteDeTrabalho #EstabilidadeAcidentária #CAT #DireitoMédico #MédicosDoValeDoAço #Ipatinga`
+**Âncoras:** Lei 8.213/1991, art. 118; Súmula 378, II, do TST.
+
+## 58 — Consciência Negra · 20/11
+> Hoje é 20 de novembro, Dia Nacional de Zumbi e da Consciência Negra — feriado nacional desde a Lei 14.759/2023.
+>
+> Para quem está escalado, segue valendo a regra do feriado trabalhado: em dobro, ou folga compensatória em outro dia.
+>
+> E segue de pé a pergunta de dentro da profissão, que não se resolve com data no calendário: quem chega à residência, quem chega à chefia de equipe, quem chega ao conselho.
+>
+> O SINMEVAÇO cumprimenta os médicos negros do Vale do Aço, e deseja um bom plantão a quem está trabalhando hoje.
+
+`#SINMEVAÇO #ConsciênciaNegra #20DeNovembro #MédicosDoValeDoAço #Ipatinga #CoronelFabriciano #Timóteo`
+**Âncora:** Lei 14.759/2023.
+
+## 59 — O contracheque linha por linha · 23/11 (carrossel, 5)
+> Você abre o contracheque, confere o líquido e fecha sem ler o resto. Quase todo mundo faz isso.
+>
+> Cinco linhas que merecem atenção: salário-base (e a quantas horas ele corresponde), plantões (quantidade e valor unitário, não um valor fechado sem conta), adicional noturno (com as horas noturnas somadas à parte), insalubridade (com o grau indicado, quando houver laudo) e DSR — que se mexe quando a parte variável se mexe.
+>
+> Um detalhe que custa caro depois: depósito prova pagamento, não prova a conta. O extrato mostra que entrou. Não mostra de que entrou. Por isso o contracheque discriminado importa — e por isso vale guardar o PDF de cada mês. Sistema de folha troca, e o histórico some junto.
+>
+> E a parte prática: quase ninguém descobre um erro olhando um mês. O erro aparece quando você põe três lado a lado. Rubrica que não varia num mês de volume diferente, plantão que aparece no mês errado, adicional que sumiu sem mudança de setor — é a comparação que denuncia.
+>
+> Traga três contracheques ao jurídico do SINMEVAÇO. A conferência é rápida e não compromete você com nada.
+>
+> Salva esse post e faz o teste dos três meses no fim de semana.
+
+`#SINMEVAÇO #Contracheque #Plantão #DireitoMédico #MédicosDoValeDoAço #Ipatinga #Timóteo`
+**Âncora:** CLT, art. 464, parágrafo único.
+
+## 60 — FGTS · 24/11
+> 8% da sua remuneração, todo mês, numa conta que não é a sua conta corrente.
+>
+> É o FGTS. O art. 15 da Lei 8.036/1990 obriga o empregador a depositar 8% da remuneração do mês na conta vinculada do trabalhador. Não sai do seu salário — é encargo dele.
+>
+> O que mais acontece na prática: o depósito atrasa, ou sai sobre uma base menor que a real, porque plantões e adicionais habituais ficaram de fora da conta.
+>
+> Dá para conferir sozinho, pelo aplicativo do FGTS: veja se há depósito em todos os meses e se o valor bate com 8% da remuneração daquele mês, adicionais incluídos.
+>
+> Vale para contrato celetista. Servidor estatutário segue regime próprio.
+>
+> Confere este mês e comenta se bateu.
+
+`#SINMEVAÇO #FGTS #DireitoMédico #MédicosDoValeDoAço #CoronelFabriciano #Ipatinga`
+**Âncora:** Lei 8.036/1990, art. 15.
+
+## 61 — Assédio no hospital · 25/11
+> Hoje é o Dia Internacional pela Eliminação da Violência contra a Mulher. No hospital, o assunto tem endereço e tem lei.
+>
+> Assédio sexual é crime desde a Lei 10.224/2001 — art. 216-A do Código Penal.
+>
+> A instituição que tem CIPA tem obrigações próprias desde a Lei 14.457/2022: canal de denúncia, regras de conduta no regimento interno e treinamento periódico. Não é cortesia, é exigência legal.
+>
+> Quem recebe o relato tem dever de apurar. Engavetar também responde.
+>
+> E o que mais ajuda depois é o que se faz agora: registro com data. Anote o episódio, quem estava presente, o que mudou na sua rotina ou na sua escala depois dele.
+>
+> Você não precisa enfrentar isso sozinha. O sindicato acompanha, e um relato não vira processo sem a sua decisão.
+
+`#SINMEVAÇO #25DeNovembro #AssédioNoTrabalho #DireitoMédico #MédicasDoValeDoAço #Ipatinga #Timóteo`
+**Âncoras:** CP, art. 216-A (Lei 10.224/2001); Lei 14.457/2022.
+
+## 62 — Convenção coletiva · 26/11
+> "Convenção coletiva só vale para quem é filiado ao sindicato."
+>
+> Não. Vale para toda a categoria na base territorial, filiado ou não.
+>
+> A Constituição reconhece as convenções e acordos coletivos no art. 7º, XXVI, e a convenção é de observância obrigatória nas respectivas representações (CLT, art. 611).
+>
+> Na prática: o piso, o reajuste, o adicional e as condições negociados na mesa chegam ao contracheque de quem nunca pisou no sindicato. É a parte do trabalho que acontece antes de qualquer problema existir.
+>
+> O que a filiação muda é outra coisa: assistência jurídica individual, acompanhamento do seu caso, participação na assembleia que define a pauta.
+>
+> Marca um colega que acha que isso não vale para ele.
+
+`#SINMEVAÇO #ConvençãoColetiva #NegociaçãoColetiva #DireitoMédico #MédicosDoValeDoAço #CoronelFabriciano`
+**Âncoras:** CF, art. 7º, XXVI; CLT, art. 611.
+
+## 63 — Férias em dobro · 27/11
+> Férias atrasadas custam o dobro. Está escrito, não é interpretação.
+>
+> O art. 137 da CLT: "sempre que as férias forem concedidas após o prazo de que trata o art. 134, o empregador pagará em dobro a respectiva remuneração".
+>
+> A conta é esta: depois de completar o período aquisitivo de doze meses, o empregador tem mais doze para conceder as férias. Passou desse prazo, a remuneração daquele período é paga em dobro.
+>
+> Não é multa que se pede de favor. É o texto da lei.
+>
+> Olhe a data do seu último período gozado e some os meses. Se passou de dois anos desde a admissão ou desde as últimas férias, vale conversar.
+
+`#SINMEVAÇO #Férias #DireitoMédico #CLT #MédicosDoValeDoAço #Ipatinga`
+**Âncoras:** CLT, arts. 134 e 137.
+
+## 64 — Primeira parcela do 13º · 30/11
+> Hoje é o último dia da primeira parcela do 13º.
+>
+> A Lei 4.749/1965 fixa o prazo: a primeira parcela vai até 30 de novembro, e a segunda até 20 de dezembro — que em 2026 cai num domingo, antecipando para sexta, 18/12.
+>
+> Quem tem remuneração variável, caso de quase todo plantonista, recebe a parte variável pela média, não pelo pior mês nem pelo salário-base sozinho.
+>
+> Se nada entrou hoje, não espere dezembro para perguntar. O atraso já aconteceu.
+>
+> Caiu ou não caiu? Comenta.
+
+`#SINMEVAÇO #DécimoTerceiro #Plantão #DireitoMédico #MédicosDoValeDoAço #Ipatinga #Timóteo`
+**Âncoras:** Lei 4.090/1962; Lei 4.749/1965.
