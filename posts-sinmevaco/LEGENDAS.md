@@ -715,7 +715,7 @@ Daí as três regras desta quinzena:
 >
 > As datas: primeira parcela até 30 de novembro, segunda até 20 de dezembro. Em 2026 o dia 20 cai num domingo, e nesse caso o pagamento se antecipa para o útil anterior — sexta, 18/12.
 >
-> Novembro começa semana que vem. Se a primeira parcela não cair, você já sabe de onde reclamar.
+> A primeira parcela cai até o fim deste mês. Se ela não entrar, você já sabe de onde reclamar.
 >
 > Guarda esse post para conferir em dezembro.
 
@@ -847,3 +847,43 @@ Daí as três regras desta quinzena:
 
 `#SINMEVAÇO #DiaDoRadiologista #Radiologia #RaiosX #Teleradiologia #MédicosDoValeDoAço #CoronelFabriciano #Ipatinga`
 **Âncoras:** descoberta dos raios X em 08/11/1895 (Röntgen); Colégio Brasileiro de Radiologia.
+
+---
+
+## Grade efetivamente agendada (28/10 a 11/11/2026)
+
+Todos às 18h BRT (21:00Z), exceto os posts de data já existentes na conta
+do cliente, que ficaram no horário original (8h BRT).
+
+| Data | Peça | Formato | Situação |
+|---|---|---|---|
+| 27/10 | 38 adicional noturno | único | publicado |
+| 28/10 | 44 assédio e escala | carrossel 5 | **publicado fora de hora** (ver nota) |
+| 29/10 | 40 interjornada | único | agendado |
+| 30/10 | Dia do Ginecologista | único | agendado (peça do cliente) |
+| 31/10 | 48 prescrição | único | agendado |
+| 01/11 | 45 férias | único | agendado |
+| 02/11 | 46 Finados | único | agendado |
+| 03/11 | 39 perfurocortante | carrossel 5 | agendado |
+| 04/11 | 42 equiparação | único | agendado |
+| 05/11 | 49 banco de horas | único | agendado |
+| 06/11 | 47 rescisão | único | agendado |
+| 07/11 | 50 o que o sindicato faz | carrossel 5 | agendado |
+| 08/11 | Dia do Radiologista | único | agendado (peça do cliente) |
+| 09/11 | 41 gestante e insalubridade | único | agendado |
+| 10/11 | Dia do Intensivista | único | agendado (peça do cliente) |
+| 11/11 | 43 13º com plantão variável | único | agendado |
+
+Fora da grade: **51 pergunta do associado** (reserva, para usar no dia em que
+chegar uma dúvida boa no direct) e **52 Dia do Radiologista** (descartado — a
+conta já tinha um post próprio para 08/11, e dois na mesma data brigariam).
+
+### Nota sobre o post 44
+A peça 44 (assédio e escala) estava programada para 31/10 às 18h e foi
+publicada pelo Social Planner em 28/10 às 07h46 BRT, poucos segundos depois
+de ser criada. As imagens são as auditadas e a legenda saiu íntegra; o que
+saiu errado foi a data e a hora. O slot de 31/10 foi então preenchido com a
+peça 48 (prescrição). Causa provável: o payload de criação reaproveitado de
+um post de publicação imediata. Os agendamentos seguintes passaram a ser
+criados com `status: "scheduled"` explícito, e todos voltaram confirmados
+nesse estado.
