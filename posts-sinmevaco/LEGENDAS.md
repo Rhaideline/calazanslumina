@@ -699,7 +699,7 @@ Daí as três regras desta quinzena:
 >
 > Nem sempre é ilegal. Mas tem hipótese em que é, e ela tem requisitos fechados (CLT, art. 461):
 >
-> Mesma função de verdade (compara-se a atividade exercida, não o nome do cargo). Mesmo empregador e mesmo estabelecimento — depois da reforma, não basta ser a mesma cidade. Até 4 anos de diferença de casa e até 2 anos na função. E não pode existir quadro de carreira ou plano de cargos e salários, porque aí a regra muda.
+> Mesma função de verdade (compara-se a atividade exercida, não o nome do cargo). Mesmo empregador e mesmo estabelecimento — depois da reforma, não basta ser a mesma cidade. Até 4 anos de diferença de tempo de casa e até 2 anos na função. E não pode existir quadro de carreira ou plano de cargos e salários, porque aí a regra muda.
 >
 > Os quatro precisam estar presentes juntos. Falta um, não equipara.
 >
@@ -713,14 +713,14 @@ Daí as três regras desta quinzena:
 >
 > Um doze avos por mês trabalhado (mês com 15 dias ou mais conta inteiro). Quando a remuneração é variável — que é o caso de quase todo plantonista —, a parte variável entra pela média. Não pelo pior mês, nem pelo salário-base sozinho.
 >
-> As datas: primeira parcela até 30 de novembro, segunda até 20 de dezembro.
+> As datas: primeira parcela até 30 de novembro, segunda até 20 de dezembro. Em 2026 o dia 20 cai num domingo, e nesse caso o pagamento se antecipa para o útil anterior — sexta, 18/12.
 >
 > Novembro começa semana que vem. Se a primeira parcela não cair, você já sabe de onde reclamar.
 >
 > Guarda esse post para conferir em dezembro.
 
 `#SINMEVAÇO #DécimoTerceiro #Plantão #DireitoMédico #MédicosDoValeDoAço #Ipatinga #Timóteo`
-**Âncora:** Lei 4.090/1962.
+**Âncoras:** Lei 4.090/1962; Lei 4.749/1965 (datas das parcelas).
 
 ## 44 — Assédio e escala · 31/10 (carrossel, 5)
 > Você reclamou da escala numa reunião. No mês seguinte, sobrou só plantão noturno para você.
