@@ -1101,6 +1101,29 @@ def decaimento(kicker, titulo, chips, nota, counter=None, foot_tag=None):
 """, counter=counter, foot_tag=foot_tag)
 
 
+BASE_CSS += """
+/* ==== CORRECOES DE TEMA — ultimo bloco de proposito ====
+   Os dispositivos pintam o <em> com cor propria (.editorial h2 em e
+   .clausula .leitura h2 em usam o verde da marca). Essa regra tem
+   especificidade maior que .t-verde em, entao em fundo verde o destaque
+   sumia -- aconteceu em duas pecas ja agendadas. Aqui as regras tem a
+   MESMA especificidade das do dispositivo e vem depois, entao vencem. */
+.t-verde h1 em,.t-verde h2 em,.t-verde h3 em,.t-verde blockquote em,
+.t-verde .frase em,.t-verde .leitura h2 em{color:#EBDFC0}
+.t-escuro h1 em,.t-escuro h2 em,.t-escuro h3 em,.t-escuro blockquote em,
+.t-escuro .frase em,.t-escuro .leitura h2 em{color:var(--brass-2)}
+.t-claro h1 em,.t-claro h2 em,.t-claro h3 em,.t-claro blockquote em,
+.t-claro .frase em,.t-claro .leitura h2 em{color:var(--navy-3)}
+
+/* A linha de fonte ficava a 45% de opacidade: sobre fundo escuro virava
+   cinza ilegivel. Fonte declarada nao e enfeite -- e o que sustenta a
+   afirmacao, e precisa ser lida. */
+.numero .fonte{opacity:1;color:rgba(255,253,250,.66)}
+.t-claro .numero .fonte{color:rgba(22,35,27,.62)}
+.canvas:has(> .photo) .numero .fonte,.numero:has(> .photo) .fonte{color:rgba(255,253,250,.70)}
+"""
+
+
 # ====== POSTS ======
 # Slots de foto: coloque o arquivo em fotos/<nome>.jpg. Sem o arquivo,
 # o degrade de fundo assume e o slide continua fechado.
@@ -1858,7 +1881,7 @@ POSTS = [
     ("40_interjornada", [
         ("01_post.html", clausula(
             "CLT &middot; art. 66",
-            "Entre duas jornadas de trabalho haver&aacute; um per&iacute;odo m&iacute;nimo de "
+            "Entre 2 (duas) jornadas de trabalho haver&aacute; um per&iacute;odo m&iacute;nimo de "
             "<mark>11 (onze) horas consecutivas</mark> para descanso.",
             "Emendar plant&atilde;o n&atilde;o &eacute; dedica&ccedil;&atilde;o. &Eacute; irregularidade.",
             "Vale entre um plant&atilde;o e o seguinte, inclusive em institui&ccedil;&otilde;es "
@@ -1887,7 +1910,7 @@ POSTS = [
              "exercida, n&atilde;o o nome do cargo no contrato.",
              "<b>Mesmo empregador e mesmo estabelecimento</b> &mdash; depois da reforma, n&atilde;o "
              "basta ser a mesma cidade.",
-             "<b>At&eacute; 4 anos</b> de diferen&ccedil;a de casa e <b>at&eacute; 2 anos</b> na "
+             "<b>At&eacute; 4 anos</b> de diferen&ccedil;a de tempo de casa e <b>at&eacute; 2 anos</b> na "
              "fun&ccedil;&atilde;o, entre voc&ecirc; e o colega comparado.",
              "<b>Sem quadro de carreira</b> &mdash; se existe plano de cargos e sal&aacute;rios, a regra "
              "muda. Vale ler o plano antes."],
@@ -1900,7 +1923,7 @@ POSTS = [
             "1/12", "",
             "Por m&ecirc;s trabalhado. Quando a remunera&ccedil;&atilde;o &eacute; vari&aacute;vel, "
             "a parte vari&aacute;vel entra pela <b>m&eacute;dia</b> &mdash; n&atilde;o pelo pior m&ecirc;s.",
-            "Lei 4.090/1962 &middot; 1&ordf; parcela at&eacute; 30 de novembro, 2&ordf; at&eacute; 20 de dezembro.",
+            "Leis 4.090/1962 e 4.749/1965 &middot; 1&ordf; parcela at&eacute; 30/11. A 2&ordf; vence em 20/12, que em 2026 cai domingo &mdash; antecipa para sexta, 18/12.",
             None, foot_tag="Gratifica&ccedil;&atilde;o<br>natalina")),
     ]),
 

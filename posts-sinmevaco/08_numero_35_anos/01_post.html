@@ -591,6 +591,26 @@ body{font-family:'Poppins',system-ui,sans-serif;color:var(--cream)}
 .t-claro .plot text{fill:rgba(22,35,27,.6)}
 .t-claro .chips span{color:var(--ink);border-color:rgba(140,111,50,.5)}
 .t-claro .eixo,.t-claro .decai .nota{color:rgba(22,35,27,.7)}
+
+/* ==== CORRECOES DE TEMA — ultimo bloco de proposito ====
+   Os dispositivos pintam o <em> com cor propria (.editorial h2 em e
+   .clausula .leitura h2 em usam o verde da marca). Essa regra tem
+   especificidade maior que .t-verde em, entao em fundo verde o destaque
+   sumia -- aconteceu em duas pecas ja agendadas. Aqui as regras tem a
+   MESMA especificidade das do dispositivo e vem depois, entao vencem. */
+.t-verde h1 em,.t-verde h2 em,.t-verde h3 em,.t-verde blockquote em,
+.t-verde .frase em,.t-verde .leitura h2 em{color:#EBDFC0}
+.t-escuro h1 em,.t-escuro h2 em,.t-escuro h3 em,.t-escuro blockquote em,
+.t-escuro .frase em,.t-escuro .leitura h2 em{color:var(--brass-2)}
+.t-claro h1 em,.t-claro h2 em,.t-claro h3 em,.t-claro blockquote em,
+.t-claro .frase em,.t-claro .leitura h2 em{color:var(--navy-3)}
+
+/* A linha de fonte ficava a 45% de opacidade: sobre fundo escuro virava
+   cinza ilegivel. Fonte declarada nao e enfeite -- e o que sustenta a
+   afirmacao, e precisa ser lida. */
+.numero .fonte{opacity:1;color:rgba(255,253,250,.66)}
+.t-claro .numero .fonte{color:rgba(22,35,27,.62)}
+.canvas:has(> .photo) .numero .fonte,.numero:has(> .photo) .fonte{color:rgba(255,253,250,.70)}
 </style></head>
 <body><div class="canvas t-verde v1 numero bg-navy grain">
 <div class="campo"><i></i></div>
