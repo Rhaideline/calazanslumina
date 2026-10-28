@@ -1024,6 +1024,17 @@ SIMBOLO_CIRPED = """<svg viewBox="0 0 200 200" fill="none" stroke="currentColor"
   <path d="M34 182 H 166" opacity=".4"/>
 </svg>"""
 
+SIMBOLO_SERVIDOR = """<svg viewBox="0 0 200 200" fill="none" stroke="currentColor"
+  stroke-width="1.7" stroke-linecap="round">
+  <path d="M100 24 L168 62 H32 Z" opacity=".85"/>
+  <path d="M32 74 H168" opacity=".55"/>
+  <path d="M56 74 V148" opacity=".7"/><path d="M84 74 V148" opacity=".7"/>
+  <path d="M116 74 V148" opacity=".7"/><path d="M144 74 V148" opacity=".7"/>
+  <path d="M34 150 H166"/>
+  <circle cx="100" cy="46" r="5" fill="currentColor" stroke="none"/>
+  <path d="M34 182 H166" opacity=".4"/>
+</svg>"""
+
 
 def foto_se_houver(nome):
     """Devolve o caminho so quando o arquivo existe.
@@ -1984,6 +1995,17 @@ POSTS = [
             None, foot_tag="CLT &middot; arts. 134,<br>143 e 145")),
     ]),
 
+    ("53_dia_servidor_publico", [
+        ("01_post.html", data_medica(
+            "28 de outubro",
+            "Dia do Servidor ",
+            "P&uacute;blico",
+            "Boa parte dos m&eacute;dicos do Vale do A&ccedil;o atende em rede p&uacute;blica. "
+            "A data est&aacute; no art. 236 da Lei 8.112/1990 &mdash; e &eacute; da categoria "
+            "tamb&eacute;m.",
+            SIMBOLO_SERVIDOR,
+            photo=foto_se_houver("fotos/servidor.jpg"))),
+    ]),
     ("46_finados", [
         ("01_post.html", statement(
             "2 de novembro",
@@ -2187,6 +2209,7 @@ RESERVA = [
     "44_assedio_escala", "45_ferias", "46_finados", "47_rescisao",
     "48_prescricao", "49_banco_horas", "50_sem_voce_pedir",
     "51_pergunta_direct", "52_dia_radiologista",
+    "53_dia_servidor_publico",
 ]
 
 ORDEM = [pasta for pasta, _, _ in CALENDARIO] + RESERVA
