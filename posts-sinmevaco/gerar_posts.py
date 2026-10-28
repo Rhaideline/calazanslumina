@@ -364,7 +364,7 @@ def split(bloco_a, bloco_b, counter, photo_a=None, photo_b=None):
                 counter=counter, show_foot=False)
 
 
-def editorial(topo, frase, rodape, counter):
+def editorial(topo, frase, rodape, counter, photo=None):
     return page("editorial", "editorial bg-cream veins", f"""
 <div class="body">
   <div class="top">{topo}</div>
@@ -373,10 +373,10 @@ def editorial(topo, frase, rodape, counter):
   <div class="rule"></div>
   <div class="bottom">{rodape}</div>
 </div>
-""", counter=counter, dark_chrome=True)
+""", counter=counter, dark_chrome=True, photo=photo)
 
 
-def lista(kicker, titulo, itens, counter, foot_tag=None):
+def lista(kicker, titulo, itens, counter, foot_tag=None, photo=None):
     li = "".join(
         f'<div class="item"><div class="n">{i+1}</div><div class="t">{t}</div></div>'
         for i, t in enumerate(itens))
@@ -386,10 +386,10 @@ def lista(kicker, titulo, itens, counter, foot_tag=None):
   <h2>{titulo}</h2>
   {li}
 </div>
-""", counter=counter, foot_tag=foot_tag)
+""", counter=counter, foot_tag=foot_tag, photo=photo)
 
 
-def cta(kicker, titulo, texto, botao, counter=None):
+def cta(kicker, titulo, texto, botao, counter=None, photo=None):
     return page(titulo, "cta bg-navy", f"""
 <div class="body">
   <div class="kicker">{kicker}</div>
@@ -402,10 +402,10 @@ def cta(kicker, titulo, texto, botao, counter=None):
   </div>
   <div class="btn">{botao}</div>
 </div>
-""", counter=counter, foot_tag="Jur&iacute;dico<br>pr&oacute;prio")
+""", counter=counter, foot_tag="Jur&iacute;dico<br>pr&oacute;prio", photo=photo)
 
 
-def statement(lead, titulo, nota, fundo="bg-brass", extra="", foot_tag=None):
+def statement(lead, titulo, nota, fundo="bg-brass", extra="", foot_tag=None, photo=None):
     return page(titulo, f"statement {fundo}", f"""
 <div class="body">
   <div class="lead">{lead}</div>
@@ -413,7 +413,7 @@ def statement(lead, titulo, nota, fundo="bg-brass", extra="", foot_tag=None):
   <h1>{titulo}</h1>
   <div class="note">{nota}</div>
 </div>
-""", foot_tag=foot_tag)
+""", foot_tag=foot_tag, photo=photo)
 
 
 BUBBLE = """<div class="bubble"><div class="file"></div>
@@ -447,12 +447,12 @@ def numero(kicker, valor, unidade, legenda, fonte, counter=None, foot_tag=None, 
 """, counter=counter, foot_tag=foot_tag, photo=photo)
 
 
-def mito_verdade(mito, verdade, counter=None):
+def mito_verdade(mito, verdade, counter=None, photo=None):
     """09 - duas faixas: mito no azul, verdade no bronze."""
     return page("mito x verdade", "mv", f"""
 <div class="faixa mito"><div class="pill">Mito</div><div class="txt">{mito}</div></div>
 <div class="faixa verdade"><div class="pill">Verdade</div><div class="txt">{verdade}</div></div>
-""", counter=counter, show_foot=False)
+""", counter=counter, show_foot=False, photo=photo)
 
 
 def agenda(kicker, dia, mes, semana, titulo, infos, counter=None, foot_tag=None):
@@ -469,7 +469,7 @@ def agenda(kicker, dia, mes, semana, titulo, infos, counter=None, foot_tag=None)
 """, counter=counter, foot_tag=foot_tag)
 
 
-def clausula(head, trecho, titulo, texto, counter=None, foot_tag=None):
+def clausula(head, trecho, titulo, texto, counter=None, foot_tag=None, photo=None):
     """11 - trecho de documento com marca-texto + leitura do que aquilo significa."""
     return page(titulo, "clausula bg-cream veins", f"""
 <div class="body">
@@ -481,10 +481,10 @@ def clausula(head, trecho, titulo, texto, counter=None, foot_tag=None):
   </div>
   <div class="leitura"><h2>{titulo}</h2><p>{texto}</p></div>
 </div>
-""", counter=counter, dark_chrome=True, foot_tag=foot_tag)
+""", counter=counter, dark_chrome=True, foot_tag=foot_tag, photo=photo)
 
 
-def pergunta(kicker, duvida, resposta, nota, counter=None, foot_tag=None):
+def pergunta(kicker, duvida, resposta, nota, counter=None, foot_tag=None, photo=None):
     """12 - pergunta recebida no direct + resposta curta."""
     return page(resposta, "pergunta bg-navy", f"""
 <div class="body">
@@ -493,7 +493,7 @@ def pergunta(kicker, duvida, resposta, nota, counter=None, foot_tag=None):
   <h2>{resposta}</h2>
   <div class="nota">{nota}</div>
 </div>
-""", counter=counter, foot_tag=foot_tag)
+""", counter=counter, foot_tag=foot_tag, photo=photo)
 
 
 # ====== CSS DOS MODELOS 13-17 ======
@@ -938,6 +938,26 @@ BASE_CSS += """
 .t-claro .data-med .frase,.t-claro .frase{color:rgba(22,35,27,.8)}
 /* Numero com foto: scrim preto, mesma decisao da peca de data. O preto
    abaixa a luz sem tingir a imagem, e o numero em dourado mantem contraste. */
+/* REGRA DURA: havendo foto, o texto e sempre claro -- o tema da pasta nao
+   manda aqui. O scrim e preto, e qualquer tinta escura do tema some nele.
+   Usa :has() para alcancar o irmao .photo dentro da mesma canvas. */
+.canvas:has(> .photo) h1,.canvas:has(> .photo) h2,.canvas:has(> .photo) .n,
+.canvas:has(> .photo) .dia,.canvas:has(> .photo) blockquote,
+.canvas:has(> .photo) .t,.canvas:has(> .photo) .logo .name{color:#FFFDFA}
+.canvas:has(> .photo) p,.canvas:has(> .photo) .ask,.canvas:has(> .photo) .cap,
+.canvas:has(> .photo) .note,.canvas:has(> .photo) .lead,.canvas:has(> .photo) .frase,
+.canvas:has(> .photo) .top,.canvas:has(> .photo) .bottom,
+.canvas:has(> .photo) .nota{color:rgba(255,253,250,.88)}
+.canvas:has(> .photo) em,.canvas:has(> .photo) .kicker,.canvas:has(> .photo) .fonte,
+.canvas:has(> .photo) .olho span,.canvas:has(> .photo) .foot .tag{color:#EBDFC0}
+.canvas:has(> .photo) .wm,.canvas:has(> .photo) .logo .sub,
+.canvas:has(> .photo) .pe{color:rgba(255,253,250,.62)}
+.canvas:has(> .photo) .label span{background:rgba(10,74,42,.92);color:#FFFDFA}
+.canvas:has(> .photo) .answer{background:rgba(10,74,42,.94);color:#FFFDFA}
+.cover .photo,.statement .photo{filter:saturate(.82) contrast(1.05)}
+.cover .photo::after,.statement .photo::after{background:
+  linear-gradient(180deg, rgba(0,0,0,.52) 0%, rgba(0,0,0,.70) 42%, rgba(0,0,0,.88) 100%),
+  radial-gradient(120% 60% at 30% 70%, rgba(0,0,0,.30) 0%, rgba(0,0,0,.72) 100%)}
 .numero .photo{filter:saturate(.85) contrast(1.04)}
 .numero .photo::after{background:
   linear-gradient(180deg, rgba(0,0,0,.80) 0%, rgba(0,0,0,.64) 28%, rgba(0,0,0,.82) 66%, rgba(0,0,0,.94) 100%),
@@ -1799,7 +1819,8 @@ POSTS = [
             "e voc&ecirc; terminou o plant&atilde;o <em>sem contar a ningu&eacute;m.</em>",
             "Isso tem consequ&ecirc;ncia?",
             "Tem &mdash; e come&ccedil;a hoje.",
-            "1/5", olho="Caso real", foot_tag="Sa&uacute;de do<br>trabalhador")),
+            "1/5", olho="Caso real", foot_tag="Sa&uacute;de do<br>trabalhador",
+            photo=foto_se_houver("fotos/perfuro.jpg"))),
         ("02_caso.html", split(
             "O medo de parecer descuidado faz muito m&eacute;dico <b>n&atilde;o notificar.</b> "
             "<span class='serif'>O acidente vira segredo.</span>",
@@ -1889,7 +1910,8 @@ POSTS = [
             "e no m&ecirc;s seguinte <em>sobrou s&oacute; plant&atilde;o noturno para voc&ecirc;.</em>",
             "Isso tem nome?",
             "Tem. E tem prova.",
-            "1/5", olho="Caso real", foot_tag="Jur&iacute;dico<br>SINMEVA&Ccedil;O")),
+            "1/5", olho="Caso real", foot_tag="Jur&iacute;dico<br>SINMEVA&Ccedil;O",
+            photo=foto_se_houver("fotos/assedio.jpg"))),
         ("02_caso.html", split(
             "Ningu&eacute;m escreve <b>&ldquo;isso &eacute; puni&ccedil;&atilde;o&rdquo;</b>. "
             "<span class='serif'>A escala apenas muda.</span>",
@@ -1947,7 +1969,8 @@ POSTS = [
             "fecham &mdash; e algu&eacute;m est&aacute; l&aacute;. Trabalho em feriado tem regra "
             "pr&oacute;pria de pagamento ou compensa&ccedil;&atilde;o; confira o seu contracheque "
             "deste m&ecirc;s.",
-            fundo="bg-brass", foot_tag="SINMEVA&Ccedil;O<br>2 de novembro")),
+            fundo="bg-brass", foot_tag="SINMEVA&Ccedil;O<br>2 de novembro",
+            photo=foto_se_houver("fotos/finados.jpg"))),
     ]),
 
     ("47_rescisao", [
@@ -1975,7 +1998,8 @@ POSTS = [
             "s&oacute; d&aacute; para cobrar os <b>&uacute;ltimos cinco anos</b>.",
             "Constitui&ccedil;&atilde;o, art. 7&ordm;, XXIX &middot; CLT, art. 11. Cada m&ecirc;s "
             "parado &eacute; um m&ecirc;s que prescreve.",
-            None, foot_tag="Prescri&ccedil;&atilde;o<br>5 anos / 2 anos")),
+            None, foot_tag="Prescri&ccedil;&atilde;o<br>5 anos / 2 anos",
+            photo=foto_se_houver("fotos/prescricao.jpg"))),
     ]),
 
     ("49_banco_horas", [
@@ -1991,7 +2015,8 @@ POSTS = [
             "e &eacute; a parte que <em>quase ningu&eacute;m v&ecirc;.</em>",
             "O que acontece nos bastidores?",
             "Cinco frentes.",
-            "1/5", olho="Bastidor", foot_tag="SINMEVA&Ccedil;O<br>desde 1991")),
+            "1/5", olho="Bastidor", foot_tag="SINMEVA&Ccedil;O<br>desde 1991",
+            photo=foto_se_houver("fotos/sindicato.jpg"))),
         ("02_caso.html", split(
             "A maioria procura o sindicato <b>no dia do problema.</b> "
             "<span class='serif'>At&eacute; l&aacute;, ele parece n&atilde;o existir.</span>",

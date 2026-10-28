@@ -537,6 +537,26 @@ body{font-family:'Poppins',system-ui,sans-serif;color:var(--cream)}
 .t-claro .data-med .frase,.t-claro .frase{color:rgba(22,35,27,.8)}
 /* Numero com foto: scrim preto, mesma decisao da peca de data. O preto
    abaixa a luz sem tingir a imagem, e o numero em dourado mantem contraste. */
+/* REGRA DURA: havendo foto, o texto e sempre claro -- o tema da pasta nao
+   manda aqui. O scrim e preto, e qualquer tinta escura do tema some nele.
+   Usa :has() para alcancar o irmao .photo dentro da mesma canvas. */
+.canvas:has(> .photo) h1,.canvas:has(> .photo) h2,.canvas:has(> .photo) .n,
+.canvas:has(> .photo) .dia,.canvas:has(> .photo) blockquote,
+.canvas:has(> .photo) .t,.canvas:has(> .photo) .logo .name{color:#FFFDFA}
+.canvas:has(> .photo) p,.canvas:has(> .photo) .ask,.canvas:has(> .photo) .cap,
+.canvas:has(> .photo) .note,.canvas:has(> .photo) .lead,.canvas:has(> .photo) .frase,
+.canvas:has(> .photo) .top,.canvas:has(> .photo) .bottom,
+.canvas:has(> .photo) .nota{color:rgba(255,253,250,.88)}
+.canvas:has(> .photo) em,.canvas:has(> .photo) .kicker,.canvas:has(> .photo) .fonte,
+.canvas:has(> .photo) .olho span,.canvas:has(> .photo) .foot .tag{color:#EBDFC0}
+.canvas:has(> .photo) .wm,.canvas:has(> .photo) .logo .sub,
+.canvas:has(> .photo) .pe{color:rgba(255,253,250,.62)}
+.canvas:has(> .photo) .label span{background:rgba(10,74,42,.92);color:#FFFDFA}
+.canvas:has(> .photo) .answer{background:rgba(10,74,42,.94);color:#FFFDFA}
+.cover .photo,.statement .photo{filter:saturate(.82) contrast(1.05)}
+.cover .photo::after,.statement .photo::after{background:
+  linear-gradient(180deg, rgba(0,0,0,.52) 0%, rgba(0,0,0,.70) 42%, rgba(0,0,0,.88) 100%),
+  radial-gradient(120% 60% at 30% 70%, rgba(0,0,0,.30) 0%, rgba(0,0,0,.72) 100%)}
 .numero .photo{filter:saturate(.85) contrast(1.04)}
 .numero .photo::after{background:
   linear-gradient(180deg, rgba(0,0,0,.80) 0%, rgba(0,0,0,.64) 28%, rgba(0,0,0,.82) 66%, rgba(0,0,0,.94) 100%),
