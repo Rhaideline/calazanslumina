@@ -32,6 +32,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: { absolute: `${curso.nome} em ${capital.nome}, ${capital.siglaEstado}` },
     description: `${curso.descricaoCurta} Para profissionais em ${capital.nome}. ${curso.modulos.length} modulos, ${totalAulas} aulas. ${curso.gratuito ? 'Acesso 100% gratuito. Comece agora →' : `So R$ ${formatPrecoCompacto(curso.preco)}. Acesso vitalicio →`}`,
     alternates: { canonical: `https://calazanslumina.com.br/cursos/${slug}/brasil/${capitalSlug}` },
+    // fora do indice desde 29/out: o curso e online, a pagina so trocava a
+    // cidade (doorway). Ver AUDITORIA-2026-10-29.md
+    robots: { index: false, follow: true },
   }
 }
 
@@ -70,12 +73,6 @@ export default async function CursoCapitalPage({ params }: { params: Promise<{ s
       name: capital.nome,
       containedInPlace: { '@type': 'State', name: capital.estado },
     },
-    review: curso.vsl.depoimentos.map((d) => ({
-      '@type': 'Review',
-      author: { '@type': 'Person', name: d.nome },
-      reviewBody: d.texto,
-      reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
-    })),
   }
 
   const faqSchema = {

@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { servicos, getServicoBySlug } from '@/data/servicos'
 import ScrollReveal from '@/components/ScrollReveal'
 import CTAForm from '@/components/CTAForm'
-import ReviewsWidget from '@/components/ReviewsWidget'
 import HeroForm from '@/components/HeroForm'
 import HeroBadges from '@/components/HeroBadges'
 import Breadcrumb from '@/components/Breadcrumb'
@@ -313,7 +312,6 @@ export default async function ServicoPage({ params }: { params: Promise<{ slug: 
       </section>
 
       {/* ===== 9. REVIEWS ===== */}
-      <ReviewsWidget />
 
       {/* ===== 10. FAQ ===== */}
       <section className="section-padding bg-white">

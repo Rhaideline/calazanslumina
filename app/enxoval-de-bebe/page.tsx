@@ -609,12 +609,8 @@ export default function EnxovalBebePage() {
             priceCurrency: 'BRL',
             availability: 'https://schema.org/InStock',
           },
-          aggregateRating: {
-            '@type': 'AggregateRating',
-            ratingValue: prod.rating,
-            bestRating: 5,
-            ratingCount: prod.likes,
-          },
+          // sem aggregateRating: a nota e os likes sao da Shopee, nao avaliacoes
+          // feitas aqui — o Google trata isso como marcacao enganosa
         },
       }))
     ),

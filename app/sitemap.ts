@@ -27,6 +27,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/para-agencias`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/ferramentas`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE}/enxoval-de-bebe`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${BASE}/privacidade`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${BASE}/termos`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${BASE}/cookies`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
   ]
 
   // Cursos
@@ -90,33 +93,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   )
 
-  // Cursos × Cidades MA
-  const cursosCidadesPages: MetadataRoute.Sitemap = cursos.flatMap((curso) =>
-    cidadesMA.map((c) => ({
-      url: `${BASE}/cursos/${curso.slug}/cidade/${c.slug}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    }))
-  )
-
-  // Cursos × Capitais BR + Cidades BR
-  const cursosCapitaisPages: MetadataRoute.Sitemap = cursos.flatMap((curso) =>
-    allCidadesBR.map((c) => ({
-      url: `${BASE}/cursos/${curso.slug}/brasil/${c.slug}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    }))
-  )
-
-  // Enxoval de Bebê × Cidades BR
-  const enxovalCidadesPages: MetadataRoute.Sitemap = allCidadesBR.map((c) => ({
-    url: `${BASE}/enxoval-de-bebe/${c.slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }))
+  // ⚠️ Cursos × cidade (2.504 URLs) e enxoval × cidade (209) SAIRAM DO
+  // SITEMAP em 29/out/2026 e levam noindex,follow na propria rota. O curso e
+  // online — a pagina por cidade so trocava o nome da cidade (doorway). Ver
+  // AUDITORIA-2026-10-29.md. As rotas continuam no ar para quem tem o link.
 
   return [
     ...staticPages,
@@ -132,8 +112,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // apagar o redirect.
     ...capitaisPages,
     ...capitaisServicosPages,
-    ...cursosCidadesPages,
-    ...cursosCapitaisPages,
-    ...enxovalCidadesPages,
   ]
 }

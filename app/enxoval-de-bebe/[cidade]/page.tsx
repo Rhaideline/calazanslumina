@@ -54,7 +54,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: `Lista completa de enxoval de bebe em ${cidade.nome}. Roupinhas 100% algodao, berco, fraldas e passeio.`,
     },
     robots: {
-      index: true,
+      index: false, // doorway: so trocava a cidade — ver AUDITORIA-2026-10-29.md
       follow: true,
       'max-snippet': -1,
       'max-image-preview': 'large' as const,

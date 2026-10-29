@@ -5,7 +5,6 @@ import { servicos } from '@/data/servicos'
 import ServiceIcon from '@/components/ServiceIcon'
 import ScrollReveal from '@/components/ScrollReveal'
 import CTAForm from '@/components/CTAForm'
-import ReviewsWidget from '@/components/ReviewsWidget'
 import HeroForm from '@/components/HeroForm'
 import HeroBadges from '@/components/HeroBadges'
 import PricingTable from '@/components/PricingTable'
@@ -176,7 +175,7 @@ const localBusinessSchema = {
   },
   areaServed: ['Massachusetts, USA', 'Brasil'],
   priceRange: '$$',
-  image: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6d8ea4c91ee3015cbc.png',
+  image: 'https://calazanslumina.com.br/logo-calazans-lumina.png',
   sameAs: ['https://www.instagram.com/calazanslumina/'],
 }
 
@@ -655,7 +654,6 @@ export default function HomePage() {
       <PricingTable />
 
       {/* ===== REVIEWS ===== */}
-      <ReviewsWidget />
 
       {/* ===== BLOG ===== */}
       <section className="section-padding bg-white" id="blog">

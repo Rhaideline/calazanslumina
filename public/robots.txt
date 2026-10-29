@@ -9,7 +9,8 @@ Disallow: /cursos/acesso/
 # app/cursos/[slug]/aprender/layout.tsx
 Disallow: /cursos/*/aprender
 Disallow: /cursos/*/download
-Disallow: /_next/
+# /_next/ NAO pode ser bloqueado: e de onde vem o CSS, o JS e as imagens.
+# Bloqueado, o Google renderiza a pagina sem estilo e sem foto.
 Disallow: /api/
 
 # AI Crawlers — Explicitly Allowed

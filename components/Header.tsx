@@ -114,10 +114,10 @@ export default function Header() {
         <div className="container-main flex items-center justify-between py-3">
           <Link href="/" className="flex items-center gap-3 group">
             <Image
-              src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6d8ea4c91ee3015cbc.png"
+              src="/logo-calazans-lumina.png"
               alt="Calazans Lumina — Agência de Marketing Digital"
-              width={260}
-              height={80}
+              width={408}
+              height={168}
               className="h-12 md:h-14 w-auto transition-transform duration-300 group-hover:scale-105"
               priority
             />

@@ -42,7 +42,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="xl:col-span-2">
             <Image
-              src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699cdc6d8ea4c91ee3015cbc.png"
+              src="/logo-calazans-lumina.png"
               alt="Calazans Lumina - Agência de Marketing Digital"
               width={220}
               height={70}
@@ -167,6 +167,32 @@ export default function Footer() {
             {' · '}
             <Link href="/brasil" className="hover:text-white/50 transition-colors">ver as 209 cidades</Link>
           </p>
+        </div>
+
+        {/* Identificacao legal + politicas — LGPD (art. 9, I e 41): o titular
+            precisa saber QUEM trata seus dados e como falar com quem trata.
+            O restore de 10/set tinha apagado as tres paginas. */}
+        <div className="border-t border-white/10 pt-6 mb-6">
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 max-w-5xl mx-auto">
+            <div className="text-white/40 text-xs leading-relaxed">
+              <p className="text-white/60 font-medium mb-1">Responsável pelo tratamento de dados</p>
+              <p>Rhaideline Calazans — Calazans Lumina</p>
+              <p>Framingham, Massachusetts, EUA</p>
+              <p>
+                <a href="mailto:calazanslumina@gmail.com" className="hover:text-white/70 transition-colors">
+                  calazanslumina@gmail.com
+                </a>
+              </p>
+            </div>
+            <nav aria-label="Políticas e termos" className="text-white/40 text-xs">
+              <p className="text-white/60 font-medium mb-1">Legal</p>
+              <ul className="space-y-1">
+                <li><Link href="/privacidade" className="hover:text-white/70 transition-colors">Política de Privacidade</Link></li>
+                <li><Link href="/termos" className="hover:text-white/70 transition-colors">Termos de Uso</Link></li>
+                <li><Link href="/cookies" className="hover:text-white/70 transition-colors">Política de Cookies</Link></li>
+              </ul>
+            </nav>
+          </div>
         </div>
 
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">

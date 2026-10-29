@@ -6,7 +6,6 @@ import { servicos, getServicoBySlug } from '@/data/servicos'
 import { cidadesMA, getCidadeMABySlug } from '@/data/cidades-ma'
 import ScrollReveal from '@/components/ScrollReveal'
 import CTAForm from '@/components/CTAForm'
-import ReviewsWidget from '@/components/ReviewsWidget'
 import HeroForm from '@/components/HeroForm'
 import HeroBadges from '@/components/HeroBadges'
 import Breadcrumb from '@/components/Breadcrumb'
@@ -170,7 +169,6 @@ export default async function CidadeServicoPage({ params }: { params: Promise<{ 
       </section>
 
       <PricingTable />
-      <ReviewsWidget />
 
       {/* Outros Serviços */}
       <section className="section-padding bg-brand-bg">

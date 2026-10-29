@@ -27,6 +27,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: { absolute: `${curso.nome} em ${cidade.nome}, MA` },
     description: `${curso.descricaoCurta} Para brasileiros em ${cidade.nome}, MA. ${curso.modulos.length} modulos, ${totalAulas} aulas. ${curso.gratuito ? 'Acesso 100% gratuito. Comece agora →' : `So R$ ${formatPrecoCompacto(curso.preco)}. Acesso vitalicio →`}`,
     alternates: { canonical: `https://calazanslumina.com.br/cursos/${slug}/cidade/${cidadeSlug}` },
+    // fora do indice desde 29/out: o curso e online, a pagina so trocava a
+    // cidade (doorway). Ver AUDITORIA-2026-10-29.md
+    robots: { index: false, follow: true },
   }
 }
 
@@ -64,12 +67,6 @@ export default async function CursoCidadePage({ params }: { params: Promise<{ sl
       name: cidade.nome,
       containedInPlace: { '@type': 'State', name: 'Massachusetts' },
     },
-    review: curso.vsl.depoimentos.map((d) => ({
-      '@type': 'Review',
-      author: { '@type': 'Person', name: d.nome },
-      reviewBody: d.texto,
-      reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
-    })),
   }
 
   const faqSchema = {
