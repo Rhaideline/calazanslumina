@@ -1065,3 +1065,19 @@ nesse estado.
 
 `#SINMEVAÇO #DécimoTerceiro #Plantão #DireitoMédico #MédicosDoValeDoAço #Ipatinga #Timóteo`
 **Âncoras:** Lei 4.090/1962; Lei 4.749/1965.
+
+## 65 — Dia do Hematologista · 29/10
+> Hoje é 29 de outubro, Dia Nacional do Hematologista e do Hemoterapeuta.
+>
+> A data é recente: foi criada pela Lei 14.919/2024. E o nome dela diz uma coisa que quase ninguém repara — são duas frentes de trabalho no mesmo dia. Quem investiga a doença do sangue e quem garante que a transfusão chegue segura no leito.
+>
+> É a especialidade que trabalha na escala do invisível: o diagnóstico sai de uma lâmina, de um mielograma, de um painel que leva dias. Enquanto o resultado não vem, alguém precisa sustentar a conversa com a família sem ter ainda o nome da doença.
+>
+> E é também das poucas em que o médico acompanha o mesmo paciente por anos — do primeiro hemograma alterado até a alta, ou até o fim.
+>
+> O SINMEVAÇO parabeniza os hematologistas e hemoterapeutas do Vale do Aço.
+>
+> Marca um colega da hematologia aqui embaixo.
+
+`#SINMEVAÇO #DiaDoHematologista #Hematologia #Hemoterapia #MédicosDoValeDoAço #Ipatinga #CoronelFabriciano #Timóteo`
+**Âncora:** Lei 14.919/2024. Foto licenciada no Adobe Stock (AdobeStock_289111791); o arquivo de origem não entra no repositório.

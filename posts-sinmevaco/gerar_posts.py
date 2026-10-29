@@ -1035,6 +1035,18 @@ SIMBOLO_SERVIDOR = """<svg viewBox="0 0 200 200" fill="none" stroke="currentColo
   <path d="M34 182 H166" opacity=".4"/>
 </svg>"""
 
+SIMBOLO_HEMATO = """<svg viewBox="0 0 200 200" fill="none" stroke="currentColor"
+  stroke-width="1.7" stroke-linecap="round">
+  <ellipse cx="100" cy="74" rx="38" ry="25" opacity=".9"/>
+  <ellipse cx="100" cy="74" rx="16" ry="10" opacity=".6"/>
+  <ellipse cx="54" cy="108" rx="30" ry="20" opacity=".55"/>
+  <ellipse cx="54" cy="108" rx="12" ry="8" opacity=".35"/>
+  <ellipse cx="146" cy="108" rx="30" ry="20" opacity=".55"/>
+  <ellipse cx="146" cy="108" rx="12" ry="8" opacity=".35"/>
+  <path d="M34 150 H166"/>
+  <path d="M34 182 H166" opacity=".4"/>
+</svg>"""
+
 
 def foto_se_houver(nome):
     """Devolve o caminho so quando o arquivo existe.
@@ -1995,6 +2007,16 @@ POSTS = [
             None, foot_tag="CLT &middot; arts. 134,<br>143 e 145")),
     ]),
 
+    ("65_dia_hematologista", [
+        ("01_post.html", data_medica(
+            "29 de outubro",
+            "Dia do ",
+            "Hematologista",
+            "A data &eacute; nova: veio da Lei 14.919/2024, que criou o Dia Nacional do "
+            "Hematologista <b>e do Hemoterapeuta</b>.",
+            SIMBOLO_HEMATO,
+            photo=foto_se_houver("fotos/hematologista.jpg"))),
+    ]),
     ("54_feriado_em_dobro", [
         ("01_post.html", clausula(
             "Lei 605/1949 &middot; art. 9&ordm;",
@@ -2377,7 +2399,7 @@ RESERVA = [
     "54_feriado_em_dobro", "55_novembro_azul_medico", "56_dsr_hora_extra",
     "57_estabilidade_acidentaria", "58_consciencia_negra", "59_contracheque",
     "60_fgts", "61_assedio_sexual", "62_convencao_coletiva",
-    "63_ferias_em_dobro", "64_primeira_parcela_13",
+    "63_ferias_em_dobro", "64_primeira_parcela_13", "65_dia_hematologista",
 ]
 
 ORDEM = [pasta for pasta, _, _ in CALENDARIO] + RESERVA
