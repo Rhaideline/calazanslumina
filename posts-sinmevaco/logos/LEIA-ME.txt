@@ -1,0 +1,5 @@
+Coloque aqui o logo oficial do SINMEVACO com o nome logo.png
+(PNG com fundo transparente, altura minima 200px).
+
+Ele entra sozinho no selo redondo branco do rodape de todos os slides.
+Enquanto o arquivo nao existir, o selo mostra "MSV" como provisorio.

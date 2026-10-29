@@ -1,0 +1,19 @@
+{
+  "postId": "6aa85aa6265e15caa64d1c14",
+  "parentPostId": "feb3f50e-9bf2-433f-9416-7991b00c66fe",
+  "locationId": "gEs9xx0VPhQ0xvtLESaQ",
+  "status": "scheduled",
+  "scheduleDate": "2026-09-14T20:45:00.000Z",
+  "scheduleDateLocal": "14/09/2026 17:45 (Brasilia)",
+  "canais": ["instagram: sinmevaco", "facebook: Sindicato dos Medicos do Vale do Aco"],
+  "createdBy": "1yhh5oeVrpJzLmRSWUBA",
+  "slides": 6,
+  "midia": "raw.githubusercontent.com, commit f9c906c",
+  "nota_api": "A primeira tentativa, com horario 5 minutos a frente, voltou 422: 'Schedule Date must be after current date'. A API rejeita margem curta demais; nada foi criado nessa tentativa. Refeito com 10 minutos de margem e aceito. Para publicar imediato, usar pelo menos 10 minutos de folga.",
+  "validacao": "GET /posts/{id} devolveu status scheduled e a data correta. O GET traz so a capa no array de media - comportamento conhecido da API. Nao recriar o post por causa disso.",
+  "fontes": [
+    "SBMN e AMB: 14 de setembro instituido como Dia do Medico Nuclear, data de fundacao da SBMN em 14/09/1961",
+    "Norma CNEN NN 3.01, Diretrizes Basicas de Protecao Radiologica: 20 mSv/ano em media de cinco anos, teto de 50 mSv em ano isolado",
+    "Meias-vidas: Fluor-18 ~110 min, Tecnecio-99m ~6 h, Iodo-131 ~8 dias"
+  ]
+}
