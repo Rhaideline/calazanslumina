@@ -667,10 +667,6 @@ export default function FerramentasPage() {
         <div className="container-main">
           <h2 className="font-serif text-2xl font-bold text-brand-dark text-center mb-8">Explore Mais</h2>
           <div className="grid md:grid-cols-4 gap-4 max-w-5xl mx-auto">
-            <Link href="/enxoval-de-bebe" className="bg-white rounded-xl p-5 border border-gray-100 hover:shadow-md transition-shadow text-center">
-              <p className="font-bold text-brand-dark mb-1">Enxoval de Bebe</p>
-              <p className="text-brand-dark/50 text-xs">Checklist completo + PDF gratis</p>
-            </Link>
             <Link href="/blog" className="bg-white rounded-xl p-5 border border-gray-100 hover:shadow-md transition-shadow text-center">
               <p className="font-bold text-brand-dark mb-1">Blog</p>
               <p className="text-brand-dark/50 text-xs">60+ artigos de marketing digital</p>

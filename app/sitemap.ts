@@ -26,7 +26,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/projetos`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/para-agencias`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/ferramentas`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${BASE}/enxoval-de-bebe`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE}/privacidade`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${BASE}/termos`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${BASE}/cookies`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
