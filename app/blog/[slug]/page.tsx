@@ -69,6 +69,9 @@ export default async function BlogPostPage({
     mainEntityOfPage: `https://calazanslumina.com.br/blog/${slug}`,
   }
 
+  const meioDoArtigo =
+    post.conteudo.split('\n').map((l, k) => (l.startsWith('## ') ? k : -1)).filter((k) => k >= 0)[1] ?? -1
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
@@ -141,6 +144,18 @@ export default async function BlogPostPage({
           <ScrollReveal>
             <div className="prose prose-lg max-w-none [&>h2]:font-serif [&>h2]:text-2xl [&>h2]:text-brand-mint [&>h2]:mt-10 [&>h2]:mb-4 [&>p]:text-brand-dark/70 [&>p]:leading-relaxed [&>ul]:text-brand-dark/70 [&>ol]:text-brand-dark/70 [&>blockquote]:border-brand-mint [&>blockquote]:text-brand-dark/60">
               {post.conteudo.split('\n').map((line, i) => {
+                // CTA no meio do artigo: antes do 2o subtitulo (fora dos posts de maternidade)
+                if (i === meioDoArtigo && post.categoria !== 'Maternidade') {
+                  return (
+                    <div key={i}>
+                      <aside className="not-prose my-10 rounded-[1.5rem] bg-brand-dark p-6 text-white md:flex md:items-center md:justify-between md:gap-6">
+                        <p className="text-lg font-semibold leading-snug">Quer isso aplicado no seu negócio, sem você ter que montar?</p>
+                        <a href="#orcamento" className="mt-4 inline-flex shrink-0 items-center rounded-full bg-brand-mint px-6 py-3 text-sm font-bold text-white md:mt-0">Orçamento grátis</a>
+                      </aside>
+                      <h2>{line.replace('## ', '')}</h2>
+                    </div>
+                  )
+                }
                 if (line.startsWith('### ')) {
                   return <h3 key={i} className="font-serif text-xl text-brand-dark mt-8 mb-3">{line.replace('### ', '')}</h3>
                 }

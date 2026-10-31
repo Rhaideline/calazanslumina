@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { servicos, getServicoBySlug } from '@/data/servicos'
 import ScrollReveal from '@/components/ScrollReveal'
 import CTAForm from '@/components/CTAForm'
+import CtaBand from '@/components/cta/CtaBand'
 import HeroForm from '@/components/HeroForm'
 import HeroBadges from '@/components/HeroBadges'
 import Breadcrumb from '@/components/Breadcrumb'
@@ -178,6 +179,8 @@ export default async function ServicoPage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
 
+      <CtaBand titulo={`Se identificou com algum desses?`} texto={`Me conte qual pesa mais hoje. Eu respondo em até 1 dia útil com o que faria primeiro no seu caso.`} botao={servico.cta || 'Quero meu orçamento grátis'} />
+
       {/* ===== 4. SOLUÇÃO ===== */}
       <section className="section-padding bg-white">
         <div className="container-main">
@@ -266,6 +269,8 @@ export default async function ServicoPage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
 
+      <CtaBand tom="vermelho" titulo={`Quer ${servico.nome.toLowerCase()} assim no seu negócio?`} botao="Quero começar" />
+
       {/* ===== 7. DIFERENCIAIS ===== */}
       <section className="section-padding bg-white">
         <div className="container-main max-w-4xl">
@@ -329,6 +334,8 @@ export default async function ServicoPage({ params }: { params: Promise<{ slug: 
           </ScrollReveal>
         </div>
       </section>
+
+      <CtaBand tom="claro" titulo="Ainda ficou alguma dúvida?" texto="Pergunte direto para quem vai fazer o trabalho. Sem compromisso e sem robô." botao="Tirar minha dúvida" />
 
       {/* ===== 11. SEO CONTENT ===== */}
       <section className="section-padding bg-brand-bg">
