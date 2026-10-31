@@ -7,7 +7,8 @@ import { sitesVitrine } from '@/data/sites-clientes'
 import { blogPosts } from '@/data/blog'
 import ServiceIcon from '@/components/ServiceIcon'
 import ScrollReveal from '@/components/ScrollReveal'
-import HeroForm from '@/components/HeroForm'
+import HeroRetratoForm from '@/components/cta/HeroRetratoForm'
+import VideosCarrossel from '@/components/VideosCarrossel'
 import CoursesSection from '@/components/CoursesSection'
 import FAQAccordion from '@/components/FAQAccordion'
 import CtaButton, { WHATSAPP_URL } from '@/components/cta/CtaButton'
@@ -26,7 +27,18 @@ const SITE = 'https://calazanslumina.com.br'
 export const metadata: Metadata = {
   title: { absolute: 'GoHighLevel, Sites e Google para Brasileiros nos EUA | Calazans Lumina' },
   description:
-    'Configuração de GoHighLevel, sites que abrem rápido e Google Meu Negócio para quem empreende nos EUA e no Brasil. O lead é respondido em segundos, de dia ou de noite.',
+    'Configuração de GoHighLevel, sites que abrem rápido e Google Meu Negócio para brasileiros com empresa nos EUA: construção, advocacia, clínica, limpeza.',
+  keywords: [
+    'agência de marketing para brasileiros nos EUA',
+    'GoHighLevel em português',
+    'configuração de GoHighLevel',
+    'marketing para construtora brasileira nos EUA',
+    'marketing para advogado brasileiro nos EUA',
+    'site para empresa brasileira nos Estados Unidos',
+    'Google Meu Negócio para brasileiros',
+    'CRM com IA no WhatsApp',
+    'cursos de marketing digital e IA',
+  ],
   alternates: { canonical: SITE },
   openGraph: {
     title: 'O seu cliente chama. O sistema responde. Você fecha.',
@@ -148,8 +160,7 @@ export default function HomePage() {
             </dl>
           </div>
           <div className="lg:col-span-5" id="formulario-topo">
-            <p className="mb-3 text-sm text-white/60">Orçamento grátis · resposta em até 1 dia útil</p>
-            <HeroForm />
+            <HeroRetratoForm />
           </div>
         </div>
       </section>
@@ -334,7 +345,7 @@ export default function HomePage() {
           <ScrollReveal>
             <div className="rounded-[2rem] bg-white p-2 ring-1 ring-black/5">
               <div className="relative aspect-[4/5] overflow-hidden rounded-[calc(2rem-0.5rem)]">
-                <Image src="/rhai-retrato-2.webp" alt="Rhaideline Calazans, fundadora da Calazans Lumina" fill className="object-cover" sizes="(max-width:1024px) 100vw, 50vw" />
+                <Image src="/foto/rhai-estudio.jpg" alt="Rhaideline Calazans, fundadora da Calazans Lumina" fill className="object-cover" sizes="(max-width:1024px) 100vw, 50vw" />
               </div>
             </div>
           </ScrollReveal>
@@ -352,6 +363,9 @@ export default function HomePage() {
           </ScrollReveal>
         </div>
       </section>
+
+      {/* ===== VIDEOS ===== */}
+      <VideosCarrossel />
 
       {/* ===== 8. CURSOS ===== */}
       <CoursesSection />

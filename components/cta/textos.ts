@@ -26,6 +26,8 @@ export const T = {
       'Me conte onde você está hoje. Eu olho o seu site, o seu Google e como o cliente chega até você, e respondo em até 1 dia útil.',
     bandBotao: 'Quero meu orçamento grátis',
     formIframe: 'Formulário de orçamento',
+    quem: 'Quem lê e responde o seu pedido',
+    videosTitulo: 'Tem uma pessoa aqui. Ela fala, e você decide.',
   },
   en: {
     orcamento: 'Free quote',
@@ -45,5 +47,7 @@ export const T = {
       'Tell me where things stand today. I will look at your site, your Google profile and how customers reach you, and reply within one business day.',
     bandBotao: 'Get my free quote',
     formIframe: 'Quote request form',
+    quem: 'The person who reads and answers your request',
+    videosTitulo: 'There is a real person here. Watch, then decide (videos in Portuguese).',
   },
 } as const

@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import FormSection from './FormSection'
+import VideosCarrossel from '../VideosCarrossel'
 import CtaButton from './CtaButton'
 import { T, WHATSAPP, type Lang } from './textos'
 
@@ -21,12 +22,14 @@ const SEM_CTA = [/^\/cursos\/[^/]+\/aprender/, /^\/cursos\/[^/]+$/]
 export default function GlobalCta({ lang = 'pt' }: { lang?: Lang }) {
   const caminho = usePathname() || '/'
   const [temForm, setTemForm] = useState(true)
+  const [temVideos, setTemVideos] = useState(true)
   const [rolou, setRolou] = useState(false)
   const [formNaTela, setFormNaTela] = useState(false)
   const bloqueada = SEM_CTA.some((r) => r.test(caminho))
 
   useEffect(() => {
     setTemForm(Boolean(document.getElementById('orcamento')))
+    setTemVideos(Boolean(document.querySelector('[data-videos]')))
     const onScroll = () => setRolou(window.scrollY > 400)
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
@@ -46,6 +49,8 @@ export default function GlobalCta({ lang = 'pt' }: { lang?: Lang }) {
 
   return (
     <>
+      {/* videos dela em toda pagina que ainda nao tem (pedido dela, 31/out) */}
+      {!temVideos && <VideosCarrossel titulo={T[lang].videosTitulo} />}
       {!temForm && <FormSection lang={lang} />}
 
       {/* celular: barra inferior */}

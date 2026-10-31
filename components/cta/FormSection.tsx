@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import GhlForm from '../GhlForm'
 import CtaButton from './CtaButton'
 import { T, WHATSAPP, type Lang } from './textos'
@@ -35,6 +36,14 @@ export default function FormSection({
                 </li>
               ))}
             </ul>
+            {/* rosto de quem responde: prova de que existe uma pessoa (pedido dela) */}
+            <figure className="mt-8 flex items-center gap-4">
+              <Image src="/foto/rhai-luz-lateral.webp" alt="Rhaideline Calazans" width={64} height={64} className="h-16 w-16 rounded-full object-cover ring-2 ring-brand-mint/60" />
+              <figcaption>
+                <span className="block font-semibold text-white">Rhaideline Calazans</span>
+                <span className="block text-sm text-white/55">{T[lang].quem}</span>
+              </figcaption>
+            </figure>
             <div className="mt-8">
               <CtaButton href={WHATSAPP[lang]} variante="whatsapp">{T[lang].falarWhats}</CtaButton>
             </div>
