@@ -138,7 +138,8 @@ export default async function ServicoPage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
 
-      {/* ===== 2. STATS BAR ===== */}
+      {/* ===== 2. STATS BAR — so com numero real ===== */}
+      {servico.resultados.length > 0 && (
       <section className="bg-brand-dark py-16 border-t border-white/5">
         <div className="container-main px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -153,6 +154,7 @@ export default async function ServicoPage({ params }: { params: Promise<{ slug: 
           </div>
         </div>
       </section>
+      )}
 
       {/* ===== 3. DORES ===== */}
       <section className="section-padding bg-brand-bg">

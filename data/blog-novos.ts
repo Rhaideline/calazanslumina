@@ -381,7 +381,7 @@ O peso das avaliacoes no ranking local aumentou significativamente. Negocios com
 4. **Dados estruturados**: JSON-LD com LocalBusiness, Service e FAQ schemas
 5. **Citacoes consistentes**: NAP (Nome, Endereco, Telefone) identico em todos os diretorios
 
-> A Calazans Lumina cria sites com SEO local otimizado para mais de 100 cidades. Nosso curso de Google Meu Negocio do Zero ensina a dominar o Maps por R$20.`,
+> A Calazans Lumina cria sites com SEO local para negócios brasileiros nos EUA. Nosso curso de Google Meu Negocio do Zero ensina a dominar o Maps por R$20.`,
     categoria: 'Google',
     imagem: img1,
     dataPublicacao: '10 de Fevereiro de 2026',

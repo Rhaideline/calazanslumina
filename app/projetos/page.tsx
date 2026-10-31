@@ -394,7 +394,7 @@ export default function ProjetosPage() {
             </div>
             <div>
               <p className="text-brand-mint font-bold text-3xl mb-1">Ranking Real</p>
-              <p className="text-white/50 text-sm">Todos os sites com SEO posicionados no Google com resultados comprovados</p>
+              <p className="text-white/50 text-sm">Sites no ar, com o número do Search Console de cada cliente</p>
             </div>
           </div>
         </div>

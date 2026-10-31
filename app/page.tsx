@@ -2,740 +2,397 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { servicos } from '@/data/servicos'
+import { projetos } from '@/data/portfolio'
+import { sitesVitrine } from '@/data/sites-clientes'
+import { blogPosts } from '@/data/blog'
 import ServiceIcon from '@/components/ServiceIcon'
 import ScrollReveal from '@/components/ScrollReveal'
-import CTAForm from '@/components/CTAForm'
 import HeroForm from '@/components/HeroForm'
-import HeroBadges from '@/components/HeroBadges'
-import PricingTable from '@/components/PricingTable'
 import CoursesSection from '@/components/CoursesSection'
-import LazyVideo from '@/components/LazyVideo'
-import PortfolioSites from '@/components/PortfolioSites'
-import { blogPosts } from '@/data/blog'
+import FAQAccordion from '@/components/FAQAccordion'
+import CtaButton, { WHATSAPP_URL } from '@/components/cta/CtaButton'
+import CtaBand from '@/components/cta/CtaBand'
+import FormSection from '@/components/cta/FormSection'
+
+// HOME redesenhada em 31/out/2026. Estrutura de leitura: promessa -> prova ->
+// a noite de um lead (o leitor se ve ali) -> o sistema GHL por dentro ->
+// servicos -> como funciona -> quem faz -> cursos -> duvidas -> formulario.
+// Cada bloco termina num convite. Nada aqui e numero inventado: os numeros de
+// cliente vem do Search Console de cada um (data/portfolio.ts) e o tempo de
+// carregamento foi medido na pagina do cliente (data/sites-clientes.ts).
+
+const SITE = 'https://calazanslumina.com.br'
 
 export const metadata: Metadata = {
-  title: 'Marketing Digital para Brasileiros nos EUA e Brasil',
+  title: { absolute: 'GoHighLevel, Sites e Google para Brasileiros nos EUA | Calazans Lumina' },
   description:
-    'Sites que abrem rápido, funis que respondem o lead na hora, CRM com IA no WhatsApp e Google Meu Negócio. Atendimento em português, para quem empreende nos EUA e no Brasil.',
-  alternates: { canonical: 'https://calazanslumina.com.br' },
+    'Configuração de GoHighLevel, sites que abrem rápido e Google Meu Negócio para quem empreende nos EUA e no Brasil. O lead é respondido em segundos, de dia ou de noite.',
+  alternates: { canonical: SITE },
   openGraph: {
-    title: 'Marketing Digital para Brasileiros nos EUA e Brasil',
-    description: 'Sites, funis no GoHighLevel, CRM com IA e Google Meu Negócio, em português.',
-    url: 'https://calazanslumina.com.br',
+    title: 'O seu cliente chama. O sistema responde. Você fecha.',
+    description: 'GoHighLevel, sites e Google Meu Negócio montados por quem planeja e executa.',
+    url: SITE,
     type: 'website',
   },
 }
 
-const videoSchemas = [
+const faqs = [
   {
-    '@context': 'https://schema.org',
-    '@type': 'VideoObject',
-    name: 'Marketing Digital na Prática — Calazans Lumina',
-    description: 'Dicas práticas de marketing digital para empreendedores brasileiros nos EUA e Brasil',
-    contentUrl: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f81590acb2f32c57fde.mp4',
-    uploadDate: '2025-03-01',
-    publisher: { '@type': 'Organization', name: 'Calazans Lumina', '@id': 'https://calazanslumina.com.br/#organization' },
+    pergunta: 'O que exatamente você configura no GoHighLevel?',
+    resposta:
+      'A conta inteira: dados da empresa, número comercial com o registro A2P (para as mensagens de texto não serem bloqueadas), funil de vendas em etapas, agente de IA que faz a triagem, resposta automática para ligação perdida, lembrete de agendamento, acompanhamento de orçamento e pedido de avaliação no Google. E as integrações: Google Meu Negócio, Gmail, Google Agenda, Facebook e Instagram.',
   },
   {
-    '@context': 'https://schema.org',
-    '@type': 'VideoObject',
-    name: 'Como Atrair Clientes Online — Calazans Lumina',
-    description: 'Estratégias para atrair clientes pela internet com marketing digital',
-    contentUrl: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f811001a525e2e45e93.mp4',
-    uploadDate: '2025-03-01',
-    publisher: { '@type': 'Organization', name: 'Calazans Lumina', '@id': 'https://calazanslumina.com.br/#organization' },
+    pergunta: 'Eu não entendo de tecnologia. Vou conseguir usar?',
+    resposta:
+      'Vai. O dia a dia acontece no aplicativo do celular: as mensagens de todos os canais chegam numa caixa só e você responde de lá. Na entrega tem treinamento gravado mostrando o uso de verdade, e a conta fica no seu nome.',
   },
   {
-    '@context': 'https://schema.org',
-    '@type': 'VideoObject',
-    name: 'Avaliações no Google: Por Que Importam — Calazans Lumina',
-    description: 'Como avaliações no Google Business Profile impactam seu negócio local',
-    contentUrl: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f813eba04ab9649d652.mp4',
-    uploadDate: '2025-03-01',
-    publisher: { '@type': 'Organization', name: 'Calazans Lumina', '@id': 'https://calazanslumina.com.br/#organization' },
+    pergunta: 'Quanto tempo leva?',
+    resposta:
+      'A configuração completa leva de 5 a 7 dias úteis depois que eu recebo os acessos. A aprovação do A2P depende das operadoras americanas e costuma levar de alguns dias a 3 semanas; enquanto isso, ligação, e-mail, Facebook, Instagram e Google já funcionam.',
   },
   {
-    '@context': 'https://schema.org',
-    '@type': 'VideoObject',
-    name: 'Como Conseguir Mais Avaliações 5 Estrelas — Calazans Lumina',
-    description: 'Estratégia para conseguir mais reviews positivos no Google Maps',
-    contentUrl: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f8110bc9c7c8a6841ea.mp4',
-    uploadDate: '2025-03-01',
-    publisher: { '@type': 'Organization', name: 'Calazans Lumina', '@id': 'https://calazanslumina.com.br/#organization' },
+    pergunta: 'Quanto custa?',
+    resposta:
+      'Cada projeto é orçado pelo escopo: quantos canais, quantas automações e se entra site junto. Você recebe a proposta por escrito, com o que está incluso, o que não está e o prazo, antes de pagar qualquer coisa.',
+  },
+  {
+    pergunta: 'Você garante quantidade de clientes?',
+    resposta:
+      'Ninguém honesto garante. O que eu mostro é o que aconteceu nos projetos que estão no ar, com o número do Search Console de cada cliente e o site aberto para você conferir.',
+  },
+  {
+    pergunta: 'Atende quem está no Brasil?',
+    resposta:
+      'Sim. O trabalho é remoto. Para o Brasil o canal principal costuma ser o WhatsApp; para os Estados Unidos, mensagem de texto, ligação e Google.',
   },
 ]
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Qual a melhor agência de marketing digital para brasileiros nos EUA?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'A Calazans Lumina é especializada em marketing digital para brasileiros nos Estados Unidos, com foco em Massachusetts. Oferece sites Next.js, funis GoHighLevel, CRM com IA, gestão de redes sociais e Google Business Profile — tudo em português.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Quanto custa um site profissional na Calazans Lumina?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Sites profissionais começam a partir de R$500 (site básico de 2 páginas). Sites com SEO completo e soluções com automação e IA são sob consulta. Todos os sites usam Next.js com PageSpeed 95+.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'A Calazans Lumina tem cursos de marketing digital e IA?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Sim! A Calazans Lumina oferece 8 cursos online, sendo 4 gratuitos (ChatGPT para Idosos, Ferramentas Digitais para Secretárias, Google Meu Negócio do Zero e Redes Sociais que Vendem) e 4 pagos a R$ 9,90 cada, cobrindo IA, marketing digital e funis de vendas.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'A Calazans Lumina atende no Brasil também?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Sim, a Calazans Lumina atende em todas as 27 capitais brasileiras além de mais de 100 cidades em Massachusetts, EUA. O atendimento é 100% em português e remoto.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'O que é GoHighLevel e como a Calazans Lumina usa essa plataforma?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'GoHighLevel (GHL) é uma plataforma all-in-one de CRM, automação de marketing e funis de vendas. A Calazans Lumina é especialista em GHL e oferece: criação de funis de alta conversão, automações de WhatsApp/email/SMS, chatbot com IA, pipelines de vendas e sub-contas prontas para clínicas de estética. Também atua como freelancer para agências que já usam GHL.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Quais são os cursos gratuitos da Calazans Lumina?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'A Calazans Lumina oferece 4 cursos 100% gratuitos: "ChatGPT para Idosos" (IA para pessoas 60+), "Ferramentas Digitais para Secretárias" (Google Workspace e produtividade), "Google Meu Negócio do Zero" e "Redes Sociais que Vendem". Além deles, 4 cursos por apenas R$ 9,90: IA Completa para Marketing Digital, IA & ChatGPT Completo, Marketing Digital para Iniciantes e Funis de Vendas Simplificado.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Como a Calazans Lumina usa inteligência artificial no marketing digital?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'A Calazans Lumina integra IA em múltiplas frentes: chatbots com IA conversacional no WhatsApp para atendimento 24h, geração de conteúdo com IA para redes sociais e blog, automações inteligentes no GoHighLevel com machine learning, análise preditiva de dados de campanhas e treinamento de robôs de atendimento personalizados para cada negócio.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Quem é Rhaideline Calazans?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Rhaideline Calazans é a fundadora da Calazans Lumina, agência de marketing digital para brasileiros nos EUA e Brasil. Com mais de 8 anos de experiência em marketing digital, é especialista em GoHighLevel, Next.js, SEO, automação de marketing e IA conversacional. Brasileira residente em Framingham, Massachusetts, ela já entregou mais de 100 projetos para empreendedores brasileiros.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'A Calazans Lumina oferece sub-contas GoHighLevel prontas?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Sim! A Calazans Lumina oferece sub-contas GHL prontas para qualquer tipo de empresa — clínicas, construction, energia solar, pintura, serviços em geral. Cada sub-conta vem com automações pré-configuradas (agendamento, lembretes, follow-up, chatbot IA). O modelo inclui uma taxa única de configuração e uma mensalidade. Funis de vendas adicionais são opcionais.',
-      },
-    },
-  ],
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.pergunta, acceptedAnswer: { '@type': 'Answer', text: f.resposta } })),
 }
 
-const speakableSchema = {
+const noite = [
+  { hora: '21:47', sem: 'Um cliente liga. Você está jantando com a família e não atende.', com: 'A ligação perdida dispara uma mensagem na hora: "Oi, aqui é da sua empresa. Como posso ajudar?"' },
+  { hora: '21:49', sem: 'Ele não deixa recado. Abre o Google e liga para o próximo da lista.', com: 'O agente de IA pergunta o que ele precisa, a cidade e o prazo, e pede fotos.' },
+  { hora: '21:55', sem: 'O concorrente atende. Marca a visita para amanhã de manhã.', com: 'Ele escolhe um horário na sua agenda. O cartão entra no funil como "visita marcada".' },
+  { hora: '08:00', sem: 'Você vê a chamada perdida. Liga de volta. "Já resolvi, obrigado."', com: 'Você abre o app, lê o resumo da conversa e chega na visita sabendo o que vai orçar.' },
+]
+
+const sistema = [
+  { t: 'Agente de IA que faz a triagem', d: 'Responde em segundos, faz as perguntas certas do seu negócio e passa para você quando o cliente pede uma pessoa.', grande: true },
+  { t: 'Ligação perdida vira conversa', d: 'Quem liga e não é atendido recebe mensagem na hora, antes de ligar para outro.' },
+  { t: 'Funil de vendas em cartões', d: 'Novo, visita marcada, orçamento enviado, fechado. O cartão anda sozinho a cada etapa.' },
+  { t: 'Uma caixa para tudo', d: 'SMS, WhatsApp, Facebook, Instagram, Google e e-mail no mesmo aplicativo.' },
+  { t: 'Número comercial com A2P', d: 'Número dos EUA registrado nas operadoras, para as mensagens chegarem e não caírem como spam.' },
+  { t: 'Avaliação no Google no automático', d: 'Depois do serviço, todo cliente recebe o pedido de avaliação com o link direto.' },
+]
+
+const passos = [
+  { n: '01', t: 'Diagnóstico', d: 'Antes da proposta, eu olho de onde vem o seu cliente hoje, quem responde, em quanto tempo e onde ele se perde.' },
+  { n: '02', t: 'Proposta por escrito', d: 'Escopo, prazo e valor. O que está incluso, o que não está, e o custo das plataformas separado.' },
+  { n: '03', t: 'Montagem', d: 'Eu mesma configuro e testo tudo: ligo, mando mensagem e preencho o formulário como se fosse cliente.' },
+  { n: '04', t: 'Entrega e treino', d: 'A conta fica no seu nome. Você recebe o treinamento gravado e 15 dias de ajustes.' },
+]
+
+const schemaPagina = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
-  '@id': 'https://calazanslumina.com.br/#webpage',
-  name: 'Calazans Lumina — Marketing Digital para Brasileiros nos EUA e Brasil',
-  speakable: {
-    '@type': 'SpeakableSpecification',
-    cssSelector: ['#sobre-a-agencia h2', '#sobre-a-agencia p'],
-  },
-  mainEntity: { '@id': 'https://calazanslumina.com.br/#organization' },
+  '@id': `${SITE}/#webpage`,
+  url: SITE,
+  name: 'Calazans Lumina — GoHighLevel, sites e Google Meu Negócio',
+  inLanguage: 'pt-BR',
+  isPartOf: { '@id': `${SITE}/#website` },
+  about: { '@id': `${SITE}/#organization` },
 }
-
-const localBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'Calazans Lumina',
-  description: 'Agência de marketing digital especializada em brasileiros nos EUA e Brasil. Sites profissionais, funis de vendas, CRM com IA e Google Business Profile.',
-  url: 'https://calazanslumina.com.br',
-  telephone: '+5531982948067',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Framingham',
-    addressRegion: 'MA',
-    addressCountry: 'US',
-  },
-  founder: {
-    '@type': 'Person',
-    name: 'Rhaideline Calazans',
-  },
-  areaServed: ['Massachusetts, USA', 'Brasil'],
-  priceRange: '$$',
-  image: 'https://calazanslumina.com.br/logo-calazans-lumina.png',
-  sameAs: ['https://www.instagram.com/calazanslumina/'],
-}
-
-const portfolioImages = [
-  { src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d624c8da2a02097df7b.png', alt: 'Site profissional desenvolvido pela Calazans Lumina — layout moderno e responsivo', segmento: 'Site Profissional' },
-  { src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d62df9bdf1a8f06e132.png', alt: 'Landing page de alta conversão para captação de leads — design premium Calazans Lumina', segmento: 'Landing Page' },
-  { src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d6255d8bc91e4457164.png', alt: 'Site institucional para empresa brasileira nos EUA — Calazans Lumina', segmento: 'Site Institucional' },
-  { src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d6220c0352e5305e8cc.png', alt: 'Página de vendas otimizada para conversão — portfolio Calazans Lumina', segmento: 'Página de Vendas' },
-  { src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d62df9bdfed7506e133.png', alt: 'Design responsivo para negócios locais em Massachusetts', segmento: 'Negócio Local' },
-  { src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d6255d8bc22d845716a.png', alt: 'Site de serviços profissionais para empreendedores brasileiros', segmento: 'Serviços Profissionais' },
-]
-
-const performanceImages = [
-  { src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3d624c8da285cc97df7c.png', alt: 'Dashboard de performance de campanhas — métricas reais Calazans Lumina' },
-  { src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3f13f714ee618fd93ca5.png', alt: 'Relatório de performance digital — métricas de conversão e ROI' },
-  { src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3f1320c035efa006b443.png', alt: 'Métricas de crescimento orgânico — SEO local para brasileiros' },
-  { src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3f1355d8bc19b9463b26.png', alt: 'Performance de landing page — taxa de conversão otimizada' },
-  { src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3f1355d8bc676d463b27.png', alt: 'Dashboard de leads — funil de vendas automatizado GHL' },
-  { src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b3f1320c035699706b444.png', alt: 'Relatório de redes sociais — crescimento de engajamento' },
-]
-
-const automacaoImages = [
-  { src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b406720c0355e60076365.png', alt: 'Fluxo de automação GoHighLevel — pipeline de vendas automatizado' },
-  { src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b410c4c8da2445e99c973.png', alt: 'Workflow GHL com disparo automático de WhatsApp, email e SMS' },
-  { src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b418ddf9bdf249608cf87.png', alt: 'Robô de IA conversacional no WhatsApp — atendimento 24h automatizado' },
-]
-
-const cidadesMA = [
-  'Framingham', 'Marlborough', 'Hudson', 'Worcester', 'Cambridge', 'Newton',
-  'Brookline', 'Quincy', 'Somerville', 'Waltham', 'Natick', 'Milford',
-  'Shrewsbury', 'Wellesley', 'Lexington', 'Arlington', 'Watertown', 'Medford',
-  'Malden', 'Braintree', 'Weymouth', 'Dedham', 'Norwood', 'Franklin',
-]
-
-const capitaisBR = [
-  'São Paulo', 'Rio de Janeiro', 'Belo Horizonte', 'Brasília', 'Salvador',
-  'Fortaleza', 'Recife', 'Curitiba', 'Porto Alegre', 'Florianópolis',
-  'Goiânia', 'Manaus', 'Vitória', 'Natal',
-]
-
-const problemasSolucoes = [
-  { problema: 'Seu site não aparece no Google', solucao: 'SEO técnico + conteúdo otimizado + Google Business Profile' },
-  { problema: 'Leads chegam e somem', solucao: 'Funil automatizado com follow-up por WhatsApp, email e SMS' },
-  { problema: 'Instagram parado, sem engajamento', solucao: 'Gestão estratégica com conteúdo que gera leads, não só curtidas' },
-  { problema: 'Gasta com anúncio sem retorno', solucao: 'Campanhas otimizadas com landing page + tracking completo de ROI' },
-  { problema: 'Ninguém responde seus leads a tempo', solucao: 'Robô de IA 24h no WhatsApp + CRM organizado com pipeline' },
-  { problema: 'Concorrente domina o Google Maps', solucao: 'Google Business Profile otimizado + estratégia de reviews' },
-]
 
 export default function HomePage() {
+  const casos = projetos.filter((p) => p.url).slice(0, 3)
+  const ultimos = blogPosts.filter((p) => p.categoria !== 'Maternidade').slice(0, 3)
+
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify([localBusinessSchema, ...videoSchemas, faqSchema, speakableSchema]) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([faqSchema, schemaPagina]) }} />
 
-      {/* ===== HERO — background image + overlay + form on right ===== */}
-      <section className="relative min-h-[85vh] flex items-center">
-        {/* Background Image */}
-        <Image
-          src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/67d74aa28b2801643ac3f117.jpeg"
-          alt="Rhaideline Calazans — Especialista em Marketing Digital para Brasileiros nos EUA e Brasil"
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-          fetchPriority="high"
-        />
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-brand-dark/85" />
-
-        <div className="container-main section-padding relative z-10 text-white">
-          <div className="grid lg:grid-cols-5 gap-10 lg:gap-12 items-center">
-            {/* Left Content — 3 cols */}
-            <div className="lg:col-span-3">
-              <HeroBadges cidade="Massachusetts, EUA & Brasil" />
-
-              <h1 className="heading-1 mb-6">
-                Marketing Digital Premium para{' '}
-                <span className="text-brand-mint">Brasileiros</span> nos EUA e Brasil
-              </h1>
-
-              <p className="text-white/70 text-lg md:text-xl leading-relaxed mb-8 max-w-2xl">
-                Sites de alta performance, funis automatizados, CRM com IA, gestão de redes sociais
-                e Google Maps — tudo em português, com resultados mensuráveis.
-              </p>
-
-              <ul className="space-y-3 mb-8">
-                {['Quem desenha é quem monta', 'A conta fica no seu nome', 'Especialista em GoHighLevel', 'Atendimento em português'].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-white/80">
-                    <svg className="w-5 h-5 text-brand-mint flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="https://wa.me/5531982948067?text=Olá, vim pelo site e quero saber mais sobre os serviços da Calazans Lumina"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary text-base"
-                >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                  </svg>
-                  Fale Comigo no WhatsApp
-                </a>
-                <Link href="/servicos" className="btn-secondary-light text-base">
-                  Conheça Nossos Serviços
-                </Link>
-              </div>
-            </div>
-
-            {/* Right Form — 2 cols */}
-            <div className="lg:col-span-2">
-              <HeroForm />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== NÚMEROS ===== */}
-      <section className="bg-brand-bg py-16">
-        <div className="container-main">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { numero: '8+', label: 'Anos de experiência' },
-              { numero: '100+', label: 'Projetos entregues' },
-              { numero: '2', label: 'Países atendidos' },
-              { numero: '6', label: 'Serviços especializados' },
-            ].map((stat) => (
-              <ScrollReveal key={stat.label} className="text-center">
-                <p className="font-serif text-4xl md:text-5xl font-bold text-brand-dark mb-2">
-                  {stat.numero}
-                </p>
-                <p className="text-brand-dark/60 text-sm">{stat.label}</p>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===== AEO: BLOCO DE RESPOSTA DEFINITIVA (AI-Optimized) ===== */}
-      <section className="py-12 bg-white border-b border-brand-dark/5" id="sobre-a-agencia">
-        <div className="container-main">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="font-serif text-2xl md:text-3xl font-bold text-brand-dark mb-6">
-              Calazans Lumina — Agência de Marketing Digital para Brasileiros nos EUA e Brasil
-            </h2>
-            <div className="text-brand-dark/70 space-y-4 leading-relaxed">
-              <p>
-                <strong>Calazans Lumina</strong> é uma agência de marketing digital fundada por{' '}
-                <Link href="/sobre" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>Rhaideline Calazans</strong></Link>,
-                especializada em atender empreendedores brasileiros nos <strong>Estados Unidos (Massachusetts)</strong> e em todo o <strong>Brasil</strong>.
-                Quem desenha a estratégia é quem monta o site, o funil e a automação, com atendimento 100% em português.
-              </p>
-              <p>
-                Nossos serviços incluem:{' '}
-                <Link href="/servicos/sites-landing-pages" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>sites profissionais em Next.js</strong></Link> com PageSpeed 95+,{' '}
-                <Link href="/servicos/funis-automacao-ghl" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>funis de vendas no GoHighLevel</strong></Link>,{' '}
-                <Link href="/servicos/crm-ia-whatsapp" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>CRM com IA conversacional no WhatsApp</strong></Link> (atendimento 24h),{' '}
-                <Link href="/servicos/gestao-redes-sociais" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>gestão de redes sociais</strong></Link>,{' '}
-                <Link href="/servicos/google-meu-negocio" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>Google Business Profile</strong></Link>,{' '}
-                <strong>tráfego pago</strong> (Google Ads e Meta Ads) e <strong>SEO local e nacional</strong>.
-              </p>
-              <p>
-                Também oferecemos{' '}
-                <Link href="/cursos" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>8 cursos online</strong></Link> sobre marketing digital e inteligência artificial — incluindo
-                4 cursos gratuitos (<Link href="/cursos/chatgpt-para-idosos" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>ChatGPT para Idosos</em></Link>,{' '}
-                <Link href="/cursos/ferramentas-digitais-secretarias" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Ferramentas Digitais para Secretárias</em></Link>,{' '}
-                <Link href="/cursos/google-meu-negocio-do-zero" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Google Meu Negócio do Zero</em></Link>{' '}
-                e <Link href="/cursos/redes-sociais-que-vendem" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Redes Sociais que Vendem</em></Link>) e
-                4 cursos acessíveis a R$ 9,90 cada (<Link href="/cursos/ia-chatgpt-completo" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>IA & ChatGPT Completo</em></Link>,{' '}
-                <Link href="/cursos/ia-marketing-digital-iniciantes" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>IA Completa para Marketing Digital</em></Link>,{' '}
-                <Link href="/cursos/marketing-digital-iniciantes" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Marketing Digital para Iniciantes</em></Link>{' '}
-                e <Link href="/cursos/funis-de-vendas-simplificado" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><em>Funis de Vendas Simplificado</em></Link>).
-              </p>
-              <p>
-                Atendemos brasileiros em mais de <strong>100 cidades de Massachusetts</strong> (Framingham, Marlborough, Hudson, Worcester, Boston e muitas outras)
-                e em todas as <strong>27 capitais do Brasil</strong>. Também atuamos como{' '}
-                <Link href="/para-agencias" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>freelancer para agências</strong></Link> de marketing
-                e oferecemos <Link href="/para-agencias" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>sub-contas GoHighLevel prontas para empresas de qualquer nicho</strong></Link>.
-              </p>
-              <p>
-                Confira nosso <Link href="/blog" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>blog com 60+ artigos gratuitos</strong></Link> sobre marketing digital, SEO, IA e automação,
-                e nosso <Link href="/projetos" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>portfólio de projetos</strong></Link> com resultados reais.
-                Para orçamento gratuito, visite nossa <Link href="/contato" className="text-brand-dark underline underline-offset-2 hover:text-brand-mint transition-colors"><strong>página de contato</strong></Link>.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== PROBLEMA/SOLUÇÃO ===== */}
-      <section className="section-padding bg-white">
-        <div className="container-main">
-          <ScrollReveal className="text-center mb-16">
-            <h2 className="heading-2 text-brand-dark mb-4">
-              Você se identifica com algum desses{' '}
-              <span className="text-brand-mint">problemas?</span>
-            </h2>
-            <p className="text-brand-dark/60 text-lg max-w-2xl mx-auto">
-              A maioria dos empreendedores brasileiros enfrenta os mesmos desafios. A boa notícia: todos têm solução.
+      {/* ===== 1. HERO ===== */}
+      <section className="relative overflow-hidden bg-[#070707] text-white">
+        <div className="pointer-events-none absolute -right-40 -top-40 h-[40rem] w-[40rem] rounded-full bg-brand-mint/20 blur-3xl" aria-hidden="true" />
+        <div className="pointer-events-none absolute -left-20 bottom-0 h-80 w-80 rounded-full bg-brand-mint/10 blur-3xl" aria-hidden="true" />
+        <div className="container-main relative grid items-center gap-12 py-16 md:py-24 lg:grid-cols-12">
+          <div className="lg:col-span-7">
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-white/80">
+              <span className="h-1.5 w-1.5 rounded-full bg-brand-mint" /> GoHighLevel · Sites · Google
+            </span>
+            <h1 className="mt-6 font-serif text-[2.6rem] leading-[1.02] sm:text-6xl lg:text-7xl font-bold">
+              O seu cliente chama.
+              <br />
+              O sistema responde.
+              <br />
+              <span className="text-brand-mint">Você fecha.</span>
+            </h1>
+            <p className="mt-7 max-w-xl text-lg md:text-xl leading-relaxed text-white/70">
+              Eu configuro o seu GoHighLevel, o seu site e o seu Google para que nenhum cliente fique sem resposta, de dia ou
+              de noite. Para quem empreende nos Estados Unidos e no Brasil.
             </p>
-          </ScrollReveal>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {problemasSolucoes.map((item, i) => (
-              <ScrollReveal key={i} delay={i * 100}>
-                <div className="card-premium h-full">
-                  <div className="flex items-start gap-3 mb-3">
-                    <svg className="w-5 h-5 text-red-500/80 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                    <h3 className="text-lg font-bold text-red-500/80">{item.problema}</h3>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-brand-mint flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <p className="text-brand-mint font-medium text-sm">Solução: {item.solucao}</p>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===== SERVIÇOS ===== */}
-      <section className="section-padding bg-brand-bg" id="servicos">
-        <div className="container-main">
-          <ScrollReveal className="text-center mb-16">
-            <h2 className="heading-2 text-brand-dark mb-4">
-              Nossos <span className="text-brand-mint">Serviços</span>
-            </h2>
-            <p className="text-brand-dark/60 text-lg max-w-2xl mx-auto">
-              Soluções completas de marketing digital, do primeiro clique ao fechamento.
-            </p>
-          </ScrollReveal>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {servicos.map((servico, i) => (
-              <ScrollReveal key={servico.slug} delay={i * 100}>
-                <Link href={`/servicos/${servico.slug}`} className="card-premium block h-full group">
-                  <ServiceIcon name={servico.icone} className="w-10 h-10 text-brand-mint mb-4" />
-                  <h3 className="text-xl font-bold text-brand-dark mb-3 group-hover:text-brand-mint transition-colors">
-                    {servico.nome}
-                  </h3>
-                  <p className="text-brand-dark/60 text-sm mb-6 leading-relaxed">{servico.descricaoCurta}</p>
-                  <span className="inline-flex items-center gap-2 text-brand-mint text-sm font-medium group-hover:gap-3 transition-all">
-                    {servico.cta}
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </span>
-                </Link>
-              </ScrollReveal>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Link href="/servicos" className="inline-flex items-center gap-2 text-brand-mint hover:text-brand-dark font-medium transition-colors">
-              Ver todos os serviços
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== CURSOS ===== */}
-      <CoursesSection />
-
-      {/* ===== CONTEUDO EM VIDEO ===== */}
-      <section className="section-padding bg-brand-dark text-white" id="videos">
-        <div className="container-main">
-          <ScrollReveal className="text-center mb-16">
-            <p className="text-brand-mint font-medium mb-2 text-sm uppercase tracking-wider">Assista e aprenda</p>
-            <h2 className="heading-2 mb-4">
-              Conteudo em <span className="text-brand-mint">Video</span>
-            </h2>
-            <p className="text-white/50 text-lg max-w-2xl mx-auto">
-              Dicas praticas de marketing digital, ferramentas e estrategias para fazer seu negocio crescer.
-            </p>
-          </ScrollReveal>
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f81590acb2f32c57fde.mp4',
-                label: 'Marketing Digital na Prática',
-              },
-              {
-                src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f811001a525e2e45e93.mp4',
-                label: 'Como Atrair Clientes Online',
-              },
-              {
-                src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f813eba04ab9649d652.mp4',
-                label: 'Avaliações no Google: Por Que Importam',
-              },
-              {
-                src: 'https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699c9f8110bc9c7c8a6841ea.mp4',
-                label: 'Como Conseguir Mais Avaliações 5 Estrelas',
-              },
-            ].map((video, i) => (
-              <ScrollReveal key={i} delay={i * 150}>
-                <div className="bg-white/5 rounded-2xl overflow-hidden border border-white/10">
-                  <LazyVideo src={video.src} />
-                  <div className="p-4">
-                    <p className="text-brand-mint font-bold text-sm uppercase tracking-wider mb-1">
-                      Video {i + 1}
-                    </p>
-                    <h3 className="text-white font-serif text-lg font-bold">
-                      {video.label}
-                    </h3>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===== SOBRE RHAIDELINE ===== */}
-      <section className="section-padding bg-brand-bg" id="sobre">
-        <div className="container-main">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <ScrollReveal>
-              <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-br from-black/20 to-black/5 rounded-3xl blur-2xl" />
-                <Image
-                  src="https://assets.cdn.filesafe.space/MR3yMqtdBa4732pi4ZCw/media/699b435a20c0357f3208c418.jpeg"
-                  alt="Rhaideline Calazans — 8 anos de experiência em marketing digital, fundadora da Calazans Lumina"
-                  width={600}
-                  height={700}
-                  className="rounded-3xl relative z-10 w-full object-cover"
-                />
-              </div>
-            </ScrollReveal>
-            <ScrollReveal delay={200}>
-              <p className="text-brand-mint font-medium mb-2 text-sm uppercase tracking-wider">Quem está por trás</p>
-              <h2 className="heading-2 text-brand-dark mb-6">Rhaideline Calazans</h2>
-              <div className="space-y-4 text-brand-dark/70 leading-relaxed">
-                <p>
-                  Depois de 14 anos como secretária médica, Rhaideline decidiu empreender por conta própria
-                  em 2018 — com uma filha de 12 anos e muita coragem. Começou importando produtos dos EUA
-                  e vendendo em marketplaces brasileiros, onde aprendeu na prática o que é ranquear produtos,
-                  otimizar anúncios e construir presença digital do zero.
-                </p>
-                <p>
-                  Hoje, com <strong>8 anos de experiência</strong>, atende brasileiros em Massachusetts e no
-                  Brasil, transformando negócios do &quot;boca a boca&quot; em máquinas previsíveis de geração de leads.
-                </p>
-                <p className="font-medium text-brand-dark">
-                  Ela não é só especialista em ferramentas — ela viveu o que é ser dona de negócio.
-                </p>
-              </div>
-              <div className="grid grid-cols-3 gap-4 mt-8">
-                {[
-                  { valor: '8+', desc: 'anos' },
-                  { valor: '100+', desc: 'projetos' },
-                  { valor: '2', desc: 'países' },
-                ].map((s) => (
-                  <div key={s.desc} className="text-center bg-white rounded-xl p-4 shadow-sm">
-                    <p className="font-serif text-2xl font-bold text-brand-dark">{s.valor}</p>
-                    <p className="text-brand-dark/50 text-xs">{s.desc}</p>
-                  </div>
-                ))}
-              </div>
-              <Link href="/sobre" className="btn-primary mt-8 inline-flex bg-brand-dark text-white hover:bg-brand-dark/90">
-                Conheça minha história completa
-              </Link>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      <PortfolioSites />
-
-      {/* ===== PORTFÓLIO ===== */}
-      <section className="section-padding bg-brand-dark text-white" id="portfolio">
-        <div className="container-main">
-          <ScrollReveal className="text-center mb-16">
-            <h2 className="heading-2 mb-4">Projetos que <span className="text-brand-mint">geram resultados</span></h2>
-          </ScrollReveal>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {portfolioImages.map((img, i) => (
-              <ScrollReveal key={i} delay={i * 100}>
-                <div className="group relative overflow-hidden rounded-2xl aspect-video">
-                  <Image src={img.src} alt={img.alt} fill className="object-cover transition-transform duration-500 group-hover:scale-110" sizes="(max-width: 768px) 100vw, 33vw" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                    <span className="text-white font-semibold">{img.segmento}</span>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-          <div className="text-center mt-10">
-            <Link href="/projetos" className="btn-secondary-light">Ver todos os projetos</Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== RESULTADOS ===== */}
-      <section className="section-padding bg-brand-bg">
-        <div className="container-main">
-          <ScrollReveal className="text-center mb-16">
-            <h2 className="heading-2 text-brand-dark mb-4">Resultados reais, números reais</h2>
-          </ScrollReveal>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {performanceImages.map((img, i) => (
-              <ScrollReveal key={i} delay={i * 100}>
-                <div className="rounded-2xl overflow-hidden shadow-lg bg-white">
-                  <Image src={img.src} alt={img.alt} width={600} height={400} className="w-full h-auto" />
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===== AUTOMAÇÕES GHL ===== */}
-      <section className="section-padding bg-brand-dark text-white relative overflow-hidden">
-        <div className="container-main relative z-10">
-          <ScrollReveal className="text-center mb-6">
-            <p className="text-brand-mint font-medium mb-2 text-sm uppercase tracking-wider">GoHighLevel</p>
-            <h2 className="heading-2 mb-4">Automações & <span className="text-brand-mint">IA que trabalham por você</span></h2>
-            <p className="text-white/50 max-w-2xl mx-auto">
-              CRM, funis, inbox unificada, calendário, automações e IA conversacional — tudo numa plataforma.
-              Enquanto você foca no seu negócio, o sistema trabalha 24h captando e nutrindo leads.
-            </p>
-          </ScrollReveal>
-
-          {/* GHL Feature highlights */}
-          <ScrollReveal className="mb-12">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto">
-              {[
-                { label: 'Inbox Unificada', sub: 'WhatsApp + SMS + Email + DMs' },
-                { label: 'Pipelines Visuais', sub: 'Gerencie leads etapa por etapa' },
-                { label: 'Workflows Automáticos', sub: 'Follow-up no piloto automático' },
-                { label: 'Calendário Integrado', sub: 'Agendamento + lembretes automáticos' },
-              ].map((f) => (
-                <div key={f.label} className="bg-white/5 rounded-xl p-4 text-center border border-white/5">
-                  <p className="text-brand-mint font-bold text-sm">{f.label}</p>
-                  <p className="text-white/40 text-xs mt-1">{f.sub}</p>
-                </div>
-              ))}
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <CtaButton>Quero meu orçamento grátis</CtaButton>
+              <CtaButton href={WHATSAPP_URL} variante="whatsapp">Falar no WhatsApp</CtaButton>
             </div>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {automacaoImages.map((img, i) => (
-              <ScrollReveal key={i} delay={i * 150}>
-                <div className="card-dark overflow-hidden p-0">
-                  <Image src={img.src} alt={img.alt} width={600} height={400} className="w-full h-auto" />
-                  <div className="p-6">
-                    <h3 className="text-brand-mint font-bold text-sm mb-2">
-                      {i === 0 && 'CRM & Pipeline de Vendas'}
-                      {i === 1 && 'Workflows Multicanal'}
-                      {i === 2 && 'IA Conversacional 24h'}
-                    </h3>
-                    <p className="text-white/70 text-sm leading-relaxed">
-                      {i === 0 && 'Pipeline visual no GoHighLevel — cada lead organizado por etapa, com automações de movimentação, tarefas e notificações. Do primeiro contato ao fechamento.'}
-                      {i === 1 && 'Workflows automáticos com disparo de WhatsApp, email e SMS em sequência. Missed call text-back, follow-up de leads e nurturing — tudo visual.'}
-                      {i === 2 && 'Robô de IA treinado com dados do seu negócio que atende no WhatsApp 24h, responde perguntas, agenda consultas e qualifica leads antes de chegar a você.'}
-                    </p>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
+            <dl className="mt-12 grid max-w-xl grid-cols-3 gap-6 border-t border-white/10 pt-8">
+              <div><dt className="text-xs text-white/50">Wolf&apos;s Siding</dt><dd className="mt-1 font-serif text-3xl font-bold">+706%</dd><dd className="text-xs text-white/50">cliques</dd></div>
+              <div><dt className="text-xs text-white/50">RS Development</dt><dd className="mt-1 font-serif text-3xl font-bold">88 mil</dd><dd className="text-xs text-white/50">impressões/mês</dd></div>
+              <div><dt className="text-xs text-white/50">JH Painting</dt><dd className="mt-1 font-serif text-3xl font-bold">24/7</dd><dd className="text-xs text-white/50">atendimento com IA</dd></div>
+            </dl>
+          </div>
+          <div className="lg:col-span-5" id="formulario-topo">
+            <p className="mb-3 text-sm text-white/60">Orçamento grátis · resposta em até 1 dia útil</p>
+            <HeroForm />
           </div>
         </div>
       </section>
 
-      {/* ===== PACOTES ===== */}
-      <PricingTable />
-
-      {/* ===== REVIEWS ===== */}
-
-      {/* ===== BLOG ===== */}
-      <section className="section-padding bg-white" id="blog">
+      {/* ===== 2. PROVA ===== */}
+      <section className="bg-white py-24 md:py-32">
         <div className="container-main">
-          <ScrollReveal className="text-center mb-16">
-            <h2 className="heading-2 text-brand-dark mb-4">Conteúdo que <span className="text-brand-mint">educa e converte</span></h2>
+          <ScrollReveal className="max-w-3xl">
+            <span className="inline-block rounded-full bg-brand-bg px-3 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-brand-dark/60">Prova, não promessa</span>
+            <h2 className="mt-5 font-serif text-4xl md:text-6xl font-bold leading-[1.05] text-brand-dark">O que aconteceu depois que o sistema entrou no ar</h2>
+            <p className="mt-5 text-lg text-brand-dark/60">Números do Search Console de cada cliente. Os sites estão no ar: abra e confira.</p>
           </ScrollReveal>
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* ⚠️ LER DO DADO, NUNCA ESCREVER SLUG A MAO AQUI.
-                Ate 20/set/2026 estes tres cartoes eram escritos a mao no JSX,
-                e DOIS deles apontavam para artigos que nao existem: o slug
-                tinha sido encurtado e o artigo real tem o slug longo. A home
-                linkava dois 404. Lendo de blogPosts o erro nao pode voltar. */}
-            {blogPosts.slice(0, 3).map((post, i) => (
-              <ScrollReveal key={i} delay={i * 150}>
-                <Link href={`/blog/${post.slug}`} className="group block">
-                  <div className="card-premium overflow-hidden p-0">
-                    <div className="relative aspect-video overflow-hidden">
-                      <Image src={post.imagem} alt={post.titulo} fill className="object-cover transition-transform duration-500 group-hover:scale-110" sizes="33vw" />
-                      <div className="absolute top-4 left-4">
-                        <span className="bg-brand-mint/90 text-white text-xs font-bold px-3 py-1 rounded-full">{post.categoria}</span>
-                      </div>
+          <div className="mt-16 grid gap-6 lg:grid-cols-3">
+            {casos.map((p, i) => (
+              <ScrollReveal key={p.slug} delay={i * 90}>
+                <Link href={`/projetos`} className="group block h-full rounded-[2rem] bg-brand-bg p-2 ring-1 ring-black/5">
+                  <div className="h-full overflow-hidden rounded-[calc(2rem-0.5rem)] bg-white">
+                    <div className="relative aspect-[16/10] overflow-hidden">
+                      <Image src={p.heroImagem} alt={`Site ${p.nome}`} fill className="object-cover object-top transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.04]" sizes="(max-width:1024px) 100vw, 33vw" />
                     </div>
                     <div className="p-6">
-                      <h3 className="font-serif text-lg font-bold group-hover:text-brand-mint transition-colors leading-snug">{post.titulo}</h3>
+                      <p className="text-xs text-brand-dark/50">{p.categoria} · {p.local}</p>
+                      <h3 className="mt-1 font-serif text-2xl font-bold text-brand-dark">{p.nome}</h3>
+                      <dl className="mt-5 flex gap-8">
+                        {p.metricas.slice(0, 2).map((m) => (
+                          <div key={m.label}><dd className="font-serif text-3xl font-bold text-brand-mint">{m.valor}</dd><dt className="text-xs text-brand-dark/50">{m.label}</dt></div>
+                        ))}
+                      </dl>
                     </div>
                   </div>
                 </Link>
               </ScrollReveal>
             ))}
           </div>
-          <div className="text-center mt-10">
-            <Link href="/blog" className="btn-secondary">Ver todos os artigos</Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== CIDADES ATENDIDAS ===== */}
-      <section className="section-padding bg-brand-bg">
-        <div className="container-main">
-          <ScrollReveal className="text-center mb-12">
-            <h2 className="heading-2 text-brand-dark mb-4">Onde eu atendo</h2>
-          </ScrollReveal>
-          {/* ⚠️ Estas cidades NAO moram mais aqui. O atendimento nos Estados
-              Unidos tem site proprio, e as paginas /cidades/* deste dominio
-              redirecionam para la — link interno apontando para 301 gasta
-              rastreio e confunde o tema da pagina. Entao o bloco assume o que
-              e: uma ponte para o outro site. */}
-          <div className="mb-10 rounded-2xl border border-brand-dark/10 bg-white p-6 md:p-8">
-            <h3 className="font-serif text-xl font-bold text-brand-dark">
-              Você está nos Estados Unidos?
-            </h3>
-            <p className="mt-3 text-brand-dark/60 leading-relaxed max-w-2xl">
-              O atendimento a brasileiros em Massachusetts e na Flórida tem site
-              próprio, com página para cada cidade — lá o assunto é o mercado
-              americano: Google Business Profile, licença de ofício, a
-              comunidade brasileira local.
-            </p>
-            <a
-              href="https://calazanslumina.com"
-              rel="noopener"
-              className="mt-5 inline-flex items-center gap-2 rounded-full bg-brand-dark px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-mint"
-            >
-              Ir para calazanslumina.com
-              <span aria-hidden="true">→</span>
-            </a>
-          </div>
-          <div>
-            <h3 className="font-serif text-xl font-bold text-brand-dark mb-4">
-              Brasil — Capitais
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {capitaisBR.map((c) => (
-                <Link key={c} href={`/brasil/${c.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ /g, '-')}`} className="bg-white text-brand-dark text-sm px-4 py-2 rounded-full hover:bg-brand-mint hover:text-white transition-colors shadow-sm">{c}</Link>
-              ))}
+          <div className="mt-14 rounded-[2rem] bg-brand-dark p-2">
+            <div className="flex flex-col gap-6 rounded-[calc(2rem-0.5rem)] bg-[#0d0d0d] p-6 md:flex-row md:items-center md:justify-between md:p-8">
+              <div>
+                <p className="text-sm text-white/50">Tempo de carregamento medido na página de cada cliente, no celular</p>
+                <div className="mt-3 flex flex-wrap gap-x-8 gap-y-2">
+                  {sitesVitrine.slice(0, 5).map((s) => (
+                    <a key={s.slug} href={s.url} target="_blank" rel="noopener noreferrer" className="text-white hover:text-brand-mint">
+                      <span className="font-semibold">{(s.lcp / 1000).toFixed(2)}s</span> <span className="text-white/50 text-sm">{s.nome}</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+              <CtaButton variante="claro">Quero um site assim</CtaButton>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===== CTA FINAL ===== */}
-      <CTAForm />
+      {/* ===== 3. A NOITE DE UM LEAD ===== */}
+      <section className="bg-brand-bg py-24 md:py-32">
+        <div className="container-main">
+          <ScrollReveal className="mx-auto max-w-3xl text-center">
+            <span className="inline-block rounded-full bg-white px-3 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-brand-dark/60">Imagine uma terça-feira</span>
+            <h2 className="mt-5 font-serif text-4xl md:text-6xl font-bold leading-[1.05] text-brand-dark">
+              O lead não esfria.
+              <br />
+              <span className="text-brand-mint">Ele é esquecido.</span>
+            </h2>
+            <p className="mt-5 text-lg text-brand-dark/60">A mesma ligação, duas noites diferentes.</p>
+          </ScrollReveal>
+          <div className="mx-auto mt-16 max-w-5xl">
+            <div className="hidden grid-cols-[90px_1fr_1fr] gap-6 px-4 pb-4 text-xs font-semibold uppercase tracking-[0.18em] md:grid">
+              <span />
+              <span className="text-brand-dark/40">Sem sistema</span>
+              <span className="text-brand-mint">Com o seu GoHighLevel</span>
+            </div>
+            <ol className="space-y-4">
+              {noite.map((n, i) => (
+                <ScrollReveal key={n.hora} delay={i * 80}>
+                  <li className="grid gap-4 rounded-[1.5rem] bg-white p-5 ring-1 ring-black/5 md:grid-cols-[90px_1fr_1fr] md:gap-6 md:p-6">
+                    <span className="font-serif text-2xl font-bold text-brand-dark">{n.hora}</span>
+                    <p className="text-brand-dark/45"><span className="mr-2 text-xs font-semibold uppercase tracking-wider md:hidden">Sem:</span>{n.sem}</p>
+                    <p className="font-medium text-brand-dark"><span className="mr-2 text-xs font-semibold uppercase tracking-wider text-brand-mint md:hidden">Com:</span>{n.com}</p>
+                  </li>
+                </ScrollReveal>
+              ))}
+            </ol>
+            <div className="mt-12 flex flex-col items-center gap-4 text-center">
+              <p className="max-w-xl text-lg text-brand-dark/70">Quantas dessas noites aconteceram no seu negócio este mês?</p>
+              <CtaButton>Quero o meu sistema respondendo</CtaButton>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== 4. O SISTEMA GHL POR DENTRO (carro-chefe) ===== */}
+      <section className="relative overflow-hidden bg-[#070707] py-24 text-white md:py-32" id="gohighlevel">
+        <div className="pointer-events-none absolute right-0 top-1/3 h-[30rem] w-[30rem] rounded-full bg-brand-mint/15 blur-3xl" aria-hidden="true" />
+        <div className="container-main relative">
+          <ScrollReveal className="max-w-3xl">
+            <span className="inline-block rounded-full bg-white/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-white/70">Setup de GoHighLevel</span>
+            <h2 className="mt-5 font-serif text-4xl md:text-6xl font-bold leading-[1.05]">Uma secretária que não dorme, montada no seu processo de venda</h2>
+            <p className="mt-5 text-lg text-white/60">Não é um modelo copiado de outro cliente. É o seu jeito de vender, só que funcionando sozinho.</p>
+          </ScrollReveal>
+          <div className="mt-16 grid gap-4 md:grid-cols-6">
+            {sistema.map((s, i) => (
+              <ScrollReveal key={s.t} delay={i * 70} className={s.grande ? 'md:col-span-4 md:row-span-2' : 'md:col-span-2'}>
+                <div className="h-full rounded-[2rem] bg-white/5 p-2 ring-1 ring-white/10">
+                  <div className={`flex h-full flex-col justify-between rounded-[calc(2rem-0.5rem)] bg-[#0f0f0f] p-6 shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)] ${s.grande ? 'md:p-8' : ''}`}>
+                    {s.grande && (
+                      <div className="relative mb-6 aspect-[16/8] overflow-hidden rounded-2xl ring-1 ring-white/10">
+                        <Image src="/prova/workflow.png" alt="Fluxo real de triagem montado no GoHighLevel: cliente atual vai para atendente, orçamento vai para o agente de IA" fill className="object-cover object-top" sizes="(max-width:768px) 100vw, 60vw" />
+                      </div>
+                    )}
+                    <div>
+                      <h3 className={`font-bold ${s.grande ? 'text-2xl' : 'text-lg'}`}>{s.t}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-white/60">{s.d}</p>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+          <p className="mt-6 text-sm text-white/40">Acima: fluxo real de triagem por WhatsApp montado para a HBM Solar.</p>
+          <div className="mt-12 flex flex-col gap-3 sm:flex-row">
+            <CtaButton>Quero meu GoHighLevel configurado</CtaButton>
+            <CtaButton href="/servicos/gohighlevel" variante="contorno">Ver tudo o que entra no setup</CtaButton>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== 5. SERVICOS ===== */}
+      <section className="bg-white py-24 md:py-32" id="servicos">
+        <div className="container-main">
+          <ScrollReveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-2xl">
+              <span className="inline-block rounded-full bg-brand-bg px-3 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-brand-dark/60">Serviços</span>
+              <h2 className="mt-5 font-serif text-4xl md:text-6xl font-bold leading-[1.05] text-brand-dark">Da primeira busca ao orçamento assinado</h2>
+            </div>
+            <Link href="/servicos" className="text-brand-dark/70 underline-offset-4 hover:text-brand-mint hover:underline">Ver todos os serviços</Link>
+          </ScrollReveal>
+          <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {servicos.map((s, i) => (
+              <ScrollReveal key={s.slug} delay={(i % 3) * 80}>
+                <Link href={`/servicos/${s.slug}`} className="group block h-full rounded-[2rem] bg-brand-bg p-2 ring-1 ring-black/5 transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-1">
+                  <div className="flex h-full flex-col rounded-[calc(2rem-0.5rem)] bg-white p-7">
+                    <ServiceIcon name={s.icone} className="h-9 w-9 text-brand-mint" />
+                    <h3 className="mt-5 text-xl font-bold text-brand-dark">{s.nome}</h3>
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-brand-dark/60">{s.descricaoCurta}</p>
+                    <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-mint">
+                      Saiba mais <span className="transition-transform duration-500 group-hover:translate-x-1" aria-hidden="true">→</span>
+                    </span>
+                  </div>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CtaBand tom="vermelho" titulo="Não sabe por onde começar?" texto="Me diga o que mais incomoda hoje: cliente que some, Google que não traz ninguém ou site que não converte. Eu digo o que eu faria primeiro." botao="Quero um diagnóstico grátis" />
+
+      {/* ===== 6. COMO FUNCIONA ===== */}
+      <section className="bg-white py-24 md:py-32">
+        <div className="container-main">
+          <ScrollReveal className="max-w-3xl">
+            <span className="inline-block rounded-full bg-brand-bg px-3 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-brand-dark/60">Como funciona</span>
+            <h2 className="mt-5 font-serif text-4xl md:text-6xl font-bold leading-[1.05] text-brand-dark">Quatro passos, nenhuma surpresa</h2>
+          </ScrollReveal>
+          <ol className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {passos.map((p, i) => (
+              <ScrollReveal key={p.n} delay={i * 80}>
+                <li className="h-full rounded-[2rem] bg-brand-bg p-7">
+                  <span className="font-serif text-5xl font-bold text-brand-mint">{p.n}</span>
+                  <h3 className="mt-4 text-xl font-bold text-brand-dark">{p.t}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-brand-dark/60">{p.d}</p>
+                </li>
+              </ScrollReveal>
+            ))}
+          </ol>
+          <div className="mt-12"><CtaButton>Começar pelo diagnóstico</CtaButton></div>
+        </div>
+      </section>
+
+      {/* ===== 7. QUEM FAZ ===== */}
+      <section className="bg-brand-bg py-24 md:py-32" id="sobre">
+        <div className="container-main grid items-center gap-12 lg:grid-cols-2">
+          <ScrollReveal>
+            <div className="rounded-[2rem] bg-white p-2 ring-1 ring-black/5">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[calc(2rem-0.5rem)]">
+                <Image src="/rhai-retrato-2.webp" alt="Rhaideline Calazans, fundadora da Calazans Lumina" fill className="object-cover" sizes="(max-width:1024px) 100vw, 50vw" />
+              </div>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={120}>
+            <span className="inline-block rounded-full bg-white px-3 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-brand-dark/60">Quem faz</span>
+            <h2 className="mt-5 font-serif text-4xl md:text-6xl font-bold leading-[1.05] text-brand-dark">Quem planeja é quem monta</h2>
+            <div className="mt-6 space-y-4 text-lg leading-relaxed text-brand-dark/70">
+              <p>Eu sou a Rhaideline Calazans. Eu desenho a estratégia e eu mesma configuro: o site, o Google, o funil e a automação do GoHighLevel. Não passo o seu projeto para uma equipe que você nunca vai conhecer.</p>
+              <p>Por isso o que está na proposta é o que vai para o ar. E quando algo precisa de ajuste, você fala com quem montou.</p>
+            </div>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <CtaButton>Quero falar com a Rhaideline</CtaButton>
+              <CtaButton href="/sobre" variante="contorno">Como eu trabalho</CtaButton>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ===== 8. CURSOS ===== */}
+      <CoursesSection />
+
+      {/* ===== 9. DUVIDAS ===== */}
+      <section className="bg-white py-24 md:py-32">
+        <div className="container-main grid gap-12 lg:grid-cols-5">
+          <div className="lg:col-span-2">
+            <span className="inline-block rounded-full bg-brand-bg px-3 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-brand-dark/60">Dúvidas</span>
+            <h2 className="mt-5 font-serif text-4xl md:text-5xl font-bold leading-[1.05] text-brand-dark">O que todo mundo pergunta antes de começar</h2>
+            <div className="mt-8"><CtaButton>Tirar a minha dúvida</CtaButton></div>
+          </div>
+          <div className="lg:col-span-3"><FAQAccordion faqs={faqs} /></div>
+        </div>
+      </section>
+
+      {/* ===== 10. BLOG ===== */}
+      {ultimos.length > 0 && (
+        <section className="bg-brand-bg py-24 md:py-28">
+          <div className="container-main">
+            <div className="flex items-end justify-between gap-6">
+              <h2 className="font-serif text-3xl md:text-5xl font-bold text-brand-dark">Para ler antes de decidir</h2>
+              <Link href="/blog" className="shrink-0 text-brand-dark/70 hover:text-brand-mint">Ver o blog</Link>
+            </div>
+            <div className="mt-10 grid gap-6 md:grid-cols-3">
+              {ultimos.map((p) => (
+                <Link key={p.slug} href={`/blog/${p.slug}`} className="group rounded-[2rem] bg-white p-2 ring-1 ring-black/5">
+                  <div className="h-full rounded-[calc(2rem-0.5rem)] p-5">
+                    <p className="text-xs uppercase tracking-wider text-brand-mint">{p.categoria}</p>
+                    <h3 className="mt-2 text-lg font-bold leading-snug text-brand-dark group-hover:text-brand-mint">{p.titulo}</h3>
+                    <p className="mt-2 line-clamp-3 text-sm text-brand-dark/60">{p.resumo}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ===== 11. FORMULARIO ===== */}
+      <FormSection />
     </>
   )
 }

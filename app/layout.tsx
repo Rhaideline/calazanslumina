@@ -1,3 +1,4 @@
+import GlobalCta from '@/components/cta/GlobalCta'
 import type { Metadata, Viewport } from 'next'
 import { DM_Serif_Display, DM_Sans } from 'next/font/google'
 import Header from '@/components/Header'
@@ -189,6 +190,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen flex flex-col" suppressHydrationWarning>
         <Header />
         <main className="flex-1">{children}</main>
+        {/* formulario do GHL + barra de CTA em toda pagina (31/out/2026) */}
+        <GlobalCta />
         <Footer />
         {/* <WhatsAppButton /> */}
         <ThirdPartyScripts />

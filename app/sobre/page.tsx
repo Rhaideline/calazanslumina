@@ -60,8 +60,8 @@ export default function SobrePage() {
     '@type': 'FAQPage',
     mainEntity: [
       { '@type': 'Question', name: 'Quem e Rhaideline Calazans?', acceptedAnswer: { '@type': 'Answer', text: 'Rhaideline Calazans é especialista em marketing digital e fundadora da Calazans Lumina, que atende brasileiros nos Estados Unidos (Massachusetts) e em todo o Brasil. Quem desenha a estratégia é quem monta o site, o funil e a automação. Trabalha com sites Next.js, funis GoHighLevel, CRM com IA no WhatsApp e Google Business Profile.' } },
-      { '@type': 'Question', name: 'A Calazans Lumina atende nos EUA e no Brasil?', acceptedAnswer: { '@type': 'Answer', text: 'Sim! A Calazans Lumina atende brasileiros em mais de 100 cidades de Massachusetts (EUA) e 227 cidades do Brasil. O atendimento e 100% remoto e em portugues. Oferecemos sites, funis, CRM, redes sociais e Google Maps.' } },
-      { '@type': 'Question', name: 'Quais servicos a Calazans Lumina oferece?', acceptedAnswer: { '@type': 'Answer', text: 'Oferecemos: sites profissionais em Next.js com PageSpeed 95+, funis de vendas no GoHighLevel, CRM com IA conversacional no WhatsApp, gestao de redes sociais, trafego pago (Google Ads e Meta Ads), Google Business Profile, SEO local e nacional, e sub-contas GoHighLevel prontas para empresas.' } },
+      { '@type': 'Question', name: 'A Calazans Lumina atende nos EUA e no Brasil?', acceptedAnswer: { '@type': 'Answer', text: 'Sim! A Calazans Lumina atende negócios em Massachusetts, na Flórida e no Brasil. O atendimento é remoto. Oferecemos sites, funis, CRM, redes sociais e Google Maps.' } },
+      { '@type': 'Question', name: 'Quais servicos a Calazans Lumina oferece?', acceptedAnswer: { '@type': 'Answer', text: 'Oferecemos: sites profissionais em Next.js que abrem rápido, funis de vendas no GoHighLevel, CRM com IA conversacional no WhatsApp, gestao de redes sociais, trafego pago (Google Ads e Meta Ads), Google Business Profile, SEO local e nacional, e sub-contas GoHighLevel prontas para empresas.' } },
     ],
   }
 
@@ -202,10 +202,10 @@ export default function SobrePage() {
                 </div>
                 <div>
                   <h3 className="font-serif text-xl font-bold text-brand-dark mb-2">
-                    Calazans Lumina — 8 anos de resultados
+                    Calazans Lumina, hoje
                   </h3>
                   <p className="text-brand-dark/70 leading-relaxed">
-                    Hoje, com 8 anos de experiência prática em marketing digital, lidero a Calazans Lumina
+                    Hoje eu lidero a Calazans Lumina
                     atendendo empreendedores brasileiros em Massachusetts (EUA) e nas principais capitais
                     do Brasil. Meu trabalho transforma negócios que vivem do &quot;boca a boca&quot; em máquinas
                     previsíveis de geração de leads — com sites de alta performance, funis automatizados,

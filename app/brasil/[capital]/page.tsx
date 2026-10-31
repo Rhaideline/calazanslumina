@@ -61,9 +61,9 @@ export default async function CapitalPage({ params }: { params: Promise<{ capita
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
-      { '@type': 'Question', name: `Qual a melhor agencia de marketing digital em ${capital.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `A Calazans Lumina oferece servicos completos de marketing digital em ${capital.nome}, ${capital.siglaEstado}: sites profissionais com PageSpeed 95+, funis GoHighLevel, CRM com IA no WhatsApp, Google Meu Negócio e gestao de redes sociais. Mais de 100 projetos entregues.` } },
+      { '@type': 'Question', name: `Qual a melhor agencia de marketing digital em ${capital.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `A Calazans Lumina oferece servicos completos de marketing digital em ${capital.nome}, ${capital.siglaEstado}: sites que abrem rápido, configuração de GoHighLevel, CRM com IA no WhatsApp, Google Meu Negócio e gestão de redes sociais.` } },
       { '@type': 'Question', name: `Quanto custa criar um site profissional em ${capital.nome}?`, acceptedAnswer: { '@type': 'Answer', text: `Sites profissionais para empresas em ${capital.nome} com precos acessiveis. Inclui design premium, SEO tecnico, PageSpeed 95+, versao mobile e integracao com Google Meu Negócio. Solicite um orcamento gratuito.` } },
-      { '@type': 'Question', name: `A Calazans Lumina atende empresas em ${capital.nome}, ${capital.siglaEstado}?`, acceptedAnswer: { '@type': 'Answer', text: `Sim! Atendemos empresas de todos os segmentos em ${capital.nome}: clinicas, energia solar, construction, pintura, servicos em geral. Atendimento remoto com resultados comprovados em mais de 200 cidades brasileiras.` } },
+      { '@type': 'Question', name: `A Calazans Lumina atende empresas em ${capital.nome}, ${capital.siglaEstado}?`, acceptedAnswer: { '@type': 'Answer', text: `Sim! Atendemos empresas de todos os segmentos em ${capital.nome}: clinicas, energia solar, construction, pintura, servicos em geral. O atendimento é remoto.` } },
     ],
   }
 

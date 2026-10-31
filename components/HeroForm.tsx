@@ -1,21 +1,17 @@
-import LazyIframe from './LazyIframe'
+import GhlForm from './GhlForm'
 
+/**
+ * Formulario do topo das paginas. So o form do GHL, do jeito que ele vem:
+ * a caixa com titulo e texto que ficava por cima saiu (pedido dela, 31/out).
+ * `titulo` continua aceito para nao quebrar quem chama, mas nao aparece.
+ */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default function HeroForm({ titulo }: { titulo?: string }) {
   return (
-    <div className="bg-brand-dark/90 backdrop-blur-sm border border-white/10 rounded-2xl p-6 lg:p-8">
-      <h3 className="font-serif text-xl lg:text-2xl font-bold text-white mb-2">
-        {titulo || 'Solicite seu Orçamento Gratuito'}
-      </h3>
-      <p className="text-white/50 text-sm mb-6">
-        Preencha o formulário e retornamos em até 24 horas
-      </p>
-      <LazyIframe
-        src="https://api.leadconnectorhq.com/widget/form/ncofzws1iEKhN6iFEA6H"
-        title="Form 2"
-        id="inline-ncofzws1iEKhN6iFEA6H"
-        className="min-h-[480px]"
-        height="480px"
-      />
+    <div className="rounded-[2rem] bg-white/10 p-2 ring-1 ring-white/15">
+      <div className="rounded-[calc(2rem-0.5rem)] bg-white p-3 md:p-4">
+        <GhlForm height={520} />
+      </div>
     </div>
   )
 }
