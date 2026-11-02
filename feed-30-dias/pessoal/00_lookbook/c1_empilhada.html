@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>c1-empilhada</title>
+<style>
+@font-face{font-family:'DM Serif Display';font-style:italic;font-weight:400;font-display:block;src:url('../../fontes/dmserif-italic-400.woff2') format('woff2');}
+@font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:block;src:url('../../fontes/dmserif-normal-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:italic;font-weight:400;font-display:block;src:url('../../fontes/dmsans-italic-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:300;font-display:block;src:url('../../fontes/dmsans-normal-300.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:block;src:url('../../fontes/dmsans-normal-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:500;font-display:block;src:url('../../fontes/dmsans-normal-500.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:600;font-display:block;src:url('../../fontes/dmsans-normal-600.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:700;font-display:block;src:url('../../fontes/dmsans-normal-700.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:italic;font-weight:400;font-display:block;src:url('../../fontes/spacemono-italic-400.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:400;font-display:block;src:url('../../fontes/spacemono-normal-400.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:block;src:url('../../fontes/spacemono-normal-700.woff2') format('woff2');}
+
+@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:400 900;font-display:block;font-stretch:normal;src:url('../../fontes/bodonimoda-italic-variable.woff2') format('woff2');}
+@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:400 900;font-display:block;font-stretch:normal;src:url('../../fontes/bodonimoda-normal-variable.woff2') format('woff2');}
+@font-face{font-family:'Caveat';font-style:normal;font-weight:400 700;font-display:block;src:url('../../fontes/caveat-variable.woff2') format('woff2');}
+@font-face{font-family:'Playfair Display';font-style:italic;font-weight:400 700;font-display:block;src:url('../../fontes/playfair-italic-variable.woff2') format('woff2');}
+
+*{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased}
+html,body{width:1080px;height:1440px;overflow:hidden;background:#15100C}
+body{font-family:'DM Sans',sans-serif}
+.tela{position:relative;width:1080px;height:1440px;overflow:hidden}
+.foto{position:absolute;inset:0;background-repeat:no-repeat}
+.veu{position:absolute;inset:0}
+/* granulado de filme: é o que separa "foto com texto por cima" de peça
+   impressa. Fica em todas as dez — é o que costura o sistema. */
+.grao{position:absolute;inset:0;z-index:40;pointer-events:none;opacity:.3;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .14 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+/* fio de cabelo a 34px da borda: o gesto mais barato que existe pra uma
+   peça parecer impressa em vez de postada */
+.moldura{position:absolute;inset:34px;z-index:35;pointer-events:none;
+         border:1px solid rgba(231,207,166,.34)}
+.marca{position:absolute;left:0;right:0;top:62px;z-index:36;text-align:center;
+       font-size:13px;letter-spacing:.46em;text-transform:uppercase;
+       font-weight:600;color:rgba(255,255,255,.88)}
+.passo{position:absolute;right:62px;bottom:60px;z-index:36;font-size:12px;
+       letter-spacing:.3em;font-weight:600}
+.rotulo{font-size:14px;letter-spacing:.42em;text-transform:uppercase;
+        font-weight:700;color:#E7CFA6}
+.regua{width:62px;height:1px;background:#D4AF6A;margin:20px 0 26px}
+.sombra{text-shadow:0 2px 24px rgba(18,11,7,.72),0 1px 4px rgba(18,11,7,.55)}
+
+    .foto{background-image:url('../../fotos/rhai-bebe.jpg');background-size:100%;background-position:center 16%;filter:saturate(1.04) contrast(1.04)}
+    .veu{background:linear-gradient(180deg,rgba(21,14,9,0.24) 0%,rgba(21,14,9,.02) 22%,rgba(21,14,9,.06) 42%,rgba(19,12,8,0.55) 66%,rgba(17,11,7,0.88) 100%)}
+    .selo{position:absolute;left:50%;transform:translateX(-50%);top:58px;
+          z-index:36;width:430px;text-align:center}
+    .selo span{display:block;font-size:14px;letter-spacing:.4em;font-weight:600;
+               text-transform:uppercase;color:#fff;padding-bottom:15px}
+    .selo i{display:block;height:1px;background:rgba(231,207,166,.62)}
+    .bloco{position:absolute;left:62px;right:62px;bottom:104px;z-index:36;
+           text-align:center}
+    .chapeu{font-size:17px;letter-spacing:.4em;font-weight:700;
+            text-transform:uppercase;color:#E7CFA6;margin-bottom:24px}
+    h1{font-family:'DM Sans',sans-serif;font-weight:700;color:#fff;letter-spacing:-.035em;
+       font-size:122px;line-height:.98}
+    
+</style></head><body><div class="tela">
+      <div class="foto"></div><div class="veu"></div>
+      <div class="selo sombra"><span>@rhaicalazans</span><i></i></div>
+      <div class="bloco"><div class="chapeu sombra">sem ironia nenhuma</div><h1 class="sombra">Coisas que eu<br>acho chique<br>numa mãe<br>que trabalha</h1></div>
+      <div class="moldura"></div><div class="grao"></div></div></body></html>

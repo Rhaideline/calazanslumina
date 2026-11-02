@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>planta</title>
+<style>
+@font-face{font-family:'DM Serif Display';font-style:italic;font-weight:400;font-display:block;src:url('../fontes/dmserif-italic-400.woff2') format('woff2');}
+@font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:block;src:url('../fontes/dmserif-normal-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:italic;font-weight:400;font-display:block;src:url('../fontes/dmsans-italic-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:300;font-display:block;src:url('../fontes/dmsans-normal-300.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:block;src:url('../fontes/dmsans-normal-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:500;font-display:block;src:url('../fontes/dmsans-normal-500.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:600;font-display:block;src:url('../fontes/dmsans-normal-600.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:700;font-display:block;src:url('../fontes/dmsans-normal-700.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:italic;font-weight:400;font-display:block;src:url('../fontes/spacemono-italic-400.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:400;font-display:block;src:url('../fontes/spacemono-normal-400.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:block;src:url('../fontes/spacemono-normal-700.woff2') format('woff2');}
+
+@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:400 900;font-display:block;font-stretch:normal;src:url('../fontes/bodonimoda-italic-variable.woff2') format('woff2');}
+@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:400 900;font-display:block;font-stretch:normal;src:url('../fontes/bodonimoda-normal-variable.woff2') format('woff2');}
+
+:root{--tinta:#111111;--tinta2:#1A1A1A;--tinta3:#08080A;--papel:#F5F1EA;--papel2:#EDE6D6;--vermelho:#FF0005;--vermelho2:#FF3B3B;--vermelho3:#A00306;--brasa:#1A0D0D;}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased}
+html,body{width:1080px;height:1440px;overflow:hidden;background:#000}
+body{font-family:'DM Sans',sans-serif}
+.tela{position:relative;width:1080px;height:1440px;overflow:hidden}
+em{font-style:italic;color:var(--vermelho)}
+.grao{position:absolute;inset:0;z-index:60;pointer-events:none;opacity:.32;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .13 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.rodape{position:absolute;left:62px;bottom:52px;z-index:50;font-size:11px;
+        letter-spacing:.34em;text-transform:uppercase;font-weight:600}
+
+    .pl{position:absolute;inset:0;background:var(--papel);color:var(--tinta);
+        padding:74px 68px}
+    .pl .moldura{position:absolute;inset:44px;border:1px solid rgba(17,17,17,.35)}
+    .pl .rh{position:absolute;left:44px;right:44px;height:0}
+    .pl .rh.a{top:44px} .pl .rh.b{bottom:44px}
+    .pl .rh i{position:absolute;width:1px;height:9px;background:rgba(17,17,17,.35)}
+    .pl .rh.b i{transform:translateY(-9px)}
+    .pl .rv{position:absolute;top:44px;bottom:44px;width:0}
+    .pl .rv.a{left:44px} .pl .rv.b{right:44px}
+    .pl .rv i{position:absolute;height:1px;width:9px;background:rgba(17,17,17,.35)}
+    .pl .rv.b i{transform:translateX(-9px)}
+    .pl .cod{position:absolute;top:58px;right:62px;font-family:'Space Mono',monospace;font-size:12px;
+             letter-spacing:.14em;color:var(--vermelho);z-index:3}
+    .pl .miolo{position:relative;z-index:3;height:100%;display:flex;
+               flex-direction:column;justify-content:center;padding:0 34px}
+    .pl h1{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:700;font-size:104px;
+           line-height:.98;letter-spacing:-.025em;max-width:800px}
+    .pl .medidas{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;
+                 gap:0 40px;max-width:720px}
+    .pl .md{display:flex;justify-content:space-between;align-items:baseline;
+            border-bottom:1px dotted rgba(17,17,17,.4);padding:13px 0;
+            font-family:'Space Mono',monospace;font-size:14px}
+    .pl .md span{letter-spacing:.1em;text-transform:uppercase;opacity:.6;font-size:11px}
+    .pl .md b{font-weight:700}
+    .pl .nota{margin-top:32px;font-size:16px;color:rgba(17,17,17,.6);max-width:600px}
+    .pl .rodape{color:rgba(17,17,17,.4);left:78px;bottom:62px}
+    
+</style></head><body><div class="tela"><div class="pl">
+      <div class="moldura"></div>
+      <div class="rh a"><i style="left:0%"></i><i style="left:5%"></i><i style="left:10%"></i><i style="left:15%"></i><i style="left:20%"></i><i style="left:25%"></i><i style="left:30%"></i><i style="left:35%"></i><i style="left:40%"></i><i style="left:45%"></i><i style="left:50%"></i><i style="left:55%"></i><i style="left:60%"></i><i style="left:65%"></i><i style="left:70%"></i><i style="left:75%"></i><i style="left:80%"></i><i style="left:85%"></i><i style="left:90%"></i><i style="left:95%"></i><i style="left:100%"></i></div><div class="rh b"><i style="left:0%"></i><i style="left:5%"></i><i style="left:10%"></i><i style="left:15%"></i><i style="left:20%"></i><i style="left:25%"></i><i style="left:30%"></i><i style="left:35%"></i><i style="left:40%"></i><i style="left:45%"></i><i style="left:50%"></i><i style="left:55%"></i><i style="left:60%"></i><i style="left:65%"></i><i style="left:70%"></i><i style="left:75%"></i><i style="left:80%"></i><i style="left:85%"></i><i style="left:90%"></i><i style="left:95%"></i><i style="left:100%"></i></div>
+      <div class="rv a"><i style="top:0%"></i><i style="top:5%"></i><i style="top:10%"></i><i style="top:15%"></i><i style="top:20%"></i><i style="top:25%"></i><i style="top:30%"></i><i style="top:35%"></i><i style="top:40%"></i><i style="top:45%"></i><i style="top:50%"></i><i style="top:55%"></i><i style="top:60%"></i><i style="top:65%"></i><i style="top:70%"></i><i style="top:75%"></i><i style="top:80%"></i><i style="top:85%"></i><i style="top:90%"></i><i style="top:95%"></i><i style="top:100%"></i></div><div class="rv b"><i style="top:0%"></i><i style="top:5%"></i><i style="top:10%"></i><i style="top:15%"></i><i style="top:20%"></i><i style="top:25%"></i><i style="top:30%"></i><i style="top:35%"></i><i style="top:40%"></i><i style="top:45%"></i><i style="top:50%"></i><i style="top:55%"></i><i style="top:60%"></i><i style="top:65%"></i><i style="top:70%"></i><i style="top:75%"></i><i style="top:80%"></i><i style="top:85%"></i><i style="top:90%"></i><i style="top:95%"></i><i style="top:100%"></i></div>
+      <div class="cod">RS DEVELOPMENT / 04 MESES</div>
+      <div class="miolo"><h1>100 páginas.<br>Zero <em>anúncio</em>.</h1>
+        <div class="medidas"><div class="md"><span>Impressões / mês</span><b>+24.500%</b></div><div class="md"><span>Cliques</span><b>+1.092%</b></div><div class="md"><span>Páginas indexadas</span><b>100+</b></div><div class="md"><span>Leads orgânicos</span><b>8</b></div></div><div class="nota">De 358 para 88.103 impressões por mês, tudo orgânico.</div></div>
+      <div class="rodape">@calazanslumina</div>
+      </div><div class="grao"></div></div></body></html>

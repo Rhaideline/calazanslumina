@@ -1,0 +1,11 @@
+# Fotos de origem (stock licenciado) NAO entram no repositorio: ele e publico,
+# e versionar o arquivo original e redistribuir o asset, o que a licenca de
+# banco de imagem nao permite. O que se publica e o slide composto -- foto com
+# scrim e tipografia por cima --, que e uso derivado legitimo.
+# Quem for renderizar de novo precisa licenciar a foto e colocar aqui.
+*.jpg
+*.jpeg
+*.png
+*.webp
+!.gitignore
+!LEIA-ME.md

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>veladura</title>
+<style>
+@font-face{font-family:'DM Serif Display';font-style:italic;font-weight:400;font-display:block;src:url('../fontes/dmserif-italic-400.woff2') format('woff2');}
+@font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:block;src:url('../fontes/dmserif-normal-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:italic;font-weight:400;font-display:block;src:url('../fontes/dmsans-italic-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:300;font-display:block;src:url('../fontes/dmsans-normal-300.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:block;src:url('../fontes/dmsans-normal-400.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:500;font-display:block;src:url('../fontes/dmsans-normal-500.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:600;font-display:block;src:url('../fontes/dmsans-normal-600.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:700;font-display:block;src:url('../fontes/dmsans-normal-700.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:italic;font-weight:400;font-display:block;src:url('../fontes/spacemono-italic-400.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:400;font-display:block;src:url('../fontes/spacemono-normal-400.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:block;src:url('../fontes/spacemono-normal-700.woff2') format('woff2');}
+
+@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:400 900;font-display:block;font-stretch:normal;src:url('../fontes/bodonimoda-italic-variable.woff2') format('woff2');}
+@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:400 900;font-display:block;font-stretch:normal;src:url('../fontes/bodonimoda-normal-variable.woff2') format('woff2');}
+
+:root{--tinta:#111111;--tinta2:#1A1A1A;--tinta3:#08080A;--papel:#F5F1EA;--papel2:#EDE6D6;--vermelho:#FF0005;--vermelho2:#FF3B3B;--vermelho3:#A00306;--brasa:#1A0D0D;}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased}
+html,body{width:1080px;height:1440px;overflow:hidden;background:#000}
+body{font-family:'DM Sans',sans-serif}
+.tela{position:relative;width:1080px;height:1440px;overflow:hidden}
+em{font-style:italic;color:var(--vermelho)}
+.grao{position:absolute;inset:0;z-index:60;pointer-events:none;opacity:.32;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .13 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.rodape{position:absolute;left:62px;bottom:52px;z-index:50;font-size:11px;
+        letter-spacing:.34em;text-transform:uppercase;font-weight:600}
+
+    .vl{position:absolute;inset:0;background:var(--tinta);overflow:hidden}
+    .vl .foto{position:absolute;inset:0;background-image:url('../fotos/tecnologia-simples.jpg');
+              background-size:cover;background-position:center;
+              filter:saturate(1.05) contrast(1.1)}
+    .vl .tinge{position:absolute;inset:0;background:
+               linear-gradient(200deg,rgba(255,0,5,.5) 0%,rgba(17,17,17,.88) 70%);
+               mix-blend-mode:hard-light}
+    .vl .fundo{position:absolute;inset:0;background:rgba(10,8,10,.34)}
+    .vl .txt{position:absolute;left:56px;right:56px;top:50%;transform:translateY(-50%);z-index:5}
+    .vl h1{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:740;color:#fff;
+           font-size:132px;line-height:.92;letter-spacing:-.03em}
+    .vl .nota{margin-top:26px;font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.22em;
+              text-transform:uppercase;color:rgba(255,255,255,.88)}
+    .vl .rodape{color:rgba(255,255,255,.5)}
+    
+</style></head><body><div class="tela"><div class="vl">
+      <div class="foto"></div><div class="tinge"></div><div class="fundo"></div>
+      <div class="txt"><h1>Manda o<br><em>endereço</em>.</h1><div class="nota">Passo as sete no seu site · resposta em 24h</div></div>
+      <div class="rodape">@calazanslumina</div>
+      </div><div class="grao"></div></div></body></html>
