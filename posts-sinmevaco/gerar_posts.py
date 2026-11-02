@@ -2007,6 +2007,61 @@ POSTS = [
             None, foot_tag="CLT &middot; arts. 134,<br>143 e 145")),
     ]),
 
+    ("66_finados_carrossel", [
+        ("01_capa.html", cover(
+            ["Hoje o pa&iacute;s visita os seus mortos"],
+            "Para quem est&aacute; de plant&atilde;o, <em>n&atilde;o &eacute; uma data.</em>",
+            "O que muda no feriado?",
+            "Para o hospital, nada.",
+            "1/6", olho="2 de novembro", foot_tag="SINMEVA&Ccedil;O<br>2 de novembro",
+            photo=foto_se_houver("fotos/finados-corredor.jpg"))),
+        ("02_peso.html", editorial(
+            "Em algum momento do plant&atilde;o, algu&eacute;m precisa atravessar o corredor "
+            "e dizer a frase.",
+            "A fam&iacute;lia vai lembrar dela <em>pelo resto da vida.</em>",
+            "E voc&ecirc; volta para o pr&oacute;ximo leito em tr&ecirc;s minutos, porque ele "
+            "est&aacute; esperando. <b>Essa troca n&atilde;o aparece em escala nenhuma</b> "
+            "&mdash; &eacute; a parte do trabalho que mais pesa e menos se nomeia.",
+            "2/6")),
+        ("03_declaracao.html", clausula(
+            "Resolu&ccedil;&atilde;o CFM n. 1.779/2005",
+            "&ldquo;A Declara&ccedil;&atilde;o de &Oacute;bito dever&aacute; ser fornecida, "
+            "sempre que poss&iacute;vel, pelo m&eacute;dico que vinha prestando "
+            "assist&ecirc;ncia ao paciente.&rdquo;",
+            "Quem assina a declara&ccedil;&atilde;o.",
+            "Morte natural <b>com</b> assist&ecirc;ncia: o m&eacute;dico que acompanhava. "
+            "<b>Sem</b> assist&ecirc;ncia: o SVO &mdash; e, onde n&atilde;o h&aacute;, o "
+            "servi&ccedil;o p&uacute;blico mais pr&oacute;ximo ou qualquer m&eacute;dico da "
+            "localidade. <b>Morte violenta ou n&atilde;o natural: os servi&ccedil;os "
+            "m&eacute;dico-legais</b>, obrigatoriamente.",
+            "3/6", foot_tag="Res. CFM<br>1.779/2005")),
+        ("04_luto.html", numero(
+            "Quando o luto &eacute; o seu",
+            "2", "dias",
+            "Consecutivos e <b>sem desconto no sal&aacute;rio</b>, por falecimento de "
+            "c&ocirc;njuge, ascendente, descendente, irm&atilde;o ou dependente declarado "
+            "na carteira.",
+            "CLT, art. 473, I (reda&ccedil;&atilde;o do Decreto-lei 229/1967). "
+            "Conven&ccedil;&atilde;o coletiva pode ampliar o prazo.",
+            "4/6", foot_tag="Art. 473, I<br>CLT")),
+        ("05_feriado.html", statement(
+            "2 de novembro",
+            "Feriado nacional. Para a sua escala, n&atilde;o.",
+            "Finados est&aacute; no art. 1&ordm; da Lei 662/1949, na reda&ccedil;&atilde;o da "
+            "<b>Lei 10.607/2002</b>. Quem trabalha no feriado e n&atilde;o recebe folga "
+            "compensat&oacute;ria tem direito &agrave; remunera&ccedil;&atilde;o em dobro "
+            "&mdash; salvo na 12x36, em que o art. 59-A da CLT j&aacute; considera os "
+            "feriados compensados.",
+            fundo="bg-brass", foot_tag="Lei 662/49<br>art. 1&ordm;")),
+        ("06_cta.html", cta(
+            "Jur&iacute;dico do SINMEVA&Ccedil;O",
+            "Um bom plant&atilde;o a quem est&aacute; l&aacute; hoje.",
+            "Se o feriado trabalhado n&atilde;o apareceu no contracheque, ou se voc&ecirc; "
+            "precisou faltar por luto e veio desconto, traga o documento. A "
+            "confer&ecirc;ncia &eacute; r&aacute;pida e n&atilde;o compromete voc&ecirc; "
+            "com nada.",
+            "Falar com o jur&iacute;dico", "6/6")),
+    ]),
     ("65_dia_hematologista", [
         ("01_post.html", data_medica(
             "29 de outubro",
@@ -2400,6 +2455,7 @@ RESERVA = [
     "57_estabilidade_acidentaria", "58_consciencia_negra", "59_contracheque",
     "60_fgts", "61_assedio_sexual", "62_convencao_coletiva",
     "63_ferias_em_dobro", "64_primeira_parcela_13", "65_dia_hematologista",
+    "66_finados_carrossel",
 ]
 
 ORDEM = [pasta for pasta, _, _ in CALENDARIO] + RESERVA
@@ -2435,6 +2491,11 @@ def familia(html):
 
 # Ciclo de fundos: seis passos com as tres familias, sem repetir vizinho
 # e sem cair no vai-e-vem de duas cores.
+# Carrosseis longos em que o rodizio de tema achataria tudo numa cor so.
+# Aqui cada slide fica no fundo natural do modelo, e o contraste vem da
+# propria sequencia de modelos.
+SEM_TEMA = {"66_finados_carrossel"}
+
 CICLO = ["escuro", "papel", "verde", "escuro", "verde", "papel"]
 TEMA = {"escuro": "t-escuro", "papel": "t-claro", "verde": "t-verde"}
 
@@ -2450,6 +2511,10 @@ def variacao(posts_por_pasta):
     plano, anterior = {}, None
     for i, pasta in enumerate(ORDEM):
         fam_natural = familia(posts_por_pasta.get(pasta, ""))
+        if pasta in SEM_TEMA:
+            plano[pasta] = ("", f"v{(i % 4) + 1}")
+            anterior = fam_natural
+            continue
         if fam_natural == "fixo":
             # Homenagem de data nao entra no rodizio: o azul-marinho com dourado
             # e o registo da peca. Os slides seguem as familias naturais deles.

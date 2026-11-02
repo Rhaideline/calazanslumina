@@ -1081,3 +1081,23 @@ nesse estado.
 
 `#SINMEVAÇO #DiaDoHematologista #Hematologia #Hemoterapia #MédicosDoValeDoAço #Ipatinga #CoronelFabriciano #Timóteo`
 **Âncora:** Lei 14.919/2024. Foto licenciada no Adobe Stock (AdobeStock_289111791); o arquivo de origem não entra no repositório.
+
+## 66 — Finados · 02/11 (carrossel, 6)
+> Hoje o país visita os seus mortos. Para quem está de plantão, a morte não é uma data no calendário — é terça-feira.
+>
+> Em algum momento do plantão, alguém precisa atravessar o corredor e dizer a frase. A família vai lembrar dela pelo resto da vida. E você volta para o próximo leito em três minutos, porque ele está esperando. Essa troca não aparece em escala nenhuma.
+>
+> Três coisas que vale ter claras, hoje:
+>
+> **Quem assina a declaração de óbito.** Morte natural com assistência: o médico que vinha acompanhando o paciente. Sem assistência: o SVO — e, onde não há, o serviço público de saúde mais próximo ou qualquer médico da localidade. Morte violenta ou não natural: os serviços médico-legais, obrigatoriamente. Está na Resolução CFM nº 1.779/2005.
+>
+> **Quando o luto é o seu.** Dois dias consecutivos, sem desconto no salário, por falecimento de cônjuge, ascendente, descendente, irmão ou dependente declarado na carteira. É o art. 473, I, da CLT, e convenção coletiva pode ampliar. Quase ninguém pede, e muita gente tira férias para enterrar o próprio pai.
+>
+> **Hoje é feriado nacional** — art. 1º da Lei 662/1949, na redação da Lei 10.607/2002. Quem trabalha e não recebe folga compensatória tem direito à remuneração em dobro, salvo na 12x36, em que o art. 59-A da CLT já considera os feriados compensados.
+>
+> O SINMEVAÇO deseja um bom plantão a quem está lá hoje.
+>
+> Salva esse post. Um dia você vai precisar dele com pressa.
+
+`#SINMEVAÇO #Finados #Plantão #DeclaraçãoDeÓbito #DireitoMédico #MédicosDoValeDoAço #Ipatinga #CoronelFabriciano #Timóteo`
+**Âncoras:** Resolução CFM nº 1.779/2005 (vigente, citada como base em norma do CREMERO de 2025); CLT, art. 473, I (redação do Decreto-lei 229/1967); Lei 662/1949, art. 1º, redação da Lei 10.607/2002; Lei 605/1949, art. 9º; CLT, art. 59-A. Foto licenciada no Adobe Stock (AdobeStock_460734233); o arquivo de origem não entra no repositório.
