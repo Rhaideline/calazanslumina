@@ -2049,17 +2049,17 @@ POSTS = [
             "2 de novembro",
             "Dia de ",
             "Finados",
-            "Hoje o pa&iacute;s visita os seus mortos. Para quem est&aacute; de plant&atilde;o, "
-            "a morte n&atilde;o &eacute; uma data &mdash; &eacute; ter&ccedil;a-feira.",
+            "Hoje o pa&iacute;s visita os seus mortos. No plant&atilde;o, a morte n&atilde;o tem "
+            "dia marcado.",
             SIMBOLO_VELA, "1/6",
             photo=foto_se_houver("fotos/finados-velas.jpg"))),
         ("02_peso.html", editorial(
             "Em algum momento do plant&atilde;o, algu&eacute;m precisa atravessar o corredor "
-            "e dizer a frase.",
-            "A fam&iacute;lia vai lembrar dela <em>pelo resto da vida.</em>",
+            "e contar para a fam&iacute;lia.",
+            "O que voc&ecirc; disser ali <em>vai ser lembrado para sempre.</em>",
             "E voc&ecirc; volta para o pr&oacute;ximo leito em tr&ecirc;s minutos, porque ele "
-            "est&aacute; esperando. <b>Essa troca n&atilde;o aparece em escala nenhuma</b> "
-            "&mdash; &eacute; a parte do trabalho que mais pesa e menos se nomeia.",
+            "est&aacute; esperando. <b>Esse peso n&atilde;o aparece em escala nenhuma</b> "
+            "&mdash; &eacute; a parte do trabalho que mais cansa e menos se fala.",
             "2/6")),
         ("03_declaracao.html", data_medica(
             "Resolu&ccedil;&atilde;o CFM n. 1.779/2005",
@@ -2078,9 +2078,9 @@ POSTS = [
             "coletiva pode ampliar. Quase ningu&eacute;m pede.",
             "4/6")),
         ("05_feriado.html", data_medica(
-            "Hoje &eacute; feriado nacional",
-            "Para a sua ",
-            "escala, n&atilde;o",
+            "2 de novembro",
+            "Feriado nacional, ",
+            "menos no plant&atilde;o",
             "Lei 662/1949, art. 1&ordm;, na reda&ccedil;&atilde;o da Lei 10.607/2002. "
             "Trabalhou e n&atilde;o teve folga compensat&oacute;ria? <b>Em dobro</b> "
             "&mdash; salvo na 12x36, que j&aacute; considera os feriados compensados.",

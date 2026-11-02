@@ -1083,9 +1083,9 @@ nesse estado.
 **Âncora:** Lei 14.919/2024. Foto licenciada no Adobe Stock (AdobeStock_289111791); o arquivo de origem não entra no repositório.
 
 ## 66 — Finados · 02/11 (carrossel, 6)
-> Hoje é Dia de Finados. O país visita os seus mortos — e, para quem está de plantão, a morte não é uma data no calendário. É terça-feira.
+> Hoje é Dia de Finados. O país visita os seus mortos — e, no plantão, a morte não tem dia marcado.
 >
-> Em algum momento do plantão, alguém precisa atravessar o corredor e dizer a frase. A família vai lembrar dela pelo resto da vida. E você volta para o próximo leito em três minutos, porque ele está esperando. Essa troca não aparece em escala nenhuma.
+> Em algum momento do plantão, alguém precisa atravessar o corredor e contar para a família. O que você disser ali vai ser lembrado para sempre. E você volta para o próximo leito em três minutos, porque ele está esperando. Esse peso não aparece em escala nenhuma.
 >
 > Três coisas que vale ter claras, hoje:
 >
