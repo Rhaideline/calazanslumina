@@ -1083,7 +1083,7 @@ nesse estado.
 **Âncora:** Lei 14.919/2024. Foto licenciada no Adobe Stock (AdobeStock_289111791); o arquivo de origem não entra no repositório.
 
 ## 66 — Finados · 02/11 (carrossel, 6)
-> Hoje o país visita os seus mortos. Para quem está de plantão, a morte não é uma data no calendário — é terça-feira.
+> Hoje é Dia de Finados. O país visita os seus mortos — e, para quem está de plantão, a morte não é uma data no calendário. É terça-feira.
 >
 > Em algum momento do plantão, alguém precisa atravessar o corredor e dizer a frase. A família vai lembrar dela pelo resto da vida. E você volta para o próximo leito em três minutos, porque ele está esperando. Essa troca não aparece em escala nenhuma.
 >
@@ -1100,4 +1100,4 @@ nesse estado.
 > Salva esse post. Um dia você vai precisar dele com pressa.
 
 `#SINMEVAÇO #Finados #Plantão #DeclaraçãoDeÓbito #DireitoMédico #MédicosDoValeDoAço #Ipatinga #CoronelFabriciano #Timóteo`
-**Âncoras:** Resolução CFM nº 1.779/2005 (vigente, citada como base em norma do CREMERO de 2025); CLT, art. 473, I (redação do Decreto-lei 229/1967); Lei 662/1949, art. 1º, redação da Lei 10.607/2002; Lei 605/1949, art. 9º; CLT, art. 59-A. Foto licenciada no Adobe Stock (AdobeStock_460734233); o arquivo de origem não entra no repositório.
+**Âncoras:** Resolução CFM nº 1.779/2005 (vigente, citada como base em norma do CREMERO de 2025); CLT, art. 473, I (redação do Decreto-lei 229/1967); Lei 662/1949, art. 1º, redação da Lei 10.607/2002; Lei 605/1949, art. 9º; CLT, art. 59-A. Foto licenciada no Adobe Stock (AdobeStock_186022314); o arquivo de origem não entra no repositório.

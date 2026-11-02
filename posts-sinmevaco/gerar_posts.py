@@ -1047,6 +1047,43 @@ SIMBOLO_HEMATO = """<svg viewBox="0 0 200 200" fill="none" stroke="currentColor"
   <path d="M34 182 H166" opacity=".4"/>
 </svg>"""
 
+SIMBOLO_VELA = """<svg viewBox="0 0 200 200" fill="none" stroke="currentColor"
+  stroke-width="1.7" stroke-linecap="round">
+  <path d="M100 30 C112 46, 116 58, 116 66 A16 16 0 0 1 84 66 C84 58, 88 46, 100 30Z"/>
+  <path d="M100 52 C106 60, 107 65, 107 69 A7 7 0 0 1 93 69 C93 65, 94 60, 100 52Z"
+    fill="currentColor" stroke="none" opacity=".55"/>
+  <path d="M100 82 V96" opacity=".7"/>
+  <rect x="76" y="96" width="48" height="54" rx="3" opacity=".85"/>
+  <path d="M34 150 H166"/>
+  <path d="M34 182 H166" opacity=".4"/>
+</svg>"""
+
+SIMBOLO_SELO = """<svg viewBox="0 0 200 200" fill="none" stroke="currentColor"
+  stroke-width="1.7" stroke-linecap="round">
+  <path d="M62 28 H124 L146 50 V132 H62 Z" opacity=".85"/>
+  <path d="M124 28 V50 H146" opacity=".6"/>
+  <path d="M78 66 H118" opacity=".5"/><path d="M78 82 H130" opacity=".5"/>
+  <path d="M78 98 H108" opacity=".5"/>
+  <circle cx="126" cy="116" r="20" opacity=".9"/>
+  <circle cx="126" cy="116" r="11" stroke-dasharray="3 5" opacity=".6"/>
+  <path d="M34 150 H166"/>
+  <path d="M34 182 H166" opacity=".4"/>
+</svg>"""
+
+SIMBOLO_CALENDARIO = """<svg viewBox="0 0 200 200" fill="none" stroke="currentColor"
+  stroke-width="1.7" stroke-linecap="round">
+  <rect x="56" y="44" width="88" height="88" rx="5" opacity=".85"/>
+  <path d="M56 70 H144" opacity=".6"/>
+  <path d="M78 32 V54" opacity=".8"/><path d="M122 32 V54" opacity=".8"/>
+  <circle cx="78" cy="90" r="3.5" fill="currentColor" stroke="none" opacity=".45"/>
+  <circle cx="100" cy="90" r="3.5" fill="currentColor" stroke="none" opacity=".45"/>
+  <circle cx="122" cy="90" r="8" fill="currentColor" stroke="none"/>
+  <circle cx="78" cy="112" r="3.5" fill="currentColor" stroke="none" opacity=".45"/>
+  <circle cx="100" cy="112" r="3.5" fill="currentColor" stroke="none" opacity=".45"/>
+  <path d="M34 150 H166"/>
+  <path d="M34 182 H166" opacity=".4"/>
+</svg>"""
+
 
 def foto_se_houver(nome):
     """Devolve o caminho so quando o arquivo existe.
@@ -2008,13 +2045,14 @@ POSTS = [
     ]),
 
     ("66_finados_carrossel", [
-        ("01_capa.html", cover(
-            ["Hoje o pa&iacute;s visita os seus mortos"],
-            "Para quem est&aacute; de plant&atilde;o, <em>n&atilde;o &eacute; uma data.</em>",
-            "O que muda no feriado?",
-            "Para o hospital, nada.",
-            "1/6", olho="2 de novembro", foot_tag="SINMEVA&Ccedil;O<br>2 de novembro",
-            photo=foto_se_houver("fotos/finados-corredor.jpg"))),
+        ("01_capa.html", data_medica(
+            "2 de novembro",
+            "Dia de ",
+            "Finados",
+            "Hoje o pa&iacute;s visita os seus mortos. Para quem est&aacute; de plant&atilde;o, "
+            "a morte n&atilde;o &eacute; uma data &mdash; &eacute; ter&ccedil;a-feira.",
+            SIMBOLO_VELA, "1/6",
+            photo=foto_se_houver("fotos/finados-velas.jpg"))),
         ("02_peso.html", editorial(
             "Em algum momento do plant&atilde;o, algu&eacute;m precisa atravessar o corredor "
             "e dizer a frase.",
@@ -2023,36 +2061,30 @@ POSTS = [
             "est&aacute; esperando. <b>Essa troca n&atilde;o aparece em escala nenhuma</b> "
             "&mdash; &eacute; a parte do trabalho que mais pesa e menos se nomeia.",
             "2/6")),
-        ("03_declaracao.html", clausula(
+        ("03_declaracao.html", data_medica(
             "Resolu&ccedil;&atilde;o CFM n. 1.779/2005",
-            "&ldquo;A Declara&ccedil;&atilde;o de &Oacute;bito dever&aacute; ser fornecida, "
-            "sempre que poss&iacute;vel, pelo m&eacute;dico que vinha prestando "
-            "assist&ecirc;ncia ao paciente.&rdquo;",
-            "Quem assina a declara&ccedil;&atilde;o.",
-            "Morte natural <b>com</b> assist&ecirc;ncia: o m&eacute;dico que acompanhava. "
-            "<b>Sem</b> assist&ecirc;ncia: o SVO &mdash; e, onde n&atilde;o h&aacute;, o "
-            "servi&ccedil;o p&uacute;blico mais pr&oacute;ximo ou qualquer m&eacute;dico da "
-            "localidade. <b>Morte violenta ou n&atilde;o natural: os servi&ccedil;os "
-            "m&eacute;dico-legais</b>, obrigatoriamente.",
-            "3/6", foot_tag="Res. CFM<br>1.779/2005")),
-        ("04_luto.html", numero(
-            "Quando o luto &eacute; o seu",
-            "2", "dias",
-            "Consecutivos e <b>sem desconto no sal&aacute;rio</b>, por falecimento de "
-            "c&ocirc;njuge, ascendente, descendente, irm&atilde;o ou dependente declarado "
-            "na carteira.",
-            "CLT, art. 473, I (reda&ccedil;&atilde;o do Decreto-lei 229/1967). "
-            "Conven&ccedil;&atilde;o coletiva pode ampliar o prazo.",
-            "4/6", foot_tag="Art. 473, I<br>CLT")),
-        ("05_feriado.html", statement(
-            "2 de novembro",
-            "Feriado nacional. Para a sua escala, n&atilde;o.",
-            "Finados est&aacute; no art. 1&ordm; da Lei 662/1949, na reda&ccedil;&atilde;o da "
-            "<b>Lei 10.607/2002</b>. Quem trabalha no feriado e n&atilde;o recebe folga "
-            "compensat&oacute;ria tem direito &agrave; remunera&ccedil;&atilde;o em dobro "
-            "&mdash; salvo na 12x36, em que o art. 59-A da CLT j&aacute; considera os "
-            "feriados compensados.",
-            fundo="bg-brass", foot_tag="Lei 662/49<br>art. 1&ordm;")),
+            "Quem assina a ",
+            "declara&ccedil;&atilde;o de &oacute;bito",
+            "Com assist&ecirc;ncia, o m&eacute;dico que acompanhava. Sem assist&ecirc;ncia, "
+            "o SVO. Morte violenta ou n&atilde;o natural, <b>sempre os servi&ccedil;os "
+            "m&eacute;dico-legais</b>.",
+            SIMBOLO_SELO, "3/6")),
+        ("04_luto.html", editorial(
+            "Voc&ecirc; assina a declara&ccedil;&atilde;o de &oacute;bito dos outros.",
+            "O seu luto <em>tamb&eacute;m est&aacute; na lei.</em>",
+            "<b>CLT, art. 473, I</b>: dois dias consecutivos, sem desconto no "
+            "sal&aacute;rio, por falecimento de c&ocirc;njuge, ascendente, descendente, "
+            "irm&atilde;o ou dependente declarado na carteira. Conven&ccedil;&atilde;o "
+            "coletiva pode ampliar. Quase ningu&eacute;m pede.",
+            "4/6")),
+        ("05_feriado.html", data_medica(
+            "Hoje &eacute; feriado nacional",
+            "Para a sua ",
+            "escala, n&atilde;o",
+            "Lei 662/1949, art. 1&ordm;, na reda&ccedil;&atilde;o da Lei 10.607/2002. "
+            "Trabalhou e n&atilde;o teve folga compensat&oacute;ria? <b>Em dobro</b> "
+            "&mdash; salvo na 12x36, que j&aacute; considera os feriados compensados.",
+            SIMBOLO_CALENDARIO, "5/6")),
         ("06_cta.html", cta(
             "Jur&iacute;dico do SINMEVA&Ccedil;O",
             "Um bom plant&atilde;o a quem est&aacute; l&aacute; hoje.",
